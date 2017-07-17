@@ -2,15 +2,20 @@
 id                  int     not null, primary key
 username            string  not null, index, unique
 email               string  not null, index, unique
+name                string  not null
+location            string  not null
+password_digest     string  not null
+session_token       string  not null, index, unique
+
+#publicProfile
+id                  int not null, primary key
 fname               string  not null
 lname               string  not null
 age                 int     not null
 bdate               date    not null
-password_digest     string  not null
-session_token       string  not null, index, unique
 
 # groupTags
-group_tags_id       int   not null, primary key
+id                  int   not null, primary key
 group_id            int   not null
 tag_id              int   not null
 
@@ -35,6 +40,7 @@ id            int     not null, primary key
 user_id       int     not null  
 body          text    not null
 event_id      int     not null
+group_id      int     not null
 
 # events
 id            int     not null, primary key
@@ -44,12 +50,12 @@ name          string  not null
 start         date    not null
 end           date    not null
 description   text    not null
-location      string  not null
+location      int     not null
 
 # eventEnrollment
 id          int     not null, primary key
 user_id     int     not null
-even_id     int     not null
+event_id    int     not null
 
 # locationGroups
 id            int     not null, primary key
