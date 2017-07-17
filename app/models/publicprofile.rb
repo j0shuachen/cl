@@ -1,0 +1,2 @@
+class Publicprofile < ApplicationRecord
+end
