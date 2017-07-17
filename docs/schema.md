@@ -7,12 +7,23 @@ location            string  not null
 password_digest     string  not null
 session_token       string  not null, index, unique
 
-#publicProfile
+# publicProfile
 id                  int not null, primary key
-fname               string  not null
-lname               string  not null
-age                 int     not null
-bdate               date    not null
+fname               string  
+lname               string  
+name                string
+age                 int    
+bdate               date  
+location            int
+user_id             int
+
+# groupMemberProfile
+id              int
+name            string
+intro           text
+review          text
+group_id        int
+user_id         int
 
 # groupTags
 id                  int   not null, primary key
