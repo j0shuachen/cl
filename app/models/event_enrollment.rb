@@ -1,0 +1,2 @@
+class EventEnrollment < ApplicationRecord
+end

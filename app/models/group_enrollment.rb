@@ -1,0 +1,2 @@
+class GroupEnrollment < ApplicationRecord
+end

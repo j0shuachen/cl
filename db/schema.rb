@@ -10,10 +10,82 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170717182919) do
+ActiveRecord::Schema.define(version: 20170718072545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
+    t.integer "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_comments_on_event_id"
+    t.index ["group_id"], name: "index_comments_on_group_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "event_enrollments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_enrollments_on_event_id"
+    t.index ["user_id"], name: "index_event_enrollments_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer "group_id", null: false
+    t.integer "user_id", null: false
+    t.string "name", null: false
+    t.text "description", null: false
+    t.date "start_time", null: false
+    t.date "end_time", null: false
+    t.integer "location_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_events_on_group_id"
+    t.index ["location_id"], name: "index_events_on_location_id"
+    t.index ["name"], name: "index_events_on_name"
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "group_enrollments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_enrollments_on_group_id"
+    t.index ["user_id"], name: "index_group_enrollments_on_user_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "name", null: false
+    t.text "info", null: false
+    t.integer "location_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_groups_on_location_id"
+    t.index ["name"], name: "index_groups_on_name"
+    t.index ["user_id"], name: "index_groups_on_user_id"
+  end
+
+  create_table "public_profiles", force: :cascade do |t|
+    t.string "fname"
+    t.string "lname"
+    t.integer "age"
+    t.date "bdate"
+    t.integer "location_id"
+    t.integer "user_id", null: false
+    t.text "bio"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_public_profiles_on_user_id", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
