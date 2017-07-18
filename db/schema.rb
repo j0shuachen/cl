@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718072545) do
+ActiveRecord::Schema.define(version: 20170718082238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,31 @@ ActiveRecord::Schema.define(version: 20170718072545) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_public_profiles_on_user_id", unique: true
+  end
+
+  create_table "tag_event_enrollments", force: :cascade do |t|
+    t.integer "tag_id", null: false
+    t.integer "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_tag_event_enrollments_on_event_id"
+    t.index ["tag_id"], name: "index_tag_event_enrollments_on_tag_id"
+  end
+
+  create_table "tag_group_enrollments", force: :cascade do |t|
+    t.integer "tag_id"
+    t.integer "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_tag_group_enrollments_on_group_id"
+    t.index ["tag_id"], name: "index_tag_group_enrollments_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tags_on_name"
   end
 
   create_table "users", force: :cascade do |t|

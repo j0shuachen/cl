@@ -1,0 +1,2 @@
+class TagEventEnrollment < ApplicationRecord
+end

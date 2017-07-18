@@ -1,0 +1,2 @@
+class TagGroupEnrollment < ApplicationRecord
+end
