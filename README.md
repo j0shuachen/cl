@@ -16,42 +16,42 @@ tags/categories
 
 # DESIGN DOCS
 1. view wireframes    
-  ..+ docs/wireframes
+  + docs/wireframes
 2. react components   
-  ..+ docs/component-hierarchy.md
+  + docs/component-hierarchy.md
 3. api endpoints      
-  ..+ docs/api-endpoints.md
+  + docs/api-endpoints.md
 4. db schema          
-  ..+ docs/component-hierarchy.md
+  + docs/component-hierarchy.md
 5. sample state       
-  ..+docs/sample-state.md
+  + docs/sample-state.md
 
 # IMPLEMENTATION TIMELINE
 
 ## PHASE 1: USER AUTH AND JSON (2 DAYS)
-  ..+ create project
-  ..+ create user model
-  ..+ set up backend auth
-  ..+ staticpages controller
-  ..+ setup APIUtil
+  + create project
+  + create user model
+  + set up backend auth
+  + staticpages controller
+  + setup APIUtil
 
 ## PHASE 2: GROUPS (2 DAYS)
-  ..+ create groups
-  ..+ create group enrollments
-  ..+ CRUD for groups
-  ..+ CRUD for group enrollments
+  + create groups
+  + create group enrollments
+  + CRUD for groups
+  + CRUD for group enrollments
 
 ## PHASE 3: EVENTS (2 DAYS)
-  ..+ create events
-  ..+ create event enrollments
-  ..+ CRUD for events
-  ..+ CRUD for event enrollments
+  + create events
+  + create event enrollments
+  + CRUD for events
+  + CRUD for event enrollments
 
 ## PHASE 4: CALENDAR (2 DAYS)
-  ..+ create calendar
+  + create calendar
 
 ## PHASE 5: SEARCH (2 DAYS)
-  ..+ create search bar
+  + create search bar
 
 
 
