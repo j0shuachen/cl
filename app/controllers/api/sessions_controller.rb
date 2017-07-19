@@ -5,8 +5,8 @@ class Api::SessionsController < ApplicationController
     params[:user][:password]
     )
     if @user
-      login(@user)
-      render "api/groups/show"
+      sign_in(@user)
+      render "api/users/show"
     else
       render(
       json: ["Incorrect username or passowrd"],
@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       logout
-      render "api/groups/show"
+      render "/api/sessions"
     else
       render(
       json: ["Not signed in"],
