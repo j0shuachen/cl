@@ -1,3 +1,156 @@
 // Place all the styles related to the Api::sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// .logo{
+//   background-image: image-url("meetup_logo_before_after.png");
+//   display: flex;
+//   background-size: contain;
+// }
+
+.header-link {
+  display: flex;
+  width: 150px;
+  height: 60px;
+  background-image: image-url("meetup_logo_before_after.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-right: 80px;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+}
+
+.login-signup{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  &:hover {
+  }
+}
+
+.login-signup > a{
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-right: 25px;
+}
+
+.sign-up-button{
+  /*font-weight: 500;*/
+  display: flex;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  background-color: #ed1c40;
+  border-color: #ed1c40;
+  color: white;
+
+
+}
+
+.sign-in-button{
+  /*font-weight: 500;*/
+  display: flex;
+  color: black;
+  background-color: #fff;
+  border: none;
+  margin-right: 5px;
+}
+
+.create-header{
+  display: flex;
+  background-color: #fff;
+  border: none;
+  margin-left: 5px;
+}
+
+.create-header-button{
+  color: black;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-right: 5px;
+  margin-left: 25px;
+}
+
+.get-app-button{
+  color: #ed1c40;
+  size: 20px;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+
+.log-in-form-container {
+  // display: flex;
+  // flex-shrink: 0;
+  // align-items: center;
+  // align-content: center;
+  // justify-content: center;
+  // display: flex;
+  // flex-direction: column;
+  height: 100%;
+  position: absolute;
+  // margin: 0;
+}
+
+
+
+.login-input{
+  // display: flex;
+}
+
+.login-form{
+  display: flex;
+  // align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+
+// //
+// label{
+//   justify-content: space-around;
+//   flex-direction: column;
+// }
+
+// label > div {
+//   display: flex;
+//   justify-content: space-around;
+//   flex-direction: column;
+// }
+
+.log-in-form-box{
+  height: 100%;
+
+  // align-content: center;
+  // display: flex;
+  // // align-items: center;
+  // flex-direction: column;
+}
+
+// html{
+//   height: 100%;
+// }
+// body{
+//   height: 100%;
+// }
+
+// #root {
+//   height: 100%;
+// }
+
+
+html, body, #root, #root>div {
+  height: 100%;
+  position: relative;
+}

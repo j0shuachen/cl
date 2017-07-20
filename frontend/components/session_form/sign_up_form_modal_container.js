@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 
 import { login, logout, signup} from '../../actions/session_actions';
-import SessionForm from './session_form';
+import SignUpFormModal from './sign_up_form';
 
 const mapStateToProps = ({ session }) => {
   return {
     loggedIn: Boolean(session.currentUser),
-    errors: session.errors
+    errors: session.errors,
+    modalIsOpen: false
   };
 };
 
@@ -22,4 +23,4 @@ const mapDispatchToProps = (dispatch, {location}) => {
 export default connect (
   mapStateToProps,
   mapDispatchToProps
-)(SessionForm);
+)(SignUpFormModal);

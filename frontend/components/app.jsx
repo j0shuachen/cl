@@ -9,19 +9,30 @@ import {
   HashRouter
 } from 'react-router-dom';
 
-import SessionFormContainer from '../components/session_form/session_form_container';
+import LogInFormContainer from '../components/session_form/log_in_form_container';
+import SignUpFormContainer from '../components/session_form/sign_up_form_container';
+import HeaderBarContainer from '../components/header_bar/header_bar_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Dummy from './dummy';
 
 const App = () => (
   <div>
     <header>
-      <Link to="/" className="header-link">
-        <h1>WHO WILL YOU MEET?</h1>
-      </Link>
+      <nav>
+        <div className="create-header">
+          <Link to="/create" className="create-header-button">Create a Meetup</Link>
+          <Link to="/app" className="get-app-button">Get the App</Link>
+        </div>
+        <div className="logo">
+          <Link to="/" className="header-link"></Link>
+        </div>
+        <HeaderBarContainer/>
+        </nav>
     </header>
     <Switch>
-      <AuthRoute path="/login" component={SessionFormContainer}/>
-      <AuthRoute path="/signup" component={SessionFormContainer}/>
+      <Route exact path="/" component={Dummy}/>
+      <AuthRoute path="/login" component={LogInFormContainer}/>
+      <AuthRoute path="/signup" component={SignUpFormContainer}/>
     </Switch>
 
 

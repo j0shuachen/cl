@@ -18,8 +18,8 @@ class Api::SessionsController < ApplicationController
   def destroy
     @user = current_user
     if @user
-      logout
-      render "/api/sessions"
+      sign_out
+      render "/api/users/show"
     else
       render(
       json: ["Not signed in"],
