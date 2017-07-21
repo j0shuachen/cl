@@ -11,6 +11,8 @@ class SignUpForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.cap= this.cap.bind(this);
+    this.navLink= this.navLink.bind(this);
   }
 
   update(field){
@@ -27,9 +29,18 @@ class SignUpForm extends React.Component {
 
   navLink(){
     if (this.props.formType === 'login'){
-      return <Link to="/signup">Sign Up</Link>;
+      return <Link className="signtuptologin" to="/signup">Sign Up</Link>;
     } else {
-      return <Link to="login">Log In</Link>;
+      return <Link className="signtuptologin" to="login">Log In</Link>;
+      }
+    }
+
+    cap(){
+      if (this.props.formType === 'login'){
+        return "Log In";
+      }
+      else{
+        return "Sign Up";
       }
     }
 
@@ -48,65 +59,61 @@ class SignUpForm extends React.Component {
   render () {
     return (
       <div className="signup-form-container">
-        <form onSubmit={this.handleSubmit} className="signup-form-box">
-        <div className="sign-up-form">
-          <br/>
-          <label className="form">
-            <span className="login-input">Username:</span>
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              className="login-input"/>
-          </label>
-          <br/>
-          <label className="form">
-            <span className="login-input">Password:</span>
-            <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              className="log-in-input"/>
-          </label>
-          <br/>
-          <label className="form">
-            <span className="login-input">Name:</span>
+        <div className="signupformbox">
+          <div className="signupformtop">
+            Sign Up
+          </div>
+          <form onSubmit={this.handleSubmit} className="signup-form-box">
+            <label className="form">
+              <span className="login-input">Username:</span>
               <input type="text"
-                value={this.state.name}
-                onChange={this.update('name')}
+                value={this.state.username}
+                onChange={this.update('username')}
+                className="login-input"/>
+            </label>
+            <br/>
+            <label className="form">
+              <span className="login-input">Password:</span>
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="login-input"/>
+            </label>
+            <br/>
+            <label className="form">
+              <span className="login-input">Name:</span>
+                <input type="text"
+                  value={this.state.name}
+                  onChange={this.update('name')}
+                  className="login-input"
+                  placeholder="This will be your name displayed to other users"
+                  />
+            </label>
+            <br/>
+            <label className="form">
+              <span className="login-input"> Location:</span>
+              <input type="text"
+                value={this.state.location}
+                onChange={this.update('location')}
                 className="login-input"
-                placeholder="This will be your name displayed to other users"
+                placeholder="We use this to find groups and events near you!"
                 />
-          </label>
-          <br/>
-          <label className="form">
-            <span className="login-input"> Location:</span>
-            <input type="text"
-              value={this.state.location}
-              onChange={this.update('location')}
-              className="login-input"
-              placeholder="We use this to find groups and events near you!"
-              />
-
-          <br/>
-          </label>
-          <label className="form">
+            </label>
+            <br/>
             <input type="submit" value="Continue" className="formo"/>
-</label>
-
-      </div>
-
-        <div className="signupwelcome"> Welcome to MeetUp!
-          <br>
-
-        </br>
-        <br></br>
-          <span className="privacy">By clicking "Continue", you agree to our Terms of Service, Privacy Policy, and Cookie Policy.</span>
+          </form>
+            <div className="signupwelcome">
+              <span>Welcome to MeetUp! </span>
+              <br/>
+              <span className="privacy">By clicking "Continue", you agree to our Terms of Service, Privacy Policy, and Cookie Policy.</span>
+              <br/>
+          </div>
+            <div className="signupwelcome">
+              <div>Already a member?</div>
+              <div className="signtuptologin">{this.navLink()}</div>
+            {this.renderErrors()}
+            </div>
         </div>
-        <br/>
-        <div className="signupwelcome">Please {this.props.formType} <br></br>or<br></br> {this.navLink()}
-        {this.renderErrors()}
-        </div>
-        </form>
-
       </div>
     );
   }

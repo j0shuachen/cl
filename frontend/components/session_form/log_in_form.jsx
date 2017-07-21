@@ -27,10 +27,19 @@ class LogInForm extends React.Component {
 
   navLink(){
     if (this.props.formType === 'login'){
-      return <Link to="/signup">Sign Up</Link>;
+      return <Link className="logintosignup" to="/signup">Sign Up</Link>;
     } else {
-      return <Link to="/login">Log In</Link>;
+      return <Link className="logintosignup" to="/login">Log In</Link>;
       }
+    }
+
+    cap(){
+      if (this.props.formType === 'login'){
+        return "Log In";
+      }else{
+        return "Sign Up";
+      }
+
     }
 
   renderErrors(){
@@ -70,7 +79,11 @@ class LogInForm extends React.Component {
           <br></br>
 
         </div>
-        <div className="loginbottom"><div>{this.props.formType} or {this.navLink()}</div></div>
+        <div className="loginbottom">
+
+          <div>Not a member?</div>
+          <div className="logintosignup">{this.navLink()}</div>
+          </div>
         </form>
       </div>
     );

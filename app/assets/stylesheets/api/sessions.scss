@@ -202,8 +202,9 @@ nav{
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: stretch;
-  align-content: stretch;
+  // align-items: stretch;
+  // align-content: stretch;
+  padding: 10% 30% 5% 30%;
   background-color: rgba(199,199,199,.3);
 }
 .login-form-box{
@@ -249,7 +250,9 @@ html, body, #root, #root>div {
   position: relative;
 }
 
+
 html{
+  height: 100%;
   display: flex;
   align-content: space-between;
   flex-direction: column;
@@ -257,20 +260,19 @@ html{
 
 .login-form-box{
   display: flex;
-  margin-top: 10%;
-  margin-bottom: 5%;
-  margin-right: 20%;
-  margin-left: 20%;
+  // margin-top: 10%;
+  // margin-bottom: 5%;
+  // margin-right: 30%;
+  // margin-left: 30%;
   display: flex;
-  // padding: 5%;
-  // padding: 0px 80px 0px 80px;
+
   width: 100%;
   background-color: white
 
 }
 
 .login-formtop{
-  margin-top: 10%;
+  // margin-top: 10%;
   display: flex;
   font-family: 'Ubuntu', sans-serif;
   width: 100%;
@@ -280,6 +282,8 @@ html{
   font-size: 40px;
   color: #E51937;
   border-bottom: 1px rgba(211,211,211,.7) solid;
+  position: relative;
+  padding-top: 5%;
 }
 
 .loginbottom{
@@ -287,11 +291,22 @@ html{
   // height: 100px;
   width: 100%;
   justify-content: center;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: center;
   font-size: 20px;
-  margin-bottom: 5%;
+  padding-bottom: 5%;
+  position: relative;
+  border-top: 1px rgba(211,211,211,.7) solid;
+  padding-top: 5%;
+
+  // margin-bottom: 5%;
 }
 
+.logintosignup{
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+  color: #E51937;
+}
 
 
 input .formo{
@@ -301,15 +316,27 @@ input .formo{
   padding: 10px;
 }
 
+.form{
+  position: relative;
+}
+
 
 .signup-form-container{
 
   display: flex;
-  align-content: center;
+  // align-content: center;
   flex-direction: column;
   height: 100%;
-  padding: 30px 300px;
+  padding: 5% 30% 5% 30%;
   font-size: 15px;
+  align-content: space-between;
+
+}
+
+.signupformtop{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 30px;
+  padding-bottom: 5%;
 
 }
 
@@ -322,30 +349,54 @@ input .formo{
   font-family: 'Ubuntu', sans-serif;
   display: flex;
   // justify-content: center;
+  align-content: space-between;
   height: 100%;
-  align-items: stretch;
   flex-direction: column;
-  margin: 30px;
-  padding: 0px, 40px;
+  // margin-bottom: 5%;
+  padding: 5%, 40% 5% 40%;
   font-size: 25px;
-
+  position: relative;
 
 }
 
 .signup-form{
   display: flex;
-  height: 100%;
+  height: 70%;
 
 }
 
-div .signupwelcome{
+.signtuptologin{
+  display: flex;
+  width: 60%;
+  // padding: 0 5% 0 5%;
+  justify-content: center;
   font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+  background-color: #ed1c40;
+  color: white;
+  height: 20%;
+
+
+}
+
+.signtuptologinb{
+  // display: flex;
+}
+
+.signupwelcome{
+  display: flex;
+  font-family: 'Ubuntu', sans-serif;
+  padding-top: 2%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 20px;
   align-items: center;
   text-align: center;
+  position: relative;
+  height: 20%;
+  font-size: 25px;
+  align-items: center;
+
 }
 
 .privacy{
@@ -363,12 +414,14 @@ div .signupwelcome{
   font-family: 'Ubuntu', sans-serif;
   display: flex;
   justify-content: center;
-  height: 40px;
+  height: 30px;
   width: 100%;
-  font-size: 25px;
+  font-size: 20px;
   background-color: #ed1c40;
   border-color: #ed1c40;
   color: white;
+  position: relative;
+  padding: 0 0 0 0;
 }
 
 
@@ -421,7 +474,7 @@ footer{
   text-align: center;
   height: 100%;
   font-family: 'Ubuntu', sans-serif;
-
+  width: 100%;
 }
 
 .footertop{
@@ -430,6 +483,8 @@ footer{
   display: flex;
   justify-content: center;
   align-content: space-between;
+  border-bottom: 1px solid white;
+  border-radius: 4px;
 }
 .footercreate{
   font-family: 'Ubuntu', sans-serif;
@@ -491,6 +546,49 @@ footer{
   background-color: #ed1c40;
   border-color: #ed1c40;
   color: white;
-  padding: 0 0 0 0;
+  position: relative;
+  // padding: 0 0 0 0;
 
+}
+
+
+
+
+
+
+
+
+.backgroundgif{
+  display: flex;
+  height: 30%;
+  width: 100%;
+  background-image: image-url("testg.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  flex-direction: column;
+  padding-top: 5%;
+  background-size: cover;
+}
+
+.dummyp{
+  font-size: 30px;
+}
+
+.dummypdos{
+  font-size: 20px
+}
+
+
+.dummysignup{
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  background-color: #ed1c40;
+  width: 10%;
+  align-self: center;
+  border-color: #ed1c40;
+  border-radius: 2px;
 }
