@@ -6,9 +6,10 @@ class Dummy extends React.Component{
   render(){
     return (
       <div className="dummy">
-        What do you love?
+        <div className="dummyp">What do you love?</div>
         <br></br>
-        Do more of it with MeetUp
+        <div className="dummyp">Do more of it with MeetUp</div>
+        <div className="dummysignup"></div>
         <br></br>
         <br></br>
           <br></br>

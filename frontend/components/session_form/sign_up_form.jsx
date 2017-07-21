@@ -47,29 +47,28 @@ class SignUpForm extends React.Component {
 
   render () {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-        Welcome to MeetUp!
-        <br/>
-        Please {this.props.formType} or {this.navLink()}
-        {this.renderErrors()}
-        <div className="login-form">
+      <div className="signup-form-container">
+        <form onSubmit={this.handleSubmit} className="signup-form-box">
+        <div className="sign-up-form">
           <br/>
-          <label>Username:
+          <label className="form">
+            <span className="login-input">Username:</span>
             <input type="text"
               value={this.state.username}
               onChange={this.update('username')}
               className="login-input"/>
           </label>
           <br/>
-          <label>Password:
+          <label className="form">
+            <span className="login-input">Password:</span>
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
-              className="login-input"/>
+              className="log-in-input"/>
           </label>
           <br/>
-          <label>Name:
+          <label className="form">
+            <span className="login-input">Name:</span>
               <input type="text"
                 value={this.state.name}
                 onChange={this.update('name')}
@@ -78,18 +77,36 @@ class SignUpForm extends React.Component {
                 />
           </label>
           <br/>
-          <label>`Location:`
+          <label className="form">
+            <span className="login-input"> Location:</span>
             <input type="text"
               value={this.state.location}
               onChange={this.update('location')}
               className="login-input"
               placeholder="We use this to find groups and events near you!"
               />
-          </label>
+
           <br/>
-          <input type="submit" value="Submit"/>
+          </label>
+          <label className="form">
+            <input type="submit" value="Continue" className="formo"/>
+</label>
+
+      </div>
+
+        <div className="signupwelcome"> Welcome to MeetUp!
+          <br>
+
+        </br>
+        <br></br>
+          <span className="privacy">By clicking "Continue", you agree to our Terms of Service, Privacy Policy, and Cookie Policy.</span>
+        </div>
+        <br/>
+        <div className="signupwelcome">Please {this.props.formType} <br></br>or<br></br> {this.navLink()}
+        {this.renderErrors()}
         </div>
         </form>
+
       </div>
     );
   }

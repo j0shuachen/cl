@@ -15,13 +15,17 @@
   background-repeat: no-repeat;
   background-size: contain;
   padding-right: 80px;
+  font-weight: bold;
 }
 
 nav{
+  font-family: 'Ubuntu', sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(0,0,0,.12);
+  font-weight: bold;
+
 }
 
 .login-signup{
@@ -70,6 +74,18 @@ nav{
   border: none;
   margin-left: 5px;
 }
+.greeting{
+  display: flex;
+  flex-direction: column;
+}
+
+.header-button{
+  text-decoration: none;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 5px;
+}
 
 .create-header-button{
   color: black;
@@ -88,69 +104,393 @@ nav{
   padding: 5px 10px;
   margin-top: 5px;
 }
+//
+// .log-in-form-container {
+//   // display: flex;
+//   // flex-shrink: 0;
+//   // align-items: center;
+//   // align-content: center;
+//   // justify-content: center;
+//   // display: flex;
+//   flex-direction: column;
+//   height: 100%;
+//   position: absolute;
+//   // margin: 0;
+// }
+//
+//
+//
+// .login-input{
+//   display: flex;
+//   // align-self: center;
+//   width: 100%;
+// }
+//
+// .login-form{
+//   display: flex;
+//   padding: 80px 80px;
+//   margin: 80px 100px;
+//   // align-content: center;
+//   justify-content: center;
+//   flex-direction: column;
+//   align-items: stretch;
+//   height: 100%;
+//   border: 3px black;
+// }
+//
+//
+// // //
+// // label{
+// //   justify-content: space-around;
+// //   flex-direction: column;
+// // }
+//
+// // label > div {
+// //   display: flex;
+// //   justify-content: space-around;
+// //   flex-direction: column;
+// // }
+// .log-in-form{
+//
+// }
+//
+// .log-in-form-box{
+//   height: 100%;
+//   display: flex;
+//   // align-content: center;
+//   // display: flex;
+//   // // align-items: center;
+//   flex-direction: column;
+//   // border: 5px solid black;
+// }
+//
+// // html{
+// //   height: 100%;
+// // }
+// // body{
+// //   height: 100%;
+// // }
+//
+// // #root {
+// //   height: 100%;
+// // }
+// login-input{
+//   // display: flex;
+//   // align-self: flex-start;
+//   font-size: 100px;
+//   width: 100px;
+// }
+// label.form {
+//   display: flex;
+//   align-self: center;
+//   flex-direction: column;
+//   font-size: 25px;
+// }
+//
+// input.login-input{
+//   display: flex;
+// }
+//
+// html, body, #root, #root>div {
+//   height: 100%;
+//   position: relative;
+// }
 
-.log-in-form-container {
-  // display: flex;
-  // flex-shrink: 0;
-  // align-items: center;
-  // align-content: center;
-  // justify-content: center;
-  // display: flex;
-  // flex-direction: column;
+
+
+.login-form-container{
   height: 100%;
-  position: absolute;
-  // margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+  background-color: rgba(199,199,199,.3);
 }
+.login-form-box{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 30px;
+  border: 1px rgba(211,211,211,.7) solid;
+  border-radius: 10px;
+  padding-left: 15%;
+  padding-right: 15%;
+  // align-content: space-between;
 
-
-
-.login-input{
-  // display: flex;
 }
 
 .login-form{
+  font-family: 'Ubuntu', sans-serif;
   display: flex;
-  // align-content: center;
-  justify-content: center;
   flex-direction: column;
-  align-items: stretch;
+
+  background-color: white;
+  width: 100%;
+  font-size: 30px;
+
+  // padding: 0px 80px 0px 80px;
+  // margin: 100px 100px;
 }
 
-
-// //
-// label{
-//   justify-content: space-around;
-//   flex-direction: column;
-// }
-
-// label > div {
-//   display: flex;
-//   justify-content: space-around;
-//   flex-direction: column;
-// }
-
-.log-in-form-box{
-  height: 100%;
-
-  // align-content: center;
-  // display: flex;
-  // // align-items: center;
-  // flex-direction: column;
+.login-form  {
 }
 
-// html{
-//   height: 100%;
-// }
-// body{
-//   height: 100%;
-// }
+.errors{
+  font-size: 20px;
+}
 
-// #root {
-//   height: 100%;
-// }
-
+.forms{
+  font-size: 20px;
+}
 
 html, body, #root, #root>div {
   height: 100%;
   position: relative;
+}
+
+html{
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+}
+
+.login-form-box{
+  display: flex;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  margin-right: 20%;
+  margin-left: 20%;
+  display: flex;
+  // padding: 5%;
+  // padding: 0px 80px 0px 80px;
+  width: 100%;
+  background-color: white
+
+}
+
+.login-formtop{
+  margin-top: 10%;
+  display: flex;
+  font-family: 'Ubuntu', sans-serif;
+  width: 100%;
+  // padding: 20px;
+  height: 20%;
+  border-radius: 2px;
+  font-size: 40px;
+  color: #E51937;
+  border-bottom: 1px rgba(211,211,211,.7) solid;
+}
+
+.loginbottom{
+  display: flex;
+  // height: 100px;
+  width: 100%;
+  justify-content: center;
+  align-items: baseline;
+  font-size: 20px;
+  margin-bottom: 5%;
+}
+
+
+
+input .formo{
+  // height: 20px;
+  font-size: 10px;
+  justify-content: center;
+  padding: 10px;
+}
+
+
+.signup-form-container{
+
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 30px 300px;
+  font-size: 15px;
+
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form-box{
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  // justify-content: center;
+  height: 100%;
+  align-items: stretch;
+  flex-direction: column;
+  margin: 30px;
+  padding: 0px, 40px;
+  font-size: 25px;
+
+
+}
+
+.signup-form{
+  display: flex;
+  height: 100%;
+
+}
+
+div .signupwelcome{
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.privacy{
+  align-self: center;
+  font-size: 10px;
+  text-align: center;
+}
+
+.login-input{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+}
+
+.formo{
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 100%;
+  font-size: 25px;
+  background-color: #ed1c40;
+  border-color: #ed1c40;
+  color: white;
+}
+
+
+footer{
+  display: flex;
+  height: 120px;
+  align-content: space-around;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(0,0,0,.87);
+  color: white;
+  padding: 0 10 0 10;
+
+}
+
+.foot{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  color: white;
+  align-items: flex-start;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+.footcopy{
+  display: flex;
+  width: 100%;
+  // justify-content: flex-start;
+  // padding: 10px
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.footcopy span {
+  // margin-right: 10px;
+}
+
+.l {
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+  // margin-left: 10px;
+  padding: 10px;
+  color: white;
+}
+
+.dummy{
+  text-align: center;
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.footertop{
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+}
+.footercreate{
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+  text-align: left;
+  color: white;
+  padding: 10px;
+  width: 50%;
+  padding-left: 15px;
+}
+.footerlogin{
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+  text-align: right;
+  color: white;
+  padding: 10px;
+  width: 50%;
+  padding-right: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.modalsignupbox{
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+}
+
+.modalform{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10% 30% 10% 30%;
+  align-content: space-around;
+
+}
+
+.modal-button{
+  text-decoration: none;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  // height: 25%;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 30px;
+  background-color: #ed1c40;
+  border-color: #ed1c40;
+  color: white;
+  padding: 0 0 0 0;
+
 }

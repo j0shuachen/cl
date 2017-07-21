@@ -47,38 +47,31 @@ class LogInForm extends React.Component {
 
   render () {
     return (
-      <div>
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-        <label>Welcome to MeetUp!</label>
-        <br/>
-        <span className="errors">{this.renderErrors()}</span>
+        <div className="login-formtop"><div>Login</div></div>
         <div className="login-form">
           <br/>
-          <div>
-            <span className="ftext">Username:</span>
+            <div className="forms">Username:</div>
             <input type="text"
               value={this.state.username}
               onChange={this.update('username')}
-              className="login-input"/>
-          </div>
+              className="forms"/>
           <br/>
-          <div>
-            <span className="ftext">Password:</span>
+            <div className="forms">Password:</div>
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
-              className="login-input"/>
-          </div>
+              className="forms"/>
           <br/>
-          <input className="log-in-submit" type="submit" value="Log In"/>
+            <span className="errors">{this.renderErrors()}</span>
+            <div><input className="formo" type="submit" value="Log In"/> </div>
           <br></br>
           <br></br>
-            <span>{this.props.formType} or {this.navLink()}</span>
 
         </div>
+        <div className="loginbottom"><div>{this.props.formType} or {this.navLink()}</div></div>
         </form>
-      </div>
       </div>
     );
   }

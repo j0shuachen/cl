@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 
 import { login, logout, signup} from '../../actions/session_actions';
-import HeaderBar2 from './header_bar2';
+import HeaderBar3 from './header_bar3';
 
 const mapStateToProps = ({ session }) => {
   return {
     loggedIn: Boolean(session.currentUser),
     errors: session.errors,
-    currentUser: session.currentUser
+    currentUser: session.currentUser,
+    modalIsOpen: false
   };
 };
 
@@ -18,4 +19,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect (
   mapStateToProps,
   mapDispatchToProps
-)(HeaderBar2);
+)(HeaderBar3);

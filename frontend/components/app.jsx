@@ -35,6 +35,33 @@ const App = () => (
       <AuthRoute path="/signup" component={SignUpFormContainer}/>
     </Switch>
 
+    <footer>
+      <div className="footertop">
+        <Link to="/create" className="footercreate">Start a MeetUp Group</Link>
+        <Link to="/login" className="footerlogin">Log in</Link>
+
+      </div>
+      <div className="foot">
+      <Link to="/help" className= "l">Help</Link>
+      <Link to="/about" className= "l">About Us</Link>
+      <Link to="/pro" className= "l">MeetUp Pro</Link>
+      <Link to="/jobs" className= "l">Jobs</Link>
+      <Link to="/apps" className= "l">Apps</Link>
+      <Link to="/api" className= "l">Api</Link>
+      <Link to="/topics" className= "l">Topics</Link>
+      <Link to="/cities" className= "l">Cities</Link>
+      <Link to="/blog" className= "l">Blog</Link>
+      <Link to="/techblog" className= "l">Tech Blog</Link>
+      <Link to="/madeincali" className= "l">Made in SF</Link>
+      </div>
+      <div className="footcopy">
+        <span className= "l"> ©2017 MeetUp</span>
+        <Link to="/privacy" className= "l">Privacy</Link>
+        <Link to="/terms" className= "l">Terms</Link>
+      </div>
+    </footer>
+
+
 
 
   </div>
