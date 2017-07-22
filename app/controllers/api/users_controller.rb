@@ -23,7 +23,7 @@ class Api::UsersController < ApplicationController
       render "api/users"
     else
       render(
-      json:["Invalid params"],
+      json: ["Invalid params"],
       status: 401
       )
     end

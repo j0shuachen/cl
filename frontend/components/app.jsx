@@ -14,7 +14,7 @@ import SignUpFormContainer from '../components/session_form/sign_up_form_contain
 import HeaderBarContainer from '../components/header_bar/header_bar_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Dummy from './dummy';
-
+import GroupShowContainer from "./groups/group_show_container";
 const App = () => (
   <div>
     <header>
@@ -33,6 +33,7 @@ const App = () => (
       <Route exact path="/" component={Dummy}/>
       <AuthRoute path="/login" component={LogInFormContainer}/>
       <AuthRoute path="/signup" component={SignUpFormContainer}/>
+      <Route path="/groups/:groupId" component={GroupShowContainer}/>
     </Switch>
 
     <footer>
