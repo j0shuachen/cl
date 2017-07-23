@@ -8,7 +8,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
-
+import GroupIndex from '../components/groups/group_index_container';
 import LogInFormContainer from '../components/session_form/log_in_form_container';
 import SignUpFormContainer from '../components/session_form/sign_up_form_container';
 import HeaderBarContainer from '../components/header_bar/header_bar_container';
@@ -34,6 +34,7 @@ const App = () => (
       <AuthRoute path="/login" component={LogInFormContainer}/>
       <AuthRoute path="/signup" component={SignUpFormContainer}/>
       <Route path="/groups/:groupId" component={GroupShowContainer}/>
+      <Route path="/groups" component={GroupIndex}/>
     </Switch>
 
     <footer>

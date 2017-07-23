@@ -59,11 +59,12 @@ class SignUpForm extends React.Component {
   render () {
     return (
       <div className="signup-form-container">
-        <div className="signupformbox">
-          <div className="signupformtop">
-            Sign Up
-          </div>
+
           <form onSubmit={this.handleSubmit} className="signup-form-box">
+            <div className="signupformtop">
+              Sign Up
+            </div>
+            
             <label className="form">
               <span className="login-input">Username:</span>
               <input type="text"
@@ -100,21 +101,19 @@ class SignUpForm extends React.Component {
                 />
             </label>
             <br/>
-            <input type="submit" value="Continue" className="formo"/>
-          </form>
-            <div className="signupwelcome">
-              <span>Welcome to MeetUp! </span>
-              <br/>
-              <span className="privacy">By clicking "Continue", you agree to our Terms of Service, Privacy Policy, and Cookie Policy.</span>
-              <br/>
+            <input type="submit" value="Continue" className="formos"/>
+              <div className="signupwelcome">
+                <span className="privacy">By clicking "Continue", you agree to our Terms of Service, Privacy Policy, and Cookie Policy.</span>
+                <br/>
+                    <div className="signupbuttontop">Already a member?</div>
+                    <br/>
+                    <div className="signtuptologin">{this.navLink()}</div>
+                  {this.renderErrors()}
+              </div>
+        </form>
+
           </div>
-            <div className="signupwelcome">
-              <div>Already a member?</div>
-              <div className="signtuptologin">{this.navLink()}</div>
-            {this.renderErrors()}
-            </div>
-        </div>
-      </div>
+
     );
   }
 }

@@ -1,0 +1,99 @@
+nav{
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  font-weight: bold;
+  flex-wrap: nowrap;
+  min-width: 900px;
+  min-height: 65px;
+
+}
+
+.header-link {
+  display: flex;
+  width: 150px;
+  height: 60px;
+  background-image: image-url("meetup_logo_before_after.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-right: 80px;
+  font-weight: bold;
+}
+
+
+
+
+.create-header{
+  display: flex;
+  background-color: #fff;
+  border: none;
+  margin-left: 5px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+.create-header-button{
+  color: black;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-right: 5px;
+  margin-left: 25px;
+  min-width: 175px;
+}
+
+.header-button{
+  text-decoration: none;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.get-app-button{
+  display: flex;
+  text-align: center;
+  color: #ed1c40;
+  size: 20px;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+  text-align: center;
+  min-width: 100px;
+  margin-right: 5px;
+//
+}
+
+.login-signup{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  &:hover {
+  }
+}
+
+.sign-up-button{
+  /*font-weight: 500;*/
+
+  background-color: #ed1c40;
+  border-color: #ed1c40;
+  color: white;
+}
+
+.sign-in-button{
+  /*font-weight: 500;*/
+  // display: flex;
+  color: black;
+  background-color: #fff;
+  border: none;
+  margin-right: 5px;
+  // min-width: 30px;
+}

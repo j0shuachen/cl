@@ -75,8 +75,7 @@ class LogInForm extends React.Component {
           <br/>
             <span className="errors">{this.renderErrors()}</span>
             <div><input className="formo" type="submit" value="Log In"/> </div>
-          <br></br>
-          <br></br>
+    
 
         </div>
         <div className="loginbottom">

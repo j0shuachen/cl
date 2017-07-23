@@ -1,0 +1,15 @@
+.backgroundgif{
+  display: flex;
+  height: 30%;
+  width: 100%;
+  background-image: image-url("testg.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  flex-direction: column;
+  padding-top: 5%;
+  background-size: cover;
+  min-width: 1000px;
+}

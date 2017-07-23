@@ -7,3 +7,8 @@ export const selectGroup = ({groups}, id) => {
 export const asArray = ({ groups }) => (
   Object.keys(groups).map(key=> groups[key])
 );
+
+
+export const selectAll = (groups) => {
+  return Object.values(groups);
+};
