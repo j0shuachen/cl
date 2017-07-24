@@ -9,7 +9,7 @@
 #  description :text             not null
 #  start_time  :date             not null
 #  end_time    :date             not null
-#  location_id :integer          not null
+#  location    :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

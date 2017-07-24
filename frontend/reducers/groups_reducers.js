@@ -4,7 +4,12 @@ import {
   RECEIVE_GROUPS ,
 } from '../actions/groups_actions.js';
 
-const GroupsReducer = (state={}, action) => {
+const initialState = {
+  entities: {},
+  // currentGroup: undefined
+};
+
+const GroupsReducer = (state=initialState, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
 

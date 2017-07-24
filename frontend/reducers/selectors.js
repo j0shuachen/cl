@@ -12,3 +12,9 @@ export const asArray = ({ groups }) => (
 export const selectAll = (groups) => {
   return Object.values(groups);
 };
+
+
+export const selectEvents = ({events}, id) => {
+  const eventss = events[id] || {};
+  return eventss;
+};

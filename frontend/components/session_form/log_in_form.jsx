@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter} from 'react-router-dom';
 
+
 class LogInForm extends React.Component {
   constructor(props){
     super(props);
@@ -22,7 +23,7 @@ class LogInForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    this.props.processForm({user}).then(()=>this.props.history.push('/groups'));
   }
 
   navLink(){
@@ -75,7 +76,7 @@ class LogInForm extends React.Component {
           <br/>
             <span className="errors">{this.renderErrors()}</span>
             <div><input className="formo" type="submit" value="Log In"/> </div>
-    
+
 
         </div>
         <div className="loginbottom">

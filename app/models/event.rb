@@ -9,10 +9,12 @@
 #  description :text             not null
 #  start_time  :date             not null
 #  end_time    :date             not null
-#  location_id :integer          not null
+#  location    :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
 class Event < ApplicationRecord
+  validates :group_id, :user_id, :name, :description, :start_time, :end_time,
+            :location, presence: true
 end

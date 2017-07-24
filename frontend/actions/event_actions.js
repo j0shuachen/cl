@@ -17,3 +17,15 @@ export const createEvent = eventt => dispatch =>(
     dispatch(receiveEvent(evento))
   ))
 );
+
+
+export const fetchEvent = id => dispatch =>(
+  APIUtil.fetchEvent(id).then(eventt =>(
+    dispatch(receiveEvent(eventt))
+  ))
+);
+
+export const fetchEvents = filters => dispatch => (
+  APIUtil.fetchEvents(filters).then(events =>(dispatch(receiveEvents(events))
+  ))
+);

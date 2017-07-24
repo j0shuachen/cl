@@ -6,7 +6,7 @@ import {receiveGroups, fetchGroups} from '../../actions/groups_actions';
 
 const mapStateToProps = state => {
   return {
-    groups: selectAll(state.groups),
+    groups: selectAll(state.groups)
     // errors: state.errors
   };
 };

@@ -19,12 +19,14 @@ class GroupIndex extends React.Component {
 
     const groupItems = this.props.groups.map((group, idx) => {
       let showz = `/groups/${group.id}`;
-      // let v = `../../../../app/images/defaultbanner${idx}.jpg`;
+      // let v = `/assets/defaultbanner${idx}.jpg` ;
       // if (!v){
-      //   v="/images/defaultbanner1.jpg";
+      //   v="/assets/defaultbanner1.jpg";
       // }
+      let v="/assets/defaultbanner1.jpg";
+
       let t = {
-        // backgroundImage: `url(${v})`,
+        backgroundImage: `url(${v})`,
         height: '300px',
         width: '300px'
       };

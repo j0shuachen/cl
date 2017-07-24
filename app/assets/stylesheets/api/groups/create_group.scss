@@ -40,10 +40,13 @@ align-items: center;
   display: flex;
   font-size: 35px;
   flex-direction: column;
+  // align-items: center;
   // align-content: center;
   padding: 40px;
   // align-content: space-around;
-
+  // align-content: center;
+  // align-items: center;
+  // justify-content: center;
 
 }
 
@@ -53,20 +56,22 @@ align-items: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 900px;
   align-self: center;
   border-bottom: 1px rgba(211, 211, 211, 0.7) solid;
+  height: 400px;
 }
 
 .groupinfo{
+    width: 900px;
+    margin-top: 30px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 900px;
+  // justify-content: center;
+  // align-items: center;
   align-self: center;
-  height: 200px;
   border-bottom: 1px rgba(211, 211, 211, 0.7) solid;
-  margin-top: 20px;
+  height: 400px;
+
 
 }
 
@@ -80,6 +85,7 @@ align-items: center;
   align-self: center;
   padding: 30px;
   margin-top: 20px;
+  height: 300px;
 
 
 }

@@ -71,6 +71,7 @@ align-items: center;
   // height: 100%;
   // max-height: 1700px;
   flex-wrap: wrap;
+  margin-bottom: 30px;
 
 // align-content: space-between;
 // align-items: center;
@@ -79,10 +80,14 @@ align-items: center;
 .dummyitem{
   margin: 10px;
   display: flex;
+  color: white;
   flex-direction: column;
   min-width: 300px;
   min-height: 300px;
 justify-content: flex-end;
 align-items: flex-start;
 font-size: 20px;
+background-image: image-url("sunset.jpg");
+background-repeat: no-repeat;
+background-size: cover;
 }
