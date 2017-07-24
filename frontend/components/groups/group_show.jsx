@@ -66,17 +66,26 @@ class GroupShow extends React.Component{
 
 
         <div className="singlegroupsidebar">
-          <div>Created: {this.props.group.created_at}</div>
-        </div>
+
+          <div className="gcreated">
+            <div className="sidehead">
+            </div>
+
+            <div className="gcreated2">
+              <div className="g1">{this.props.group.name}</div>
+              <div className="g2">Created: {this.props.group.created_at}</div>
+              </div>
+            </div>
+          </div>
 
         <div className="singlegroupmain">
-          
+
           <div className="groupinfo">{this.props.group.info}</div>
         </div>
 
 
         <div className="singlegroupnews">
-          awgaweg
+          <div>What's new</div>
         </div>
 
 

@@ -1,0 +1,67 @@
+.indexlink{
+  display: flex;
+  width:300px;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 25px;
+
+
+
+}
+
+
+.indexlinko{
+  display: flex;
+  width:300px;
+  height: 300px;
+
+}
+
+
+
+
+.groupindexheader{
+  display: flex;
+  width: 100%;
+  height: 150px;
+  background-color: #ed1c40;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  justify-content: center;
+  font-size: 40px;
+  align-items: center;
+}
+
+  .searchbarz{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    color: #ed1c40;
+    background-color: black;
+  }
+
+  .searchwhite{
+    display: flex;
+    margin: 15px;
+    height: 50px;
+    width: 300px;
+    background-color: white;
+  }
+
+  .grouplist{
+    display: flex;
+    flex-wrap: wrap;
+
+    // flex-direction: column;
+
+  }
+
+
+  .g1{
+    display: flex;
+    min-width: 300px;
+    min-height: 300px;
+  }

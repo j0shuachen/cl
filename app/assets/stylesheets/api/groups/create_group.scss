@@ -1,0 +1,125 @@
+.groupformcontainer{
+    font-family: 'Ubuntu', sans-serif;
+    height: 100%;
+    max-height: 1300px;
+
+}
+
+.creategroupgif{
+  display: flex;
+  // height: 30%;
+  height: 300px;
+  // min-width: 900px;
+  width: 100%;
+  background-image: image-url("testg.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  flex-direction: column;
+  // padding-top: 80px;
+  background-size: cover;
+  min-width: 1000px;
+justify-content: center;
+align-items: center;
+}
+
+.c1{
+  font-size: 40px;
+  padding: 20px;
+
+}
+.c2{
+  font-size: 25px;
+}
+
+.groupform{
+  height: 100%;
+  max-height: 800px;
+  display: flex;
+  font-size: 35px;
+  flex-direction: column;
+  // align-content: center;
+  padding: 40px;
+  // align-content: space-around;
+
+
+}
+
+.groupname{
+  width: 900px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 900px;
+  align-self: center;
+  border-bottom: 1px rgba(211, 211, 211, 0.7) solid;
+}
+
+.groupinfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 900px;
+  align-self: center;
+  height: 200px;
+  border-bottom: 1px rgba(211, 211, 211, 0.7) solid;
+  margin-top: 20px;
+
+}
+
+.grouplocation{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-between;
+  // padding-top: 20px;
+  width: 900px;
+  align-self: center;
+  padding: 30px;
+  margin-top: 20px;
+
+
+}
+
+.creategroupsub{
+  align-self: center;
+  text-align: center;
+  min-width: 700px;
+  min-height: 50px;
+  // margin: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #ed1c40;
+margin-top: 50px;
+  font-size: 30px;
+  color: white;
+}
+
+.ginput{
+  width: 900px;
+  height: 40px;
+  font-size: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
+
+.ginput2{
+  height: 100px;
+  width: 100%;
+  font-size: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.steps{
+  align-self: flex-start;
+  font-size: 20px;
+  color: rgba(0,0,0,.26);
+}
+
+.ques{
+  align-self: flex-start;
+}
