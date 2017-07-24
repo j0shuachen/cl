@@ -5,6 +5,7 @@ class Dummy extends React.Component{
 
   render(){
     return (
+      <div>
       <div className="dummy">
         <div className="backgroundgif">
         <div className="dummyp">What do you love?</div>
@@ -17,9 +18,8 @@ class Dummy extends React.Component{
         </div>
         </div>
 
-        <div className="dummytitle"> Find a group or an upcoming event near you!</div>
 
-        <div> Explore </div>
+        <div className="dummytitle"> Explore </div>
 
         <div className="dummylist">
 
@@ -127,6 +127,7 @@ class Dummy extends React.Component{
 
 
         </div>
+      </div>
       </div>
     );
 
