@@ -41,8 +41,8 @@ const App = () => (
       <Route path="/groups" component={GroupIndex}/>
         <Route path="/events/:eventId" component={EventShowContainer}/>
         <Route path="/events" component={EventIndex}/>
-        <Route path="/createevent" component={EventFormContainer}/>
-    <Route path="/create" component={GroupForm}/>
+        <Route exact path="/create/event" component={EventFormContainer}/>
+    <Route exact path="/create/group" component={GroupForm}/>
 
     </Switch>
 
