@@ -49,7 +49,7 @@ const App = () => (
 
     <footer>
       <div className="footertop">
-        <Link to="/create" className="footercreate">Start a MeetUp Group</Link>
+        <Link to="/create/group" className="footercreate">Start a MeetUp Group</Link>
         <Link to="/login" className="footerlogin">Log in</Link>
 
       </div>
