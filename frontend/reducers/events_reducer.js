@@ -7,6 +7,7 @@ import{
 // const initialState={
 //   entities:{}
 // };
+// x
 
 const EventsReducer = (state={}, action) => {
   Object.freeze(state);
