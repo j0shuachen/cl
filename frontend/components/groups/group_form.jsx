@@ -28,7 +28,7 @@ class GroupForm extends React.Component {
     const location = this.state.location;
     const user = this.props.currentUser;
     const groupe = {name: name, info: info, location: location, user_id: user};
-    this.props.createGroup({group: groupe});
+    this.props.createGroup({group: groupe}).then(()=>this.props.history.push('/groups/:id'));
   }
 
   createName(e){

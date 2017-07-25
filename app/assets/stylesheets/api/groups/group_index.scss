@@ -71,7 +71,15 @@
 
 
   .g1{
-    display: flex;
     min-width: 300px;
     min-height: 300px;
+    display: flex;
+    padding:10px;
+    font-size: 30px;
+    width: 200px;
+    align-self: center;
+    height: 40px;
+    border-top: 1px rgba(211,211,211,.7) solid;
+    justify-content: center;
+  align-items: center;
   }

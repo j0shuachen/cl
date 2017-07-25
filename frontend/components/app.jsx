@@ -24,11 +24,11 @@ const App = () => (
     <header>
       <nav>
         <div className="create-header">
-          <Link to="/create" className="create-header-button">Create a Meetup</Link>
+          <Link to="/create/group" className="create-header-button">Create a Meetup</Link>
           <Link to="/app" className="get-app-button">Get the App</Link>
         </div>
         <div className="logo">
-          <Link to="/" className="header-link"></Link>
+          <Link to="/groups" className="header-link"></Link>
         </div>
         <HeaderBarContainer/>
         </nav>

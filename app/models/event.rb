@@ -36,4 +36,8 @@ class Event < ApplicationRecord
   through: :event_enrollments,
   source: :user
 
+  def organizer_username
+    @event.organizer.username
+  end
+
 end

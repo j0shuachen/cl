@@ -1,5 +1,21 @@
 
+.createeventt{
+  display: flex;
+  width: 500px;
+  height: 30px;
+  text-decoration: none;
+  align-self: flex-end;
+  justify-content: flex-end;
+  color: #ed1c40;
+  padding: 10px;
+}
 
+.info{
+  display: flex;
+  width:800px;
+  height: 400px;
+  margin-bottom: 30px;
+}
 
 .glink{
   padding: 20px;
@@ -49,11 +65,11 @@
   background-size: contain;
 }
 
-.g1{
+.g11{
   display: flex;
   padding:10px;
   font-size: 30px;
-  max-width: 200px;
+  width: 200px;
   align-self: center;
   height: 40px;
   border-top: 1px rgba(211,211,211,.7) solid;
@@ -87,6 +103,7 @@ align-items: center;
 
 .grouphomeinfo{
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 500px;
   justify-content: center;

@@ -41,11 +41,18 @@ class GroupShow extends React.Component{
     // ));
     // const year=created.getUTCFullYear();
     // console.log(year);
-    let g = this.props.group.events;
+
+    // const g = () => (
+    //   <div className="grouptocreateevent">
+    //     <Link to={idz +"/create/event"}>Create a new event</Link>
+    //     </div>
+    // );
+
     // console.log(g);
     // g.forEach((ev, idx) => (
     //   <div key={idx}>{ev.name}</div>
     // ));
+
 
     const eventList = (events = []) => (
   events.map(event => (
@@ -55,7 +62,7 @@ class GroupShow extends React.Component{
 
       <div className="groupeventid">Event# {event.id}</div>
 
-      <div className="groupeventorganizer">Event organizer{event.organizer}</div>
+      <div className="groupeventorganizer">Event organizer: {event.organizer}</div>
       <div className="groupevenntdescription">{event.description}</div>
     </div>
   ))
@@ -96,7 +103,7 @@ class GroupShow extends React.Component{
             </div>
 
             <div className="gcreated2">
-              <div className="g1">{this.props.group.name}</div>
+              <div className="g11">{this.props.group.name}</div>
               <div className="g2">Created: {this.props.group.created_at}</div>
               </div>
             </div>
@@ -104,7 +111,11 @@ class GroupShow extends React.Component{
 
         <div className="singlegroupmain">
 
-          <div className="grouphomeinfo">{this.props.group.info}</div>
+          <div className="grouphomeinfo">
+            <div className="info">{this.props.group.info}</div>
+                <Link className="createeventt" to={idz +"/create/event"}>Create a new event</Link>
+
+          </div>
           <div className="groupevents">
 
               {eventList(this.props.group.events)}

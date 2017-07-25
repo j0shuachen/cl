@@ -18,7 +18,7 @@ const mapStateToProps = (state, {match}) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchGroup: id => dispatch(fetchGroup(id)),
-  fetchGroups: filters => dispatch(fetchGroups(filters)),
+  // fetchGroups: filters => dispatch(fetchGroups(filters)),
   fetchEvents: filters => dispatch(fetchEvents(filters))
 });
 

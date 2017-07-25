@@ -3,7 +3,7 @@ import React from 'react';
 class EventForm extends React.Component{
   constructor(props){
     super(props);
-    // console.log(this.props);
+    console.log(this.props);
     this.state={
       group_id: "",
       user_id: "",
@@ -12,23 +12,29 @@ class EventForm extends React.Component{
       location: ""
 
     };
+
+    this.createEvent = this.createEvent.bind(this);
+    this.createName = this.createName.bind(this);
+    this.createDescription = this.createDescription.bind(this);
+    this.createLocation = this.createLocation.bind(this);
   }
 
 
+// this.props.match.params.groupId
   componentDidMount(){
     this.props.fetchEvents();
   }
 
 
   createEvent(){
-    const groupId = this.props.group_id;
+    const groupId = this.props.groupId;
     const userId = this.props.currentUser;
     const name = this.state.name;
     const description = this.state.description;
     const location = this.state.location;
     const evente = {group_id: groupId, user_id: userId, name: name,
       description: description, location: location};
-      this.props.createEvent({event: evente});
+      this.props.createEvent({event: evente}).then(()=>this.props.history.push(`/groups/${groupId}`))
   }
 
   createName(e){
@@ -51,12 +57,6 @@ class EventForm extends React.Component{
     <div className="eventformcontainer">
       <div className="createevent">
         <form className="eventform" onSubmit={this.createEvent}>
-          <label className="eventname">
-            <div className="eventques"> What will your event be called?</div>
-            <input className="einput" type="text" ref="name"
-              value={this.state.name} placeholder="Your event's name here"
-              onChange={this.createName}/>
-          </label>
 
 
           <label className="eventname">
@@ -65,6 +65,9 @@ class EventForm extends React.Component{
               value={this.state.name} placeholder="Your event's name here"
               onChange={this.createName}/>
           </label>
+
+
+
 
 
 
