@@ -9,7 +9,7 @@ const initialState = {
   // currentGroup: undefined
 };
 
-const GroupsReducer = (state=initialState, action) => {
+const GroupsReducer = (state={}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
 

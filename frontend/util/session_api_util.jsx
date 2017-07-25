@@ -7,7 +7,7 @@ export const login = user => (
 );
 
 export const signup = user => {
-  console.log(user);
+  // console.log(user);
 
   const req = $.ajax({
     method: 'POST',
@@ -15,7 +15,7 @@ export const signup = user => {
     data: user
   });
 
-  console.log(req);
+  // console.log(req);
 
   return req;
 };

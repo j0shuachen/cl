@@ -1,0 +1,2 @@
+module Api::EventEnrollmentsHelper
+end

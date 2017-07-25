@@ -15,7 +15,10 @@ import SignUpFormContainer from '../components/session_form/sign_up_form_contain
 import HeaderBarContainer from '../components/header_bar/header_bar_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Dummy from './dummy';
+import EventShowContainer from '../components/groups/event_show_container';
+import EventIndex from '../components/groups/events_index_container';
 import GroupShowContainer from "./groups/group_show_container";
+import EventFormContainer from "./events/event_form_container";
 const App = () => (
   <div>
     <header>
@@ -36,7 +39,11 @@ const App = () => (
       <AuthRoute path="/signup" component={SignUpFormContainer}/>
       <Route path="/groups/:groupId" component={GroupShowContainer}/>
       <Route path="/groups" component={GroupIndex}/>
-      <Route path="/create" component={GroupForm}/>
+        <Route path="/events/:eventId" component={EventShowContainer}/>
+        <Route path="/events" component={EventIndex}/>
+        <Route path="/createevent" component={EventFormContainer}/>
+    <Route path="/create" component={GroupForm}/>
+
     </Switch>
 
     <footer>

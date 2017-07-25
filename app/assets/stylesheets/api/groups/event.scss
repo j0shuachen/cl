@@ -1,0 +1,32 @@
+
+.groupevents{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  // justify-content: center;
+  height: 100%;
+  min-height: 100%;
+}
+
+.groupeventeach{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 500px;
+  margin: 20px;
+  border-bottom: 1px rgba(211,211,211,.7) solid;
+}
+
+.groupeventname{
+  font-size: 60px;
+  width: 600px;
+  // align-content: center;
+  height: 100px;
+}
+
+.groupeventlocation{
+  font-size: 30px;
+  width: 600px;
+  height: 70px;
+
+}

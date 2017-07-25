@@ -1,0 +1,2 @@
+module Api::PublicProfilesHelper
+end

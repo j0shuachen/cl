@@ -38,5 +38,13 @@
   "bugs": {
     "url": "https://github.com/j0shuachen/MeetUp/issues"
   },
-  "homepage": "https://github.com/j0shuachen/MeetUp#readme"
+  "homepage": "https://github.com/j0shuachen/MeetUp#readme",
+
+  "engines": {
+    "node": "6.10.1",
+    "npm": "3.10.10"
+  },
+  "scripts": {
+    "postinstall": "webpack"
+  }
 }

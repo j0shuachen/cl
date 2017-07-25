@@ -16,4 +16,5 @@
 #
 
 class PublicProfile < ApplicationRecord
+  validates :user_id, presence: true
 end

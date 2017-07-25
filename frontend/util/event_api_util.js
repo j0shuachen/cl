@@ -1,12 +1,12 @@
 export const fetchEvents = data => (
   $.ajax({
     method: "GET",
-    url: '/api/groups/events',
+    url: '/api/events',
     data
   })
 );
 
-export const fetchEvent = (groupId, id) => (
+export const fetchEvent = (id) => (
   $.ajax({
     method: "GET",
     url: `/api/events/${id}`
@@ -16,6 +16,7 @@ export const fetchEvent = (groupId, id) => (
 export const createEvent =data => (
   $.ajax({
     method: "POST",
-    url: "api/events"
+    url: "api/events",
+    data
   })
 );

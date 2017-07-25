@@ -1,5 +1,7 @@
 class Api::GroupsController < ApplicationController
 
+
+
   def index
     @groups = Group.all
   end
@@ -20,6 +22,7 @@ class Api::GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     # render api_group_url(:id)
+    
     render :show
   end
 
@@ -40,5 +43,6 @@ class Api::GroupsController < ApplicationController
     def group_params
       params.require(:group).permit(:user_id, :name, :info, :location)
     end
+
 
 end

@@ -18,10 +18,35 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil: true}
 
   after_initialize :ensure_session_token
-  # has_many :group_enrollments,
-  #   primary_key: :id,
-  #   foreign_key: :user_id,
-  #   class_name: :GroupEnrollment
+
+  has_many :group_enrollments,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :GroupEnrollment
+
+    has_many :groups,
+    through: :group_enrollments,
+    source: :group
+
+    has_many :group_mod,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Group
+
+    has_many :event_enrollments,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :EventEnrollment
+
+    has_many :events,
+    through: :event_enrollments,
+    source: :event
+
+    has_many :event_org,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Event
+
 
   attr_reader :password
 

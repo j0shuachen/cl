@@ -7,8 +7,6 @@
 #  user_id     :integer          not null
 #  name        :string           not null
 #  description :text             not null
-#  start_time  :date             not null
-#  end_time    :date             not null
 #  location    :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

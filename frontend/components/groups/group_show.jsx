@@ -36,9 +36,32 @@ class GroupShow extends React.Component{
     const pages=`/groups/${this.props.group.id}/pages`;
     const myprofile="/users/1";
     const created=this.props.group.created_at;
-    console.log(created);
+    // const eventg = this.props.group.events.forEach((e, idx) => (
+    //   <div key={idx} name={e.name} description={e.description}></div>
+    // ));
     // const year=created.getUTCFullYear();
     // console.log(year);
+    let g = this.props.group.events;
+    // console.log(g);
+    // g.forEach((ev, idx) => (
+    //   <div key={idx}>{ev.name}</div>
+    // ));
+
+    const eventList = (events = []) => (
+  events.map(event => (
+    <div className="groupeventeach" key={event.id}>
+        <div className="groupeventname">{event.name}</div>
+          <div className="groupeventlocation">Event location: {event.location}</div>
+
+      <div className="groupeventid">Event# {event.id}</div>
+
+      <div className="groupeventorganizer">Event organizer{event.organizer}</div>
+      <div className="groupevenntdescription">{event.description}</div>
+    </div>
+  ))
+);
+
+
   return (
     <div className="singlegroupcontainer">
       <div className="groupheader">
@@ -46,6 +69,7 @@ class GroupShow extends React.Component{
       <div className="singlegroupheader">
         <span>{this.props.group.name}</span>
       </div>
+
       <div className="singletop">
       <div className="singlegroupbar">
         <Link to={idz} className="glink">Home</Link>
@@ -80,8 +104,13 @@ class GroupShow extends React.Component{
 
         <div className="singlegroupmain">
 
-          <div className="groupinfo">{this.props.group.info}</div>
-        </div>
+          <div className="grouphomeinfo">{this.props.group.info}</div>
+          <div className="groupevents">
+
+              {eventList(this.props.group.events)}
+
+            </div>
+      </div>
 
 
         <div className="singlegroupnews">

@@ -1,16 +1,14 @@
 class Api::EventsController < ApplicationController
 
   def index
-    if params[:group_id]
-      @events = Event.where('group_id = ?', params[:group_id])
-    else
+
       @events = Event.all
-    end
   end
 
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
+  
     if @event.save
       render :show
     else
@@ -28,8 +26,9 @@ class Api::EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
+
     if @event.update_attributes
-      render "api/groups/:id/events/"
+      render "api/events/:id"
     else
       render(
       json:["Invalid params"],
@@ -41,6 +40,6 @@ class Api::EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:group_id, :user_id, :name, :description, :start_time, :end_time, :location)
+    params.require(:event).permit(:group_id, :user_id, :name, :description, :location, :start_time, :end_time)
   end
 end

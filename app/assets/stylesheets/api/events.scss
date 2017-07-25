@@ -1,3 +1,48 @@
 // Place all the styles related to the Api::events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.eventformcontainer{
+  display: flex;
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  min-height: 100%;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+
+}
+
+.createevent{
+  display: flex;
+  width: 100%;
+}
+
+.eventform{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.eventname{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.eventlocation{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.eventdescription{
+  display: flex;
+  flex-direction: column;
+
+}

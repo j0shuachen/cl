@@ -9,7 +9,7 @@
 }
 
 .glink{
-  
+
 }
 .singlegroupsidebar{
   // padding: 10px;
@@ -53,7 +53,7 @@
   display: flex;
   padding:10px;
   font-size: 30px;
-  width: 200px;
+  max-width: 200px;
   align-self: center;
   height: 40px;
   border-top: 1px rgba(211,211,211,.7) solid;
@@ -76,6 +76,7 @@ align-items: center;
 .singlegroupmain{
 
   display: flex;
+  flex-direction: column;
   min-width: 700px;
   height: 100%;
   justify-content:flex-start;
@@ -84,10 +85,18 @@ align-items: center;
 
 }
 
-.groupinfo{
-  padding: 30px;
-  align-self: flex-start;
+.grouphomeinfo{
+  display: flex;
+  width: 100%;
+  height: 500px;
+  justify-content: center;
+align-items: center;
+border-bottom: 1px rgba(211,211,211,.7) solid;
+font-size: 35px;
+
 }
+
+
 
 .singlegroupnews{
   padding: 10px;

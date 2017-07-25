@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 import { signup, login, logout } from './util/session_api_util';
 import {createGroup, fetchGroup, fetchGroups} from './util/group_api_util';
+import {createEvent, fetchEvent, fetchEvents} from './util/event_api_util';
 window.signup = signup;
 window.login = login;
 window.logout = logout;
@@ -28,3 +29,6 @@ window.createGroup = createGroup;
 
 window.fetchGroup = fetchGroup;
 window.fetchGroups = fetchGroups;
+window.fetchEvents = fetchEvents;
+window.fetchEvent = fetchEvent;
+window.createEvent = createEvent;

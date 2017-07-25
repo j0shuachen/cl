@@ -14,7 +14,17 @@ export const selectAll = (groups) => {
 };
 
 
-export const selectEvents = ({events}, id) => {
-  const eventss = events[id] || {};
+// export const selectEvents = ({events}, id) => {
+//   const eventss = events[id] || {};
+//   return events;
+// };
+
+// export const selectEvents = (events) => {
+//   return Object.values(events);
+// };
+
+
+export const selectEvents = ({events}, id)=> {
+  const eventss =events[id] || {};
   return eventss;
 };
