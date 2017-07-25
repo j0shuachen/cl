@@ -10,7 +10,7 @@
 #
 
 class GroupEnrollment < ApplicationRecord
-  validates :user_id, :group_id
+  validates :user_id, :group_id, presence: true
 
   belongs_to :user,
     primary_key: :id,
