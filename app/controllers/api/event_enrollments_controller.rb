@@ -25,8 +25,3 @@ class Api::EventEnrollmentsController < ApplicationController
   end
 
 end
-
-
-
-
-end
