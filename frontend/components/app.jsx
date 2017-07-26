@@ -8,6 +8,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+import GroupUpdateContainer from '../components/groups/group_update_container';
 import GroupForm from '../components/groups/group_form_container';
 import GroupIndex from '../components/groups/group_index_container';
 import LogInFormContainer from '../components/session_form/log_in_form_container';
@@ -19,6 +20,7 @@ import EventShowContainer from '../components/groups/event_show_container';
 import EventIndex from '../components/groups/events_index_container';
 import GroupShowContainer from "./groups/group_show_container";
 import EventFormContainer from "./events/event_form_container";
+import UpdateEventContainer from '../components/events/update_event_container';
 const App = () => (
   <div>
     <header>
@@ -36,7 +38,8 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Dummy}/>
         <Route exact path="/groups/:id/create/event" component={EventFormContainer}/>
-
+          <Route exact path="/groups/:groupId/events/:eventId/update" component={UpdateEventContainer}/>
+          <Route exact path="/groups/:groupId/update" component={GroupUpdateContainer}/>
       <AuthRoute path="/login" component={LogInFormContainer}/>
       <AuthRoute path="/signup" component={SignUpFormContainer}/>
       <Route path="/groups/:groupId" component={GroupShowContainer}/>

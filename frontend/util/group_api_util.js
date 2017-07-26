@@ -21,3 +21,11 @@ export const createGroup = data => (
     data
   })
 );
+
+export const updateGroup = group =>(
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/groups/${group.id}`,
+    data: group
+  })
+);

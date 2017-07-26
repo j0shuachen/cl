@@ -7,11 +7,13 @@ import {selectEvents} from '../../reducers/selectors';
 const mapStateToProps = (state, {match}) => {
   const groupId = parseInt(match.params.groupId);
   const group = selectGroup(state, match.params.groupId);
-  const events = selectEvents(state, match.params.groupId);
+  // const events = selectEvents(state, match.params.groupId);
+  // console.log(group);
+  // console.log(events);
   return {
     groupId,
     group,
-    events
+    // events
   };
 
 };

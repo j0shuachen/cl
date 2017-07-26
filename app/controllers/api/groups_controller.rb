@@ -22,13 +22,13 @@ class Api::GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     # render api_group_url(:id)
-    
+
     render :show
   end
 
   def update
-    @group =Group.find(params[:id])
-    if @group.update_attributes
+    @group =Group.find(params[:group][:id])
+    if @group.update(group_params)
       render "api/groups/:id"
     else
       render(

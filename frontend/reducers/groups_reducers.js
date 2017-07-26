@@ -2,6 +2,7 @@ import merge from 'lodash/merge';
 import {
   RECEIVE_GROUP,
   RECEIVE_GROUPS ,
+  UPDATE_GROUP
 } from '../actions/groups_actions.js';
 
 const initialState = {
@@ -19,6 +20,10 @@ const GroupsReducer = (state={}, action) => {
     case RECEIVE_GROUP:
       const newGroup= {[action.group.id]: action.group};
       return merge({}, state, newGroup);
+    case UPDATE_GROUP:
+    newState = merge({}, state);
+    newState[action.group.id] = action.group;
+    return newState;
     default:
     return state;
   }

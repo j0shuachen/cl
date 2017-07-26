@@ -6,7 +6,7 @@ class GroupShow extends React.Component{
 
   constructor (props) {
     super(props);
-    console.log(this.props);
+
 
     this.state= {
 
@@ -62,7 +62,7 @@ class GroupShow extends React.Component{
 
       <div className="groupeventid">Event# {event.id}</div>
 
-      <div className="groupeventorganizer">Event organizer: {event.organizer}</div>
+      <div className="groupeventorganizer">Event organizer: {event.user_id.name}</div>
       <div className="groupevenntdescription">{event.description}</div>
     </div>
   ))

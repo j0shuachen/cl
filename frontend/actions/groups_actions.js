@@ -1,6 +1,7 @@
 import * as APIUtil from '../util/group_api_util';
 export const RECEIVE_GROUPS = "RECEIVE_GROUPS";
 export const RECEIVE_GROUP = "RECEIVE_GROUP";
+export const UPDATE_GROUP = "UPDATE_GROUP";
 
 export const receiveGroups = groups => ({
   type: RECEIVE_GROUPS,
@@ -18,7 +19,7 @@ export const fetchGroups = filters => dispatch =>(
   ))
 );
 
-export const fetchGroup = id => dispatch=>(
+export const fetchGroup = id => dispatch =>(
   APIUtil.fetchGroup(id).then(groupe =>(
     dispatch(receiveGroup(groupe))
   ))
@@ -29,3 +30,9 @@ export const createGroup = group => dispatch => (
     dispatch(receiveGroup(groupe))
   ))
 );
+
+export const updateGroup = group => dispatch => {
+  return APIUtil.updateGroup(group).then(resp => {
+    dispatch(receiveGroup(resp));
+  }) ;
+};
