@@ -74,7 +74,7 @@ class UpdateEvent extends React.Component{
 
 
           <label className="eventname">
-            <div className="eventques"> What will your event be called?</div>
+            <div className="eventques"> Switch up your event's name here!</div>
             <input className="einput" type="text" ref="name"
               value={this.state.name}
               onChange={this.createName}/>
@@ -86,7 +86,7 @@ class UpdateEvent extends React.Component{
 
 
           <label className="eventdescription">
-            <div className="eventques"> What is your event all about?</div>
+            <div className="eventques"> Your event not what it used to be?</div>
             <input className="einput" type="text" ref="description"
               value={this.state.description}
               onChange={this.createDescription}/>
@@ -94,7 +94,7 @@ class UpdateEvent extends React.Component{
 
 
           <label className="eventlocation">
-            <div className="eventques"> Where is your event going down?</div>
+            <div className="eventques"> Change up where your event location!</div>
             <input className="einput" type="text" ref="location"
               value={this.state.location}
               onChange={this.createLocation}/>

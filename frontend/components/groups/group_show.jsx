@@ -54,20 +54,26 @@ class GroupShow extends React.Component{
     // ));
 
 
+
+
     const eventList = (events = []) => (
-  events.map(event => (
+  events.map(event => {
+    const lin = `/groups/${event.group_id}/events/${event.id}/update`;
+    return(
     <div className="groupeventeach" key={event.id}>
         <div className="groupeventname">{event.name}</div>
           <div className="groupeventlocation">Event location: {event.location}</div>
 
       <div className="groupeventid">Event# {event.id}</div>
 
-      <div className="groupeventorganizer">Event organizer: {event.user_id.name}</div>
+      <div className="groupeventorganizer">Event organizer: {event.user_id}</div>
       <div className="groupevenntdescription">{event.description}</div>
-    </div>
-  ))
+      <Link to={lin}>Update Event</Link>
+  </div>
 );
-
+})
+);
+  const show =`/groups/${this.props.group.id}/update`;
 
   return (
     <div className="singlegroupcontainer">
@@ -105,6 +111,9 @@ class GroupShow extends React.Component{
             <div className="gcreated2">
               <div className="g11">{this.props.group.name}</div>
               <div className="g2">Created: {this.props.group.created_at}</div>
+              </div>
+              <div className="gcreated3">
+                <Link to={show} className="upgroup">Update Group</Link>
               </div>
             </div>
           </div>

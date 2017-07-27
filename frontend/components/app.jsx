@@ -37,6 +37,8 @@ const App = () => (
     </header>
     <Switch>
       <Route exact path="/" component={Dummy}/>
+        <Route exact path="/groups/:groupId/events/:eventId" component={EventShowContainer}/>
+
         <Route exact path="/groups/:id/create/event" component={EventFormContainer}/>
           <Route exact path="/groups/:groupId/events/:eventId/update" component={UpdateEventContainer}/>
           <Route exact path="/groups/:groupId/update" component={GroupUpdateContainer}/>
@@ -44,7 +46,6 @@ const App = () => (
       <AuthRoute path="/signup" component={SignUpFormContainer}/>
       <Route path="/groups/:groupId" component={GroupShowContainer}/>
       <Route path="/groups" component={GroupIndex}/>
-        <Route path="/events/:eventId" component={EventShowContainer}/>
         <Route path="/events" component={EventIndex}/>
     <Route exact path="/create/group" component={GroupForm}/>
 

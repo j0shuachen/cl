@@ -27,7 +27,7 @@ class Api::EventsController < ApplicationController
   def update
     @event = Event.find(params[:event][:id])
     if @event.update(event_params)
-      render "api/events/:id"
+      render :show
     else
       render(
       json:["Invalid params"],

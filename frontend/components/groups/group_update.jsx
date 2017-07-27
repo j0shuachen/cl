@@ -3,7 +3,7 @@ import React from 'react';
 class UpdateGroup extends React.Component {
   constructor(props){
     super(props);
-console.log(props);
+// console.log(props);
     this.state= {
       name: "",
       info: "",
@@ -25,12 +25,13 @@ console.log(props);
     setTimeout(this.prev, 500);  }
 
   createGroup(){
+    const groupId = this.props.groupId;
     const name = this.state.name;
     const info = this.state.info;
     const location = this.state.location;
     const user = this.props.currentUser;
     const groupe = {name: name, info: info, location: location, user_id: this.props.currentUser, id: this.props.groupId};
-    this.props.updateGroup({group: groupe}).then(()=>this.props.history.push('/groups/:groupId'));
+    this.props.updateGroup({group: groupe}).then(()=>this.props.history.push(`/groups/${groupId}`));
   }
 
   createName(e){
@@ -67,7 +68,7 @@ console.log(props);
 
           <label className="groupname">
             <div className="steps">Step 1 of 4</div>
-            <div className="ques">What will your group be called?</div>
+            <div className="ques">Update your group's name here!</div>
           <input className="ginput" type="text" ref="name"
             value={this.state.name} placeholder="Your group's name here!"
             onChange={this.createName}/>
@@ -75,7 +76,7 @@ console.log(props);
 
           <label className="groupinfo">
             <div className="steps">Step 2 of 4</div>
-            <div className="ques">How would you describe your group?</div>
+            <div className="ques">Change your group's description here!</div>
             <textarea className="ginput2" type="text" ref="location"
               cols="30" rows='10' value={this.state.info}
               placeholder="Description of your group!"
@@ -84,7 +85,7 @@ console.log(props);
 
           <label className="grouplocation">
             <div className="steps">Step 3 of 4</div>
-            <div className="ques">Where is your group's home base?</div>
+            <div className="ques">Moving your group's home base?</div>
             <input className="ginput" type="text" ref="location"
             value={this.state.location} placeholder="Your group's location here!"
             onChange={this.createLocation}/>

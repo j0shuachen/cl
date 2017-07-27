@@ -29,7 +29,7 @@ class Api::GroupsController < ApplicationController
   def update
     @group =Group.find(params[:group][:id])
     if @group.update(group_params)
-      render "api/groups/:id"
+      render :show
     else
       render(
       json:["Invalid params"],
