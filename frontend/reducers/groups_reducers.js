@@ -2,15 +2,16 @@ import merge from 'lodash/merge';
 import {
   RECEIVE_GROUP,
   RECEIVE_GROUPS ,
-  UPDATE_GROUP
+  UPDATE_GROUP,
+  RECEIVE_ERRORS
 } from '../actions/groups_actions.js';
 
-const initialState = {
-  entities: {},
+const initialState = Object.freeze({
+  errors: []
   // currentGroup: undefined
-};
+});
 
-const GroupsReducer = (state={}, action) => {
+const GroupsReducer = (state = initialState, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
 
@@ -24,6 +25,11 @@ const GroupsReducer = (state={}, action) => {
     newState = merge({}, state);
     newState[action.group.id] = action.group;
     return newState;
+    case RECEIVE_ERRORS:
+      const errors = action.errors;
+      return merge({}, state, {
+        errors
+      });
     default:
     return state;
   }

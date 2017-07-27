@@ -10,8 +10,9 @@ const mapStateToProps = (state, {match}) => {
   // const events = selectEvents(state, match.params.groupId);
   // console.log(group);
   // console.log(events);
+
   return {
-    currentUser: state.session.currentUser.id,
+    currentUser: state.session.currentUser,
     groupId,
     group,
     // events

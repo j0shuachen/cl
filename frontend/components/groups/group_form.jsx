@@ -3,7 +3,7 @@ import React from 'react';
 class GroupForm extends React.Component {
   constructor(props){
     super(props);
-// console.log(props);
+console.log(props);
     this.state= {
       name: "",
       info: "",
@@ -16,6 +16,7 @@ class GroupForm extends React.Component {
     this.createName = this.createName.bind(this);
     this.createInfo = this.createInfo.bind(this);
     this.createLocation = this.createLocation.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount(){
@@ -47,6 +48,19 @@ class GroupForm extends React.Component {
     this.setState({location});
   }
 
+  renderErrors(){
+    if(this.props.errors){
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+  }
 
 
   render(){
@@ -83,8 +97,13 @@ class GroupForm extends React.Component {
             value={this.state.location} placeholder="Your group's location here!"
             onChange={this.createLocation}/>
           </label>
+          <span className="errors">{this.renderErrors()}</span>
+
           <input className="creategroupsub" type="submit"></input>
-        </form>
+
+      </form>
+
+
 
 
 

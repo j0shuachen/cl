@@ -5,7 +5,10 @@ import { selectGroup, selectAll } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => ({
   groups: selectAll(state.groups),
+  errors: state.groups.errors
   // errors: state.errors
+  // errors: state.errors
+
 });
 
 const mapDispatchToProps = dispatch => ({

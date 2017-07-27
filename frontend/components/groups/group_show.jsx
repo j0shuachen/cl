@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+// import GroupEnrollment from '../group_enrollments/group_enrollment_container';
 
 class GroupShow extends React.Component{
 
   constructor (props) {
     super(props);
-
+    console.log(this.props);
     this.state= {
 
     };
@@ -105,10 +105,9 @@ renderU (){
     const eventList = (events = []) => (
   events.map(event => {
 
-    let g = this.props.currentUser;
+    let g = this.props.currentUser.id;
     let v = event.user_id;
     const lin = `/groups/${event.group_id}/events/${event.id}/update`;
-
     const x = () => {
       if (g===v){
         return (
@@ -170,7 +169,7 @@ renderU (){
             <div className="gcreated2">
               <div className="g11">{this.props.group.name}</div>
               <div className="g2">Created: {this.props.group.created_at}</div>
-              </div>
+          </div>
               <div className="gcreated3">{this.renderU()}
               </div>
             </div>

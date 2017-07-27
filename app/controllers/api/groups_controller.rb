@@ -8,8 +8,9 @@ class Api::GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    @group.user_id = current_user.id
-    if @group.save
+    # if @group.user_id
+      @group.user_id = current_user.id
+      if @group.save
       render :show
     else
       render(

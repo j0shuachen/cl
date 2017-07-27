@@ -6,6 +6,7 @@ import Modal from 'react-modal';
 class HeaderBar3 extends React.Component{
   constructor(props){
       super(props);
+      console.log(this.props);
       this.state = {
         modalIsOpen: false
       };
@@ -13,6 +14,7 @@ class HeaderBar3 extends React.Component{
       this.closeModal = this.closeModal.bind(this);
       this.personalGreeting = this.personalGreeting(this);
       this.sessionLinks = this.sessionLinks(this);
+      this.demo=this.demo.bind(this);
     }
 
   sessionLinks (){
@@ -43,6 +45,44 @@ class HeaderBar3 extends React.Component{
     this.setState({modalIsOpen: true});
   }
 
+  demo(){
+    const guests = {1:{
+      username: 'guest1',
+      password: 'guest1'
+    }, 2:{
+      username: 'guest2',
+      password: 'guest2'
+    }, 3:{
+      username: 'guest3',
+      email:'guest3',
+    }, 4:{
+      username: 'guest4',
+      password: 'guest4'},
+      5:{
+        username: 'guest5',
+        password: 'guest5'},
+      6:{
+        username: 'guest6',
+        password: 'guest6'},
+      7:{
+        username: 'guest7',
+        password: 'guest7'},
+      8:{
+        username: 'guest8',
+        password: 'guest8'},
+      9:{
+        username: 'guest9',
+        password: 'guest9'},
+      10:{
+        username: 'guest10',
+        password: 'guest10'}
+      };
+
+      const num = Math.floor((Math.random() * 10) + 1);
+      const user= guests[num];
+      this.props.login({user}).then(()=>this.props.history.push('/groups'));
+    }
+
 personalGreeting (currentUser, logout) {
   return (
     <div>
@@ -64,6 +104,7 @@ render(){
   const sessionLinks =() =>{
     return (
     <div className="login-signup">
+      <Link to="/" className="sign-up-button" onClick={this.demo}> Demo </Link>
       <Link to="/login"
         className="sign-in-button">Login
       </Link>

@@ -24,7 +24,12 @@ export const selectAll = (groups) => {
 // };
 
 
-export const selectEvents = ({events}, id)=> {
+export const selectEvents = ({events}, id) => {
   const eventss =events[id] || {};
   return eventss;
+};
+
+export const selectGroupEnrollment = ({enrollments}, id) => {
+  const enrollment = enrollments[id] || {};
+  return enrollment;
 };

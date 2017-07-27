@@ -2,7 +2,12 @@ import * as APIUtil from '../util/group_api_util';
 export const RECEIVE_GROUPS = "RECEIVE_GROUPS";
 export const RECEIVE_GROUP = "RECEIVE_GROUP";
 export const UPDATE_GROUP = "UPDATE_GROUP";
+export const RECEIVE_ERRORS ="RECEIVE_ERRORS";
 
+export const receiveErrors = errors => ({
+  type: RECEIVE_ERRORS,
+  errors
+});
 export const receiveGroups = groups => ({
   type: RECEIVE_GROUPS,
   groups

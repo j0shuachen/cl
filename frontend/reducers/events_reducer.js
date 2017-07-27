@@ -2,7 +2,8 @@ import merge from 'lodash/merge';
 import{
   RECEIVE_EVENT,
   RECEIVE_EVENTS,
-  UPDATE_EVENT
+  UPDATE_EVENT,
+  RECEIVE_ERRORS
 } from '../actions/event_actions';
 
 // const initialState={
@@ -10,7 +11,7 @@ import{
 // };
 // x
 
-const EventsReducer = (state={}, action) => {
+const EventsReducer = (state={errors:[]}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
 
@@ -25,6 +26,11 @@ const EventsReducer = (state={}, action) => {
       newState = merge({}, state);
       newState[action.eventt.id] = action.eventt;
       return newState;
+      case RECEIVE_ERRORS:
+        const errors = action.errors;
+        return merge({}, state, {
+          errors
+        });
     default:
     return state;
   }

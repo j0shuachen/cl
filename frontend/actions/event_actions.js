@@ -2,6 +2,13 @@ import * as APIUtil from '../util/event_api_util';
 export const RECEIVE_EVENT= "RECEIVE_EVENT";
 export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
 export const UPDATE_EVENT = "UPDATE_EVENT";
+export const RECEIVE_ERRORS ="RECEIVE_ERRORS";
+
+export const receiveErrors = errors => ({
+  type: RECEIVE_ERRORS,
+  errors
+});
+
 export const receiveEvent = eventt =>({
     type: RECEIVE_EVENT,
     eventt

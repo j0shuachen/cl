@@ -7,7 +7,8 @@ import EventsReducer from './events_reducer';
 const RootReducer = combineReducers({
   session: SessionReducer,
   groups: GroupsReducer,
-  events: EventsReducer
+  events: EventsReducer,
+
 
 });
 

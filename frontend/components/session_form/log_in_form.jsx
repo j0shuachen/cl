@@ -5,13 +5,15 @@ import { Link, withRouter} from 'react-router-dom';
 class LogInForm extends React.Component {
   constructor(props){
     super(props);
+    console.log(this.props);
+
     this.state = {
-      name: '',
+
       username: '',
-      email:'',
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demo = this.demo.bind(this);
   }
 
   update(field){
@@ -22,9 +24,32 @@ class LogInForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
+
     const user = this.state;
     this.props.processForm({user}).then(()=>this.props.history.push('/groups'));
   }
+
+  demo(){
+    const guests = {1:{
+      username: 'guest1',
+      password: 'guest1'
+    }, 2:{
+      username: 'guest2',
+      password: 'guest2'
+    }, 3:{
+      username: 'guest3',
+      email:'guest3',
+    }, 4:{
+      username: 'guest4',
+      password: 'guest5'},
+      5:{
+        username: 'guest5',
+        password: 'guest5'}
+      };
+      const user= guests[5];
+      this.props.processForm({user}).then(()=>this.props.history.push('/groups'));
+
+    }
 
   navLink(){
     if (this.props.formType === 'login'){
@@ -84,6 +109,8 @@ class LogInForm extends React.Component {
           <div>Not a member?</div>
           <div className="logintosignup">{this.navLink()}</div>
           </div>
+
+          <div onClick={this.demo}> guest demo </div>
         </form>
       </div>
     );

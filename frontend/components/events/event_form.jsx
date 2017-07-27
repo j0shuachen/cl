@@ -3,6 +3,7 @@ import React from 'react';
 class EventForm extends React.Component{
   constructor(props){
     super(props);
+    console.log("form");
     console.log(this.props);
     this.state={
       group_id: "",
@@ -34,7 +35,7 @@ class EventForm extends React.Component{
     const location = this.state.location;
     const evente = {group_id: groupId, user_id: userId, name: name,
       description: description, location: location};
-      this.props.createEvent({event: evente}).then(()=>this.props.history.push(`/groups/${groupId}`))
+      this.props.createEvent({event: evente}).then(()=>this.props.history.push(`/groups/${groupId}`));
   }
 
   createName(e){
