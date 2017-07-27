@@ -11,6 +11,7 @@ const mapStateToProps = (state, {match}) => {
   // console.log(group);
   // console.log(events);
   return {
+    currentUser: state.session.currentUser.id,
     groupId,
     group,
     // events

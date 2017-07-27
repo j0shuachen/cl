@@ -20,12 +20,16 @@ class EventShow extends React.Component {
   renderUpdate(){
     // let showz = `/groups/${this.props.evento.group_id}/events/${this.props.evento.id}/update`;
     let showz = `/groups/${this.props.groupId}/events/${this.props.eventId}/update`;
-    // if (this.props.currentUser.id === this.props.evento.user_id)
+    let g = this.props.currentUser;
+    let v = this.props.evento.user_id;
+
+    // if (this.props.currentUser.id === this.props.evento.user_id){
+    if (v ===g){
     return (
       <div className="eventup">
         <Link className="eventup" to={showz}>Update Event</Link>
     </div>
-  );
+  );}
 
   }
 

@@ -7,10 +7,11 @@ class GroupShow extends React.Component{
   constructor (props) {
     super(props);
 
-
     this.state= {
 
     };
+    // this.renderEvents = this.renderEvents.bind(this);
+    this.renderU = this.renderU.bind(this);
   }
 
 
@@ -18,7 +19,52 @@ class GroupShow extends React.Component{
     this.props.fetchGroup(this.props.match.params.groupId);
   }
 
+renderU (){
+  const show =`/groups/${this.props.group.id}/update`;
+  let g = this.props.currentUser;
+  let v = this.props.group.user_id;
+  if (v === g){
+    return (
+      <div className="gg">
+        <Link to={show} className="upgroup">Update Group</Link>
+      </div>
+    );
+  }
+}
 
+// renderEvents(events = []){
+//   console.log(events);
+//
+// events.map(event => {
+//   const t = this.props.currentUser;
+//   console.log(t);
+//
+//   const g = event.user_id;
+//   console.log(g);
+//   const lin = `/groups/${event.group_id}/events/${event.id}/update`;
+  // if (t===g){
+  //   return (
+  //     <div >
+  //       <Link to={lin}>Edit</Link>
+  //     </div>
+  //   );
+  // }
+
+//   return(
+//     <div>
+//   <div className="groupeventeach" key={event.id}>
+//       <div className="groupeventname">{event.name}</div>
+//         <div className="groupeventlocation">Event location: {event.location}</div>
+//
+//     <div className="groupeventid">Event# {event.id}</div>
+//
+//     <div className="groupeventorganizer">Event organizer: {event.user_id}</div>
+//     <div className="groupevenntdescription">{event.description}</div>
+// </div>
+// </div>
+// );
+// });
+// }
 
 
 // const l = ({ group, groupId, fetchGroup}) => {
@@ -58,7 +104,20 @@ class GroupShow extends React.Component{
 
     const eventList = (events = []) => (
   events.map(event => {
+
+    let g = this.props.currentUser;
+    let v = event.user_id;
     const lin = `/groups/${event.group_id}/events/${event.id}/update`;
+
+    const x = () => {
+      if (g===v){
+        return (
+          <div className="upLink">
+            <Link className= "uplink" to={lin}>Update Event</Link>
+          </div>
+        );
+      }
+    };
     return(
     <div className="groupeventeach" key={event.id}>
         <div className="groupeventname">{event.name}</div>
@@ -68,12 +127,12 @@ class GroupShow extends React.Component{
 
       <div className="groupeventorganizer">Event organizer: {event.user_id}</div>
       <div className="groupevenntdescription">{event.description}</div>
-      <Link to={lin}>Update Event</Link>
+      <div className="uplinko">{x()}
+    </div>
   </div>
 );
 })
 );
-  const show =`/groups/${this.props.group.id}/update`;
 
   return (
     <div className="singlegroupcontainer">
@@ -112,8 +171,7 @@ class GroupShow extends React.Component{
               <div className="g11">{this.props.group.name}</div>
               <div className="g2">Created: {this.props.group.created_at}</div>
               </div>
-              <div className="gcreated3">
-                <Link to={show} className="upgroup">Update Group</Link>
+              <div className="gcreated3">{this.renderU()}
               </div>
             </div>
           </div>
