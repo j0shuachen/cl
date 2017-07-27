@@ -30,7 +30,7 @@ console.log(props);
     const user = this.props.currentUser;
 
     const groupe = {name: name, info: info, location: location, user_id: user};
-    this.props.createGroup({group: groupe}).then(()=>this.props.history.push('/groups/:id'));
+    this.props.createGroup({group: groupe}).then(()=>this.props.history.push(`/groups/${this.props.groups.length}`));
   }
 
   createName(e){

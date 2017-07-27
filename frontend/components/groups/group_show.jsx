@@ -6,18 +6,25 @@ class GroupShow extends React.Component{
 
   constructor (props) {
     super(props);
-    console.log(this.props);
+    // console.log(this.props);
     this.state= {
-
     };
     // this.renderEvents = this.renderEvents.bind(this);
     this.renderU = this.renderU.bind(this);
+
+    // console.log(this.state);
   }
 
 
   componentDidMount(){
     this.props.fetchGroup(this.props.match.params.groupId);
   }
+
+  // componentWillReceiveProps(nextProps){
+  //   // if (nextProps.currentUser.id !== this.props.currentUser.id) {
+  //
+  //   }
+  // }
 
 renderU (){
   const show =`/groups/${this.props.group.id}/update`;
@@ -99,16 +106,31 @@ renderU (){
     //   <div key={idx}>{ev.name}</div>
     // ));
 
+    // console.log(this.props.mod);
 
+    // console.log("insdie");
+    const modd = () => {
+      if(this.props.group.mod){
+        return (
+          this.props.group.mod.name
+        );
+      }
+    };
+    // console.log(this.props.group.mod);
+    // const l = this.props.group.mod;
+    // console.log(l);
+    // if (l){
+    //   console.log(l.name);
+    // }
 
-
-    const eventList = (events = []) => (
+    const eventList= (events = []) => (
   events.map(event => {
+    const x = () => {
 
+  if (this.props.currentUser){
     let g = this.props.currentUser.id;
     let v = event.user_id;
     const lin = `/groups/${event.group_id}/events/${event.id}/update`;
-    const x = () => {
       if (g===v){
         return (
           <div className="upLink">
@@ -116,7 +138,8 @@ renderU (){
           </div>
         );
       }
-    };
+    }
+  };
     return(
     <div className="groupeventeach" key={event.id}>
         <div className="groupeventname">{event.name}</div>
@@ -169,6 +192,7 @@ renderU (){
             <div className="gcreated2">
               <div className="g11">{this.props.group.name}</div>
               <div className="g2">Created: {this.props.group.created_at}</div>
+              <div className="g3">{modd()}</div>
           </div>
               <div className="gcreated3">{this.renderU()}
               </div>

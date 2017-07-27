@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 class HeaderBar3 extends React.Component{
   constructor(props){
       super(props);
-      console.log(this.props);
+      // console.log(this.props);
       this.state = {
         modalIsOpen: false
       };
