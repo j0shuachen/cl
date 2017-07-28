@@ -4,17 +4,17 @@ CliqueUp is a MeetUp clone allowing users to create groups and events to interac
 ## Heroku Link
 https://cliqueup.herokuapp.com/#/
 
-##Users
+## Users
 On the database side, users are stored in a table with columns for id, username, name, email, location, hashed password, created_at, update_at, and session token.
 
-##Groups
+## Groups
 Groups are stored in the database with columns for id, user_id, name, info, created_at, update_at, image_url, and, location.
 
 
-##Events
+## Events
 Events are stored in a table in the database with id, name, description, location, group_id, image_url,  created_at, update_at, and user_id.
 
-#Site Functionality
+# Site Functionality
 
 ## Log in/ Signup
 Sign up form allowing users to sign up with the site an log in. Upon successful sign in, users will be directed to the group index page.
@@ -36,6 +36,6 @@ Users can upload their own pictures for their groups/events. If no picture is pr
 
 
 # Future Direction For Project
-Add google maps api
-Add calendar widget
-Create profiles for users
++ Add google maps api
++ Add calendar widget
++ Create profiles for users

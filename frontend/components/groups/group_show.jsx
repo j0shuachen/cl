@@ -14,7 +14,8 @@ class GroupShow extends React.Component{
     };
     // this.renderEvents = this.renderEvents.bind(this);
     this.renderU = this.renderU.bind(this);
-    // this.ismember = this.ismember.bind(this);
+    this.ismember = this.ismember.bind(this);
+    this.renderJoin= this.renderJoin.bind(this);
     // console.log(this.state);
   }
 
@@ -36,18 +37,27 @@ class GroupShow extends React.Component{
   // ismember(){
   //
   //   const g = this.props.fetchGroupEnrollments(this.props.match.params.groupId);
-  //   console.log(g);
+    // console.log(g);
   //   g.forEach((user) => {
   //     if(user.user_id === this.props.currentUser.id){
   //       return true;
   //     }
   //   });
   //   return false;
-  //
-  // }
 
-  renderJoin(){
   }
+
+  // renderJoin(){
+  //   if(this.ismember()){
+  //     return (
+  //       <div>Join Group</div>
+  //     );
+  //   }else{
+  //     return (
+  //       <div>Leave Group</div>
+  //     );
+  //   }
+  // }
 
 renderU (){
   // console.log(this.props);
@@ -248,7 +258,7 @@ renderU (){
 
           <div className="grouphomeinfo">
             <div className="info">{this.props.group.info}</div>
-                <Link className="createeventt" to={idz +"/create/event"}>Create a new event</Link>
+              <Link className="createeventt" to={idz +"/create/event"}>Create a new event</Link>
 
           </div>
           <div className="groupevents">
