@@ -37,7 +37,7 @@ class GroupShow extends React.Component{
   // ismember(){
   //
   //   const g = this.props.fetchGroupEnrollments(this.props.match.params.groupId);
-    // console.log(g);
+  //   // console.log(g);
   //   g.forEach((user) => {
   //     if(user.user_id === this.props.currentUser.id){
   //       return true;
@@ -45,7 +45,6 @@ class GroupShow extends React.Component{
   //   });
   //   return false;
 
-  }
 
   // renderJoin(){
   //   if(this.ismember()){
@@ -59,8 +58,7 @@ class GroupShow extends React.Component{
   //   }
   // }
 
-renderU (){
-  // console.log(this.props);
+renderU(){
   const show =`/groups/${this.props.group.id}/update`;
   if (this.props.currentUser){
 
@@ -72,8 +70,7 @@ renderU (){
         <Link to={show} className="upgroup">Update Group</Link>
       </div>
     );
-  }
-}
+  }}
 }
 
 // renderEvents(events = []){
@@ -258,6 +255,7 @@ renderU (){
 
           <div className="grouphomeinfo">
             <div className="info">{this.props.group.info}</div>
+            <div>{this.renderJoin()}</div>
               <Link className="createeventt" to={idz +"/create/event"}>Create a new event</Link>
 
           </div>
