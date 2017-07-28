@@ -25,13 +25,7 @@ const App = () => (
   <div>
     <header>
       <nav>
-        <div className="create-header">
-          <Link to="/create/group" className="create-header-button">Create a Meetup</Link>
-          <Link to="/app" className="get-app-button">Get the App</Link>
-        </div>
-        <div className="logo">
-          <Link to="/groups" className="header-link"></Link>
-        </div>
+        
         <HeaderBarContainer/>
         </nav>
     </header>

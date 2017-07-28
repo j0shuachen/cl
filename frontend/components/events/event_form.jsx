@@ -3,14 +3,14 @@ import React from 'react';
 class EventForm extends React.Component{
   constructor(props){
     super(props);
-    console.log("form");
-    console.log(this.props);
+
     this.state={
       group_id: "",
       user_id: "",
       name: "",
       description: "",
-      location: ""
+      location: "",
+      image_url: ""
 
     };
 
@@ -18,24 +18,31 @@ class EventForm extends React.Component{
     this.createName = this.createName.bind(this);
     this.createDescription = this.createDescription.bind(this);
     this.createLocation = this.createLocation.bind(this);
+    this.setImage = this.setImage.bind(this);
+    this.uploadButton = this.uploadButton.bind(this);
+
   }
 
 
 // this.props.match.params.groupId
   componentDidMount(){
     this.props.fetchEvents();
+    setTimeout(this.createEvent, 500);
   }
 
 
   createEvent(){
-    const groupId = this.props.groupId;
+    if(this.props){
+      const groupId = this.props.groupId;
     const userId = this.props.currentUser;
     const name = this.state.name;
     const description = this.state.description;
     const location = this.state.location;
+    const image = this.state.image_url;
     const evente = {group_id: groupId, user_id: userId, name: name,
-      description: description, location: location};
+      description: description, location: location, image_url: image};
       this.props.createEvent({event: evente}).then(()=>this.props.history.push(`/groups/${groupId}`));
+    }
   }
 
   createName(e){
@@ -53,6 +60,22 @@ class EventForm extends React.Component{
     this.setState({location});
   }
 
+  setImage(url){
+    this.setState({image_url: url});
+    // console.log(this.state);
+  }
+
+
+  uploadButton () {
+    cloudinary.openUploadWidget(
+      window.CLOUDINARY_OPTIONS, (errors, images) => {
+        if(errors === null){
+         this.setImage(images[0].url);
+        }
+      }
+    );
+
+  }
   render(){
     return (
     <div className="eventformcontainer">
@@ -85,6 +108,11 @@ class EventForm extends React.Component{
             <input className="einput" type="text" ref="location"
               value={this.state.location} placeholder="Your event's location here"
               onChange={this.createLocation}/>
+          </label>
+
+          <label className="eventpic">
+            <div className="eventques"> Upload a picture for your event!</div>
+            <div className="uploadeventbut" onClick={this.uploadButton}>Upload!</div>
           </label>
 
           <input className="createeventsub" type="submit"></input>

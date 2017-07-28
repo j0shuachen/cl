@@ -32,7 +32,12 @@ export const fetchGroupEnrollment = id => (dispatch) => {
 };
 
 export const fetchGroupEnrollments = () => (dispatch) => {
-  return APIUtil.fetchGroupEnrollments().then(enrollments => dispatch(receiveGroupEnrollments(enrollments)));
+  return APIUtil.fetchGroupEnrollments().then(
+    enrollments => {
+      console.log("Server resp: " + enrollments);
+      dispatch(receiveGroupEnrollments(enrollments));
+    }
+  );
 };
 
 export const createGroupEnrollment = enrollment => dispatch => {

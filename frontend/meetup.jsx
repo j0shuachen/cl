@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }else{
     store=configureStore();
   }
+  window.dispatch = store.dispatch;
   window.getState = store.getState;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);
@@ -22,11 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
 import { signup, login, logout } from './util/session_api_util';
 import {createGroup, fetchGroup, fetchGroups} from './util/group_api_util';
 import {createEvent, fetchEvent, fetchEvents} from './util/event_api_util';
+import {deleteGroupEnrollment, createGroupEnrollment, fetchGroupEnrollment, fetchGroupEnrollments } from './util/group_enrollment_api_util';
+import {  } from './actions/group_enrollment_actions';
+
 window.signup = signup;
 window.login = login;
 window.logout = logout;
 window.createGroup = createGroup;
-
+window.createGroupEnrollment = createGroupEnrollment;
+window.fetchGroupEnrollment = fetchGroupEnrollment;
+window.fetchGroupEnrollments = fetchGroupEnrollments;
+window.deleteGroupEnrollment = deleteGroupEnrollment;
 window.fetchGroup = fetchGroup;
 window.fetchGroups = fetchGroups;
 window.fetchEvents = fetchEvents;

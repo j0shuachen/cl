@@ -7,7 +7,7 @@ class GroupEnrollment extends React.Component {
 
     // console.log(this.props);
     this.state ={
-      member: false
+      // member: false
     };
     this.createGroupEnrollment=this.createGroupEnrollment.bind(this);
     this.deleteGroupEnrollment= this.deleteGroupEnrollment.bind(this);

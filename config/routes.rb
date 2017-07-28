@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'api/group_enrollments'
 
   root "static_pages#root"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
     resources :groups
     resources :events
     # resources :groups
-    # resources :group_enrollments
+    resources :group_enrollments
     # resources :events
     # resources :event_enrollments
   end

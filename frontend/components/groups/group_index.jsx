@@ -1,5 +1,7 @@
 import React from 'react';
 import GroupShow from './group_show';
+import Search from '../search/search_container';
+
 
 import { Link, Route} from 'react-router-dom';
 
@@ -33,7 +35,8 @@ class GroupIndex extends React.Component {
         return (
           <div className="g1" key={idx}>
 
-            <Link style={t} className="indexlink" to={showz}>{group.name}</Link>
+            <Link style={t} className="indexlink" to={showz}>
+              {group.name}</Link>
           </div>
         );
     });
@@ -45,9 +48,13 @@ class GroupIndex extends React.Component {
         <div className="groupindexheader"> Find a MeetUp! </div>
         <div className="searchbarz">
 
-          <div className="searchwhite"></div>
+          <div className="searchwhite"><Search/>
+
+          </div>
+
         </div>
         <ul className="grouplist">{groupItems}</ul>
+
       </div>
     );
 

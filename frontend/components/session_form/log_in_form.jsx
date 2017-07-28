@@ -5,7 +5,7 @@ import { Link, withRouter} from 'react-router-dom';
 class LogInForm extends React.Component {
   constructor(props){
     super(props);
-    console.log(this.props);
+    // console.log(this.props);
 
     this.state = {
 

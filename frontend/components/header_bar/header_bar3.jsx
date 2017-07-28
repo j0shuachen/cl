@@ -94,17 +94,34 @@ personalGreeting (currentUser, logout) {
 }
 render(){
   const personalGreeting = (currentUser, logout) => (
+    <div className="mainhed">
+    <div className="create-header">
+      <Link to="/create/group" className="create-header-button">Create a Meetup</Link>
+        <Link to="/" className="demo-button" onClick={this.demo}> Demo </Link>
+  </div>
+    <div className="logo">
+      <Link to="/groups" className="header-link"></Link>
+    </div>
     <div className="greeting">
-      <h1 className="header-name">Hi, {currentUser.username}!</h1>
+      <div className="header-name">Hi, {currentUser.username}!</div>
       <Link to="/"className="header-button" onClick={logout}>Log Out
       </Link>
   </div>
+</div>
   );
 
   const sessionLinks =() =>{
     return (
+      <div className="mainhed">
+      <div className="create-header">
+        <Link to="/create/group" className="create-header-button">Create a Meetup</Link>
+          <Link to="/" className="demo-button" onClick={this.demo}> Demo </Link>
+    </div>
+      <div className="logo">
+        <Link to="/groups" className="header-link"></Link>
+      </div>
     <div className="login-signup">
-      <Link to="/" className="sign-up-button" onClick={this.demo}> Demo </Link>
+
       <Link to="/login"
         className="sign-in-button">Login
       </Link>
@@ -128,6 +145,7 @@ render(){
        </div>
      </Modal>
       </Link>
+    </div>
     </div>
   );
 };

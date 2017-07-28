@@ -2,6 +2,9 @@
 ## Trello Link
 https://trello.com/b/gDGh3LSu/meetup-fullstack
 
+## Heroku Link
+https://cliqueup.herokuapp.com/#/
+
 # MINIMUM VIABLE PRODUCT
 1. new account creation, login, guest/demo
 2. production readme

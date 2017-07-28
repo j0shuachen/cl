@@ -7,6 +7,8 @@ end
 
 
 
+
+
 # json.members do
 #   json.array! @group.members, partial: 'api/users/user', as: :member
 # end

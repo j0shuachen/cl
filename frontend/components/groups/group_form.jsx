@@ -3,13 +3,14 @@ import React from 'react';
 class GroupForm extends React.Component {
   constructor(props){
     super(props);
-console.log(props);
+// console.log(props);
     this.state= {
       name: "",
       info: "",
       location: "",
       user_id: "",
-      errors: ""
+      errors: "",
+      image_url: ""
 
     };
     this.createGroup = this.createGroup.bind(this);
@@ -17,6 +18,8 @@ console.log(props);
     this.createInfo = this.createInfo.bind(this);
     this.createLocation = this.createLocation.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.uploadButton = this.uploadButton.bind(this);
+    this.setImage = this.setImage.bind(this);
   }
 
   componentDidMount(){
@@ -28,8 +31,8 @@ console.log(props);
     const info = this.state.info;
     const location = this.state.location;
     const user = this.props.currentUser;
-
-    const groupe = {name: name, info: info, location: location, user_id: user};
+    const image = this.state.image_url;
+    const groupe = {name: name, info: info, location: location, user_id: user, image_url: image};
     this.props.createGroup({group: groupe}).then(()=>this.props.history.push(`/groups/${this.props.groups.length}`));
   }
 
@@ -61,6 +64,33 @@ console.log(props);
     );
   }
   }
+
+ setImage(url){
+   console.log(url);
+  if (url === ""){
+    this.setState({image_url: null});
+
+ }else{
+   this.setState({image_url: url});
+
+ }
+  //  console.log(this.state);
+ }
+
+
+ uploadButton () {
+   cloudinary.openUploadWidget(
+     window.CLOUDINARY_OPTIONS, (errors, images) => {
+       if(errors === null){
+        this.setImage(images[0].url);
+      }else{
+        this.setImage(null);
+      }
+     }
+   );
+
+ }
+
 
 
   render(){
@@ -97,6 +127,14 @@ console.log(props);
             value={this.state.location} placeholder="Your group's location here!"
             onChange={this.createLocation}/>
           </label>
+
+
+          <label className="grouppic">
+            <div className="steps">Step 4 of 4</div>
+            <div className="ques">Upload a picture for your group!</div>
+            <div className="uploadpicbutton" onClick={this.uploadButton}> Upload</div>
+          </label>
+
           <span className="errors">{this.renderErrors()}</span>
 
           <input className="creategroupsub" type="submit"></input>

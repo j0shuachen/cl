@@ -8,6 +8,32 @@ nav{
   flex-wrap: nowrap;
   min-width: 900px;
   min-height: 65px;
+align-content: space-between;;
+
+}
+
+.demo-button{
+  display: flex;
+  min-width: 80px;
+  min-height: 30px;
+  background-color: #ed1c40;
+  border-color: #ed1c40;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+.mainhed{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  align-content: space-between;
 
 }
 
@@ -18,8 +44,12 @@ nav{
   background-image: image-url("meetup_logo_before_after.png");
   background-repeat: no-repeat;
   background-size: contain;
-  padding-right: 80px;
+  // padding-right: 80px;
   font-weight: bold;
+  margin-left: 60px;
+  margin-right: 30px;
+  align-self: center;
+  justify-content: center;
 }
 
 
@@ -27,9 +57,6 @@ nav{
 
 .create-header{
   display: flex;
-  background-color: #fff;
-  border: none;
-  margin-left: 5px;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -40,20 +67,42 @@ nav{
 .create-header-button{
   color: black;
   font-size: 20px;
-  padding: 5px 10px;
+  // padding: 5px 10px;
   border-radius: 4px;
   text-decoration: none;
-  margin-right: 5px;
-  margin-left: 25px;
+  // margin-right: 5px;
+  // margin-left: 25px;
   min-width: 175px;
 }
 
 .header-button{
-  text-decoration: none;
-  width: 100%;
+  // text-decoration: none;
+  // width: 100%;
+  // justify-content: center;
+  // text-align: center;
+  // // margin-bottom: 5px;
+  // min-width: 80px;
+  // min-height: 30px;
+  // font-size: 20px;
+  // background-color: #ed1c40;
+  // color: white;
+  // align-content: center;
+  display: flex;
+  min-width: 100px;
+  min-height: 30px;
+  background-color: #ed1c40;
+  border-color: #ed1c40;
+  color: white;
+  flex-direction: column;
   justify-content: center;
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 4px;
+  align-content: center;
   text-align: center;
-  margin-bottom: 5px;
+
+
 }
 
 .get-app-button{
@@ -80,6 +129,27 @@ nav{
   }
 }
 
+
+.header-name{
+  display: flex;
+  min-width: 200px;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+
+
+}
+
+
+.greeting{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+}
 .sign-up-button{
   /*font-weight: 500;*/
 

@@ -16,6 +16,20 @@
 }
 
 
+
+.eventindex{
+  display: flex;
+  width:300px;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 25px;
+  color: #ed1c40;
+}
+
+
 .x{
 
 }
@@ -50,6 +64,18 @@
     background-color: black;
   }
 
+  .search{
+    display: flex;
+    height: 50px;
+    width: 300px;
+    widht: 100%;
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+
+  }
+
   .searchwhite{
     display: flex;
     margin: 15px;
@@ -57,6 +83,8 @@
     width: 300px;
     background-color: white;
   }
+
+
 
   .grouplist{
     display: flex;
@@ -68,7 +96,19 @@
     // flex-direction: column;
 
   }
-
+  // .g3{
+  //   min-width: 200px;
+  //   min-height: 200px;
+  //   display: flex;
+  //   padding:10px;
+  //   font-size: 30px;
+  //   width: 200px;
+  //   align-self: center;
+  //   height: 40px;
+  //   border-top: 1px rgba(211,211,211,.7) solid;
+  //   justify-content: center;
+  // align-items: center;
+  // }
 
   .g1{
     min-width: 300px;

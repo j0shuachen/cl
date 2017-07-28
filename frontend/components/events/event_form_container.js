@@ -9,7 +9,7 @@ import {selectAll, selectEvents} from '../../reducers/selectors';
 
 const mapStateToProps = (state, {match}) => {
   const groupId = parseInt(match.params.id);
-console.log(state);
+// console.log(state);
   return {
     events: selectAll(state.events),
     groupId,

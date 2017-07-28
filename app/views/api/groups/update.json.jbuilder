@@ -1,4 +1,4 @@
-json.partial! '/api/groups/group', groupe: @group
+json.partial! '/api/groups/group', group: @group
 
 
 json.events do

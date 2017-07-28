@@ -7,7 +7,8 @@ import {
 } from '../actions/groups_actions.js';
 
 const initialState = Object.freeze({
-  errors: []
+  errors: [], 
+
   // currentGroup: undefined
 });
 

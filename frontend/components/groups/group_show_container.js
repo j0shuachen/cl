@@ -3,11 +3,18 @@ import {fetchGroup, fetchGroups} from '../../actions/groups_actions';
 import {selectGroup} from '../../reducers/selectors';
 import GroupShow from './group_show';
 import {fetchEvent, fetchEvents} from '../../actions/event_actions';
-import {selectEvents} from '../../reducers/selectors';
+import {selectEvents, selectAll} from '../../reducers/selectors';
+
 const mapStateToProps = (state, {match}) => {
+  const eventId = parseInt(match.params.eventId);
+  // console.log(state);
+  // console.log(match);
+  const evento = selectEvents(state, match.params.eventId);
+  // console.log(state);
   const groupId = parseInt(match.params.groupId);
   const group = selectGroup(state, match.params.groupId);
-  // const events = selectEvents(state, match.params.groupId);
+  const event = selectEvents(state, match.params.groupId);
+
   // console.log(group);
   // console.log(events);
   // const currentUser = () => {(
@@ -37,12 +44,16 @@ const mapStateToProps = (state, {match}) => {
   // console.log(modaa);
   return {
     currentUser: state.session.currentUser,
+    events: selectAll(state.events),
     // currentUser,
+    eventId,
+    evento,
     // name: mod[name],
     groupId,
     group,
+    event
     // mod: state.groups.groupId.mod
-    // events
+
   };
 
 };

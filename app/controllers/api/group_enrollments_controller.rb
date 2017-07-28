@@ -1,7 +1,25 @@
 class Api::GroupEnrollmentsController < ApplicationController
 
   def index
-    @groupenrollments = GroupEnrollment.all
+    # @group_enrollments = GroupEnrollment.all
+
+    @group_enrollments = GroupEnrollment.where(group_id: group_enrollment_params[:group_id])
+
+
+    @users = []
+    @group_enrollments.each do |enrollment|
+      @users.push(User.find(enrollment.user_id))
+    end
+
+
+    render json: @users
+  end
+
+  def show
+    @group_enrollments = GroupEnrollment.where(group_id: group_enrollment_params[:group_id])
+    @group_enrollments.each do |enrollment|
+      return enrollment if enrollment.user_id ==  group_enrollment_params[:user_id]
+    end
   end
 
   def create

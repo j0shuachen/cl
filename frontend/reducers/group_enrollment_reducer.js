@@ -12,13 +12,13 @@ import{
 // };
 // x
 
-const GroupEnrollmentReducer = (state={errors:[]}, action) => {
+const GroupEnrollmentReducer = (state={}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
 
   switch(action.type){
     case RECEIVE_GROUP_ENROLLMENTS:
-    return action.enrollment;
+      return action.enrollments;
 
     case RECEIVE_GROUP_ENROLLMENT:
     const newEvent = {[action.enrollment.id]: action.enrollment};

@@ -1,13 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 // import GroupEnrollment from '../group_enrollments/group_enrollment_container';
+// import GroupEnrollment from '../search/group_enrollment_container';
+
 
 class GroupShow extends React.Component{
 
   constructor (props) {
     super(props);
-    // console.log(this.props);
     this.state= {
+      member: false
+
     };
     // this.renderEvents = this.renderEvents.bind(this);
     this.renderU = this.renderU.bind(this);
@@ -18,6 +21,8 @@ class GroupShow extends React.Component{
 
   componentDidMount(){
     this.props.fetchGroup(this.props.match.params.groupId);
+    this.props.fetchEvents();
+
   }
 
   // componentWillReceiveProps(nextProps){
@@ -26,9 +31,15 @@ class GroupShow extends React.Component{
   //   }
   // }
 
+
+
+
 renderU (){
+  // console.log(this.props);
   const show =`/groups/${this.props.group.id}/update`;
-  let g = this.props.currentUser;
+  if (this.props.currentUser){
+
+  let g = this.props.currentUser.id;
   let v = this.props.group.user_id;
   if (v === g){
     return (
@@ -37,6 +48,7 @@ renderU (){
       </div>
     );
   }
+}
 }
 
 // renderEvents(events = []){
@@ -108,14 +120,24 @@ renderU (){
 
     // console.log(this.props.mod);
 
-    // console.log("insdie");
-    const modd = () => {
+    const moddname = () => {
       if(this.props.group.mod){
         return (
           this.props.group.mod.name
         );
       }
     };
+
+    const moddcontact = () => {
+      if (this.props.group.mod){
+        return (
+          this.props.group.mod.email
+        );
+      }
+    };
+
+
+
     // console.log(this.props.group.mod);
     // const l = this.props.group.mod;
     // console.log(l);
@@ -140,11 +162,12 @@ renderU (){
       }
     }
   };
+
     return(
     <div className="groupeventeach" key={event.id}>
         <div className="groupeventname">{event.name}</div>
           <div className="groupeventlocation">Event location: {event.location}</div>
-
+            <img className="eventpico" src={event.image_url}></img>
       <div className="groupeventid">Event# {event.id}</div>
 
       <div className="groupeventorganizer">Event organizer: {event.user_id}</div>
@@ -155,6 +178,10 @@ renderU (){
 );
 })
 );
+
+
+// console.log(this.props.group);
+
 
   return (
     <div className="singlegroupcontainer">
@@ -186,13 +213,14 @@ renderU (){
         <div className="singlegroupsidebar">
 
           <div className="gcreated">
-            <div className="sidehead">
-            </div>
+            <img className="grouppico" src={this.props.group.image_url}></img>
+
 
             <div className="gcreated2">
               <div className="g11">{this.props.group.name}</div>
               <div className="g2">Created: {this.props.group.created_at}</div>
-              <div className="g3">{modd()}</div>
+              <div className="g3"> Mod: {moddname()}</div>
+              <div className="g4"> Contact Info: {moddcontact()}</div>
           </div>
               <div className="gcreated3">{this.renderU()}
               </div>
@@ -212,7 +240,6 @@ renderU (){
 
             </div>
       </div>
-
 
         <div className="singlegroupnews">
           <div>What's new</div>

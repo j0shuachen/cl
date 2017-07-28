@@ -26,10 +26,15 @@ class EventIndex extends React.Component{
     });
 
     return (
-      <div>
-        <ul>{eventItems}</ul>
+      <div className="x">
 
-      </div>
+        <div className="groupindexheader"> Find an Event!</div>
+          <div className="searhbarz">
+            <div className="searchwhite"></div>
+          </div>
+        <ul className="grouplist">{eventItems}</ul>
+</div>
+
     );
   }
 }

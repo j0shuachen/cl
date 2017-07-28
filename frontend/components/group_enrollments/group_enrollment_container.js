@@ -12,7 +12,7 @@ const mapStateToProps = (state, {match}) => {
   // const enrollmentId = parseInt(match.params.id);
   // const groupId = parseInt(match.params.groupId);
   // const group = selectGroup(state, match.params.groupId);
-console.log(state);
+// console.log(state);
   return {
     member: false
 

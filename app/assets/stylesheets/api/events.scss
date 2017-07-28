@@ -2,7 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.tt{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  max-width: 1500px;
+  margin-left: 20px;
+  // align-self: center;
+  // flex-direction: column;
 
+}
 
 .eventformcontainer{
   display: flex;
@@ -33,7 +42,7 @@
   // align-content: center;
   height: 100%;
   width: 100%;
-  min-height: 900px;
+  min-height: 1200px;
   min-width: 600px;
   margin-top: 40px;
   // justify-content: center;
@@ -66,6 +75,40 @@ padding: 20px;
 
   padding: 20px;
 
+}
+
+
+.eventpic{
+  display: flex;
+  flex-direction: column;
+  min-width: 800px;
+  justify-content: center;
+  align-self: center;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 10px;
+
+  padding: 20px;
+
+}
+.uploadeventbut{
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 300px;
+  min-height: 300px;
+  font-size: 60px;
+  padding: 20px;
+  margin-top: 10px;
+  color: white;
+  background-image: image_url("sunset.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 60px;
 }
 
 .eventdescription{
