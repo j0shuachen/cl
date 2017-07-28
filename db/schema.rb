@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20170728165242) do
     t.string "location", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_url", default: "http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif"
+    t.string "image_url", default: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif"
     t.index ["group_id"], name: "index_events_on_group_id"
     t.index ["location"], name: "index_events_on_location"
     t.index ["name"], name: "index_events_on_name"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20170728165242) do
     t.string "location", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_url", default: "http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif"
+    t.string "image_url", default: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif"
     t.index ["location"], name: "index_groups_on_location"
     t.index ["name"], name: "index_groups_on_name"
     t.index ["user_id"], name: "index_groups_on_user_id"

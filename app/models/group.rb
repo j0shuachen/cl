@@ -9,7 +9,7 @@
 #  location   :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  image_url  :string           default("http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif")
+#  image_url  :string           default("https://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif")
 #
 
 class Group < ApplicationRecord
