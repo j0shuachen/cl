@@ -87,6 +87,7 @@
 
 
   .grouplist{
+    z-index: -100;
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 30px;
@@ -112,6 +113,7 @@
 
 
   .g1{
+    z-index: -100;
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
     min-width: 300px;

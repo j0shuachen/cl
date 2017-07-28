@@ -4,12 +4,28 @@
 
 
 .res{
+
+  margin-top: 10px;
+  display: flex;
   width: 300px;
-  height: 30px;
+  height: 40px;
   font-size: 20px;
   text-decoration: none;
   background-color: #ed1c40;
+  font-family: 'Ubuntu', sans-serif;
+
+
   color: white;
+}
+
+.res:hover{
+    background-color: yellow;
+    color: black;
+}
+
+.res1{
+  background-color: #ed1c40;
+  z-index: 1000;
 }
 
 .indexpic{

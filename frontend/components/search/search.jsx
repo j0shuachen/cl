@@ -35,7 +35,7 @@ class Search extends React.Component {
       const o =`/groups/${group.id}`;
 
       return (
-        <div className= "res" key={idx}>
+        <div className= "res1" key={idx}>
         <Link className= "res" to={o} >{group.name}</Link>
       </div>);
     });
