@@ -64,15 +64,7 @@ group10= Group.create(name: "San Jose Hiking Crew", location: "san jose", user_i
 group11= Group.create(name: "food club", location: "san jose", user_id: 18, info: "We are a group of food lovers that explore different restaurants around the bay area. Join us as we explore a new restaurant every week! New members welcome!!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1501259277/585be1aa1600002400bdf2a6_ipusya.jpg")
 
 
-group12 = Group.create(name: "90's babies", location: "sunnyvale", user_id: 13, info: "The realization that this incoming high school freshmen were born in the 2000s means that the high school reign of 90s babies is over. But that doesn't mean we're getting old, it just means we're growing up!
-I created this group for people who just moved here like I did, or for locals who are interested in meeting new people. This group is as much as yours as it is mine. So if you have a great idea, don't hesitate to let me know!
-", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1501258285/2a1c5bbb55d56e983ff7ba2b09caa556--sharingan-eyes-kakashi-sharingan_vh5ubs.jpg")
 
-group13 = Group.new( name: "Bar Wednesday", location: "san jose", user_id: 20, info: "Bar Wednesday is a casual weekly event for local professionals across industries to socialize, philosophize and discuss new technologies. Members represent local startups, finance, technology, automotive, real estate and other industries.
-
-Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries.
-
-All are welcome! Please enjoy Bar Wednesday responsibly.", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1501258713/download_7_psujbp.jpg")
 
 group14 = Group.new( name: "Hackaday", location: "san jose", user_id: 17, info: "This meetup is for Hackaday enthusiasts in San Jose, run in partnership with Hackaday! More info to be added here soon.")
 
