@@ -5,14 +5,13 @@ class Api::GroupEnrollmentsController < ApplicationController
 
     @group_enrollments = GroupEnrollment.where(group_id: group_enrollment_params[:group_id])
 
-
     @users = []
     @group_enrollments.each do |enrollment|
       @users.push(User.find(enrollment.user_id))
     end
 
 
-    render json: @users
+    render 'api/group_enrollments/index'
   end
 
   def show

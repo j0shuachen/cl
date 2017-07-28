@@ -48,34 +48,34 @@ class HeaderBar3 extends React.Component{
   demo(){
     const guests = {1:{
       username: 'guest1',
-      password: 'guest1'
+      password: 'guest11'
     }, 2:{
       username: 'guest2',
-      password: 'guest2'
+      password: 'guest21'
     }, 3:{
       username: 'guest3',
-      email:'guest3',
+      email:'guest31',
     }, 4:{
       username: 'guest4',
-      password: 'guest4'},
+      password: 'guest41'},
       5:{
         username: 'guest5',
-        password: 'guest5'},
+        password: 'guest51'},
       6:{
         username: 'guest6',
-        password: 'guest6'},
+        password: 'guest61'},
       7:{
         username: 'guest7',
-        password: 'guest7'},
+        password: 'guest71'},
       8:{
         username: 'guest8',
-        password: 'guest8'},
+        password: 'guest81'},
       9:{
         username: 'guest9',
-        password: 'guest9'},
+        password: 'guest91'},
       10:{
         username: 'guest10',
-        password: 'guest10'}
+        password: 'guest101'}
       };
 
       const num = Math.floor((Math.random() * 10) + 1);

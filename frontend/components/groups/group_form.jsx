@@ -10,7 +10,7 @@ class GroupForm extends React.Component {
       location: "",
       user_id: "",
       errors: "",
-      image_url: ""
+      // image_url: ""
 
     };
     this.createGroup = this.createGroup.bind(this);
@@ -26,6 +26,8 @@ class GroupForm extends React.Component {
     this.props.fetchGroups();
   }
 
+
+
   createGroup(){
     const name = this.state.name;
     const info = this.state.info;
@@ -33,7 +35,7 @@ class GroupForm extends React.Component {
     const user = this.props.currentUser;
     const image = this.state.image_url;
     const groupe = {name: name, info: info, location: location, user_id: user, image_url: image};
-    this.props.createGroup({group: groupe}).then(()=>this.props.history.push(`/groups/${this.props.groups.length}`));
+    this.props.createGroup({group: groupe}).then(()=>this.props.history.push("/groups/"));
   }
 
   createName(e){
@@ -66,16 +68,12 @@ class GroupForm extends React.Component {
   }
 
  setImage(url){
-   console.log(url);
-  if (url === ""){
-    this.setState({image_url: null});
-
- }else{
-   this.setState({image_url: url});
+  if (url ){
+    this.setState({image_url: url});
 
  }
   //  console.log(this.state);
- }
+}
 
 
  uploadButton () {
@@ -83,8 +81,6 @@ class GroupForm extends React.Component {
      window.CLOUDINARY_OPTIONS, (errors, images) => {
        if(errors === null){
         this.setImage(images[0].url);
-      }else{
-        this.setImage(null);
       }
      }
    );

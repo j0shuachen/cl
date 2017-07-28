@@ -47,7 +47,7 @@
 .groupindexheader{
   display: flex;
   width: 100%;
-  height: 150px;
+  height: 100px;
   background-color: #ed1c40;
   font-family: 'Ubuntu', sans-serif;
   color: white;
@@ -110,11 +110,15 @@
   // align-items: center;
   // }
 
+
   .g1{
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
     min-width: 300px;
     min-height: 300px;
     display: flex;
     padding:10px;
+    flex-direction: column;
     font-size: 30px;
     width: 200px;
     align-self: center;
@@ -122,4 +126,5 @@
     border-top: 1px rgba(211,211,211,.7) solid;
     justify-content: center;
   align-items: center;
+  color:#ed1c40;
   }

@@ -10,7 +10,7 @@ class EventForm extends React.Component{
       name: "",
       description: "",
       location: "",
-      image_url: ""
+      // image_url: ""
 
     };
 

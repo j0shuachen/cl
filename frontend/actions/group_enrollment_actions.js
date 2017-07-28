@@ -19,7 +19,6 @@ export const receiveErrors = errors => ({
   errors
 });
 
-
 export const removeGroupEnrollment = enrollment => ({
   type: REMOVE_GROUP_ENROLLMENT,
   enrollment
@@ -31,10 +30,9 @@ export const fetchGroupEnrollment = id => (dispatch) => {
   });
 };
 
-export const fetchGroupEnrollments = () => (dispatch) => {
-  return APIUtil.fetchGroupEnrollments().then(
+export const fetchGroupEnrollments = (groupId) => (dispatch) => {
+  return APIUtil.fetchGroupEnrollments(groupId).then(
     enrollments => {
-      console.log("Server resp: " + enrollments);
       dispatch(receiveGroupEnrollments(enrollments));
     }
   );

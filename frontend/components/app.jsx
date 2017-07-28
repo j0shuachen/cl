@@ -25,12 +25,12 @@ const App = () => (
   <div>
     <header>
       <nav>
-        
+
         <HeaderBarContainer/>
         </nav>
     </header>
     <Switch>
-      <Route exact path="/" component={Dummy}/>
+      <Route exact path="/" component={GroupIndex}/>
         <Route exact path="/groups/:groupId/events/:eventId" component={EventShowContainer}/>
 
         <ProtectedRoute exact path="/groups/:id/create/event" component={EventFormContainer}/>

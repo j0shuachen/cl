@@ -32,11 +32,13 @@ class GroupIndex extends React.Component {
         height: '300px',
         width: '300px'
       };
+      // console.log(group);
         return (
           <div className="g1" key={idx}>
+            <Link to={showz}>    <img className="eo" src={group.image_url}></img>
+</Link>
+{group.name}
 
-            <Link style={t} className="indexlink" to={showz}>
-              {group.name}</Link>
           </div>
         );
     });
@@ -45,17 +47,19 @@ class GroupIndex extends React.Component {
 
     return (
       <div className="x">
+        <div className="backgroundgif">
+        <div className="dummyp">What do you love?</div>
+        <div className="dummypdos">Do more of it with MeetUp</div>
+        </div>
+
         <div className="groupindexheader"> Find a MeetUp! </div>
         <div className="searchbarz">
-
-          <div className="searchwhite"><Search/>
-
-          </div>
-
+          <div className="searchwhite"><Search/></div>
         </div>
         <ul className="grouplist">{groupItems}</ul>
 
       </div>
+
     );
 
 

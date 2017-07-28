@@ -14,7 +14,7 @@ class GroupShow extends React.Component{
     };
     // this.renderEvents = this.renderEvents.bind(this);
     this.renderU = this.renderU.bind(this);
-
+    // this.ismember = this.ismember.bind(this);
     // console.log(this.state);
   }
 
@@ -22,6 +22,7 @@ class GroupShow extends React.Component{
   componentDidMount(){
     this.props.fetchGroup(this.props.match.params.groupId);
     this.props.fetchEvents();
+    this.props.fetchGroupEnrollments(this.props.match.params.groupId);
 
   }
 
@@ -32,7 +33,21 @@ class GroupShow extends React.Component{
   // }
 
 
+  // ismember(){
+  //
+  //   const g = this.props.fetchGroupEnrollments(this.props.match.params.groupId);
+  //   console.log(g);
+  //   g.forEach((user) => {
+  //     if(user.user_id === this.props.currentUser.id){
+  //       return true;
+  //     }
+  //   });
+  //   return false;
+  //
+  // }
 
+  renderJoin(){
+  }
 
 renderU (){
   // console.log(this.props);
@@ -165,9 +180,11 @@ renderU (){
 
     return(
     <div className="groupeventeach" key={event.id}>
+
         <div className="groupeventname">{event.name}</div>
+          <img className="indexpic" src={event.image_url}></img>
+
           <div className="groupeventlocation">Event location: {event.location}</div>
-            <img className="eventpico" src={event.image_url}></img>
       <div className="groupeventid">Event# {event.id}</div>
 
       <div className="groupeventorganizer">Event organizer: {event.user_id}</div>

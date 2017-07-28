@@ -19,7 +19,6 @@ const GroupEnrollmentReducer = (state={}, action) => {
   switch(action.type){
     case RECEIVE_GROUP_ENROLLMENTS:
       return action.enrollments;
-
     case RECEIVE_GROUP_ENROLLMENT:
     const newEvent = {[action.enrollment.id]: action.enrollment};
     return merge({}, state, newEvent);

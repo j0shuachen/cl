@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import {fetchGroup, fetchGroups} from '../../actions/groups_actions';
+import {fetchGroupEnrollments} from '../../actions/group_enrollment_actions';
 import {selectGroup} from '../../reducers/selectors';
 import GroupShow from './group_show';
 import {fetchEvent, fetchEvents} from '../../actions/event_actions';
@@ -51,7 +52,7 @@ const mapStateToProps = (state, {match}) => {
     // name: mod[name],
     groupId,
     group,
-    event
+    enrollments: state.group_enrollments
     // mod: state.groups.groupId.mod
 
   };
@@ -61,7 +62,8 @@ const mapStateToProps = (state, {match}) => {
 const mapDispatchToProps = dispatch => ({
   fetchGroup: id => dispatch(fetchGroup(id)),
   // fetchGroups: filters => dispatch(fetchGroups(filters)),
-  fetchEvents: filters => dispatch(fetchEvents(filters))
+  fetchEvents: filters => dispatch(fetchEvents(filters)),
+  fetchGroupEnrollments: (groupId) => dispatch(fetchGroupEnrollments(groupId))
 });
 
 export default connect(
