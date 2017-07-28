@@ -15,7 +15,7 @@
 class Group < ApplicationRecord
   validates :user_id, :name, :info, :location, presence: true
 
-  belongs_to :mod,
+  belongs_to :mod, optional: true,
   primary_key: :id,
   foreign_key: :user_id,
   class_name: :User

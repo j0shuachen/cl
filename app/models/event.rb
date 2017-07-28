@@ -18,12 +18,12 @@ class Event < ApplicationRecord
             :location, presence: true
 
 
-  belongs_to :group,
+  belongs_to :group, optional: true,
   primary_key: :id,
   foreign_key: :group_id,
   class_name: :Group
 
-  belongs_to :organizer,
+  belongs_to :organizer, optional: true,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :User
