@@ -14,8 +14,8 @@ class GroupShow extends React.Component{
     };
     // this.renderEvents = this.renderEvents.bind(this);
     this.renderU = this.renderU.bind(this);
-    this.ismember = this.ismember.bind(this);
-    this.renderJoin= this.renderJoin.bind(this);
+    // this.ismember = this.ismember.bind(this);
+    // this.renderJoin= this.renderJoin.bind(this);
     // console.log(this.state);
   }
 
@@ -255,7 +255,6 @@ renderU(){
 
           <div className="grouphomeinfo">
             <div className="info">{this.props.group.info}</div>
-            <div>{this.renderJoin()}</div>
               <Link className="createeventt" to={idz +"/create/event"}>Create a new event</Link>
 
           </div>
