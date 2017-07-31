@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {fetchGroup, fetchGroups} from '../../actions/groups_actions';
-import {fetchGroupEnrollments} from '../../actions/group_enrollment_actions';
+import {fetchGroupEnrollments, createGroupEnrollment, deleteGroupEnrollment} from '../../actions/group_enrollment_actions';
 import {selectGroup} from '../../reducers/selectors';
 import GroupShow from './group_show';
 import {fetchEvent, fetchEvents} from '../../actions/event_actions';
@@ -63,7 +63,9 @@ const mapDispatchToProps = dispatch => ({
   fetchGroup: id => dispatch(fetchGroup(id)),
   // fetchGroups: filters => dispatch(fetchGroups(filters)),
   fetchEvents: filters => dispatch(fetchEvents(filters)),
-  fetchGroupEnrollments: (groupId) => dispatch(fetchGroupEnrollments(groupId))
+  fetchGroupEnrollments: (groupId) => dispatch(fetchGroupEnrollments(groupId)),
+  createGroupEnrollment: (enrollment) => dispatch(createGroupEnrollment(enrollment)),
+  deleteGroupEnrollment: (id) => dispatch(deleteGroupEnrollment(id))
 });
 
 export default connect(

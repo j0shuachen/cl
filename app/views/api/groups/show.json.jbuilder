@@ -6,7 +6,9 @@ json.events do
 end
 
 
-
+json.members do
+  json.array! @group.members
+end
 
 
 # json.members do

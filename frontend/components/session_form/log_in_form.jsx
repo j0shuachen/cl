@@ -110,7 +110,6 @@ class LogInForm extends React.Component {
           <div className="logintosignup">{this.navLink()}</div>
           </div>
 
-          <div onClick={this.demo}> guest demo </div>
         </form>
       </div>
     );

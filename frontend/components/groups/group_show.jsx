@@ -9,13 +9,17 @@ class GroupShow extends React.Component{
   constructor (props) {
     super(props);
     this.state= {
-      member: false
+      member: false,
+      enrollment_id: null
+
 
     };
     // this.renderEvents = this.renderEvents.bind(this);
     this.renderU = this.renderU.bind(this);
     // this.ismember = this.ismember.bind(this);
-    // this.renderJoin= this.renderJoin.bind(this);
+    // this.renderJ = this.renderJ.bind(this);
+    // this.createMember= this.createMember.bind(this);
+    // this.deleteMember= this.deleteMember.bind(this);
     // console.log(this.state);
   }
 
@@ -23,8 +27,7 @@ class GroupShow extends React.Component{
   componentDidMount(){
     this.props.fetchGroup(this.props.match.params.groupId);
     this.props.fetchEvents();
-    this.props.fetchGroupEnrollments(this.props.match.params.groupId);
-
+    // this.props.fetchGroupEnrollments(this.props.match.params.groupId);
   }
 
   // componentWillReceiveProps(nextProps){
@@ -34,29 +37,56 @@ class GroupShow extends React.Component{
   // }
 
 
-  // ismember(){
-  //
-  //   const g = this.props.fetchGroupEnrollments(this.props.match.params.groupId);
-  //   // console.log(g);
-  //   g.forEach((user) => {
-  //     if(user.user_id === this.props.currentUser.id){
-  //       return true;
-  //     }
-  //   });
-  //   return false;
-
-
-  // renderJoin(){
-  //   if(this.ismember()){
-  //     return (
-  //       <div>Join Group</div>
-  //     );
-  //   }else{
-  //     return (
-  //       <div>Leave Group</div>
-  //     );
-  //   }
-  // }
+//   ismember(){
+//
+//     const g = this.props.fetchGroupEnrollments(this.props.match.params.groupId);
+//     // console.log(g);
+//     if (g){
+//     Array.from(g).forEach((user) => {
+//       if(user.user_id === this.props.currentUser.id){
+//         this.setState({
+//           member: true,
+//           enrollment_id: g.id
+//         });
+//         return true;
+//       }
+//     });
+//     return false;
+//   }
+// }
+// //
+// //
+// createMember(){
+//   const m = this.props.currentUser.id;
+//   const o = this.props.groupId;
+//   this.setState({member: true});
+//   this.props.createGroupEnrollment({group_enrollment:{user_id: m, group_id: o}});
+//   console.log("created");
+// }
+//
+// deleteMember(){
+//   const m = this.props.currentUser.id;
+//   const o = this.props.groupId;
+//   this.setState({member: false});
+//   this.props.deleteGroupEnrollment(m);
+// }
+// //
+// renderJ(){
+//   if (this.ismember()){
+//     return (
+//       <div>
+//         <div onClick={this.deleteMember}>Leave group!</div>
+//       </div>
+//
+//     );
+//   }else{
+//     return (
+//       <div>
+//         <div onClick={this.createMember}>Join group!</div>
+//       </div>
+//     );
+//   }
+// }
 
 renderU(){
   const show =`/groups/${this.props.group.id}/update`;

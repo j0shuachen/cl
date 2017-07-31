@@ -16,9 +16,10 @@ class Api::GroupEnrollmentsController < ApplicationController
 
   def show
     @group_enrollments = GroupEnrollment.where(group_id: group_enrollment_params[:group_id])
-    @group_enrollments.each do |enrollment|
-      return enrollment if enrollment.user_id ==  group_enrollment_params[:user_id]
-    end
+    # @group_enrollments.each do |enrollment|
+    #   return enrollment if enrollment.user_id ==  group_enrollment_params[:user_id]
+    # end
+    render :show
   end
 
   def create
@@ -36,7 +37,7 @@ class Api::GroupEnrollmentsController < ApplicationController
   end
 
   def destroy
-    @group_enrollment = GroupEnrollment.find(params[:user_id, :group_id])
+    @group_enrollment = GroupEnrollment.find_by(params[:user_id], params[:group_id])
     if @group_enrollment.destroy
       render :show
     else
