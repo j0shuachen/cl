@@ -46,8 +46,18 @@ export const createGroupEnrollment = enrollment => dispatch => {
   );
 };
 
-export const deleteGroupEnrollment = id => dispatch => {
-  return APIUtil.deleteGroupEnrollment(id).then(
+// export const deleteGroupEnrollment = (userId, groupId) => dispatch => {
+//   return APIUtil.deleteGroupEnrollment(userId, groupId).then(
+//     resp => {
+//       dispatch(removeGroupEnrollment(resp));
+//     }
+//   );
+// };
+
+
+
+export const deleteGroupEnrollment = enrollment => dispatch => {
+  return APIUtil.deleteGroupEnrollment(enrollment).then(
     resp => {
       dispatch(removeGroupEnrollment(resp));
     }

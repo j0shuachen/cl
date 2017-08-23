@@ -20,16 +20,16 @@ class Group < ApplicationRecord
   foreign_key: :user_id,
   class_name: :User
 
-  has_many :group_enrollments,
+  has_many :group_enrollments, dependent: :destroy,
   primary_key: :id,
   foreign_key: :group_id,
   class_name: :GroupEnrollment
 
-  has_many :members,
+  has_many :members, dependent: :destroy,
   through: :group_enrollments,
   source: :user
 
-  has_many :events,
+  has_many :events, dependent: :destroy,
   primary_key: :id,
   foreign_key: :group_id,
   class_name: :Event

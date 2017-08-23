@@ -32,7 +32,7 @@ class GroupEnrollment extends React.Component {
     const userId = this.props.session.currentUser;
     const member = {user_id: userId, group_id: groupId};
     this.setState({member:true});
-    this.props.removeGroupEnrollment({member}).then(() => this.props.history.push(`/groups/${groupId}`));
+    this.props.removeGroupEnrollment({member});
   }
 
   render(){

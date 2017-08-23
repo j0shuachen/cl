@@ -25,7 +25,6 @@ import {createGroup, fetchGroup, fetchGroups} from './util/group_api_util';
 import {createEvent, fetchEvent, fetchEvents} from './util/event_api_util';
 import {deleteGroupEnrollment, createGroupEnrollment, fetchGroupEnrollment, fetchGroupEnrollments } from './util/group_enrollment_api_util';
 import {  } from './actions/group_enrollment_actions';
-
 window.signup = signup;
 window.login = login;
 window.logout = logout;

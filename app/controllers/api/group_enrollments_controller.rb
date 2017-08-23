@@ -15,7 +15,7 @@ class Api::GroupEnrollmentsController < ApplicationController
   end
 
   def show
-    @group_enrollments = GroupEnrollment.where(group_id: group_enrollment_params[:group_id])
+    @group_enrollment = GroupEnrollment.where(group_id: group_enrollment_params[:group_id], user_id: group_enrollment_params[:user_id])
     # @group_enrollments.each do |enrollment|
     #   return enrollment if enrollment.user_id ==  group_enrollment_params[:user_id]
     # end
@@ -37,9 +37,43 @@ class Api::GroupEnrollmentsController < ApplicationController
   end
 
   def destroy
-    @group_enrollment = GroupEnrollment.find_by(params[:user_id], params[:group_id])
-    if @group_enrollment.destroy
-      render :show
+    # @group_enrollment = GroupEnrollment.find_by(user_id: group_enrollment_params[:user_id], group_id: group_enrollment_params[:group_id])
+    # @group_enrollment = GroupEnrollment.where(user_id: group_enrollment_params[:user_id], group_id: group_enrollment_params[:group_id])
+
+    @group_enrollment = GroupEnrollment.find_by(user_id: group_enrollment_params[:user_id])
+    # @group_enrollment = GroupEnrollment.find(group_enrollment_params[:id])
+    if @group_enrollment
+    @group_enrollment.destroy
+    @group_enrollments = GroupEnrollment.where(group_id: group_enrollment_params[:group_id])
+    # @group = Group.where(group_id: group_enrollment_params[:group_id])
+    @group = Group.find(group_enrollment_params[:group_id])
+    @users = []
+    @group_enrollments.each do |enrollment|
+      @users.push(User.find(enrollment.user_id))
+    end
+    render @group
+    # if @group_enrollment.destroy
+    # if @group_enrollment
+    #   if @group_enrollment.is_a?
+    #     @group_enrollment.each do |x|
+    #       x.destroy
+    #     end
+    #   else
+    #   # p @group_enrollment
+    #     if @group_enrollment.destroy
+    #   # end
+    #     # if x.destroy
+    #     #   render 'api/groups/groupId'
+    #     # end
+    #     # render :show
+    #     render `api/groups/#{group_enrollment_params[:group_id]}`
+    #     end
+    #   end
+      # render :show
+      # render 'api'
+      # if @group_enrollment
+      #   GroupEnrollment.destroy(params[:id])
+
     else
       render(
       json: ["error"],
@@ -55,7 +89,7 @@ class Api::GroupEnrollmentsController < ApplicationController
   private
 
   def group_enrollment_params
-    params.require(:group_enrollment).permit(:group_id, :user_id)
+    params.require(:group_enrollment).permit(:group_id, :user_id, :id)
   end
 
 end

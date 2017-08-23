@@ -29,9 +29,33 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @group_enrollment = GroupEnrollment.where(user_id: user_params[:user_id], group_id: user_params[:group_id])
+    # if @group_enrollment.destroy
+
+    if @group_enrollment
+      # v = @group_enrollment
+      @group_enrollment.each do |x|
+        x.destroy
+      end
+        # if x.destroy
+        #   render 'api/groups/groupId'
+        # end
+      # render :show
+      # render :show
+      # render 'api'
+
+    else
+      render(
+      json: ["error"],
+      status: 909
+      )
+    end
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :name, :location, :email)
+    params.require(:user).permit(:username, :password, :name, :location, :email, :user_id, :group_id)
   end
 end

@@ -21,6 +21,7 @@ import EventIndex from '../components/groups/events_index_container';
 import GroupShowContainer from "./groups/group_show_container";
 import EventFormContainer from "./events/event_form_container";
 import UpdateEventContainer from '../components/events/update_event_container';
+import GroupMembersContainer from './groups/group_members_container';
 const App = () => (
   <div>
     <header>
@@ -32,7 +33,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={GroupIndex}/>
         <Route exact path="/groups/:groupId/events/:eventId" component={EventShowContainer}/>
-
+        <Route exact path="/groups/:groupId/members" component={GroupMembersContainer}/>
         <ProtectedRoute exact path="/groups/:id/create/event" component={EventFormContainer}/>
           <ProtectedRoute exact path="/groups/:groupId/events/:eventId/update" component={UpdateEventContainer}/>
           <ProtectedRoute exact path="/groups/:groupId/update" component={GroupUpdateContainer}/>

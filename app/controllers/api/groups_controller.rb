@@ -22,6 +22,7 @@ class Api::GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    
     # render api_group_url(:id)
 
     render :show
