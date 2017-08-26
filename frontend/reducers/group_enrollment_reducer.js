@@ -23,13 +23,24 @@ const GroupEnrollmentReducer = (state={}, action) => {
     const newEvent = {[action.enrollment.id]: action.enrollment};
     // return merge({}, state, newEvent);
     const op = merge({}, state);
-    if(op.enrolls){
-    op.enrolls[action.enrollment.id]= action.enrollment;
-    return op;
-  }else{
-    op.enrolls = {};
-    return op;
-  }
+    console.log(action.enrollment);
+//     if(op.enrolls){
+//     op.enrolls[action.enrollment.id]= action.enrollment.;
+//     // op.members[action.enrollment.id] = action.enrollment;
+//     return op;
+//   // }else{
+//   //   op.enrolls = {};
+//   //   return op;
+//   // }
+// }else{
+//   op.enrolls = {};
+//
+//   op.enrolls[action.enrollment.id] = action.enrollment;
+//   return op;
+// }
+  op.enrolls = action.enrollment.enrolls;
+  op.members = action.enrollment.members;
+  return op;
 
     case REMOVE_GROUP_ENROLLMENT:
       newState = merge({}, state);
@@ -37,9 +48,14 @@ const GroupEnrollmentReducer = (state={}, action) => {
       // console.log(action.enrollment);
       // console.log(newState.members[action.enrollment.user_id]);
       // console.log(newState.enrolls);
-      delete newState.members[action.enrollment.user_id];
-      delete newState.enrolls[action.enrollment.id];
+      // delete newState.members[action.enrollment.user_id];
+      console.log(action.enrollment);
+      // delete newState.enrolls[action.enrollment.id];
+      // delete newState.members[action.enrollment.user_id];
       // console.log('ye', newState);
+
+      newState.enrolls = action.enrollment.enrolls;
+      newState.members = action.enrollment.members;
       return newState;
       case RECEIVE_ERRORS:
         const errors = action.errors;

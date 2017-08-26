@@ -10,13 +10,7 @@
 # end
 # end
 #
-json.members do
-@users.each do |user|
-  json.set! user.id do
-    json.extract! user, :id, :username, :name, :email
-  end
-end
-end
+
 json.enrolls do
 @group_enrollments.each do |enrollment|
   json.set! enrollment.id do
@@ -24,6 +18,14 @@ json.enrolls do
   end
 end
 end
+json.members do
+@users.each do |user|
+  json.set! user.id do
+    json.extract! user, :id, :username, :name, :email
+  end
+end
+end
+
 # json.enrolls do
 #   json.array! @group_enrollments
 # end

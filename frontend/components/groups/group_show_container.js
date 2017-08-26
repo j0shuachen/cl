@@ -5,7 +5,7 @@ import {selectGroup} from '../../reducers/selectors';
 import GroupShow from './group_show';
 import {fetchEvent, fetchEvents} from '../../actions/event_actions';
 import {selectEvents, selectAll} from '../../reducers/selectors';
-
+import {createEventEnrollment, deleteEventEnrollment} from '../../actions/event_enrollment_actions';
 const mapStateToProps = (state, {match}) => {
   const eventId = parseInt(match.params.eventId);
   // console.log(state);
@@ -48,7 +48,9 @@ const mapDispatchToProps = dispatch => ({
   fetchGroupEnrollments: (groupId) => dispatch(fetchGroupEnrollments(groupId)),
   fetchGroupEnrollment: id => dispatch(fetchGroupEnrollment(id)),
   createGroupEnrollment: (enrollment) => dispatch(createGroupEnrollment(enrollment)),
-  deleteGroupEnrollment: (id) => dispatch(deleteGroupEnrollment(id))
+  deleteGroupEnrollment: (id) => dispatch(deleteGroupEnrollment(id)),
+  createEventEnrollment: (enrollment) => dispatch(createEventEnrollment(enrollment)),
+    deleteEventEnrollment: (id) => dispatch(deleteEventEnrollment(id))
 });
 
 export default connect(

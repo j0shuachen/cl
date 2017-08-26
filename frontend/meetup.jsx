@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store}/>, root);
 });
 
-
+import {createEventEnrollment, deleteEventEnrollment, fetchEventEnrollment,  fetchEventEnrollments} from './util/event_enrollment_api_util';
 import { signup, login, logout } from './util/session_api_util';
 import {createGroup, fetchGroup, fetchGroups} from './util/group_api_util';
 import {createEvent, fetchEvent, fetchEvents} from './util/event_api_util';
@@ -38,3 +38,7 @@ window.fetchGroups = fetchGroups;
 window.fetchEvents = fetchEvents;
 window.fetchEvent = fetchEvent;
 window.createEvent = createEvent;
+window.createEventEnrollment = createEventEnrollment;
+window.deleteEventEnrollment = deleteEventEnrollment;
+window.fetchEventEnrollment = fetchEventEnrollment;
+window.fetchEventEnrollments = fetchEventEnrollments;

@@ -1,8 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-// import GroupEnrollment from '../group_enrollments/group_enrollment_container';
-// import GroupEnrollment from '../search/group_enrollment_container';
-
 
 class GroupShow extends React.Component{
 
@@ -12,44 +9,42 @@ class GroupShow extends React.Component{
       // member: null
       loaded: false
     };
-    // console.log(this.props);
-    // this.renderEvents = this.renderEvents.bind(this);
+
     this.renderU = this.renderU.bind(this);
     this.ismember = this.ismember.bind(this);
     this.renderJ = this.renderJ.bind(this);
     this.createMember= this.createMember.bind(this);
     this.deleteMember= this.deleteMember.bind(this);
     // this.amember = this.amember.bind(this);
-    this.enid = this.enid.bind(this);
     this.renderjoin = this.renderjoin.bind(this);
     this.renderdel = this.renderdel.bind(this);
     this.opmember = this.opmember.bind(this);
-    // console.log(this.props);
-    // this.allmembs = this.allmembs.bind(this);
-    // console.log(this.state);
-    // this.groupmembers= this.groupmembers.bind(this);
+    this.eventsetter = this.eventsetter.bind(this);
+
   }
   getInitialState(){
     this.opmember();
   }
 
   componentDidMount(){
-    this.props.fetchGroup(this.props.match.params.groupId);
-    this.props.fetchEvents();
+    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true}));
+    this.props.fetchEvents().then(() => this.setState({checking: true}));
     this.props.fetchGroupEnrollments(this.props.match.params.groupId);
     // this.renderJ();
     // this.amember();
     this.opmember();
+    this.eventsetter();
     // this.ismember();
   }
 
   componentWillMount(){
-    this.props.fetchGroup(this.props.match.params.groupId);
-    this.props.fetchEvents();
+    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter());
+    // this.props.fetchEvents().then(() => this.eventsetter().then(this.fetchEventEnrollments()));
     this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
     // this.renderJ();
     // this.ismember();
     this.opmember();
+    this.eventsetter();
   }
 
   componentWillReceiveProps(nextProps){
@@ -62,23 +57,7 @@ class GroupShow extends React.Component{
   componentWillUpdateProps(prevProps,nextProps){
 
   }
-// ismember(){
-//       const g = this.props.fetchGroupEnrollments(this.props.match.params.groupId);
-//       if(g){
-//         const v = Array.from(g);
-//         for (var i=0; i < v.length; i++){
-//           if(v[i].user_id === this.props.currentUser.id){
-//             this.setState({
-//               member: true,
-//               enrollment_id: v[i].id
-//             });
-//             return true;
-//           }else{
-//             return false;
-//           }
-//         }
-//       }
-// }
+
 
 opmember(){
   if(this.props.memboz){
@@ -86,7 +65,7 @@ opmember(){
   const g = this.props.memboz;
   const og = Object.values(g);
   // const ot = Object.values(og);
-  console.log('og',og);
+  // console.log('og',og);
 
   for(var i=0; i < og.length; i++){
     if(og[i].id === this.props.currentUser.id){
@@ -116,132 +95,24 @@ ismember(){
       this.setState({member: false});
       return false;
     }
-  // if(this.props.group_enrollments){
-  //   const g = this.props.group_enrollments[1];
-  //   let ost = Object.keys(g);
-  //   if(ost){
-  //     for(var i=0; i < ost.length; i++){
-  //       let op = g[ost[i]];
-  //       if(op.user_id===this.props.currentUser.id){
-  //         this.setState({member: true});
-  //         return true;
-  //       }
-  //     }
-  //     this.setState({member: false});
-  //     return false;
-  //   }
-  // }
 }
-
-// amember(){
-//   // console.log(this.props);
-//   let y = this.props.group.members;
-//   if (y){
-//     // let x = false;
-//     y.forEach((el) => {
-//       // console.log(el);
-//       // console.log(this.props);
-//       if(el.id === this.props.currentUser.id){
-//         this.setState({member: true});
-//         // console.log('yooo');
-//         // return true;
-//       }
-//     });
-//     // return false;
-//
-//   }
-//   // this.setState({member: x});
-//
-//
-// }
 
 createMember(){
   const m = this.props.currentUser.id;
   const o = this.props.groupId;
-  if(this.props.createGroupEnrollment({group_enrollment:{user_id: m, group_id: o}})){
-    console.log('dododo');
+  this.props.createGroupEnrollment({group_enrollment:{user_id: m, group_id: o}}).then(()=> this.setState({check: true}));
+    // console.log('dododo');
     // this.forceUpdate();
-    // this.opmember();
     this.setState({member: true});
-
-    // this.amember();
-  }
-}
-
-enid(){
-  let cur;
-  this.props.group.members.forEach((x) => {
-    if(x.user_id === this.props.currentUser.id){
-      cur = x.id;
-    }
-  });
-  return cur;
 }
 
 deleteMember(){
   const m = this.props.currentUser.id;
   const o = this.props.groupId;
-  // console.log(m);
-  // console.log(o);
-
-//   if(this.props.group.members){
-//     this.props.group.members.forEach((x) => {
-//       console.log(x);
-//       console.log(this.props);
-//
-//       // console.log(this.props.fetchGroupEnrollments({group_enrollment:{ group_id: this.props.groupId, user_id: this.props.currentUser.id}}));
-//       // console.log(this.props.currentUser.id);
-//     if(x.id === this.props.currentUser.id){
-//       // console.log('need');
-//       let cur = x.id;
-//       console.log('deleted');
-//
-//       this.props.deleteGroupEnrollment({group_enrollment:{user_id: m, group_id: o}}).then(
-//       this.setState({member: false}));
-//     }
-//   });
-// }
-
-  // if (this.props.group){
-  //   this.props.group.enrollments.forEach( e => {
-  //     console.log(e);
-  //     if (e.user_id === this.props.currentUser.id){
-  //       console.log('matched');
-  //       console.log(e);
-  //       if(this.props.deleteGroupEnrollment({group_enrollment:{id: e.id, user_id: e.user_id, group_id: e.group_id}, id: e.id})){
-  //         console.log('hithithit', this.props);
-  //       this.setState({member: false});
-  //       this.forceUpdate();
-  //       this.amember();
-  //     }}
-  //   }
-  //
-  //
-  // );
-  // }
-//   if (this.props.group_enrollments){
-//   let ok = this.props.group_enrollments[1];
-//   console.log('ok', ok);
-//   for(var i=0; i < ok.length; i++){
-//     // console.log(ok[i]);
-//     // console.log(this.props.currentUser.id);
-//     if(ok[i].user_id === this.props.currentUser.id){
-//       // console.log('ld');
-//       this.props.deleteGroupEnrollment({group_enrollment:{id: ok[i].id, user_id: ok[i].user_id, group_id: ok[i].group_id}, id: ok[i].id});
-//         // console.log('huir');
-//         this.setState({member: false});
-//         break;
-// }
-//
-//   }
-//
-// }
-
-
-
+this.setState({check: true});
 // console.log(this.props);
 if (this.props.group_enrollments){
-  let ok = this.props.group_enrollments[1];
+  let ok = this.props.group_enrollments[0];
   let arr = Object.keys(ok);
   if (arr.length > 0){
   for(var i=0; i < arr.length; i++){
@@ -268,6 +139,27 @@ if (this.props.group_enrollments){
 
 
 }
+eventsetter(){
+  let v = this.props.currentUser.id;
+  if(this.props.group.events){
+    let t = this.props.group.events;
+    for(var i=0; i < t.length; i++){
+      if(t[i].rsvp){
+      if(t[i].rsvp[v] && this.state.member){
+        // console.log('i',t[i].rsvp[v]);
+        // console.log('v', v);
+        // console.log(this.state);
+      this.setState({[t[i].id]: true });
+      // console.log('fgjhkl', this.state);
+    }else{
+      this.setState({[t[i].id]: false});
+    }
+  }else{
+    // this.setState({[t[i].id]: false});
+  }
+    }
+  }
+}
 //
 renderJ(){
   if (this.state.member){
@@ -287,7 +179,7 @@ renderJ(){
 }
 
 componentWillReceiveProps(nextProps){
-  console.log(nextProps);
+  // console.log(nextProps);
   this.setState({nextProps});
   // if(this.props.match.params.id !== nextProps.match.params.id){
   //   this.props.fetchGroup(nextProps.match.params.id);
@@ -310,6 +202,7 @@ renderjoin(){
   );
 }
 
+
 renderU(){
   const show =`/groups/${this.props.group.id}/update`;
   if (this.props.currentUser){
@@ -331,13 +224,6 @@ renderU(){
       );
     }
 
-    // if(!this.state.member){
-    //   return(
-    //     <div>Loading...</div>
-    //   );
-    // }
-    // console.log(this.opmember());
-    // console.log(this.props);
     const idz = `/groups/${this.props.group.id}`;
     const members=`/groups/${this.props.group.id}/members`;
     const sponsors=`/groups/${this.props.group.id}/sponsors`;
@@ -352,16 +238,6 @@ renderU(){
         );
       }
     };
-
-  //   const meme = (me = []) => (
-  //     me.map(o => {
-  //     return (
-  //       <div>{o.name}</div>
-  //     );
-  //   }
-  // ));
-  //
-  //   console.log(this.props.group.members);
     const moddcontact = () => {
       if (this.props.group.mod){
         return (
@@ -370,83 +246,116 @@ renderU(){
       }
     };
 
-    const eventList= (events = []) => (
-  events.map(event => {
-    const x = () => {
-
-  if (this.props.currentUser){
-    let g = this.props.currentUser.id;
-    let v = event.user_id;
-    const lin = `/groups/${event.group_id}/events/${event.id}/update`;
-      if (g===v){
-        return (
-          <div className="upLink">
-            <Link className= "uplink" to={lin}>Update Event</Link>
-          </div>
-        );
-      }
-    }
-  };
+  const eventList= (events = []) => (
+    events.map(event => {
+      const x = () => {
+        if (this.props.currentUser){
+          let g = this.props.currentUser.id;
+          // let v = event.user_id;
+          let v = event.organizer.id;
+          const lin = `/groups/${event.group_id}/events/${event.id}/update`;
+          if (g===v){
+            return (
+              <div className="upLink">
+                <Link className= "uplink" to={lin}>Update Event</Link>
+              </div>
+            );
+          }
+        }
+      };
+      const leave = () => {
+        console.log('hitttttleave', this.props);
+        this.setState({[event.id]: false});
+        console.log('left', this.state);
+    // this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, groupId: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
+        this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, groupId: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));
+      };
+      const join =() => {console.log('hit');
+        this.setState({[event.id]: true});
+    // this.props.createEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
+        this.props.createEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));
+        console.log('state',this.state);
+        console.log(this.props);
+      };
+      const ot = () => {
+    // console.log(this.state);
+        if(this.state[event.id] && this.state.member){
+          return(
+            <div className='leaveevent' onClick={leave}>
+              Leave Event
+            </div>
+          );
+        }else if (!this.state.member) {
+          return(
+            <div>
+              Join group to RSVP
+            </div>
+          );
+        }
+        else if (this.state.member && !this.state[event.id]) {
+          return(
+            <div className='eventrsvp'>
+              <div className='joiner' onClick={join}>RSVP</div>
+            </div>
+          );
+        }
+      };
 
     return(
-    <div className="groupeventeach" key={event.id}>
-
+      <div className="groupeventeach" key={event.id}>
         <div className="groupeventname">{event.name}</div>
-          <img className="indexpic" src={event.image_url}></img>
-
-          <div className="groupeventlocation">Event location: {event.location}</div>
-      <div className="groupeventid">Event# {event.id}</div>
-
-      <div className="groupeventorganizer">Event organizer: {event.user_id}</div>
-      <div className="groupevenntdescription">{event.description}</div>
-      <div className="uplinko">{x()}
+        <img className="indexpic" src={event.image_url}></img>
+        <div className="groupeventlocation">Event location: {event.location}</div>
+        <div className="groupeventid">Event# {event.id}</div>
+        <div className="groupeventorganizer">Event organizer: {event.organizer.name}</div>
+        <div className="groupevenntdescription">{event.description}</div>
+        <div className="uplinko">{x()}
+      </div>
+      <div>{ot()}</div>
     </div>
-  </div>
-);
-})
+    );
+  })
 );
 
   return (
     <div className="singlegroupcontainer">
       <div className="groupheader">
         <div className="singlegroupbanner"></div>
-      <div className="singlegroupheader">
-        <span>{this.props.group.name}</span>
-      </div>
+        <div className="singlegroupheader">
+          <span>{this.props.group.name}</span>
+        </div>
 
       <div className="singletop">
-      <div className="singlegroupbar">
-        <Link to={idz} className="glink">Home</Link>
-        <Link to={members} className="glink">Members</Link>
-        <Link to={sponsors} className="glink">Sponsors</Link>
-        <Link to={photos} className="glink">Photos</Link>
-        <Link to={pages} className="glink">Pages</Link>
+        <div className="singlegroupbar">
+          <Link to={idz} className="glink">Home</Link>
+          <Link to={members} className="glink">Members</Link>
+          <Link to={sponsors} className="glink">Sponsors</Link>
+          <Link to={photos} className="glink">Photos</Link>
+          <Link to={pages} className="glink">Pages</Link>
+        </div>
+
+        <div className="bardos">
+          <Link className="glink" to={myprofile} >My profile</Link>
+        </div>
       </div>
-      <div className="bardos">
-      <Link className="glink" to={myprofile} >My profile</Link>
-      </div>
-    </div>
       </div>
 
-    <div className="singlegroup">
+      <div className="singlegroup">
         <div className="singlegroupsidebar">
           <div className="gcreated">
             <img className="grouppico" src={this.props.group.image_url}></img>
-
 
             <div className="gcreated2">
               <div className="g11">{this.props.group.name}</div>
               <div className="g2">Created: {this.props.group.created_at}</div>
               <div className="g3"> Mod: {moddname()}</div>
               <div className="g4"> Contact Info: {moddcontact()}</div>
-          </div>
-              <div className="gcreated3">{this.renderU()}
-              </div>
             </div>
+            <div className="gcreated3">{this.renderU()}</div>
           </div>
+        </div>
 
         <div className="singlegroupmain">
-
           <div className="grouphomeinfo">
             <div className="info">{this.props.group.info}</div>
             {this.state.member?  this.renderdel() : this.renderjoin()  }
@@ -472,124 +381,3 @@ renderU(){
 
 }
 export default GroupShow;
-
-
-
-    // console.log(this.props.group.mod);
-    // const l = this.props.group.mod;
-    // console.log(l);
-    // if (l){
-    //   console.log(l.name);
-    // }
-
-    // const eventg = this.props.group.events.forEach((e, idx) => (
-    //   <div key={idx} name={e.name} description={e.description}></div>
-    // ));
-    // const year=created.getUTCFullYear();
-    // console.log(year);
-
-    // const g = () => (
-    //   <div className="grouptocreateevent">
-    //     <Link to={idz +"/create/event"}>Create a new event</Link>
-    //     </div>
-    // );
-
-    // console.log(g);
-    // g.forEach((ev, idx) => (
-    //   <div key={idx}>{ev.name}</div>
-    // ));
-
-    // console.log(this.props.mod);
-
-    // renderEvents(events = []){
-    //   console.log(events);
-    //
-    // events.map(event => {
-    //   const t = this.props.currentUser;
-    //   console.log(t);
-    //
-    //   const g = event.user_id;
-    //   console.log(g);
-    //   const lin = `/groups/${event.group_id}/events/${event.id}/update`;
-      // if (t===g){
-      //   return (
-      //     <div >
-      //       <Link to={lin}>Edit</Link>
-      //     </div>
-      //   );
-      // }
-
-    //   return(
-    //     <div>
-    //   <div className="groupeventeach" key={event.id}>
-    //       <div className="groupeventname">{event.name}</div>
-    //         <div className="groupeventlocation">Event location: {event.location}</div>
-    //
-    //     <div className="groupeventid">Event# {event.id}</div>
-    //
-    //     <div className="groupeventorganizer">Event organizer: {event.user_id}</div>
-    //     <div className="groupevenntdescription">{event.description}</div>
-    // </div>
-    // </div>
-    // );
-    // });
-    // }
-
-
-    // const l = ({ group, groupId, fetchGroup}) => {
-    //
-    //
-      // const groups = {
-      //   [groupId]: group
-      // };
-
-      // componentWillReceiveProps(nextProps){
-      //   // if (nextProps.currentUser.id !== this.props.currentUser.id) {
-      //
-      //   }
-      // }
-
-      // console.log(this.props.group);
-
-      //   ismember(){
-      //
-      //     const g = this.props.fetchGroupEnrollments(this.props.match.params.groupId);
-      //     // console.log(g);
-      //     if (g){
-      //     Array.from(g).forEach((user) => {
-      //       if(user.user_id === this.props.currentUser.id){
-      //         this.setState({
-      //           member: true,
-      //           enrollment_id: g.id
-      //         });
-      //         return true;
-      //       }
-      //     });
-      //     return false;
-      //   }
-      // }
-      //
-      //
-
-      // groupmembers(){
-      //   const g = this.props.fetchGroupEnrollments(this.props.match.params.groupId);
-      //   if(g){
-      //     console.log(g);
-      //   }
-      // }
-
-
-      // allmembs(){
-      //   const g = this.props.fetchGroupEnrollments(this.props.match.params.groupId).members;
-      //   const g = this.props.membs;
-      //   if(g){
-      //     g.map(mem =>{
-      //       return (
-      //         <div>
-      //           <div>{mem.name}</div>
-      //
-      //           </div>
-      //       );
-      //     });
-      //   }
-      // }

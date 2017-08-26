@@ -25,9 +25,16 @@ class Api::GroupEnrollmentsController < ApplicationController
   def create
     @group_enrollment= GroupEnrollment.new(group_enrollment_params)
     @group_enrollment.user_id = current_user.id
+    @group = Group.find(group_enrollment_params[:group_id])
+    # @user = User.find(group_enrollment_params[:user_id])
 
     if @group_enrollment.save
-      render :show
+      @group_enrollments = GroupEnrollment.where(group_id: group_enrollment_params[:group_id])
+      @users = []
+      @group_enrollments.each do |enrollment|
+        @users.push(User.find(enrollment.user_id))
+      end
+      render :index
     else
       render(
       json: ["Missing required fields"],
@@ -51,7 +58,8 @@ class Api::GroupEnrollmentsController < ApplicationController
     @group_enrollments.each do |enrollment|
       @users.push(User.find(enrollment.user_id))
     end
-    render @group
+    render :index
+    # render @group
     # if @group_enrollment.destroy
     # if @group_enrollment
     #   if @group_enrollment.is_a?

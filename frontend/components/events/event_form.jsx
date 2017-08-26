@@ -27,7 +27,7 @@ class EventForm extends React.Component{
 // this.props.match.params.groupId
   componentDidMount(){
     this.props.fetchEvents();
-    setTimeout(this.createEvent, 500);
+    // setTimeout(this.createEvent, 500);
   }
 
 

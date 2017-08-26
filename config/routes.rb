@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :groups
     resources :events
     # resources :groups
+    resources :event_enrollments
     resources :group_enrollments
     # resources :events
     # resources :event_enrollments

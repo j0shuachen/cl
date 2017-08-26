@@ -28,12 +28,12 @@ class Event < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
-  has_many :event_enrollments,
+  has_many :event_enrollments, dependent: :destroy,
   primary_key: :id,
   foreign_key: :event_id,
   class_name: :EventEnrollment
 
-  has_many :members,
+  has_many :members, dependent: :destroy,
   through: :event_enrollments,
   source: :user
 
