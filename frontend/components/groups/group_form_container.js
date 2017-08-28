@@ -6,6 +6,7 @@ import { selectGroup, selectAll } from '../../reducers/selectors';
 const mapStateToProps = (state) => ({
   groups: selectAll(state.groups),
   errors: state.groups.errors,
+  currentUser: state.session.currentUser
   // errors: state.errors
   // errors: state.errors
 

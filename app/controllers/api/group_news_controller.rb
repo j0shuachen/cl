@@ -22,7 +22,7 @@ class Api::GroupNewsController < ApplicationController
     @group_new = GroupNews.new(group_news_params)
     @group = Group.find(group_news_params[:group_id])
     # @user = User.find(group_enrollment_params[:user_id])
-
+    @group_new.user_id = current_user.id
     if @group_new.save
       @group_news = GroupNews.where(group_id: group_news_params[:group_id])
 

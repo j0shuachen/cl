@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+// import TimeAgo from 'react-timeago';
+import TimeAgo from 'timeago-react'; // var TimeAgo = require('timeago-react');
 
 class GroupShow extends React.Component{
 
@@ -275,9 +277,11 @@ renderU(){
     const newsList = (news = []) => {
       var x = [];
       for(var i=news.length-1; i>= 0; i--){
+        let v = new Date(news[i].date).toString();
         x.push(
           <div className='yc' key={i}>
             <div> {news[i].news}</div>
+            <TimeAgo datetime={v}></TimeAgo>
           </div>
         );
       }

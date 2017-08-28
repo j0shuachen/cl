@@ -6,41 +6,63 @@
 #   movies = Movie.create!([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create!(name: 'Luke', movie: movies.first)
 
+OP=[
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909476/defaultprofilepic19_d9sdwt.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909476/defaultprofilepic18_skpd06.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909476/defaultprofilepic17_fmxia5.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909476/defaultprofilepic16_ynk2vd.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909476/defaultprofilepic15_gor5uo.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909476/defaultprofilepic9_iumnqj.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909476/defaultprofilepic8_vzlgfc.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909476/defaultprofilepic7_xwj780.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909476/defaultprofilepic6_atszgv.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909476/defaultprofilepic6_ivry6z.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909468/defaultprofilepic14_kwe5vt.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909468/defaultprofilepic13_cexzpr.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909468/defaultprofilepic12_cymiu8.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909468/defaultprofilepic11_bswwjc.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909468/defaultprofilepic10_vcbhqh.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909468/defaultprofilepic5_fmwzal.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909468/defaultprofilepic4_nobsac.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909468/defaultprofilepic3_wyfdnd.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909468/defaultprofilepic2_a25vgi.jpg',
+'http://res.cloudinary.com/dxeyfggji/image/upload/v1503909468/defaultprofilepic1_pn35e9.jpg'
+]
 User.destroy_all
 Group.destroy_all
 Event.destroy_all
 GroupEnrollment.destroy_all
 
-user1 = User.create!(username: "user1", password: "user11", name: "user1", location: "san francisco", email: "user1@gmail.com")
-user2 = User.create!(username: "user2", password: "user21", name: "user2", location: "san francisco", email: "user2@gmail.com")
-user3 = User.create!(username: "user3", password: "user31", name: "user3", location: "san francisco", email: "user3@gmail.com")
-user4 = User.create!(username: "user4", password: "user41", name: "user4", location: "san francisco", email: "user4@gmail.com")
-user5 = User.create!(username: "user5", password: "user51", name: "user5", location: "san francisco", email: "user5@gmail.com")
-user6 = User.create!(username: "user6", password: "user61", name: "user6", location: "san francisco", email: "user6@gmail.com")
-user7 = User.create!(username: "user7", password: "user71", name: "user7", location: "san francisco", email: "user7@gmail.com")
-user8 = User.create!(username: "user8", password: "user81", name: "user8", location: "san francisco", email: "user8@gmail.com")
-user9 = User.create!(username: "user9", password: "user91", name: "user9", location: "san francisco", email: "user9@gmail.com")
-user10 = User.create!(username: "user10", password: "user10", name: "user10", location: "san francisco", email: "user10@gmail.com")
-user11 = User.create!(username: "vegeta", password: "vegeta", name: "vegeta", location: "san jose", email: "vegeta33@hotmail.com"  )
-user12 = User.create!(username: "goku", password: "gokawfwu", name: "goku", location: "san jose", email: "goku99@hotmail.com"  )
-user13 = User.create!(username: "kenny", password: "kennawfawfay", name: "kenny", location: "san jose", email: "slimdunkin@aol.com"  )
-user14 = User.create!(username: "cam", password: "camwafwfa", name: "cam", location: "mountain view", email: "goku99@aol.com"  )
-user15 = User.create!(username: "j0hn", password: "j0hnwfawf", name: "john", location: "sunnyvale", email: "johnjohnjohn@hotmail.com"  )
-user16 = User.create!(username: "slim", password: "slimawfaw", name: "slim", location: "san jose", email: "virginiaslim@gmail.com"  )
-user17 = User.create!(username: "gohan", password: "gohaawfawfawn", name: "gohan", location: "milpitas", email: "goku99@hotmail.com"  )
-user18 = User.create!(username: "kakashi", password: "kakashi", name: "kakashi", location: "milpitas", email: "hiddenleaf9@hotmail.com"  )
-user19 = User.create!(username: "arvind45", password: "arvind", name: "arvind", location: "castro valley", email: "21savage@hotmail.com"  )
-user20 = User.create!(username: "chuckthenorris", password: "norris", name: "norris", location: "richmond", email: "chuckthenorris@hotmail.com"  )
-guest1 = User.create!(username: "guest1", password: "guest11", name: "guest1", location: "castro valley", email: "guest1@gmail.com")
-guest2 = User.create!(username: "guest2", password: "guest21", name: "guest2", location: "castro valley", email: "guest1@gmail.com")
-guest3 = User.create!(username: "guest3", password: "guest31", name: "guest3", location: "castro valley", email: "guest1@gmail.com")
-guest4 = User.create!(username: "guest4", password: "guest41", name: "guest4", location: "castro valley", email: "guest1@gmail.com")
-guest5 = User.create!(username: "guest5", password: "guest51", name: "guest5", location: "castro valley", email: "guest1@gmail.com")
-guest6 = User.create!(username: "guest6", password: "guest61", name: "guest6", location: "castro valley", email: "guest1@gmail.com")
-guest7 = User.create!(username: "guest7", password: "guest71", name: "guest7", location: "castro valley", email: "guest1@gmail.com")
-guest8 = User.create!(username: "guest8", password: "guest81", name: "guest8", location: "castro valley", email: "guest1@gmail.com")
-guest9 = User.create!(username: "guest9", password: "guest91", name: "guest9", location: "castro valley", email: "guest1@gmail.com")
-guest10 = User.create!(username: "guest10", password: "guest101", name: "guest10", location: "castro valley", email: "guest1@gmail.com")
+user1 = User.create!(username: "user1", password: "user11", name: "user1", location: "san francisco", email: "user1@gmail.com", image_url: OP[rand(20)])
+user2 = User.create!(username: "user2", password: "user21", name: "user2", location: "san francisco", email: "user2@gmail.com", image_url: OP[rand(20)])
+user3 = User.create!(username: "user3", password: "user31", name: "user3", location: "san francisco", email: "user3@gmail.com", image_url: OP[rand(20)])
+user4 = User.create!(username: "user4", password: "user41", name: "user4", location: "san francisco", email: "user4@gmail.com", image_url: OP[rand(20)])
+user5 = User.create!(username: "user5", password: "user51", name: "user5", location: "san francisco", email: "user5@gmail.com", image_url: OP[rand(20)])
+user6 = User.create!(username: "user6", password: "user61", name: "user6", location: "san francisco", email: "user6@gmail.com", image_url: OP[rand(20)])
+user7 = User.create!(username: "user7", password: "user71", name: "user7", location: "san francisco", email: "user7@gmail.com", image_url: OP[rand(20)])
+user8 = User.create!(username: "user8", password: "user81", name: "user8", location: "san francisco", email: "user8@gmail.com", image_url: OP[rand(20)])
+user9 = User.create!(username: "user9", password: "user91", name: "user9", location: "san francisco", email: "user9@gmail.com", image_url: OP[rand(20)])
+user10 = User.create!(username: "user10", password: "user10", name: "user10", location: "san francisco", email: "user10@gmail.com", image_url: OP[rand(20)])
+user11 = User.create!(username: "vegeta", password: "vegeta", name: "vegeta", location: "san jose", email: "vegeta33@hotmail.com", image_url: OP[rand(20)]  )
+user12 = User.create!(username: "goku", password: "gokawfwu", name: "goku", location: "san jose", email: "goku99@hotmail.com", image_url: OP[rand(20)]  )
+user13 = User.create!(username: "kenny", password: "kennawfawfay", name: "kenny", location: "san jose", email: "slimdunkin@aol.com", image_url: OP[rand(20)]  )
+user14 = User.create!(username: "cam", password: "camwafwfa", name: "cam", location: "mountain view", email: "goku99@aol.com" , image_url: OP[rand(20)] )
+user15 = User.create!(username: "j0hn", password: "j0hnwfawf", name: "john", location: "sunnyvale", email: "johnjohnjohn@hotmail.com", image_url: OP[rand(20)]  )
+user16 = User.create!(username: "slim", password: "slimawfaw", name: "slim", location: "san jose", email: "virginiaslim@gmail.com", image_url: OP[rand(20)]  )
+user17 = User.create!(username: "gohan", password: "gohaawfawfawn", name: "gohan", location: "milpitas", email: "goku99@hotmail.com", image_url: OP[rand(20)]  )
+user18 = User.create!(username: "kakashi", password: "kakashi", name: "kakashi", location: "milpitas", email: "hiddenleaf9@hotmail.com", image_url: OP[rand(20)]  )
+user19 = User.create!(username: "arvind45", password: "arvind", name: "arvind", location: "castro valley", email: "21savage@hotmail.com", image_url: OP[rand(20)]  )
+user20 = User.create!(username: "chuckthenorris", password: "norris", name: "norris", location: "richmond", email: "chuckthenorris@hotmail.com", image_url: OP[rand(20)]  )
+guest1 = User.create!(username: "guest1", password: "guest11", name: "guest1", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
+guest2 = User.create!(username: "guest2", password: "guest21", name: "guest2", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
+guest3 = User.create!(username: "guest3", password: "guest31", name: "guest3", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
+guest4 = User.create!(username: "guest4", password: "guest41", name: "guest4", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
+guest5 = User.create!(username: "guest5", password: "guest51", name: "guest5", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
+guest6 = User.create!(username: "guest6", password: "guest61", name: "guest6", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
+guest7 = User.create!(username: "guest7", password: "guest71", name: "guest7", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
+guest8 = User.create!(username: "guest8", password: "guest81", name: "guest8", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
+guest9 = User.create!(username: "guest9", password: "guest91", name: "guest9", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
+guest10 = User.create!(username: "guest10", password: "guest101", name: "guest10", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
 
 group1= Group.create!(name: "star wars", location: "milpitas", user_id: user1.id, info: "star wars > star trek!! We are a group of star wars lovers that get together every weekend to hang out. Movie screening on the 21st of every month! May the force be with you!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258263/1200px-Star_Wars_Logo.svg_murnm7.png")
 group2= Group.create!(name: "bootcamp grads", location: "san francisco", user_id: user12.id, info: "Bay area coding boot camp grads! We love coding and having fun! Join us as we explore  technologies every Wednesday night. Happy Hour socials on Friday!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258708/download_d4zzwb.png")

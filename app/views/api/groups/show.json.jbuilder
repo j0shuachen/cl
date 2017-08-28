@@ -48,7 +48,11 @@ end
 json.user @user
 
 json.news do
-  json.array! @group.news
+  json.array! @group.news.each do |ne|
+    json.extract! ne, :id, :news
+    json.date ne.created_at.strftime('%b %e, %Y %T')
+  end
+  # json.date @
 end
 # json.members do
 #   json.array! @group.members, partial: 'api/users/user', as: :member
