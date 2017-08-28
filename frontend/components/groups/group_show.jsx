@@ -7,6 +7,7 @@ class GroupShow extends React.Component{
     super(props);
     this.state= {
       // member: null
+      newz: true,
       loaded: false
     };
 
@@ -41,6 +42,8 @@ class GroupShow extends React.Component{
     this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter());
     // this.props.fetchEvents().then(() => this.eventsetter().then(this.fetchEventEnrollments()));
     this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
+    this.props.fetchGroupNews(this.props.match.params.groupId).then(() => this.setState({newz: !this.state.newz}));
+
     // this.renderJ();
     // this.ismember();
     this.opmember();
@@ -100,15 +103,21 @@ ismember(){
 createMember(){
   const m = this.props.currentUser.id;
   const o = this.props.groupId;
+  const t = this.props.group.user.name;
   this.props.createGroupEnrollment({group_enrollment:{user_id: m, group_id: o}}).then(()=> this.setState({check: true}));
+  this.setState({member: true});
+  this.setState({newz: !this.state.newz});
+  this.props.createGroupNew({group_news:{group_id: o, news: `${t} joined the group`}}).then(() =>this.props.fetchGroup(this.props.groupId).then(()=> this.setState({newz: !this.state.newz})));
+
     // console.log('dododo');
     // this.forceUpdate();
-    this.setState({member: true});
 }
 
 deleteMember(){
   const m = this.props.currentUser.id;
   const o = this.props.groupId;
+  const t = this.props.group.user.name;
+
 this.setState({check: true});
 // console.log(this.props);
 if (this.props.group_enrollments){
@@ -125,8 +134,11 @@ if (this.props.group_enrollments){
       // console.log('ld');
 
       this.props.deleteGroupEnrollment({group_enrollment:{id: x.id, user_id: x.user_id, group_id: x.group_id}, id: x.id});
+      this.setState({member: false});
+
+      this.props.createGroupNew({group_news:{group_id: o, news: `${t} left the group`}}).then(this.props.fetchGroup(this.props.groupId).then(()=> this.setState({newz: !this.state.newz})));
+
         // console.log('huir');
-        this.setState({member: false});
         // this.opmember();
         break;
 }
@@ -140,8 +152,10 @@ if (this.props.group_enrollments){
 
 }
 eventsetter(){
-  let v = this.props.currentUser.id;
   if(this.props.group.events){
+    if(this.props.currentUser){
+    let v = this.props.currentUser.id;
+
     let t = this.props.group.events;
     for(var i=0; i < t.length; i++){
       if(t[i].rsvp){
@@ -158,7 +172,7 @@ eventsetter(){
     // this.setState({[t[i].id]: false});
   }
     }
-  }
+  }}
 }
 //
 renderJ(){
@@ -218,6 +232,7 @@ renderU(){
   }}
 }
   render() {
+    console.log(this.props);
     if(this.props.group.length === 0){
       return (
         <div>Loading...</div>
@@ -230,7 +245,9 @@ renderU(){
     const photos=`/groups/${this.props.group.id}/photos`;
     const pages=`/groups/${this.props.group.id}/pages`;
     const myprofile="/users/1";
-    const created=this.props.group.created_at;
+    // const created=this.props.group.created_at;
+    const created=this.props.group.creator;
+
     const moddname = () => {
       if(this.props.group.mod){
         return (
@@ -245,7 +262,27 @@ renderU(){
         );
       }
     };
-
+    // const newsList = (news = []) => (
+    //
+    //   news.reverse().map(newg => {
+    //     return(
+    //       <div className='yc' key={newg.id}>
+    //         <div> {newg.news}</div>
+    //       </div>
+    //     );
+    //   })
+    // );
+    const newsList = (news = []) => {
+      var x = [];
+      for(var i=news.length-1; i>= 0; i--){
+        x.push(
+          <div className='yc' key={i}>
+            <div> {news[i].news}</div>
+          </div>
+        );
+      }
+      return x;
+    };
   const eventList= (events = []) => (
     events.map(event => {
       const x = () => {
@@ -311,6 +348,7 @@ renderU(){
         <div className="groupevenntdescription">{event.description}</div>
         <div className="uplinko">{x()}
       </div>
+      <div>{event.rsvp.num} members attending</div>
       <div>{ot()}</div>
     </div>
     );
@@ -347,9 +385,10 @@ renderU(){
 
             <div className="gcreated2">
               <div className="g11">{this.props.group.name}</div>
-              <div className="g2">Created: {this.props.group.created_at}</div>
+              <div className="g2">Established: {this.props.group.creator}</div>
               <div className="g3"> Mod: {moddname()}</div>
               <div className="g4"> Contact Info: {moddcontact()}</div>
+              <div className='g5'>{this.props.group.number} members</div>
             </div>
             <div className="gcreated3">{this.renderU()}</div>
           </div>
@@ -371,6 +410,7 @@ renderU(){
 
         <div className="singlegroupnews">
           <div>What's new</div>
+          {this.state.newz ? newsList(this.props.group.news) : newsList(this.props.group.news)}
         </div>
 
 

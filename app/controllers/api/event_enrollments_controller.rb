@@ -10,6 +10,7 @@ class Api::EventEnrollmentsController < ApplicationController
       @event_enrollments.each do |enrollment|
         @users.push(User.find(enrollment.user_id))
       end
+      @numevent = @users.length
       render :index
     else
       render(
@@ -25,6 +26,8 @@ class Api::EventEnrollmentsController < ApplicationController
     @event_enrollments.each do |x|
       @users.push(User.find(x.user_id))
     end
+    @numevent = @users.length
+
     render :index
   end
 
@@ -34,6 +37,8 @@ class Api::EventEnrollmentsController < ApplicationController
     @event = Event.find(event_enrollment_params[:event_id])
     @event_enrollments = EventEnrollment.where(event_id: event_enrollment_params[:event_id])
     @users = []
+    @numevent = @users.length
+
     @event_enrollments.each do |mem|
       @users.push(User.find(mem.user_id))
     end

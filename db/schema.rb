@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824032350) do
+ActiveRecord::Schema.define(version: 20170827200656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(version: 20170824032350) do
     t.index ["group_id"], name: "index_group_enrollments_on_group_id"
     t.index ["user_id", "group_id"], name: "index_group_enrollments_on_user_id_and_group_id", unique: true
     t.index ["user_id"], name: "index_group_enrollments_on_user_id"
+  end
+
+  create_table "group_news", force: :cascade do |t|
+    t.integer "group_id"
+    t.text "news"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["news"], name: "index_group_news_on_news"
   end
 
   create_table "groups", force: :cascade do |t|

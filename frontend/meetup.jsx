@@ -25,6 +25,9 @@ import {createGroup, fetchGroup, fetchGroups} from './util/group_api_util';
 import {createEvent, fetchEvent, fetchEvents} from './util/event_api_util';
 import {deleteGroupEnrollment, createGroupEnrollment, fetchGroupEnrollment, fetchGroupEnrollments } from './util/group_enrollment_api_util';
 import {  } from './actions/group_enrollment_actions';
+import {createGroupNew, fetchGroupNew, fetchGroupNews} from './util/group_news_api_util';
+
+
 window.signup = signup;
 window.login = login;
 window.logout = logout;
@@ -42,3 +45,6 @@ window.createEventEnrollment = createEventEnrollment;
 window.deleteEventEnrollment = deleteEventEnrollment;
 window.fetchEventEnrollment = fetchEventEnrollment;
 window.fetchEventEnrollments = fetchEventEnrollments;
+window.fetchGroupNews = fetchGroupNews;
+window.fetchGroupNew = fetchGroupNew;
+window.createGroupNew = createGroupNew;

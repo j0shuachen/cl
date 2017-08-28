@@ -1,5 +1,7 @@
 json.partial! '/api/groups/group', group: @group
 
+json.creator @creator
+json.number @numembers
 # json.events do
 #   json.array! @group.events
 # end
@@ -30,6 +32,7 @@ json.events do
           # end
         end
       end
+      json.num event.members.length
     end
   end
 end
@@ -42,7 +45,11 @@ json.enrollments do
   json.array! @group.group_enrollments
 end
 
+json.user @user
 
+json.news do
+  json.array! @group.news
+end
 # json.members do
 #   json.array! @group.members, partial: 'api/users/user', as: :member
 # end

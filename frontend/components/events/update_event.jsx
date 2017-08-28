@@ -7,6 +7,7 @@ class UpdateEvent extends React.Component{
     super(props);
     // console.log(this.props);
     // console.log(this.props.match.params.eventId);
+    console.log(this.props);
     this.state={
       group_id: "",
       user_id: "",
@@ -28,9 +29,15 @@ class UpdateEvent extends React.Component{
   // this.props.match.params.groupId
   componentDidMount(){
     this.props.fetchEvent(this.props.eventId);
-    setTimeout(this.prev, 500);
+    this.props.fetchGroup(this.props.groupId);
+
+    // setTimeout(this.prev, 500);
   }
 
+componentWillMount(){
+  this.props.fetchGroup(this.props.groupId).then(this.setState({check: true}));
+
+}
 
   createEvent(){
     const groupId = this.props.groupId;
@@ -41,6 +48,8 @@ class UpdateEvent extends React.Component{
     const evente = {group_id: groupId, user_id: userId, name: name,
       description: description, location: location, id: this.props.eventId };
       this.props.updateEvent(evente).then(()=>this.props.history.push(`/groups/${groupId}`));
+      this.props.createGroupNew({group_news: {group_id: this.props.groupId, news: `${this.props.group.user.name} updated the event ${name}`}});
+
   }
 
   createName(e){

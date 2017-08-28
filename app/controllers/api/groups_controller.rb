@@ -11,6 +11,17 @@ class Api::GroupsController < ApplicationController
     # if @group.user_id
       @group.user_id = current_user.id
       if @group.save
+        @creator = @group.created_at.strftime('%b %Y')
+        @numembers = @group.members.length
+        @user = User.find(current_user.id)
+        s = @user.name
+        t = @group.name
+        p s
+        p t
+        GroupNews.create!(group_id: @group.id, news: s + ' created the group '+ t)
+        GroupEnrollment.create!(group_id: @group.id, user_id: @user.id)
+        @group
+
       render :show
     else
       render(
@@ -22,7 +33,12 @@ class Api::GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    
+    @creator = @group.created_at.strftime('%b %Y')
+    @numembers = @group.members.length
+    if current_user
+      @user = User.find(current_user.id)
+    end
+    p @creator
     # render api_group_url(:id)
 
     render :show
@@ -31,6 +47,11 @@ class Api::GroupsController < ApplicationController
   def update
     @group =Group.find(params[:group][:id])
     if @group.update(group_params)
+      @creator = @group.created_at.strftime('%b %Y')
+      @numembers = @group.members.length
+      @user = User.find(current_user.id)
+
+
       render :show
     else
       render(

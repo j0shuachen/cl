@@ -3,7 +3,7 @@ import React from 'react';
 class EventForm extends React.Component{
   constructor(props){
     super(props);
-
+    console.log(this.props);
     this.state={
       group_id: "",
       user_id: "",
@@ -26,8 +26,15 @@ class EventForm extends React.Component{
 
 // this.props.match.params.groupId
   componentDidMount(){
+    this.props.fetchGroup(this.props.groupId).then(this.setState({check: true}));
+
     this.props.fetchEvents();
     // setTimeout(this.createEvent, 500);
+  }
+  componentWillMount(){
+    this.props.fetchGroup(this.props.groupId);
+    // this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true}));
+
   }
 
 
@@ -42,6 +49,7 @@ class EventForm extends React.Component{
     const evente = {group_id: groupId, user_id: userId, name: name,
       description: description, location: location, image_url: image};
       this.props.createEvent({event: evente}).then(()=>this.props.history.push(`/groups/${groupId}`));
+      this.props.createGroupNew({group_news: {group_id: this.props.groupId, news: `${this.props.group.user.name} created the event ${name}`}});
     }
   }
 

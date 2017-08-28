@@ -222,14 +222,18 @@ font-size: 35px;
 
 }
 
-
+.yc{
+  display: flex;
+  padding: 10px;
+}
 
 .singlegroupnews{
+  flex-direction: column;
   padding: 10px;
   display: flex;
   width: 200px;
   min-width: 150px;
-  justify-content: center;
+  // justify-content: center;
   flex: 0.5;
   border: 1px rgba(211,211,211,.7) solid;
   margin-left: 10px;

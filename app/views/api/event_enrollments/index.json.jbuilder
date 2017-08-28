@@ -13,4 +13,6 @@ json.rsvpd do
       json.extract! user, :id, :username, :name, :email
     end
   end
-end 
+end
+
+json.num @numevent
