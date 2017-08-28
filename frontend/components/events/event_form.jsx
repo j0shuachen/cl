@@ -49,7 +49,7 @@ class EventForm extends React.Component{
     const evente = {group_id: groupId, user_id: userId, name: name,
       description: description, location: location, image_url: image};
       this.props.createEvent({event: evente}).then(()=>this.props.history.push(`/groups/${groupId}`));
-      this.props.createGroupNew({group_news: {group_id: this.props.groupId, news: `${this.props.group.user.name} created the event ${name}`}});
+      // this.props.createGroupNew({group_news: {group_id: this.props.groupId, news: `${this.props.group.user.name} created the event ${name}`}});
     }
   }
 

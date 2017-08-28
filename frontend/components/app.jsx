@@ -22,6 +22,9 @@ import GroupShowContainer from "./groups/group_show_container";
 import EventFormContainer from "./events/event_form_container";
 import UpdateEventContainer from '../components/events/update_event_container';
 import GroupMembersContainer from './groups/group_members_container';
+
+// <Route exact path='/users/:userId' component={UserShowContainer}></Route>
+
 const App = () => (
   <div>
     <header>

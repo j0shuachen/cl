@@ -8,8 +8,12 @@ class Api::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
-
+    @user = User.find(@event.user_id)
+    s = @user.name
+    t = @event.name
     if @event.save
+      GroupNews.create!(group_id: @event.group_id, news: s + ' created the event '+ t, user_id: current_user.id)
+
       render :show
     else
       render(

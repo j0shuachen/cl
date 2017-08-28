@@ -279,9 +279,12 @@ renderU(){
       for(var i=news.length-1; i>= 0; i--){
         let v = new Date(news[i].date).toString();
         x.push(
-          <div className='yc' key={i}>
-            <div> {news[i].news}</div>
-            <TimeAgo datetime={v}></TimeAgo>
+          <div className='newseach' key={i}>
+            <img className='groupnewspic' src={news[i].use.image_url}></img>
+          <div className='yc'>
+            <div >{news[i].news} </div>
+            <TimeAgo className= 'ago' datetime={v}></TimeAgo>
+          </div>
           </div>
         );
       }

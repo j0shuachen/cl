@@ -5,6 +5,12 @@ class Api::EventEnrollmentsController < ApplicationController
     @event_enrollment.user_id = current_user.id
 
     if @event_enrollment.save
+      @user = User.find(@event_enrollment.user_id)
+      @event = Event.find(@event_enrollment.event_id)
+      s = @user.name
+      t = @event.name
+      GroupNews.create!(group_id: @event.group_id, news: s + ' rsvp\'d for the event t', user_id: current_user.id )
+
       @users = []
       @event_enrollments = EventEnrollment.where(event_id: event_enrollment_params[:event_id])
       @event_enrollments.each do |enrollment|
@@ -33,6 +39,11 @@ class Api::EventEnrollmentsController < ApplicationController
 
   def destroy
     @event_enrollment = EventEnrollment.find_by(user_id: event_enrollment_params[:user_id], event_id: event_enrollment_params[:event_id] )
+    @user = User.find(@event_enrollment.user_id)
+    @event = Event.find(@event_enrollment.event_id)
+    s = @user.name
+    t = @event.name
+    GroupNews.create!(group_id: @event.group_id, news: s + ' is no longer attending the event t', user_id: current_user.id )
     @event_enrollment.destroy
     @event = Event.find(event_enrollment_params[:event_id])
     @event_enrollments = EventEnrollment.where(event_id: event_enrollment_params[:event_id])

@@ -49,8 +49,9 @@ json.user @user
 
 json.news do
   json.array! @group.news.each do |ne|
-    json.extract! ne, :id, :news
+    json.extract! ne, :id, :news, :user_id
     json.date ne.created_at.strftime('%b %e, %Y %T')
+    json.use User.find(ne.user_id)
   end
   # json.date @
 end
