@@ -259,3 +259,40 @@ font-size: 35px;
   margin-right: 10px;
   font-size: 25px;
 }
+
+
+
+.grouphomememinfo{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 800px;
+  // justify-content: center;
+align-items: center;
+border-bottom: 1px rgba(211,211,211,.7) solid;
+font-size: 35px;
+
+}
+
+.memrow{
+  margin-top: 20px;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-width: 400px;
+}
+.memname{
+  padding-left: 20px;
+}
+
+.yo{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 400px;
+}
+.membershead{
+  display: flex;
+  margin-top: 25px;
+}

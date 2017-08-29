@@ -10,7 +10,8 @@ class GroupShow extends React.Component{
     this.state= {
       // member: null
       newz: true,
-      loaded: false
+      loaded: false,
+      num: true
     };
 
     this.renderU = this.renderU.bind(this);
@@ -107,7 +108,7 @@ createMember(){
   const o = this.props.groupId;
   const t = this.props.group.user.name;
   this.props.createGroupEnrollment({group_enrollment:{user_id: m, group_id: o}}).then(()=> this.setState({check: true}));
-  this.setState({member: true});
+  this.setState({member: true, num: true});
   this.setState({newz: !this.state.newz});
   this.props.createGroupNew({group_news:{group_id: o, news: `${t} joined the group`}}).then(() =>this.props.fetchGroup(this.props.groupId).then(()=> this.setState({newz: !this.state.newz})));
 
@@ -135,10 +136,12 @@ if (this.props.group_enrollments){
     if(x.user_id === this.props.currentUser.id){
       // console.log('ld');
 
-      this.props.deleteGroupEnrollment({group_enrollment:{id: x.id, user_id: x.user_id, group_id: x.group_id}, id: x.id});
-      this.setState({member: false});
+      // this.props.deleteGroupEnrollment({group_enrollment:{id: x.id, user_id: x.user_id, group_id: x.group_id}, id: x.id}).then(() => this.props.fetchGroup(this.props.groupId)).then(()=>this.setState({check:false}));
+      this.props.deleteGroupEnrollment({group_enrollment:{id: x.id, user_id: x.user_id, group_id: x.group_id}, id: x.id}).then(()=>this.setState({check:false}));
 
-      this.props.createGroupNew({group_news:{group_id: o, news: `${t} left the group`}}).then(this.props.fetchGroup(this.props.groupId).then(()=> this.setState({newz: !this.state.newz})));
+      this.setState({member: false, num: false});
+
+      this.props.createGroupNew({group_news:{group_id: o, news: `${t} left the group`}}).then( () => this.props.fetchGroup(this.props.groupId).then(()=> this.setState({newz: !this.state.newz})));
 
         // console.log('huir');
         // this.opmember();
@@ -395,7 +398,7 @@ renderU(){
               <div className="g2">Established: {this.props.group.creator}</div>
               <div className="g3"> Mod: {moddname()}</div>
               <div className="g4"> Contact Info: {moddcontact()}</div>
-              <div className='g5'>{this.props.group.number} members</div>
+              {this.state.num ? <div className='g5'>{this.props.group.number} members</div> : <div className='g5'>{this.props.group.number} members</div>}
             </div>
             <div className="gcreated3">{this.renderU()}</div>
           </div>

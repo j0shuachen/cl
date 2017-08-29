@@ -7,6 +7,7 @@ import {fetchEvent, fetchEvents} from '../../actions/event_actions';
 import {selectEvents, selectAll} from '../../reducers/selectors';
 
 const mapStateToProps = (state, {match}) => {
+  console.log(state);
   const eventId = parseInt(match.params.eventId);
   // console.log(state);
   // console.log(match);
@@ -28,7 +29,7 @@ const mapStateToProps = (state, {match}) => {
     evento,
     // name: mod[name],
     groupId,
-    group,
+    group: group,
     memb: group.members,
     enrollments: state.group_enrollments.enrolls,
     memboz: state.group_enrollments.members

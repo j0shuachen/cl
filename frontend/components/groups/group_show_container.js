@@ -8,6 +8,7 @@ import {selectEvents, selectAll} from '../../reducers/selectors';
 import {fetchGroupNew, fetchGroupNews, createGroupNew} from '../../actions/group_news_actions';
 import {createEventEnrollment, deleteEventEnrollment} from '../../actions/event_enrollment_actions';
 const mapStateToProps = (state, {match}) => {
+  console.log(state);
   const eventId = parseInt(match.params.eventId);
   // console.log(state);
   // console.log(match);

@@ -20,7 +20,7 @@ class Group < ApplicationRecord
   foreign_key: :user_id,
   class_name: :User
 
-  has_many :group_enrollments, dependent: :destroy,
+  has_many :group_enrollments,
   primary_key: :id,
   foreign_key: :group_id,
   class_name: :GroupEnrollment

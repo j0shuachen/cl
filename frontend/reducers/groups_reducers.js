@@ -7,7 +7,7 @@ import {
 } from '../actions/groups_actions.js';
 
 const initialState = Object.freeze({
-  errors: [], 
+  errors: [],
 
   // currentGroup: undefined
 });
@@ -21,7 +21,8 @@ const GroupsReducer = (state = initialState, action) => {
       return action.groups;
     case RECEIVE_GROUP:
       const newGroup= {[action.group.id]: action.group};
-      return merge({}, state, newGroup);
+      // return merge({}, state, newGroup);
+      return newGroup;
     case UPDATE_GROUP:
     newState = merge({}, state);
     newState[action.group.id] = action.group;

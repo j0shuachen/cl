@@ -34,7 +34,16 @@ class Api::GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @creator = @group.created_at.strftime('%b %Y')
+    p 'yolllllooooooooooo'
+    p @group.members
     @numembers = @group.members.length
+    @members = @group.members
+
+    p 'members!!'
+    p @members
+    p 'lengthy!!'
+    p @numembers
+    @enrollments = @group.group_enrollments
     if current_user
       @user = User.find(current_user.id)
     end
@@ -50,7 +59,7 @@ class Api::GroupsController < ApplicationController
       @creator = @group.created_at.strftime('%b %Y')
       @numembers = @group.members.length
       @user = User.find(current_user.id)
-
+      @members = @group.members
 
       render :show
     else

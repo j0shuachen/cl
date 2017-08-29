@@ -37,12 +37,20 @@ json.events do
   end
 end
 
+# json.members do
+#   json.array! @group.members
+# end
+#
+# json.enrollments do
+#   json.array! @group.group_enrollments
+# end
+
 json.members do
-  json.array! @group.members
+  json.array! @members
 end
 
 json.enrollments do
-  json.array! @group.group_enrollments
+  json.array! @enrollments
 end
 
 json.user @user

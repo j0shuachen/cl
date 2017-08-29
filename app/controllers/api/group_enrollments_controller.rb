@@ -45,19 +45,39 @@ class Api::GroupEnrollmentsController < ApplicationController
 
   def destroy
     # @group_enrollment = GroupEnrollment.find_by(user_id: group_enrollment_params[:user_id], group_id: group_enrollment_params[:group_id])
-    # @group_enrollment = GroupEnrollment.where(user_id: group_enrollment_params[:user_id], group_id: group_enrollment_params[:group_id])
+    @group_enrollment = GroupEnrollment.where(user_id: group_enrollment_params[:user_id], group_id: group_enrollment_params[:group_id])
 
-    @group_enrollment = GroupEnrollment.find_by(user_id: group_enrollment_params[:user_id])
+    # @group_enrollment = GroupEnrollment.find_by(user_id: group_enrollment_params[:user_id])
     # @group_enrollment = GroupEnrollment.find(group_enrollment_params[:id])
     if @group_enrollment
-    @group_enrollment.destroy
+    @group_enrollment.each do |enr|
+      enr.destroy
+    end
+
+
     @group_enrollments = GroupEnrollment.where(group_id: group_enrollment_params[:group_id])
+    # if @group_enrollments
+    # @group_enrollments.each do |enrolls|
+    #   enrolls.destroy!
+    # end
+  # end
+
     # @group = Group.where(group_id: group_enrollment_params[:group_id])
-    @group = Group.find(group_enrollment_params[:group_id])
     @users = []
-    @group_enrollments.each do |enrollment|
+    @event_enrollments = EventEnrollment.where(group_id: group_enrollment_params[:group_id], user_id: current_user.id)
+    if @event_enrollments
+      @event_enrollments.each do |enrolls|
+        enrolls.destroy
+      end
+    end
+    @ngroup_enrollments = GroupEnrollment.where(group_id: group_enrollment_params[:group_id])
+    if @ngroup_enrollments
+    @ngroup_enrollments.each do |enrollment|
       @users.push(User.find(enrollment.user_id))
     end
+  end
+    @group = Group.find(group_enrollment_params[:group_id])
+
     render :index
     # render @group
     # if @group_enrollment.destroy
