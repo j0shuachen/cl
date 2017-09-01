@@ -279,8 +279,8 @@ font-size: 35px;
   padding-left: 30px;
   display: flex;
   flex-direction: row;
-  width: 100%;
-  min-width: 400px;
+  // width: 100%;
+  min-width: 200px;
 }
 .memname{
   padding-left: 20px;
@@ -288,7 +288,10 @@ font-size: 35px;
 
 .yo{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // align-items: center;
+  // align-content: center;
   width: 100%;
   min-width: 400px;
 }

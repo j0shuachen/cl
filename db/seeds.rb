@@ -53,6 +53,34 @@ user17 = User.create!(username: "gohan", password: "gohaawfawfawn", name: "gohan
 user18 = User.create!(username: "kakashi", password: "kakashi", name: "kakashi", location: "milpitas", email: "hiddenleaf9@hotmail.com", image_url: OP[rand(20)]  )
 user19 = User.create!(username: "arvind45", password: "arvind", name: "arvind", location: "castro valley", email: "21savage@hotmail.com", image_url: OP[rand(20)]  )
 user20 = User.create!(username: "chuckthenorris", password: "norris", name: "norris", location: "richmond", email: "chuckthenorris@hotmail.com", image_url: OP[rand(20)]  )
+user21 = User.create!(username: Faker::Internet.unique.user_name , password: Faker::Internet.password , name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user22 = User.create!(username: Faker::Internet.unique.user_name , password: Faker::Internet.password , name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user23 = User.create!(username: Faker::Internet.unique.user_name , password: Faker::Internet.password , name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user24 = User.create!(username: Faker::Internet.unique.user_name , password: Faker::Internet.password , name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user25 = User.create!(username: Faker::Internet.unique.user_name , password: Faker::Internet.password , name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user26 = User.create!(username: Faker::Internet.unique.user_name , password: Faker::Internet.password , name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user27 = User.create!(username: Faker::Internet.unique.user_name , password: Faker::Internet.password , name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user28 = User.create!(username: Faker::Internet.unique.user_name , password: Faker::Internet.password , name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user29 = User.create!(username: Faker::Internet.unique.user_name , password: Faker::Internet.password , name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user30 = User.create!(username: Faker::Internet.unique.user_name , password: Faker::Internet.password , name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user31 = User.create!(username: Faker::Internet.unique.user_name , password: Faker::Internet.password , name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user32 = User.create!(username: Faker::Internet.unique.user_name , password: Faker::Internet.password , name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user33 = User.create!(username: Faker::Internet.unique.user_name , password: Faker::Internet.password , name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user34 = User.create!(username: 'tunaRoll' , password: 'password', name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user35 = User.create!(username: 'sf9ers' , password: 'password', name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user36 = User.create!(username: 'PistolPETE' , password: 'password', name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user37 = User.create!(username: 'FIREBALL' , password: 'password', name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user38 = User.create!(username: 'jmo&COKE' , password: 'password', name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user39 = User.create!(username: 'HEEEEM' , password: 'password', name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user40 = User.create!(username: 'jaeger' , password: 'password', name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user41 = User.create!(username: 'kaiju' , password: 'password', name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user42 = User.create!(username: 'KENJI' , password: 'password', name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user43 = User.create!(username: 'benjiROX' , password: 'password', name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user44 = User.create!(username: 'BOyka' , password: 'password', name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user45 = User.create!(username: 'crossfit' , password: 'password', name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+
+
+
 guest1 = User.create!(username: "guest1", password: "guest11", name: "guest1", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
 guest2 = User.create!(username: "guest2", password: "guest21", name: "guest2", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
 guest3 = User.create!(username: "guest3", password: "guest31", name: "guest3", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
@@ -115,6 +143,11 @@ Activities can range from the casual (hikes, game nights, karaoke nights, etc.) 
 group16= Group.create!(name: "Asian Party Club", location: "san francisco", user_id: user20.id, info: "·  The Asian party club was recently founded to meet the needs of the Asian community.
 
 ·  Hosts fun, social and networking events in San Francisco and the Silicon Valley.", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258716/download_9_yyeqwp.jpg")
+
+
+
+
+group17= Group.create!(name: "Los Angeles Graphic Designers", location: "Los Angeles", user_id: user25.id, info: "We are a group of graphic designers based in Los Angeles shaking up the design industry! Join us for our weekly meetups and monthly design competitions!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262317/pexels-photo-128666_gr3wrd.jpg")
 
 
 
@@ -236,8 +269,19 @@ Plan to get here a little early to get your tickets and so we can get good seats
 We might also walk around and grab a bite afterwards. Looking forward to seeing y'All there!", location: "san francisco" )
 
 
+
+
+
 GroupEnrollment.create!(user_id: user1.id, group_id: group1.id )
+GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user1.name + ' joined the group!')
 GroupEnrollment.create!(user_id: user2.id, group_id: group1.id )
+GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user2.name + ' joined the group!')
+
 GroupEnrollment.create!(user_id: user3.id, group_id: group1.id )
+GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user3.name + ' joined the group!')
+
 GroupEnrollment.create!(user_id: user4.id, group_id: group1.id )
+GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user4.name + ' joined the group!')
+
 GroupEnrollment.create!(user_id: user5.id, group_id: group1.id )
+GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user5.name + ' joined the group!')
