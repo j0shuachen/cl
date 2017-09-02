@@ -37,7 +37,7 @@ class GroupIndex extends React.Component {
           <div className="g1" key={idx}>
             <Link to={showz}>    <img className="eo" src={group.image_url}></img>
 </Link>
-{group.name}
+<div className='g999'>{group.name}</div>
 
           </div>
         );
