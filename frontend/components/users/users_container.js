@@ -18,7 +18,7 @@ const mapStateToProps = (state, {match}) => {
   const group = selectGroup(state, match.params.groupId);
 
   const user = selectGroup(state, match.params.userId);
-console.log(userId);
+// console.log(userId);
   return {
     currentUser: state.session.currentUser,
     user:state.session,

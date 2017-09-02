@@ -9,7 +9,7 @@ class GroupMembers extends React.Component{
 
   constructor (props) {
     super(props);
-    console.log(this.props);
+    // console.log(this.props);
     this.state= {
 
       enrollment_id: null,
@@ -99,7 +99,7 @@ class GroupMembers extends React.Component{
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     // if(!this.state.group){
     //   return(<div>loading...</div>);
     // }

@@ -14,7 +14,7 @@ class EventIndex extends React.Component{
   }
 
   render(){
-    console.log(this.props);
+    // console.log(this.props);
     const {events} = this.props;
     const eventItems = this.props.events.map((event, idx) => {
       let showz = `/groups/${event.group_id}/events/${event.id}`;

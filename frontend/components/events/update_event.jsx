@@ -7,7 +7,7 @@ class UpdateEvent extends React.Component{
     super(props);
     // console.log(this.props);
     // console.log(this.props.match.params.eventId);
-    console.log(this.props);
+    // console.log(this.props);
     this.state={
       group_id: "",
       user_id: "",

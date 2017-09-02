@@ -20,7 +20,7 @@ const GroupNewsReducer = (state={}, action) => {
     const newEvent = {[action.enrollment.id]: action.enrollment};
     // return merge({}, state, newEvent);
     const op = merge({}, state);
-    console.log(action.enrollment);
+    // console.log(action.enrollment);
 //     if(op.enrolls){
 //     op.enrolls[action.enrollment.id]= action.enrollment.;
 //     // op.members[action.enrollment.id] = action.enrollment;
@@ -46,7 +46,7 @@ const GroupNewsReducer = (state={}, action) => {
       // console.log(newState.members[action.enrollment.user_id]);
       // console.log(newState.enrolls);
       // delete newState.members[action.enrollment.user_id];
-      console.log(action.enrollment);
+      // console.log(action.enrollment);
       // delete newState.enrolls[action.enrollment.id];
       // delete newState.members[action.enrollment.user_id];
       // console.log('ye', newState);

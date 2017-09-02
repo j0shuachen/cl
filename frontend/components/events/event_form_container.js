@@ -12,9 +12,9 @@ import {fetchGroup} from '../../actions/groups_actions';
 
 const mapStateToProps = (state, {match}) => {
   const groupId = parseInt(match.params.id);
-console.log(state);
+// console.log(state);
 const group = selectGroup(state, match.params.id);
-console.log(group);
+// console.log(group);
   return {
     events: selectAll(state.events),
     groupId,

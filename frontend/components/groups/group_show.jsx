@@ -67,6 +67,7 @@ class GroupShow extends React.Component{
 
 opmember(){
   if(this.props.memboz){
+    if(this.props.currentUser){
     let x = false;
   const g = this.props.memboz;
   const og = Object.values(g);
@@ -86,6 +87,10 @@ opmember(){
     this.setState({member: false});
   }
   return;
+}else{
+  this.setState({member: false});
+
+}
 }
 }
 
@@ -237,7 +242,7 @@ renderU(){
   }}
 }
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     if(this.props.group.length === 0){
       return (
         <div>Loading...</div>
@@ -311,18 +316,19 @@ renderU(){
         }
       };
       const leave = () => {
-        console.log('hitttttleave', this.props);
+        // console.log('hitttttleave', this.props);
         this.setState({[event.id]: false});
-        console.log('left', this.state);
+        // console.log('left', this.state);
     // this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, groupId: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
         this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, groupId: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));
       };
-      const join =() => {console.log('hit');
+      const join =() => {
+        // console.log('hit');
         this.setState({[event.id]: true});
     // this.props.createEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
         this.props.createEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));
-        console.log('state',this.state);
-        console.log(this.props);
+        // console.log('state',this.state);
+        // console.log(this.props);
       };
       const ot = () => {
     // console.log(this.state);

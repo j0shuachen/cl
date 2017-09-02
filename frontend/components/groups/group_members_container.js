@@ -7,7 +7,7 @@ import {fetchEvent, fetchEvents} from '../../actions/event_actions';
 import {selectEvents, selectAll} from '../../reducers/selectors';
 
 const mapStateToProps = (state, {match}) => {
-  console.log(state);
+  // console.log(state);
   const eventId = parseInt(match.params.eventId);
   // console.log(state);
   // console.log(match);

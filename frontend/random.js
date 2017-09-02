@@ -285,7 +285,7 @@ const v = () => {
   const og = `/groups/${event.group_id}/events/${event.id}`;
   if(this.state.member){
     if(event.rsvp){
-      console.log(event);
+      // console.log(event);
     if (event.rsvp[this.props.currentUser.id]){
     return (
       <div className='leaveevent' onClick={leave}>

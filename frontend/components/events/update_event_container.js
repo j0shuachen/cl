@@ -14,7 +14,7 @@ const mapStateToProps = (state, {match}) => {
   // const group = selectGroup(state, match.params.groupId);
   // const events = selectEvents(state, match.params.eventId);
   const o = selectGroup(state, match.params.groupId);
-  console.log(o);
+  // console.log(o);
 
   return {
     groupId,
