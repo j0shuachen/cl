@@ -20,6 +20,7 @@
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
+    "timeago-react": "^1.2.2",
     "webpack": "^3.3.0"
   },
   "description": "https://trello.com/b/gDGh3LSu/meetup-fullstack",

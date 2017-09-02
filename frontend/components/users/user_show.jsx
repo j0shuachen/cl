@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 // import TimeAgo from 'react-timeago';
-import TimeAgo from 'timeago-react'; // var TimeAgo = require('timeago-react');
+// import TimeAgo from 'timeago-react'; // var TimeAgo = require('timeago-react');
 
 class UserShow extends React.Component{
 
