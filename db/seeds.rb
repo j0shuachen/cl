@@ -457,16 +457,16 @@ We might also walk around and grab a bite afterwards. Looking forward to seeing 
 
 
 
-GroupEnrollment.create!(user_id: user1.id, group_id: group1.id )
-GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user1.name + ' joined the group!')
-GroupEnrollment.create!(user_id: user2.id, group_id: group1.id )
-GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user2.name + ' joined the group!')
-
-GroupEnrollment.create!(user_id: user3.id, group_id: group1.id )
-GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user3.name + ' joined the group!')
-
-GroupEnrollment.create!(user_id: user4.id, group_id: group1.id )
-GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user4.name + ' joined the group!')
-
-GroupEnrollment.create!(user_id: user5.id, group_id: group1.id )
-GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user5.name + ' joined the group!')
+# GroupEnrollment.create!(user_id: user1.id, group_id: group1.id )
+# GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user1.name + ' joined the group!')
+# GroupEnrollment.create!(user_id: user2.id, group_id: group1.id )
+# GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user2.name + ' joined the group!')
+#
+# GroupEnrollment.create!(user_id: user3.id, group_id: group1.id )
+# GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user3.name + ' joined the group!')
+#
+# GroupEnrollment.create!(user_id: user4.id, group_id: group1.id )
+# GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user4.name + ' joined the group!')
+#
+# GroupEnrollment.create!(user_id: user5.id, group_id: group1.id )
+# GroupNews.create!(user_id: user1.id, group_id: group1.id, news: user5.name + ' joined the group!')
