@@ -93,7 +93,14 @@ guest9 = User.create!(username: "guest9", password: "guest91", name: "guest9", l
 guest10 = User.create!(username: "guest10", password: "guest101", name: "guest10", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
 
 group1= Group.create!(name: "star wars", location: "milpitas", user_id: user1.id, info: "star wars > star trek!! We are a group of star wars lovers that get together every weekend to hang out. Movie screening on the 21st of every month! May the force be with you!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258263/1200px-Star_Wars_Logo.svg_murnm7.png")
+gn33 = GroupNews.create!(group_id: group1.id, news: user1.username + ' created the group ' + group1.name, user_id: user1.id)
+ge33 = GroupEnrollment.create!(group_id: group1.id, user_id: user1.id)
+
 group2= Group.create!(name: "bootcamp grads", location: "san francisco", user_id: user12.id, info: "Bay area coding boot camp grads! We love coding and having fun! Join us as we explore  technologies every Wednesday night. Happy Hour socials on Friday!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504310022/logo-emblem-red-1000-1-_ycgof6.jpg")
+gn34 = GroupNews.create!(group_id: group2.id, news: user12.username + ' created the group ' + group2.name, user_id: user12.id)
+ge34 = GroupEnrollment.create!(group_id: group2.id, user_id: user12.id)
+
+
 group3= Group.create!(name: "South Bay Ping Pong", location: "santa clara", user_id: user18.id, info: "• Ping pong is a fun way to meet people and get a great work out all year round; rain or shine.
 
 • Have fun during your lunch break and join us  Tuesdays, Thursdays & Fridays from 12 pm-2 pm for just $5 per day
@@ -109,40 +116,80 @@ group3= Group.create!(name: "South Bay Ping Pong", location: "santa clara", user
 • Better players are encouraged to help lower level players
 
 ", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258277/download_1_imnrgf.jpg")
+gn35 = GroupNews.create!(group_id: group3.id, news: user18.username + ' created the group ' + group3.name, user_id: user18.id)
+ge35 = GroupEnrollment.create!(group_id: group3.id, user_id: user18.id)
+
+
 group4= Group.create!(user_id: user13.id, name: "weekend baksetball cru", location:"san francisco", info: "Weekend basketball crew! Players of all skill levels welcome! After a long week at work, there's nothing like a few pickup games to blow off steam!
 
 We meet every Saturday and Sunday at 10:00am!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258707/6359464693365503891966175787_pickup_basketball_gzp8ie.jpg")
+gn36 = GroupNews.create!(group_id: group4.id, news: user13.username + ' created the group ' + group4.name, user_id: user13.id)
+ge36 = GroupEnrollment.create!(group_id: group4.id, user_id: user13.id)
 
 
 
 group5= Group.create!(name: "hip hop lovers", location: "mountain view", user_id: user12.id, info: "Hip hop appreciation crew. We love everything about hip hop. Join us to hear about upcoming events and concerts first! No ticket scalping allowed here!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501259103/65c9ba984e90d29163196b211369ee63--graffiti-artists-hiphop_w1beva.jpg")
+gn37 = GroupNews.create!(group_id: group5.id, news: user12.username + ' created the group ' + group5.name, user_id: user12.id)
+ge37 = GroupEnrollment.create!(group_id: group5.id, user_id: user12.id)
+
+
 group6= Group.create!(name: "KPOP", location: "san francisco", user_id: user11.id, info: "Eat, drink, sleep kpop! Join us to learn about upcoming concerts, events, music drops and more!  members welcome at our Fresh Fridays where we watch  kpop music videos released over the last week!!!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258279/kpop-jpg_hv06pm.gif")
+gn38 = GroupNews.create!(group_id: group6.id, news: user11.username + ' created the group ' + group6.name, user_id: user11.id)
+ge38 = GroupEnrollment.create!(group_id: group6.id, user_id: user11.id)
+
 group7= Group.create!(name: "Anime Club", location: "hayward", user_id: user15.id, info: "Naruto, Bleach, One Piece, Cowboy Bebop, we love em all!!!! Anime lovers unite!!! Join us if you are a fellow anime lover interested in making a few like-minded friends! We have a weekly ice cream social where  members are welcome to attend!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258285/2a1c5bbb55d56e983ff7ba2b09caa556--sharingan-eyes-kakashi-sharingan_vh5ubs.jpg")
+gn39 = GroupNews.create!(group_id: group7.id, news: user15.username + ' created the group ' + group7.name, user_id: user26.id)
+ge39 = GroupEnrollment.create!(group_id: group7.id, user_id: user15.id)
+
 group8= Group.create!(name: "caltrain commuters", location: "cupertino", user_id: user16.id, info: "You know what this is... caltrain commuters!!! Join us to share your funny caltrain stories and vent if need be! ", image_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1504310134/vSzCaJVS_ju3406.jpg')
+gn40 = GroupNews.create!(group_id: group8.id, news: user16.username + ' created the group ' + group8.name, user_id: user16.id)
+ge40 = GroupEnrollment.create!(group_id: group8.id, user_id: user16.id)
+
 group9= Group.create!(name: "L2SpeakKorean", location: "san francisco", user_id: user17.id, info: "Want to learn to speak korean? This is the club for you! All proficiency levels welcome! Please send me an email if you are a native speaker interested in helping others learn!", image_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1504310359/il_340x270.920999708_jd5c_hhptjx.jpg')
+gn41 = GroupNews.create!(group_id: group9.id, news: user17.username + ' created the group ' + group9.name, user_id: user17.id)
+ge41 = GroupEnrollment.create!(group_id: group9.id, user_id: user17.id)
+
 group10= Group.create!(name: "San Jose Hiking Crew", location: "san jose", user_id: user14.id, info: "South bay hikers! We love the outdoors. Weekly hikes on Saturday from 7:00am-3:00pm and Sunday from 9:00am-5:00pm! Come out and hike with us!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501259174/download_10_ahldfl.jpg")
+gn42 = GroupNews.create!(group_id: group10.id, news: user14.username + ' created the group ' + group10.name, user_id: user14.id)
+ge42 = GroupEnrollment.create!(group_id: group10.id, user_id: user14.id)
+
+
 group11= Group.create!(name: "food club", location: "san jose", user_id: user18.id, info: "We are a group of food lovers that explore different restaurants around the bay area. Join us as we explore a  restaurant every week!  members welcome!!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501259277/585be1aa1600002400bdf2a6_ipusya.jpg")
+gn43 = GroupNews.create!(group_id: group11.id, news: user18.username + ' created the group ' + group11.name, user_id: user18.id)
+ge43 = GroupEnrollment.create!(group_id: group11.id, user_id: user18.id)
 
 
 group12 = Group.create!(name: "90's babies", location: "sunnyvale", user_id: user13.id, info: "The realization that this incoming high school freshmen were born in the 2000s means that the high school reign of 90s babies is over. But that doesn't mean we're getting old, it just means we're growing up!
 I create!d this group for people who just moved here like I did, or for locals who are interested in meeting  people. This group is as much as yours as it is mine. So if you have a great idea, don't hesitate to let me know!
 ", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258285/2a1c5bbb55d56e983ff7ba2b09caa556--sharingan-eyes-kakashi-sharingan_vh5ubs.jpg")
+gn44 = GroupNews.create!(group_id: group12.id, news: user13.username + ' created the group ' + group12.name, user_id: user13.id)
+ge44 = GroupEnrollment.create!(group_id: group12.id, user_id: user13.id)
+
 
 group13 = Group.create!( name: "Bar Wednesday", location: "san jose", user_id: user20.id, info: "Bar Wednesday is a casual weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries.
 
 Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries.
 
 All are welcome! Please enjoy Bar Wednesday responsibly.", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258713/download_7_psujbp.jpg")
+gn45 = GroupNews.create!(group_id: group13.id, news: user20.username + ' created the group ' + group13.name, user_id: user20.id)
+ge45 = GroupEnrollment.create!(group_id: group13.id, user_id: user20.id)
+
 
 group14 = Group.create!( name: "Hackaday", location: "san jose", user_id: user17.id, info: "This meetup is for Hackaday enthusiasts in San Jose, run in partnership with Hackaday! More info to be added here soon.")
+gn46 = GroupNews.create!(group_id: group14.id, news: user17.username + ' created the group ' + group14.name, user_id: user17.id)
+ge46 = GroupEnrollment.create!(group_id: group14.id, user_id: user17.id)
 
 group15= Group.create!(name:"Silicon Valley Offbeat 20's and 30's", location: "sunnyvale", user_id: 11, info: "This is a group for people in their 20s & early 30s looking to bond with cool  friends over quirky, fun activities. We're less about the happy hours and meeting over drinks (though they're bound to happen informally) and more about the strange, fun things you've always wanted to try doing (Quidditch, anyone?).
 
 Activities can range from the casual (hikes, game nights, karaoke nights, etc.) to the more offbeat (puzzle hunts, obstacle courses, murder mysteries, etc.). If this sounds right up your alley, come join us for some random fun!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258281/BoHxGMbIEAAUPgn_q7gcyk.jpg")
+gn47 = GroupNews.create!(group_id: group15.id, news: user11.username + ' created the group ' + group15.name, user_id: user11.id)
+ge47 = GroupEnrollment.create!(group_id: group15.id, user_id: user11.id)
 
 group16= Group.create!(name: "Asian Party Club", location: "san francisco", user_id: user20.id, info: "·  The Asian party club was recently founded to meet the needs of the Asian community.
 
 ·  Hosts fun, social and networking events in San Francisco and the Silicon Valley.", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258716/download_9_yyeqwp.jpg")
+gn48 = GroupNews.create!(group_id: group16.id, news: user20.username + ' created the group ' + group16.name, user_id: user26.id)
+ge48 = GroupEnrollment.create!(group_id: group16.id, user_id: user20.id)
 
 
 
