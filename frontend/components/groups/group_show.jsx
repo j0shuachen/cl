@@ -9,7 +9,7 @@ class GroupShow extends React.Component{
     super(props);
     this.state= {
       // member: null
-      newz: true,
+      newz: false,
       loaded: false,
       num: true
     };
@@ -31,7 +31,7 @@ class GroupShow extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true}));
+    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true, newz: true}));
     this.props.fetchEvents().then(() => this.setState({checking: true}));
     this.props.fetchGroupEnrollments(this.props.match.params.groupId);
     // this.renderJ();
@@ -283,9 +283,12 @@ renderU(){
     //   })
     // );
     const newsList = (news = []) => {
+      if(this.props.group){
+        if(this.props.group.news){
       var x = [];
+      var t = news.length;
       var o = this.props.groupId;
-      for(var i=news.length-1; i>= 0; i--){
+      for(var i=0; i< t; i++){
         let v = new Date(news[i].date).toString();
           var user = `/groups/${o}/users/${news[i].user_id}`;
           if(news[i].typo==='g'){
@@ -306,6 +309,8 @@ renderU(){
         );
       }
       return x;
+    }
+  }
     };
   const eventList= (events = []) => (
     events.map(event => {
