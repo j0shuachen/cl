@@ -242,7 +242,7 @@ renderU(){
   }}
 }
   render() {
-    // console.log(this.props);
+    console.log(this.props);
     if(this.props.group.length === 0){
       return (
         <div>Loading...</div>
@@ -284,13 +284,19 @@ renderU(){
     // );
     const newsList = (news = []) => {
       var x = [];
+      let p = this.props.groupId;
       for(var i=news.length-1; i>= 0; i--){
         let v = new Date(news[i].date).toString();
+        let use = news[i].user_id;
+        let lin = `/groups/${p}/users/${use}`;
+        // let pops = `/groups/${p}/events/${}`;
         x.push(
           <div className='newseach' key={i}>
+            <Link to={lin}>
             <img className='groupnewspic' src={news[i].use.image_url}></img>
+            </Link>
           <div className='yc'>
-            <div >{news[i].news} </div>
+            <Link >{news[i].news} </Link>
             <TimeAgo className= 'ago' datetime={v}></TimeAgo>
           </div>
           </div>

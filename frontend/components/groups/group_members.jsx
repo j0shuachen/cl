@@ -171,8 +171,10 @@ class GroupMembers extends React.Component{
 
     const newsList = (news = []) => {
       var x = [];
+      var o = this.props.groupId;
       for(var i=news.length-1; i>= 0; i--){
         let v = new Date(news[i].date).toString();
+          var user = `/groups/${o}/users/${news[i].user_id}`;
         x.push(
           <div className='newseach' key={i}>
             <img className='groupnewspic' src={news[i].use.image_url}></img>

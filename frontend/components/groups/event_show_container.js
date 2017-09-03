@@ -15,7 +15,7 @@ const mapStateToProps = ( state, {match}) => {
   const groupId = evento.group_id;
   return {
     groupId,
-    currentUser: state.session.currentUser.id,
+    currentUser: state.session.currentUser,
     eventId,
     evento,
 
