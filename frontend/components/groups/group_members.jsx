@@ -85,12 +85,16 @@ class GroupMembers extends React.Component{
     let arr = [];
       if(this.props.group.members){
       let o = this.props.group.members;
+      let v = this.props.groupId;
+
       for (var i=0; i < o.length; i++){
+        let p = o[i].id;
+        let user = `/groups/${v}/users/${p}`;
       arr.push(
-          <div className='memrow' key={o[i].id}>
+            <Link  key={o[i].id} className= 'memrow' to={user}>
             <img className='groupnewspic' src={o[i].image_url}></img>
           <div className='memname'>{o[i].name}</div>
-          </div>
+          </Link>
         );
       }
     }

@@ -259,6 +259,29 @@ font-size: 35px;
 
 }
 
+.userhomeinfo{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 800px;
+//   justify-content: center;
+// align-items: center;
+border-bottom: 1px rgba(211,211,211,.7) solid;
+font-size: 35px;
+}
+
+.userinfo{
+  flex-direction: column;
+  padding: 50px;
+}
+
+.username{
+  margin-top: 5px;
+}
+
+.usertitle{
+  text-align: center;
+}
 .yc{
   display: flex;
   padding: 10px;
@@ -299,6 +322,8 @@ font-size: 35px;
   flex-direction: row;
   // width: 100%;
   min-width: 200px;
+  text-decoration: none;
+  
 }
 .memname{
   padding-left: 20px;

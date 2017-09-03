@@ -25,6 +25,8 @@ class UserShow extends React.Component{
     this.opmember = this.opmember.bind(this);
     this.eventsetter = this.eventsetter.bind(this);
     this.info = this.info.bind(this);
+    this.membergroups = this.membergroups.bind(this);
+    this.groupmods = this.groupmods.bind(this);
   }
   getInitialState(){
     this.opmember();
@@ -70,6 +72,7 @@ class UserShow extends React.Component{
 
 opmember(){
   if(this.props.memboz){
+    if(this.props.currentUser){
     let x = false;
   const g = this.props.memboz;
   const og = Object.values(g);
@@ -89,6 +92,9 @@ opmember(){
     this.setState({member: false});
   }
   return;
+}else{
+  this.setState({member: false});
+}
 }
 }
 
@@ -226,6 +232,7 @@ renderjoin(){
 
 info(){
   const g = () => {
+    if (this.props.currentUser){
     if (this.props.currentUser.id === this.props.x.id) {
       return(
         <div>
@@ -233,17 +240,65 @@ info(){
         </div>
       );
     }
+  }else{
+    return (null);
+  }
   };
   if (this.state.c){
     return (
-      <div className="info">
-        <img className='grouppico' src={this.props.x.image_url}></img>
-        <div >{this.props.x.name}</div>
-        <div>{this.props.x.email}</div>
+      <div className="userinfo">
+        <div className='usertitle'>User Info</div>
+        <img className='userpico' src={this.props.x.image_url}></img>
+        <div className='username'>username: {this.props.x.name}</div>
+        <div className='username'>contact info: {this.props.x.email}</div>
         <div>{g()}</div>
       </div>
     );
   }
+}
+
+groupmods(){
+  if(this.state.c){
+    if(this.props.x.usermods){
+      let arr = [];
+      let o = this.props.x.usermods;
+      let too = this.props.x.usermods.length;
+      for(var i=0; i < too; i++){
+        arr.push(
+          <div className='membergroups' key={i}>
+            <img className='membergroupspic' src={o[i].image_url}></img>
+            <div className='membergroupname'>{o[i].name}</div>
+
+          </div>
+        );
+      }
+      return arr;
+    }else{
+      return(<div>Has not started any groups!</div>);
+    }
+  }
+}
+membergroups(){
+  if(this.state.c){
+    if(this.props.x.usermems){
+      let arr = [];
+      let o = this.props.x.usermems;
+    let too = this.props.x.usermems.length;
+    for(var i=0; i < too; i++){
+    arr.push(
+      <div className='membergroups' key={i}>
+        <img className='membergroupspic' src={o[i].image_url}></img>
+        <div className='membergroupname'>{o[i].name}</div>
+
+      </div>
+    );
+  }
+
+  return arr;
+}else{
+  return(<div>Has not joined any groups yet</div>);
+}
+}
 }
 
 renderU(){
@@ -261,7 +316,7 @@ renderU(){
   }}
 }
   render() {
-    // console.log(this.props);
+    console.log(this.props);
     if(this.props.group.length === 0){
       return (
         <div>Loading...</div>
@@ -430,8 +485,15 @@ renderU(){
         </div>
 
         <div className="singlegroupmain">
-          <div className="grouphomeinfo">
+          <div className="userhomeinfo">
             {this.info()}
+            <div className='modmem'>
+              <div className='mod'>Moderates groups: </div>
+              <div className='indent'>{this.groupmods()}</div>
+              <div className='mod'>Member of groups: </div>
+              <div className='indent'>{this.membergroups()}</div>
+            </div>
+
           </div>
 
       </div>

@@ -11,7 +11,51 @@
   align-self: center;
   width: 225px;
   height: 225px;
+  border-radius: 3px;
+}
 
+.modmem{
+  padding: 50px;
+}
+
+.membergroupspic{
+  width: 100px;
+  height: 100px;
+}
+
+.membergroups{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.membergroupname{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  padding-top: 30px;
+  padding-left: 15px;
+}
+
+.indent{
+  padding-left: 60px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.mod{
+  border-top: 1px rgba(211, 211, 211, 0.7) solid;
+  padding-top: 30px;
+  margin-top: 30px;
+}
+
+.userpico{
+  display: flex;
+  align-self: flex-start;
+  width: 225px;
+  height: 225px;
+  border-radius: 3px;
 }
 .uploadpicbutton{
   display: flex;
