@@ -175,11 +175,18 @@ class GroupMembers extends React.Component{
       for(var i=news.length-1; i>= 0; i--){
         let v = new Date(news[i].date).toString();
           var user = `/groups/${o}/users/${news[i].user_id}`;
+          if(news[i].typo==='g'){
+            var ol = `/groups/${o}`;
+        }else if(news[i].typo==='e'){
+          ol = `/groups/${o}/events/${news[i].oid}`;
+        }
         x.push(
           <div className='newseach' key={i}>
+            <Link to={user}>
             <img className='groupnewspic' src={news[i].use.image_url}></img>
+            </Link>
           <div className='yc'>
-            <div >{news[i].news} </div>
+            <Link to={ol} >{news[i].news} </Link>
             <TimeAgo className= 'ago' datetime={v}></TimeAgo>
           </div>
           </div>

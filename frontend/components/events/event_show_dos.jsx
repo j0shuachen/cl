@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 // import TimeAgo from 'react-timeago';
 import TimeAgo from 'timeago-react'; // var TimeAgo = require('timeago-react');
 
-class GroupShow extends React.Component{
+class EventShowDos extends React.Component{
 
   constructor (props) {
     super(props);
@@ -24,7 +24,7 @@ class GroupShow extends React.Component{
     this.renderdel = this.renderdel.bind(this);
     this.opmember = this.opmember.bind(this);
     this.eventsetter = this.eventsetter.bind(this);
-
+    this.renderEventUpdate = this.renderEventUpdate.bind(this);
   }
   getInitialState(){
     this.opmember();
@@ -32,8 +32,13 @@ class GroupShow extends React.Component{
 
   componentDidMount(){
     this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true}));
-    this.props.fetchEvents().then(() => this.setState({checking: true}));
+    // this.props.fetchGroup(this.props.match.params.groupId);
+
+    // this.props.fetchEvents().then(() => this.setState({checking: true}));
     this.props.fetchGroupEnrollments(this.props.match.params.groupId);
+      this.props.fetchEvent(this.props.match.params.eventId).then(()=>this.setState({checkt: true}));
+      // setTimeout(this.renderUpdate, 500);
+
     // this.renderJ();
     // this.amember();
     this.opmember();
@@ -42,7 +47,9 @@ class GroupShow extends React.Component{
   }
 
   componentWillMount(){
-    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter());
+    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true}));
+
+    // this.props.fetchGroup(this.props.match.params.groupId);
     // this.props.fetchEvents().then(() => this.eventsetter().then(this.fetchEventEnrollments()));
     this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
     this.props.fetchGroupNews(this.props.match.params.groupId).then(() => this.setState({newz: !this.state.newz}));
@@ -115,7 +122,7 @@ createMember(){
   this.props.createGroupEnrollment({group_enrollment:{user_id: m, group_id: o}}).then(()=> this.setState({check: true}));
   this.setState({member: true, num: true});
   this.setState({newz: !this.state.newz});
-  this.props.createGroupNew({group_news:{group_id: o, news: `${t} joined the group`, oid: o, typo: 'g'}}).then(() =>this.props.fetchGroup(this.props.groupId).then(()=> this.setState({newz: !this.state.newz})));
+  this.props.createGroupNew({group_news:{group_id: o, news: `${t} joined the group`}}).then(() =>this.props.fetchGroup(this.props.groupId).then(()=> this.setState({newz: !this.state.newz})));
 
     // console.log('dododo');
     // this.forceUpdate();
@@ -146,7 +153,7 @@ if (this.props.group_enrollments){
 
       this.setState({member: false, num: false});
 
-      this.props.createGroupNew({group_news:{group_id: o, news: `${t} left the group`, oid: o, typo: 'g'}}).then( () => this.props.fetchGroup(this.props.groupId).then(()=> this.setState({newz: !this.state.newz})));
+      this.props.createGroupNew({group_news:{group_id: o, news: `${t} left the group`}}).then( () => this.props.fetchGroup(this.props.groupId).then(()=> this.setState({newz: !this.state.newz})));
 
         // console.log('huir');
         // this.opmember();
@@ -226,6 +233,23 @@ renderjoin(){
   );
 }
 
+renderEventUpdate(){
+  // let showz = `/groups/${this.props.evento.group_id}/events/${this.props.evento.id}/update`;
+  let showz = `/groups/${this.props.groupId}/events/${this.props.eventId}/update`;
+  if(this.props.currentUser){
+  let g = this.props.currentUser;
+  let v = this.props.evento.user_id;
+
+  // if (this.props.currentUser.id === this.props.evento.user_id){
+  if (v ===g.id){
+  return (
+    <div className="eventup">
+      <Link className="eventup" to={showz}>Update Event</Link>
+  </div>
+);}
+}
+}
+
 
 renderU(){
   const show =`/groups/${this.props.group.id}/update`;
@@ -284,22 +308,24 @@ renderU(){
     // );
     const newsList = (news = []) => {
       var x = [];
-      var o = this.props.groupId;
+      let p = this.props.groupId;
       for(var i=news.length-1; i>= 0; i--){
         let v = new Date(news[i].date).toString();
-          var user = `/groups/${o}/users/${news[i].user_id}`;
-          if(news[i].typo==='g'){
-            var ol = `/groups/${o}`;
-        }else if(news[i].typo==='e'){
-          ol = `/groups/${o}/events/${news[i].oid}`;
-        }
+        let use = news[i].user_id;
+        let lin = `/groups/${p}/users/${use}`;
+        if(news[i].typo==='g'){
+          var o = `/groups/${p}`;
+      }else if(news[i].typo==='e'){
+        o = `/groups/${p}/events/${news[i].oid}`;
+      }
+        // let pops = `/groups/${p}/events/${}`;
         x.push(
           <div className='newseach' key={i}>
-            <Link to={user}>
+            <Link to={lin}>
             <img className='groupnewspic' src={news[i].use.image_url}></img>
             </Link>
           <div className='yc'>
-            <Link to={ol} >{news[i].news} </Link>
+            <Link to={o} >{news[i].news} </Link>
             <TimeAgo className= 'ago' datetime={v}></TimeAgo>
           </div>
           </div>
@@ -330,7 +356,6 @@ renderU(){
         // console.log('left', this.state);
     // this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, groupId: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
         this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, groupId: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));
-
       };
       const join =() => {
         // console.log('hit');
@@ -423,16 +448,13 @@ renderU(){
         </div>
 
         <div className="singlegroupmain">
-          <div className="grouphomeinfo">
-            <div className="info">{this.props.group.info}</div>
-            {this.state.member?  this.renderdel() : this.renderjoin()  }
-
-              <Link className="createeventt" to={idz +"/create/event"}>Create a new event</Link>
-          </div>
-          <div className="groupevents">
-
-              {eventList(this.props.group.events)}
-
+          <div>
+            <div className="eventtitle">{this.props.evento.name}</div>
+          <div className="eventolocation">{this.props.evento.location}</div>
+          <div className="eventstart">{this.props.evento.start_time}</div>
+            <div className="eventend">{this.props.evento.end_time}</div>
+            <div className="eventinfo">{this.props.evento.description}</div>
+            <div className="oo">{this.renderEventUpdate()}</div>
             </div>
       </div>
 
@@ -448,4 +470,4 @@ renderU(){
 }
 
 }
-export default GroupShow;
+export default EventShowDos;

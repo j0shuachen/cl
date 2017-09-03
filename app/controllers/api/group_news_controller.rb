@@ -66,7 +66,7 @@ class Api::GroupNewsController < ApplicationController
   private
 
   def group_news_params
-    params.require(:group_news).permit(:group_id, :news, :user_id)
+    params.require(:group_news).permit(:group_id, :news, :user_id, :oid, :typo)
   end
 
 end

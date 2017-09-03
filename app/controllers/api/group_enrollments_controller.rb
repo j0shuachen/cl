@@ -29,6 +29,8 @@ class Api::GroupEnrollmentsController < ApplicationController
     # @user = User.find(group_enrollment_params[:user_id])
 
     if @group_enrollment.save
+      # @user = User.find(group_enrollment_params[:user_id])
+      # GroupNews.create!(group_id: group_enrollment_params[:group_id], user_id: group_enrollment_params[:user_id] )
       @group_enrollments = GroupEnrollment.where(group_id: group_enrollment_params[:group_id])
       @users = []
       @group_enrollments.each do |enrollment|
@@ -54,7 +56,9 @@ class Api::GroupEnrollmentsController < ApplicationController
       enr.destroy
     end
 
-
+    @user = User.find(group_enrollment_params[:user_id])
+    # GroupNews.create!(group_id: group_enrollment_params[:group_id], user_id: group_enrollment_params[:user_id], )
+    # @group_enrollments = GroupEnrollment.where(group_id: group_enrollment_params[:group_id], oid: group_enrollment_params[:group_id], news: @user.username + ' joined the group!', typo: 'g')
     @group_enrollments = GroupEnrollment.where(group_id: group_enrollment_params[:group_id])
     # if @group_enrollments
     # @group_enrollments.each do |enrolls|

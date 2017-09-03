@@ -18,7 +18,7 @@ class Api::GroupsController < ApplicationController
         t = @group.name
         p s
         p t
-        GroupNews.create!(group_id: @group.id, news: s + ' created the group '+ t, user_id: current_user.id)
+        GroupNews.create!(group_id: @group.id, news: s + ' created the group '+ t, user_id: current_user.id, oid: @group.id, typo: 'g')
         GroupEnrollment.create!(group_id: @group.id, user_id: @user.id)
         @group
 

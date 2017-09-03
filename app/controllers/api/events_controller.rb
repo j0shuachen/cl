@@ -12,7 +12,7 @@ class Api::EventsController < ApplicationController
     s = @user.name
     t = @event.name
     if @event.save
-      GroupNews.create!(group_id: @event.group_id, news: s + ' created the event '+ t, user_id: current_user.id)
+      GroupNews.create!(group_id: @event.group_id, news: s + ' created the event '+ t, user_id: current_user.id, oid: @event.id, typo:'e')
 
       render :show
     else
