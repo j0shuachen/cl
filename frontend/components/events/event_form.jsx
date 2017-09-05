@@ -45,8 +45,11 @@ class EventForm extends React.Component{
     const name = this.state.name;
     const description = this.state.description;
     const location = this.state.location;
-    const image = this.state.image_url;
-    const evente = {group_id: groupId, user_id: userId, name: name,
+    if(this.state.image_url===null){
+      var image = 'http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif';
+    }else{
+      image = this.state.image_url;
+    }    const evente = {group_id: groupId, user_id: userId, name: name,
       description: description, location: location, image_url: image};
       this.props.createEvent({event: evente}).then(()=>this.props.history.push(`/groups/${groupId}`));
       // this.props.createGroupNew({group_news: {group_id: this.props.groupId, news: `${this.props.group.user.name} created the event ${name}`}});
