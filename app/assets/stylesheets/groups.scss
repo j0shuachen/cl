@@ -48,6 +48,32 @@
 
 
 }
+
+.uplob{
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 15px;
+  background-color: rgba(199,199,199,.3);
+  border: 1px rgba(211,211,211,1) solid;
+  width: 200px;
+}
+
+.uplob:hover{
+  cursor: pointer;
+}
+.groupformpic{
+  display: flex;
+  margin-top: 20px;
+  max-width: 300px;
+  max-height: 300px;
+  height: 250px;
+  width: 250px;
+  font-family: 'Ubuntu', sans-serif;
+  opacity: 0.9;
+  border-radius: 10px;
+
+
+}
 .eo:hover{
   opacity: 1;
 

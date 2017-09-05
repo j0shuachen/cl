@@ -278,7 +278,11 @@ renderU(){
     const sponsors=`/groups/${this.props.group.id}/sponsors`;
     const photos=`/groups/${this.props.group.id}/photos`;
     const pages=`/groups/${this.props.group.id}/pages`;
-    const myprofile="/users/1";
+    if(this.props.currentUser){
+    var myprofile=`/groups/${this.props.group.id}/users/${this.props.currentUser.id}`;
+    }else{
+     myprofile=`/groups/${this.props.group.id}/members`;
+    } 
     // const created=this.props.group.created_at;
     const created=this.props.group.creator;
 

@@ -118,8 +118,12 @@ class GroupMembers extends React.Component{
     const sponsors=`/groups/${this.props.group.id}/sponsors`;
     const photos=`/groups/${this.props.group.id}/photos`;
     const pages=`/groups/${this.props.group.id}/pages`;
-    const myprofile="/users/1";
-    const created=this.props.group.created_at;
+    if(this.props.currentUser){
+    var myprofile=`/groups/${this.props.group.id}/users/${this.props.currentUser.id}`;
+    }else{
+     myprofile=`/groups/${this.props.group.id}/members`;
+    }
+        const created=this.props.group.created_at;
     const moddname = () => {
       if(this.props.group.mod){
         return (
@@ -170,9 +174,12 @@ class GroupMembers extends React.Component{
     };
 
     const newsList = (news = []) => {
+      if(this.props.group){
+        if(this.props.group.news){
+          let g = this.props.group.news.length
       var x = [];
       var o = this.props.groupId;
-      for(var i=news.length-1; i>= 0; i--){
+      for(var i=0; i< g; i++){
         let v = new Date(news[i].date).toString();
           var user = `/groups/${o}/users/${news[i].user_id}`;
           if(news[i].typo==='g'){
@@ -193,6 +200,8 @@ class GroupMembers extends React.Component{
         );
       }
       return x;
+    }
+  }
     };
 
     // console.log('hwifhaowfh', this.props);

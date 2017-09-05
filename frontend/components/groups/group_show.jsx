@@ -185,22 +185,59 @@ eventsetter(){
   }}
 }
 //
-renderJ(){
-  if (this.state.member){
-    return (
-      <div>
-        <div onClick={this.deleteMember}>Leave group!</div>
-      </div>
 
-    );
-  }else{
-    return (
-      <div>
-        <div onClick={this.createMember}>Join group!</div>
-      </div>
-    );
+renderJ (){
+  if(this.props.group){
+    if(this.props.currentUser && this.props.group.mod){
+      if(this.props.group.mod.id !== this.props.currentUser.id && this.state.member){
+        return (
+          <div className='jer'
+           onClick={this.deleteMember}>Leave group!
+          </div>
+
+        );
+      }else if (this.props.group.mod.id === this.props.currentUser.id) {
+        return(null);
+      }else if (this.props.group.mod.id!==this.props.currentUser.id && !this.state.member) {
+        return (
+          <div className='jer'
+            onClick={this.createMember}>Join group!
+          </div>
+        );
+      }
+
+    }else if (!this.props.currentUser) {
+      return(
+        <div className='jer'
+          >Create an account or log in to join group!
+        </div>
+      );
+    }
   }
 }
+// renderJ(){
+//
+//   if (this.state.member ){
+//     return (
+//       <div className='jer'
+//        onClick={this.deleteMember}>Leave group!
+//       </div>
+//
+//     );
+//   }else if(!this.state.member && this.props.currentUser){
+//     return (
+//       <div className='jer'
+//         onClick={this.createMember}>Join group!
+//       </div>
+//     );
+//   }else if(!this.props.currentUser){
+//     return(
+//       <div className='jer'
+//         >Create an account or log in to join group!
+//       </div>
+//     );
+//   }
+// }
 
 componentWillReceiveProps(nextProps){
   // console.log(nextProps);
@@ -227,6 +264,8 @@ renderjoin(){
 }
 
 
+
+
 renderU(){
   const show =`/groups/${this.props.group.id}/update`;
   if (this.props.currentUser){
@@ -235,7 +274,7 @@ renderU(){
   let v = this.props.group.user_id;
   if (v === g){
     return (
-      <div className="gg">
+      <div className="jer">
         <Link to={show} className="upgroup">Update Group</Link>
       </div>
     );
@@ -254,8 +293,11 @@ renderU(){
     const sponsors=`/groups/${this.props.group.id}/sponsors`;
     const photos=`/groups/${this.props.group.id}/photos`;
     const pages=`/groups/${this.props.group.id}/pages`;
-    const myprofile="/users/1";
-    // const created=this.props.group.created_at;
+    if(this.props.currentUser){
+    var myprofile=`/groups/${this.props.group.id}/users/${this.props.currentUser.id}`;
+    }else{
+     myprofile=`/groups/${this.props.group.id}/members`;
+    }    // const created=this.props.group.created_at;
     const created=this.props.group.creator;
 
     const moddname = () => {
@@ -371,6 +413,7 @@ renderU(){
       let g = this.props.groupId;
       let e = event.id;
       var ok = `/groups/${g}/events/${e}`;
+
     return(
       <div className="groupeventeach" key={event.id}>
         <Link to={ok} className="groupeventname">{event.name}</Link>
@@ -387,6 +430,30 @@ renderU(){
     );
   })
 );
+const tripz = () => {
+if(this.props.group && this.props.currentUser){
+  if(this.props.group.mod){
+  if(this.props.group.mod.id === this.props.currentUser.id){
+    var go = `/groups/${this.props.group.id}/update`;
+    return(<Link to={go} className='glink'>Update Group</Link>);
+  }else{
+    return (null);
+  }
+}
+}else{
+  return null;
+}
+};
+
+const createEven = () => {
+  if(this.state.member){
+      return(  <Link className="createeventt" to={idz +"/create/event"}>Create a new event</Link>);
+}else{
+  return( <div className='createeventt'> Join group to create an event! </div>);
+}
+
+  };
+
 
   return (
     <div className="singlegroupcontainer">
@@ -403,6 +470,7 @@ renderU(){
           <Link to={sponsors} className="glink">Sponsors</Link>
           <Link to={photos} className="glink">Photos</Link>
           <Link to={pages} className="glink">Pages</Link>
+          {tripz()}
         </div>
 
         <div className="bardos">
@@ -419,21 +487,30 @@ renderU(){
             <div className="gcreated2">
               <div className="g11">{this.props.group.name}</div>
               <div className="g2">Established: {this.props.group.creator}</div>
-              <div className="g3"> Mod: {moddname()}</div>
-              <div className="g4"> Contact Info: {moddcontact()}</div>
-              {this.state.num ? <div className='g5'>{this.props.group.number} members</div> : <div className='g5'>{this.props.group.number} members</div>}
+                {this.state.num ? <div className='g2'>{this.props.group.number} members</div> : <div className='g2'>{this.props.group.number} members</div>}
+
+              <div className="g66">
+                <div className='g90'>Mod: {moddname()}</div>
+                <div className='g90'>Mod Contact Info: {moddcontact()}</div>
+</div>
+
+
+                <div className="g4">{this.state.member?  this.renderJ() : this.renderJ()}
+
+</div>
+
+
+
+
             </div>
-            <div className="gcreated3">{this.renderU()}</div>
           </div>
         </div>
 
         <div className="singlegroupmain">
           <div className="grouphomeinfo">
             <div className="info">{this.props.group.info}</div>
-            {this.state.member?  this.renderdel() : this.renderjoin()  }
-
-              <Link className="createeventt" to={idz +"/create/event"}>Create a new event</Link>
-          </div>
+            {createEven()}
+        </div>
           <div className="groupevents">
 
               {eventList(this.props.group.events)}
@@ -453,4 +530,8 @@ renderU(){
 }
 
 }
+
+
+// <div className="g4">{this.renderU()}</div>
+
 export default GroupShow;

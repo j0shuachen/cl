@@ -10,7 +10,7 @@ class EventForm extends React.Component{
       name: "",
       description: "",
       location: "",
-      // image_url: ""
+      image_url: null
 
     };
 
@@ -120,10 +120,12 @@ class EventForm extends React.Component{
 
           <label className="eventpic">
             <div className="eventques"> Upload a picture for your event!</div>
-            <div className="uploadeventbut" onClick={this.uploadButton}>Upload!</div>
+              {this.state.image_url ? <img className='groupformpic' src={this.state.image_url}></img> :<img className='groupformpic' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1501260585/default_group_normal_ymyl3t.png'></img> }
+              <div className='uplob' onClick={this.uploadButton}>Upload</div>
+
           </label>
 
-          <input className="createeventsub" type="submit"></input>
+          <input className="creategroupsub" type="submit"></input>
 
         </form>
       </div>

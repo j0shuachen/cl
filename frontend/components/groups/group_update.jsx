@@ -18,6 +18,8 @@ class UpdateGroup extends React.Component {
     this.createInfo = this.createInfo.bind(this);
     this.createLocation = this.createLocation.bind(this);
     this.prev = this.prev.bind(this);
+    this.uploadButton = this.uploadButton.bind(this);
+    this.setImage = this.setImage.bind(this);
   }
 
   componentDidMount(){
@@ -30,7 +32,12 @@ class UpdateGroup extends React.Component {
     const info = this.state.info;
     const location = this.state.location;
     const user = this.props.currentUser;
-    const groupe = {name: name, info: info, location: location, user_id: this.props.currentUser, id: this.props.groupId};
+    if(this.state.image_url===null){
+      var image = 'http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif';
+    }else{
+      image = this.state.image_url;
+    }
+    const groupe = {name: name, info: info, location: location, user_id: this.props.currentUser, id: this.props.groupId, image_url: image};
     this.props.updateGroup({group: groupe}).then(()=>this.props.history.push(`/groups/${groupId}`));
   }
 
@@ -53,6 +60,28 @@ class UpdateGroup extends React.Component {
     this.setState({name:this.props.group.name});
     this.setState({info: this.props.group.info});
     this.setState({location: this.props.group.location});
+  }
+
+
+  setImage(url){
+   if (url ){
+     this.setState({image_url: url});
+
+  }
+   //  console.log(this.state);
+ }
+
+
+  uploadButton () {
+    cloudinary.openUploadWidget(
+      window.CLOUDINARY_OPTIONS, (errors, images) => {
+        if(errors === null){
+         this.setImage(images[0].url);
+
+       }
+      }
+    );
+
   }
 
   render(){
@@ -89,6 +118,15 @@ class UpdateGroup extends React.Component {
             <input className="ginput" type="text" ref="location"
             value={this.state.location} placeholder="Your group's location here!"
             onChange={this.createLocation}/>
+          </label>
+
+          <label className="grouppic">
+            <div className="steps">Step 4 of 4</div>
+            <div className="ques">Update your group's picture!</div>
+            {this.state.image_url ? <img className='groupformpic' src={this.state.image_url}></img> :<img className='groupformpic' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1501260585/default_group_normal_ymyl3t.png'></img> }
+            <div className='uplob' onClick={this.uploadButton}>Upload</div>
+
+
           </label>
 
           <input className="creategroupsub" type="submit"></input>

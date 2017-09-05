@@ -10,7 +10,8 @@ class GroupForm extends React.Component {
       location: "",
       user_id: "",
       errors: "",
-      // image_url: ""
+
+      image_url: null
 
     };
     this.createGroup = this.createGroup.bind(this);
@@ -33,7 +34,11 @@ class GroupForm extends React.Component {
     const info = this.state.info;
     const location = this.state.location;
     const user = this.props.currentUser;
-    const image = this.state.image_url;
+    if(this.state.image_url===null){
+      var image = 'http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif';
+    }else{
+      image = this.state.image_url;
+    }
     const groupe = {name: name, info: info, location: location, user_id: user, image_url: image};
     this.props.createGroup({group: groupe}).then(()=>this.props.history.push("/groups"));
   }
@@ -81,6 +86,7 @@ class GroupForm extends React.Component {
      window.CLOUDINARY_OPTIONS, (errors, images) => {
        if(errors === null){
         this.setImage(images[0].url);
+
       }
      }
    );
@@ -128,7 +134,10 @@ class GroupForm extends React.Component {
           <label className="grouppic">
             <div className="steps">Step 4 of 4</div>
             <div className="ques">Upload a picture for your group!</div>
-            <div className="uploadpicbutton" onClick={this.uploadButton}> Upload</div>
+            {this.state.image_url ? <img className='groupformpic' src={this.state.image_url}></img> :<img className='groupformpic' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1501260585/default_group_normal_ymyl3t.png'></img> }
+            <div className='uplob' onClick={this.uploadButton}>Upload</div>
+
+
           </label>
 
           <span className="errors">{this.renderErrors()}</span>
