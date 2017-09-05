@@ -49,6 +49,8 @@ json.members do
   json.array! @members
 end
 
+json.randos @randos
+
 json.enrollments do
   json.array! @enrollments
 end
