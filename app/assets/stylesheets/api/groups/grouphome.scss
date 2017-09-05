@@ -1,33 +1,95 @@
 
-.createeventt{
+
+
+.yoka{
+  margin: 10px;
+}
+
+.joiner{
   display: flex;
-  width: 500px;
+  width: 200px;
+  flex-direction: column;
   height: 30px;
   text-decoration: none;
+  margin: 10px;
   margin-top: 30px;
+  // justify-content: flex-end;
+  border-radius: 10px;
+  justify-content: center;
+  // align-self: flex-end;
+  color: white;
+  padding: 10px;
+  background-color: #ed1c40;
+  text-align: center;
+}
+
+.createeventt{
+  display: flex;
+  width: 350px;
+  height: 30px;
+  text-decoration: none;
+  // margin-top: 30px;
   align-self: flex-end;
   justify-content: flex-end;
   color: #ed1c40;
   padding: 10px;
+  font-size: 25px;
+}
+.createeventt2{
+  display: flex;
+  width: 350px;
+  flex-direction: column;
+  height: 30px;
+  text-decoration: none;
+  align-self: flex-end;
+  // margin-top: 30px;
+  // align-self: flex-end;
+  // justify-content: flex-end;
+  border-radius: 10px;
+  justify-content: center;
+  color: white;
+  padding: 10px;
+  background-color: #ed1c40;
+  text-align: center;
+  margin-right: 10px;
+  font-size: 30px;
 }
 .jer{
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
+  // align-self: center;
+  align-self: flex-end;
   font-size: 20px;
     padding: 10px;
     color: #ed1c40;
     height: 30px;
-    margin-top: 30px;
+    // margin-top: 30px;
     font-size: 30px;
     color: white;
     background-color: #ed1c40;
     border-radius: 10px;
     text-align: center;
     width: 200px;
-    height: 40px;
+    height: 30px;
+    margin: 10px;
+}
+.toko{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  // align-self: baseline;
+  border-bottom: 1px rgba(211,211,211,.7) solid;
+  height: 70px;
+
 }
 
+.tok2{
+  display: flex;
+  width: 300px;
+  font-size: 20px;
+  align-self: center;
+}
 
 .uplink{
   display: flex;
@@ -159,10 +221,17 @@ min-height: 80px;
 }
 
 .g90{
-  width: 225px;
-  height: 200px;
   display: flex;
-  
+  flex-direction: column;
+
+  width: 225px;
+  height: 100px;
+  align-self: center;
+  // align-content: center;
+    justify-content: center;
+    padding:10px;
+text-align: center;
+
 }
 .g66{
   display: flex;
@@ -297,7 +366,7 @@ align-items: center;
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 800px;
+  min-height: 500px;
   justify-content: center;
 align-items: center;
 border-bottom: 1px rgba(211,211,211,.7) solid;

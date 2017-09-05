@@ -391,7 +391,7 @@ renderU(){
     // console.log(this.state);
         if(this.state[event.id] && this.state.member){
           return(
-            <div className='leaveevent' onClick={leave}>
+            <div className='joiner' onClick={leave}>
               Leave Event
             </div>
           );
@@ -424,7 +424,7 @@ renderU(){
         <div className="groupevenntdescription">{event.description}</div>
         <div className="uplinko">{x()}
       </div>
-      <div>{event.rsvp.num} members attending</div>
+      {this.state[event.id] ? <div className='yoka'>{event.rsvp.num} members attending</div> :       <div className='yoka'>{event.rsvp.num} members attending</div> }
       <div>{ot()}</div>
     </div>
     );
@@ -447,7 +447,7 @@ if(this.props.group && this.props.currentUser){
 
 const createEven = () => {
   if(this.state.member){
-      return(  <Link className="createeventt" to={idz +"/create/event"}>Create a new event</Link>);
+      return(  <Link className="createeventt2" to={idz +"/create/event"}>Create a new event</Link>);
 }else{
   return( <div className='createeventt'> Join group to create an event! </div>);
 }
@@ -491,13 +491,11 @@ const createEven = () => {
 
               <div className="g66">
                 <div className='g90'>Mod: {moddname()}</div>
-                <div className='g90'>Mod Contact Info: {moddcontact()}</div>
-</div>
+                  <div className='g90' >Contact Info: {moddcontact()}</div>
+
+                </div>
 
 
-                <div className="g4">{this.state.member?  this.renderJ() : this.renderJ()}
-
-</div>
 
 
 
@@ -510,6 +508,12 @@ const createEven = () => {
           <div className="grouphomeinfo">
             <div className="info">{this.props.group.info}</div>
             {createEven()}
+
+        </div>
+        <div className='toko'>
+          {this.state.member?  this.renderJ() : this.renderJ()}
+
+
         </div>
           <div className="groupevents">
 
