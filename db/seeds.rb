@@ -92,7 +92,14 @@ user55 = User.create!(username: Faker::DragonBall.unique.character, password: 'p
 user56 = User.create!(username: Faker::DragonBall.unique.character, password: 'password', name: Faker::Name.unique.name , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("msd", "100x100"))
 user57 = User.create!(username: Faker::DragonBall.unique.character, password: 'password', name: Faker::Name.unique.name , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("ag", "100x100"))
 user58 = User.create!(username: Faker::DragonBall.unique.character, password: 'password', name: Faker::Name.unique.name , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("my", "100x100"))
-user59 = User.create!(username: Faker::DragonBall.unique.character, password: 'password', name: Faker::Name.unique.name , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("my-own-y", "100x100"))
+user59 = User.create!(username: Faker::DragonBall.unique.character, password: 'password', name: Faker::HarryPotter.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("mywn-y", "100x100"))
+user60 = User.create!(username: Faker::DragonBall.unique.character, password: 'password', name: Faker::HarryPotter.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("my-o-y", "100x100"))
+user61 = User.create!(username: Faker::Hobbit.unique.character, password: 'password', name: Faker::HarryPotter.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("my-oasdwn-y", "100x100"))
+user62 = User.create!(username: Faker::Hobbit.unique.character, password: 'password', name: Faker::HarryPotter.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("my-owffdsn-y", "100x100"))
+user63 = User.create!(username: Faker::Hobbit.unique.character, password: 'password', name: Faker::HarryPotter.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("my-ownaffawfw-y", "100x100"))
+user64 = User.create!(username: Faker::Hobbit.unique.character, password: 'password', name: Faker::HarryPotter.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("my-ownwfw-y", "100x100"))
+user65 = User.create!(username: Faker::Hobbit.unique.character, password: 'password', name: Faker::Name.unique.name , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("my-wwwown-y", "100x100"))
+user66 = User.create!(username: Faker::Hobbit.unique.character, password: 'password', name: Faker::Name.unique.name , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("myqqq-own-y", "100x100"))
 
 
 
