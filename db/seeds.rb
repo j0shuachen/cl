@@ -79,6 +79,26 @@ user43 = User.create!(username: 'benjiROX' , password: 'password', name: Faker::
 user44 = User.create!(username: 'BOyka' , password: 'password', name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
 user45 = User.create!(username: 'crossfit' , password: 'password', name: Faker::StarWars.character, location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
 
+user46 = User.create!(username: Faker::Zelda.unique.character, password: 'password', name: Faker::Name.unique.name , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user47 = User.create!(username: Faker::Zelda.unique.character, password: 'password', name: Faker::RickAndMorty.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user48 = User.create!(username: Faker::Zelda.unique.character, password: 'password', name: Faker::RickAndMorty.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: OP[rand(20)])
+user49 = User.create!(username: Faker::Zelda.unique.character, password: 'password', name: Faker::RickAndMorty.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("my-own-slug", "50x50"))
+user50 = User.create!(username: Faker::Zelda.unique.character, password: 'password', name: Faker::RickAndMorty.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("jfjj", "50x50"))
+user51 = User.create!(username: Faker::Zelda.unique.character, password: 'password', name: Faker::RickAndMorty.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("okw", "50x50"))
+user52 = User.create!(username: Faker::Zelda.unique.character, password: 'password', name: Faker::Seinfeld.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("fweeee", "50x50"))
+user53 = User.create!(username: Faker::DragonBall.unique.character, password: 'password', name: Faker::Seinfeld.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("fdsds", "50x50"))
+user54 = User.create!(username: Faker::DragonBall.unique.character, password: 'password', name: Faker::Seinfeld.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("fwe", "50x50"))
+user55 = User.create!(username: Faker::DragonBall.unique.character, password: 'password', name: Faker::Seinfeld.unique.character , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("wfaw", "50x50"))
+user56 = User.create!(username: Faker::DragonBall.unique.character, password: 'password', name: Faker::Name.unique.name , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("msd", "50x50"))
+user57 = User.create!(username: Faker::DragonBall.unique.character, password: 'password', name: Faker::Name.unique.name , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("ag", "50x50"))
+user58 = User.create!(username: Faker::DragonBall.unique.character, password: 'password', name: Faker::Name.unique.name , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("my", "50x50"))
+user59 = User.create!(username: Faker::DragonBall.unique.character, password: 'password', name: Faker::Name.unique.name , location: Faker::Address.city, email: Faker::Internet.unique.free_email , image_url: Faker::Avatar.image("my-own-y", "50x50"))
+
+
+
+
+
+
 
 
 guest1 = User.create!(username: "guest1", password: "guest11", name: "guest1", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
