@@ -1,4 +1,8 @@
 import React from 'react';
+import 'flatpickr/dist/themes/dark.css';
+
+// import '!style!css!MeetUp/MeetUp/nodemodules/flatpickr/dist/themes/dark.css';
+import Flatpickr from 'react-flatpickr';
 
 class EventForm extends React.Component{
   constructor(props){
@@ -88,6 +92,7 @@ class EventForm extends React.Component{
 
   }
   render(){
+    // const oj = new flatpickr('jer',{});
     return (
     <div className="eventformcontainer">
       <div className="createevent">
@@ -127,6 +132,7 @@ class EventForm extends React.Component{
               <div className='uplob' onClick={this.uploadButton}>Upload</div>
 
           </label>
+          <Flatpickr data-enable-time options={{inline:'true'}} className='lothar'></Flatpickr>
 
           <input className="creategroupsub" type="submit"></input>
 

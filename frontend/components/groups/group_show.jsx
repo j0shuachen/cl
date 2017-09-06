@@ -208,7 +208,7 @@ renderJ (){
 
     }else if (!this.props.currentUser) {
       return(
-        <div className='jer'
+        <div className='createeventt'
           >Create an account or log in to join group!
         </div>
       );
@@ -619,7 +619,8 @@ const randomem = () => {
 
         <div className='roz'>
 
-        <div className='rmem'>{randomem()}
+        <div className='rmem'>
+          {randomem()}
           {this.state.member?  this.renderJ() : this.renderJ()}
         </div>
 
