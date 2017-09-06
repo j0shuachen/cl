@@ -132,9 +132,16 @@ class EventForm extends React.Component{
               <div className='uplob' onClick={this.uploadButton}>Upload</div>
 
           </label>
+        <div className='holden'>
+          <div className='holdendos'>
           <Flatpickr data-enable-time options={{inline:'true'}} className='lothar'></Flatpickr>
+          </div>
+            <div className='holdentres'>
 
-          <input className="creategroupsub" type="submit"></input>
+        <Flatpickr data-enable-time options={{inline:'true'}} className='lothar'></Flatpickr>
+        </div>
+      </div>
+        <input className="creategroupsub" type="submit"></input>
 
         </form>
       </div>
