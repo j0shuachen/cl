@@ -14,7 +14,9 @@ class EventForm extends React.Component{
       name: "",
       description: "",
       location: "",
-      image_url: null
+      image_url: null,
+      start_time:'',
+      end_time:''
 
     };
 
@@ -24,7 +26,8 @@ class EventForm extends React.Component{
     this.createLocation = this.createLocation.bind(this);
     this.setImage = this.setImage.bind(this);
     this.uploadButton = this.uploadButton.bind(this);
-
+    this.setStart = this.setStart.bind(this);
+    this.setEnd= this.setEnd.bind(this);
   }
 
 
@@ -49,12 +52,23 @@ class EventForm extends React.Component{
     const name = this.state.name;
     const description = this.state.description;
     const location = this.state.location;
+    if(this.state.start_time ===''){
+      var starter = 'tbd';
+    }else{
+      starter = this.state.start_time.toString();
+    }
+
+    if(this.state.end_time === ''){
+      var ender = 'tbd';
+    }else{
+      ender = this.state.end_time.toString();
+    }
     if(this.state.image_url===null){
       var image = 'http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif';
     }else{
       image = this.state.image_url;
     }    const evente = {group_id: groupId, user_id: userId, name: name,
-      description: description, location: location, image_url: image};
+      description: description, location: location, image_url: image, start_time: starter, end_time: ender};
       this.props.createEvent({event: evente}).then(()=>this.props.history.push(`/groups/${groupId}`));
       // this.props.createGroupNew({group_news: {group_id: this.props.groupId, news: `${this.props.group.user.name} created the event ${name}`}});
     }
@@ -80,6 +94,17 @@ class EventForm extends React.Component{
     // console.log(this.state);
   }
 
+  setStart(t){
+    console.log(t);
+
+    this.setState({start_time:t});
+  }
+
+  setEnd(t){
+    console.log(t);
+
+    this.setState({end_time:t});
+  }
 
   uploadButton () {
     cloudinary.openUploadWidget(
@@ -91,6 +116,8 @@ class EventForm extends React.Component{
     );
 
   }
+
+
   render(){
     // const oj = new flatpickr('jer',{});
     return (
@@ -121,12 +148,12 @@ class EventForm extends React.Component{
           <div className='holden'>
             <div className='holdendos'>
               <div className= 'loth'>Start Time</div>
-            <Flatpickr data-enable-time options={{inline:'true'}} className='lothar'></Flatpickr>
+            <Flatpickr onChange={this.setStart} data-enable-time options={{inline:'true'}} className='lothar'></Flatpickr>
             </div>
               <div className='holdentres'>
                 <div className='loth'>End Time</div>
 
-          <Flatpickr data-enable-time options={{inline:'true'}} className='lothar'></Flatpickr>
+          <Flatpickr onChange={this.setEnd} data-enable-time options={{inline:'true'}} className='lothar'></Flatpickr>
           </div>
         </div>
 
