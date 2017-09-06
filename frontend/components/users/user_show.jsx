@@ -259,7 +259,7 @@ info(){
 
 groupmods(){
   if(this.state.c){
-    if(this.props.x.usermods){
+    if(this.props.x.usermods.length>0){
       let arr = [];
       let o = this.props.x.usermods;
       let too = this.props.x.usermods.length;
@@ -280,7 +280,7 @@ groupmods(){
 }
 membergroups(){
   if(this.state.c){
-    if(this.props.x.usermems){
+    if(this.props.x.usermems.length > 0){
       let arr = [];
       let o = this.props.x.usermems;
     let too = this.props.x.usermems.length;
@@ -296,7 +296,7 @@ membergroups(){
 
   return arr;
 }else{
-  return(<div>Has not joined any groups yet</div>);
+  return(<div>Has not joined any groups yet!</div>);
 }
 }
 }
