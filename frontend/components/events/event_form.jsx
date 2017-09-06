@@ -107,10 +107,6 @@ class EventForm extends React.Component{
           </label>
 
 
-
-
-
-
           <label className="eventdescription">
             <div className="eventques"> What is your event all about?</div>
             <input className="einput" type="text" ref="description"
@@ -118,6 +114,21 @@ class EventForm extends React.Component{
               onChange={this.createDescription}/>
           </label>
 
+          <label className="eventnameo">
+
+          <div className="eventqueso"> When is your event going down?</div>
+          </label>
+          <div className='holden'>
+            <div className='holdendos'>
+              <div className= 'loth'>Start Time</div>
+            <Flatpickr data-enable-time options={{inline:'true'}} className='lothar'></Flatpickr>
+            </div>
+              <div className='holdentres'>
+                <div className='loth'>End Time</div>
+
+          <Flatpickr data-enable-time options={{inline:'true'}} className='lothar'></Flatpickr>
+          </div>
+        </div>
 
           <label className="eventlocation">
             <div className="eventques"> Where is your event going down?</div>
@@ -132,15 +143,7 @@ class EventForm extends React.Component{
               <div className='uplob' onClick={this.uploadButton}>Upload</div>
 
           </label>
-        <div className='holden'>
-          <div className='holdendos'>
-          <Flatpickr data-enable-time options={{inline:'true'}} className='lothar'></Flatpickr>
-          </div>
-            <div className='holdentres'>
 
-        <Flatpickr data-enable-time options={{inline:'true'}} className='lothar'></Flatpickr>
-        </div>
-      </div>
         <input className="creategroupsub" type="submit"></input>
 
         </form>
