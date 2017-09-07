@@ -53,6 +53,64 @@ class Api::GroupsController < ApplicationController
       @user = User.find(current_user.id)
     end
     p @creator
+    @eventboth = []
+    both = @group.events.where(start_time: 'tbd', end_time: 'tbd')
+    both.each do |s|
+      @eventboth << s
+    end
+    @eventboth.reverse!
+    @eventeither = []
+    either = @group.events.where('start_time = ? and end_time != ?', 'tbd', 'tbd').or(@group.events.where('start_time != ? and end_time = ?', 'tbd', 'tbd'))
+    if either.length > 0
+      either.each do |s|
+        if s.start_time == 'tbd'
+          s[:timer] = DateTime.parse(s.end_time)
+          @eventeither << s
+        else
+          s[:timer] = DateTime.parse(s.start_time)
+          @eventeither << s
+        end
+      end
+      @eventeither.sort_by! do |t|
+        t[:timer]
+      end.reverse!
+    end
+    # @eventstart = []
+#     starter = @group.events.where('start_time = ? and end_time != ?', 'tbd', 'tbd')
+#     if starter.length > 0
+#     starter.each do |s|
+#       @eventstart << s
+#     end
+#     @eventstart.sort_by! do |s|
+#       (DateTime.parse(s.end_time))
+#     end.reverse!
+#   end
+#
+#     @eventend = []
+#   ender = @group.events.where('end_time = ? and start_time != ?', 'tbd', 'tbd')
+#   if ender.length > 0
+#   ender.each do |s|
+#     @eventend << s
+#   end
+#   @eventend.sort_by! do |s|
+#     (DateTime.parse(s.start_time))
+#   end.reverse!
+# end
+    # @evented = []
+    # k = @group.events.where(start_time: 'tbd').or(@group.events.where(end_time: 'tbd'))
+    # if k.length > 0
+    #   k.each do |s|
+    #     @evented << s
+    #   end
+    # end
+    @eventd=[]
+    o=  @group.events.where.not(start_time: 'tbd', end_time: 'tbd')
+    if o.length > 0
+      o.each do |s|
+        @eventd << s
+      end
+    end
+    @events = @group.events.reverse
     # render api_group_url(:id)
 
     render :show

@@ -438,6 +438,7 @@ const eventList= (events = []) => {
 if(events.length === 0){
   return <div> No events so far, why not create one? </div>;
 }else{
+  // let toko = events.reverse();
   return(
   events.map(event => {
     const x = () => {
@@ -481,7 +482,7 @@ if(events.length === 0){
         );
       }else if (!this.state.member) {
         return(
-          <div>
+          <div className='jjjj'>
             Join group to RSVP
           </div>
         );
@@ -497,14 +498,18 @@ if(events.length === 0){
     let g = this.props.groupId;
     let e = event.id;
     var ok = `/groups/${g}/events/${e}`;
-
+    let ots = `/groups/${g}/users/${event.organizer.id}`;
   return(
     <div className="groupeventeach" key={event.id}>
       <Link to={ok} className="groupeventname">{event.name}</Link>
       <img className="indexpic" src={event.image_url}></img>
-      <div className="groupeventlocation">Event location: {event.location}</div>
-      <div className="groupeventid">Event# {event.id}</div>
-      <div className="groupeventorganizer">Event organizer: {event.organizer.name}</div>
+      <div className="groupeventlocation">Location: {event.location}</div>
+      <div className='groupeventorganizer'>
+        <div className='org'>Organizer: </div>
+<Link to={ots}><img className='eventorg' src={event.organizer.image_url}></img></Link>
+</div>
+      <div className='groupeventid'>Start time: {event.start_time}</div>
+      <div className='groupeventid'>End time: {event.end_time}</div>
       <div className="groupevenntdescription">{event.description}</div>
       <div className="uplinko">{x()}
     </div>

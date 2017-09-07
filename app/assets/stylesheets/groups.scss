@@ -49,6 +49,12 @@
 
 }
 
+.org{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 .uplob{
   margin-top: 20px;
   text-align: center;
@@ -57,7 +63,9 @@
   border: 1px rgba(211,211,211,1) solid;
   width: 200px;
 }
-
+.jjjj{
+  margin: 5px;
+}
 .uplob:hover{
   cursor: pointer;
 }

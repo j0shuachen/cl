@@ -22,13 +22,13 @@ json.number @numembers
 # end
 
 json.events do
-  json.array! @group.events.each do |event|
+  json.array! @events.each do |event|
     # json.set! event.id do
       json.extract! event, :id, :name, :group_id, :organizer, :image_url, :description, :location, :start_time, :end_time
         json.rsvp do
           event.members.each do |member|
             json.set! member.id do
-            json.extract! member, :id, :name, :email
+            json.extract! member, :id, :name, :email, :image_url
           # end
         end
       end
@@ -44,7 +44,9 @@ end
 # json.enrollments do
 #   json.array! @group.group_enrollments
 # end
-
+json.eventboth @eventboth
+json.eventeither @eventeither
+json.eventnot @eventd
 json.members do
   json.array! @members
 end

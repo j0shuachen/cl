@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170906065715) do
+ActiveRecord::Schema.define(version: 20170907011155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20170906065715) do
     t.string "image_url", default: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif"
     t.string "start_time"
     t.string "end_time"
+    t.datetime "timer"
     t.index ["group_id"], name: "index_events_on_group_id"
     t.index ["location"], name: "index_events_on_location"
     t.index ["name"], name: "index_events_on_name"
