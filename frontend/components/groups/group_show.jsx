@@ -208,8 +208,8 @@ renderJ (){
 
     }else if (!this.props.currentUser) {
       return(
-        <div className='createeventt'
-          >Create an account or log in to join group!
+        <div className='createeventto'
+          >Log in to join group!
         </div>
       );
     }

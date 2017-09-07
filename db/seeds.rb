@@ -123,6 +123,31 @@ group1= Group.create!(name: "star wars", location: "milpitas", user_id: user1.id
 gn33 = GroupNews.create!(group_id: group1.id, news: user1.username + ' created the group ' + group1.name, user_id: user1.id, oid: group1.id, typo: 'g')
 ge33 = GroupEnrollment.create!(group_id: group1.id, user_id: user1.id)
 
+gn49 = GroupNews.create!(group_id: group1.id, news: user20.username + ' joined the group', user_id: user20.id, oid: group1.id, typo: 'g')
+ge49 = GroupEnrollment.create!(group_id: group1.id, user_id: user20.id)
+gn50 = GroupNews.create!(group_id: group1.id, news: user21.username + ' joined the group', user_id: user21.id, oid: group1.id, typo: 'g')
+ge50 = GroupEnrollment.create!(group_id: group1.id, user_id: user21.id)
+gn51 = GroupNews.create!(group_id: group1.id, news: user22.username + ' joined the group', user_id: user22.id, oid: group1.id, typo: 'g')
+ge51 = GroupEnrollment.create!(group_id: group1.id, user_id: user22.id)
+gn52 = GroupNews.create!(group_id: group1.id, news: user23.username + ' joined the group', user_id: user23.id, oid: group1.id, typo: 'g')
+ge52 = GroupEnrollment.create!(group_id: group1.id, user_id: user23.id)
+gn53 = GroupNews.create!(group_id: group1.id, news: user24.username + ' joined the group', user_id: user24.id, oid: group1.id, typo: 'g')
+ge53 = GroupEnrollment.create!(group_id: group1.id, user_id: user24.id)
+gn54 = GroupNews.create!(group_id: group1.id, news: user25.username + ' joined the group', user_id: user25.id, oid: group1.id, typo: 'g')
+ge54 = GroupEnrollment.create!(group_id: group1.id, user_id: user25.id)
+gn55 = GroupNews.create!(group_id: group1.id, news: user45.username + ' joined the group', user_id: user45.id, oid: group1.id, typo: 'g')
+ge55 = GroupEnrollment.create!(group_id: group1.id, user_id: user45.id)
+gn56 = GroupNews.create!(group_id: group1.id, news: user60.username + ' joined the group', user_id: user60.id, oid: group1.id, typo: 'g')
+ge56 = GroupEnrollment.create!(group_id: group1.id, user_id: user60.id)
+gn57 = GroupNews.create!(group_id: group1.id, news: user61.username + ' joined the group', user_id: user61.id, oid: group1.id, typo: 'g')
+ge57 = GroupEnrollment.create!(group_id: group1.id, user_id: user61.id)
+gn58 = GroupNews.create!(group_id: group1.id, news: user59.username + ' joined the group', user_id: user59.id, oid: group1.id, typo: 'g')
+ge58 = GroupEnrollment.create!(group_id: group1.id, user_id: user59.id)
+gn59 = GroupNews.create!(group_id: group1.id, news: user58.username + ' joined the group', user_id: user58.id, oid: group1.id, typo: 'g')
+ge59 = GroupEnrollment.create!(group_id: group1.id, user_id: user58.id)
+
+
+
 group2= Group.create!(name: "bootcamp grads", location: "san francisco", user_id: user12.id, info: "Bay area coding boot camp grads! We love coding and having fun! Join us as we explore  technologies every Wednesday night. Happy Hour socials on Friday!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504310022/logo-emblem-red-1000-1-_ycgof6.jpg")
 gn34 = GroupNews.create!(group_id: group2.id, news: user12.username + ' created the group ' + group2.name, user_id: user12.id, oid: group2.id, typo: 'g')
 ge34 = GroupEnrollment.create!(group_id: group2.id, user_id: user12.id)
@@ -224,6 +249,9 @@ ge48 = GroupEnrollment.create!(group_id: group16.id, user_id: user20.id)
 group17= Group.create!(name: "Los Angeles Graphic Designers", location: "Los Angeles", user_id: user25.id, info: "We are a group of graphic designers based in Los Angeles shaking up the design industry! Join us for our weekly meetups and monthly design competitions!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262317/pexels-photo-128666_gr3wrd.jpg")
 gn1 = GroupNews.create!(group_id: group17.id, news: user25.username + ' created the group ' + group17.name, user_id: user25.id, oid: group17.id, typo: 'g')
 ge1 = GroupEnrollment.create!(group_id: group17.id, user_id: user25.id)
+
+
+
 
 group18= Group.create!(name: "Bay Area Fantasy Football", location: "San Jose", user_id: user12.id, info: "Home to the bay area fantasy football association. Join us to sign up with a registered league and win prizes. Weekly meetups at local bars and pubs to watch the game!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262250/pexels-photo-564071_akyas1.jpg")
 gn2 = GroupNews.create!(group_id: group18.id, news: user12.username + ' created the group ' + group18.name, user_id: user12.id, oid: group18.id, typo: 'g')
@@ -391,94 +419,64 @@ We've always had investors showing up!", location: "cupertino")
 
 event5= Event.create!(user_id: user19.id, group_id: group13.id, name: "Bar Wednesday @ Sino
 ", description: "Bar Wednesday is a casual weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries.
-
 Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries.
-
 This week's Bar Wednesday will be hosted at Sino in Santana Row, San Jose.
-
 Before that I'll be going to Le Marché Santana Row, an outdoor French market every Wednesday from 4pm-8pm on Santana Row (between Olin Avenue and Olsen Drive).
+All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: '2017-09-22 12:00', end_time: '2017-09-22 6:00')
 
-All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg")
+event6 = Event.create!(name: "Bar Wednesday @ Paper Plane", user_id: user18.id, group_id: group13.id, description:" Bar Wednesday is a casual weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Paper Plane in downtown San Jose. Paper Plane is home to great cocktails, food and an impressive bottle wall. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: '2017-09-05 14:00', end_time: '2017-09-05 18:00')
 
-event6 = Event.create!(name: "Bar Wednesday @ Paper Plane", user_id: user18.id, group_id: group13.id, description:" Bar Wednesday is a casual weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Paper Plane in downtown San Jose. Paper Plane is home to great cocktails, food and an impressive bottle wall. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg")
+event7 = Event.create!( name: "Bar Wednesday @ Haberdasher", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Bar Wednesday standby, Haberdasher, in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: '2017-09-03 12:00', end_time: '2017-09-03 16:00')
 
-event7 = Event.create!( name: "Bar Wednesday @ Haberdasher", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Bar Wednesday standby, Haberdasher, in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg")
+event8 = Event.create!( name: "Bar Wednesday @ Five Points", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Five Points in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: '2017-09-08 18:00', end_time:'2017-09-08 23:00')
 
-event8 = Event.create!( name: "Bar Wednesday @ Five Points", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Five Points in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg")
+event9 = Event.create!( name: "Bar Wednesday @ 55South", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at 55South, in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: '2017-09-10 17:00', end_time: '2017-09-10 22:00')
 
-event9 = Event.create!( name: "Bar Wednesday @ 55South", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at 55South, in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg")
-
-event10 = Event.create!( name: "Bar Wednesday @ Haberdasher", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Bar Wednesday standby, Haberdasher, in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg")
+event10 = Event.create!( name: "Bar Wednesday @ Haberdasher", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Bar Wednesday standby, Haberdasher, in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time:'2017-10-02 19:00', end_time: '2017-10-02 23:30')
 
 event11 = Event.create!(name: "It's Friday. Let's Play Ping Pong Tonight!", user_id: user15.id, group_id: group3.id, description: "• Drop in open play $5
-
 • All levels welcome
-
 • We play with multiple balls, so it's okay to miss because you always have another ball ready to go
-
-• Better players are encouraged to help lower level players", location: "milpitas", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258275/download_qhxlzq.jpg")
+• Better players are encouraged to help lower level players", location: "milpitas", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258275/download_qhxlzq.jpg", start_time: '2017-09-15 12:00', end_time: '2017-09-15 19:00')
 
 event12 = Event.create!(name: "It's Monday. Let's Play Ping Pong Tonight!", user_id: user15.id, group_id: group3.id, description: "• Drop in open play $5
-
 • All levels welcome
-
 • We play with multiple balls, so it's okay to miss because you always have another ball ready to go
-
-• Better players are encouraged to help lower level players", location: "sunnyvale", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258275/download_qhxlzq.jpg")
+• Better players are encouraged to help lower level players", location: "sunnyvale", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258275/download_qhxlzq.jpg", start_time: '2017-09-20 12:00', end_time: '2017-09-20 19:00')
 
 event13 = Event.create!(name: "It's Wednesday. Let's Play Ping Pong Tonight!", user_id: user15.id, group_id: group3.id, description: "• Drop in open play $5
-
 • All levels welcome
-
 • We play with multiple balls, so it's okay to miss because you always have another ball ready to go
-
-• Better players are encouraged to help lower level players", location: "cupertino", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258275/download_qhxlzq.jpg")
+• Better players are encouraged to help lower level players", location: "cupertino", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258275/download_qhxlzq.jpg", start_time: '2017-09-23 12:00', end_time: '2017-09-23 19:00')
 
 event14 = Event.create!(name: "Saturday Social", user_id: user12.id, group_id: group6.id,  description: "**This event gives attendance priority to bies. **
-
 * This event will be gender-balanced *
-
 ARE YOU  TO SATURDAY SOCIAL?
-
 Sign up and you will be given priority treatment!
-
 ARE YOU AFRAID OF COMING ALONE AND WATCHING EVERYONE HAVE FUN WHILE YOU'RE SITTING IN THE CORNER?
-
 Don't worry! We often have a lot of  people show up. We are very friendly and no one is ever left out. Ever.
-
 WANT TO HAVE FUN RIGHT AWAY AND MEET A LOT OF PEOPLE?
-
-Make sure to ask for the organizer, come up and say hi!", location: "cupertino")
+Make sure to ask for the organizer, come up and say hi!", location: "cupertino", start_time: '2017-09-15 12:00', end_time: '2017-09-15 22:00')
 
 event15 = Event.create!(name: "Hump Day Happy Hour at D&B
 ", user_id: user12.id, group_id: group6.id, description: "This place is really the place to be on a Wednesday night! On Wednesday it's half off on apps, drinks, and of course games. What gets really interesting is that the middle of Dave and busters becomes dance floor with a DJ.
+Lets meet up at 9:30 before it gets too crowded. There is also a cover at 10 that you can use for a drink :)", location: "sunnyvale", start_time: '2017-09-20 13:00', end_time: '2017-09-20 19:00')
 
-Lets meet up at 9:30 before it gets too crowded. There is also a cover at 10 that you can use for a drink :)", location: "sunnyvale")
-
-event16= Event.create!(name: "trivia night", group_id: group8.id , user_id: user14.id, description: "et's go to trivia!
-
-Golden State Brewery hosts a trivia night every Thursday. It's a good chance to try some  beers and test your general knowledge.
-
-Trivia starts at 6:30pm but feel free to come a little earlier to grab a drink, play darts and billiards, or just hangout. They don't sell food, but you are more than welcome to bring outside food into the taproom.", location: "santa clara")
+event16= Event.create!(name: "trivia night", group_id: group8.id , user_id: user14.id, description: "et's go to trivia! Golden State Brewery hosts a trivia night every Thursday. It's a good chance to try some  beers and test your general knowledge. Trivia starts at 6:30pm but feel free to come a little earlier to grab a drink, play darts and billiards, or just hangout. They don't sell food, but you are more than welcome to bring outside food into the taproom.", location: "santa clara", start_time: '2017-10-15 15:00', end_time: '2017-10-15 19:00')
 
 
 event17 = Event.create!(name: "bie night", group_id: group1.id, user_id: user11.id, description: "From 7:30 - 9:30pm, come and chat with  people for good time in the market hall! Watch others sing songs (or participate yourself) and enjoy awesome ice cream at this tradition at the market.
-
 San Pedro Square Market has other restaurants as well so feel free to indulge at other places. For a Thursday night, there should be plenty of seating so it won't be hard to have us all together.
+Hope to see you all there!", location: "richmond", start_time: '2017-10-22 12:00', end_time: '2017-10-22 19:00')
 
-Hope to see you all there!", location: "richmond")
+event18= Event.create!(name: "trivia night", group_id: group1.id, user_id: user11.id, description: "Star wars trivia at starbucks!! 1st place $20 gift card!!", location: "milpitas", start_time: '2017-10-05 12:00', end_time: '2017-10-05 19:00')
 
-event18= Event.create!(name: "trivia night", group_id: group1.id, user_id: user11.id, description: "Star wars trivia at starbucks!! 1st place $20 gift card!!", location: "milpitas")
-
-event19= Event.create!(name: "movie night", group_id: group1.id, user_id: user11.id, description: "Star wars the force awakens movie night!!!! snacks will be provided but please bybob", location: "milpitas")
+event19= Event.create!(name: "movie night", group_id: group1.id, user_id: user11.id, description: "Star wars the force awakens movie night!!!! snacks will be provided but please bybob", location: "milpitas", start_time: '2017-10-29 12:00', end_time: '2017-10-29 19:00')
 
 event20 =Event.create!(name: "Movie Day: War for the Planet of the Apes", group_id: group9.id , user_id: user18.id, description: "94% Rotten Tomatoes, warring apes & Woody Harrelson, is there a better way to end the weekend? Probably, but this is all I got.
-
 We'll be watching War for the Planet of the Apes at Santana Row.
-
 Plan to get here a little early to get your tickets and so we can get good seats.
-
-We might also walk around and grab a bite afterwards. Looking forward to seeing y'All there!", location: "san francisco" )
+We might also walk around and grab a bite afterwards. Looking forward to seeing y'All there!", location: "san francisco", start_time: '2017-10-02 12:00', end_time: '2017-10-02 19:00' )
 
 
 

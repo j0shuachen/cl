@@ -39,10 +39,10 @@ class Api::GroupsController < ApplicationController
     @numembers = @group.members.length
     @members = @group.members
 
-    if @members.length <= 10
+    if @members.length <= 9
       @randos = @members.shuffle
-    elsif @members.length > 10
-      @randos = @members.shuffle.take(10)
+    elsif @members.length > 9
+      @randos = @members.shuffle.take(9)
     end
     p 'members!!'
     p @members
