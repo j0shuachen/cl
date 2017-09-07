@@ -177,31 +177,76 @@ gn58 = GroupNews.create!(group_id: group1.id, news: user59.username + ' joined t
 ge58 = GroupEnrollment.create!(group_id: group1.id, user_id: user59.id)
 gn59 = GroupNews.create!(group_id: group1.id, news: user58.username + ' joined the group', user_id: user58.id, oid: group1.id, typo: 'g')
 ge59 = GroupEnrollment.create!(group_id: group1.id, user_id: user58.id)
-
+gn60 = GroupNews.create!(group_id: group1.id, news: user6.username + ' joined the group', user_id: user6.id, oid: group1.id, typo: 'g')
+ge60 = GroupEnrollment.create!(group_id: group1.id, user_id: user6.id)
 
 
 group2= Group.create!(name: "bootcamp grads", location: "san francisco", user_id: user12.id, info: "Bay area coding boot camp grads! We love coding and having fun! Join us as we explore  technologies every Wednesday night. Happy Hour socials on Friday!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504310022/logo-emblem-red-1000-1-_ycgof6.jpg")
 gn34 = GroupNews.create!(group_id: group2.id, news: user12.username + ' created the group ' + group2.name, user_id: user12.id, oid: group2.id, typo: 'g')
 ge34 = GroupEnrollment.create!(group_id: group2.id, user_id: user12.id)
 
+gn61 = GroupNews.create!(group_id: group2.id, news: user6.username + ' joined the group', user_id: user6.id, oid: group2.id, typo: 'g')
+ge61 = GroupEnrollment.create!(group_id: group2.id, user_id: user6.id)
+gn62 = GroupNews.create!(group_id: group2.id, news: user10.username + ' joined the group', user_id: user10.id, oid: group2.id, typo: 'g')
+ge62 = GroupEnrollment.create!(group_id: group2.id, user_id: user10.id)
+gn63 = GroupNews.create!(group_id: group2.id, news: user100.username + ' joined the group', user_id: user100.id, oid: group2.id, typo: 'g')
+ge63 = GroupEnrollment.create!(group_id: group2.id, user_id: user100.id)
+gn64 = GroupNews.create!(group_id: group2.id, news: user99.username + ' joined the group', user_id: user99.id, oid: group2.id, typo: 'g')
+ge64 = GroupEnrollment.create!(group_id: group2.id, user_id: user99.id)
+gn65 = GroupNews.create!(group_id: group2.id, news: user13.username + ' joined the group', user_id: user13.id, oid: group2.id, typo: 'g')
+ge65 = GroupEnrollment.create!(group_id: group2.id, user_id: user13.id)
+gn66 = GroupNews.create!(group_id: group2.id, news: user70.username + ' joined the group', user_id: user70.id, oid: group2.id, typo: 'g')
+ge66 = GroupEnrollment.create!(group_id: group2.id, user_id: user70.id)
+gn67 = GroupNews.create!(group_id: group2.id, news: user65.username + ' joined the group', user_id: user65.id, oid: group2.id, typo: 'g')
+ge67 = GroupEnrollment.create!(group_id: group2.id, user_id: user65.id)
+gn68 = GroupNews.create!(group_id: group2.id, news: user34.username + ' joined the group', user_id: user34.id, oid: group2.id, typo: 'g')
+ge68 = GroupEnrollment.create!(group_id: group2.id, user_id: user34.id)
+gn69 = GroupNews.create!(group_id: group2.id, news: user41.username + ' joined the group', user_id: user41.id, oid: group2.id, typo: 'g')
+ge69 = GroupEnrollment.create!(group_id: group2.id, user_id: user41.id)
+gn70 = GroupNews.create!(group_id: group2.id, news: user55.username + ' joined the group', user_id: user55.id, oid: group2.id, typo: 'g')
+ge70 = GroupEnrollment.create!(group_id: group2.id, user_id: user55.id)
+gn71 = GroupNews.create!(group_id: group2.id, news: user29.username + ' joined the group', user_id: user29.id, oid: group2.id, typo: 'g')
+ge71 = GroupEnrollment.create!(group_id: group2.id, user_id: user29.id)
+gn72 = GroupNews.create!(group_id: group2.id, news: user77.username + ' joined the group', user_id: user77.id, oid: group2.id, typo: 'g')
+ge72 = GroupEnrollment.create!(group_id: group2.id, user_id: user77.id)
+
 
 group3= Group.create!(name: "South Bay Ping Pong", location: "santa clara", user_id: user18.id, info: "• Ping pong is a fun way to meet people and get a great work out all year round; rain or shine.
-
 • Have fun during your lunch break and join us  Tuesdays, Thursdays & Fridays from 12 pm-2 pm for just $5 per day
-
 • We now have three nights,  Mondays, Wednesdays, and Fridays from 7:30pm-10:00pm
-
 • Drop in open play $5
-
 • All levels welcome
-
 • We play with multiple balls, so it's okay to miss because you always have another ball ready to go
-
 • Better players are encouraged to help lower level players
-
 ", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258277/download_1_imnrgf.jpg")
 gn35 = GroupNews.create!(group_id: group3.id, news: user18.username + ' created the group ' + group3.name, user_id: user18.id, oid: group3.id, typo: 'g')
 ge35 = GroupEnrollment.create!(group_id: group3.id, user_id: user18.id)
+gn73 = GroupNews.create!(group_id: group3.id, news: user77.username + ' joined the group', user_id: user77.id, oid: group3.id, typo: 'g')
+ge73 = GroupEnrollment.create!(group_id: group3.id, user_id: user77.id)
+gn74 = GroupNews.create!(group_id: group3.id, news: user88.username + ' joined the group', user_id: user88.id, oid: group3.id, typo: 'g')
+ge74 = GroupEnrollment.create!(group_id: group3.id, user_id: user88.id)
+gn75 = GroupNews.create!(group_id: group3.id, news: user23.username + ' joined the group', user_id: user23.id, oid: group3.id, typo: 'g')
+ge75 = GroupEnrollment.create!(group_id: group3.id, user_id: user23.id)
+gn76 = GroupNews.create!(group_id: group3.id, news: user33.username + ' joined the group', user_id: user33.id, oid: group3.id, typo: 'g')
+ge76 = GroupEnrollment.create!(group_id: group3.id, user_id: user33.id)
+gn77 = GroupNews.create!(group_id: group3.id, news: user66.username + ' joined the group', user_id: user66.id, oid: group3.id, typo: 'g')
+ge77 = GroupEnrollment.create!(group_id: group3.id, user_id: user66.id)
+gn78 = GroupNews.create!(group_id: group3.id, news: user82.username + ' joined the group', user_id: user82.id, oid: group3.id, typo: 'g')
+ge78 = GroupEnrollment.create!(group_id: group3.id, user_id: user82.id)
+gn79 = GroupNews.create!(group_id: group3.id, news: user5.username + ' joined the group', user_id: user5.id, oid: group3.id, typo: 'g')
+ge79 = GroupEnrollment.create!(group_id: group3.id, user_id: user5.id)
+gn80 = GroupNews.create!(group_id: group3.id, news: user29.username + ' joined the group', user_id: user29.id, oid: group3.id, typo: 'g')
+ge80 = GroupEnrollment.create!(group_id: group3.id, user_id: user29.id)
+gn81 = GroupNews.create!(group_id: group3.id, news: user31.username + ' joined the group', user_id: user31.id, oid: group3.id, typo: 'g')
+ge81 = GroupEnrollment.create!(group_id: group3.id, user_id: user31.id)
+gn82= GroupNews.create!(group_id: group3.id, news: user46.username + ' joined the group', user_id: user46.id, oid: group3.id, typo: 'g')
+ge82 = GroupEnrollment.create!(group_id: group3.id, user_id: user46.id)
+gn83 = GroupNews.create!(group_id: group3.id, news: user99.username + ' joined the group', user_id: user99.id, oid: group3.id, typo: 'g')
+ge83 = GroupEnrollment.create!(group_id: group3.id, user_id: user99.id)
+gn84 = GroupNews.create!(group_id: group3.id, news: user42.username + ' joined the group', user_id: user42.id, oid: group3.id, typo: 'g')
+ge84 = GroupEnrollment.create!(group_id: group3.id, user_id: user42.id)
+gn85 = GroupNews.create!(group_id: group3.id, news: user24.username + ' joined the group', user_id: user24.id, oid: group3.id, typo: 'g')
+ge85 = GroupEnrollment.create!(group_id: group3.id, user_id: user24.id)
 
 
 group4= Group.create!(user_id: user13.id, name: "weekend baksetball cru", location:"san francisco", info: "Weekend basketball crew! Players of all skill levels welcome! After a long week at work, there's nothing like a few pickup games to blow off steam!
