@@ -62,7 +62,7 @@ class Api::EventEnrollmentsController < ApplicationController
   private
 
   def event_enrollment_params
-    params.require(:event_enrollment).permit(:group_id, :user_id, :event_id)
+    params.require(:event_enrollment).permit(:group_id, :user_id, :event_id, :typo)
   end
 
 end
