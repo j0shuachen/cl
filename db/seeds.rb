@@ -368,6 +368,26 @@ ge71 = GroupEnrollment.create!(group_id: group2.id, user_id: user29.id)
 gn72 = GroupNews.create!(group_id: group2.id, news: user77.username + ' joined the group', user_id: user77.id, oid: group2.id, typo: 'g')
 ge72 = GroupEnrollment.create!(group_id: group2.id, user_id: user77.id)
 
+
+event27= Event.create!(user_id: user77.id, group_id: group2.id, name: '10k Hackathon', description: "Hackathon with a 10k top prize!!", location: "San Francisco", start_time: '2017-10-07 12:00', end_time: '2017-10-07 21:00')
+event28= Event.create!(user_id: user29.id, group_id: group2.id, name: "Northern California Renaissance Faire", description: "You're a wizard Harry! Or you're a knight. Or a fair maiden... um...
+Come to the Northern California Renaissance Faire and live in a medieval fantasy for a day! Costumes are not required but they are encouraged (rentals also available).
+There will be plenty actors, musicians, artisan booths, jousting and great food (giant turkey leg anyone?) Vegetarian, vegan and gluten-free food is also available at the faire.
+Celtic rock group Tempest will also be performing free this evening.
+IMPORTANT: If you buy your tickets ahead of time online you will get a discount. Discounted tickets are only $18.
+In the comments below, let's try to organize some carpooling. See you at the Faire ", location: "San Jose", start_time: '2017-09-16 10:00', end_time: '2017-09-16 18:00')
+event29= Event.create!(user_id: user13.id, group_id: group2.id, name: "Saturday Social", description: "Let's meet for drinks at a bar (different bar every time) and then play it by ear. Suggestions for bars or things to do are welcome! Leave a comment with your suggestion.
+Tips for a successful Saturday Social:
+- Take an Uber. Drinking and driving is not cool.
+- Bring some cash. Some of the bars may be cash-only.
+- Wear comfortable shoes. There may be some dancing involved.
+- Suggest places to go or things to do; this is a democracy.
+- Don't flake. You will be moved to the bottom of the waitlist for future events if you do.", location: "San Jose", start_time: '2017-11-09 18:00', end_time: '2017-11-09 24:00')
+event30= Event.create!(user_id: user12.id, group_id: group2.id, name: "Taco Truck & Drinks", description: "Let's have fun by doing two of everyone's favorite things: eat tacos & have some drinks! Looking forward to meeting everyone! Let's meet at Taco Truck", location: "San Jose", start_time: '2017-11-28 16:00', end_time: '2017-11-28 24:00')
+event31= Event.create!(user_id: user70.id, group_id: group2.id, name: "Raging Waters", description: "Summer is near its end, so why not get wet before it's too cold. Join us at Raging Waters on Sunday Tickets can be purchased at the website or in person ", location: "San Jose", start_time: '2017-09-08 12:00', end_time: '2017-09-08 22:00')
+
+
+
 gn635 = GroupNews.create!(group_id: group2.id, news: user77.username + ' created the event' + event27.name, user_id: user77.id, oid: event27.id, typo: 'e')
 gn636 = GroupNews.create!(group_id: group2.id, news: user29.username + ' created the event' + event28.name, user_id: user29.id, oid: event28.id, typo: 'e')
 gn637 = GroupNews.create!(group_id: group2.id, news: user13.username + ' created the event' + event29.name, user_id: user13.id, oid: event29.id, typo: 'e')
@@ -385,6 +405,8 @@ gn648 = GroupNews.create!(group_id: group2.id, news: user99.username + ' rsvp\'d
 gn649 = GroupNews.create!(group_id: group2.id, news: user100.username + ' rsvp\'d for ' + event27.name, user_id: user100.id, oid: event27.id, typo: 'e')
 gn650 = GroupNews.create!(group_id: group2.id, news: user10.username + ' rsvp\'d for ' + event27.name, user_id: user10.id, oid: event27.id, typo: 'e')
 gn651 = GroupNews.create!(group_id: group2.id, news: user6.username + ' rsvp\'d for ' + event27.name, user_id: user6.id, oid: event27.id, typo: 'e')
+
+
 ee32 = EventEnrollment.create!(user_id: user77.id, event_id: event27.id)
 ee33 = EventEnrollment.create!(user_id: user29.id, event_id: event27.id)
 ee34 = EventEnrollment.create!(user_id: user13.id, event_id: event27.id)
@@ -404,7 +426,7 @@ ee47 = EventEnrollment.create!(user_id: user10.id, event_id: event27.id)
 ee48 = EventEnrollment.create!(user_id: user6.id, event_id: event27.id)
 
 
-event27= Event.create!(user_id: user77.id, group_id: group2.id, name: '10k Hackathon', description: "Hackathon with a 10k top prize!!", location: "San Francisco", start_time: '2017-10-07 12:00', end_time: '2017-10-07 21:00')
+
 gn652 = GroupNews.create!(group_id: group2.id, news: user77.username + ' rsvp\'d for ' + event28.name, user_id: user77.id, oid: event28.id, typo: 'e')
 gn653 = GroupNews.create!(group_id: group2.id, news: user29.username + ' rsvp\'d for ' + event28.name, user_id: user29.id, oid: event28.id, typo: 'e')
 gn654= GroupNews.create!(group_id: group2.id, news: user55.username + ' rsvp\'d for ' + event28.name, user_id: user55.id, oid: event28.id, typo: 'e')
@@ -436,12 +458,7 @@ ee64 = EventEnrollment.create!(user_id: user10.id, event_id: event28.id)
 ee65 = EventEnrollment.create!(user_id: user6.id, event_id: event28.id)
 
 
-event28= Event.create!(user_id: user29.id, group_id: group2.id, name: "Northern California Renaissance Faire", description: "You're a wizard Harry! Or you're a knight. Or a fair maiden... um...
-Come to the Northern California Renaissance Faire and live in a medieval fantasy for a day! Costumes are not required but they are encouraged (rentals also available).
-There will be plenty actors, musicians, artisan booths, jousting and great food (giant turkey leg anyone?) Vegetarian, vegan and gluten-free food is also available at the faire.
-Celtic rock group Tempest will also be performing free this evening.
-IMPORTANT: If you buy your tickets ahead of time online you will get a discount. Discounted tickets are only $18.
-In the comments below, let's try to organize some carpooling. See you at the Faire ", location: "San Jose", start_time: '2017-09-16 10:00', end_time: '2017-09-16 18:00')
+
 gn664 = GroupNews.create!(group_id: group2.id, news: user77.username + ' rsvp\'d for ' + event29.name, user_id: user77.id, oid: event29.id, typo: 'e')
 gn665 = GroupNews.create!(group_id: group2.id, news: user29.username + ' rsvp\'d for ' + event29.name, user_id: user29.id, oid: event29.id, typo: 'e')
 gn666= GroupNews.create!(group_id: group2.id, news: user55.username + ' rsvp\'d for ' + event29.name, user_id: user55.id, oid: event29.id, typo: 'e')
@@ -473,13 +490,7 @@ ee81 = EventEnrollment.create!(user_id: user10.id, event_id: event29.id)
 ee82 = EventEnrollment.create!(user_id: user6.id, event_id: event29.id)
 
 
-event29= Event.create!(user_id: user13.id, group_id: group2.id, name: "Saturday Social", description: "Let's meet for drinks at a bar (different bar every time) and then play it by ear. Suggestions for bars or things to do are welcome! Leave a comment with your suggestion.
-Tips for a successful Saturday Social:
-- Take an Uber. Drinking and driving is not cool.
-- Bring some cash. Some of the bars may be cash-only.
-- Wear comfortable shoes. There may be some dancing involved.
-- Suggest places to go or things to do; this is a democracy.
-- Don't flake. You will be moved to the bottom of the waitlist for future events if you do.", location: "San Jose", start_time: '2017-11-09 18:00', end_time: '2017-11-09 24:00')
+
 
 
 gn676 = GroupNews.create!(group_id: group2.id, news: user77.username + ' rsvp\'d for ' + event30.name, user_id: user77.id, oid: event30.id, typo: 'e')
@@ -511,7 +522,8 @@ ee96 = EventEnrollment.create!(user_id: user99.id, event_id: event30.id)
 ee97 = EventEnrollment.create!(user_id: user100.id, event_id: event30.id)
 ee98 = EventEnrollment.create!(user_id: user10.id, event_id: event30.id)
 ee99 = EventEnrollment.create!(user_id: user6.id, event_id: event30.id)
-event30= Event.create!(user_id: user12.id, group_id: group2.id, name: "Taco Truck & Drinks", description: "Let's have fun by doing two of everyone's favorite things: eat tacos & have some drinks! Looking forward to meeting everyone! Let's meet at Taco Truck", location: "San Jose", start_time: '2017-11-28 16:00', end_time: '2017-11-28 24:00')
+
+
 
 gn688 = GroupNews.create!(group_id: group2.id, news: user77.username + ' rsvp\'d for ' + event31.name, user_id: user77.id, oid: event31.id, typo: 'e')
 gn689 = GroupNews.create!(group_id: group2.id, news: user29.username + ' rsvp\'d for ' + event31.name, user_id: user29.id, oid: event31.id, typo: 'e')
@@ -542,9 +554,6 @@ ee113 = EventEnrollment.create!(user_id: user99.id, event_id: event31.id)
 ee114 = EventEnrollment.create!(user_id: user100.id, event_id: event31.id)
 ee115 = EventEnrollment.create!(user_id: user10.id, event_id: event31.id)
 ee116 = EventEnrollment.create!(user_id: user6.id, event_id: event31.id)
-event31= Event.create!(user_id: user70.id, group_id: group2.id, name: "Raging Waters", description: "Summer is near its end, so why not get wet before it's too cold. Join us at Raging Waters on Sunday Tickets can be purchased at the website or in person ", location: "San Jose", start_time: '2017-09-08 12:00', end_time: '2017-09-08 22:00')
-
-
 
 
 
@@ -591,6 +600,9 @@ ge85 = GroupEnrollment.create!(group_id: group3.id, user_id: user24.id)
 # gn701 = GroupNews.create!(group_id: group3.id, news: user6.username + ' rsvp\'d for ' + event32.name, user_id: user6.id, oid: event32.id, typo: 'e')
 
 
+event32= Event.create!(user_id: user24.id, group_id: group3.id, name: "Ancient Forest & Amazing Exotic Wild Cats  A Close up & personal Experience !", description: "Ancient Forest & Amazing Exotic Wild Cats  A Close up & personal Experience !", location: 'San Francisco', start_time: '2017-09-08 10:30', end_time: '2017-09-08 16:45')
+
+
 gn700 = GroupNews.create!(group_id: group3.id, news: user24.username + ' created the event' + event32.name, user_id: user24.id, oid: event32.id, typo: 'e')
 ee117 = EventEnrollment.create!(user_id: user6.id, event_id: event32.id)
 gn701 = GroupNews.create!(group_id: group3.id, news: user24.username + ' rsvp\'d for ' + event32.name, user_id: user24.id, oid: event32.id, typo: 'e')
@@ -622,7 +634,6 @@ ee129 = EventEnrollment.create!(user_id: user88.id, event_id: event32.id)
 ee130 = EventEnrollment.create!(user_id: user77.id, event_id: event32.id)
 ee131 = EventEnrollment.create!(user_id: user18.id, event_id: event32.id)
 
-event32= Event.create!(user_id: user24.id, group_id: group3.id, name: "Ancient Forest & Amazing Exotic Wild Cats  A Close up & personal Experience !", description: "Ancient Forest & Amazing Exotic Wild Cats  A Close up & personal Experience !", location: 'San Francisco', start_time: '2017-09-08 10:30', end_time: '2017-09-08 16:45')
 
 
 event33= Event.create!(user_id: user18.id, group_id: group3.id, name: "Hike, Bike, Swim & Party trip !", description: "Great fro sun bathing, swimming, has a off shore lagoon & 2 creeks with trout & salmon to view.  Parking will be so easy; not like last year at Emerald Bay.  The lot at Baldwin beach costs 8.00 per car.  So we will load up the vehicles.   We can park 50 yards from the shore.  bathrooms are there, etc.    ** I have been there several times.  It's very nice .  We can kayak right off the beach & go East or West or explore the lagoon & creeks. ", location: "San Jose", start_time: '2017-09-15 7:00', end_time: '2017-09-15 24:00')
@@ -3217,7 +3228,7 @@ ge309 = GroupEnrollment.create!(group_id: group21.id, user_id: user34.id)
 gn310 = GroupNews.create!(group_id: group21.id, news: user69.username + ' joined the group', user_id: user69.id, oid: group21.id, typo: 'g')
 ge310 = GroupEnrollment.create!(group_id: group21.id, user_id: user69.id)
 
-event87= Event.create!(user_id: user29.id, group_id: group21.id, name: "", description: 'Hey guys! Come hang out at my place and play some fun board games!
+event87= Event.create!(user_id: user29.id, group_id: group21.id, name: "Game Night!", description: 'Hey guys! Come hang out at my place and play some fun board games!
 I have the following board games in my apartment already:
 • Dead of Winter (no expansion pack) - Zombie themed survival co-op game.
 • Power Grid - Having a PhD in Electrical Engineering Simulator
@@ -4108,7 +4119,7 @@ ee1223 = EventEnrollment.create!(user_id: user71.id, event_id: event1100.id)
 ee1224 = EventEnrollment.create!(user_id: user77.id, event_id: event1100.id)
 ee1225 = EventEnrollment.create!(user_id: user19.id, event_id: event1100.id)
 ee1226 = EventEnrollment.create!(user_id: user10.id, event_id: event1100.id)
-ee1227 = EventEnrollment.create!(user_id: user299.id, event_id: event1100.id)
+ee1227 = EventEnrollment.create!(user_id: user29.id, event_id: event1100.id)
 
 
 event111= Event.create!(user_id: user33.id, group_id: group28.id, name: "Grass Handball with San Francisco Calheat", description: 'Come and join us for some grass handball action with the San Francisco Calheat Team Handball Club. We will mix beach handball and indoor handball rules to make it more fun. This game is open to men and women of any level. It is best described by "water polo on dry-land" or "basketball with soccer goals and hockey rules"', location: 'San Francisco', start_time: '2017-11-08 19:00', end_time: '2017-11-08 21:30')
@@ -4136,7 +4147,7 @@ ee1234 = EventEnrollment.create!(user_id: user71.id, event_id: event111.id)
 ee1235 = EventEnrollment.create!(user_id: user77.id, event_id: event111.id)
 ee1236 = EventEnrollment.create!(user_id: user19.id, event_id: event111.id)
 ee1237 = EventEnrollment.create!(user_id: user10.id, event_id: event111.id)
-ee1238 = EventEnrollment.create!(user_id: user299.id, event_id: event111.id)
+ee1238 = EventEnrollment.create!(user_id: user29.id, event_id: event111.id)
 
 event112= Event.create!(user_id: user33.id, group_id: group28.id, name: "Camping & Perseid's Meteor Shower viewing", description: ' Currently have 5 spots available. I\'ve cross posted this event on couple other meetups. If there are more than 5 responses, will do a random lottery at Friday midnight  and finalize the RSVP.', location: "Sunnyvale", start_time: '2017-12-19 15:00', end_time: '2017-12-19 19:30')
 gn2003 = GroupNews.create!(group_id: group28.id, news: user33.username + ' created the event' + event112.name, user_id: user33.id, oid: event112.id, typo: 'e')
@@ -4163,7 +4174,7 @@ ee1245 = EventEnrollment.create!(user_id: user71.id, event_id: event112.id)
 ee1246 = EventEnrollment.create!(user_id: user77.id, event_id: event112.id)
 ee1247 = EventEnrollment.create!(user_id: user19.id, event_id: event112.id)
 ee1248 = EventEnrollment.create!(user_id: user10.id, event_id: event112.id)
-ee1249 = EventEnrollment.create!(user_id: user299.id, event_id: event112.id)
+ee1249 = EventEnrollment.create!(user_id: user29.id, event_id: event112.id)
 
 group29 = Group.create!(name: "San Bruno Golfers", location: "San Bruno", user_id: user29.id, info: "Do you love golf? This is the meetup for you! Let's hit the back 9!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262246/golf-sunset-sport-golfer_zt2rrg.png")
 gn13 = GroupNews.create!(group_id: group29.id, news: user29.username + ' created the group ' + group29.name, user_id: user29.id, oid: group29.id, typo: 'g')
@@ -4429,7 +4440,7 @@ ee1320 = EventEnrollment.create!(user_id: user62.id, event_id: event119.id)
 ee1321 = EventEnrollment.create!(user_id: user60.id, event_id: event119.id)
 ee1322 = EventEnrollment.create!(user_id: user28.id, event_id: event119.id)
 ee1323 = EventEnrollment.create!(user_id: user41.id, event_id: event119.id)
-ee1324 = EventEnrollment.create!(user_id: user43id, event_id: event119.id)
+ee1324 = EventEnrollment.create!(user_id: user43.id, event_id: event119.id)
 ee1325 = EventEnrollment.create!(user_id: user5.id, event_id: event119.id)
 ee1326 = EventEnrollment.create!(user_id: user7.id, event_id: event119.id)
 
@@ -4458,7 +4469,7 @@ ee1331 = EventEnrollment.create!(user_id: user62.id, event_id: event120.id)
 ee1332 = EventEnrollment.create!(user_id: user60.id, event_id: event120.id)
 ee1333 = EventEnrollment.create!(user_id: user28.id, event_id: event120.id)
 ee1334 = EventEnrollment.create!(user_id: user41.id, event_id: event120.id)
-ee1335 = EventEnrollment.create!(user_id: user43id, event_id: event120.id)
+ee1335 = EventEnrollment.create!(user_id: user43.id, event_id: event120.id)
 ee1336 = EventEnrollment.create!(user_id: user5.id, event_id: event120.id)
 ee1337 = EventEnrollment.create!(user_id: user7.id, event_id: event120.id)
 
@@ -4486,7 +4497,7 @@ ee1342 = EventEnrollment.create!(user_id: user62.id, event_id: event121.id)
 ee1343 = EventEnrollment.create!(user_id: user60.id, event_id: event121.id)
 ee1344 = EventEnrollment.create!(user_id: user28.id, event_id: event121.id)
 ee1345 = EventEnrollment.create!(user_id: user41.id, event_id: event121.id)
-ee1346 = EventEnrollment.create!(user_id: user43id, event_id: event121.id)
+ee1346 = EventEnrollment.create!(user_id: user43.id, event_id: event121.id)
 ee1347 = EventEnrollment.create!(user_id: user5.id, event_id: event121.id)
 ee1348 = EventEnrollment.create!(user_id: user7.id, event_id: event121.id)
 
@@ -4538,7 +4549,7 @@ ee1353 = EventEnrollment.create!(user_id: user57.id, event_id: event122.id)
 ee1354 = EventEnrollment.create!(user_id: user47.id, event_id: event122.id)
 ee1355 = EventEnrollment.create!(user_id: user36.id, event_id: event122.id)
 ee1356 = EventEnrollment.create!(user_id: user30.id, event_id: event122.id)
-ee1357 = EventEnrollment.create!(user_id: user19id, event_id: event122.id)
+ee1357 = EventEnrollment.create!(user_id: user19.id, event_id: event122.id)
 ee1358 = EventEnrollment.create!(user_id: user18.id, event_id: event122.id)
 ee1359 = EventEnrollment.create!(user_id: user89.id, event_id: event122.id)
 
@@ -4569,7 +4580,7 @@ ee1364 = EventEnrollment.create!(user_id: user57.id, event_id: event123.id)
 ee1365 = EventEnrollment.create!(user_id: user47.id, event_id: event123.id)
 ee1366 = EventEnrollment.create!(user_id: user36.id, event_id: event123.id)
 ee1367 = EventEnrollment.create!(user_id: user30.id, event_id: event123.id)
-ee1368 = EventEnrollment.create!(user_id: user19id, event_id: event123.id)
+ee1368 = EventEnrollment.create!(user_id: user19.id, event_id: event123.id)
 ee1369 = EventEnrollment.create!(user_id: user18.id, event_id: event123.id)
 ee1370 = EventEnrollment.create!(user_id: user89.id, event_id: event123.id)
 
@@ -4597,7 +4608,7 @@ ee1375 = EventEnrollment.create!(user_id: user57.id, event_id: event124.id)
 ee1376 = EventEnrollment.create!(user_id: user47.id, event_id: event124.id)
 ee1377 = EventEnrollment.create!(user_id: user36.id, event_id: event124.id)
 ee1378 = EventEnrollment.create!(user_id: user30.id, event_id: event124.id)
-ee1379 = EventEnrollment.create!(user_id: user19id, event_id: event124.id)
+ee1379 = EventEnrollment.create!(user_id: user19.id, event_id: event124.id)
 ee1380 = EventEnrollment.create!(user_id: user18.id, event_id: event124.id)
 ee1381 = EventEnrollment.create!(user_id: user89.id, event_id: event124.id)
 
@@ -4758,7 +4769,7 @@ ee1419 = EventEnrollment.create!(user_id: user17.id, event_id: event128.id)
 ee1420 = EventEnrollment.create!(user_id: user23.id, event_id: event128.id)
 ee1421 = EventEnrollment.create!(user_id: user22.id, event_id: event128.id)
 ee1422 = EventEnrollment.create!(user_id: user41.id, event_id: event128.id)
-ee1423 = EventEnrollment.create!(user_id: user56id, event_id: event128.id)
+ee1423 = EventEnrollment.create!(user_id: user56.id, event_id: event128.id)
 ee1424 = EventEnrollment.create!(user_id: user78.id, event_id: event128.id)
 ee1425 = EventEnrollment.create!(user_id: user70.id, event_id: event128.id)
 event129= Event.create!(user_id: user36.id, group_id: group15.id, name: "Outdoor Boot Camp", description: 'Here’s why you’ll never want to miss our class: Your trainer and group are waiting for you at the meeting location. You have a short period of time out of your day to go all out. You have paid upfront; you are committed. Your group has now become your team. You’re amazed at the level which you can now workout. Your body is changing!', location: "San Ramon", start_time: '2017-11-19 13:00', end_time: '2017-11-19 16:30')
@@ -4784,7 +4795,7 @@ ee1430 = EventEnrollment.create!(user_id: user17.id, event_id: event129.id)
 ee1431 = EventEnrollment.create!(user_id: user23.id, event_id: event129.id)
 ee1432 = EventEnrollment.create!(user_id: user22.id, event_id: event129.id)
 ee1433 = EventEnrollment.create!(user_id: user41.id, event_id: event129.id)
-ee1434 = EventEnrollment.create!(user_id: user56id, event_id: event129.id)
+ee1434 = EventEnrollment.create!(user_id: user56.id, event_id: event129.id)
 ee1435 = EventEnrollment.create!(user_id: user78.id, event_id: event129.id)
 ee1436 = EventEnrollment.create!(user_id: user70.id, event_id: event129.id)
 
@@ -4812,7 +4823,7 @@ ee1441 = EventEnrollment.create!(user_id: user17.id, event_id: event130.id)
 ee1442 = EventEnrollment.create!(user_id: user23.id, event_id: event130.id)
 ee1443 = EventEnrollment.create!(user_id: user22.id, event_id: event130.id)
 ee1444 = EventEnrollment.create!(user_id: user41.id, event_id: event130.id)
-ee1445 = EventEnrollment.create!(user_id: user56id, event_id: event130.id)
+ee1445 = EventEnrollment.create!(user_id: user56.id, event_id: event130.id)
 ee1446 = EventEnrollment.create!(user_id: user78.id, event_id: event130.id)
 ee1447 = EventEnrollment.create!(user_id: user70.id, event_id: event130.id)
 
@@ -4863,7 +4874,7 @@ ee1452 = EventEnrollment.create!(user_id: user17.id, event_id: event131.id)
 ee1453 = EventEnrollment.create!(user_id: user23.id, event_id: event131.id)
 ee1454 = EventEnrollment.create!(user_id: user22.id, event_id: event131.id)
 ee1455 = EventEnrollment.create!(user_id: user41.id, event_id: event131.id)
-ee1456 = EventEnrollment.create!(user_id: user56id, event_id: event131.id)
+ee1456 = EventEnrollment.create!(user_id: user56.id, event_id: event131.id)
 ee1457 = EventEnrollment.create!(user_id: user78.id, event_id: event131.id)
 ee1458 = EventEnrollment.create!(user_id: user70.id, event_id: event131.id)
 
@@ -4891,7 +4902,7 @@ ee1463 = EventEnrollment.create!(user_id: user17.id, event_id: event132.id)
 ee1464 = EventEnrollment.create!(user_id: user23.id, event_id: event132.id)
 ee1465 = EventEnrollment.create!(user_id: user22.id, event_id: event132.id)
 ee1466 = EventEnrollment.create!(user_id: user41.id, event_id: event132.id)
-ee1467 = EventEnrollment.create!(user_id: user56id, event_id: event132.id)
+ee1467 = EventEnrollment.create!(user_id: user56.id, event_id: event132.id)
 ee1468 = EventEnrollment.create!(user_id: user78.id, event_id: event132.id)
 ee1469 = EventEnrollment.create!(user_id: user70.id, event_id: event132.id)
 
@@ -4920,7 +4931,7 @@ ee1474 = EventEnrollment.create!(user_id: user17.id, event_id: event133.id)
 ee1475 = EventEnrollment.create!(user_id: user23.id, event_id: event133.id)
 ee1476 = EventEnrollment.create!(user_id: user22.id, event_id: event133.id)
 ee1477 = EventEnrollment.create!(user_id: user41.id, event_id: event133.id)
-ee1478 = EventEnrollment.create!(user_id: user56id, event_id: event133.id)
+ee1478 = EventEnrollment.create!(user_id: user56.id, event_id: event133.id)
 ee1479 = EventEnrollment.create!(user_id: user78.id, event_id: event133.id)
 ee1480 = EventEnrollment.create!(user_id: user70.id, event_id: event133.id)
 

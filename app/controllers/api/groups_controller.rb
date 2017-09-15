@@ -111,6 +111,13 @@ class Api::GroupsController < ApplicationController
       end
     end
     @events = @group.events.reverse
+    p 'youyo'
+    p @group.news
+    @groo = @group.news.sort_by do |opo|
+      opo.id
+    end
+    @groo = @groo.reverse
+
     # render api_group_url(:id)
 
     render :show
