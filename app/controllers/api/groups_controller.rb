@@ -110,6 +110,11 @@ class Api::GroupsController < ApplicationController
         @eventd << s
       end
     end
+    @eventd.sort_by! do |el|
+      el.start_time
+    end
+    @eventd.reverse!
+
     @events = @group.events.reverse
     p 'youyo'
     p @group.news

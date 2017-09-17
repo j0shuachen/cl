@@ -44,8 +44,11 @@ end
 # json.enrollments do
 #   json.array! @group.group_enrollments
 # end
+
+
 json.eventboth @eventboth
 json.eventeither @eventeither
+
 json.eventnot @eventd
 json.members do
   json.array! @members

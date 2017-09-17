@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 // import TimeAgo from 'react-timeago';
 import TimeAgo from 'timeago-react'; // var TimeAgo = require('timeago-react');
+import moment from 'moment';
 
 class GroupShow extends React.Component{
 
@@ -282,7 +283,7 @@ renderU(){
 }
   render() {
     console.log(this.props);
-    if(this.props.group.length === 0){
+    if(Object.keys(this.props.group).length === 0){
       return (
         <div>Loading...</div>
       );
@@ -499,6 +500,7 @@ if(events.length === 0){
     let e = event.id;
     var ok = `/groups/${g}/events/${e}`;
     let ots = `/groups/${g}/users/${event.organizer.id}`;
+
   return(
     <div className="groupeventeach" key={event.id}>
       <Link to={ok} className="groupeventname">{event.name}</Link>
@@ -508,8 +510,8 @@ if(events.length === 0){
         <div className='org'>Organizer: </div>
 <Link to={ots}><img className='eventorg' src={event.organizer.image_url}></img></Link>
 </div>
-      <div className='groupeventid'>Start time: {event.start_time}</div>
-      <div className='groupeventid'>End time: {event.end_time}</div>
+      <div className='groupeventid'>Start time: {moment(event.start_time).format('dddd MMM Do YYYY hh:mm A')}</div>
+      <div className='groupeventid'>End time: {moment(event.end_time).format('dddd MMM Do YYYY hh:mm A')}</div>
       <div className="groupevenntdescription">{event.description}</div>
       <div className="uplinko">{x()}
     </div>
