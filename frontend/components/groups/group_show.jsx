@@ -506,7 +506,14 @@ if(events.length === 0){
     var ok = `/groups/${g}/events/${e}`;
 
     let ots = `/groups/${g}/users/${event.organizer.id}`;
-
+    const randers = (ran=[]) => {
+      var arr = [];
+      for(var i =0; i < ran.length; i++){
+        var pj = `/groups/${this.props.groupId}/users/${ran[i].id}`;
+        arr.push(<Link to={pj}> <img key={i} className='eventorg' src={ran[i].image_url}></img></Link>);
+      }
+      return arr;
+    };
   return(
     <div className="groupeventeach" key={event.id}>
       <Link to={ok} className="groupeventname">{event.name}</Link>
@@ -521,6 +528,7 @@ if(events.length === 0){
       <div className="groupevenntdescription">{event.description}</div>
       <div className="uplinko">{x()}
     </div>
+    <div className='yoka'>{randers(event.rsvp.rando)}</div>
     {this.state[event.id] ? <div className='yoka'>{event.rsvp.num} members attending</div> :       <div className='yoka'>{event.rsvp.num} members attending</div> }
     <div>{ot()}</div>
   </div>

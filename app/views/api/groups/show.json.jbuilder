@@ -30,6 +30,7 @@ json.eventboth do
           json.extract! m, :id, :name, :email, :image_url
         end
       end
+      json.rando e.members.shuffle.take(5)
       json.num e.members.length
     end
   end
@@ -43,6 +44,7 @@ json.eventeither do
           json.extract! m, :id, :name, :email, :image_url
         end
       end
+      json.rando e.members.shuffle.take(5)
       json.num e.members.length
     end
   end
@@ -57,6 +59,7 @@ json.eventnot do
           json.extract! m, :id, :name, :email, :image_url
         end
       end
+      json.rando e.members.shuffle.take(5)
       json.num e.members.length
     end
   end
