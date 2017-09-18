@@ -510,7 +510,7 @@ if(events.length === 0){
       var arr = [];
       for(var i =0; i < ran.length; i++){
         var pj = `/groups/${this.props.groupId}/users/${ran[i].id}`;
-        arr.push(<Link to={pj}> <img key={i} className='eventorg' src={ran[i].image_url}></img></Link>);
+        arr.push(<Link to={pj} key={i} className='soolo'> <img className='eventorg' src={ran[i].image_url}></img></Link>);
       }
       return arr;
     };
@@ -528,7 +528,7 @@ if(events.length === 0){
       <div className="groupevenntdescription">{event.description}</div>
       <div className="uplinko">{x()}
     </div>
-    <div className='yoka'>{randers(event.rsvp.rando)}</div>
+    <div className='yoka'>{randers(event.rsvp.rando)}  + {event.rsvp.num - 5} more</div>
     {this.state[event.id] ? <div className='yoka'>{event.rsvp.num} members attending</div> :       <div className='yoka'>{event.rsvp.num} members attending</div> }
     <div>{ot()}</div>
   </div>
@@ -596,7 +596,7 @@ const randomem = () => {
         </div>
 
         <div className="bardos">
-          <Link className="glink" to={myprofile} >My profile</Link>
+          {this.props.currentUser? <Link className="glink" to={myprofile} >My profile</Link> : null }
         </div>
       </div>
       </div>
