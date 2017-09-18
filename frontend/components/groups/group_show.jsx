@@ -433,11 +433,16 @@ renderU(){
 //   })
 // );
 
+const choppa = () => {
+  if(!this.props.group.eventnot && !this.props.group.eventboth && !this.props.group.eventeither){
+    return <div> No events so far, why not create one? </div>;
 
+  }
+};
 
 const eventList= (events = []) => {
 if(events.length === 0){
-  return <div> No events so far, why not create one? </div>;
+  return null;
 }else{
   // let toko = events.reverse();
   return(
@@ -499,6 +504,7 @@ if(events.length === 0){
     let g = this.props.groupId;
     let e = event.id;
     var ok = `/groups/${g}/events/${e}`;
+
     let ots = `/groups/${g}/users/${event.organizer.id}`;
 
   return(
@@ -510,8 +516,8 @@ if(events.length === 0){
         <div className='org'>Organizer: </div>
 <Link to={ots}><img className='eventorg' src={event.organizer.image_url}></img></Link>
 </div>
-      <div className='groupeventid'>Start time: {moment(event.start_time).format('dddd MMM Do YYYY hh:mm A')}</div>
-      <div className='groupeventid'>End time: {moment(event.end_time).format('dddd MMM Do YYYY hh:mm A')}</div>
+      <div className='groupeventid'>Start time: {event.start_time === 'tbd' ? 'tbd' : moment(event.start_time).format('dddd MMM Do YYYY hh:mm A')}</div>
+      <div className='groupeventid'>End time: {event.end_time === 'tbd' ? 'tbd' : moment(event.end_time).format('dddd MMM Do YYYY hh:mm A')}</div>
       <div className="groupevenntdescription">{event.description}</div>
       <div className="uplinko">{x()}
     </div>
@@ -634,8 +640,10 @@ const randomem = () => {
         </div>
         </div>
           <div className="groupevents">
-
-              {eventList(this.props.group.events)}
+            {choppa()}
+            {eventList(this.props.group.eventboth)}
+            {eventList(this.props.group.eventeither)}
+              {eventList(this.props.group.eventnot)}
 
             </div>
       </div>

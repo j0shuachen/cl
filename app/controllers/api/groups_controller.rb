@@ -20,9 +20,18 @@ class Api::GroupsController < ApplicationController
         p t
         GroupNews.create!(group_id: @group.id, news: s + ' created the group '+ t, user_id: current_user.id, oid: @group.id, typo: 'g')
         GroupEnrollment.create!(group_id: @group.id, user_id: @user.id)
+        v = @group.id
+        p 'yooolo'
+        p v
+        # @groups = Group.all
         @group
-
-      render :show
+        # @group
+        # render :index
+        # # render api_group_url(v)
+        # render `api/groups/#{@group.id}`
+      # render :index
+      # render :show
+      render @group
     else
       render(
       json: ["Missing required fields"],

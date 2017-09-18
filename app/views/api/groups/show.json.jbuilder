@@ -21,6 +21,47 @@ json.number @numembers
 #   end
 # end
 
+json.eventboth do
+  json.array! @eventboth.each do |e|
+    json.extract! e, :id, :name, :group_id, :organizer, :image_url, :description, :location, :start_time, :end_time
+    json.rsvp do
+      e.members.each do |m|
+        json.set! m.id do
+          json.extract! m, :id, :name, :email, :image_url
+        end
+      end
+      json.num e.members.length
+    end
+  end
+end
+json.eventeither do
+  json.array! @eventeither.each do |e|
+    json.extract! e, :id, :name, :group_id, :organizer, :image_url, :description, :location, :start_time, :end_time
+    json.rsvp do
+      e.members.each do |m|
+        json.set! m.id do
+          json.extract! m, :id, :name, :email, :image_url
+        end
+      end
+      json.num e.members.length
+    end
+  end
+end
+
+json.eventnot do
+  json.array! @eventd.each do |e|
+    json.extract! e, :id, :name, :group_id, :organizer, :image_url, :description, :location, :start_time, :end_time
+    json.rsvp do
+      e.members.each do |m|
+        json.set! m.id do
+          json.extract! m, :id, :name, :email, :image_url
+        end
+      end
+      json.num e.members.length
+    end
+  end
+end
+
 json.events do
   json.array! @events.each do |event|
     # json.set! event.id do
@@ -46,10 +87,7 @@ end
 # end
 
 
-json.eventboth @eventboth
-json.eventeither @eventeither
 
-json.eventnot @eventd
 json.members do
   json.array! @members
 end

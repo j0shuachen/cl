@@ -7,6 +7,12 @@ class Api::EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    if event_params['start_time'] != 'tbd'
+      @event['start_time'] = DateTime.parse(event_params['start_time'])
+    end
+    if event_params['end_time'] != 'tbd'
+      @event['end_time'] = DateTime.parse(event_params['end_time'])
+    end
     @event.user_id = current_user.id
     @user = User.find(@event.user_id)
     s = @user.name
