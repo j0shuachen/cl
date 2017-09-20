@@ -504,33 +504,51 @@ if(events.length === 0){
     let g = this.props.groupId;
     let e = event.id;
     var ok = `/groups/${g}/events/${e}`;
-
+    const numbo = () => {
+      if(event.rsvp.num === 0 || event.rsvp.num < 5){
+        return null;
+      }else  {
+        return(
+          `+ ${event.rsvp.num} more`);
+      }
+    };
     let ots = `/groups/${g}/users/${event.organizer.id}`;
     const randers = (ran=[]) => {
+
       var arr = [];
       for(var i =0; i < ran.length; i++){
         var pj = `/groups/${this.props.groupId}/users/${ran[i].id}`;
         arr.push(<Link to={pj} key={i} className='soolo'> <img className='eventorg' src={ran[i].image_url}></img></Link>);
       }
       return arr;
+
     };
   return(
     <div className="groupeventeach" key={event.id}>
       <Link to={ok} className="groupeventname">{event.name}</Link>
-      <img className="indexpic" src={event.image_url}></img>
-      <div className="groupeventlocation">Location: {event.location}</div>
-      <div className='groupeventorganizer'>
-        <div className='org'>Organizer: </div>
-<Link to={ots}><img className='eventorg' src={event.organizer.image_url}></img></Link>
-</div>
-      <div className='groupeventid'>Start time: {event.start_time === 'tbd' ? 'tbd' : moment(event.start_time).format('dddd MMM Do YYYY hh:mm A')}</div>
-      <div className='groupeventid'>End time: {event.end_time === 'tbd' ? 'tbd' : moment(event.end_time).format('dddd MMM Do YYYY hh:mm A')}</div>
-      <div className="groupevenntdescription">{event.description}</div>
-      <div className="uplinko">{x()}
+      <img className="indexpic2" src={event.image_url}></img>
+
+    <div className='hoppaa'>
+      <div className='yoka3'>
+        <div className="groupeventlocation">Location: {event.location}</div>
+          {event.rsvp.rando.length > 0 ? <div className='yoka'>{randers(event.rsvp.rando)} {numbo()}  </div> : null}
+
+
+    <div className="groupevenntdescription">{event.description}</div>
+      <div className="uplinko">{x()}  </div>
+      </div>
+      <div className='yoka4'>
+        <div className='groupeventorganizer'>
+          <div className='org'>Organizer: </div>
+  <Link to={ots}><img className='eventorg' src={event.organizer.image_url}></img></Link>
+
+  </div>
+        <div className='groupeventid'>Start time: {event.start_time === 'tbd' ? 'tbd' : moment(event.start_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+        <div className='groupeventid'>End time: {event.end_time === 'tbd' ? 'tbd' : moment(event.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+        {this.state[event.id] ? <div className='yoka2'>{event.rsvp.num} members attending</div> :       <div className='yoka2'>{event.rsvp.num} members attending</div> }
+          {ot()}
+        </div>
     </div>
-    <div className='yoka'>{randers(event.rsvp.rando)}  + {event.rsvp.num - 5} more</div>
-    {this.state[event.id] ? <div className='yoka'>{event.rsvp.num} members attending</div> :       <div className='yoka'>{event.rsvp.num} members attending</div> }
-    <div>{ot()}</div>
   </div>
   );
 }));
@@ -553,7 +571,7 @@ if(this.props.group && this.props.currentUser){
 
 const createEven = () => {
   if(this.state.member){
-      return(  <Link className="createeventt2" to={idz +"/create/event"}>Create a new event</Link>);
+      return(  <Link className="createeventt2" to={idz +"/create/event"}>Create event</Link>);
 }else{
   return( <div className='createeventt'> Join group to create an event! </div>);
 }
