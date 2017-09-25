@@ -455,9 +455,9 @@ if(events.length === 0){
         const lin = `/groups/${event.group_id}/events/${event.id}/update`;
         if (g===v){
           return (
-            <div className="upLink">
-              <Link className= "uplink" to={lin}>Update Event</Link>
-            </div>
+
+              <Link className= "joiner" to={lin}>Update Event</Link>
+
           );
         }
       }
@@ -509,7 +509,7 @@ if(events.length === 0){
         return null;
       }else  {
         return(
-          `+ ${event.rsvp.num} more`);
+          `+ ${event.rsvp.num - 5} more`);
       }
     };
     let ots = `/groups/${g}/users/${event.organizer.id}`;
@@ -535,18 +535,19 @@ if(events.length === 0){
 
 
     <div className="groupevenntdescription">{event.description}</div>
-      <div className="uplinko">{x()}  </div>
       </div>
       <div className='yoka4'>
         <div className='groupeventorganizer'>
           <div className='org'>Organizer: </div>
   <Link to={ots}><img className='eventorg' src={event.organizer.image_url}></img></Link>
 
-  </div>
+        </div>
         <div className='groupeventid'>Start time: {event.start_time === 'tbd' ? 'tbd' : moment(event.start_time).format('ddd MMM Do YYYY hh:mm A')}</div>
         <div className='groupeventid'>End time: {event.end_time === 'tbd' ? 'tbd' : moment(event.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
         {this.state[event.id] ? <div className='yoka2'>{event.rsvp.num} members attending</div> :       <div className='yoka2'>{event.rsvp.num} members attending</div> }
           {ot()}
+        {x()}
+
         </div>
     </div>
   </div>
@@ -586,7 +587,7 @@ const randomem = () => {
     for(var i =0; i < k.length; i++ ){
       let li = `/groups/${this.props.groupId}/users/${k[i].id}`;
       ar.push(
-      <Link key={i} to={li}>
+      <Link className= 'opos' key={i} to={li}>
         <img className='groupnewspic2'src={k[i].image_url}></img>
       </Link>
     );
@@ -619,7 +620,7 @@ const randomem = () => {
       </div>
       </div>
 
-      <div className="singlegroup">
+      <div className="singlegroup" >
         <div className="singlegroupsidebar">
           <div className="gcreated">
             <img className="grouppico" src={this.props.group.image_url}></img>
@@ -643,7 +644,7 @@ const randomem = () => {
           </div>
         </div>
 
-        <div className="singlegroupmain">
+        <div className="singlegroupmain" >
           <div className="grouphomeinfo">
             <div className="info">{this.props.group.info}</div>
             <div className='roze'>
@@ -660,8 +661,8 @@ const randomem = () => {
 
         <div className='rmem'>
           {randomem()}
-          {this.state.member?  this.renderJ() : this.renderJ()}
         </div>
+        {this.state.member?  this.renderJ() : this.renderJ()}
 
         </div>
         </div>

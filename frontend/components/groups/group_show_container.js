@@ -2,7 +2,8 @@ import {connect} from 'react-redux';
 import {fetchGroup, fetchGroups} from '../../actions/groups_actions';
 import {fetchGroupEnrollments, createGroupEnrollment, deleteGroupEnrollment, fetchGroupEnrollment} from '../../actions/group_enrollment_actions';
 import {selectGroup} from '../../reducers/selectors';
-import GroupShow from './group_show';
+// import GroupShow from './group_show';
+import GroupShowDos from './groupshowdos';
 import {fetchEvent, fetchEvents} from '../../actions/event_actions';
 import {selectEvents, selectAll} from '../../reducers/selectors';
 import {fetchGroupNew, fetchGroupNews, createGroupNew} from '../../actions/group_news_actions';
@@ -61,7 +62,7 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(GroupShow);
+)(GroupShowDos);
 
 
 // console.log(group);

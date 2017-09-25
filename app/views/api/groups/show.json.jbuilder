@@ -114,3 +114,33 @@ end
 # json.members do
 #   json.array! @group.members, partial: 'api/users/user', as: :member
 # end
+
+json.pastevents do
+  json.array! @pastevents.each do |e|
+    json.extract! e, :id, :name, :group_id, :organizer, :image_url, :description, :location, :start_time, :end_time
+    json.rsvp do
+      e.members.each do |m|
+        json.set! m.id do
+          json.extract! m, :id, :name, :email, :image_url
+        end
+      end
+      json.rando e.members.shuffle.take(5)
+      json.num e.members.length
+    end
+  end
+end
+
+json.upcomingevents do
+  json.array! @upcomingevents.each do |e|
+    json.extract! e, :id, :name, :group_id, :organizer, :image_url, :description, :location, :start_time, :end_time
+    json.rsvp do
+      e.members.each do |m|
+        json.set! m.id do
+          json.extract! m, :id, :name, :email, :image_url
+        end
+      end
+      json.rando e.members.shuffle.take(5)
+      json.num e.members.length
+    end
+  end
+end

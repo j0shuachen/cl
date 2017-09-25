@@ -103,7 +103,7 @@ componentWillMount(){
 
 
           <label className="eventlocation">
-            <div className="eventques"> Change up where your event location!</div>
+            <div className="eventques"> Change up the event location!</div>
             <input className="einput" type="text" ref="location"
               value={this.state.location}
               onChange={this.createLocation}/>

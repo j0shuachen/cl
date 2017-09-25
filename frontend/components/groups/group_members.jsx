@@ -176,7 +176,7 @@ class GroupMembers extends React.Component{
     const newsList = (news = []) => {
       if(this.props.group){
         if(this.props.group.news){
-          let g = this.props.group.news.length
+          let g = this.props.group.news.length;
       var x = [];
       var o = this.props.groupId;
       for(var i=0; i< g; i++){
@@ -228,22 +228,22 @@ class GroupMembers extends React.Component{
       </div>
 
     <div className="singlegroup">
-        <div className="singlegroupsidebar">
-          <div className="gcreated">
-            <img className="grouppico" src={this.props.group.image_url}></img>
+      <div className="singlegroupsidebar">
+        <div className="gcreated">
+          <img className="grouppico" src={this.props.group.image_url}></img>
 
+          <div className="gcreated2">
+            <div className="g11">{this.props.group.name}</div>
+            <div className="g2">Established: {this.props.group.creator}</div>
+              {this.state.num ? <div className='g2'>{this.props.group.number} members</div> : <div className='g2'>{this.props.group.number} members</div>}
 
-            <div className="gcreated2">
-              <div className="g11">{this.props.group.name}</div>
-              <div className="g2">Created: {this.props.group.creator}</div>
-              <div className="g3"> Mod: {moddname()}</div>
-              <div className="g4"> Contact Info: {moddcontact()}</div>
-                {this.state.num ? <div className='g5'>{this.props.group.number} members</div> : <div className='g5'>{this.props.group.number} members</div>}
+            <div className="g66">
+              <div className='g90'>Mod: {moddname()}</div>
 
-        </div>
-
-            </div>
+              </div>
           </div>
+        </div>
+      </div>
 
         <div className="singlegroupmain">
 

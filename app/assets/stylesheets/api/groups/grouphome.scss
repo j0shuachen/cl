@@ -5,7 +5,32 @@
   margin: 10px;
   // font-size: 20px;
   height: 80px;
-  font-size: 20px;
+  // font-size: 20px;
+  // font-size: 1vw;
+  font-size: 14px;
+  min-width: 450px;
+
+}
+
+.yokaz{
+  display: flex;
+  align-self: flex-start;
+  padding: 10px;
+  margin-top: 2%;
+
+
+}
+
+.eventlistmore{
+  display: flex;
+  // text-align: center;
+  margin-left: 1%;
+  flex-direction: column;
+  // justify-content:center;
+  width: 60px;
+  justify-content: flex-end;
+  height: 60px;
+  font-size: 12px;
 }
 
 .yoka2{
@@ -22,6 +47,7 @@
   flex-direction: column;
   width: 65%;
   overflow: hidden;
+  margin-right: 1%;
 }
 .yoka4{
   display: flex;
@@ -29,6 +55,7 @@
   height: 300px;
   width: 35%;
   margin-right: 10px;
+  margin-left: 2%;
 }
 .hoppaa{
   display: flex;
@@ -56,7 +83,7 @@
 
 .createeventt{
   display: flex;
-  width: 350px;
+  width: 40%;
   height: 30px;
   text-decoration: none;
   // margin-top: 30px;
@@ -65,8 +92,11 @@
   // justify-content: flex-end;
   color: #ed1c40;
   padding: 10px;
-  font-size: 25px;
+  font-size: 20px;
+  justify-content: center;
+  text-align: center;
   right: 0;
+  // align-self: flex-end;
 }
 
 .createeventto{
@@ -111,6 +141,9 @@
   display: flex;
   flex-direction: row;
   margin-left: 10px;
+  width: 100%;
+  position: relative;
+  right: 0;
 }
 
 .roz{
@@ -131,20 +164,27 @@
     padding: 1%;
     color: #ed1c40;
     height: 30px;
+    min-width: 105px;
     // margin-top: 30px;
-    font-size: 1vw;
+    // font-size: 1vw;
+    // font-size: 16px;
     color: white;
     // width: 100%;
     background-color: #ed1c40;
     border-radius: 10px;
     text-align: center;
+    align-self: flex-end;
+    margin-right: 7%;
+    margin-bottom: 2%;
     // text-align: center;
     // width: 200px;
     // height: 30px;
-    margin: 10px;
+    // margin: 10px;
+    // margin: 1%;
     // position:absolute;
     // right: 0;
     width: 15%;
+    // min-width: 80px;
 }
 .toko{
   display: flex;
@@ -212,14 +252,25 @@
   height: 100%;
   width: 60px;
   align-self: center;
+  object-fit: cover;
   text-decoration: none;
 }
-
+.opos{
+  // width: 7%;
+  // margin: 1%;
+  object-fit: contain;
+  margin-left: 1%;
+}
 .groupnewspic2{
   width: 60px;
+  // width: 100%;
+  // width: 6%;
+  // height: 100%;
+  // min-width: 100%;
   height: 60px;
   align-self: center;
-  margin: 5px;
+  object-fit: cover;
+  // margin: 5px;
 }
 .yc{
   display: flex;
@@ -249,14 +300,14 @@
 .info{
   display: flex;
   flex-direction: column;
-  text-align: center;
-  align-content: center;
+  // text-align: center;
+  // align-content: center;
   // width:800px;
   width: 100%;
 
   align-self: center;
   justify-content: center;
-  height: 400px;
+  // height: 400px;
   margin-bottom: 30px;
   font-size: 25px;
 }
@@ -283,6 +334,10 @@
   justify-content: center;
   border: 1px rgba(211,211,211,.7) solid;
   min-height: 500px;
+  min-width: 250px;
+  max-width: 250px;
+  background-color: white;
+
 }
 
 .gcreated{
@@ -292,6 +347,7 @@
   width: 100%;
   min-height: 1000px;
   // height: 100%;
+  min-width: 250px;
   align-items: flex-start;
   // min-height: 700px;
 }
@@ -334,12 +390,12 @@ min-height: 80px;
   display: flex;
   flex-direction: column;
 
-  width: 225px;
-  height: 100px;
+  // width: 225px;
+  // height: 100px;
   align-self: center;
   // align-content: center;
     justify-content: center;
-    padding:10px;
+    padding:10%;
 text-align: center;
 
 }
@@ -391,8 +447,9 @@ min-height: 80px;
 }
 .g11{
   display: flex;
-  padding:10px;
-  font-size: 30px;
+  // padding:10px;
+  font-size: 25px;
+  // font-size: 1.5vw;
   // width: 200px;
   width: 100%;
   padding-top: 20px;
@@ -403,14 +460,22 @@ min-height: 80px;
 align-items: center;
 text-align: center;
 height: 60px;
+margin-top: 2%;
+
+padding: 1%;
+padding-top: 5%;
 }
 .g2{
   display: flex;
   // border-top: 1px rgba(211,211,211,.7) solid;
   justify-content: center;
 align-items: center;
-  padding: 10px;
-  width: 200px;
+  // padding: 10px;
+  padding: 10%;
+  // width: 200px;
+  // width: 100%;
+  // font-size: 1vw;
+  font-size: 16px;
   align-self: center;
   text-align: center;
 
@@ -424,10 +489,12 @@ align-items: center;
   // min-width: 800px;
   // min-height: 800px;
   height: 100%;
+  min-width: 700px;
   justify-content:flex-start;
   // flex: 3;
+  flex: 1.25;
   border: 1px rgba(211,211,211,.7) solid;
-
+  background-color: white;
 }
 
 .gcreated3{
@@ -499,6 +566,7 @@ align-items: center;
 align-items: center;
 border-bottom: 1px rgba(211,211,211,.7) solid;
 font-size: 35px;
+// justify-content: center;
 
 }
 
@@ -534,10 +602,12 @@ font-size: 35px;
 
 .username{
   margin-top: 5px;
+  font-size: 25px;
 }
 
 .usertitle{
   text-align: center;
+  font-size: 30px;
 }
 .yc{
   display: flex;
@@ -545,6 +615,7 @@ font-size: 35px;
 }
 
 .singlegroupnews{
+  background-color: white;
   flex-direction: column;
   padding: 10px;
   display: flex;
@@ -552,11 +623,12 @@ font-size: 35px;
   width: 25%;
   // min-width: 150px;
   // justify-content: center;
-  flex: 0.5;
+  flex: 0.25;
   border: 1px rgba(211,211,211,.7) solid;
   margin-left: 10px;
   margin-right: 10px;
   font-size: 25px;
+  // min-width: 250px;
 }
 
 
@@ -565,17 +637,20 @@ font-size: 35px;
 
 .memrow{
   margin-top: 20px;
-  padding-left: 30px;
+  // padding-left: 30px;
+  // padding: 1%;
+  margin-left: 5%;
   display: flex;
   flex-direction: row;
   // width: 100%;
   min-width: 200px;
-  width: 425px;
+  width: 45%;
   text-decoration: none;
 
 }
 .memname{
   padding-left: 20px;
+  font-size: 25px;
 }
 
 
@@ -587,9 +662,12 @@ font-size: 35px;
   // align-items: center;
   // align-content: center;
   width: 100%;
+  // justify-content: center;
+  // align-self: center;
   // min-width: 400px;
 }
 .membershead{
   display: flex;
   margin-top: 25px;
+  margin-bottom: 25px;
 }

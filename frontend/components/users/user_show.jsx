@@ -264,12 +264,14 @@ groupmods(){
       let o = this.props.x.usermods;
       let too = this.props.x.usermods.length;
       for(var i=0; i < too; i++){
+
+        var linker = `/groups/${o[i].id}`;
         arr.push(
-          <div className='membergroups' key={i}>
+          <Link to={linker} className='membergroups' key={i}>
             <img className='membergroupspic' src={o[i].image_url}></img>
             <div className='membergroupname'>{o[i].name}</div>
 
-          </div>
+          </Link>
         );
       }
       return arr;
@@ -284,13 +286,15 @@ membergroups(){
       let arr = [];
       let o = this.props.x.usermems;
     let too = this.props.x.usermems.length;
-    for(var i=0; i < too; i++){
+    for(var i=0; i < too; i++){ 
+      var linker = `/groups/${o[i].id}`;
+
     arr.push(
-      <div className='membergroups' key={i}>
+      <Link to={linker} className='membergroups' key={i}>
         <img className='membergroupspic' src={o[i].image_url}></img>
         <div className='membergroupname'>{o[i].name}</div>
 
-      </div>
+      </Link>
     );
   }
 
@@ -471,7 +475,7 @@ renderU(){
       </div>
       </div>
 
-      <div className="singlegroup">
+      <div className="singlegroup" >
         <div className="singlegroupsidebar">
           <div className="gcreated">
             <img className="grouppico" src={this.props.group.image_url}></img>
@@ -479,11 +483,13 @@ renderU(){
             <div className="gcreated2">
               <div className="g11">{this.props.group.name}</div>
               <div className="g2">Established: {this.props.group.creator}</div>
-              <div className="g3"> Mod: {moddname()}</div>
-              <div className="g4"> Contact Info: {moddcontact()}</div>
-              {this.state.num ? <div className='g5'>{this.props.group.number} members</div> : <div className='g5'>{this.props.group.number} members</div>}
+                {this.state.num ? <div className='g2'>{this.props.group.number} members</div> : <div className='g2'>{this.props.group.number} members</div>}
+
+              <div className="g66">
+                <div className='g90'>Mod: {moddname()}</div>
+
+                </div>
             </div>
-            <div className="gcreated3">{this.renderU()}</div>
           </div>
         </div>
 

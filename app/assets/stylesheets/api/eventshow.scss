@@ -27,7 +27,7 @@
   padding: 50px;
   margin-top: 20px;
   display: flex;
-  font-size: 80px;
+  font-size: 30px;
   align-self: flex-start;
   color: #ed1c40;
   padding-bottom: 15px;
@@ -50,7 +50,11 @@
 
 .eventend{
   display: flex;
-
+  align-self: flex-start;
+  padding-left: 20px;
+  height: 30px;
+  font-size: 25px;
+  margin-top: 1%;
 }
 .eventup{
   display: flex;
@@ -83,4 +87,10 @@ flex-direction: column;
   min-height: 400px;
   min-width: 700px;
 
+}
+
+.eventinfoo{
+  padding: 20px;
+  margin-top: 5%;
+  font-size: 25px;
 }

@@ -39,6 +39,12 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    # @eventswent = EventEnrollment.joins('INNER JOIN events ON events.id = event_enrollments.event_id').where('event_enrollments.user_id = ?', @user.id)
+    @eventswent = Event.joins('INNER JOIN event_enrollments ON event_enrollments.event_id = events.id').where('events.user_id = ?', @user.id)
+
+    p 'checking'
+    p @eventswent
+    p 'doneo'
     render `api/users/#{@user.id}`
   end
 

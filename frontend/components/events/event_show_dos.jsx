@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 // import TimeAgo from 'react-timeago';
 import TimeAgo from 'timeago-react'; // var TimeAgo = require('timeago-react');
-
+import moment from 'moment';
 class EventShowDos extends React.Component{
 
   constructor (props) {
@@ -14,7 +14,7 @@ class EventShowDos extends React.Component{
       num: true
     };
 
-    this.renderU = this.renderU.bind(this);
+    this.renderUpdateGroup = this.renderUpdateGroup.bind(this);
     this.ismember = this.ismember.bind(this);
     this.renderJ = this.renderJ.bind(this);
     this.createMember= this.createMember.bind(this);
@@ -251,7 +251,7 @@ renderEventUpdate(){
 }
 
 
-renderU(){
+renderUpdateGroup(){
   const show =`/groups/${this.props.group.id}/update`;
   if (this.props.currentUser){
 
@@ -267,12 +267,11 @@ renderU(){
 }
   render() {
     console.log(this.props);
-    if(this.props.group.length === 0){
+    if(Object.keys(this.props.group).length === 0 || !this.props.evento.random || Object.keys(this.props.evento).length === 0){
       return (
         <div>Loading...</div>
       );
     }
-
     const idz = `/groups/${this.props.group.id}`;
     const members=`/groups/${this.props.group.id}/members`;
     const sponsors=`/groups/${this.props.group.id}/sponsors`;
@@ -282,7 +281,7 @@ renderU(){
     var myprofile=`/groups/${this.props.group.id}/users/${this.props.currentUser.id}`;
     }else{
      myprofile=`/groups/${this.props.group.id}/members`;
-    } 
+    }
     // const created=this.props.group.created_at;
     const created=this.props.group.creator;
 
@@ -412,8 +411,29 @@ renderU(){
   })
 );
 
+const numbo = () => {
+  let len = this.props.evento.rsvpp;
+  if(len.length === 0 || len.length < 8){
+    return null;
+  }else  {
+    return(
+      <div className='eventlistmore'> {`+ ${len.length - 8} more`}</div>);
+  }
+};
+
+const randers = (ran=[]) => {
+
+  var arr = [];
+  for(var i =0; i < ran.length; i++){
+    var pj = `/groups/${this.props.groupId}/users/${ran[i].id}`;
+    arr.push(<Link to={pj} key={i} className='soolo'> <img className='eventorg' src={ran[i].image_url}></img></Link>);
+  }
+  return arr;
+};
+
   return (
     <div className="singlegroupcontainer">
+
       <div className="groupheader">
         <div className="singlegroupbanner"></div>
         <div className="singlegroupheader">
@@ -427,38 +447,44 @@ renderU(){
           <Link to={sponsors} className="glink">Sponsors</Link>
           <Link to={photos} className="glink">Photos</Link>
           <Link to={pages} className="glink">Pages</Link>
+          {this.renderUpdateGroup()}
         </div>
 
         <div className="bardos">
-          <Link className="glink" to={myprofile} >My profile</Link>
+          {this.props.currentUser? <Link className="glink" to={myprofile} >My profile</Link> : null }
         </div>
       </div>
       </div>
+      <div className="singlegroup" >
 
-      <div className="singlegroup">
-        <div className="singlegroupsidebar">
-          <div className="gcreated">
-            <img className="grouppico" src={this.props.group.image_url}></img>
+      <div className="singlegroupsidebar">
+        <div className="gcreated">
+          <img className="grouppico" src={this.props.group.image_url}></img>
 
-            <div className="gcreated2">
-              <div className="g11">{this.props.group.name}</div>
-              <div className="g2">Established: {this.props.group.creator}</div>
-              <div className="g3"> Mod: {moddname()}</div>
-              <div className="g4"> Contact Info: {moddcontact()}</div>
-              {this.state.num ? <div className='g5'>{this.props.group.number} members</div> : <div className='g5'>{this.props.group.number} members</div>}
-            </div>
-            <div className="gcreated3">{this.renderU()}</div>
+          <div className="gcreated2">
+            <div className="g11">{this.props.group.name}</div>
+            <div className="g2">Established: {this.props.group.creator}</div>
+              {this.state.num ? <div className='g2'>{this.props.group.number} members</div> : <div className='g2'>{this.props.group.number} members</div>}
+
+            <div className="g66">
+              <div className='g90'>Mod: {moddname()}</div>
+
+              </div>
           </div>
         </div>
+      </div>
 
         <div className="singlegroupmain">
-          <div>
-            <div className="eventtitle">{this.props.evento.name}</div>
-          <div className="eventolocation">{this.props.evento.location}</div>
-          <div className="eventstart">{this.props.evento.start_time}</div>
-            <div className="eventend">{this.props.evento.end_time}</div>
-            <div className="eventinfo">{this.props.evento.description}</div>
-            <div className="oo">{this.renderEventUpdate()}</div>
+          <div className='grouphomeinfo'>
+            <div className="groupeventname">{this.props.evento.name}</div>
+          <div className="eventlocationo">Location: {this.props.evento.location}</div>
+            {this.props.evento.random.length > 0 ? <div className='yokaz'>{randers(this.props.evento.random)} {numbo()}  </div> : null}
+
+        <div className="eventend">{this.props.evento.start_time === 'tbd' ? 'start time: tbd' : 'start time: ' + moment(this.props.evento.start_time).format('ddd MMM Do YYYY hh:mm A') }</div>
+            <div className="eventend">{this.props.evento.end_time === 'tbd' ? 'end time: tbd' : 'end time: ' +  moment(this.props.evento.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+            <div className="eventinfoo">{this.props.evento.description}</div>
+
+          <div className="oo">{this.renderEventUpdate()}</div>
             </div>
       </div>
 
@@ -467,8 +493,7 @@ renderU(){
           {this.state.newz ? newsList(this.props.group.news) : newsList(this.props.group.news)}
         </div>
 
-
-    </div>
+        </div>
     </div>
   );
 }
