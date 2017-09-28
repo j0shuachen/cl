@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 // import TimeAgo from 'react-timeago';
 // import TimeAgo from 'timeago-react'; // var TimeAgo = require('timeago-react');
+import moment from 'moment';
 
 class UserShow extends React.Component{
 
@@ -29,40 +30,40 @@ class UserShow extends React.Component{
     this.groupmods = this.groupmods.bind(this);
   }
   getInitialState(){
-    this.opmember();
+    // this.opmember();
   }
 
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId).then(() => this.setState({c: true}));
-    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true}));
-    this.props.fetchEvents().then(() => this.setState({checking: true}));
-    this.props.fetchGroupEnrollments(this.props.match.params.groupId);
-    // this.renderJ();
-    // this.amember();
-    this.opmember();
-    this.eventsetter();
+    // this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true}));
+    // this.props.fetchEvents().then(() => this.setState({checking: true}));
+    // this.props.fetchGroupEnrollments(this.props.match.params.groupId);
+    // // this.renderJ();
+    // // this.amember();
+    // this.opmember();
+    // this.eventsetter();
     // this.ismember();
   }
 
   componentWillMount(){
     this.props.fetchUser(this.props.match.params.userId);
 
-    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter());
-    // this.props.fetchEvents().then(() => this.eventsetter().then(this.fetchEventEnrollments()));
-    this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
-    this.props.fetchGroupNews(this.props.match.params.groupId).then(() => this.setState({newz: !this.state.newz}));
-
-    // this.renderJ();
-    // this.ismember();
-    this.opmember();
-    this.eventsetter();
+    // this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter());
+    // // this.props.fetchEvents().then(() => this.eventsetter().then(this.fetchEventEnrollments()));
+    // this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
+    // this.props.fetchGroupNews(this.props.match.params.groupId).then(() => this.setState({newz: !this.state.newz}));
+    //
+    // // this.renderJ();
+    // // this.ismember();
+    // this.opmember();
+    // this.eventsetter();
   }
 
   componentWillReceiveProps(nextProps){
-    if(nextProps.group !== this.props.group){
-      this.props.fetchGroup(this.this.props.match.params.groupId);
-      this.props.fetchGroupEnrollments(this.props.match.params.groupId);
-    }
+    // if(nextProps.group !== this.props.group){
+    //   this.props.fetchGroup(this.this.props.match.params.groupId);
+    //   this.props.fetchGroupEnrollments(this.props.match.params.groupId);
+    // }
   }
 
   componentWillUpdateProps(prevProps,nextProps){
@@ -234,7 +235,7 @@ info(){
   const g = () => {
     if (this.props.currentUser){
     if (this.props.currentUser.id === this.props.x.id) {
-      var updater = `/groups/${this.props.groupId}/users/${this.props.currentUser.id}/update`;
+      var updater = `/users/${this.props.currentUser.id}/update`;
       return(
         <Link  className='joiner' to={updater}>
           Update
@@ -252,6 +253,7 @@ info(){
         <div className='userprof'>
         <img className='userpico' src={this.props.x.image_url}></img>
         <div className='statistics'>
+          <div className='stats'>Member since: {moment(this.props.x.created_at).format('ddd MMM Do YYYY')}</div>
           <div className='stats'>Total event rsvps: {this.props.x.eventrsvps.length}</div>
           <div className='stats' >Number of events attended: {this.props.x.eventswent.length}</div>
           <div className='stats'>Moderates: {this.props.x.usermods.length} groups</div>
@@ -277,9 +279,12 @@ groupmods(){
 
         var linker = `/groups/${o[i].id}`;
         arr.push(
-          <Link to={linker} className='membergroups' key={i}>
+          <Link to={linker} className='membergroupsglob' key={i}>
+            <div className='membergroupsglobin'>
             <img className='membergroupspic' src={o[i].image_url}></img>
             <div className='membergroupname'>{o[i].name}</div>
+            </div>
+            <div className='joingroupdate'>Created on: {moment(o[i].created_at).format('ddd MMM Do YYYY')}</div>
 
           </Link>
         );
@@ -292,17 +297,21 @@ groupmods(){
 }
 membergroups(){
   if(this.state.c){
-    if(this.props.x.usermems.length > 0){
+    if(this.props.x.membergroups.length > 0){
       let arr = [];
-      let o = this.props.x.usermems;
-    let too = this.props.x.usermems.length;
+      let o = this.props.x.membergroups;
+    let too = this.props.x.membergroups.length;
     for(var i=0; i < too; i++){
       var linker = `/groups/${o[i].id}`;
 
     arr.push(
-      <Link to={linker} className='membergroups' key={i}>
+      <Link to={linker} className='membergroupsglob' key={i}>
+        <div className='membergroupsglobin'>
+
         <img className='membergroupspic' src={o[i].image_url}></img>
         <div className='membergroupname'>{o[i].name}</div>
+        </div>
+        <div className='joingroupdate'>Joined on: {moment(o[i].enrollmentinfo[0].created_at).format('ddd MMM Do YYYY')}</div>
 
       </Link>
     );
@@ -331,7 +340,7 @@ renderU(){
 }
   render() {
     console.log(this.props);
-    if(Object.keys(this.props.group).length === 0 || !this.props.x){
+    if(this.props.group.length === 0){
       return (
         <div>Loading...</div>
       );
@@ -343,7 +352,7 @@ renderU(){
     const photos=`/groups/${this.props.group.id}/photos`;
     const pages=`/groups/${this.props.group.id}/pages`;
     if(this.props.currentUser){
-    var myprofile=`/groups/${this.props.group.id}/users/${this.props.currentUser.id}`;
+    var myprofile=`users/${this.props.currentUser.id}`;
     }else{
      myprofile=`/groups/${this.props.group.id}/members`;
     }     // const created=this.props.group.created_at;
@@ -461,7 +470,7 @@ renderU(){
     );
   })
 );
-
+var groupindex = `/groups`;
   return (
     <div className="singlegroupcontainer">
       <div className="groupheader">
@@ -472,45 +481,25 @@ renderU(){
 
       <div className="singletop">
         <div className="singlegroupbar">
-          <Link to={idz} className="glink">Home</Link>
-          <Link to={members} className="glink">Members</Link>
-          <Link to={sponsors} className="glink">Sponsors</Link>
-          <Link to={photos} className="glink">Photos</Link>
-          <Link to={pages} className="glink">Pages</Link>
+          <Link to={groupindex} className='glink'> Back to Groups</Link>
         </div>
 
         <div className="bardos">
-          {this.props.currentUser.id === this.props.x.id ? <Link className="glinkon" to={myprofile} >My profile</Link> : <Link className="glink" to={myprofile} >My profile</Link>}
         </div>
       </div>
       </div>
 
       <div className="singlegroup" >
-        <div className="singlegroupsidebar">
-          <div className="gcreated">
-            <img className="grouppico" src={this.props.group.image_url}></img>
 
-            <div className="gcreated2">
-              <div className="g11">{this.props.group.name}</div>
-              <div className="g2">Established: {this.props.group.creator}</div>
-                {this.state.num ? <div className='g2'>{this.props.group.number} members</div> : <div className='g2'>{this.props.group.number} members</div>}
 
-              <div className="g66">
-                <div className='g90'>Mod: {moddname()}</div>
-
-                </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="singlegroupmain">
+        <div className="profilegroupmain">
           <div className="userhomeinfo">
           {this.info()}
             <div className='modmem'>
               <div className='mod'>Moderates groups: </div>
-              <div className='indent'>{this.groupmods()}</div>
-              <div className='mod'>Member of groups: </div>
-              <div className='indent'>{this.membergroups()}</div>
+              {this.groupmods()}
+              <div className='moddos'>Member of groups: </div>
+              {this.membergroups()}
             </div>
 
           </div>

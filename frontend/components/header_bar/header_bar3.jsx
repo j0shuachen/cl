@@ -93,6 +93,7 @@ personalGreeting (currentUser, logout) {
 );
 }
 render(){
+
   const personalGreeting = (currentUser, logout) => (
     <div className="mainhed">
     <div className="create-header">
@@ -103,7 +104,7 @@ render(){
       <Link to="/groups" className="header-link"></Link>
     </div>
     <div className="greeting">
-      <div className="header-name">Hi, {currentUser.username}!</div>
+      <div className="header-name">Hi,  <Link className='headertoprof' to={`/users/${currentUser.id}`}>{'   ' + currentUser.username}</Link>!</div>
       <Link to="/"className="header-button" onClick={logout}>Log Out
       </Link>
   </div>

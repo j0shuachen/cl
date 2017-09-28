@@ -34,7 +34,16 @@
   max-width: 300px;
   max-height: 300px;
 }
-
+.joinGrouptoRsvp{
+  font-size: 18px;
+}
+.glinkon{
+  // background-color: white;
+  color: #8B0000;
+  padding: 20px;
+  text-decoration: none;
+  margin-left: 1px;
+}
 .indexpic2{
   padding-left: 20px;
   width: 20%;
@@ -42,6 +51,13 @@
   max-width: 100%;
   height: auto;
   object-fit: cover;
+  width: 150px;
+  height: 150px;
+  max-width: 150px;
+  max-height: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
 }
 .eo{
   display: flex;
@@ -58,6 +74,8 @@
 
 }
 .soolo{
+  width: 60px;
+  height: 50px;
   text-decoration: none;
 }
 .org{
@@ -81,7 +99,7 @@
   // padding-left: 10px;
   margin-top: 5%;
   padding-right: 5%;
-  font-size: 15px;
+  font-size: 14px;
 }
 .uplob:hover{
   cursor: pointer;

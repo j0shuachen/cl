@@ -71,6 +71,7 @@ class Api::GroupEnrollmentsController < ApplicationController
     @event_enrollments = EventEnrollment.where(group_id: group_enrollment_params[:group_id], user_id: current_user.id)
     if @event_enrollments
       @event_enrollments.each do |enrolls|
+        
         enrolls.destroy
       end
     end

@@ -505,7 +505,7 @@ if(events.length === 0){
     let e = event.id;
     var ok = `/groups/${g}/events/${e}`;
     const numbo = () => {
-      if(event.rsvp.num === 0 || event.rsvp.num < 5){
+      if(event.rsvp.num === 0 || event.rsvp.num <= 5){
         return null;
       }else  {
         return(
@@ -606,7 +606,7 @@ const randomem = () => {
 
       <div className="singletop">
         <div className="singlegroupbar">
-          <Link to={idz} className="glink">Home</Link>
+          <Link to={idz} className="glinkon">Home</Link>
           <Link to={members} className="glink">Members</Link>
           <Link to={sponsors} className="glink">Sponsors</Link>
           <Link to={photos} className="glink">Photos</Link>

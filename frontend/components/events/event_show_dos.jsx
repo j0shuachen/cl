@@ -11,9 +11,9 @@ class EventShowDos extends React.Component{
       // member: null
       newz: true,
       loaded: false,
-      num: true
+      num: true,
     };
-
+    this.membergroups = this.membergroups.bind(this);
     this.renderUpdateGroup = this.renderUpdateGroup.bind(this);
     this.ismember = this.ismember.bind(this);
     this.renderJ = this.renderJ.bind(this);
@@ -25,6 +25,7 @@ class EventShowDos extends React.Component{
     this.opmember = this.opmember.bind(this);
     this.eventsetter = this.eventsetter.bind(this);
     this.renderEventUpdate = this.renderEventUpdate.bind(this);
+    this.checkrsvp = this.checkrsvp.bind(this);
   }
   getInitialState(){
     this.opmember();
@@ -48,6 +49,7 @@ class EventShowDos extends React.Component{
 
   componentWillMount(){
     this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true}));
+    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true, newz: true})).then(() => this.checkrsvp());
 
     // this.props.fetchGroup(this.props.match.params.groupId);
     // this.props.fetchEvents().then(() => this.eventsetter().then(this.fetchEventEnrollments()));
@@ -168,6 +170,20 @@ if (this.props.group_enrollments){
 
 
 }
+
+checkrsvp (){
+  console.log('checkers');
+  if(this.props.group.eventdos[this.props.eventId].rsvp){
+    console.log('checkedrs');
+    // if(this.props.evento.rsvpph[this.props.currentUser.id]){
+    //   var ok = this.props.eventId;
+    //   this.setState({[this.props.eventId]: true});
+    // }
+    if(this.props.group.eventdos[this.props.eventId].rsvp[this.props.currentUser.id]){
+      this.setState({[this.props.eventId]: true});
+    }
+  }
+}
 eventsetter(){
   if(this.props.group.events){
     if(this.props.currentUser){
@@ -251,6 +267,35 @@ renderEventUpdate(){
 }
 
 
+membergroups(){
+  if(this.props.group){
+    if(this.props.group.eventdos[this.props.eventId].rsvpa.length > 0){
+      let arr = [];
+      let o = this.props.group.eventdos[this.props.eventId].rsvpa;
+    let too = o.length;
+    for(var i=0; i < too; i++){
+      var linker = `/groups/${this.props.groupId}/users/${o[i].id}`;
+
+    arr.push(
+      <Link to={linker} className='eventmembersglob' key={i}>
+        <div className='membergroupsglobin'>
+
+        <img className='membergroupspic' src={o[i].image_url}></img>
+        <div className='membergroupname'>{o[i].name}</div>
+        </div>
+        <div className='joingroupdate'>RSVP'd on: {moment(o[i].eventenrollmentinfo[0].created_at).format('ddd MMM Do YYYY')}</div>
+
+      </Link>
+    );
+  }
+
+  return arr;
+}else{
+  return(<div>No rsvps yet!</div>);
+}
+}
+}
+
 renderUpdateGroup(){
   const show =`/groups/${this.props.group.id}/update`;
   if (this.props.currentUser){
@@ -312,7 +357,8 @@ renderUpdateGroup(){
     const newsList = (news = []) => {
       var x = [];
       let p = this.props.groupId;
-      for(var i=news.length-1; i>= 0; i--){
+      // for(var i=news.length-1; i>= 0; i--){
+      for(var i = 0; i < news.length; i++){
         let v = new Date(news[i].date).toString();
         let use = news[i].user_id;
         let lin = `/groups/${p}/users/${use}`;
@@ -336,84 +382,11 @@ renderUpdateGroup(){
       }
       return x;
     };
-  const eventList= (events = []) => (
-    events.map(event => {
-      const x = () => {
-        if (this.props.currentUser){
-          let g = this.props.currentUser.id;
-          // let v = event.user_id;
-          let v = event.organizer.id;
-          const lin = `/groups/${event.group_id}/events/${event.id}/update`;
-          if (g===v){
-            return (
-              <div className="upLink">
-                <Link className= "uplink" to={lin}>Update Event</Link>
-              </div>
-            );
-          }
-        }
-      };
-      const leave = () => {
-        // console.log('hitttttleave', this.props);
-        this.setState({[event.id]: false});
-        // console.log('left', this.state);
-    // this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, groupId: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
-        this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, groupId: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));
-      };
-      const join =() => {
-        // console.log('hit');
-        this.setState({[event.id]: true});
-    // this.props.createEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
-        this.props.createEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));
-        // console.log('state',this.state);
-        // console.log(this.props);
-      };
-      const ot = () => {
-    // console.log(this.state);
-        if(this.state[event.id] && this.state.member){
-          return(
-            <div className='leaveevent' onClick={leave}>
-              Leave Event
-            </div>
-          );
-        }else if (!this.state.member) {
-          return(
-            <div>
-              Join group to RSVP
-            </div>
-          );
-        }
-        else if (this.state.member && !this.state[event.id]) {
-          return(
-            <div className='eventrsvp'>
-              <div className='joiner' onClick={join}>RSVP</div>
-            </div>
-          );
-        }
-      };
-      let g = this.props.groupId;
-      let e = event.id;
-      var ok = `/groups/${g}/events/${e}`;
-    return(
-      <div className="groupeventeach" key={event.id}>
-        <Link to={ok} className="groupeventname">{event.name}</Link>
-        <img className="indexpic" src={event.image_url}></img>
-        <div className="groupeventlocation">Event location: {event.location}</div>
-        <div className="groupeventid">Event# {event.id}</div>
-        <div className="groupeventorganizer">Event organizer: {event.organizer.name}</div>
-        <div className="groupevenntdescription">{event.description}</div>
-        <div className="uplinko">{x()}
-      </div>
-      <div>{event.rsvp.num} members attending</div>
-      <div>{ot()}</div>
-    </div>
-    );
-  })
-);
+
 
 const numbo = () => {
   let len = this.props.evento.rsvpp;
-  if(len.length === 0 || len.length < 8){
+  if(len.length === 0 || len.length <= 5){
     return null;
   }else  {
     return(
@@ -422,7 +395,7 @@ const numbo = () => {
 };
 
 const randers = (ran=[]) => {
-
+console.log('randers');
   var arr = [];
   for(var i =0; i < ran.length; i++){
     var pj = `/groups/${this.props.groupId}/users/${ran[i].id}`;
@@ -431,6 +404,59 @@ const randers = (ran=[]) => {
   return arr;
 };
 
+
+const leave = () => {
+  // console.log('hitttttleave', this.props);
+  this.setState({[this.props.eventId]: false});
+  console.log('left', this.state);
+// this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, groupId: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
+  this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: this.props.eventId, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));
+};
+const join =() => {
+  // console.log('hit');
+  this.setState({[this.props.eventId]: true});
+  console.log('join', this.state);
+
+// this.props.createEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
+  this.props.createEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: this.props.eventId, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));
+  // console.log('state',this.state);
+  // console.log(this.props);
+};
+
+const timeChecker = () => {
+  if(new Date(this.props.evento.start_time) > new Date() || new Date(this.props.evento.end_time) > new Date()){
+    return false;
+  }else {
+    return true;
+  }
+};
+const ot = () => {
+// console.log(this.state);
+
+  if(this.state[this.props.eventId] && this.state.member){
+    return(
+      <div className='joinerdos' onClick={leave}>
+        Leave Event
+      </div>
+    );
+  }else if (!this.state.member) {
+    return(
+      <div className= 'joinGrouptoRsvp'>
+        Join group to RSVP
+      </div>
+    );
+  }
+  else if (this.state.member && !this.state[this.props.eventId]) {
+    return(
+      <div className='eventrsvp'>
+        <div className='joinerdos' onClick={join}>RSVP</div>
+      </div>
+    );
+  }
+};
+// console.log(this.state);
+var ots = `/groups/${this.props.groupId}/users/${this.props.evento.organizer.id}`;
+var ok = `/groups/${this.props.groupId}/events/${this.props.eventId}`;
   return (
     <div className="singlegroupcontainer">
 
@@ -448,6 +474,7 @@ const randers = (ran=[]) => {
           <Link to={photos} className="glink">Photos</Link>
           <Link to={pages} className="glink">Pages</Link>
           {this.renderUpdateGroup()}
+
         </div>
 
         <div className="bardos">
@@ -475,28 +502,145 @@ const randers = (ran=[]) => {
       </div>
 
         <div className="singlegroupmain">
-          <div className='grouphomeinfo'>
-            <div className="groupeventname">{this.props.evento.name}</div>
-          <div className="eventlocationo">Location: {this.props.evento.location}</div>
-            {this.props.evento.random.length > 0 ? <div className='yokaz'>{randers(this.props.evento.random)} {numbo()}  </div> : null}
+          <div className='eventhomeinfo'>
+            <Link to={ok} className="singlegroupeventname">{this.props.evento.name}</Link>
+              {this.props.evento.image_url === 'https://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif' || this.props.evento.image_url ==='http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif' ? null : <img className="indexpic2" src={this.props.evento.image_url}></img> }
+              <div className='hoppaa'>
+                <div className='yoka3'>
+                  <div className="groupeventlocation">Location: {this.props.evento.location}</div>
+                    {this.props.evento.random.length > 0 ? <div className='yoka'>{randers(this.props.evento.random)} {numbo()}  </div> : null}
+                    <div className="groupevenntdescription">{this.props.evento.description}</div>
+                    </div>
+                  <div className='yoka4'>
+                    <div className='groupeventorganizer'>
+                      <div className='org'>Organizer: </div>
+                      <Link to={ots}><img className='eventorg' src={this.props.evento.organizer.image_url}></img></Link>
+                    </div>
+                    <div className='groupeventid'>Start time: {this.props.evento.start_time === 'tbd' ? 'tbd' : moment.utc(this.props.evento.start_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+                    <div className='groupeventid'>End time: {this.props.evento.end_time === 'tbd' ? 'tbd' : moment.utc(this.props.evento.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+                      {this.state[event.id] ? <div className='yoka2'>{this.props.evento.membersnum} members attending</div> :       <div className='yoka2'>{this.props.evento.membersnum} members attending</div> }
+                      {timeChecker() ? null : ot()}
+                      {this.renderEventUpdate()}
+                    </div>
+                  </div>
+                </div>
+                {this.membergroups()}
+              </div>
 
-        <div className="eventend">{this.props.evento.start_time === 'tbd' ? 'start time: tbd' : 'start time: ' + moment(this.props.evento.start_time).format('ddd MMM Do YYYY hh:mm A') }</div>
-            <div className="eventend">{this.props.evento.end_time === 'tbd' ? 'end time: tbd' : 'end time: ' +  moment(this.props.evento.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
-            <div className="eventinfoo">{this.props.evento.description}</div>
+              <div className="singlegroupnews">
+                <div>Event news</div>
+                {this.state.newz ? newsList(this.props.group.eventdos[this.props.eventId].news) : newsList(this.props.group.eventdos[this.props.eventId].news)}
+              </div>
 
-          <div className="oo">{this.renderEventUpdate()}</div>
             </div>
-      </div>
+          </div>
 
-        <div className="singlegroupnews">
-          <div>What's new</div>
-          {this.state.newz ? newsList(this.props.group.news) : newsList(this.props.group.news)}
-        </div>
 
-        </div>
-    </div>
   );
 }
 
 }
 export default EventShowDos;
+
+
+
+
+
+// <div className="singlegroupeventname">{this.props.evento.name}</div>
+// <div className="eventlocationo">Location: {this.props.evento.location}</div>
+// {this.props.evento.random.length > 0 ? <div className='yokaz'>{randers(this.props.evento.random)} {numbo()}  </div> : null}
+//
+// <div className="eventend">{this.props.evento.start_time === 'tbd' ? 'start time: tbd' : 'start time: ' + moment(this.props.evento.start_time).format('ddd MMM Do YYYY hh:mm A') }</div>
+// <div className="eventend">{this.props.evento.end_time === 'tbd' ? 'end time: tbd' : 'end time: ' +  moment(this.props.evento.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+// <div className="eventinfoo">{this.props.evento.description}</div>
+//
+// <div className="oo">{this.renderEventUpdate()}</div>
+// {ot()}
+// </div>
+// </div>
+//
+// <div className="singlegroupnews">
+// <div>What's new</div>
+// {this.state.newz ? newsList(this.props.group.news) : newsList(this.props.group.news)}
+// </div>
+//
+// </div>
+// </div>
+
+
+
+// const eventList= (events = []) => (
+//   events.map(event => {
+//     const x = () => {
+//       if (this.props.currentUser){
+//         let g = this.props.currentUser.id;
+//         // let v = event.user_id;
+//         let v = event.organizer.id;
+//         const lin = `/groups/${event.group_id}/events/${event.id}/update`;
+//         if (g===v){
+//           return (
+//             <div className="upLink">
+//               <Link className= "uplink" to={lin}>Update Event</Link>
+//             </div>
+//           );
+//         }
+//       }
+//     };
+//     const leave = () => {
+//       // console.log('hitttttleave', this.props);
+//       this.setState({[event.id]: false});
+//       // console.log('left', this.state);
+//   // this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, groupId: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
+//       this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: this.props.eventId, groupId: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));
+//     };
+//     const join =() => {
+//       // console.log('hit');
+//       this.setState({[event.id]: true});
+//
+//   // this.props.createEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
+//       this.props.createEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: this.props.eventId, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));
+//       // console.log('state',this.state);
+//       // console.log(this.props);
+//     };
+//     const ot = () => {
+//   // console.log(this.state);
+//       if(this.state[event.id] && this.state.member){
+//         return(
+//           <div className='leaveevent' onClick={leave}>
+//             Leave Event
+//           </div>
+//         );
+//       }else if (!this.state.member) {
+//         return(
+//           <div>
+//             Join group to RSVP
+//           </div>
+//         );
+//       }
+//       else if (this.state.member && !this.state[event.id]) {
+//         return(
+//           <div className='eventrsvp'>
+//             <div className='joiner' onClick={join}>RSVP</div>
+//           </div>
+//         );
+//       }
+//     };
+//     let g = this.props.groupId;
+//     let e = event.id;
+//     var ok = `/groups/${g}/events/${e}`;
+//   return(
+//     <div className="groupeventeach" key={event.id}>
+//       <Link to={ok} className="groupeventname">{event.name}</Link>
+//       <img className="indexpic" src={event.image_url}></img>
+//       <div className="groupeventlocation">Event location: {event.location}</div>
+//       <div className="groupeventid">Event# {event.id}</div>
+//       <div className="groupeventorganizer">Event organizer: {event.organizer.name}</div>
+//       <div className="groupevenntdescription">{event.description}</div>
+//       <div className="uplinko">{x()}
+//     </div>
+//     <div>{event.rsvp.num} members attending</div>
+//     <div>{ot()}</div>
+//   </div>
+//   );
+// })
+// );

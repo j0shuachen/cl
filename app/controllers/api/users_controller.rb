@@ -41,23 +41,34 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
     # @eventswent = EventEnrollment.joins('INNER JOIN events ON events.id = event_enrollments.event_id').where('event_enrollments.user_id = ?', @user.id)
     @eventswent = Event.joins('INNER JOIN event_enrollments ON event_enrollments.event_id = events.id').where('events.user_id = ?', @user.id)
-
+    @eventrsvps = EventEnrollment.where('user_id = ?', @user.id )
     p 'checking'
     p @eventswent
+    # @eventsdos = GroupEnrollment.joins('INNER JOIN groups ON groups.id = group_enrollments.group_id').where('group_enrollments.user_id =?', @user.id)
+    @eventsdos = Group.joins('INNER JOIN group_enrollments ON group_enrollments.group_id = groups.id').where('group_enrollments.user_id = ?', @user.id)
     p 'doneo'
+    p @eventsdos
+
     render `api/users/#{@user.id}`
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes
-      render "api/users"
-    else
-      render(
-      json: ["Invalid params"],
-      status: 401
-      )
-    end
+    p 'params'
+    p params
+      @user = User.find(params[:user][:id])
+      p @user
+      # @user = User.find(user_params[:id])
+      if @user.update(user_params)
+        p @user.id
+        # render `/api/users/#{@user.id}`
+        render :show
+      else
+        render(
+        json: ["Invalid params"],
+        status: 401
+        )
+      end
+
   end
 
   def destroy
@@ -87,6 +98,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :name, :location, :email, :user_id, :group_id)
+    params.require(:user).permit(:username, :password, :name, :location, :email, :id, :group_id)
   end
 end

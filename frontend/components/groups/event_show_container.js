@@ -15,6 +15,7 @@ const mapStateToProps = ( state, {match}) => {
   const eventId = parseInt(match.params.eventId);
   // console.log(state);
   // console.log(match);
+
   const evento = selectEvents(state, match.params.eventId);
   const groupId = parseInt(match.params.groupId);
   const group = selectGroup(state, match.params.groupId);
@@ -28,7 +29,11 @@ const mapStateToProps = ( state, {match}) => {
     currentUser: state.session.currentUser,
     eventId,
     evento,
-    group
+    group,
+    group_enrollments: selectAll(state.group_enrollments),
+    memboz: state.group_enrollments.members
+
+
 
     // events: selectEvents(state.events)
     // events: state.events

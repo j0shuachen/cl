@@ -5,4 +5,4 @@
 #   json.email user.email
 #
 # end
-json.extract! user, :id, :username, :name, :email, :image_url
+json.extract! user, :id, :username, :name, :email, :location, :image_url, :created_at

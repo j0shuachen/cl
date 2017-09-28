@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 import {createEventEnrollment, deleteEventEnrollment, fetchEventEnrollment,  fetchEventEnrollments} from './util/event_enrollment_api_util';
-import { signup, login, logout } from './util/session_api_util';
+import { signup, login, logout, fetchUser } from './util/session_api_util';
 import {createGroup, fetchGroup, fetchGroups} from './util/group_api_util';
 import {createEvent, fetchEvent, fetchEvents} from './util/event_api_util';
 import {deleteGroupEnrollment, createGroupEnrollment, fetchGroupEnrollment, fetchGroupEnrollments } from './util/group_enrollment_api_util';
@@ -48,3 +48,4 @@ window.fetchEventEnrollments = fetchEventEnrollments;
 window.fetchGroupNews = fetchGroupNews;
 window.fetchGroupNew = fetchGroupNew;
 window.createGroupNew = createGroupNew;
+window.fetchUser = fetchUser;

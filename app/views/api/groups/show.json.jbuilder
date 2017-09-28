@@ -81,6 +81,30 @@ json.events do
   end
 end
 
+json.eventdos do
+  @events.each do |event|
+    json.set! event.id do
+      json.extract! event, :id, :name, :group_id, :organizer, :image_url, :description, :location, :start_time, :end_time
+      json.rsvp do
+        event.members.each do |member|
+          json.set! member.id do
+          json.extract! member, :id, :name, :email, :image_url
+        end
+      end
+    end
+    json.rsvpa event.members.each do |em|
+      json.extract! em, :id, :name, :email, :image_url
+      json.eventenrollmentinfo event.event_enrollments.where('user_id = ?', em.id)
+    end
+    json.news @group.news.where('typo=? and oid =?', 'e', event.id).order('created_at DESC').each do |ne|
+      json.extract! ne, :id, :news, :user_id, :oid, :typo
+      json.date ne.created_at.strftime('%b %e, %Y %T')
+      json.use User.find(ne.user_id)
+    end
+  end
+end
+end
+
 # json.members do
 #   json.array! @group.members
 # end

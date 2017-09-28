@@ -14,11 +14,15 @@ class GroupMembers extends React.Component{
 
       enrollment_id: null,
       loaded: false,
-      newz: true
+      newz: true,
+      heightning: 1215,
+      heighter: '1215px'
+
 
     };
     // this.props.fetchGroup(this.props.match.params.groupId);
     this.ops = this.ops.bind(this);
+    this.newsheightclicker = this.newsheightclicker.bind(this);
     // this.renderEvents = this.renderEvents.bind(this);
 
     // this.allmembs = this.allmembs.bind(this);
@@ -36,7 +40,7 @@ class GroupMembers extends React.Component{
   componentWillMount(){
     // this.props.fetchGroup(this.props.match.params.groupId).then(()=> this.ops()).then( () => this.setState({loaded: true}));
     this.props.fetchEvents();
-    this.props.fetchGroup(this.props.match.params.groupId).then(()=>this.setState({loaded: true})).then(()=> this.ops());
+    this.props.fetchGroup(this.props.match.params.groupId).then(()=>this.setState({loaded: true, lengther: this.props.group.news.length})).then(()=> this.ops());
 
     this.props.fetchGroupEnrollments(this.props.match.params.groupId);
     // this.ops();
@@ -79,6 +83,15 @@ class GroupMembers extends React.Component{
   //
   // }
 
+  newsheightclicker() {
+    console.log('hitt');
+    var newheight = this.state.heightning+1215;
+
+    var newheighter = newheight.toString() + 'px';
+    console.log(newheight);
+      this.setState({heighter: newheighter, heightning: newheight, newz: true});
+
+  }
   ops(){
     if(this.props.group){
     // if(this.state.loaded){
@@ -193,7 +206,7 @@ class GroupMembers extends React.Component{
             <img className='groupnewspic' src={news[i].use.image_url}></img>
             </Link>
           <div className='yc'>
-            <Link to={ol} >{news[i].news} </Link>
+            <Link className='membersnews' to={ol} >{news[i].news} </Link>
             <TimeAgo className= 'ago' datetime={v}></TimeAgo>
           </div>
           </div>
@@ -203,7 +216,7 @@ class GroupMembers extends React.Component{
     }
   }
     };
-
+    console.log(this.state);
     // console.log('hwifhaowfh', this.props);
   return (
     <div className="singlegroupcontainer">
@@ -216,7 +229,7 @@ class GroupMembers extends React.Component{
       <div className="singletop">
       <div className="singlegroupbar">
         <Link to={idz} className="glink">Home</Link>
-        <Link to={members} className="glink">Members</Link>
+        <Link to={members} className="glinkon">Members</Link>
         <Link to={sponsors} className="glink">Sponsors</Link>
         <Link to={photos} className="glink">Photos</Link>
         <Link to={pages} className="glink">Pages</Link>
@@ -253,12 +266,16 @@ class GroupMembers extends React.Component{
           </div>
 
       </div>
+        <div className="singlegroupnews"  >
 
-        <div className="singlegroupnews">
-          <div>What's new</div>
+          <div className='whatsnew'>What's new</div>
+            <div style={{height: this.state.heighter, overflow: 'hidden'}}>
             {this.state.newz ? newsList(this.props.group.news) : newsList(this.props.group.news)}
+            </div>
+          {this.state.heightning <= this.state.lengther* 135 ? <div className='newsclicker' onClick={this.newsheightclicker}>More news!</div> : null }
 
-        </div>
+            </div>
+
 
 
     </div>

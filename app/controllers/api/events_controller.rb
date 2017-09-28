@@ -31,6 +31,8 @@ class Api::EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @news = GroupNews.where('typo =? and oid=?','e', @event.group_id)
+    # @group = Group.find(@event.group_id)
     render :show
   end
 

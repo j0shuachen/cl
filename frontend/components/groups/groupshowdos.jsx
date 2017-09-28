@@ -173,7 +173,7 @@ renderJ (){
     if(this.props.currentUser && this.props.group.mod){
       if(this.props.group.mod.id !== this.props.currentUser.id && this.state.member){
         return (
-          <div className='jer'
+          <div className='createeventt23'
            onClick={this.deleteMember}>Leave group!
           </div>
 
@@ -182,7 +182,7 @@ renderJ (){
         return(null);
       }else if (this.props.group.mod.id!==this.props.currentUser.id && !this.state.member) {
         return (
-          <div className='jer'
+          <div className='createeventt23'
             onClick={this.createMember}>Join group!
           </div>
         );
@@ -249,8 +249,9 @@ renderU(){
         let e = event.id;
         var ok = `/groups/${g}/events/${e}`;
 
+
         const numbo = () => {
-          if(event.rsvp.num === 0 || event.rsvp.num < 5){
+          if(event.rsvp.num === 0 || event.rsvp.num <= 5){
             return null;
           }else  {
             return(
@@ -267,10 +268,11 @@ renderU(){
           }
           return arr;
         };
+
         return(
           <div className="groupeventeach" key={event.id}>
             <Link to={ok} className="groupeventname">{event.name}</Link>
-            <img className="indexpic2" src={event.image_url}></img>
+              {event.image_url === 'https://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif' || event.image_url ==='http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif' ? null : <img className="indexpic2" src={event.image_url}></img> }
 
             <div className='hoppaa'>
 
@@ -285,6 +287,8 @@ renderU(){
                   <div className='org'>Organizer: </div>
                   <Link to={ots}><img className='eventorg' src={event.organizer.image_url}></img></Link>
                 </div>
+                <div className='groupeventid'>Ended: {moment.utc(event.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+
                 {this.state[event.id] ? <div className='yoka2'>{event.rsvp.num} members went </div> : <div className='yoka2'>{event.rsvp.num} members went</div> }
               </div>
 
@@ -342,9 +346,8 @@ renderU(){
           }
           else if (this.state.member && !this.state[event.id]) {
             return(
-              <div className='eventrsvp'>
+
                 <div className='joiner' onClick={joinEvent}>RSVP</div>
-              </div>
             );
           }
         };
@@ -354,7 +357,7 @@ renderU(){
         let e = event.id;
         var ok = `/groups/${g}/events/${e}`;
       const numbo = () => {
-        if(event.rsvp.num === 0 || event.rsvp.num < 5){
+        if(event.rsvp.num === 0 || event.rsvp.num <= 5){
           return null;
         }else  {
           return(
@@ -374,7 +377,7 @@ renderU(){
     return(
       <div className="groupeventeach" key={event.id}>
         <Link to={ok} className="groupeventname">{event.name}</Link>
-        <img className="indexpic2" src={event.image_url}></img>
+          {event.image_url === 'https://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif' || event.image_url ==='http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif' ? null : <img className="indexpic2" src={event.image_url}></img> }
 
         <div className='hoppaa'>
           <div className='yoka3'>
@@ -485,7 +488,7 @@ renderU(){
             <img className='groupnewspic' src={news[i].use.image_url}></img>
             </Link>
           <div className='yc'>
-            <Link to={ol} >{news[i].news} </Link>
+            <Link className='news' to={ol} >{news[i].news} </Link>
             <TimeAgo className= 'ago' datetime={v}></TimeAgo>
           </div>
           </div>
@@ -510,7 +513,7 @@ renderU(){
 
       <div className="singletop">
         <div className="singlegroupbar">
-          <Link to={idz} className="glink">Home</Link>
+          <Link to={idz} className="glinkon">Home</Link>
           <Link to={members} className="glink">Members</Link>
           <Link to={sponsors} className="glink">Sponsors</Link>
           <Link to={photos} className="glink">Photos</Link>

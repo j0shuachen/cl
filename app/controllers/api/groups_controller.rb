@@ -113,7 +113,7 @@ class Api::GroupsController < ApplicationController
     #     @evented << s
     #   end
     # end
-    @upcomingevents = @group.events.where('start_time > ? and end_time > ?',DateTime.now, DateTime.now ).order('start_time DESC')
+    @upcomingevents = @group.events.where('start_time > ? and end_time > ?',DateTime.now, DateTime.now ).order('start_time ASC')
     @eventd=[]
     o=  @group.events.where.not(start_time: 'tbd', end_time: 'tbd')
     if o.length > 0

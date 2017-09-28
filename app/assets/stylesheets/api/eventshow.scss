@@ -53,8 +53,9 @@
   align-self: flex-start;
   padding-left: 20px;
   height: 30px;
-  font-size: 25px;
-  margin-top: 1%;
+  font-size: 16px;
+  height: 20px;
+  // margin-top: 1%;
 }
 .eventup{
   display: flex;
@@ -79,7 +80,7 @@ flex-direction: column;
   padding: 20px;
   display: flex;
   margin-top: 80px;
-  font-size: 25px;
+  font-size: 18px;
   align-self: center;
   justify-content: center;
   text-align: center;
@@ -90,7 +91,9 @@ flex-direction: column;
 }
 
 .eventinfoo{
+  align-self: flex-start;
   padding: 20px;
   margin-top: 5%;
-  font-size: 25px;
+  font-size: 18px;
+  width: 50%;
 }

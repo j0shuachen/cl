@@ -4,6 +4,18 @@ json.rsvpp do
   json.array! event.members
 end
 
-json.random do
-  json.array! event.members.shuffle.take(8)
+json.membersnum event.members.length
+
+json.rsvpph do
+  event.members.each do |mem|
+    json.set! mem.id do
+      json.extract! mem, :id
+    end
+  end
 end
+
+json.random do
+  json.array! event.members.shuffle.take(5)
+end
+
+json.news @news

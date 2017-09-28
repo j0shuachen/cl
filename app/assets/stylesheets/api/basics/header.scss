@@ -27,6 +27,21 @@ align-content: space-between;;
   border-radius: 4px;
 }
 
+.demo-button:hover{
+  display: flex;
+  min-width: 80px;
+  min-height: 30px;
+  background-color: white;
+  border-color: #ed1c40;
+  color: #ed1c40;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
 .mainhed{
   display: flex;
   align-items: center;
@@ -34,6 +49,7 @@ align-content: space-between;;
   display: flex;
   width: 100%;
   align-content: space-between;
+  min-width: 1200px
 
 }
 
@@ -75,6 +91,11 @@ align-content: space-between;;
   min-width: 175px;
 }
 
+.create-header-button:hover{
+  color: #ed1c40;
+  // background-color: #ed1c40;
+}
+
 .header-button{
   // text-decoration: none;
   // width: 100%;
@@ -103,6 +124,22 @@ align-content: space-between;;
   text-align: center;
 
 
+}
+.header-button:hover{
+  display: flex;
+  min-width: 100px;
+  min-height: 30px;
+  background-color: white;
+  border-color: #ed1c40;
+  color: #ed1c40;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 4px;
+  align-content: center;
+  text-align: center;
 }
 
 .get-app-button{

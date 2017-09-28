@@ -242,12 +242,12 @@ ge59 = GroupEnrollment.create!(group_id: group1.id, user_id: user58.id)
 gn60 = GroupNews.create!(group_id: group1.id, news: user6.username + ' joined the group', user_id: user6.id, oid: group1.id, typo: 'g')
 ge60 = GroupEnrollment.create!(group_id: group1.id, user_id: user6.id)
 
-event21= Event.create!(user_id: user1.id, group_id: group1.id, name: "Movie Night at AMC20", description: "Come watch Wonder Woman with the whole team! We'll grab dinner and drinks at a local restaurant afterwards!", location: "San Jose", start_time: DateTime.parse('2017-11-24 18:00'), end_time: DateTime.parse('2017-11-24 24:00'))
-event22= Event.create!(user_id: user6.id, group_id: group1.id, name: "Bingo Night", description: "Bingo Night!!! $500 worth prizes! It's Bingo time! ", location: "Los Altos", start_time: DateTime.parse('2017-10-24 12:00'), end_time: DateTime.parse('2017-10-24 20:00'))
-event23= Event.create!(user_id: user6.id, group_id: group1.id, name: "Super Trivia", description: "Super Trivia Night! Teams of 3! Top prize is a $100 Amazon gift card to each team member. Second place $50, third place $25!!!!", location: "San Jose", start_time: DateTime.parse('2017-10-16 13:00'), end_time: DateTime.parse('2017-10-16 19:00'))
-event24= Event.create!(user_id: user59.id, group_id: group1.id, name: "Movie Night at Century23", description: "Come watch It!!! Dinner and a movie leggo!", location: "San Jose", start_time: DateTime.parse('2017-11-24 18:00'), end_time: DateTime.parse('2017-11-24 24:00'))
-event25= Event.create!(user_id: user58.id, group_id: group1.id, name: "New Member Mixer", description: "Monthly event to meet and greet all of our wonderful new members! We will be grabbing dinner at Alexander's Steak House and then heading out to Pure for drinks and socializing!!", location: "San Jose", start_time: DateTime.parse('2017-11-29 19:00'), end_time: DateTime.parse('2017-11-30 2:00'))
-event26= Event.create!(user_id: user1.id, group_id: group1.id, name: "Breast Cancer Fundraiser", description: "Come join us for the breast cancer awareness fundraiser! Currently seeking 10 more volunteers for the morning shifts!", location: "San Jose", start_time: DateTime.parse('2017-11-07 18:00'), end_time: DateTime.parse('2017-11-07 24:00'))
+event21= Event.create!(user_id: user1.id, group_id: group1.id, name: "Movie Night at AMC20", description: "Come watch Wonder Woman with the whole team! We'll grab dinner and drinks at a local restaurant afterwards!", location: "San Jose", start_time: DateTime.parse('2017-11-24 18:00 GMT-7'), end_time: DateTime.parse('2017-11-24 24:00 GMT-7'))
+event22= Event.create!(user_id: user6.id, group_id: group1.id, name: "Bingo Night", description: "Bingo Night!!! $500 worth prizes! It's Bingo time! ", location: "Los Altos", start_time: DateTime.parse('2017-10-24 12:00 GMT-7'), end_time: DateTime.parse('2017-10-24 20:00 GMT-7'))
+event23= Event.create!(user_id: user6.id, group_id: group1.id, name: "Super Trivia", description: "Super Trivia Night! Teams of 3! Top prize is a $100 Amazon gift card to each team member. Second place $50, third place $25!!!!", location: "San Jose", start_time: DateTime.parse('2017-10-16 13:00 GMT-7'), end_time: DateTime.parse('2017-10-16 19:00 GMT-7'))
+event24= Event.create!(user_id: user59.id, group_id: group1.id, name: "Movie Night at Century23", description: "Come watch It!!! Dinner and a movie leggo!", location: "San Jose", start_time: DateTime.parse('2017-11-24 18:00 GMT-7'), end_time: DateTime.parse('2017-11-24 24:00 GMT-7'))
+event25= Event.create!(user_id: user58.id, group_id: group1.id, name: "New Member Mixer", description: "Monthly event to meet and greet all of our wonderful new members! We will be grabbing dinner at Alexander's Steak House and then heading out to Pure for drinks and socializing!!", location: "San Jose", start_time: DateTime.parse('2017-11-29 19:00 GMT-7'), end_time: DateTime.parse('2017-11-30 2:00' GMT-7))
+event26= Event.create!(user_id: user1.id, group_id: group1.id, name: "Breast Cancer Fundraiser", description: "Come join us for the breast cancer awareness fundraiser! Currently seeking 10 more volunteers for the morning shifts!", location: "San Jose", start_time: DateTime.parse('2017-11-07 18:00 GMT-7'), end_time: DateTime.parse('2017-11-07 24:00 GMT-7'))
 
 gn591 = GroupNews.create!(group_id: group1.id, news: user1.username + ' created the event ' + event21.name, user_id: user1.id, oid: event21.id, typo: 'e')
 # gn592 = GroupEnrollment.create!(group_id: group1.id, user_id: user140 .id)
@@ -369,22 +369,22 @@ gn72 = GroupNews.create!(group_id: group2.id, news: user77.username + ' joined t
 ge72 = GroupEnrollment.create!(group_id: group2.id, user_id: user77.id)
 
 
-event27= Event.create!(user_id: user77.id, group_id: group2.id, name: '10k Hackathon', description: "Hackathon with a 10k top prize!!", location: "San Francisco", start_time: DateTime.parse('2017-10-07 12:00'), end_time: DateTime.parse('2017-10-07 21:00'))
+event27= Event.create!(user_id: user77.id, group_id: group2.id, name: '10k Hackathon', description: "Hackathon with a 10k top prize!!", location: "San Francisco", start_time: DateTime.parse('2017-10-07 12:00 GMT-7'), end_time: DateTime.parse('2017-10-07 21:00 GMT-7'))
 event28= Event.create!(user_id: user29.id, group_id: group2.id, name: "Northern California Renaissance Faire", description: "You're a wizard Harry! Or you're a knight. Or a fair maiden... um...
 Come to the Northern California Renaissance Faire and live in a medieval fantasy for a day! Costumes are not required but they are encouraged (rentals also available).
 There will be plenty actors, musicians, artisan booths, jousting and great food (giant turkey leg anyone?) Vegetarian, vegan and gluten-free food is also available at the faire.
 Celtic rock group Tempest will also be performing free this evening.
 IMPORTANT: If you buy your tickets ahead of time online you will get a discount. Discounted tickets are only $18.
-In the comments below, let's try to organize some carpooling. See you at the Faire ", location: "San Jose", start_time: DateTime.parse('2017-09-16 10:00'), end_time: DateTime.parse('2017-09-16 18:00'))
+In the comments below, let's try to organize some carpooling. See you at the Faire ", location: "San Jose", start_time: DateTime.parse('2017-09-16 10:00 GMT-7'), end_time: DateTime.parse('2017-09-16 18:00 GMT-7'))
 event29= Event.create!(user_id: user13.id, group_id: group2.id, name: "Saturday Social", description: "Let's meet for drinks at a bar (different bar every time) and then play it by ear. Suggestions for bars or things to do are welcome! Leave a comment with your suggestion.
 Tips for a successful Saturday Social:
 - Take an Uber. Drinking and driving is not cool.
 - Bring some cash. Some of the bars may be cash-only.
 - Wear comfortable shoes. There may be some dancing involved.
 - Suggest places to go or things to do; this is a democracy.
-- Don't flake. You will be moved to the bottom of the waitlist for future events if you do.", location: "San Jose", start_time: DateTime.parse('2017-11-09 18:00'), end_time: DateTime.parse('2017-11-09 24:00'))
-event30= Event.create!(user_id: user12.id, group_id: group2.id, name: "Taco Truck & Drinks", description: "Let's have fun by doing two of everyone's favorite things: eat tacos & have some drinks! Looking forward to meeting everyone! Let's meet at Taco Truck", location: "San Jose", start_time: DateTime.parse('2017-11-28 16:00'), end_time: DateTime.parse('2017-11-28 24:00'))
-event31= Event.create!(user_id: user70.id, group_id: group2.id, name: "Raging Waters", description: "Summer is near its end, so why not get wet before it's too cold. Join us at Raging Waters on Sunday Tickets can be purchased at the website or in person ", location: "San Jose", start_time: DateTime.parse('2017-09-08 12:00'), end_time: DateTime.parse('2017-09-08 22:00'))
+- Don't flake. You will be moved to the bottom of the waitlist for future events if you do.", location: "San Jose", start_time: DateTime.parse('2017-11-09 18:00 GMT-7'), end_time: DateTime.parse('2017-11-09 24:00 GMT-7'))
+event30= Event.create!(user_id: user12.id, group_id: group2.id, name: "Taco Truck & Drinks", description: "Let's have fun by doing two of everyone's favorite things: eat tacos & have some drinks! Looking forward to meeting everyone! Let's meet at Taco Truck", location: "San Jose", start_time: DateTime.parse('2017-11-28 16:00 GMT-7'), end_time: DateTime.parse('2017-11-28 24:00 GMT-7'))
+event31= Event.create!(user_id: user70.id, group_id: group2.id, name: "Raging Waters", description: "Summer is near its end, so why not get wet before it's too cold. Join us at Raging Waters on Sunday Tickets can be purchased at the website or in person ", location: "San Jose", start_time: DateTime.parse('2017-09-08 12:00 GMT-7'), end_time: DateTime.parse('2017-09-08 22:00 GMT-7'))
 
 
 
@@ -600,7 +600,7 @@ ge85 = GroupEnrollment.create!(group_id: group3.id, user_id: user24.id)
 # gn701 = GroupNews.create!(group_id: group3.id, news: user6.username + ' rsvp\'d for ' + event32.name, user_id: user6.id, oid: event32.id, typo: 'e')
 
 
-event32= Event.create!(user_id: user24.id, group_id: group3.id, name: "Ancient Forest & Amazing Exotic Wild Cats  A Close up & personal Experience !", description: "Ancient Forest & Amazing Exotic Wild Cats  A Close up & personal Experience !", location: 'San Francisco', start_time: DateTime.parse('2017-09-08 10:30'), end_time: DateTime.parse('2017-09-08 16:45'))
+event32= Event.create!(user_id: user24.id, group_id: group3.id, name: "Ancient Forest & Amazing Exotic Wild Cats  A Close up & personal Experience !", description: "Ancient Forest & Amazing Exotic Wild Cats  A Close up & personal Experience !", location: 'San Francisco', start_time: DateTime.parse('2017-09-08 10:30 GMT-7'), end_time: DateTime.parse('2017-09-08 16:45 GMT-7'))
 
 
 gn700 = GroupNews.create!(group_id: group3.id, news: user24.username + ' created the event ' + event32.name, user_id: user24.id, oid: event32.id, typo: 'e')
@@ -636,7 +636,7 @@ ee131 = EventEnrollment.create!(user_id: user18.id, event_id: event32.id)
 
 
 
-event33= Event.create!(user_id: user18.id, group_id: group3.id, name: "Hike, Bike, Swim & Party trip !", description: "Great fro sun bathing, swimming, has a off shore lagoon & 2 creeks with trout & salmon to view.  Parking will be so easy; not like last year at Emerald Bay.  The lot at Baldwin beach costs 8.00 per car.  So we will load up the vehicles.   We can park 50 yards from the shore.  bathrooms are there, etc.    ** I have been there several times.  It's very nice .  We can kayak right off the beach & go East or West or explore the lagoon & creeks. ", location: "San Jose", start_time: DateTime.parse('2017-09-15 07:00'), end_time: DateTime.parse('2017-09-15 24:00'))
+event33= Event.create!(user_id: user18.id, group_id: group3.id, name: "Hike, Bike, Swim & Party trip !", description: "Great fro sun bathing, swimming, has a off shore lagoon & 2 creeks with trout & salmon to view.  Parking will be so easy; not like last year at Emerald Bay.  The lot at Baldwin beach costs 8.00 per car.  So we will load up the vehicles.   We can park 50 yards from the shore.  bathrooms are there, etc.    ** I have been there several times.  It's very nice .  We can kayak right off the beach & go East or West or explore the lagoon & creeks. ", location: "San Jose", start_time: DateTime.parse('2017-09-15 07:00 GMT-7'), end_time: DateTime.parse('2017-09-15 24:00 GMT-7'))
 
 gn715 = GroupNews.create!(group_id: group3.id, news: user18.username + ' created the event ' + event33.name, user_id: user18.id, oid: event33.id, typo: 'e')
 ee132 = EventEnrollment.create!(user_id: user18.id, event_id: event33.id)
@@ -672,7 +672,7 @@ ee146 = EventEnrollment.create!(user_id: user18.id, event_id: event33.id)
 
 
 
-event34= Event.create!(user_id: user18.id, group_id: group3.id, name: "2017 FALL coed social FLAG FOOTBALL", description: "Do you like FUN, meeting new PEOPLE, getting some EXERCISE, and FLAG FOOTBALL?!?  We are a nationwide social sports company, coed, 21 and over, with an emphasis on fun!  Open to all skill levels and very welcoming to new players!  ", location: "Milpitas", start_time: DateTime.parse('2017-09-09 12:00'), end_time: DateTime.parse('2017-09-09 16:00'))
+event34= Event.create!(user_id: user18.id, group_id: group3.id, name: "2017 FALL coed social FLAG FOOTBALL", description: "Do you like FUN, meeting new PEOPLE, getting some EXERCISE, and FLAG FOOTBALL?!?  We are a nationwide social sports company, coed, 21 and over, with an emphasis on fun!  Open to all skill levels and very welcoming to new players!  ", location: "Milpitas", start_time: DateTime.parse('2017-09-09 12:00 GMT-7'), end_time: DateTime.parse('2017-09-09 16:00 GMT-7'))
 gn730 = GroupNews.create!(group_id: group3.id, news: user18.username + ' created the event ' + event34.name, user_id: user18.id, oid: event34.id, typo: 'e')
 gn731 = GroupNews.create!(group_id: group3.id, news: user24.username + ' rsvp\'d for ' + event34.name, user_id: user24.id, oid: event34.id, typo: 'e')
 gn732 = GroupNews.create!(group_id: group3.id, news: user42.username + ' rsvp\'d for ' + event34.name, user_id: user42.id, oid: event34.id, typo: 'e')
@@ -706,7 +706,7 @@ ee161 = EventEnrollment.create!(user_id: user18.id, event_id: event34.id)
 
 
 
-event35= Event.create!(user_id: user29.id, group_id: group3.id, name: "2017 SPRING coed social KICKBALL ", description: "Do you like FUN, meeting new PEOPLE, getting some EXERCISE, and KICKBALL?!?  We are a nationwide social sports company, coed, 21 and over, with an emphasis on fun!  Open to all skill levels and very welcoming groups! ", location: "Sunnyvale", start_time: DateTime.parse('2017-11-11 12:00'), end_time: DateTime.parse('2017-11-11 19:00'))
+event35= Event.create!(user_id: user29.id, group_id: group3.id, name: "2017 SPRING coed social KICKBALL ", description: "Do you like FUN, meeting new PEOPLE, getting some EXERCISE, and KICKBALL?!?  We are a nationwide social sports company, coed, 21 and over, with an emphasis on fun!  Open to all skill levels and very welcoming groups! ", location: "Sunnyvale", start_time: DateTime.parse('2017-11-11 12:00 GMT-7'), end_time: DateTime.parse('2017-11-11 19:00 GMT-7'))
 gn745 = GroupNews.create!(group_id: group3.id, news: user29.username + ' created the event ' + event35.name, user_id: user29.id, oid: event35.id, typo: 'e')
 gn746 = GroupNews.create!(group_id: group3.id, news: user24.username + ' rsvp\'d for ' + event35.name, user_id: user24.id, oid: event35.id, typo: 'e')
 gn747 = GroupNews.create!(group_id: group3.id, news: user42.username + ' rsvp\'d for ' + event35.name, user_id: user42.id, oid: event35.id, typo: 'e')
@@ -779,7 +779,7 @@ gn101 = GroupNews.create!(group_id: group4.id, news: user48.username + ' joined 
 ge101 = GroupEnrollment.create!(group_id: group4.id, user_id: user48.id)
 event36= Event.create!(user_id: user89.id, group_id: group4.id, name: "Make New Friends - Monthly Mixer Meetup", description: "Monthly Social Mixer
 Have you made any new friends this summer?
-Join this event and make a few more - you can never have too many friends. ", location: "Sunnyvale", start_time: DateTime.parse('2017-11-11 18:00'), end_time: DateTime.parse('2017-11-12 2:00'))
+Join this event and make a few more - you can never have too many friends. ", location: "Sunnyvale", start_time: DateTime.parse('2017-11-11 18:00 GMT-7'), end_time: DateTime.parse('2017-11-12 2:00' GMT-7))
 
 gn760 = GroupNews.create!(group_id: group4.id, news: user89.username + ' created the event ' + event36.name, user_id: user89.id, oid: event36.id, typo: 'e')
 gn761 = GroupNews.create!(group_id: group4.id, news: user89.username + ' rsvp\'d for ' + event36.name, user_id: user89.id, oid: event36.id, typo: 'e')
@@ -824,7 +824,7 @@ event37=Event.create!(user_id: user15.id, group_id: group4.id, name: "Meet and G
 Make new friends and have an awesome weekend!
 How to find us: patio, ask the front desk about Mixer Event
 Text to[masked] if you are at the venue and can't find the group.
-After a long week at work, school or whatever you do, you owe it to yourself to go out and have a great time. This no pressure event is facilitated by our team. You don't need to think about how to break the ice with someone new because everyone at the event is open to meeting new people.", location: "Sunnyvale", start_time: DateTime.parse('2017-11-11 12:00'), end_time: DateTime.parse('2017-11-11 19:00'))
+After a long week at work, school or whatever you do, you owe it to yourself to go out and have a great time. This no pressure event is facilitated by our team. You don't need to think about how to break the ice with someone new because everyone at the event is open to meeting new people.", location: "Sunnyvale", start_time: DateTime.parse('2017-11-11 12:00 GMT-7'), end_time: DateTime.parse('2017-11-11 19:00 GMT-7'))
 
 gn778 = GroupNews.create!(group_id: group4.id, news: user15.username + ' created the event ' + event37.name, user_id: user15.id, oid: event37.id, typo: 'e')
 gn779 = GroupNews.create!(group_id: group4.id, news: user89.username + ' rsvp\'d for ' + event37.name, user_id: user89.id, oid: event37.id, typo: 'e')
@@ -871,7 +871,7 @@ Sunnyvale Urban Forest Advocates (SUFA) is a volunteer group supporting the City
 On September 16th, Saturday, SUFA will hold a Fall Forest Festival at Washington Park. There will be games for children, tree walks at the park and a lecture on trees by Leonard Dunn, Urban Landscape Manager in Sunnyvale.
 Volunteers will be helping with set up and activities.
 Let me know if you have any questions.
-Juliet", location: "Sunnyvale", start_time: DateTime.parse('2017-09-16 06:00'), end_time: DateTime.parse('2017-09-16 14:00'))
+Juliet", location: "Sunnyvale", start_time: DateTime.parse('2017-09-16 06:00 GMT-7'), end_time: DateTime.parse('2017-09-16 14:00 GMT-7'))
 
 gn796 = GroupNews.create!(group_id: group4.id, news: user15.username + ' created the event ' + event38.name, user_id: user15.id, oid: event38.id, typo: 'e')
 gn797 = GroupNews.create!(group_id: group4.id, news: user89.username + ' rsvp\'d for ' + event38.name, user_id: user89.id, oid: event38.id, typo: 'e')
@@ -915,7 +915,7 @@ event39= Event.create!(user_id: user20.id, group_id: group4.id, name: "Looking f
 The next Archangel Holiday Boutique is on October 7th and 8th. We are looking for volunteers with a variety of skills and hours of participation:
 Tech support: Update and maintain website and social media accounts like Facebook and Instagram. 5-10 hours/month until mid-October.
 General support: Distribution of flyers and posters, on-line ad and event calendar listing, contacting media outlets (TV, radio, and magazines), 5-10 hours/month until Oct 6h.
-Event site preparation, and event support as receptionist, greeter, gift-wrapper, etc., Any number of hours on Oct 7th and 8th.", location: "Cupertino", start_time: DateTime.parse('2017-11-15 08:00'), end_time: DateTime.parse('2017-11-15 19:00'))
+Event site preparation, and event support as receptionist, greeter, gift-wrapper, etc., Any number of hours on Oct 7th and 8th.", location: "Cupertino", start_time: DateTime.parse('2017-11-15 08:00 GMT-7'), end_time: DateTime.parse('2017-11-15 19:00 GMT-7'))
 
 gn814 = GroupNews.create!(group_id: group4.id, news: user20.username + ' created the event ' + event39.name, user_id: user20.id, oid: event39.id, typo: 'e')
 gn815 = GroupNews.create!(group_id: group4.id, news: user89.username + ' rsvp\'d for ' + event39.name, user_id: user89.id, oid: event39.id, typo: 'e')
@@ -993,7 +993,7 @@ ge117 = GroupEnrollment.create!(group_id: group5.id, user_id: user71.id)
 gn118 = GroupNews.create!(group_id: group5.id, news: user40.username + ' joined the group', user_id: user40.id, oid: group5.id, typo: 'g')
 ge118 = GroupEnrollment.create!(group_id: group5.id, user_id: user40.id)
 
-event40= Event.create!(user_id: user12.id, group_id: group5.id, name: "San Jose Earthquakes vs Toronto FC (& Free Quakes Swag!) ", description: "Come out and support our local soccer team! They are away at Toronto, so we'll watch from San Pedro square market bar. Wear your earthquakes gear! Go quakes!! ", location: "San Jose", start_time: DateTime.parse('2017-09-24 12:00'), end_time: DateTime.parse('2017-09-24 19:00'))
+event40= Event.create!(user_id: user12.id, group_id: group5.id, name: "San Jose Earthquakes vs Toronto FC (& Free Quakes Swag!) ", description: "Come out and support our local soccer team! They are away at Toronto, so we'll watch from San Pedro square market bar. Wear your earthquakes gear! Go quakes!! ", location: "San Jose", start_time: DateTime.parse('2017-09-24 12:00 GMT-7'), end_time: DateTime.parse('2017-09-24 19:00 GMT-7'))
 gn832 = GroupNews.create!(group_id: group5.id, news: user12.username + ' created the event ' + event40.name, user_id: user12.id, oid: event40.id, typo: 'e')
 gn833 = GroupNews.create!(group_id: group5.id, news: user12.username + ' rsvp\'d for ' + event40.name, user_id: user12.id, oid: event40.id, typo: 'e')
 gn834 = GroupNews.create!(group_id: group5.id, news: user40.username + ' rsvp\'d for ' + event40.name, user_id: user40.id, oid: event40.id, typo: 'e')
@@ -1039,7 +1039,7 @@ event41= Event.create!(user_id: user12.id, group_id: group5.id, name: "2017 SPRI
 1:35 ~ 1:40 CIE introduction
 1:40 ~ 2:00 Keynote session Youth Leadership and Volunteer Opportunities in Local Government by Assembly-member Kansen Chu
 2:00 ~ 2:20 session Making it Count with Youth by Rick Maloon, M.ed, principal of Miramonte Christian School
-2:20 ~ 2:25 5 minutes break ", location: "Sunnyvale", start_time: DateTime.parse('2017-11-13 06:00'), end_time: DateTime.parse('2017-11-13 19:00'))
+2:20 ~ 2:25 5 minutes break ", location: "Sunnyvale", start_time: DateTime.parse('2017-11-13 06:00 GMT-7'), end_time: DateTime.parse('2017-11-13 19:00 GMT-7'))
 
 gn851 = GroupNews.create!(group_id: group5.id, news: user12.username + ' created the event ' + event41.name, user_id: user12.id, oid: event41.id, typo: 'e')
 gn852 = GroupNews.create!(group_id: group5.id, news: user12.username + ' rsvp\'d for ' + event41.name, user_id: user12.id, oid: event41.id, typo: 'e')
@@ -1083,7 +1083,7 @@ ee280 = EventEnrollment.create!(user_id: user48.id, event_id: event41.id)
 
 
 event42= Event.create!(user_id: user12.id, group_id: group5.id, name: "South Bay Electronics and Embedded Designers Meetup", description: "“We love to talk about electronics.”
-The meetup has become a great place to talk about electronics. Most members are actively building something. Really great group of people and a fun time. Tours of Techshop are free and ad hoc. If Techshop parking ever gets full, there is free parking on the side streets. ", location: "San Jose", start_time: DateTime.parse('2017-09-14 12:00'), end_time: DateTime.parse('2017-09-14 19:30'))
+The meetup has become a great place to talk about electronics. Most members are actively building something. Really great group of people and a fun time. Tours of Techshop are free and ad hoc. If Techshop parking ever gets full, there is free parking on the side streets. ", location: "San Jose", start_time: DateTime.parse('2017-09-14 12:00 GMT-7'), end_time: DateTime.parse('2017-09-14 19:30 GMT-7'))
 
 gn870 = GroupNews.create!(group_id: group5.id, news: user12.username + ' created the event ' + event42.name, user_id: user12.id, oid: event42.id, typo: 'e')
 gn871 = GroupNews.create!(group_id: group5.id, news: user12.username + ' rsvp\'d for ' + event42.name, user_id: user12.id, oid: event42.id, typo: 'e')
@@ -1153,7 +1153,7 @@ ge129 = GroupEnrollment.create!(group_id: group6.id, user_id: user96.id)
 gn130 = GroupNews.create!(group_id: group6.id, news: user95.username + ' joined the group', user_id: user95.id, oid: group6.id, typo: 'g')
 ge130 = GroupEnrollment.create!(group_id: group6.id, user_id: user95.id)
 
-event43= Event.create!(user_id: user11.id, group_id: group6.id, name: "Just RSVP and Drop in", description: "I am organizing this meetup at this nice coffee shop. I am open for any suggestions. I would like to provide a platform for like minded individuals to meet and discuss. If you are not comfortable with the location or anything, just let me know and we can discuss.", location: "Santa Clara", start_time: DateTime.parse('2017-09-09 10:00'), end_time: DateTime.parse('2017-09-09 19:00'))
+event43= Event.create!(user_id: user11.id, group_id: group6.id, name: "Just RSVP and Drop in", description: "I am organizing this meetup at this nice coffee shop. I am open for any suggestions. I would like to provide a platform for like minded individuals to meet and discuss. If you are not comfortable with the location or anything, just let me know and we can discuss.", location: "Santa Clara", start_time: DateTime.parse('2017-09-09 10:00 GMT-7'), end_time: DateTime.parse('2017-09-09 19:00 GMT-7'))
 
 gn884 = GroupNews.create!(group_id: group6.id, news: user11.username + ' created the event ' + event43.name, user_id: user11.id, oid: event43.id, typo: 'e')
 gn885 = GroupNews.create!(group_id: group6.id, news: user11.username + ' rsvp\'d for ' + event43.name, user_id: user11.id, oid: event43.id, typo: 'e')
@@ -1185,7 +1185,7 @@ ee305 = EventEnrollment.create!(user_id: user95.id, event_id: event43.id)
 ee306 = EventEnrollment.create!(user_id: user11.id, event_id: event43.id)
 
 
-event44= Event.create!(user_id: user11.id, group_id: group6.id, name: "UTURN and the Future of Media: An Evening With Kaswara Al-Khatib", description: "Online media has completely changed the game. Anyone with an internet connection can find a voice and an audience—and become a voice FOR an audience. Nowhere is this better embodied than in Saudi Arabia's UTURN channel. Created by Kaswara Al-Khatib in 2010, UTURN Entertainment is tech platform for entertainment and content development, all in Arabic for a Saudi audience. With over 35 million subscribers and more than two billion views, the platform is now the fastest-growing online video content network in the Arab World.", location: "San Jose", start_time: DateTime.parse('2017-11-07 12:00'), end_time: DateTime.parse('2017-11-07 21:00'))
+event44= Event.create!(user_id: user11.id, group_id: group6.id, name: "UTURN and the Future of Media: An Evening With Kaswara Al-Khatib", description: "Online media has completely changed the game. Anyone with an internet connection can find a voice and an audience—and become a voice FOR an audience. Nowhere is this better embodied than in Saudi Arabia's UTURN channel. Created by Kaswara Al-Khatib in 2010, UTURN Entertainment is tech platform for entertainment and content development, all in Arabic for a Saudi audience. With over 35 million subscribers and more than two billion views, the platform is now the fastest-growing online video content network in the Arab World.", location: "San Jose", start_time: DateTime.parse('2017-11-07 12:00 GMT-7'), end_time: DateTime.parse('2017-11-07 21:00 GMT-7'))
 
 gn898 = GroupNews.create!(group_id: group6.id, news: user11.username + ' created the event ' + event44.name, user_id: user11.id, oid: event44.id, typo: 'e')
 gn899 = GroupNews.create!(group_id: group6.id, news: user11.username + ' rsvp\'d for ' + event44.name, user_id: user11.id, oid: event44.id, typo: 'e')
@@ -1218,7 +1218,7 @@ ee319 = EventEnrollment.create!(user_id: user11.id, event_id: event44.id)
 
 
 event45= Event.create!(user_id: user11.id, group_id: group6.id, name: "Love, Eat, Dance! Dinner Show at Angelica's", description: "Son 7 is a newly formed Latin World Beat Group Featuring traditional salsa, Latin music from around the world, tribal congas and originals by Gary Davila.
-Dance all evening or elevate your spirit with tunes from Celia Cruz, Buena vista Social Club, Hector Lavoe, Oscar de leon, Poncho sanchez and talented band leader: Gary Davila Originals.", location: "San Jose", start_time: DateTime.parse('2017-10-10 21:00'), end_time: DateTime.parse('2017-10-11 2:00'))
+Dance all evening or elevate your spirit with tunes from Celia Cruz, Buena vista Social Club, Hector Lavoe, Oscar de leon, Poncho sanchez and talented band leader: Gary Davila Originals.", location: "San Jose", start_time: DateTime.parse('2017-10-10 21:00 GMT-7'), end_time: DateTime.parse('2017-10-11 2:00' GMT-7))
 
 gn912 = GroupNews.create!(group_id: group6.id, news: user11.username + ' created the event ' + event45.name, user_id: user11.id, oid: event45.id, typo: 'e')
 gn913 = GroupNews.create!(group_id: group6.id, news: user11.username + ' rsvp\'d for ' + event45.name, user_id: user11.id, oid: event45.id, typo: 'e')
@@ -1279,7 +1279,7 @@ gn141 = GroupNews.create!(group_id: group7.id, news: user47.username + ' joined 
 ge141 = GroupEnrollment.create!(group_id: group7.id, user_id: user47.id)
 
 #
-event46= Event.create!(user_id: user15.id, group_id: group7.id, name: "Watch The Silicon Valley Science Fiction Short Film Festival", description: "The Computer History Museum is hosting the Silicon Valley Science Fiction Short Film Festival. They will be screening 16 short films from around the world. This two hour event will begin at 7pm and is FREE for people to attend. There will be food trucks onsite at Off the Grid, and Catered Too will be hosting a wine and beer bar.", location: "Mountain View", start_time: DateTime.parse('2017-09-09 07:00'), end_time: DateTime.parse('2017-09-09 19:00'))
+event46= Event.create!(user_id: user15.id, group_id: group7.id, name: "Watch The Silicon Valley Science Fiction Short Film Festival", description: "The Computer History Museum is hosting the Silicon Valley Science Fiction Short Film Festival. They will be screening 16 short films from around the world. This two hour event will begin at 7pm and is FREE for people to attend. There will be food trucks onsite at Off the Grid, and Catered Too will be hosting a wine and beer bar.", location: "Mountain View", start_time: DateTime.parse('2017-09-09 07:00 GMT-7'), end_time: DateTime.parse('2017-09-09 19:00 GMT-7'))
 
 gn926 = GroupNews.create!(group_id: group7.id, news: user15.username + ' created the event ' + event46.name, user_id: user15.id, oid: event46.id, typo: 'e')
 gn927 = GroupNews.create!(group_id: group7.id, news: user15.username + ' rsvp\'d for ' + event46.name, user_id: user15.id, oid: event46.id, typo: 'e')
@@ -1310,7 +1310,7 @@ ee343 = EventEnrollment.create!(user_id: user93.id, event_id: event46.id)
 ee344 = EventEnrollment.create!(user_id: user94.id, event_id: event46.id)
 ee345 = EventEnrollment.create!(user_id: user95.id, event_id: event46.id)
 
-event47= Event.create!(user_id: user15.id, group_id: group7.id, name: "Campbell Community Center Indoor Pickleball", description: "Please join us for exciting action at the Campbell Community Center. The Pickleball session will be held in the Main Gym. All levels of players are welcome! They have paddles to loan. The drop-in fee is only $3 for over 2 hours of play!", location: "Campbell", start_time: DateTime.parse('2017-11-07 10:00'), end_time: DateTime.parse('2017-11-07 19:00'))
+event47= Event.create!(user_id: user15.id, group_id: group7.id, name: "Campbell Community Center Indoor Pickleball", description: "Please join us for exciting action at the Campbell Community Center. The Pickleball session will be held in the Main Gym. All levels of players are welcome! They have paddles to loan. The drop-in fee is only $3 for over 2 hours of play!", location: "Campbell", start_time: DateTime.parse('2017-11-07 10:00 GMT-7'), end_time: DateTime.parse('2017-11-07 19:00 GMT-7'))
 
 gn940 = GroupNews.create!(group_id: group7.id, news: user15.username + ' created the event ' + event47.name, user_id: user15.id, oid: event47.id, typo: 'e')
 gn941 = GroupNews.create!(group_id: group7.id, news: user15.username + ' rsvp\'d for ' + event47.name, user_id: user15.id, oid: event47.id, typo: 'e')
@@ -1343,7 +1343,7 @@ ee358 = EventEnrollment.create!(user_id: user95.id, event_id: event47.id)
 
 
 
-event48= Event.create!(user_id: user42.id, group_id: group7.id, name: "Milpitas Indoor Pickleball", description: "Join us for Pickleball at this very nice facility.  There are six courts with plenty of room and great lighting. All levels are welcome. We love to teach those who are new to the sport how to play the game. There are paddles for you to use. If you are a resident of Milpitas, you buy a five visit pass for $10. If you are not a resident of Milpitas, you buy an annual membership for $50 and then purchase a five visit pass. If you are 50 plus years old, the five visit pass is $10. If you are under 50, the cost for a five visit pass is $20. The passes have no expiration date. The five visits can be whenever you choose to use them. Another option is to pay a drop in fee of $8 each time you go, but that doesn't make much sense  if you plan on playing there on a regular basis. See you on the courts at the Milpitas Sports Center!", location: "Milpitas", start_time: DateTime.parse('2017-11-16 10:00'), end_time: DateTime.parse('2017-11-16 19:00'))
+event48= Event.create!(user_id: user42.id, group_id: group7.id, name: "Milpitas Indoor Pickleball", description: "Join us for Pickleball at this very nice facility.  There are six courts with plenty of room and great lighting. All levels are welcome. We love to teach those who are new to the sport how to play the game. There are paddles for you to use. If you are a resident of Milpitas, you buy a five visit pass for $10. If you are not a resident of Milpitas, you buy an annual membership for $50 and then purchase a five visit pass. If you are 50 plus years old, the five visit pass is $10. If you are under 50, the cost for a five visit pass is $20. The passes have no expiration date. The five visits can be whenever you choose to use them. Another option is to pay a drop in fee of $8 each time you go, but that doesn't make much sense  if you plan on playing there on a regular basis. See you on the courts at the Milpitas Sports Center!", location: "Milpitas", start_time: DateTime.parse('2017-11-16 10:00 GMT-7'), end_time: DateTime.parse('2017-11-16 19:00 GMT-7'))
 
 gn954 = GroupNews.create!(group_id: group7.id, news: user15.username + ' created the event ' + event48.name, user_id: user15.id, oid: event48.id, typo: 'e')
 gn955 = GroupNews.create!(group_id: group7.id, news: user15.username + ' rsvp\'d for ' + event48.name, user_id: user15.id, oid: event48.id, typo: 'e')
@@ -1411,7 +1411,7 @@ ge155 = GroupEnrollment.create!(group_id: group8.id, user_id: user67.id)
 gn156 = GroupNews.create!(group_id: group8.id, news: user68.username + ' joined the group', user_id: user68.id, oid: group8.id, typo: 'g')
 ge156 = GroupEnrollment.create!(group_id: group8.id, user_id: user68.id)
 
-event49= Event.create!(user_id: user16.id, group_id: group8.id, name: "Tuesday Night Beginner Runner Meetup + SOCIAL", description: "Whether you have never run a step in your life, or you are just getting back into it after taking some time off, this is the Meetup for you! This is a 2-4 mile distance, and you can choose what distance you'd like to do. We encourage walkers, run/walkers, and runners to join us for this beginning level run. ", location: "Campbell", start_time: DateTime.parse('2017-09-12 18:00'), end_time: DateTime.parse('2017-09-12 19:00'))
+event49= Event.create!(user_id: user16.id, group_id: group8.id, name: "Tuesday Night Beginner Runner Meetup + SOCIAL", description: "Whether you have never run a step in your life, or you are just getting back into it after taking some time off, this is the Meetup for you! This is a 2-4 mile distance, and you can choose what distance you'd like to do. We encourage walkers, run/walkers, and runners to join us for this beginning level run. ", location: "Campbell", start_time: DateTime.parse('2017-09-12 18:00 GMT-7'), end_time: DateTime.parse('2017-09-12 19:00 GMT-7'))
 
 
 gn968 = GroupNews.create!(group_id: group8.id, news: user16.username + ' created the event ' + event49.name, user_id: user16.id, oid: event49.id, typo: 'e')
@@ -1451,7 +1451,7 @@ ee387 = EventEnrollment.create!(user_id: user47.id, event_id: event49.id)
 
 
 
-event50= Event.create!(user_id: user16.id, group_id: group8.id, name: "Speed Workout @CCC", description: "Meet up near the main restrooms at the North end of the track. ALL paces are welcome. The workout can be modified depending on your personal goal, just see the event organizer. This workout will vary from week to week. Hope to see you there, AND please bring a watch if you have one.", location: "Campbell", start_time: DateTime.parse('2017-10-09 10:30'), end_time: DateTime.parse('2017-10-09 19:45'))
+event50= Event.create!(user_id: user16.id, group_id: group8.id, name: "Speed Workout @CCC", description: "Meet up near the main restrooms at the North end of the track. ALL paces are welcome. The workout can be modified depending on your personal goal, just see the event organizer. This workout will vary from week to week. Hope to see you there, AND please bring a watch if you have one.", location: "Campbell", start_time: DateTime.parse('2017-10-09 10:30 GMT-7'), end_time: DateTime.parse('2017-10-09 19:45 GMT-7'))
 
 gn985 = GroupNews.create!(group_id: group8.id, news: user16.username + ' created the event ' + event50.name, user_id: user16.id, oid: event50.id, typo: 'e')
 gn986 = GroupNews.create!(group_id: group8.id, news: user16.username + ' rsvp\'d for ' + event50.name, user_id: user16.id, oid: event50.id, typo: 'e')
@@ -1489,7 +1489,7 @@ ee402 = EventEnrollment.create!(user_id: user48.id, event_id: event50.id)
 ee403 = EventEnrollment.create!(user_id: user47.id, event_id: event50.id)
 
 
-event51= Event.create!(user_id: user16.id, group_id: group8.id, name: "Latest Innovations in Robotics", description: "Our distinguished panel will discuss the latest innovations in robotics.", location: "Palo Alto", start_time: DateTime.parse('2017-10-03 18:00'), end_time: DateTime.parse('2017-10-03 22:00'))
+event51= Event.create!(user_id: user16.id, group_id: group8.id, name: "Latest Innovations in Robotics", description: "Our distinguished panel will discuss the latest innovations in robotics.", location: "Palo Alto", start_time: DateTime.parse('2017-10-03 18:00 GMT-7'), end_time: DateTime.parse('2017-10-03 22:00 GMT-7'))
 gn1002 = GroupNews.create!(group_id: group8.id, news: user16.username + ' created the event ' + event51.name, user_id: user16.id, oid: event51.id, typo: 'e')
 gn1003 = GroupNews.create!(group_id: group8.id, news: user16.username + ' rsvp\'d for ' + event51.name, user_id: user16.id, oid: event51.id, typo: 'e')
 gn1004 = GroupNews.create!(group_id: group8.id, news: user68.username + ' rsvp\'d for ' + event51.name, user_id: user68.id, oid: event51.id, typo: 'e')
@@ -1527,7 +1527,7 @@ ee419 = EventEnrollment.create!(user_id: user47.id, event_id: event51.id)
 
 
 event52= Event.create!(user_id: user16.id, group_id: group8.id, name: "Point Isabel to Meeker Slough, Richmond", description: "We’ll walk 2.5-3 miles along the East Bay Trail shoreline, tidal marshes and sloughs. We’ll see ducks, shorebirds, possible migrant passerines and raptors, and Ridgway’s Rail if we’re very lucky. We’ll have a rising tide for our walk (1 to 4.5 feet). World Shoreline Day participants may upload their bird lists to ebird.
-Bring binoculars. Restrooms and water fountains at meeting place. ", location: "Richmond", start_time: DateTime.parse('2017-09-28 09:00'), end_time: DateTime.parse('2017-09-28 12:00'))
+Bring binoculars. Restrooms and water fountains at meeting place. ", location: "Richmond", start_time: DateTime.parse('2017-09-28 09:00 GMT-7'), end_time: DateTime.parse('2017-09-28 12:00 GMT-7'))
 
 gn1119 = GroupNews.create!(group_id: group8.id, news: user16.username + ' created the event ' + event52.name, user_id: user16.id, oid: event52.id, typo: 'e')
 gn1120 = GroupNews.create!(group_id: group8.id, news: user16.username + ' rsvp\'d for ' + event52.name, user_id: user16.id, oid: event52.id, typo: 'e')
@@ -1600,7 +1600,7 @@ gn171 = GroupNews.create!(group_id: group9.id, news: user83.username + ' joined 
 ge171 = GroupEnrollment.create!(group_id: group9.id, user_id: user83.id)
 
 event53= Event.create!(user_id: user17.id, group_id: group9.id, name: "Free Coworking Day @ BRIIA", description: "From BRIIA (Bishop Ranch Accelerator):
-Tired of your commute? Too much chaos at home? Want to network with like-minded professionals? Try our vibrant co-working community for a day for FREE. Limited to the first 20 people that register! We’ll wrap up the day at 5PM with a casual happy hour either in our offices or on the lake.", location: "San Ramon", start_time: DateTime.parse('2017-09-17 09:00'), end_time: DateTime.parse('2017-09-17 19:00'))
+Tired of your commute? Too much chaos at home? Want to network with like-minded professionals? Try our vibrant co-working community for a day for FREE. Limited to the first 20 people that register! We’ll wrap up the day at 5PM with a casual happy hour either in our offices or on the lake.", location: "San Ramon", start_time: DateTime.parse('2017-09-17 09:00 GMT-7'), end_time: DateTime.parse('2017-09-17 19:00 GMT-7'))
 gn1136 = GroupNews.create!(group_id: group9.id, news: user17.username + ' created the event ' + event53.name, user_id: user17.id, oid: event53.id, typo: 'e')
 gn1137 = GroupNews.create!(group_id: group9.id, news: user17.username + ' rsvp\'d for ' + event53.name, user_id: user17.id, oid: event53.id, typo: 'e')
 gn1138 = GroupNews.create!(group_id: group9.id, news: user83.username + ' rsvp\'d for ' + event53.name, user_id: user83.id, oid: event53.id, typo: 'e')
@@ -1638,7 +1638,7 @@ ee451 = EventEnrollment.create!(user_id: user68.id, event_id: event53.id)
 
 
 
-event54= Event.create!(user_id: user17.id, group_id: group9.id, name: "Coffee & Discuss Photography in Walnut Creek", description: "Come learn about various photography techniques and hacks!", location: "Santa Clara", start_time: DateTime.parse('2017-10-20 10:00'), end_time: DateTime.parse('2017-10-20 17:30'))
+event54= Event.create!(user_id: user17.id, group_id: group9.id, name: "Coffee & Discuss Photography in Walnut Creek", description: "Come learn about various photography techniques and hacks!", location: "Santa Clara", start_time: DateTime.parse('2017-10-20 10:00 GMT-7'), end_time: DateTime.parse('2017-10-20 17:30 GMT-7'))
 
 gn1153 = GroupNews.create!(group_id: group9.id, news: user17.username + ' created the event ' + event54.name, user_id: user17.id, oid: event54.id, typo: 'e')
 gn1154 = GroupNews.create!(group_id: group9.id, news: user17.username + ' rsvp\'d for ' + event54.name, user_id: user17.id, oid: event54.id, typo: 'e')
@@ -1676,7 +1676,7 @@ ee466 = EventEnrollment.create!(user_id: user80.id, event_id: event54.id)
 ee467 = EventEnrollment.create!(user_id: user68.id, event_id: event54.id)
 
 
-event55= Event.create!(user_id: user82.id, group_id: group9.id, name: "Birding with Karl the Fog, San Francisco", description: "We’ll start the morning with Karl the Fog (apparently his name can only be used in its full form) checking birds on Seal Rocks and maybe at Mile Rock. Bring a scope since this is a great time for seabirds. Since Karl the Fog will probably be present through the morning we’ll plan on driving over to Golden Gate Park and the Chain-of-Lakes. After birding there we’ll head down to Lake Merced to see what migrants might turn up there.", location: "San Francisco", start_time: DateTime.parse('2017-09-19 05:00'), end_time: DateTime.parse('2017-09-19 14:00'))
+event55= Event.create!(user_id: user82.id, group_id: group9.id, name: "Birding with Karl the Fog, San Francisco", description: "We’ll start the morning with Karl the Fog (apparently his name can only be used in its full form) checking birds on Seal Rocks and maybe at Mile Rock. Bring a scope since this is a great time for seabirds. Since Karl the Fog will probably be present through the morning we’ll plan on driving over to Golden Gate Park and the Chain-of-Lakes. After birding there we’ll head down to Lake Merced to see what migrants might turn up there.", location: "San Francisco", start_time: DateTime.parse('2017-09-19 05:00 GMT-7'), end_time: DateTime.parse('2017-09-19 14:00 GMT-7'))
 
 gn1170 = GroupNews.create!(group_id: group9.id, news: user82.username + ' created the event ' + event55.name, user_id: user82.id, oid: event55.id, typo: 'e')
 gn1171 = GroupNews.create!(group_id: group9.id, news: user82.username + ' rsvp\'d for ' + event55.name, user_id: user82.id, oid: event55.id, typo: 'e')
@@ -1753,7 +1753,7 @@ event56= Event.create!(user_id: user14.id, group_id: group10.id, name: "Play Dod
 -Regular dodgeball (no catching) or battleball (with catching)
 -Dodgeball with targets
 -Four quadrants (get everyone out in a quadrant and take it over)
--Spud", location: "Santa Clara", start_time: DateTime.parse('2017-10-09 18:00'), end_time: DateTime.parse('2017-10-09 22:30'))
+-Spud", location: "Santa Clara", start_time: DateTime.parse('2017-10-09 18:00 GMT-7'), end_time: DateTime.parse('2017-10-09 22:30 GMT-7'))
 
 gn1187 = GroupNews.create!(group_id: group10.id, news: user14.username + ' created the event ' + event56.name, user_id: user14.id, oid: event56.id, typo: 'e')
 gn1188 = GroupNews.create!(group_id: group10.id, news: user14.username + ' rsvp\'d for ' + event56.name, user_id: user14.id, oid: event56.id, typo: 'e')
@@ -1790,7 +1790,7 @@ ee497 = EventEnrollment.create!(user_id: user26.id, event_id: event56.id)
 ee498 = EventEnrollment.create!(user_id: user89.id, event_id: event56.id)
 ee499 = EventEnrollment.create!(user_id: user14.id, event_id: event56.id)
 
-event57= Event.create!(user_id: user14.id, group_id: group10.id, name: "Watch The Silicon Valley Science Fiction Short Film Festival", description: "The Computer History Museum is hosting the Silicon Valley Science Fiction Short Film Festival. They will be screening 16 short films from around the world. This two hour event will begin at 7pm and is FREE for people to attend. There will be food trucks onsite at Off the Grid, and Catered Too will be hosting a wine and beer bar!", location: "Mountain View", start_time: DateTime.parse('2017-10-06 20:00'), end_time: DateTime.parse('2017-10-06 23:30'))
+event57= Event.create!(user_id: user14.id, group_id: group10.id, name: "Watch The Silicon Valley Science Fiction Short Film Festival", description: "The Computer History Museum is hosting the Silicon Valley Science Fiction Short Film Festival. They will be screening 16 short films from around the world. This two hour event will begin at 7pm and is FREE for people to attend. There will be food trucks onsite at Off the Grid, and Catered Too will be hosting a wine and beer bar!", location: "Mountain View", start_time: DateTime.parse('2017-10-06 20:00 GMT-7'), end_time: DateTime.parse('2017-10-06 23:30 GMT-7'))
 
 gn1204 = GroupNews.create!(group_id: group10.id, news: user14.username + ' created the event ' + event57.name, user_id: user14.id, oid: event57.id, typo: 'e')
 gn1205 = GroupNews.create!(group_id: group10.id, news: user14.username + ' rsvp\'d for ' + event57.name, user_id: user14.id, oid: event57.id, typo: 'e')
@@ -1831,7 +1831,7 @@ ee515 = EventEnrollment.create!(user_id: user14.id, event_id: event57.id)
 event58= Event.create!(user_id: user14.id, group_id: group10.id, name: "Swing Dance Beginner Lesson and Dancing", description: "Swing dance is a fun, energetic, upbeat dance that anyone can learn, and is very welcoming to beginners.
 What to wear:
 Wear comfortable shoes and comfortable clothes that are easy to move in.
-The lindy scene is very casual, and there’s a wide range of clothing from jeans and t-shirts to nice dresses and suits...to vintage clothing." , location: "Sunnyvale", start_time: DateTime.parse('2017-10-17 14:00'), end_time: DateTime.parse('2017-10-17 19:30'))
+The lindy scene is very casual, and there’s a wide range of clothing from jeans and t-shirts to nice dresses and suits...to vintage clothing." , location: "Sunnyvale", start_time: DateTime.parse('2017-10-17 14:00 GMT-7'), end_time: DateTime.parse('2017-10-17 19:30 GMT-7'))
 
 gn1221 = GroupNews.create!(group_id: group10.id, news: user14.username + ' created the event ' + event58.name, user_id: user14.id, oid: event58.id, typo: 'e')
 gn1222 = GroupNews.create!(group_id: group10.id, news: user14.username + ' rsvp\'d for ' + event58.name, user_id: user14.id, oid: event58.id, typo: 'e')
@@ -1892,7 +1892,7 @@ ge194 = GroupEnrollment.create!(group_id: group11.id, user_id: user13.id)
 gn195 = GroupNews.create!(group_id: group11.id, news: user73.username + ' joined the group', user_id: user73.id, oid: group11.id, typo: 'g')
 ge195 = GroupEnrollment.create!(group_id: group11.id, user_id: user73.id)
 
-event59= Event.create!(user_id: user18.id, group_id: group11.id, name: "Puzzled Pint", description: "Puzzled Pint is an awesome puzzling event where the theme is to solve puzzles over food and drinks! It occurs on the second Tuesday of every month. This month, it will be at Faultline Brewing Company in Sunnyvale!", location: "Sunnyvale", start_time: DateTime.parse('2017-09-17 16:00'), end_time: DateTime.parse('2017-09-17 22:30'))
+event59= Event.create!(user_id: user18.id, group_id: group11.id, name: "Puzzled Pint", description: "Puzzled Pint is an awesome puzzling event where the theme is to solve puzzles over food and drinks! It occurs on the second Tuesday of every month. This month, it will be at Faultline Brewing Company in Sunnyvale!", location: "Sunnyvale", start_time: DateTime.parse('2017-09-17 16:00 GMT-7'), end_time: DateTime.parse('2017-09-17 22:30 GMT-7'))
 
 gn1238 = GroupNews.create!(group_id: group11.id, news: user18.username + ' created the event ' + event59.name, user_id: user18.id, oid: event59.id, typo: 'e')
 gn1239 = GroupNews.create!(group_id: group11.id, news: user18.username + ' rsvp\'d for ' + event59.name, user_id: user18.id, oid: event59.id, typo: 'e')
@@ -1921,7 +1921,7 @@ ee542 = EventEnrollment.create!(user_id: user26.id, event_id: event59.id)
 
 
 
-event60= Event.create!(user_id: user18.id, group_id: group11.id, name: "Weekly French Roast", description: "Our weekly French Roast!!", location: "Sunnyvale", start_time: DateTime.parse('2017-10-03 10:00'), end_time: DateTime.parse('2017-10-03 17:30'))
+event60= Event.create!(user_id: user18.id, group_id: group11.id, name: "Weekly French Roast", description: "Our weekly French Roast!!", location: "Sunnyvale", start_time: DateTime.parse('2017-10-03 10:00 GMT-7'), end_time: DateTime.parse('2017-10-03 17:30 GMT-7'))
 gn1250 = GroupNews.create!(group_id: group11.id, news: user18.username + ' created the event ' + event60.name, user_id: user18.id, oid: event60.id, typo: 'e')
 gn1251 = GroupNews.create!(group_id: group11.id, news: user18.username + ' rsvp\'d for ' + event60.name, user_id: user18.id, oid: event60.id, typo: 'e')
 gn1252 = GroupNews.create!(group_id: group11.id, news: user73.username + ' rsvp\'d for ' + event60.name, user_id: user73.id, oid: event60.id, typo: 'e')
@@ -1946,7 +1946,7 @@ ee550 = EventEnrollment.create!(user_id: user29.id, event_id: event60.id)
 ee551 = EventEnrollment.create!(user_id: user28.id, event_id: event60.id)
 ee552 = EventEnrollment.create!(user_id: user27.id, event_id: event60.id)
 ee553 = EventEnrollment.create!(user_id: user26.id, event_id: event60.id)
-event61= Event.create!(user_id: user18.id, group_id: group11.id, name: "Shoreline Lake Loop", description: "We'll meet on the sidewalk, in front of the doors and make a loop (or several, as time allows) on one side. Go at your own pace! Talk, or, be silent - it's all good. If you have never visited the park before, just know that it can be windy / colder than other parts of Silicon Valley, even outside of the park in Mountain View. ", location: "Sunnyvale", start_time: DateTime.parse('2017-11-26 14:00'), end_time: DateTime.parse('2017-11-26 17:30'))
+event61= Event.create!(user_id: user18.id, group_id: group11.id, name: "Shoreline Lake Loop", description: "We'll meet on the sidewalk, in front of the doors and make a loop (or several, as time allows) on one side. Go at your own pace! Talk, or, be silent - it's all good. If you have never visited the park before, just know that it can be windy / colder than other parts of Silicon Valley, even outside of the park in Mountain View. ", location: "Sunnyvale", start_time: DateTime.parse('2017-11-26 14:00 GMT-7'), end_time: DateTime.parse('2017-11-26 17:30 GMT-7'))
 
 
 gn1262 = GroupNews.create!(group_id: group11.id, news: user18.username + ' created the event ' + event61.name, user_id: user18.id, oid: event61.id, typo: 'e')
@@ -2013,7 +2013,7 @@ ge209 = GroupEnrollment.create!(group_id: group12.id, user_id: user80.id)
 gn210 = GroupNews.create!(group_id: group12.id, news: user47.username + ' joined the group', user_id: user47.id, oid: group12.id, typo: 'g')
 ge210 = GroupEnrollment.create!(group_id: group12.id, user_id: user47.id)
 
-event560= Event.create!(user_id: user13.id, group_id: group12.id, name: "Shut Up and Write! Silicon Valley (San Jose)", description: "Get in an uninterrupted hour of writing on a regular basis in the company of other writers. Bring your own writing project. There is WiFi, but outlets are limited so make sure your electronic devices are charged. Your purchase of coffee or food is appreciated. ", location: "San Jose", start_time: DateTime.parse('2017-09-25 12:00'), end_time: DateTime.parse('2017-09-25 20:30'))
+event560= Event.create!(user_id: user13.id, group_id: group12.id, name: "Shut Up and Write! Silicon Valley (San Jose)", description: "Get in an uninterrupted hour of writing on a regular basis in the company of other writers. Bring your own writing project. There is WiFi, but outlets are limited so make sure your electronic devices are charged. Your purchase of coffee or food is appreciated. ", location: "San Jose", start_time: DateTime.parse('2017-09-25 12:00 GMT-7'), end_time: DateTime.parse('2017-09-25 20:30 GMT-7'))
 
 gn1274 = GroupNews.create!(group_id: group12.id, news: user13.username + ' created the event ' + event560.name, user_id: user13.id, oid: event560.id, typo: 'e')
 gn1275 = GroupNews.create!(group_id: group12.id, news: user13.username + ' rsvp\'d for ' + event560.name, user_id: user13.id, oid: event560.id, typo: 'e')
@@ -2051,7 +2051,7 @@ ee578 = EventEnrollment.create!(user_id: user75.id, event_id: event560.id)
 ee579 = EventEnrollment.create!(user_id: user74.id, event_id: event560.id)
 ee580 = EventEnrollment.create!(user_id: user73.id, event_id: event560.id)
 
-event570= Event.create!(user_id: user13.id, group_id: group12.id, name: "Tropical Tastes, Mixology Demos, Music & More: California Rum Festival", description: "It may bring to mind the sandy beaches and glittering waters of the Caribbean where it was first distilled, but rum is capable of so much more than spiking a frothy umbrella drink -- not that there's anything wrong with that. The third annual California Rum Festival at SOMArts San Francisco kicks off on Friday evening with a four-hour session featuring arts and crafts, music, mixology demos, plenty of samples from a variety of brands and a signature souvenir tasting cup. Then on Saturday, it's time to tiki it up at a Rum Bazaar featuring tropical cocktails and retro-surf music.", location: "San Francisco", start_time: DateTime.parse('2017-12-01 16:00'), end_time: DateTime.parse('2017-12-01 22:30'))
+event570= Event.create!(user_id: user13.id, group_id: group12.id, name: "Tropical Tastes, Mixology Demos, Music & More: California Rum Festival", description: "It may bring to mind the sandy beaches and glittering waters of the Caribbean where it was first distilled, but rum is capable of so much more than spiking a frothy umbrella drink -- not that there's anything wrong with that. The third annual California Rum Festival at SOMArts San Francisco kicks off on Friday evening with a four-hour session featuring arts and crafts, music, mixology demos, plenty of samples from a variety of brands and a signature souvenir tasting cup. Then on Saturday, it's time to tiki it up at a Rum Bazaar featuring tropical cocktails and retro-surf music.", location: "San Francisco", start_time: DateTime.parse('2017-12-01 16:00 GMT-7'), end_time: DateTime.parse('2017-12-01 22:30 GMT-7'))
 
 gn1291 = GroupNews.create!(group_id: group12.id, news: user13.username + ' created the event ' + event570.name, user_id: user13.id, oid: event570.id, typo: 'e')
 gn1292 = GroupNews.create!(group_id: group12.id, news: user13.username + ' rsvp\'d for ' + event570.name, user_id: user13.id, oid: event570.id, typo: 'e')
@@ -2089,7 +2089,7 @@ ee594 = EventEnrollment.create!(user_id: user75.id, event_id: event570.id)
 ee595 = EventEnrollment.create!(user_id: user74.id, event_id: event570.id)
 ee596 = EventEnrollment.create!(user_id: user73.id, event_id: event570.id)
 
-event580= Event.create!(user_id: user13.id, group_id: group12.id, name: "Lunchtime Soccer", description: "Lunchtime Soccer!!", location: "Sunnyvale", start_time: DateTime.parse('2017-09-27 12:00'), end_time: DateTime.parse('2017-09-27 1:30'))
+event580= Event.create!(user_id: user13.id, group_id: group12.id, name: "Lunchtime Soccer", description: "Lunchtime Soccer!!", location: "Sunnyvale", start_time: DateTime.parse('2017-09-27 12:00 GMT-7'), end_time: DateTime.parse('2017-09-27 1:30' GMT-7))
 
 gn1308 = GroupNews.create!(group_id: group12.id, news: user13.username + ' created the event ' + event580.name, user_id: user13.id, oid: event580.id, typo: 'e')
 gn1309 = GroupNews.create!(group_id: group12.id, news: user13.username + ' rsvp\'d for ' + event580.name, user_id: user13.id, oid: event580.id, typo: 'e')
@@ -2153,7 +2153,7 @@ gn219 = GroupNews.create!(group_id: group13.id, news: user53.username + ' joined
 ge219 = GroupEnrollment.create!(group_id: group13.id, user_id: user53.id)
 gn220 = GroupNews.create!(group_id: group13.id, news: user54.username + ' joined the group', user_id: user54.id, oid: group13.id, typo: 'g')
 ge220 = GroupEnrollment.create!(group_id: group13.id, user_id: user54.id)
-event590= Event.create!(user_id: user20.id, group_id: group13.id, name: "Tour de Fat Festival", description: "Fat Tire presents the Tour de Fat from New Belgium Brewing featuring Hollis Brown is coming to Oakland July 28th. A mix of musicians, circus performers, vaudeville acts, magicians, comedians, and mind-blowing provocateurs will also take the stage. Doors open at 7pm, costumes are encouraged and Everyone 21+ can enjoy year-round beers from New Belgium including its flagship beer, the American craft beer icon Fat Tire Belgian Style Ale, along with Voodoo Ranger IPA and Citradelic Tangerine IPA. Attendees will also get to try Fat Tire Belgian White Ale before it launches this August. Tour de Fat’s Oakland stop benefits Walk Oakland Bike Oakland. The perfect event if you like a unique experience with great beer! ", location: "Oakland", start_time: DateTime.parse('2017-12-05 12:00'), end_time: DateTime.parse('2017-12-05 20:30'))
+event590= Event.create!(user_id: user20.id, group_id: group13.id, name: "Tour de Fat Festival", description: "Fat Tire presents the Tour de Fat from New Belgium Brewing featuring Hollis Brown is coming to Oakland July 28th. A mix of musicians, circus performers, vaudeville acts, magicians, comedians, and mind-blowing provocateurs will also take the stage. Doors open at 7pm, costumes are encouraged and Everyone 21+ can enjoy year-round beers from New Belgium including its flagship beer, the American craft beer icon Fat Tire Belgian Style Ale, along with Voodoo Ranger IPA and Citradelic Tangerine IPA. Attendees will also get to try Fat Tire Belgian White Ale before it launches this August. Tour de Fat’s Oakland stop benefits Walk Oakland Bike Oakland. The perfect event if you like a unique experience with great beer! ", location: "Oakland", start_time: DateTime.parse('2017-12-05 12:00 GMT-7'), end_time: DateTime.parse('2017-12-05 20:30 GMT-7'))
 
 gn1325 = GroupNews.create!(group_id: group13.id, news: user20.username + ' created the event ' + event590.name, user_id: user20.id, oid: event590.id, typo: 'e')
 gn1326 = GroupNews.create!(group_id: group13.id, news: user20.username + ' rsvp\'d for ' + event590.name, user_id: user20.id, oid: event590.id, typo: 'e')
@@ -2185,7 +2185,7 @@ ee623 = EventEnrollment.create!(user_id: user47.id, event_id: event590.id)
 
 
 event600= Event.create!(user_id: user20.id, group_id: group13.id, name: "Should I study for an MBA? Meet us in San Francisco", description: "The skills and insights of an MBA are so invaluable that the earlier you can have an MBA is better for you. If you’re contemplating whether to make the MBA a priority in 2016, consider the pros and cons of studying for an MBA. Achieving career goals doesn’t take place overnight, so if you have a plan, why not make it a priority for this year.
-As the saying from Og Mandino goes “Always do your best. What you plant now, you will harvest later”.", location: "San Francisco", start_time: DateTime.parse('2017-09-01 12:00'), end_time: DateTime.parse('2017-09-01 18:30'))
+As the saying from Og Mandino goes “Always do your best. What you plant now, you will harvest later”.", location: "San Francisco", start_time: DateTime.parse('2017-09-01 12:00 GMT-7'), end_time: DateTime.parse('2017-09-01 18:30 GMT-7'))
 
 gn1337 = GroupNews.create!(group_id: group13.id, news: user20.username + ' created the event ' + event600.name, user_id: user20.id, oid: event600.id, typo: 'e')
 gn1338 = GroupNews.create!(group_id: group13.id, news: user20.username + ' rsvp\'d for ' + event600.name, user_id: user20.id, oid: event600.id, typo: 'e')
@@ -2213,7 +2213,7 @@ ee632 = EventEnrollment.create!(user_id: user68.id, event_id: event600.id)
 ee633 = EventEnrollment.create!(user_id: user48.id, event_id: event600.id)
 ee634 = EventEnrollment.create!(user_id: user47.id, event_id: event600.id)
 
-event610= Event.create!(user_id: user13.id, group_id: group13.id, name: "Forgotten Treasures – Antique Appraisal Event", description: 'Antique Appraisal Event!!  Come check out all the antiques!', location: "Cupertino", start_time: DateTime.parse('2017-10-20 12:00'), end_time: DateTime.parse('2017-10-20 19:30'))
+event610= Event.create!(user_id: user13.id, group_id: group13.id, name: "Forgotten Treasures – Antique Appraisal Event", description: 'Antique Appraisal Event!!  Come check out all the antiques!', location: "Cupertino", start_time: DateTime.parse('2017-10-20 12:00 GMT-7'), end_time: DateTime.parse('2017-10-20 19:30 GMT-7'))
 gn1349 = GroupNews.create!(group_id: group13.id, news: user20.username + ' created the event ' + event610.name, user_id: user20.id, oid: event610.id, typo: 'e')
 gn1350 = GroupNews.create!(group_id: group13.id, news: user20.username + ' rsvp\'d for ' + event610.name, user_id: user20.id, oid: event610.id, typo: 'e')
 gn1351 = GroupNews.create!(group_id: group13.id, news: user54.username + ' rsvp\'d for ' + event610.name, user_id: user54.id, oid: event610.id, typo: 'e')
@@ -2270,7 +2270,7 @@ ge231 = GroupEnrollment.create!(group_id: group14.id, user_id: user77.id)
 gn232 = GroupNews.create!(group_id: group14.id, news: user63.username + ' joined the group', user_id: user63.id, oid: group14.id, typo: 'g')
 ge232 = GroupEnrollment.create!(group_id: group14.id, user_id: user63.id)
 
-event62= Event.create!(user_id: user17.id, group_id: group14.id, name: "Guardianship and Estate Planning Workshop", description: 'Learn how to plan for the future!', location: "Cupertino", start_time: DateTime.parse('2017-11-26 14:00'), end_time: DateTime.parse('2017-11-26 18:30'))
+event62= Event.create!(user_id: user17.id, group_id: group14.id, name: "Guardianship and Estate Planning Workshop", description: 'Learn how to plan for the future!', location: "Cupertino", start_time: DateTime.parse('2017-11-26 14:00 GMT-7'), end_time: DateTime.parse('2017-11-26 18:30 GMT-7'))
 gn1361 = GroupNews.create!(group_id: group14.id, news: user17.username + ' created the event ' + event62.name, user_id: user17.id, oid: event62.id, typo: 'e')
 gn1362 = GroupNews.create!(group_id: group14.id, news: user17.username + ' rsvp\'d for ' + event62.name, user_id: user17.id, oid: event62.id, typo: 'e')
 gn1363 = GroupNews.create!(group_id: group14.id, news: user63.username + ' rsvp\'d for ' + event62.name, user_id: user63.id, oid: event62.id, typo: 'e')
@@ -2303,7 +2303,7 @@ ee658 = EventEnrollment.create!(user_id: user54.id, event_id: event62.id)
 
 
 
-event63= Event.create!(user_id: user17.id, group_id: group14.id, name: "BNG Lunch Networking", description: 'Why not spend your lunch networking with like-minded people?', location: "Milpitas", start_time: DateTime.parse('2017-10-01 12:00'), end_time: DateTime.parse('2017-10-01 13:30'))
+event63= Event.create!(user_id: user17.id, group_id: group14.id, name: "BNG Lunch Networking", description: 'Why not spend your lunch networking with like-minded people?', location: "Milpitas", start_time: DateTime.parse('2017-10-01 12:00 GMT-7'), end_time: DateTime.parse('2017-10-01 13:30 GMT-7'))
 gn1375 = GroupNews.create!(group_id: group14.id, news: user17.username + ' created the event ' + event63.name, user_id: user17.id, oid: event63.id, typo: 'e')
 gn1376 = GroupNews.create!(group_id: group14.id, news: user17.username + ' rsvp\'d for ' + event63.name, user_id: user17.id, oid: event63.id, typo: 'e')
 gn1377 = GroupNews.create!(group_id: group14.id, news: user63.username + ' rsvp\'d for ' + event63.name, user_id: user63.id, oid: event63.id, typo: 'e')
@@ -2335,7 +2335,7 @@ ee670 = EventEnrollment.create!(user_id: user55.id, event_id: event63.id)
 ee671 = EventEnrollment.create!(user_id: user54.id, event_id: event63.id)
 
 
-event64= Event.create!(user_id: user17.id, group_id: group14.id, name: "BNG Lunch Networking", description: 'Why not spend your lunch networking with like-minded people?', location: "Cupertino", start_time: DateTime.parse('2017-11-01 12:00'), end_time: DateTime.parse('2017-11-01 13:30'))
+event64= Event.create!(user_id: user17.id, group_id: group14.id, name: "BNG Lunch Networking", description: 'Why not spend your lunch networking with like-minded people?', location: "Cupertino", start_time: DateTime.parse('2017-11-01 12:00 GMT-7'), end_time: DateTime.parse('2017-11-01 13:30 GMT-7'))
 gn1389 = GroupNews.create!(group_id: group14.id, news: user17.username + ' created the event ' + event64.name, user_id: user17.id, oid: event64.id, typo: 'e')
 gn1390 = GroupNews.create!(group_id: group14.id, news: user17.username + ' rsvp\'d for ' + event64.name, user_id: user17.id, oid: event64.id, typo: 'e')
 gn1391 = GroupNews.create!(group_id: group14.id, news: user63.username + ' rsvp\'d for ' + event64.name, user_id: user63.id, oid: event64.id, typo: 'e')
@@ -2367,7 +2367,7 @@ ee683 = EventEnrollment.create!(user_id: user55.id, event_id: event64.id)
 ee684 = EventEnrollment.create!(user_id: user54.id, event_id: event64.id)
 
 
-event65= Event.create!(user_id: user30.id, group_id: group14.id, name: "BNG Lunch Networking", description: 'Why not spend your lunch networking with like-minded people?', location: "Sunnyvale", start_time: DateTime.parse('2017-11-10 12:00'), end_time: DateTime.parse('2017-11-10 13:30'))
+event65= Event.create!(user_id: user30.id, group_id: group14.id, name: "BNG Lunch Networking", description: 'Why not spend your lunch networking with like-minded people?', location: "Sunnyvale", start_time: DateTime.parse('2017-11-10 12:00 GMT-7'), end_time: DateTime.parse('2017-11-10 13:30 GMT-7'))
 gn1403 = GroupNews.create!(group_id: group14.id, news: user17.username + ' created the event ' + event65.name, user_id: user17.id, oid: event65.id, typo: 'e')
 gn1404 = GroupNews.create!(group_id: group14.id, news: user17.username + ' rsvp\'d for ' + event65.name, user_id: user17.id, oid: event65.id, typo: 'e')
 gn1405 = GroupNews.create!(group_id: group14.id, news: user63.username + ' rsvp\'d for ' + event65.name, user_id: user63.id, oid: event65.id, typo: 'e')
@@ -2400,7 +2400,7 @@ ee697 = EventEnrollment.create!(user_id: user54.id, event_id: event65.id)
 
 
 
-event66= Event.create!(user_id: user57.id, group_id: group14.id, name: "BNG Lunch Networking", description: 'Why not spend your lunch networking with like-minded people?', location: "San Francisco", start_time: DateTime.parse('2017-11-06 12:00'), end_time: DateTime.parse('2017-11-06 13:30'))
+event66= Event.create!(user_id: user57.id, group_id: group14.id, name: "BNG Lunch Networking", description: 'Why not spend your lunch networking with like-minded people?', location: "San Francisco", start_time: DateTime.parse('2017-11-06 12:00 GMT-7'), end_time: DateTime.parse('2017-11-06 13:30 GMT-7'))
 gn1417 = GroupNews.create!(group_id: group14.id, news: user17.username + ' created the event ' + event66.name, user_id: user17.id, oid: event66.id, typo: 'e')
 gn1418 = GroupNews.create!(group_id: group14.id, news: user17.username + ' rsvp\'d for ' + event66.name, user_id: user17.id, oid: event66.id, typo: 'e')
 gn1419 = GroupNews.create!(group_id: group14.id, news: user63.username + ' rsvp\'d for ' + event66.name, user_id: user63.id, oid: event66.id, typo: 'e')
@@ -2431,7 +2431,7 @@ ee708 = EventEnrollment.create!(user_id: user11.id, event_id: event66.id)
 ee709 = EventEnrollment.create!(user_id: user55.id, event_id: event66.id)
 ee710 = EventEnrollment.create!(user_id: user54.id, event_id: event66.id)
 
-event67= Event.create!(user_id: user17.id, group_id: group14.id, name: "BNG Lunch Networking", description: 'Why not spend your lunch networking with like-minded people?', location: "Saratoga", start_time: DateTime.parse('2017-11-03 12:00'), end_time: DateTime.parse('2017-11-03 13:30'))
+event67= Event.create!(user_id: user17.id, group_id: group14.id, name: "BNG Lunch Networking", description: 'Why not spend your lunch networking with like-minded people?', location: "Saratoga", start_time: DateTime.parse('2017-11-03 12:00 GMT-7'), end_time: DateTime.parse('2017-11-03 13:30 GMT-7'))
 gn1431 = GroupNews.create!(group_id: group14.id, news: user17.username + ' created the event ' + event67.name, user_id: user17.id, oid: event67.id, typo: 'e')
 gn1432 = GroupNews.create!(group_id: group14.id, news: user17.username + ' rsvp\'d for ' + event67.name, user_id: user17.id, oid: event67.id, typo: 'e')
 gn1433 = GroupNews.create!(group_id: group14.id, news: user63.username + ' rsvp\'d for ' + event67.name, user_id: user63.id, oid: event67.id, typo: 'e')
@@ -2463,7 +2463,7 @@ ee722 = EventEnrollment.create!(user_id: user55.id, event_id: event67.id)
 ee723 = EventEnrollment.create!(user_id: user54.id, event_id: event67.id)
 
 
-event68= Event.create!(user_id: user17.id, group_id: group14.id, name: "BNG Lunch Networking", description: 'Why not spend your lunch networking with like-minded people?', location: "Cupertino", start_time: DateTime.parse('2017-10-29 12:00'), end_time: DateTime.parse('2017-10-29 13:30'))
+event68= Event.create!(user_id: user17.id, group_id: group14.id, name: "BNG Lunch Networking", description: 'Why not spend your lunch networking with like-minded people?', location: "Cupertino", start_time: DateTime.parse('2017-10-29 12:00 GMT-7'), end_time: DateTime.parse('2017-10-29 13:30 GMT-7'))
 gn1445 = GroupNews.create!(group_id: group14.id, news: user17.username + ' created the event ' + event68.name, user_id: user17.id, oid: event68.id, typo: 'e')
 gn1446 = GroupNews.create!(group_id: group14.id, news: user17.username + ' rsvp\'d for ' + event68.name, user_id: user17.id, oid: event68.id, typo: 'e')
 gn1447 = GroupNews.create!(group_id: group14.id, news: user63.username + ' rsvp\'d for ' + event68.name, user_id: user63.id, oid: event68.id, typo: 'e')
@@ -2520,7 +2520,7 @@ ge241 = GroupEnrollment.create!(group_id: group15.id, user_id: user22.id)
 gn242 = GroupNews.create!(group_id: group15.id, news: user39.username + ' joined the group', user_id: user39.id, oid: group15.id, typo: 'g')
 ge242 = GroupEnrollment.create!(group_id: group15.id, user_id: user39.id)
 
-event69= Event.create!(user_id: user11.id, group_id: group15.id, name: "Meet the Designers - Exclusive Fall Fashion Event - Day 1", description: 'Fall is nearly here and its time to transition your closet! We are here to help, and you are cordially invited to discover new fall collections from local womenswear designers Harumi K', location: "Cupertino", start_time: DateTime.parse('2017-10-08 12:00'), end_time: DateTime.parse('2017-10-08 19:30'))
+event69= Event.create!(user_id: user11.id, group_id: group15.id, name: "Meet the Designers - Exclusive Fall Fashion Event - Day 1", description: 'Fall is nearly here and its time to transition your closet! We are here to help, and you are cordially invited to discover new fall collections from local womenswear designers Harumi K', location: "Cupertino", start_time: DateTime.parse('2017-10-08 12:00 GMT-7'), end_time: DateTime.parse('2017-10-08 19:30 GMT-7'))
 gn1459 = GroupNews.create!(group_id: group15.id, news: user11.username + ' created the event ' + event69.name, user_id: user11.id, oid: event69.id, typo: 'e')
 gn1460 = GroupNews.create!(group_id: group15.id, news: user11.username + ' rsvp\'d for ' + event69.name, user_id: user11.id, oid: event69.id, typo: 'e')
 gn1461 = GroupNews.create!(group_id: group15.id, news: user39.username + ' rsvp\'d for ' + event69.name, user_id: user39.id, oid: event69.id, typo: 'e')
@@ -2550,7 +2550,7 @@ ee747 = EventEnrollment.create!(user_id: user63.id, event_id: event69.id)
 
 
 
-event70= Event.create!(user_id: user11.id, group_id: group15.id, name: "Weekly WordPress Support Group", description: 'Join us for a weekly foray into all things WordPress and get support for your burning questions. ', location: "Cupertino", start_time: DateTime.parse('2017-10-22 12:00'), end_time: DateTime.parse('2017-10-22 19:30'))
+event70= Event.create!(user_id: user11.id, group_id: group15.id, name: "Weekly WordPress Support Group", description: 'Join us for a weekly foray into all things WordPress and get support for your burning questions. ', location: "Cupertino", start_time: DateTime.parse('2017-10-22 12:00 GMT-7'), end_time: DateTime.parse('2017-10-22 19:30 GMT-7'))
 gn1471 = GroupNews.create!(group_id: group15.id, news: user11.username + ' created the event ' + event70.name, user_id: user11.id, oid: event70.id, typo: 'e')
 gn1472 = GroupNews.create!(group_id: group15.id, news: user11.username + ' rsvp\'d for ' + event70.name, user_id: user11.id, oid: event70.id, typo: 'e')
 gn1473 = GroupNews.create!(group_id: group15.id, news: user39.username + ' rsvp\'d for ' + event70.name, user_id: user39.id, oid: event70.id, typo: 'e')
@@ -2576,7 +2576,7 @@ ee755 = EventEnrollment.create!(user_id: user71.id, event_id: event70.id)
 ee756 = EventEnrollment.create!(user_id: user80.id, event_id: event70.id)
 ee757 = EventEnrollment.create!(user_id: user50.id, event_id: event70.id)
 ee758 = EventEnrollment.create!(user_id: user63.id, event_id: event70.id)
-event71= Event.create!(user_id: user11.id, group_id: group15.id, name: "Friday Mosaic Workshop", description: 'Learn how to create tile or glass mosaics. Start a new project or continue an existing project. Use my materials and tools or bring your own. 2-5PM Friendly and fun environment. All levels welcome. All basic materials included. Close toed shoes are a good idea.', location: "Saratoga", start_time: DateTime.parse('2017-11-02 14:00'), end_time: DateTime.parse('2017-11-02 19:30'))
+event71= Event.create!(user_id: user11.id, group_id: group15.id, name: "Friday Mosaic Workshop", description: 'Learn how to create tile or glass mosaics. Start a new project or continue an existing project. Use my materials and tools or bring your own. 2-5PM Friendly and fun environment. All levels welcome. All basic materials included. Close toed shoes are a good idea.', location: "Saratoga", start_time: DateTime.parse('2017-11-02 14:00 GMT-7'), end_time: DateTime.parse('2017-11-02 19:30 GMT-7'))
 
 gn1483 = GroupNews.create!(group_id: group15.id, news: user11.username + ' created the event ' + event71.name, user_id: user11.id, oid: event71.id, typo: 'e')
 gn1484 = GroupNews.create!(group_id: group15.id, news: user11.username + ' rsvp\'d for ' + event71.name, user_id: user11.id, oid: event71.id, typo: 'e')
@@ -2630,7 +2630,7 @@ ge250 = GroupEnrollment.create!(group_id: group16.id, user_id: user84.id)
 gn251 = GroupNews.create!(group_id: group16.id, news: user46.username + ' joined the group', user_id: user46.id, oid: group16.id, typo: 'g')
 ge251 = GroupEnrollment.create!(group_id: group16.id, user_id: user46.id)
 
-event72= Event.create!(user_id: user20.id, group_id: group16.id, name: "Indie Fashion Pop Up Featuring Stella & Dot", description: 'Harumi K womenswear and Stella & Dot jewelry are joining forces for a fabulous afternoon of fashion, bling, and bubbly! This is your opportunity to recieve personalized style tips from Harumi K designer Sherry Koyama and Stella & Dot Stylist Bernadette Manzano for a unique head to toe look. We look forward to mingling with you at this fun event!', location: "Sunnyvale", start_time: DateTime.parse('2017-09-17 12:00'), end_time: DateTime.parse('2017-09-17 19:30'))
+event72= Event.create!(user_id: user20.id, group_id: group16.id, name: "Indie Fashion Pop Up Featuring Stella & Dot", description: 'Harumi K womenswear and Stella & Dot jewelry are joining forces for a fabulous afternoon of fashion, bling, and bubbly! This is your opportunity to recieve personalized style tips from Harumi K designer Sherry Koyama and Stella & Dot Stylist Bernadette Manzano for a unique head to toe look. We look forward to mingling with you at this fun event!', location: "Sunnyvale", start_time: DateTime.parse('2017-09-17 12:00 GMT-7'), end_time: DateTime.parse('2017-09-17 19:30 GMT-7'))
 gn1495 = GroupNews.create!(group_id: group16.id, news: user20.username + ' created the event ' + event72.name, user_id: user20.id, oid: event72.id, typo: 'e')
 gn1496 = GroupNews.create!(group_id: group16.id, news: user20.username + ' rsvp\'d for ' + event72.name, user_id: user20.id, oid: event72.id, typo: 'e')
 gn1497 = GroupNews.create!(group_id: group16.id, news: user46.username + ' rsvp\'d for ' + event72.name, user_id: user46.id, oid: event72.id, typo: 'e')
@@ -2657,7 +2657,7 @@ ee779 = EventEnrollment.create!(user_id: user39.id, event_id: event72.id)
 
 
 
-event73= Event.create!(user_id: user20.id, group_id: group16.id, name: "Fashion & Art Pop Up", description: 'We are excited to announce a Harumi K(www.harumik.com) pop up shop taking place at Hsuper Gallery on Sunday, May 14. Shop the latest womenswear designs by Harumi K - Contemporary Womenswear and original artwork by Martin ', location: "Cupertino", start_time: DateTime.parse('2017-10-16 12:00'), end_time: DateTime.parse('2017-10-16 19:30'))
+event73= Event.create!(user_id: user20.id, group_id: group16.id, name: "Fashion & Art Pop Up", description: 'We are excited to announce a Harumi K(www.harumik.com) pop up shop taking place at Hsuper Gallery on Sunday, May 14. Shop the latest womenswear designs by Harumi K - Contemporary Womenswear and original artwork by Martin ', location: "Cupertino", start_time: DateTime.parse('2017-10-16 12:00 GMT-7'), end_time: DateTime.parse('2017-10-16 19:30 GMT-7'))
 gn1506 = GroupNews.create!(group_id: group16.id, news: user20.username + ' created the event ' + event73.name, user_id: user20.id, oid: event73.id, typo: 'e')
 gn1507 = GroupNews.create!(group_id: group16.id, news: user20.username + ' rsvp\'d for ' + event73.name, user_id: user20.id, oid: event73.id, typo: 'e')
 gn1508 = GroupNews.create!(group_id: group16.id, news: user46.username + ' rsvp\'d for ' + event73.name, user_id: user46.id, oid: event73.id, typo: 'e')
@@ -2682,7 +2682,7 @@ ee787 = EventEnrollment.create!(user_id: user77.id, event_id: event73.id)
 ee788 = EventEnrollment.create!(user_id: user70.id, event_id: event73.id)
 ee789 = EventEnrollment.create!(user_id: user39.id, event_id: event73.id)
 
-event74= Event.create!(user_id: user20.id, group_id: group16.id, name: "Picnic in the Park", description: 'Picnic in the Park!!', location: "Cupertino", start_time: DateTime.parse('2017-09-21 12:00'), end_time: DateTime.parse('2017-09-21 14:30'))
+event74= Event.create!(user_id: user20.id, group_id: group16.id, name: "Picnic in the Park", description: 'Picnic in the Park!!', location: "Cupertino", start_time: DateTime.parse('2017-09-21 12:00 GMT-7'), end_time: DateTime.parse('2017-09-21 14:30 GMT-7'))
 gn1517 = GroupNews.create!(group_id: group16.id, news: user20.username + ' created the event ' + event74.name, user_id: user20.id, oid: event74.id, typo: 'e')
 gn1518 = GroupNews.create!(group_id: group16.id, news: user20.username + ' rsvp\'d for ' + event74.name, user_id: user20.id, oid: event74.id, typo: 'e')
 gn1519 = GroupNews.create!(group_id: group16.id, news: user46.username + ' rsvp\'d for ' + event74.name, user_id: user46.id, oid: event74.id, typo: 'e')
@@ -2736,7 +2736,7 @@ ge262 = GroupEnrollment.create!(group_id: group17.id, user_id: user90.id)
 gn263 = GroupNews.create!(group_id: group17.id, news: user94.username + ' joined the group', user_id: user94.id, oid: group17.id, typo: 'g')
 ge263 = GroupEnrollment.create!(group_id: group17.id, user_id: user94.id)
 
-event75= Event.create!(user_id: user25.id, group_id: group17.id, name: "Play at the Park", description: 'Enjoy a day at the park with the whole crew!', location: "Mountain View", start_time: DateTime.parse('2017-12-12 10:00'), end_time: DateTime.parse('2017-12-12 19:30'))
+event75= Event.create!(user_id: user25.id, group_id: group17.id, name: "Play at the Park", description: 'Enjoy a day at the park with the whole crew!', location: "Mountain View", start_time: DateTime.parse('2017-12-12 10:00 GMT-7'), end_time: DateTime.parse('2017-12-12 19:30 GMT-7'))
 gn1528 = GroupNews.create!(group_id: group17.id, news: user25.username + ' created the event ' + event75.name, user_id: user25.id, oid: event75.id, typo: 'e')
 gn1529 = GroupNews.create!(group_id: group17.id, news: user25.username + ' rsvp\'d for ' + event75.name, user_id: user25.id, oid: event75.id, typo: 'e')
 gn1530 = GroupNews.create!(group_id: group17.id, news: user94.username + ' rsvp\'d for ' + event75.name, user_id: user94.id, oid: event75.id, typo: 'e')
@@ -2768,7 +2768,7 @@ ee811 = EventEnrollment.create!(user_id: user49.id, event_id: event75.id)
 ee812 = EventEnrollment.create!(user_id: user46.id, event_id: event75.id)
 
 
-event76= Event.create!(user_id: user25.id, group_id: group17.id, name: "Bay Area PDA Student Chapter - Pipettes and Pizza", description: 'Are you a student or do you know a student that wants to learn what it takes to verify, calibrate, and repair micropipettes to research and industry standards? Here is a hands-on experience with Rainin Mettler-Toledo on how calibration and repair is actually done.', location: "Oakland", start_time: DateTime.parse('2017-09-13 14:00'), end_time: DateTime.parse('2017-09-13 16:30'))
+event76= Event.create!(user_id: user25.id, group_id: group17.id, name: "Bay Area PDA Student Chapter - Pipettes and Pizza", description: 'Are you a student or do you know a student that wants to learn what it takes to verify, calibrate, and repair micropipettes to research and industry standards? Here is a hands-on experience with Rainin Mettler-Toledo on how calibration and repair is actually done.', location: "Oakland", start_time: DateTime.parse('2017-09-13 14:00 GMT-7'), end_time: DateTime.parse('2017-09-13 16:30 GMT-7'))
 gn1542 = GroupNews.create!(group_id: group17.id, news: user25.username + ' created the event ' + event76.name, user_id: user25.id, oid: event76.id, typo: 'e')
 gn1543 = GroupNews.create!(group_id: group17.id, news: user25.username + ' rsvp\'d for ' + event76.name, user_id: user25.id, oid: event76.id, typo: 'e')
 gn1544 = GroupNews.create!(group_id: group17.id, news: user94.username + ' rsvp\'d for ' + event76.name, user_id: user94.id, oid: event76.id, typo: 'e')
@@ -2799,7 +2799,7 @@ ee823 = EventEnrollment.create!(user_id: user71.id, event_id: event76.id)
 ee824 = EventEnrollment.create!(user_id: user49.id, event_id: event76.id)
 ee825 = EventEnrollment.create!(user_id: user46.id, event_id: event76.id)
 
-event77= Event.create!(user_id: user25.id, group_id: group17.id, name: "Come and join us!", description: 'Just across the Golden Gate bridge in gorgeous Sausalito is the sumptuous Soulstice Mind and Body Spa and Meditation Center, where every Friday at 3pm, I lead a Mind-Body Journeys Meditation.I’m Gina Vance, Inner Journey Guide and Mind Body Mentor, helping ambitious souls to reach their goals by connecting to inner gifts, slaying inner dragons, and shining the light of the soul more fully, and in delicious ways.', location: "Sausalito", start_time: DateTime.parse('2017-11-27 15:00'), end_time: DateTime.parse('2017-11-27 20:30'))
+event77= Event.create!(user_id: user25.id, group_id: group17.id, name: "Come and join us!", description: 'Just across the Golden Gate bridge in gorgeous Sausalito is the sumptuous Soulstice Mind and Body Spa and Meditation Center, where every Friday at 3pm, I lead a Mind-Body Journeys Meditation.I’m Gina Vance, Inner Journey Guide and Mind Body Mentor, helping ambitious souls to reach their goals by connecting to inner gifts, slaying inner dragons, and shining the light of the soul more fully, and in delicious ways.', location: "Sausalito", start_time: DateTime.parse('2017-11-27 15:00 GMT-7'), end_time: DateTime.parse('2017-11-27 20:30 GMT-7'))
 gn1555 = GroupNews.create!(group_id: group17.id, news: user25.username + ' created the event ' + event77.name, user_id: user25.id, oid: event77.id, typo: 'e')
 gn1556 = GroupNews.create!(group_id: group17.id, news: user25.username + ' rsvp\'d for ' + event77.name, user_id: user25.id, oid: event77.id, typo: 'e')
 gn1557 = GroupNews.create!(group_id: group17.id, news: user94.username + ' rsvp\'d for ' + event77.name, user_id: user94.id, oid: event77.id, typo: 'e')
@@ -2860,7 +2860,7 @@ ge276 = GroupEnrollment.create!(group_id: group18.id, user_id: user90.id)
 
 
 
-event78= Event.create!(user_id: user12.id, group_id: group18.id, name: "Boardwalk Bowling!", description: 'We\'ll will be there around 4:15  to sercure our lanes and get the half price deal (2.25 per game, plus shoe rental). If work gets in your way, just come when you can. We\'ll probably be there till at least 6:00.', location: "Santa Cruz", start_time: DateTime.parse('2017-10-09 16:00'), end_time: DateTime.parse('2017-10-09 19:00'))
+event78= Event.create!(user_id: user12.id, group_id: group18.id, name: "Boardwalk Bowling!", description: 'We\'ll will be there around 4:15  to sercure our lanes and get the half price deal (2.25 per game, plus shoe rental). If work gets in your way, just come when you can. We\'ll probably be there till at least 6:00.', location: "Santa Cruz", start_time: DateTime.parse('2017-10-09 16:00 GMT-7'), end_time: DateTime.parse('2017-10-09 19:00 GMT-7'))
 gn1569 = GroupNews.create!(group_id: group18.id, news: user12.username + ' created the event ' + event78.name, user_id: user12.id, oid: event78.id, typo: 'e')
 gn1570 = GroupNews.create!(group_id: group18.id, news: user12.username + ' rsvp\'d for ' + event78.name, user_id: user12.id, oid: event78.id, typo: 'e')
 gn1571 = GroupNews.create!(group_id: group18.id, news: user90.username + ' rsvp\'d for ' + event78.name, user_id: user90.id, oid: event78.id, typo: 'e')
@@ -2892,7 +2892,7 @@ ee850 = EventEnrollment.create!(user_id: user33.id, event_id: event78.id)
 ee851 = EventEnrollment.create!(user_id: user94.id, event_id: event78.id)
 
 
-event79= Event.create!(user_id: user12.id, group_id: group18.id, name: "Let\'s See The Trip to Spain Movie", description: 'Although perhaps not a future Academy Award nominee, this looks like a fun, entertaining movie. ', location: "Santa Cruz", start_time: DateTime.parse('2017-09-11 16:00'), end_time: DateTime.parse('2017-09-11 19:30'))
+event79= Event.create!(user_id: user12.id, group_id: group18.id, name: "Let\'s See The Trip to Spain Movie", description: 'Although perhaps not a future Academy Award nominee, this looks like a fun, entertaining movie. ', location: "Santa Cruz", start_time: DateTime.parse('2017-09-11 16:00 GMT-7'), end_time: DateTime.parse('2017-09-11 19:30 GMT-7'))
 gn1583 = GroupNews.create!(group_id: group18.id, news: user12.username + ' created the event ' + event79.name, user_id: user12.id, oid: event79.id, typo: 'e')
 gn1584 = GroupNews.create!(group_id: group18.id, news: user12.username + ' rsvp\'d for ' + event79.name, user_id: user12.id, oid: event79.id, typo: 'e')
 gn1585 = GroupNews.create!(group_id: group18.id, news: user90.username + ' rsvp\'d for ' + event79.name, user_id: user90.id, oid: event79.id, typo: 'e')
@@ -2923,7 +2923,7 @@ ee862 = EventEnrollment.create!(user_id: user59.id, event_id: event79.id)
 ee863 = EventEnrollment.create!(user_id: user33.id, event_id: event79.id)
 ee864 = EventEnrollment.create!(user_id: user94.id, event_id: event79.id)
 
-event80= Event.create!(user_id: user12.id, group_id: group18.id, name: "Flexible Fridays in Redwood City", description: 'Tennis, Tennis, Tennis!', location: "Redwood City", start_time: DateTime.parse('2017-10-08 10:00'), end_time: DateTime.parse('2017-10-08 14:30'))
+event80= Event.create!(user_id: user12.id, group_id: group18.id, name: "Flexible Fridays in Redwood City", description: 'Tennis, Tennis, Tennis!', location: "Redwood City", start_time: DateTime.parse('2017-10-08 10:00 GMT-7'), end_time: DateTime.parse('2017-10-08 14:30 GMT-7'))
 gn1597 = GroupNews.create!(group_id: group18.id, news: user12.username + ' created the event ' + event80.name, user_id: user12.id, oid: event80.id, typo: 'e')
 gn1598 = GroupNews.create!(group_id: group18.id, news: user12.username + ' rsvp\'d for ' + event80.name, user_id: user12.id, oid: event80.id, typo: 'e')
 gn1599 = GroupNews.create!(group_id: group18.id, news: user90.username + ' rsvp\'d for ' + event80.name, user_id: user90.id, oid: event80.id, typo: 'e')
@@ -2985,7 +2985,7 @@ gn287 = GroupNews.create!(group_id: group19.id, news: user36.username + ' joined
 ge287 = GroupEnrollment.create!(group_id: group19.id, user_id: user36.id)
 
 
-event81= Event.create!(user_id: user15.id, group_id: group19.id, name: "TGIF and Movie Night in Scotts Valley", description: 'Meet in the upstairs room at Tony & Alba\'s in the Kings Village Shopping Center, (226 Mt Hermon Road, Scotts Valley, CA), next to the cinema. Afterwards. we may see a movie next door or in Santa Cruz.  Most evening shows start around 7:00pm. ', location: "Scotts Valley", start_time: DateTime.parse('2017-10-15 17:00'), end_time: DateTime.parse('2017-10-15 20:30'))
+event81= Event.create!(user_id: user15.id, group_id: group19.id, name: "TGIF and Movie Night in Scotts Valley", description: 'Meet in the upstairs room at Tony & Alba\'s in the Kings Village Shopping Center, (226 Mt Hermon Road, Scotts Valley, CA), next to the cinema. Afterwards. we may see a movie next door or in Santa Cruz.  Most evening shows start around 7:00pm. ', location: "Scotts Valley", start_time: DateTime.parse('2017-10-15 17:00 GMT-7'), end_time: DateTime.parse('2017-10-15 20:30 GMT-7'))
 gn1611 = GroupNews.create!(group_id: group19.id, news: user15.username + ' created the event ' + event81.name, user_id: user15.id, oid: event81.id, typo: 'e')
 gn1612 = GroupNews.create!(group_id: group19.id, news: user15.username + ' rsvp\'d for ' + event81.name, user_id: user15.id, oid: event81.id, typo: 'e')
 gn1613 = GroupNews.create!(group_id: group19.id, news: user36.username + ' rsvp\'d for ' + event81.name, user_id: user36.id, oid: event81.id, typo: 'e')
@@ -3014,7 +3014,7 @@ ee887 = EventEnrollment.create!(user_id: user81.id, event_id: event81.id)
 ee888 = EventEnrollment.create!(user_id: user92.id, event_id: event81.id)
 ee889 = EventEnrollment.create!(user_id: user90.id, event_id: event81.id)
 
-event82= Event.create!(user_id: user69.id, group_id: group19.id, name: "IoT Beer Social (San Mateo)", description: ' To find us we will have the Linux Penguin on our table or you can email me ', location: "San Mateo", start_time: DateTime.parse('2017-11-05 17:00'), end_time: DateTime.parse('2017-11-06 2:30'))
+event82= Event.create!(user_id: user69.id, group_id: group19.id, name: "IoT Beer Social (San Mateo)", description: ' To find us we will have the Linux Penguin on our table or you can email me ', location: "San Mateo", start_time: DateTime.parse('2017-11-05 17:00 GMT-7'), end_time: DateTime.parse('2017-11-06 2:30' GMT-7))
 
 gn1624 = GroupNews.create!(group_id: group19.id, news: user15.username + ' created the event ' + event82.name, user_id: user15.id, oid: event82.id, typo: 'e')
 gn1625 = GroupNews.create!(group_id: group19.id, news: user15.username + ' rsvp\'d for ' + event82.name, user_id: user15.id, oid: event82.id, typo: 'e')
@@ -3045,7 +3045,7 @@ ee900 = EventEnrollment.create!(user_id: user92.id, event_id: event82.id)
 ee901 = EventEnrollment.create!(user_id: user90.id, event_id: event82.id)
 
 
-event83= Event.create!(user_id: user15.id, group_id: group19.id, name: "Friday Night Flashlights - September sunset hike at Mission Peak", description: 'Sunset Hike, join the crew as we take in the beautiful sunset', location: "San Jose", start_time: DateTime.parse('2017-09-29 17:15'), end_time: DateTime.parse('2017-09-29 20:30'))
+event83= Event.create!(user_id: user15.id, group_id: group19.id, name: "Friday Night Flashlights - September sunset hike at Mission Peak", description: 'Sunset Hike, join the crew as we take in the beautiful sunset', location: "San Jose", start_time: DateTime.parse('2017-09-29 17:15 GMT-7'), end_time: DateTime.parse('2017-09-29 20:30 GMT-7'))
 gn1636 = GroupNews.create!(group_id: group19.id, news: user15.username + ' created the event ' + event83.name, user_id: user15.id, oid: event83.id, typo: 'e')
 gn1637 = GroupNews.create!(group_id: group19.id, news: user15.username + ' rsvp\'d for ' + event83.name, user_id: user15.id, oid: event83.id, typo: 'e')
 gn1638 = GroupNews.create!(group_id: group19.id, news: user36.username + ' rsvp\'d for ' + event83.name, user_id: user36.id, oid: event83.id, typo: 'e')
@@ -3108,7 +3108,7 @@ gn300 = GroupNews.create!(group_id: group20.id, news: user87.username + ' joined
 ge300 = GroupEnrollment.create!(group_id: group20.id, user_id: user87.id)
 
 
-event84= Event.create!(user_id: user15.id, group_id: group20.id, name: "Saturday Los Gatos Creek Trail bike ride", description: 'Saturday Los Gatos Creek Trail bike ride!!!!', location: "Los Gatos", start_time: DateTime.parse('2017-12-03 12:00'), end_time: DateTime.parse('2017-12-03 19:30'))
+event84= Event.create!(user_id: user15.id, group_id: group20.id, name: "Saturday Los Gatos Creek Trail bike ride", description: 'Saturday Los Gatos Creek Trail bike ride!!!!', location: "Los Gatos", start_time: DateTime.parse('2017-12-03 12:00 GMT-7'), end_time: DateTime.parse('2017-12-03 19:30 GMT-7'))
 gn1649 = GroupNews.create!(group_id: group20.id, news: user15.username + ' created the event ' + event84.name, user_id: user15.id, oid: event84.id, typo: 'e')
 gn1650 = GroupNews.create!(group_id: group20.id, news: user15.username + ' rsvp\'d for ' + event84.name, user_id: user15.id, oid: event84.id, typo: 'e')
 gn1651 = GroupNews.create!(group_id: group20.id, news: user87.username + ' rsvp\'d for ' + event84.name, user_id: user87.id, oid: event84.id, typo: 'e')
@@ -3141,7 +3141,7 @@ ee926 = EventEnrollment.create!(user_id: user36.id, event_id: event84.id)
 
 
 
-event85= Event.create!(user_id: user15.id, group_id: group20.id, name: "Ride with Sports Basement Sunnyvale", description: 'Ride, Ride, Ride!', location: "Sunnyvale", start_time: DateTime.parse('2017-09-20 12:00'), end_time: DateTime.parse('2017-09-20 16:30'))
+event85= Event.create!(user_id: user15.id, group_id: group20.id, name: "Ride with Sports Basement Sunnyvale", description: 'Ride, Ride, Ride!', location: "Sunnyvale", start_time: DateTime.parse('2017-09-20 12:00 GMT-7'), end_time: DateTime.parse('2017-09-20 16:30 GMT-7'))
 gn1663 = GroupNews.create!(group_id: group20.id, news: user15.username + ' created the event ' + event85.name, user_id: user15.id, oid: event85.id, typo: 'e')
 gn1664 = GroupNews.create!(group_id: group20.id, news: user15.username + ' rsvp\'d for ' + event85.name, user_id: user15.id, oid: event85.id, typo: 'e')
 gn1665 = GroupNews.create!(group_id: group20.id, news: user87.username + ' rsvp\'d for ' + event85.name, user_id: user87.id, oid: event85.id, typo: 'e')
@@ -3173,7 +3173,7 @@ ee938 = EventEnrollment.create!(user_id: user37.id, event_id: event85.id)
 ee939 = EventEnrollment.create!(user_id: user36.id, event_id: event85.id)
 
 
-event86= Event.create!(user_id: user15.id, group_id: group20.id, name: "Rock N Glow Bowl at Homestead Bowl", description: 'It\'s time to bowl!!', location: "Sunnyvale", start_time: DateTime.parse('2017-10-11 16:00'), end_time: DateTime.parse('2017-10-11 19:30'))
+event86= Event.create!(user_id: user15.id, group_id: group20.id, name: "Rock N Glow Bowl at Homestead Bowl", description: 'It\'s time to bowl!!', location: "Sunnyvale", start_time: DateTime.parse('2017-10-11 16:00 GMT-7'), end_time: DateTime.parse('2017-10-11 19:30 GMT-7'))
 gn1677 = GroupNews.create!(group_id: group20.id, news: user15.username + ' created the event ' + event86.name, user_id: user15.id, oid: event86.id, typo: 'e')
 gn1678 = GroupNews.create!(group_id: group20.id, news: user15.username + ' rsvp\'d for ' + event86.name, user_id: user15.id, oid: event86.id, typo: 'e')
 gn1679 = GroupNews.create!(group_id: group20.id, news: user87.username + ' rsvp\'d for ' + event86.name, user_id: user87.id, oid: event86.id, typo: 'e')
@@ -3233,7 +3233,7 @@ I have the following board games in my apartment already:
 • Dead of Winter (no expansion pack) - Zombie themed survival co-op game.
 • Power Grid - Having a PhD in Electrical Engineering Simulator
 • Mascerade - Everyone is given a character with abilities, but 90% of the game you will not know which character you are.
-Please comment below which board game(s) you are planning on bringing so that we have a good spread. I have two good tables for games so we can split into two groups of 5-6 pretty easily.', location: "Mountain View", start_time: DateTime.parse('2017-11-28 18:00'), end_time: DateTime.parse('2017-11-28 22:30'))
+Please comment below which board game(s) you are planning on bringing so that we have a good spread. I have two good tables for games so we can split into two groups of 5-6 pretty easily.', location: "Mountain View", start_time: DateTime.parse('2017-11-28 18:00 GMT-7'), end_time: DateTime.parse('2017-11-28 22:30 GMT-7'))
 gn1691 = GroupNews.create!(group_id: group21.id, news: user29.username + ' created the event ' + event87.name, user_id: user29.id, oid: event87.id, typo: 'e')
 gn1692 = GroupNews.create!(group_id: group21.id, news: user29.username + ' rsvp\'d for ' + event87.name, user_id: user29.id, oid: event87.id, typo: 'e')
 gn1693 = GroupNews.create!(group_id: group21.id, news: user69.username + ' rsvp\'d for ' + event87.name, user_id: user87.id, oid: event87.id, typo: 'e')
@@ -3262,7 +3262,7 @@ ee963 = EventEnrollment.create!(user_id: user87.id, event_id: event87.id)
 
 
 
-event88= Event.create!(user_id: user29.id, group_id: group21.id, name: "Handstand World Record Event at Dolores Park", description: 'Attempt to break the world record!!', location: "San Francisco", start_time: DateTime.parse('2017-12-23 10:00'), end_time: DateTime.parse('2017-12-23 15:30'))
+event88= Event.create!(user_id: user29.id, group_id: group21.id, name: "Handstand World Record Event at Dolores Park", description: 'Attempt to break the world record!!', location: "San Francisco", start_time: DateTime.parse('2017-12-23 10:00 GMT-7'), end_time: DateTime.parse('2017-12-23 15:30 GMT-7'))
 gn1703 = GroupNews.create!(group_id: group21.id, news: user29.username + ' created the event ' + event88.name, user_id: user29.id, oid: event88.id, typo: 'e')
 gn1704 = GroupNews.create!(group_id: group21.id, news: user29.username + ' rsvp\'d for ' + event88.name, user_id: user29.id, oid: event88.id, typo: 'e')
 gn1705 = GroupNews.create!(group_id: group21.id, news: user69.username + ' rsvp\'d for ' + event88.name, user_id: user87.id, oid: event88.id, typo: 'e')
@@ -3289,7 +3289,7 @@ ee972 = EventEnrollment.create!(user_id: user77.id, event_id: event88.id)
 ee973 = EventEnrollment.create!(user_id: user88.id, event_id: event88.id)
 ee974 = EventEnrollment.create!(user_id: user87.id, event_id: event88.id)
 
-event89= Event.create!(user_id: user29.id, group_id: group21.id, name: "weekly after work tennis at Newark Community Center Park", description: 'Relieve your workday troubles with a couple sets of tennis', location: "Newark", start_time: DateTime.parse('2017-11-07 19:00'), end_time: DateTime.parse('2017-11-07 22:30'))
+event89= Event.create!(user_id: user29.id, group_id: group21.id, name: "weekly after work tennis at Newark Community Center Park", description: 'Relieve your workday troubles with a couple sets of tennis', location: "Newark", start_time: DateTime.parse('2017-11-07 19:00 GMT-7'), end_time: DateTime.parse('2017-11-07 22:30 GMT-7'))
 gn1715 = GroupNews.create!(group_id: group21.id, news: user29.username + ' created the event ' + event89.name, user_id: user29.id, oid: event89.id, typo: 'e')
 gn1716 = GroupNews.create!(group_id: group21.id, news: user29.username + ' rsvp\'d for ' + event89.name, user_id: user29.id, oid: event89.id, typo: 'e')
 gn1717 = GroupNews.create!(group_id: group21.id, news: user69.username + ' rsvp\'d for ' + event89.name, user_id: user87.id, oid: event89.id, typo: 'e')
@@ -3339,7 +3339,7 @@ gn319 = GroupNews.create!(group_id: group22.id, news: user99.username + ' joined
 ge319 = GroupEnrollment.create!(group_id: group22.id, user_id: user99.id)
 gn320 = GroupNews.create!(group_id: group22.id, news: user98.username + ' joined the group', user_id: user98.id, oid: group22.id, typo: 'g')
 ge320 = GroupEnrollment.create!(group_id: group22.id, user_id: user98.id)
-event90= Event.create!(user_id: user18.id, group_id: group22.id, name: "Up on the Roof -- Cielo Bar", description: 'VIP seating at Cielo Bar, join us, mingle, network!', location: "San Jose", start_time: DateTime.parse('2017-11-28 19:00'), end_time: DateTime.parse('2017-11-29 2:30'))
+event90= Event.create!(user_id: user18.id, group_id: group22.id, name: "Up on the Roof -- Cielo Bar", description: 'VIP seating at Cielo Bar, join us, mingle, network!', location: "San Jose", start_time: DateTime.parse('2017-11-28 19:00 GMT-7'), end_time: DateTime.parse('2017-11-29 2:30' GMT-7))
 gn1727 = GroupNews.create!(group_id: group22.id, news: user18.username + ' created the event ' + event89.name, user_id: user18.id, oid: event90.id, typo: 'e')
 gn1728 = GroupNews.create!(group_id: group22.id, news: user18.username + ' rsvp\'d for ' + event90.name, user_id: user18.id, oid: event90.id, typo: 'e')
 gn1729 = GroupNews.create!(group_id: group22.id, news: user69.username + ' rsvp\'d for ' + event90.name, user_id: user69.id, oid: event90.id, typo: 'e')
@@ -3368,7 +3368,7 @@ ee996 = EventEnrollment.create!(user_id: user98.id, event_id: event90.id)
 
 
 
-event91= Event.create!(user_id: user30.id, group_id: group22.id, name: "Dinner at Left Bank Brasserie @ Santana Row", description: 'Come grab dinner with the whole group at Left Bank Brasserie!', location: "San Jose", start_time: DateTime.parse('2017-12-11 19:00'), end_time: DateTime.parse('2017-12-11 22:30'))
+event91= Event.create!(user_id: user30.id, group_id: group22.id, name: "Dinner at Left Bank Brasserie @ Santana Row", description: 'Come grab dinner with the whole group at Left Bank Brasserie!', location: "San Jose", start_time: DateTime.parse('2017-12-11 19:00 GMT-7'), end_time: DateTime.parse('2017-12-11 22:30 GMT-7'))
 gn1739 = GroupNews.create!(group_id: group22.id, news: user18.username + ' created the event ' + event91.name, user_id: user18.id, oid: event91.id, typo: 'e')
 gn1740 = GroupNews.create!(group_id: group22.id, news: user18.username + ' rsvp\'d for ' + event91.name, user_id: user18.id, oid: event91.id, typo: 'e')
 gn1741 = GroupNews.create!(group_id: group22.id, news: user69.username + ' rsvp\'d for ' + event91.name, user_id: user69.id, oid: event91.id, typo: 'e')
@@ -3396,7 +3396,7 @@ ee1006 = EventEnrollment.create!(user_id: user99.id, event_id: event91.id)
 ee1007 = EventEnrollment.create!(user_id: user98.id, event_id: event91.id)
 
 
-event92= Event.create!(user_id: user18.id, group_id: group22.id, name: "Dinner at Lazy Dog Restaurant and Bar", description: 'Dinner at Lazy Dog, bring your dogs!!', location: "Cupertino", start_time: DateTime.parse('2017-10-15 19:00'), end_time: DateTime.parse('2017-10-15 22:30'))
+event92= Event.create!(user_id: user18.id, group_id: group22.id, name: "Dinner at Lazy Dog Restaurant and Bar", description: 'Dinner at Lazy Dog, bring your dogs!!', location: "Cupertino", start_time: DateTime.parse('2017-10-15 19:00 GMT-7'), end_time: DateTime.parse('2017-10-15 22:30 GMT-7'))
 gn1751 = GroupNews.create!(group_id: group22.id, news: user18.username + ' created the event ' + event92.name, user_id: user18.id, oid: event92.id, typo: 'e')
 gn1752 = GroupNews.create!(group_id: group22.id, news: user18.username + ' rsvp\'d for ' + event92.name, user_id: user18.id, oid: event92.id, typo: 'e')
 gn1753 = GroupNews.create!(group_id: group22.id, news: user69.username + ' rsvp\'d for ' + event92.name, user_id: user69.id, oid: event92.id, typo: 'e')
@@ -3446,7 +3446,7 @@ gn329 = GroupNews.create!(group_id: group23.id, news: user51.username + ' joined
 ge329 = GroupEnrollment.create!(group_id: group23.id, user_id: user51.id)
 gn330 = GroupNews.create!(group_id: group23.id, news: user30.username + ' joined the group', user_id: user30.id, oid: group23.id, typo: 'g')
 ge330 = GroupEnrollment.create!(group_id: group23.id, user_id: user30.id)
-event93= Event.create!(user_id: user42.id, group_id: group23.id, name: "point richmond concert", description: 'starts at 5:30 but you can come anytime where Washington and Park intercept in Point Richmond. we usually meet outside Starbucks', location: "Richmond", start_time: DateTime.parse('2017-09-14 17:00'), end_time: DateTime.parse('2017-09-14 22:30'))
+event93= Event.create!(user_id: user42.id, group_id: group23.id, name: "point richmond concert", description: 'starts at 5:30 but you can come anytime where Washington and Park intercept in Point Richmond. we usually meet outside Starbucks', location: "Richmond", start_time: DateTime.parse('2017-09-14 17:00 GMT-7'), end_time: DateTime.parse('2017-09-14 22:30 GMT-7'))
 gn1763 = GroupNews.create!(group_id: group23.id, news: user42.username + ' created the event ' + event93.name, user_id: user42.id, oid: event93.id, typo: 'e')
 gn1764 = GroupNews.create!(group_id: group23.id, news: user42.username + ' rsvp\'d for ' + event93.name, user_id: user42.id, oid: event93.id, typo: 'e')
 gn1765 = GroupNews.create!(group_id: group23.id, news: user30.username + ' rsvp\'d for ' + event93.name, user_id: user30.id, oid: event93.id, typo: 'e')
@@ -3474,7 +3474,7 @@ ee1028 = EventEnrollment.create!(user_id: user98.id, event_id: event93.id)
 ee1029 = EventEnrollment.create!(user_id: user97.id, event_id: event93.id)
 
 
-event94= Event.create!(user_id: user88.id, group_id: group23.id, name: 'Let\'s Try Dim Sum', description: 'I have never had Dim Sum and am excited to try it out! The more the merrier. The restaurant said prices vary and I\'m thinking they might not be able to do separate checks. I\'m suggesting to bring cash!', location: "Cupertino", start_time: DateTime.parse('2017-09-24 10:00'), end_time: DateTime.parse('2017-09-24 14:30'))
+event94= Event.create!(user_id: user88.id, group_id: group23.id, name: 'Let\'s Try Dim Sum', description: 'I have never had Dim Sum and am excited to try it out! The more the merrier. The restaurant said prices vary and I\'m thinking they might not be able to do separate checks. I\'m suggesting to bring cash!', location: "Cupertino", start_time: DateTime.parse('2017-09-24 10:00 GMT-7'), end_time: DateTime.parse('2017-09-24 14:30 GMT-7'))
 gn1775 = GroupNews.create!(group_id: group23.id, news: user42.username + ' created the event ' + event94.name, user_id: user42.id, oid: event94.id, typo: 'e')
 gn1776 = GroupNews.create!(group_id: group23.id, news: user42.username + ' rsvp\'d for ' + event94.name, user_id: user42.id, oid: event94.id, typo: 'e')
 gn1777 = GroupNews.create!(group_id: group23.id, news: user30.username + ' rsvp\'d for ' + event94.name, user_id: user30.id, oid: event94.id, typo: 'e')
@@ -3503,7 +3503,7 @@ ee1040 = EventEnrollment.create!(user_id: user97.id, event_id: event94.id)
 
 
 
-event95= Event.create!(user_id: user42.id, group_id: group23.id, name: "Special Screening of: Outrun", description: 'The San Mateo County Pride Center, in partnership with the San Mateo County Behavioral Health & Recovery Services Office of Diversity and Equity and the San Mateo County Pride Initiative, presents a special screening of Out Run, a documentary film by S. Leo Chiang and Johnny Symons. Suggested donation $10; no one turned away for lack of funds.', location: "San Mateo", start_time: DateTime.parse('2017-11-22 17:00'), end_time: DateTime.parse('2017-11-22 19:30'))
+event95= Event.create!(user_id: user42.id, group_id: group23.id, name: "Special Screening of: Outrun", description: 'The San Mateo County Pride Center, in partnership with the San Mateo County Behavioral Health & Recovery Services Office of Diversity and Equity and the San Mateo County Pride Initiative, presents a special screening of Out Run, a documentary film by S. Leo Chiang and Johnny Symons. Suggested donation $10; no one turned away for lack of funds.', location: "San Mateo", start_time: DateTime.parse('2017-11-22 17:00 GMT-7'), end_time: DateTime.parse('2017-11-22 19:30 GMT-7'))
 gn1787 = GroupNews.create!(group_id: group23.id, news: user42.username + ' created the event ' + event95.name, user_id: user42.id, oid: event95.id, typo: 'e')
 gn1788 = GroupNews.create!(group_id: group23.id, news: user42.username + ' rsvp\'d for ' + event95.name, user_id: user42.id, oid: event95.id, typo: 'e')
 gn1789 = GroupNews.create!(group_id: group23.id, news: user30.username + ' rsvp\'d for ' + event95.name, user_id: user30.id, oid: event95.id, typo: 'e')
@@ -3554,7 +3554,7 @@ gn339 = GroupNews.create!(group_id: group49.id, news: user64.username + ' joined
 ge339 = GroupEnrollment.create!(group_id: group49.id, user_id: user64.id)
 gn340 = GroupNews.create!(group_id: group49.id, news: user71.username + ' joined the group', user_id: user71.id, oid: group49.id, typo: 'g')
 ge340 = GroupEnrollment.create!(group_id: group49.id, user_id: user71.id)
-event96= Event.create!(user_id: user38.id, group_id: group49.id, name: "Lets Play - Saturday.", description: 'Soccer on a Saturday, what could be better?', location: "Los Gatos", start_time: DateTime.parse('2017-10-21 11:00'), end_time: DateTime.parse('2017-10-21 16:30'))
+event96= Event.create!(user_id: user38.id, group_id: group49.id, name: "Lets Play - Saturday.", description: 'Soccer on a Saturday, what could be better?', location: "Los Gatos", start_time: DateTime.parse('2017-10-21 11:00 GMT-7'), end_time: DateTime.parse('2017-10-21 16:30 GMT-7'))
 
 gn1799 = GroupNews.create!(group_id: group49.id, news: user38.username + ' created the event ' + event96.name, user_id: user38.id, oid: event96.id, typo: 'e')
 gn1800 = GroupNews.create!(group_id: group49.id, news: user38.username + ' rsvp\'d for ' + event96.name, user_id: user38.id, oid: event96.id, typo: 'e')
@@ -3582,7 +3582,7 @@ ee1060 = EventEnrollment.create!(user_id: user91.id, event_id: event96.id)
 ee1061 = EventEnrollment.create!(user_id: user98.id, event_id: event96.id)
 ee1062 = EventEnrollment.create!(user_id: user97.id, event_id: event96.id)
 
-event97= Event.create!(user_id: user38.id, group_id: group49.id, name: "Socializing and networking", description: 'Found a bar we\'ll try out for this event.  The Press Club.  Happy hour is until 6PM everyday with Monday-Friday offering $3 off any glass of wine or beer.', location: "San Jose", start_time: DateTime.parse('2017-10-26 15:00'), end_time: DateTime.parse('2017-10-26 17:00'))
+event97= Event.create!(user_id: user38.id, group_id: group49.id, name: "Socializing and networking", description: 'Found a bar we\'ll try out for this event.  The Press Club.  Happy hour is until 6PM everyday with Monday-Friday offering $3 off any glass of wine or beer.', location: "San Jose", start_time: DateTime.parse('2017-10-26 15:00 GMT-7'), end_time: DateTime.parse('2017-10-26 17:00 GMT-7'))
 gn1811 = GroupNews.create!(group_id: group49.id, news: user38.username + ' created the event ' + event97.name, user_id: user38.id, oid: event97.id, typo: 'e')
 gn1812 = GroupNews.create!(group_id: group49.id, news: user38.username + ' rsvp\'d for ' + event97.name, user_id: user38.id, oid: event97.id, typo: 'e')
 gn1813 = GroupNews.create!(group_id: group49.id, news: user71.username + ' rsvp\'d for ' + event97.name, user_id: user71.id, oid: event97.id, typo: 'e')
@@ -3611,7 +3611,7 @@ ee1073 = EventEnrollment.create!(user_id: user97.id, event_id: event97.id)
 
 
 
-event98= Event.create!(user_id: user38.id, group_id: group49.id, name: "September Rave Ride with SJ Bike Party", description: 'Bike party let\'s go San Ho!', location: "San Jose", start_time: DateTime.parse('2017-11-12 19:00'), end_time: DateTime.parse('2017-11-12 23:30'))
+event98= Event.create!(user_id: user38.id, group_id: group49.id, name: "September Rave Ride with SJ Bike Party", description: 'Bike party let\'s go San Ho!', location: "San Jose", start_time: DateTime.parse('2017-11-12 19:00 GMT-7'), end_time: DateTime.parse('2017-11-12 23:30 GMT-7'))
 gn1823 = GroupNews.create!(group_id: group49.id, news: user38.username + ' created the event ' + event98.name, user_id: user38.id, oid: event98.id, typo: 'e')
 gn1824 = GroupNews.create!(group_id: group49.id, news: user38.username + ' rsvp\'d for ' + event98.name, user_id: user38.id, oid: event98.id, typo: 'e')
 gn1825 = GroupNews.create!(group_id: group49.id, news: user71.username + ' rsvp\'d for ' + event98.name, user_id: user71.id, oid: event98.id, typo: 'e')
@@ -3662,7 +3662,7 @@ gn349 = GroupNews.create!(group_id: group24.id, news: user83.username + ' joined
 ge349 = GroupEnrollment.create!(group_id: group24.id, user_id: user83.id)
 gn350 = GroupNews.create!(group_id: group24.id, news: user92.username + ' joined the group', user_id: user92.id, oid: group24.id, typo: 'g')
 ge350 = GroupEnrollment.create!(group_id: group24.id, user_id: user92.id)
-event99= Event.create!(user_id: user43.id, group_id: group24.id, name: "Pogonip Hike from Harvey West at 10:00 AM", description: 'We will meet at the corner of Harvey West Blvd. and Dubois St. About 5 miles, 700 elevation gain. The trail is steep in places making the hike moderately difficult, about 2.5 hrs. As always this is an at risk activity, by attending you agree to hold harmless the organizers and all attending the hike, you are responsible for your own safety on the hike.', location: "Santa Cruz", start_time: DateTime.parse('2017-09-19 10:00'), end_time: DateTime.parse('2017-09-19 17:30'))
+event99= Event.create!(user_id: user43.id, group_id: group24.id, name: "Pogonip Hike from Harvey West at 10:00 AM", description: 'We will meet at the corner of Harvey West Blvd. and Dubois St. About 5 miles, 700 elevation gain. The trail is steep in places making the hike moderately difficult, about 2.5 hrs. As always this is an at risk activity, by attending you agree to hold harmless the organizers and all attending the hike, you are responsible for your own safety on the hike.', location: "Santa Cruz", start_time: DateTime.parse('2017-09-19 10:00 GMT-7'), end_time: DateTime.parse('2017-09-19 17:30 GMT-7'))
 gn1835 = GroupNews.create!(group_id: group24.id, news: user43.username + ' created the event ' + event99.name, user_id: user43.id, oid: event99.id, typo: 'e')
 gn1836 = GroupNews.create!(group_id: group24.id, news: user43.username + ' rsvp\'d for ' + event99.name, user_id: user43.id, oid: event99.id, typo: 'e')
 gn1837 = GroupNews.create!(group_id: group24.id, news: user92.username + ' rsvp\'d for ' + event99.name, user_id: user92.id, oid: event99.id, typo: 'e')
@@ -3690,7 +3690,7 @@ ee1094 = EventEnrollment.create!(user_id: user75.id, event_id: event99.id)
 ee1095 = EventEnrollment.create!(user_id: user71.id, event_id: event99.id)
 
 
-event100= Event.create!(user_id: user64.id, group_id: group24.id, name: "Sunday Tennis in Foster City", description: 'Tennis in Foster City!', location: "Foster City", start_time: DateTime.parse('2017-09-20 12:00'), end_time: DateTime.parse('2017-09-20 17:30'))
+event100= Event.create!(user_id: user64.id, group_id: group24.id, name: "Sunday Tennis in Foster City", description: 'Tennis in Foster City!', location: "Foster City", start_time: DateTime.parse('2017-09-20 12:00 GMT-7'), end_time: DateTime.parse('2017-09-20 17:30 GMT-7'))
 gn1847 = GroupNews.create!(group_id: group24.id, news: user43.username + ' created the event ' + event100.name, user_id: user43.id, oid: event100.id, typo: 'e')
 gn1848 = GroupNews.create!(group_id: group24.id, news: user43.username + ' rsvp\'d for ' + event100.name, user_id: user43.id, oid: event100.id, typo: 'e')
 gn1849 = GroupNews.create!(group_id: group24.id, news: user92.username + ' rsvp\'d for ' + event100.name, user_id: user92.id, oid: event100.id, typo: 'e')
@@ -3717,7 +3717,7 @@ ee1104 = EventEnrollment.create!(user_id: user69.id, event_id: event100.id)
 ee1105 = EventEnrollment.create!(user_id: user75.id, event_id: event100.id)
 ee1106 = EventEnrollment.create!(user_id: user71.id, event_id: event100.id)
 
-event101= Event.create!(user_id: user43.id, group_id: group24.id, name: "San Francisco Qigong Meetup", description: 'Join us as we learn and practice whole body circular and spiral movements to release tension and stagnant energy and clear the way for fresh energy and renewal.', location: "San Francisco", start_time: DateTime.parse('2017-11-11 09:00'), end_time: DateTime.parse('2017-11-11 11:30'))
+event101= Event.create!(user_id: user43.id, group_id: group24.id, name: "San Francisco Qigong Meetup", description: 'Join us as we learn and practice whole body circular and spiral movements to release tension and stagnant energy and clear the way for fresh energy and renewal.', location: "San Francisco", start_time: DateTime.parse('2017-11-11 09:00 GMT-7'), end_time: DateTime.parse('2017-11-11 11:30 GMT-7'))
 gn1859 = GroupNews.create!(group_id: group24.id, news: user43.username + ' created the event ' + event101.name, user_id: user43.id, oid: event101.id, typo: 'e')
 gn1860 = GroupNews.create!(group_id: group24.id, news: user43.username + ' rsvp\'d for ' + event101.name, user_id: user43.id, oid: event101.id, typo: 'e')
 gn1861 = GroupNews.create!(group_id: group24.id, news: user92.username + ' rsvp\'d for ' + event101.name, user_id: user92.id, oid: event101.id, typo: 'e')
@@ -3770,7 +3770,7 @@ ge359 = GroupEnrollment.create!(group_id: group25.id, user_id: user30.id)
 gn360 = GroupNews.create!(group_id: group25.id, news: user36.username + ' joined the group', user_id: user36.id, oid: group25.id, typo: 'g')
 ge360 = GroupEnrollment.create!(group_id: group25.id, user_id: user36.id)
 
-event102= Event.create!(user_id: user31.id, group_id: group25.id, name: "TOMORROW: WIB-SF East Bay Ice Cream Social and Networking", description: 'Have a sweet tooth? Loving the warmer weather? Come celebrate summer and network with amazing Women In Bio at our ice cream social', location: "Los Gatos", start_time: DateTime.parse('2017-09-14 13:00'), end_time: DateTime.parse('2017-09-14 17:30'))
+event102= Event.create!(user_id: user31.id, group_id: group25.id, name: "TOMORROW: WIB-SF East Bay Ice Cream Social and Networking", description: 'Have a sweet tooth? Loving the warmer weather? Come celebrate summer and network with amazing Women In Bio at our ice cream social', location: "Los Gatos", start_time: DateTime.parse('2017-09-14 13:00 GMT-7'), end_time: DateTime.parse('2017-09-14 17:30 GMT-7'))
 gn1871 = GroupNews.create!(group_id: group25.id, news: user31.username + ' created the event ' + event102.name, user_id: user31.id, oid: event102.id, typo: 'e')
 gn1872 = GroupNews.create!(group_id: group25.id, news: user31.username + ' rsvp\'d for ' + event102.name, user_id: user31.id, oid: event102.id, typo: 'e')
 gn1873 = GroupNews.create!(group_id: group25.id, news: user36.username + ' rsvp\'d for ' + event102.name, user_id: user36.id, oid: event102.id, typo: 'e')
@@ -3798,7 +3798,7 @@ ee1127 = EventEnrollment.create!(user_id: user75.id, event_id: event102.id)
 ee1128 = EventEnrollment.create!(user_id: user71.id, event_id: event102.id)
 
 
-event103= Event.create!(user_id: user31.id, group_id: group25.id, name: "Small Group Meeting: Business Mastermind", description: 'Business Masterminds are an excellent place to "think tank" your business ideas before implementing them. Business Masterminds are also a great place to learn about new business development tools: such as marketing, advertising, best practices, and hiring/firing.', location: "Daly City", start_time: DateTime.parse('2017-12-22 12:00'), end_time: DateTime.parse('2017-12-22 16:30'))
+event103= Event.create!(user_id: user31.id, group_id: group25.id, name: "Small Group Meeting: Business Mastermind", description: 'Business Masterminds are an excellent place to "think tank" your business ideas before implementing them. Business Masterminds are also a great place to learn about new business development tools: such as marketing, advertising, best practices, and hiring/firing.', location: "Daly City", start_time: DateTime.parse('2017-12-22 12:00 GMT-7'), end_time: DateTime.parse('2017-12-22 16:30 GMT-7'))
 gn1883 = GroupNews.create!(group_id: group25.id, news: user31.username + ' created the event ' + event103.name, user_id: user31.id, oid: event103.id, typo: 'e')
 gn1884 = GroupNews.create!(group_id: group25.id, news: user31.username + ' rsvp\'d for ' + event103.name, user_id: user31.id, oid: event103.id, typo: 'e')
 gn1885 = GroupNews.create!(group_id: group25.id, news: user36.username + ' rsvp\'d for ' + event103.name, user_id: user36.id, oid: event103.id, typo: 'e')
@@ -3825,7 +3825,7 @@ ee1137 = EventEnrollment.create!(user_id: user69.id, event_id: event103.id)
 ee1138 = EventEnrollment.create!(user_id: user75.id, event_id: event103.id)
 ee1139 = EventEnrollment.create!(user_id: user71.id, event_id: event103.id)
 
-event104= Event.create!(user_id: user31.id, group_id: group25.id, name: "Lunchtime Soccer", description: 'Lunchtime Soccer', location: "Palo Alto", start_time: DateTime.parse('2017-10-18 12:00'), end_time: DateTime.parse('2017-10-18 13:30'))
+event104= Event.create!(user_id: user31.id, group_id: group25.id, name: "Lunchtime Soccer", description: 'Lunchtime Soccer', location: "Palo Alto", start_time: DateTime.parse('2017-10-18 12:00 GMT-7'), end_time: DateTime.parse('2017-10-18 13:30 GMT-7'))
 gn1895 = GroupNews.create!(group_id: group25.id, news: user31.username + ' created the event ' + event104.name, user_id: user31.id, oid: event104.id, typo: 'e')
 gn1896 = GroupNews.create!(group_id: group25.id, news: user31.username + ' rsvp\'d for ' + event104.name, user_id: user31.id, oid: event104.id, typo: 'e')
 gn1897 = GroupNews.create!(group_id: group25.id, news: user36.username + ' rsvp\'d for ' + event104.name, user_id: user36.id, oid: event104.id, typo: 'e')
@@ -3876,7 +3876,7 @@ gn369 = GroupNews.create!(group_id: group26.id, news: user90.username + ' joined
 ge369 = GroupEnrollment.create!(group_id: group26.id, user_id: user90.id)
 gn370 = GroupNews.create!(group_id: group26.id, news: user11.username + ' joined the group', user_id: user11.id, oid: group26.id, typo: 'g')
 ge370 = GroupEnrollment.create!(group_id: group26.id, user_id: user11.id)
-event105= Event.create!(user_id: user39.id, group_id: group26.id, name: "Yoga in the Park", description: 'We will meet up for 1 hour to enjoy some flowy vinyasa leaving a bit stronger, raise that body temp & relax our minds.  Core exercises & a faster moving flow will make this class feel like more of a workout, but stretches integrated throughout will leave you feeling a bit more limber.  You may sweat a bit so bring water, your mat & any props you may want to use. Class is beginner friendly with opportunities for advanced students to take their practice a bit further.  ', location: "Saratoga", start_time: DateTime.parse('2017-11-08 12:00'), end_time: DateTime.parse('2017-11-08 13:30'))
+event105= Event.create!(user_id: user39.id, group_id: group26.id, name: "Yoga in the Park", description: 'We will meet up for 1 hour to enjoy some flowy vinyasa leaving a bit stronger, raise that body temp & relax our minds.  Core exercises & a faster moving flow will make this class feel like more of a workout, but stretches integrated throughout will leave you feeling a bit more limber.  You may sweat a bit so bring water, your mat & any props you may want to use. Class is beginner friendly with opportunities for advanced students to take their practice a bit further.  ', location: "Saratoga", start_time: DateTime.parse('2017-11-08 12:00 GMT-7'), end_time: DateTime.parse('2017-11-08 13:30 GMT-7'))
 
 gn1907 = GroupNews.create!(group_id: group26.id, news: user39.username + ' created the event ' + event105.name, user_id: user39.id, oid: event105.id, typo: 'e')
 gn1908 = GroupNews.create!(group_id: group26.id, news: user39.username + ' rsvp\'d for ' + event105.name, user_id: user39.id, oid: event105.id, typo: 'e')
@@ -3906,7 +3906,7 @@ ee1161 = EventEnrollment.create!(user_id: user36.id, event_id: event105.id)
 
 
 
-event106= Event.create!(user_id: user39.id, group_id: group26.id, name: "Back to Recess!", description: 'Remember back in the days when you still had recess and played all those school yard games? Let\'s go down nostalgia lane and be like kids again! Come spend a fun afternoon reliving your childhood and playing some old school games.', location: "Milpitas", start_time: DateTime.parse('2017-12-17 12:00'), end_time: DateTime.parse('2017-12-17 13:30'))
+event106= Event.create!(user_id: user39.id, group_id: group26.id, name: "Back to Recess!", description: 'Remember back in the days when you still had recess and played all those school yard games? Let\'s go down nostalgia lane and be like kids again! Come spend a fun afternoon reliving your childhood and playing some old school games.', location: "Milpitas", start_time: DateTime.parse('2017-12-17 12:00 GMT-7'), end_time: DateTime.parse('2017-12-17 13:30 GMT-7'))
 
 gn1919 = GroupNews.create!(group_id: group26.id, news: user39.username + ' created the event ' + event106.name, user_id: user39.id, oid: event106.id, typo: 'e')
 gn1920 = GroupNews.create!(group_id: group26.id, news: user39.username + ' rsvp\'d for ' + event106.name, user_id: user39.id, oid: event106.id, typo: 'e')
@@ -3935,7 +3935,7 @@ ee1171 = EventEnrollment.create!(user_id: user45.id, event_id: event106.id)
 ee1172 = EventEnrollment.create!(user_id: user36.id, event_id: event106.id)
 
 
-event107= Event.create!(user_id: user39.id, group_id: group26.id, name: "Septembers's Flag Football", description: 'Flag football!!!!!!', location: "Campbell", start_time: DateTime.parse('2017-11-16 14:00'), end_time: DateTime.parse('2017-11-16 18:30'))
+event107= Event.create!(user_id: user39.id, group_id: group26.id, name: "Septembers's Flag Football", description: 'Flag football!!!!!!', location: "Campbell", start_time: DateTime.parse('2017-11-16 14:00 GMT-7'), end_time: DateTime.parse('2017-11-16 18:30 GMT-7'))
 gn1931 = GroupNews.create!(group_id: group26.id, news: user39.username + ' created the event ' + event107.name, user_id: user39.id, oid: event107.id, typo: 'e')
 gn1932 = GroupNews.create!(group_id: group26.id, news: user39.username + ' rsvp\'d for ' + event107.name, user_id: user39.id, oid: event107.id, typo: 'e')
 gn1933 = GroupNews.create!(group_id: group26.id, news: user11.username + ' rsvp\'d for ' + event107.name, user_id: user11.id, oid: event107.id, typo: 'e')
@@ -3985,7 +3985,7 @@ gn379 = GroupNews.create!(group_id: group27.id, news: user74.username + ' joined
 ge379 = GroupEnrollment.create!(group_id: group27.id, user_id: user74.id)
 gn380 = GroupNews.create!(group_id: group27.id, news: user29.username + ' joined the group', user_id: user29.id, oid: group27.id, typo: 'g')
 ge380 = GroupEnrollment.create!(group_id: group27.id, user_id: user29.id)
-event108= Event.create!(user_id: user41.id, group_id: group27.id, name: "Let's meet up and set up learning tablets for Oakland kids", description: 'Help Lit Lab set up 800 learning devices to lend to underserved East Bay families this school year.', location: "Oakland", start_time: DateTime.parse('2017-10-28 10:00'), end_time: DateTime.parse('2017-10-28 17:30'))
+event108= Event.create!(user_id: user41.id, group_id: group27.id, name: "Let's meet up and set up learning tablets for Oakland kids", description: 'Help Lit Lab set up 800 learning devices to lend to underserved East Bay families this school year.', location: "Oakland", start_time: DateTime.parse('2017-10-28 10:00 GMT-7'), end_time: DateTime.parse('2017-10-28 17:30 GMT-7'))
 
 gn1943 = GroupNews.create!(group_id: group27.id, news: user41.username + ' created the event ' + event108.name, user_id: user41.id, oid: event108.id, typo: 'e')
 gn1944 = GroupNews.create!(group_id: group27.id, news: user41.username + ' rsvp\'d for ' + event108.name, user_id: user41.id, oid: event108.id, typo: 'e')
@@ -4015,7 +4015,7 @@ ee1194 = EventEnrollment.create!(user_id: user11.id, event_id: event108.id)
 
 
 
-event109= Event.create!(user_id: user41.id, group_id: group27.id, name: "San Francisco - Feeding the Homeless on the Streets", description: '*IMPORTANT NOTE:  We can no longer park inside the Sanctuary parking lot @201 8th, but you should not have any problem finding a parking spot right there on the street.  We will meet on the sidewalk directly across the street from 201-8th street.  We meet at 7:45pm, but we usually don\'t start walking until 8pm.  Please call me  if you are late.', location: "San Francisco", start_time: DateTime.parse('2017-12-02 09:00'), end_time: DateTime.parse('2017-12-02 19:30'))
+event109= Event.create!(user_id: user41.id, group_id: group27.id, name: "San Francisco - Feeding the Homeless on the Streets", description: '*IMPORTANT NOTE:  We can no longer park inside the Sanctuary parking lot @201 8th, but you should not have any problem finding a parking spot right there on the street.  We will meet on the sidewalk directly across the street from 201-8th street.  We meet at 7:45pm, but we usually don\'t start walking until 8pm.  Please call me  if you are late.', location: "San Francisco", start_time: DateTime.parse('2017-12-02 09:00 GMT-7'), end_time: DateTime.parse('2017-12-02 19:30 GMT-7'))
 gn1955 = GroupNews.create!(group_id: group27.id, news: user41.username + ' created the event ' + event109.name, user_id: user41.id, oid: event109.id, typo: 'e')
 gn1956 = GroupNews.create!(group_id: group27.id, news: user41.username + ' rsvp\'d for ' + event109.name, user_id: user41.id, oid: event109.id, typo: 'e')
 gn1957 = GroupNews.create!(group_id: group27.id, news: user29.username + ' rsvp\'d for ' + event109.name, user_id: user29.id, oid: event109.id, typo: 'e')
@@ -4043,7 +4043,7 @@ ee1204 = EventEnrollment.create!(user_id: user12.id, event_id: event109.id)
 ee1205 = EventEnrollment.create!(user_id: user11.id, event_id: event109.id)
 
 
-event110= Event.create!(user_id: user41.id, group_id: group27.id, name: "Archery Meetup @ Bowhunters Unlimited", description: 'This is a meetup for anyone interested in starting up archery. Both beginners and experts alike are welcome, and no archery equipment is required (though sharing your own equipment is highly appreciated). I have 6 sets of archery equipment available for the group to alternate use, as well as a few sets of gloves and arm guards.', location: "Saratoga", start_time: DateTime.parse('2017-12-09 11:00'), end_time: DateTime.parse('2017-12-09 19:30'))
+event110= Event.create!(user_id: user41.id, group_id: group27.id, name: "Archery Meetup @ Bowhunters Unlimited", description: 'This is a meetup for anyone interested in starting up archery. Both beginners and experts alike are welcome, and no archery equipment is required (though sharing your own equipment is highly appreciated). I have 6 sets of archery equipment available for the group to alternate use, as well as a few sets of gloves and arm guards.', location: "Saratoga", start_time: DateTime.parse('2017-12-09 11:00 GMT-7'), end_time: DateTime.parse('2017-12-09 19:30 GMT-7'))
 gn1967 = GroupNews.create!(group_id: group27.id, news: user41.username + ' created the event ' + event110.name, user_id: user41.id, oid: event110.id, typo: 'e')
 gn1968 = GroupNews.create!(group_id: group27.id, news: user41.username + ' rsvp\'d for ' + event110.name, user_id: user41.id, oid: event110.id, typo: 'e')
 gn1969 = GroupNews.create!(group_id: group27.id, news: user29.username + ' rsvp\'d for ' + event110.name, user_id: user29.id, oid: event110.id, typo: 'e')
@@ -4094,7 +4094,7 @@ ge389 = GroupEnrollment.create!(group_id: group28.id, user_id: user54.id)
 gn390 = GroupNews.create!(group_id: group28.id, news: user39.username + ' joined the group', user_id: user39.id, oid: group28.id, typo: 'g')
 ge390 = GroupEnrollment.create!(group_id: group28.id, user_id: user39.id)
 
-event1100= Event.create!(user_id: user33.id, group_id: group28.id, name: "Bad Axe Throwing Open House", description: '*This is going to be an unhosted Event. It actually starts at 2pm but i will be there around 5pm! Come early if you like!', location: "Daly City", start_time: DateTime.parse('2017-12-11 14:00'), end_time: DateTime.parse('2017-12-11 20:30'))
+event1100= Event.create!(user_id: user33.id, group_id: group28.id, name: "Bad Axe Throwing Open House", description: '*This is going to be an unhosted Event. It actually starts at 2pm but i will be there around 5pm! Come early if you like!', location: "Daly City", start_time: DateTime.parse('2017-12-11 14:00 GMT-7'), end_time: DateTime.parse('2017-12-11 20:30 GMT-7'))
 gn1979 = GroupNews.create!(group_id: group28.id, news: user33.username + ' created the event ' + event1100.name, user_id: user33.id, oid: event1100.id, typo: 'e')
 gn1980 = GroupNews.create!(group_id: group28.id, news: user33.username + ' rsvp\'d for ' + event1100.name, user_id: user33.id, oid: event1100.id, typo: 'e')
 gn1981 = GroupNews.create!(group_id: group28.id, news: user39.username + ' rsvp\'d for ' + event1100.name, user_id: user39.id, oid: event1100.id, typo: 'e')
@@ -4122,7 +4122,7 @@ ee1226 = EventEnrollment.create!(user_id: user10.id, event_id: event1100.id)
 ee1227 = EventEnrollment.create!(user_id: user29.id, event_id: event1100.id)
 
 
-event111= Event.create!(user_id: user33.id, group_id: group28.id, name: "Grass Handball with San Francisco Calheat", description: 'Come and join us for some grass handball action with the San Francisco Calheat Team Handball Club. We will mix beach handball and indoor handball rules to make it more fun. This game is open to men and women of any level. It is best described by "water polo on dry-land" or "basketball with soccer goals and hockey rules"', location: 'San Francisco', start_time: DateTime.parse('2017-11-08 19:00'), end_time: DateTime.parse('2017-11-08 21:30'))
+event111= Event.create!(user_id: user33.id, group_id: group28.id, name: "Grass Handball with San Francisco Calheat", description: 'Come and join us for some grass handball action with the San Francisco Calheat Team Handball Club. We will mix beach handball and indoor handball rules to make it more fun. This game is open to men and women of any level. It is best described by "water polo on dry-land" or "basketball with soccer goals and hockey rules"', location: 'San Francisco', start_time: DateTime.parse('2017-11-08 19:00 GMT-7'), end_time: DateTime.parse('2017-11-08 21:30 GMT-7'))
 gn1991 = GroupNews.create!(group_id: group28.id, news: user33.username + ' created the event ' + event111.name, user_id: user33.id, oid: event111.id, typo: 'e')
 gn1992 = GroupNews.create!(group_id: group28.id, news: user33.username + ' rsvp\'d for ' + event111.name, user_id: user33.id, oid: event111.id, typo: 'e')
 gn1993 = GroupNews.create!(group_id: group28.id, news: user39.username + ' rsvp\'d for ' + event111.name, user_id: user39.id, oid: event111.id, typo: 'e')
@@ -4149,7 +4149,7 @@ ee1236 = EventEnrollment.create!(user_id: user19.id, event_id: event111.id)
 ee1237 = EventEnrollment.create!(user_id: user10.id, event_id: event111.id)
 ee1238 = EventEnrollment.create!(user_id: user29.id, event_id: event111.id)
 
-event112= Event.create!(user_id: user33.id, group_id: group28.id, name: "Camping & Perseid's Meteor Shower viewing", description: ' Currently have 5 spots available. I\'ve cross posted this event on couple other meetups. If there are more than 5 responses, will do a random lottery at Friday midnight  and finalize the RSVP.', location: "Sunnyvale", start_time: DateTime.parse('2017-12-19 15:00'), end_time: DateTime.parse('2017-12-19 19:30'))
+event112= Event.create!(user_id: user33.id, group_id: group28.id, name: "Camping & Perseid's Meteor Shower viewing", description: ' Currently have 5 spots available. I\'ve cross posted this event on couple other meetups. If there are more than 5 responses, will do a random lottery at Friday midnight  and finalize the RSVP.', location: "Sunnyvale", start_time: DateTime.parse('2017-12-19 15:00 GMT-7'), end_time: DateTime.parse('2017-12-19 19:30 GMT-7'))
 gn2003 = GroupNews.create!(group_id: group28.id, news: user33.username + ' created the event ' + event112.name, user_id: user33.id, oid: event112.id, typo: 'e')
 gn2004 = GroupNews.create!(group_id: group28.id, news: user33.username + ' rsvp\'d for ' + event112.name, user_id: user33.id, oid: event112.id, typo: 'e')
 gn2005 = GroupNews.create!(group_id: group28.id, news: user39.username + ' rsvp\'d for ' + event112.name, user_id: user39.id, oid: event112.id, typo: 'e')
@@ -4200,7 +4200,7 @@ ge399 = GroupEnrollment.create!(group_id: group29.id, user_id: user95.id)
 gn400 = GroupNews.create!(group_id: group29.id, news: user60.username + ' joined the group', user_id: user60.id, oid: group29.id, typo: 'g')
 ge400 = GroupEnrollment.create!(group_id: group29.id, user_id: user60.id)
 
-event113= Event.create!(user_id: user29.id, group_id: group29.id, name: "Bar Calisthenics Workout in Santa Clara", description: 'I met some cool people who are into bar calisthenics work. That crazy cool street workout where people to fun things on bars and rings.', location: "Santa Clara", start_time: DateTime.parse('2017-10-08 08:00'), end_time: DateTime.parse('2017-10-08 14:30'))
+event113= Event.create!(user_id: user29.id, group_id: group29.id, name: "Bar Calisthenics Workout in Santa Clara", description: 'I met some cool people who are into bar calisthenics work. That crazy cool street workout where people to fun things on bars and rings.', location: "Santa Clara", start_time: DateTime.parse('2017-10-08 08:00 GMT-7'), end_time: DateTime.parse('2017-10-08 14:30 GMT-7'))
 gn2015 = GroupNews.create!(group_id: group29.id, news: user29.username + ' created the event ' + event113.name, user_id: user29.id, oid: event113.id, typo: 'e')
 gn2016 = GroupNews.create!(group_id: group29.id, news: user29.username + ' rsvp\'d for ' + event113.name, user_id: user29.id, oid: event113.id, typo: 'e')
 gn2017 = GroupNews.create!(group_id: group29.id, news: user60.username + ' rsvp\'d for ' + event113.name, user_id: user60.id, oid: event113.id, typo: 'e')
@@ -4229,7 +4229,7 @@ ee1260 = EventEnrollment.create!(user_id: user55.id, event_id: event113.id)
 
 
 
-event114= Event.create!(user_id: user29.id, group_id: group29.id, name: "Saturday Dublin PetSmart Adoption Event from 11 am - 2 pm", description: 'We are having an adoption event at Dublin PetSmart. We could use your help! The event on Saturday, August 12th at Dublin PetSmart on Amador Plaza Road. New volunteers need to sign a release form and turn it in before starting to volunteer. You may bring it with you to the event. If you are under 18, a parent must come with you to the first event and sign on your behalf, you cannot bring it completed without a parent. You can ask for the form at the event or get it off our site', location: "Dublin", start_time: DateTime.parse('2017-11-17 11:00'), end_time: DateTime.parse('2017-11-17 14:30'))
+event114= Event.create!(user_id: user29.id, group_id: group29.id, name: "Saturday Dublin PetSmart Adoption Event from 11 am - 2 pm", description: 'We are having an adoption event at Dublin PetSmart. We could use your help! The event on Saturday, August 12th at Dublin PetSmart on Amador Plaza Road. New volunteers need to sign a release form and turn it in before starting to volunteer. You may bring it with you to the event. If you are under 18, a parent must come with you to the first event and sign on your behalf, you cannot bring it completed without a parent. You can ask for the form at the event or get it off our site', location: "Dublin", start_time: DateTime.parse('2017-11-17 11:00 GMT-7'), end_time: DateTime.parse('2017-11-17 14:30 GMT-7'))
 gn2027 = GroupNews.create!(group_id: group29.id, news: user29.username + ' created the event ' + event114.name, user_id: user29.id, oid: event114.id, typo: 'e')
 gn2028 = GroupNews.create!(group_id: group29.id, news: user29.username + ' rsvp\'d for ' + event114.name, user_id: user29.id, oid: event114.id, typo: 'e')
 gn2029 = GroupNews.create!(group_id: group29.id, news: user60.username + ' rsvp\'d for ' + event114.name, user_id: user60.id, oid: event114.id, typo: 'e')
@@ -4259,7 +4259,7 @@ ee1271 = EventEnrollment.create!(user_id: user55.id, event_id: event114.id)
 
 
 
-event115= Event.create!(user_id: user29.id, group_id: group29.id, name: "San Francisco Qigong Meetup", description: 'Qigong is a mindfulness and body practice that integrates movement, breath and awareness.', location: "San Francisco", start_time: DateTime.parse('2017-10-16 09:00'), end_time: DateTime.parse('2017-10-16 12:30'))
+event115= Event.create!(user_id: user29.id, group_id: group29.id, name: "San Francisco Qigong Meetup", description: 'Qigong is a mindfulness and body practice that integrates movement, breath and awareness.', location: "San Francisco", start_time: DateTime.parse('2017-10-16 09:00 GMT-7'), end_time: DateTime.parse('2017-10-16 12:30 GMT-7'))
 gn2039 = GroupNews.create!(group_id: group29.id, news: user29.username + ' created the event ' + event115.name, user_id: user29.id, oid: event115.id, typo: 'e')
 gn2040 = GroupNews.create!(group_id: group29.id, news: user29.username + ' rsvp\'d for ' + event115.name, user_id: user29.id, oid: event115.id, typo: 'e')
 gn2041 = GroupNews.create!(group_id: group29.id, news: user60.username + ' rsvp\'d for ' + event115.name, user_id: user60.id, oid: event115.id, typo: 'e')
@@ -4310,7 +4310,7 @@ ge409 = GroupEnrollment.create!(group_id: group30.id, user_id: user82.id)
 gn410 = GroupNews.create!(group_id: group30.id, news: user5.username + ' joined the group', user_id: user5.id, oid: group30.id, typo: 'g')
 ge410 = GroupEnrollment.create!(group_id: group30.id, user_id: user5.id)
 
-event116= Event.create!(user_id: user25.id, group_id: group30.id, name: "TRX Bootcamp", description: 'Take your workout away from the smelly gym and enjoy the fresh air outside. All levels of fitness welcome. Space is limited to 8 participants per class to ensure proper attention and to make specific adjustments for each participant as needed. Members of Get Fit Yoga can attend 1 FREE class ;)', location: "Mountain View", start_time: DateTime.parse('2017-10-24 17:00'), end_time: DateTime.parse('2017-10-24 19:30'))
+event116= Event.create!(user_id: user25.id, group_id: group30.id, name: "TRX Bootcamp", description: 'Take your workout away from the smelly gym and enjoy the fresh air outside. All levels of fitness welcome. Space is limited to 8 participants per class to ensure proper attention and to make specific adjustments for each participant as needed. Members of Get Fit Yoga can attend 1 FREE class ;)', location: "Mountain View", start_time: DateTime.parse('2017-10-24 17:00 GMT-7'), end_time: DateTime.parse('2017-10-24 19:30 GMT-7'))
 gn2051 = GroupNews.create!(group_id: group30.id, news: user25.username + ' created the event ' + event116.name, user_id: user25.id, oid: event116.id, typo: 'e')
 gn2052 = GroupNews.create!(group_id: group30.id, news: user25.username + ' rsvp\'d for ' + event116.name, user_id: user25.id, oid: event116.id, typo: 'e')
 gn2053 = GroupNews.create!(group_id: group30.id, news: user5.username + ' rsvp\'d for ' + event116.name, user_id: user5.id, oid: event116.id, typo: 'e')
@@ -4338,7 +4338,7 @@ ee1292 = EventEnrollment.create!(user_id: user60.id, event_id: event116.id)
 ee1293 = EventEnrollment.create!(user_id: user39.id, event_id: event116.id)
 
 
-event117= Event.create!(user_id: user25.id, group_id: group30.id, name: "Mindful Movement Qigong 10:15am Drop-In Class", description: 'Join us for Mindful Movement Qigong to experience the effects and benefits of Qigong! Class are great for beginners and experienced Qigongers alike. All levels of fitness, ability and experience are welcome to join.', location: "Los Gatos", start_time: DateTime.parse('2017-10-23 10:00'), end_time: DateTime.parse('2017-10-23 12:30'))
+event117= Event.create!(user_id: user25.id, group_id: group30.id, name: "Mindful Movement Qigong 10:15am Drop-In Class", description: 'Join us for Mindful Movement Qigong to experience the effects and benefits of Qigong! Class are great for beginners and experienced Qigongers alike. All levels of fitness, ability and experience are welcome to join.', location: "Los Gatos", start_time: DateTime.parse('2017-10-23 10:00 GMT-7'), end_time: DateTime.parse('2017-10-23 12:30 GMT-7'))
 gn2063 = GroupNews.create!(group_id: group30.id, news: user25.username + ' created the event ' + event117.name, user_id: user25.id, oid: event117.id, typo: 'e')
 gn2064 = GroupNews.create!(group_id: group30.id, news: user25.username + ' rsvp\'d for ' + event117.name, user_id: user25.id, oid: event117.id, typo: 'e')
 gn2065 = GroupNews.create!(group_id: group30.id, news: user5.username + ' rsvp\'d for ' + event117.name, user_id: user5.id, oid: event117.id, typo: 'e')
@@ -4366,7 +4366,7 @@ ee1303 = EventEnrollment.create!(user_id: user60.id, event_id: event117.id)
 ee1304 = EventEnrollment.create!(user_id: user39.id, event_id: event117.id)
 
 
-event118= Event.create!(user_id: user25.id, group_id: group30.id, name: "Final San Diego Meet n' Greet !", description: 'This is the final meeting for the San Diego Trip which takes place at the end of Sept.  This is the LAST chance to join the group if you so desire and it\'s a pretty important meeting for those who are planning on going.  The main purpose is to get the group together and have a drink or some snacks so that we get to know everyone that\'ll be on the trip.', location: "San Francisco", start_time: DateTime.parse('2017-12-16 13:00'), end_time: DateTime.parse('2017-12-16 17:30'))
+event118= Event.create!(user_id: user25.id, group_id: group30.id, name: "Final San Diego Meet n' Greet !", description: 'This is the final meeting for the San Diego Trip which takes place at the end of Sept.  This is the LAST chance to join the group if you so desire and it\'s a pretty important meeting for those who are planning on going.  The main purpose is to get the group together and have a drink or some snacks so that we get to know everyone that\'ll be on the trip.', location: "San Francisco", start_time: DateTime.parse('2017-12-16 13:00 GMT-7'), end_time: DateTime.parse('2017-12-16 17:30 GMT-7'))
 gn2075 = GroupNews.create!(group_id: group30.id, news: user25.username + ' created the event ' + event118.name, user_id: user25.id, oid: event118.id, typo: 'e')
 gn2076 = GroupNews.create!(group_id: group30.id, news: user25.username + ' rsvp\'d for ' + event118.name, user_id: user25.id, oid: event118.id, typo: 'e')
 gn2077 = GroupNews.create!(group_id: group30.id, news: user5.username + ' rsvp\'d for ' + event118.name, user_id: user5.id, oid: event118.id, typo: 'e')
@@ -4417,7 +4417,7 @@ ge419 = GroupEnrollment.create!(group_id: group31.id, user_id: user79.id)
 gn420 = GroupNews.create!(group_id: group31.id, news: user18.username + ' joined the group', user_id: user18.id, oid: group31.id, typo: 'g')
 ge420 = GroupEnrollment.create!(group_id: group31.id, user_id: user18.id)
 
-event119= Event.create!(user_id: user27.id, group_id: group31.id, name: "The Ultimate Crawl - Mission Edition", description: 'The Mission district is known for it\'s dive bars and exotic late-night atmosphere. As always, this is a great opportunity to learn about the area and meet some new awesome people. We\'ll be sticking to the northern part of the Mission and focus heavily on 16th and Valencia.', location: "San Francisco", start_time: DateTime.parse('2017-09-28 19:00'), end_time: DateTime.parse('2017-09-28 23:30'))
+event119= Event.create!(user_id: user27.id, group_id: group31.id, name: "The Ultimate Crawl - Mission Edition", description: 'The Mission district is known for it\'s dive bars and exotic late-night atmosphere. As always, this is a great opportunity to learn about the area and meet some new awesome people. We\'ll be sticking to the northern part of the Mission and focus heavily on 16th and Valencia.', location: "San Francisco", start_time: DateTime.parse('2017-09-28 19:00 GMT-7'), end_time: DateTime.parse('2017-09-28 23:30 GMT-7'))
 gn2087 = GroupNews.create!(group_id: group31.id, news: user27.username + ' created the event ' + event119.name, user_id: user27.id, oid: event119.id, typo: 'e')
 gn2088 = GroupNews.create!(group_id: group31.id, news: user27.username + ' rsvp\'d for ' + event119.name, user_id: user27.id, oid: event119.id, typo: 'e')
 gn2089 = GroupNews.create!(group_id: group31.id, news: user18.username + ' rsvp\'d for ' + event119.name, user_id: user18.id, oid: event119.id, typo: 'e')
@@ -4446,7 +4446,7 @@ ee1326 = EventEnrollment.create!(user_id: user7.id, event_id: event119.id)
 
 
 
-event120= Event.create!(user_id: user27.id, group_id: group31.id, name: "Tour de North Beach - The Ultimate Crawl", description: 'Let\'s get together and checkout the infamous North Beach!  North Beach is an awesome neighborhood that features some of the best live music venues in all San Francisco.', location: "San Francisco", start_time: DateTime.parse('2017-12-21 19:00'), end_time: DateTime.parse('2017-12-21 23:30'))
+event120= Event.create!(user_id: user27.id, group_id: group31.id, name: "Tour de North Beach - The Ultimate Crawl", description: 'Let\'s get together and checkout the infamous North Beach!  North Beach is an awesome neighborhood that features some of the best live music venues in all San Francisco.', location: "San Francisco", start_time: DateTime.parse('2017-12-21 19:00 GMT-7'), end_time: DateTime.parse('2017-12-21 23:30 GMT-7'))
 gn2099 = GroupNews.create!(group_id: group31.id, news: user27.username + ' created the event ' + event120.name, user_id: user27.id, oid: event120.id, typo: 'e')
 gn2100 = GroupNews.create!(group_id: group31.id, news: user27.username + ' rsvp\'d for ' + event120.name, user_id: user27.id, oid: event120.id, typo: 'e')
 gn2101 = GroupNews.create!(group_id: group31.id, news: user18.username + ' rsvp\'d for ' + event120.name, user_id: user18.id, oid: event120.id, typo: 'e')
@@ -4474,7 +4474,7 @@ ee1336 = EventEnrollment.create!(user_id: user5.id, event_id: event120.id)
 ee1337 = EventEnrollment.create!(user_id: user7.id, event_id: event120.id)
 
 
-event121= Event.create!(user_id: user27.id, group_id: group31.id, name: "HOOCH Hump Day (w/ a free drink!) @ Bond Bar", description: 'Let\'s get together for an awesome happy hour to help push us through the mid-week. We\'ll gather, grab an area, and enjoy some drinks and good company. Feel free to pop in for just a minute to say hi and checkout the space!', location: "San Francisco", start_time: DateTime.parse('2017-12-26 17:00'), end_time: DateTime.parse('2017-12-26 23:30'))
+event121= Event.create!(user_id: user27.id, group_id: group31.id, name: "HOOCH Hump Day (w/ a free drink!) @ Bond Bar", description: 'Let\'s get together for an awesome happy hour to help push us through the mid-week. We\'ll gather, grab an area, and enjoy some drinks and good company. Feel free to pop in for just a minute to say hi and checkout the space!', location: "San Francisco", start_time: DateTime.parse('2017-12-26 17:00 GMT-7'), end_time: DateTime.parse('2017-12-26 23:30 GMT-7'))
 gn2111 = GroupNews.create!(group_id: group31.id, news: user27.username + ' created the event ' + event121.name, user_id: user27.id, oid: event121.id, typo: 'e')
 gn2112 = GroupNews.create!(group_id: group31.id, news: user27.username + ' rsvp\'d for ' + event121.name, user_id: user27.id, oid: event121.id, typo: 'e')
 gn2113 = GroupNews.create!(group_id: group31.id, news: user18.username + ' rsvp\'d for ' + event121.name, user_id: user18.id, oid: event121.id, typo: 'e')
@@ -4525,7 +4525,7 @@ ge429 = GroupEnrollment.create!(group_id: group32.id, user_id: user89.id)
 gn430 = GroupNews.create!(group_id: group32.id, news: user88.username + ' joined the group', user_id: user88.id, oid: group32.id, typo: 'g')
 ge430 = GroupEnrollment.create!(group_id: group32.id, user_id: user88.id)
 
-event122= Event.create!(user_id: user23.id, group_id: group32.id, name: "Temple Nightclub - Happy Hour & Dancing", description: 'Hey guys! We\'ve been invited once again to go checkout Temple Nightclub and party the evening away at the top club in the city.', location: "San Francisco", start_time: DateTime.parse('2017-10-18 17:00'), end_time: DateTime.parse('2017-10-19 02:30'))
+event122= Event.create!(user_id: user23.id, group_id: group32.id, name: "Temple Nightclub - Happy Hour & Dancing", description: 'Hey guys! We\'ve been invited once again to go checkout Temple Nightclub and party the evening away at the top club in the city.', location: "San Francisco", start_time: DateTime.parse('2017-10-18 17:00 GMT-7'), end_time: DateTime.parse('2017-10-19 02:30 GMT-7'))
 
 gn2123 = GroupNews.create!(group_id: group32.id, news: user23.username + ' created the event ' + event122.name, user_id: user23.id, oid: event122.id, typo: 'e')
 gn2124 = GroupNews.create!(group_id: group32.id, news: user23.username + ' rsvp\'d for ' + event122.name, user_id: user23.id, oid: event122.id, typo: 'e')
@@ -4556,7 +4556,7 @@ ee1359 = EventEnrollment.create!(user_id: user89.id, event_id: event122.id)
 
 
 event123= Event.create!(user_id: user23.id, group_id: group32.id, name: "Meditation Classes", description: 'With the Blessings of Jagat Guru SHRI SHRI 1008 Yogi Raj Mahamandaleshwar Swami Mohan Das Vairagi
-This group is for anyone interested in Meditation with Mantra chanting and Chakras Balancing. All above 8 years of age are welcome. This Meditation practice improves health, mental focus and also Healthy living can be achieved. Listed below are some of the benefits of Meditation and Chakras Balancing. ( Anti Smoking, Alcohol Addiction, Drugs ,etc )', location: "Cupertino", start_time: DateTime.parse('2017-12-27 09:00'), end_time: DateTime.parse('2017-12-27 13:30'))
+This group is for anyone interested in Meditation with Mantra chanting and Chakras Balancing. All above 8 years of age are welcome. This Meditation practice improves health, mental focus and also Healthy living can be achieved. Listed below are some of the benefits of Meditation and Chakras Balancing. ( Anti Smoking, Alcohol Addiction, Drugs ,etc )', location: "Cupertino", start_time: DateTime.parse('2017-12-27 09:00 GMT-7'), end_time: DateTime.parse('2017-12-27 13:30 GMT-7'))
 
 gn2135 = GroupNews.create!(group_id: group32.id, news: user23.username + ' created the event ' + event123.name, user_id: user23.id, oid: event123.id, typo: 'e')
 gn2136 = GroupNews.create!(group_id: group32.id, news: user23.username + ' rsvp\'d for ' + event123.name, user_id: user23.id, oid: event123.id, typo: 'e')
@@ -4585,7 +4585,7 @@ ee1369 = EventEnrollment.create!(user_id: user18.id, event_id: event123.id)
 ee1370 = EventEnrollment.create!(user_id: user89.id, event_id: event123.id)
 
 
-event124= Event.create!(user_id: user23.id, group_id: group32.id, name: "Yoga in the Park", description: 'We will meet up for 1 hour to enjoy some flowy vinyasa leaving a bit stronger, raise that body temp & relax our minds.  Core exercises & a faster moving flow will make this class feel like more of a workout, but stretches integrated throughout will leave you feeling a bit more limber.  You may sweat a bit so bring water, your mat & any props you may want to use. Class is beginner friendly with opportunities for advanced students to take their practice a bit further.', location: "Mountain View", start_time: DateTime.parse('2017-10-26 12:00'), end_time: DateTime.parse('2017-10-26 13:30'))
+event124= Event.create!(user_id: user23.id, group_id: group32.id, name: "Yoga in the Park", description: 'We will meet up for 1 hour to enjoy some flowy vinyasa leaving a bit stronger, raise that body temp & relax our minds.  Core exercises & a faster moving flow will make this class feel like more of a workout, but stretches integrated throughout will leave you feeling a bit more limber.  You may sweat a bit so bring water, your mat & any props you may want to use. Class is beginner friendly with opportunities for advanced students to take their practice a bit further.', location: "Mountain View", start_time: DateTime.parse('2017-10-26 12:00 GMT-7'), end_time: DateTime.parse('2017-10-26 13:30 GMT-7'))
 gn2147 = GroupNews.create!(group_id: group32.id, news: user23.username + ' created the event ' + event124.name, user_id: user23.id, oid: event124.id, typo: 'e')
 gn2148 = GroupNews.create!(group_id: group32.id, news: user23.username + ' rsvp\'d for ' + event124.name, user_id: user23.id, oid: event124.id, typo: 'e')
 gn2149 = GroupNews.create!(group_id: group32.id, news: user88.username + ' rsvp\'d for ' + event124.name, user_id: user88.id, oid: event124.id, typo: 'e')
@@ -4638,7 +4638,7 @@ gn439 = GroupNews.create!(group_id: group33.id, news: user48.username + ' joined
 ge439 = GroupEnrollment.create!(group_id: group33.id, user_id: user48.id)
 gn440 = GroupNews.create!(group_id: group33.id, news: user70.username + ' joined the group', user_id: user70.id, oid: group33.id, typo: 'g')
 ge440 = GroupEnrollment.create!(group_id: group33.id, user_id: user70.id)
-event125= Event.create!(user_id: user21.id, group_id: group33.id, name: "Tricking Workshop at Twisters: Basic Combos & Skills", description: 'Learn to link together fundamental tricking skills to create dynamic acrobatic combos!', location: "Mountain View", start_time: DateTime.parse('2017-12-02 19:00'), end_time: DateTime.parse('2017-12-02 22:00'))
+event125= Event.create!(user_id: user21.id, group_id: group33.id, name: "Tricking Workshop at Twisters: Basic Combos & Skills", description: 'Learn to link together fundamental tricking skills to create dynamic acrobatic combos!', location: "Mountain View", start_time: DateTime.parse('2017-12-02 19:00 GMT-7'), end_time: DateTime.parse('2017-12-02 22:00 GMT-7'))
 gn2159 = GroupNews.create!(group_id: group33.id, news: user21.username + ' created the event ' + event125.name, user_id: user21.id, oid: event125.id, typo: 'e')
 gn2160 = GroupNews.create!(group_id: group33.id, news: user21.username + ' rsvp\'d for ' + event125.name, user_id: user21.id, oid: event125.id, typo: 'e')
 gn2161 = GroupNews.create!(group_id: group33.id, news: user70.username + ' rsvp\'d for ' + event125.name, user_id: user70.id, oid: event125.id, typo: 'e')
@@ -4666,7 +4666,7 @@ ee1391 = EventEnrollment.create!(user_id: user96.id, event_id: event125.id)
 ee1392 = EventEnrollment.create!(user_id: user88.id, event_id: event125.id)
 
 
-event126= Event.create!(user_id: user21.id, group_id: group33.id, name: "eDriftTrikes Demo Day", description: 'This will be an unhosted event but you can definitely catch me there for the first set of demos around 3-5pm! I\'ll give you more details as it comes closer.', location: "Richmond", start_time: DateTime.parse('2017-11-26 15:00'), end_time: DateTime.parse('2017-11-26 19:30'))
+event126= Event.create!(user_id: user21.id, group_id: group33.id, name: "eDriftTrikes Demo Day", description: 'This will be an unhosted event but you can definitely catch me there for the first set of demos around 3-5pm! I\'ll give you more details as it comes closer.', location: "Richmond", start_time: DateTime.parse('2017-11-26 15:00 GMT-7'), end_time: DateTime.parse('2017-11-26 19:30 GMT-7'))
 gn2171 = GroupNews.create!(group_id: group33.id, news: user21.username + ' created the event ' + event126.name, user_id: user21.id, oid: event126.id, typo: 'e')
 gn2172 = GroupNews.create!(group_id: group33.id, news: user21.username + ' rsvp\'d for ' + event126.name, user_id: user21.id, oid: event126.id, typo: 'e')
 gn2173 = GroupNews.create!(group_id: group33.id, news: user70.username + ' rsvp\'d for ' + event126.name, user_id: user70.id, oid: event126.id, typo: 'e')
@@ -4694,7 +4694,7 @@ ee1402 = EventEnrollment.create!(user_id: user96.id, event_id: event126.id)
 ee1403 = EventEnrollment.create!(user_id: user88.id, event_id: event126.id)
 
 
-event127= Event.create!(user_id: user21.id, group_id: group33.id, name: "Classroom Library Organization", description: 'The teachers need our help to organize the classroom libraries.  Dinner will be provided if you RSVP by 12pm on 8/30.', location: "Palo Alto", start_time: DateTime.parse('2017-11-03 11:00'), end_time: DateTime.parse('2017-11-03 18:30'))
+event127= Event.create!(user_id: user21.id, group_id: group33.id, name: "Classroom Library Organization", description: 'The teachers need our help to organize the classroom libraries.  Dinner will be provided if you RSVP by 12pm on 8/30.', location: "Palo Alto", start_time: DateTime.parse('2017-11-03 11:00 GMT-7'), end_time: DateTime.parse('2017-11-03 18:30 GMT-7'))
 gn2183 = GroupNews.create!(group_id: group33.id, news: user21.username + ' created the event ' + event127.name, user_id: user21.id, oid: event127.id, typo: 'e')
 gn2184 = GroupNews.create!(group_id: group33.id, news: user21.username + ' rsvp\'d for ' + event127.name, user_id: user21.id, oid: event127.id, typo: 'e')
 gn2185 = GroupNews.create!(group_id: group33.id, news: user70.username + ' rsvp\'d for ' + event127.name, user_id: user70.id, oid: event127.id, typo: 'e')
@@ -4746,7 +4746,7 @@ ge449 = GroupEnrollment.create!(group_id: group34.id, user_id: user80.id)
 gn450 = GroupNews.create!(group_id: group34.id, news: user81.username + ' joined the group', user_id: user81.id, oid: group34.id, typo: 'g')
 ge450 = GroupEnrollment.create!(group_id: group34.id, user_id: user81.id)
 
-event128= Event.create!(user_id: user36.id, group_id: group34.id, name: "Chinese Medicine and the Five Elements", description: 'Chinese Medicine is absolutely powerful. Come learn and understand Chinese Medicine in a way where you know how and when to use it. LeTa will also go over the Five Elements as a foundational tool for eating, business interactions and all relationships in general. Find out what Element you are!', location: "Santa Cruz", start_time: DateTime.parse('2017-09-25 09:00'), end_time: DateTime.parse('2017-09-25 13:30'))
+event128= Event.create!(user_id: user36.id, group_id: group34.id, name: "Chinese Medicine and the Five Elements", description: 'Chinese Medicine is absolutely powerful. Come learn and understand Chinese Medicine in a way where you know how and when to use it. LeTa will also go over the Five Elements as a foundational tool for eating, business interactions and all relationships in general. Find out what Element you are!', location: "Santa Cruz", start_time: DateTime.parse('2017-09-25 09:00 GMT-7'), end_time: DateTime.parse('2017-09-25 13:30 GMT-7'))
 gn2195 = GroupNews.create!(group_id: group34.id, news: user36.username + ' created the event ' + event128.name, user_id: user36.id, oid: event128.id, typo: 'e')
 gn2196 = GroupNews.create!(group_id: group34.id, news: user36.username + ' rsvp\'d for ' + event128.name, user_id: user36.id, oid: event128.id, typo: 'e')
 gn2197 = GroupNews.create!(group_id: group34.id, news: user81.username + ' rsvp\'d for ' + event128.name, user_id: user81.id, oid: event128.id, typo: 'e')
@@ -4772,7 +4772,7 @@ ee1422 = EventEnrollment.create!(user_id: user41.id, event_id: event128.id)
 ee1423 = EventEnrollment.create!(user_id: user56.id, event_id: event128.id)
 ee1424 = EventEnrollment.create!(user_id: user78.id, event_id: event128.id)
 ee1425 = EventEnrollment.create!(user_id: user70.id, event_id: event128.id)
-event129= Event.create!(user_id: user36.id, group_id: group15.id, name: "Outdoor Boot Camp", description: 'Here’s why you’ll never want to miss our class: Your trainer and group are waiting for you at the meeting location. You have a short period of time out of your day to go all out. You have paid upfront; you are committed. Your group has now become your team. You’re amazed at the level which you can now workout. Your body is changing!', location: "San Ramon", start_time: DateTime.parse('2017-11-19 13:00'), end_time: DateTime.parse('2017-11-19 16:30'))
+event129= Event.create!(user_id: user36.id, group_id: group15.id, name: "Outdoor Boot Camp", description: 'Here’s why you’ll never want to miss our class: Your trainer and group are waiting for you at the meeting location. You have a short period of time out of your day to go all out. You have paid upfront; you are committed. Your group has now become your team. You’re amazed at the level which you can now workout. Your body is changing!', location: "San Ramon", start_time: DateTime.parse('2017-11-19 13:00 GMT-7'), end_time: DateTime.parse('2017-11-19 16:30 GMT-7'))
 gn2207 = GroupNews.create!(group_id: group34.id, news: user36.username + ' created the event ' + event129.name, user_id: user36.id, oid: event129.id, typo: 'e')
 gn2208 = GroupNews.create!(group_id: group34.id, news: user36.username + ' rsvp\'d for ' + event129.name, user_id: user36.id, oid: event129.id, typo: 'e')
 gn2209 = GroupNews.create!(group_id: group34.id, news: user81.username + ' rsvp\'d for ' + event129.name, user_id: user81.id, oid: event129.id, typo: 'e')
@@ -4800,7 +4800,7 @@ ee1435 = EventEnrollment.create!(user_id: user78.id, event_id: event129.id)
 ee1436 = EventEnrollment.create!(user_id: user70.id, event_id: event129.id)
 
 
-event130= Event.create!(user_id: user36.id, group_id: group15.id, name: "Please join us for this believer\'s breakfast.", description: 'Please join us for this believer\'s breakfast.', location: "Daly City", start_time: DateTime.parse('2017-09-26 06:00'), end_time: DateTime.parse('2017-09-26 11:30'))
+event130= Event.create!(user_id: user36.id, group_id: group15.id, name: "Please join us for this believer\'s breakfast.", description: 'Please join us for this believer\'s breakfast.', location: "Daly City", start_time: DateTime.parse('2017-09-26 06:00 GMT-7'), end_time: DateTime.parse('2017-09-26 11:30 GMT-7'))
 gn2219 = GroupNews.create!(group_id: group34.id, news: user36.username + ' created the event ' + event130.name, user_id: user36.id, oid: event130.id, typo: 'e')
 gn2220 = GroupNews.create!(group_id: group34.id, news: user36.username + ' rsvp\'d for ' + event130.name, user_id: user36.id, oid: event130.id, typo: 'e')
 gn2221 = GroupNews.create!(group_id: group34.id, news: user81.username + ' rsvp\'d for ' + event130.name, user_id: user81.id, oid: event130.id, typo: 'e')
@@ -4851,7 +4851,7 @@ ge459 = GroupEnrollment.create!(group_id: group35.id, user_id: user30.id)
 gn460 = GroupNews.create!(group_id: group35.id, news: user66.username + ' joined the group', user_id: user66.id, oid: group35.id, typo: 'g')
 ge460 = GroupEnrollment.create!(group_id: group35.id, user_id: user66.id)
 
-event131= Event.create!(user_id: user37.id, group_id: group35.id, name: "Emeryville Marina Walk", description: 'We\'re going to meet at the Emeryville Marina Park (past the Marina building) at the end of Powell Street in Emeryville. We\'ll go to the Emeryville Public Market afterwards for coffee.', location: "Emeryville", start_time: DateTime.parse('2017-09-21 10:00'), end_time: DateTime.parse('2017-09-21 18:30'))
+event131= Event.create!(user_id: user37.id, group_id: group35.id, name: "Emeryville Marina Walk", description: 'We\'re going to meet at the Emeryville Marina Park (past the Marina building) at the end of Powell Street in Emeryville. We\'ll go to the Emeryville Public Market afterwards for coffee.', location: "Emeryville", start_time: DateTime.parse('2017-09-21 10:00 GMT-7'), end_time: DateTime.parse('2017-09-21 18:30 GMT-7'))
 gn2231 = GroupNews.create!(group_id: group35.id, news: user37.username + ' created the event ' + event131.name, user_id: user37.id, oid: event131.id, typo: 'e')
 gn2232 = GroupNews.create!(group_id: group35.id, news: user37.username + ' rsvp\'d for ' + event131.name, user_id: user37.id, oid: event131.id, typo: 'e')
 gn2233 = GroupNews.create!(group_id: group35.id, news: user66.username + ' rsvp\'d for ' + event131.name, user_id: user66.id, oid: event131.id, typo: 'e')
@@ -4879,7 +4879,7 @@ ee1457 = EventEnrollment.create!(user_id: user78.id, event_id: event131.id)
 ee1458 = EventEnrollment.create!(user_id: user70.id, event_id: event131.id)
 
 
-event132= Event.create!(user_id: user37.id, group_id: group35.id, name: "The Inner Dance Experience: A New Way To Meditate! (FREE)", description: 'Inner dance is a gentle and powerful practice of awakening to the wisdom of your subconscious mind and how it shows up in your life. As you create your reality with your body and experience it with your mind, inner dance brings clarity to what is truly happening inside of you and what is being created in the moment. Inner dance serves as a mirror, bringing together your past, present and future and shows the perfect reflection of who you really  are.', location: "Concord", start_time: DateTime.parse('2017-11-25 14:00'), end_time: DateTime.parse('2017-11-25 17:30'))
+event132= Event.create!(user_id: user37.id, group_id: group35.id, name: "The Inner Dance Experience: A New Way To Meditate! (FREE)", description: 'Inner dance is a gentle and powerful practice of awakening to the wisdom of your subconscious mind and how it shows up in your life. As you create your reality with your body and experience it with your mind, inner dance brings clarity to what is truly happening inside of you and what is being created in the moment. Inner dance serves as a mirror, bringing together your past, present and future and shows the perfect reflection of who you really  are.', location: "Concord", start_time: DateTime.parse('2017-11-25 14:00 GMT-7'), end_time: DateTime.parse('2017-11-25 17:30 GMT-7'))
 gn2243 = GroupNews.create!(group_id: group35.id, news: user37.username + ' created the event ' + event132.name, user_id: user37.id, oid: event132.id, typo: 'e')
 gn2244 = GroupNews.create!(group_id: group35.id, news: user37.username + ' rsvp\'d for ' + event132.name, user_id: user37.id, oid: event132.id, typo: 'e')
 gn2245 = GroupNews.create!(group_id: group35.id, news: user66.username + ' rsvp\'d for ' + event132.name, user_id: user66.id, oid: event132.id, typo: 'e')
@@ -4908,7 +4908,7 @@ ee1469 = EventEnrollment.create!(user_id: user70.id, event_id: event132.id)
 
 
 
-event133= Event.create!(user_id: user37.id, group_id: group35.id, name: "Saturday Volleyball 10:00-7:00", description: 'Saturday Volleyball 10:00-7:00', location: "Los Gatos", start_time: DateTime.parse('2017-12-18 10:00'), end_time: DateTime.parse('2017-12-18 19:00'))
+event133= Event.create!(user_id: user37.id, group_id: group35.id, name: "Saturday Volleyball 10:00-7:00", description: 'Saturday Volleyball 10:00-7:00', location: "Los Gatos", start_time: DateTime.parse('2017-12-18 10:00 GMT-7'), end_time: DateTime.parse('2017-12-18 19:00 GMT-7'))
 gn2255 = GroupNews.create!(group_id: group35.id, news: user37.username + ' created the event ' + event133.name, user_id: user37.id, oid: event133.id, typo: 'e')
 gn2256 = GroupNews.create!(group_id: group35.id, news: user37.username + ' rsvp\'d for ' + event133.name, user_id: user37.id, oid: event133.id, typo: 'e')
 gn2257 = GroupNews.create!(group_id: group35.id, news: user66.username + ' rsvp\'d for ' + event133.name, user_id: user66.id, oid: event133.id, typo: 'e')
@@ -4960,7 +4960,7 @@ ge469 = GroupEnrollment.create!(group_id: group36.id, user_id: user59.id)
 gn470 = GroupNews.create!(group_id: group36.id, news: user50.username + ' joined the group', user_id: user50.id, oid: group36.id, typo: 'g')
 ge470 = GroupEnrollment.create!(group_id: group36.id, user_id: user50.id)
 
-event134= Event.create!(user_id: user41.id, group_id: group36.id, name: "JPop Summit Festival", description: 'Meet fellow Anime Fans near you! Come to a local Anime Meetup for fun, friends and talk about your favorite Anime/Manga artists, shows and games. We attend conventions and JPop cultural festivals throughout the year.  Whatever interests you about Anime and Manga is welcomed here (people must be 18 years or older to attend and have an actual picture of themselves).', location: "San Jose", start_time: DateTime.parse('2017-10-21 09:00'), end_time: DateTime.parse('2017-10-21 23:30'))
+event134= Event.create!(user_id: user41.id, group_id: group36.id, name: "JPop Summit Festival", description: 'Meet fellow Anime Fans near you! Come to a local Anime Meetup for fun, friends and talk about your favorite Anime/Manga artists, shows and games. We attend conventions and JPop cultural festivals throughout the year.  Whatever interests you about Anime and Manga is welcomed here (people must be 18 years or older to attend and have an actual picture of themselves).', location: "San Jose", start_time: DateTime.parse('2017-10-21 09:00 GMT-7'), end_time: DateTime.parse('2017-10-21 23:30 GMT-7'))
 gn2267 = GroupNews.create!(group_id: group36.id, news: user41.username + ' created the event ' + event134.name, user_id: user41.id, oid: event134.id, typo: 'e')
 gn2268 = GroupNews.create!(group_id: group36.id, news: user41.username + ' rsvp\'d for ' + event134.name, user_id: user41.id, oid: event134.id, typo: 'e')
 gn2269 = GroupNews.create!(group_id: group36.id, news: user50.username + ' rsvp\'d for ' + event134.name, user_id: user50.id, oid: event134.id, typo: 'e')
@@ -4988,7 +4988,7 @@ ee1490 = EventEnrollment.create!(user_id: user63.id, event_id: event134.id)
 ee1491 = EventEnrollment.create!(user_id: user66.id, event_id: event134.id)
 
 
-event135= Event.create!(user_id: user41.id, group_id: group36.id, name: "The Power of Play - Using Play at Work to Build Teams", description: 'Does a group play because they are a team? Or are they a team because they play?', location: "Redwood City", start_time: DateTime.parse('2017-10-17 14:00'), end_time: DateTime.parse('2017-10-17 17:30'))
+event135= Event.create!(user_id: user41.id, group_id: group36.id, name: "The Power of Play - Using Play at Work to Build Teams", description: 'Does a group play because they are a team? Or are they a team because they play?', location: "Redwood City", start_time: DateTime.parse('2017-10-17 14:00 GMT-7'), end_time: DateTime.parse('2017-10-17 17:30 GMT-7'))
 gn2279 = GroupNews.create!(group_id: group36.id, news: user41.username + ' created the event ' + event135.name, user_id: user41.id, oid: event135.id, typo: 'e')
 gn2280 = GroupNews.create!(group_id: group36.id, news: user41.username + ' rsvp\'d for ' + event135.name, user_id: user41.id, oid: event135.id, typo: 'e')
 gn2281 = GroupNews.create!(group_id: group36.id, news: user50.username + ' rsvp\'d for ' + event135.name, user_id: user50.id, oid: event135.id, typo: 'e')
@@ -5016,7 +5016,7 @@ ee1501 = EventEnrollment.create!(user_id: user63.id, event_id: event135.id)
 ee1502 = EventEnrollment.create!(user_id: user66.id, event_id: event135.id)
 
 
-event136= Event.create!(user_id: user41.id, group_id: group36.id, name: "Startup Tea Talk: featuring two amazing speakers", description: 'Startup Tea Talk” is set to inspire the hundreds of thoughts founders world wide and be a great stage to deliver your message to the world.', location: "Morgan Hill", start_time: DateTime.parse('2017-10-26 09:00'), end_time: DateTime.parse('2017-10-26 17:00'))
+event136= Event.create!(user_id: user41.id, group_id: group36.id, name: "Startup Tea Talk: featuring two amazing speakers", description: 'Startup Tea Talk” is set to inspire the hundreds of thoughts founders world wide and be a great stage to deliver your message to the world.', location: "Morgan Hill", start_time: DateTime.parse('2017-10-26 09:00 GMT-7'), end_time: DateTime.parse('2017-10-26 17:00 GMT-7'))
 gn2291 = GroupNews.create!(group_id: group36.id, news: user41.username + ' created the event ' + event136.name, user_id: user41.id, oid: event136.id, typo: 'e')
 gn2292 = GroupNews.create!(group_id: group36.id, news: user41.username + ' rsvp\'d for ' + event136.name, user_id: user41.id, oid: event136.id, typo: 'e')
 gn2293 = GroupNews.create!(group_id: group36.id, news: user50.username + ' rsvp\'d for ' + event136.name, user_id: user50.id, oid: event136.id, typo: 'e')
@@ -5068,7 +5068,7 @@ ge479 = GroupEnrollment.create!(group_id: group37.id, user_id: user74.id)
 gn480 = GroupNews.create!(group_id: group37.id, news: user89.username + ' joined the group', user_id: user89.id, oid: group37.id, typo: 'g')
 ge480 = GroupEnrollment.create!(group_id: group37.id, user_id: user89.id)
 
-event137= Event.create!(user_id: user44.id, group_id: group37.id, name: "Future of Bitcoin", description: 'Join us for a panel of experts on the future for Bitcoin.', location: "San Francisco", start_time: DateTime.parse('2017-10-30 18:00'), end_time: DateTime.parse('2017-10-30 20:30'))
+event137= Event.create!(user_id: user44.id, group_id: group37.id, name: "Future of Bitcoin", description: 'Join us for a panel of experts on the future for Bitcoin.', location: "San Francisco", start_time: DateTime.parse('2017-10-30 18:00 GMT-7'), end_time: DateTime.parse('2017-10-30 20:30 GMT-7'))
 gn2303 = GroupNews.create!(group_id: group37.id, news: user44.username + ' created the event ' + event137.name, user_id: user44.id, oid: event137.id, typo: 'e')
 gn2304 = GroupNews.create!(group_id: group37.id, news: user44.username + ' rsvp\'d for ' + event137.name, user_id: user44.id, oid: event137.id, typo: 'e')
 gn2305 = GroupNews.create!(group_id: group37.id, news: user89.username + ' rsvp\'d for ' + event137.name, user_id: user89.id, oid: event137.id, typo: 'e')
@@ -5098,7 +5098,7 @@ ee1524 = EventEnrollment.create!(user_id: user50.id, event_id: event137.id)
 
 
 
-event138= Event.create!(user_id: user44.id, group_id: group37.id, name: "National Night Run", description: 'The Night Nation Run is the World’s first Running Music Festival. A musical voyage filled with live music, lights, lasers, all set to the latest in Electronic Dance Music. Run, walk, skip or dance your way through this electrifying adventure with music carrying you every step. Your journey will take you through an illuminated racecourse to multiple on course DJ stages, finishing with an explosive main stage after party featuring top EDM DJ’s and special guest celebrity performers.', location: "Santa Clara", start_time: DateTime.parse('2017-11-11 14:00'), end_time: DateTime.parse('2017-11-11 20:30'))
+event138= Event.create!(user_id: user44.id, group_id: group37.id, name: "National Night Run", description: 'The Night Nation Run is the World’s first Running Music Festival. A musical voyage filled with live music, lights, lasers, all set to the latest in Electronic Dance Music. Run, walk, skip or dance your way through this electrifying adventure with music carrying you every step. Your journey will take you through an illuminated racecourse to multiple on course DJ stages, finishing with an explosive main stage after party featuring top EDM DJ’s and special guest celebrity performers.', location: "Santa Clara", start_time: DateTime.parse('2017-11-11 14:00 GMT-7'), end_time: DateTime.parse('2017-11-11 20:30 GMT-7'))
 gn2315 = GroupNews.create!(group_id: group37.id, news: user44.username + ' created the event ' + event138.name, user_id: user44.id, oid: event138.id, typo: 'e')
 gn2316 = GroupNews.create!(group_id: group37.id, news: user44.username + ' rsvp\'d for ' + event138.name, user_id: user44.id, oid: event138.id, typo: 'e')
 gn2317 = GroupNews.create!(group_id: group37.id, news: user89.username + ' rsvp\'d for ' + event138.name, user_id: user89.id, oid: event138.id, typo: 'e')
@@ -5126,7 +5126,7 @@ ee1534 = EventEnrollment.create!(user_id: user55.id, event_id: event138.id)
 ee1535 = EventEnrollment.create!(user_id: user50.id, event_id: event138.id)
 
 
-event139= Event.create!(user_id: user44.id, group_id: group37.id, name: "Entrepreneur Mixer and Happy Hour", description: 'Are you looking for co-founders, partners, core team members, advisors for your start-up?', location: "Campbell", start_time: DateTime.parse('2017-12-12 19:00'), end_time: DateTime.parse('2017-12-12 23:30'))
+event139= Event.create!(user_id: user44.id, group_id: group37.id, name: "Entrepreneur Mixer and Happy Hour", description: 'Are you looking for co-founders, partners, core team members, advisors for your start-up?', location: "Campbell", start_time: DateTime.parse('2017-12-12 19:00 GMT-7'), end_time: DateTime.parse('2017-12-12 23:30 GMT-7'))
 gn2327 = GroupNews.create!(group_id: group37.id, news: user44.username + ' created the event ' + event139.name, user_id: user44.id, oid: event139.id, typo: 'e')
 gn2328 = GroupNews.create!(group_id: group37.id, news: user44.username + ' rsvp\'d for ' + event139.name, user_id: user44.id, oid: event139.id, typo: 'e')
 gn2329 = GroupNews.create!(group_id: group37.id, news: user89.username + ' rsvp\'d for ' + event139.name, user_id: user89.id, oid: event139.id, typo: 'e')
@@ -5177,7 +5177,7 @@ gn489 = GroupNews.create!(group_id: group38.id, news: user98.username + ' joined
 ge489 = GroupEnrollment.create!(group_id: group38.id, user_id: user98.id)
 gn490 = GroupNews.create!(group_id: group38.id, news: user88.username + ' joined the group', user_id: user88.id, oid: group38.id, typo: 'g')
 ge490 = GroupEnrollment.create!(group_id: group38.id, user_id: user88.id)
-event140= Event.create!(user_id: user40.id, group_id: group38.id, name: "Spikeball volleyball and Food Trucks at North Park San Jose", description: 'On Sundays food trucks park right in front a huge patch of grass near Moitozo Park in San Jose from 11:30am to 2:30pm. We will be setting up spikeball nets at 11am and play until 2pm. Will also have a volleyball net setup as well.', location: "Sunnyvale", start_time: DateTime.parse('2017-09-13 11:00'), end_time: DateTime.parse('2017-09-13 16:30'))
+event140= Event.create!(user_id: user40.id, group_id: group38.id, name: "Spikeball volleyball and Food Trucks at North Park San Jose", description: 'On Sundays food trucks park right in front a huge patch of grass near Moitozo Park in San Jose from 11:30am to 2:30pm. We will be setting up spikeball nets at 11am and play until 2pm. Will also have a volleyball net setup as well.', location: "Sunnyvale", start_time: DateTime.parse('2017-09-13 11:00 GMT-7'), end_time: DateTime.parse('2017-09-13 16:30 GMT-7'))
 
 gn2339 = GroupNews.create!(group_id: group38.id, news: user40.username + ' created the event ' + event140.name, user_id: user40.id, oid: event140.id, typo: 'e')
 gn2340 = GroupNews.create!(group_id: group38.id, news: user40.username + ' rsvp\'d for ' + event140.name, user_id: user40.id, oid: event140.id, typo: 'e')
@@ -5208,7 +5208,7 @@ ee1557 = EventEnrollment.create!(user_id: user89.id, event_id: event140.id)
 
 
 
-event141= Event.create!(user_id: user40.id, group_id: group38.id, name: "Museum Musings (Rosicrucian Egyptian Museum)", description: 'The largest collection of Egyptian mummies and artifacts in the West Coast is tucked away in the Rose Garden neighborhood of San Jose, at the Rosicrucian Egyptian Museum ', location: "San Jose", start_time: DateTime.parse('2017-11-19 13:00'), end_time: DateTime.parse('2017-11-19 14:30'))
+event141= Event.create!(user_id: user40.id, group_id: group38.id, name: "Museum Musings (Rosicrucian Egyptian Museum)", description: 'The largest collection of Egyptian mummies and artifacts in the West Coast is tucked away in the Rose Garden neighborhood of San Jose, at the Rosicrucian Egyptian Museum ', location: "San Jose", start_time: DateTime.parse('2017-11-19 13:00 GMT-7'), end_time: DateTime.parse('2017-11-19 14:30 GMT-7'))
 gn2351 = GroupNews.create!(group_id: group38.id, news: user40.username + ' created the event ' + event141.name, user_id: user40.id, oid: event141.id, typo: 'e')
 gn2352 = GroupNews.create!(group_id: group38.id, news: user40.username + ' rsvp\'d for ' + event141.name, user_id: user40.id, oid: event141.id, typo: 'e')
 gn2353 = GroupNews.create!(group_id: group38.id, news: user88.username + ' rsvp\'d for ' + event141.name, user_id: user88.id, oid: event141.id, typo: 'e')
@@ -5236,7 +5236,7 @@ ee1567 = EventEnrollment.create!(user_id: user92.id, event_id: event141.id)
 ee1568 = EventEnrollment.create!(user_id: user89.id, event_id: event141.id)
 
 
-event142= Event.create!(user_id: user40.id, group_id: group38.id, name: "Monthly Matinee (Alien: Covenant)", description: 'I watch a lot of movies. Sometimes, I think they\'re worth seeing in theaters. I opt for weekend morning/matinee showings because they\'re cheaper and less crowded. Feel free to join me. I will arrive early and hang out at the bottom of the escalators in front of Coldstone. At 15 minutes prior to the listed showtime, I will enter the theater to take my seat whether or not anyone else shows up.', location: "Cupertino", start_time: DateTime.parse('2017-12-08 10:00'), end_time: DateTime.parse('2017-12-08 12:30'))
+event142= Event.create!(user_id: user40.id, group_id: group38.id, name: "Monthly Matinee (Alien: Covenant)", description: 'I watch a lot of movies. Sometimes, I think they\'re worth seeing in theaters. I opt for weekend morning/matinee showings because they\'re cheaper and less crowded. Feel free to join me. I will arrive early and hang out at the bottom of the escalators in front of Coldstone. At 15 minutes prior to the listed showtime, I will enter the theater to take my seat whether or not anyone else shows up.', location: "Cupertino", start_time: DateTime.parse('2017-12-08 10:00 GMT-7'), end_time: DateTime.parse('2017-12-08 12:30 GMT-7'))
 gn2363 = GroupNews.create!(group_id: group38.id, news: user40.username + ' created the event ' + event142.name, user_id: user40.id, oid: event142.id, typo: 'e')
 gn2364 = GroupNews.create!(group_id: group38.id, news: user40.username + ' rsvp\'d for ' + event142.name, user_id: user40.id, oid: event142.id, typo: 'e')
 gn2365 = GroupNews.create!(group_id: group38.id, news: user88.username + ' rsvp\'d for ' + event142.name, user_id: user88.id, oid: event142.id, typo: 'e')
@@ -5288,7 +5288,7 @@ ge499 = GroupEnrollment.create!(group_id: group39.id, user_id: user21.id)
 gn500 = GroupNews.create!(group_id: group39.id, news: user58.username + ' joined the group', user_id: user58.id, oid: group39.id, typo: 'g')
 ge500 = GroupEnrollment.create!(group_id: group39.id, user_id: user58.id)
 
-event143= Event.create!(user_id: user26.id, group_id: group39.id, name: "Wildflower Expo", description: 'Now that hiking season is in full swing and the flowers are blooming, here\'s an awesome FREE chance to enhance your next outdoor adventure by familiarizing yourself with the broad diversity of California\'s native flora!', location: "Saratoga", start_time: DateTime.parse('2017-10-15 09:00'), end_time: DateTime.parse('2017-10-15 14:30'))
+event143= Event.create!(user_id: user26.id, group_id: group39.id, name: "Wildflower Expo", description: 'Now that hiking season is in full swing and the flowers are blooming, here\'s an awesome FREE chance to enhance your next outdoor adventure by familiarizing yourself with the broad diversity of California\'s native flora!', location: "Saratoga", start_time: DateTime.parse('2017-10-15 09:00 GMT-7'), end_time: DateTime.parse('2017-10-15 14:30 GMT-7'))
 gn2375 = GroupNews.create!(group_id: group39.id, news: user26.username + ' created the event ' + event143.name, user_id: user26.id, oid: event143.id, typo: 'e')
 gn2376 = GroupNews.create!(group_id: group39.id, news: user26.username + ' rsvp\'d for ' + event143.name, user_id: user26.id, oid: event143.id, typo: 'e')
 gn2377 = GroupNews.create!(group_id: group39.id, news: user58.username + ' rsvp\'d for ' + event143.name, user_id: user58.id, oid: event143.id, typo: 'e')
@@ -5316,7 +5316,7 @@ ee1589 = EventEnrollment.create!(user_id: user85.id, event_id: event143.id)
 ee1590 = EventEnrollment.create!(user_id: user88.id, event_id: event143.id)
 
 
-event144= Event.create!(user_id: user26.id, group_id: group39.id, name: "Offbeat Movie Night (Ruby Sparks) + Potluck", description: 'Looking to expand your movie repertoire? Join us for an "offbeat" movie night!', location: "Gilroy", start_time: DateTime.parse('2017-11-18 17:00'), end_time: DateTime.parse('2017-11-18 20:30'))
+event144= Event.create!(user_id: user26.id, group_id: group39.id, name: "Offbeat Movie Night (Ruby Sparks) + Potluck", description: 'Looking to expand your movie repertoire? Join us for an "offbeat" movie night!', location: "Gilroy", start_time: DateTime.parse('2017-11-18 17:00 GMT-7'), end_time: DateTime.parse('2017-11-18 20:30 GMT-7'))
 gn2387 = GroupNews.create!(group_id: group39.id, news: user26.username + ' created the event ' + event144.name, user_id: user26.id, oid: event144.id, typo: 'e')
 gn2388 = GroupNews.create!(group_id: group39.id, news: user26.username + ' rsvp\'d for ' + event144.name, user_id: user26.id, oid: event144.id, typo: 'e')
 gn2389 = GroupNews.create!(group_id: group39.id, news: user58.username + ' rsvp\'d for ' + event144.name, user_id: user58.id, oid: event144.id, typo: 'e')
@@ -5345,7 +5345,7 @@ ee1601 = EventEnrollment.create!(user_id: user88.id, event_id: event144.id)
 
 
 event145= Event.create!(user_id: user26.id, group_id: group39.id, name: "Offbeat Family Feud: Our Version of the Game Show", description: 'SURVEY SAYS: It\'s time for Offbeat\'s first game show!
-Come play or come spectate', location: "Concord", start_time: DateTime.parse('2017-10-10 17:00'), end_time: DateTime.parse('2017-10-10 20:30'))
+Come play or come spectate', location: "Concord", start_time: DateTime.parse('2017-10-10 17:00 GMT-7'), end_time: DateTime.parse('2017-10-10 20:30 GMT-7'))
 gn2399 = GroupNews.create!(group_id: group39.id, news: user26.username + ' created the event ' + event145.name, user_id: user26.id, oid: event145.id, typo: 'e')
 gn2400 = GroupNews.create!(group_id: group39.id, news: user26.username + ' rsvp\'d for ' + event145.name, user_id: user26.id, oid: event145.id, typo: 'e')
 gn2401 = GroupNews.create!(group_id: group39.id, news: user58.username + ' rsvp\'d for ' + event145.name, user_id: user58.id, oid: event145.id, typo: 'e')
@@ -5398,7 +5398,7 @@ ge509 = GroupEnrollment.create!(group_id: group40.id, user_id: user13.id)
 gn510 = GroupNews.create!(group_id: group40.id, news: user77.username + ' joined the group', user_id: user77.id, oid: group40.id, typo: 'g')
 ge510 = GroupEnrollment.create!(group_id: group40.id, user_id: user77.id)
 
-event146= Event.create!(user_id: user22.id, group_id: group40.id, name: "Visit the 50th Northern California Cherry Blossom Festival", description: 'Let us go to the 50th Northern California Cherry Blossom Festival this Sunday to see some cultural shows and the Grand Parade!', location: "San Francisco", start_time: DateTime.parse('2017-09-28 09:00'), end_time: DateTime.parse('2017-09-28 17:30'))
+event146= Event.create!(user_id: user22.id, group_id: group40.id, name: "Visit the 50th Northern California Cherry Blossom Festival", description: 'Let us go to the 50th Northern California Cherry Blossom Festival this Sunday to see some cultural shows and the Grand Parade!', location: "San Francisco", start_time: DateTime.parse('2017-09-28 09:00 GMT-7'), end_time: DateTime.parse('2017-09-28 17:30 GMT-7'))
 gn2411 = GroupNews.create!(group_id: group40.id, news: user22.username + ' created the event ' + event146.name, user_id: user22.id, oid: event146.id, typo: 'e')
 gn2412 = GroupNews.create!(group_id: group40.id, news: user22.username + ' rsvp\'d for ' + event146.name, user_id: user22.id, oid: event146.id, typo: 'e')
 gn2413 = GroupNews.create!(group_id: group40.id, news: user77.username + ' rsvp\'d for ' + event146.name, user_id: user77.id, oid: event146.id, typo: 'e')
@@ -5425,7 +5425,7 @@ ee1621 = EventEnrollment.create!(user_id: user85.id, event_id: event146.id)
 ee1622 = EventEnrollment.create!(user_id: user61.id, event_id: event146.id)
 ee1623 = EventEnrollment.create!(user_id: user58.id, event_id: event146.id)
 
-event147= Event.create!(user_id: user22.id, group_id: group40.id, name: "Save this Date for an Awesome Agile Evening!", description: 'Save this Date for an Awesome Agile Evening!', location: "San Jose", start_time: DateTime.parse('2017-10-01 19:00'), end_time: DateTime.parse('2017-10-01 22:30'))
+event147= Event.create!(user_id: user22.id, group_id: group40.id, name: "Save this Date for an Awesome Agile Evening!", description: 'Save this Date for an Awesome Agile Evening!', location: "San Jose", start_time: DateTime.parse('2017-10-01 19:00 GMT-7'), end_time: DateTime.parse('2017-10-01 22:30 GMT-7'))
 gn2423 = GroupNews.create!(group_id: group40.id, news: user22.username + ' created the event ' + event147.name, user_id: user22.id, oid: event147.id, typo: 'e')
 gn2424 = GroupNews.create!(group_id: group40.id, news: user22.username + ' rsvp\'d for ' + event147.name, user_id: user22.id, oid: event147.id, typo: 'e')
 gn2425 = GroupNews.create!(group_id: group40.id, news: user77.username + ' rsvp\'d for ' + event147.name, user_id: user77.id, oid: event147.id, typo: 'e')
@@ -5453,7 +5453,7 @@ ee1633 = EventEnrollment.create!(user_id: user61.id, event_id: event147.id)
 ee1634 = EventEnrollment.create!(user_id: user58.id, event_id: event147.id)
 
 
-event148= Event.create!(user_id: user22.id, group_id: group40.id, name: "Saturday San Jose/Campbell Pick-Up Soccer 9:30 AM at John Morgan Park", description: 'Time again for Pick-Up Soccer at John D. Morgan Park! ', location: "Campbell", start_time: DateTime.parse('2017-11-04 09:00'), end_time: DateTime.parse('2017-11-04 15:30'))
+event148= Event.create!(user_id: user22.id, group_id: group40.id, name: "Saturday San Jose/Campbell Pick-Up Soccer 9:30 AM at John Morgan Park", description: 'Time again for Pick-Up Soccer at John D. Morgan Park! ', location: "Campbell", start_time: DateTime.parse('2017-11-04 09:00 GMT-7'), end_time: DateTime.parse('2017-11-04 15:30 GMT-7'))
 gn2435 = GroupNews.create!(group_id: group40.id, news: user22.username + ' created the event ' + event148.name, user_id: user22.id, oid: event148.id, typo: 'e')
 gn2436 = GroupNews.create!(group_id: group40.id, news: user22.username + ' rsvp\'d for ' + event148.name, user_id: user22.id, oid: event148.id, typo: 'e')
 gn2437 = GroupNews.create!(group_id: group40.id, news: user77.username + ' rsvp\'d for ' + event148.name, user_id: user77.id, oid: event148.id, typo: 'e')
@@ -5506,7 +5506,7 @@ ge519 = GroupEnrollment.create!(group_id: group41.id, user_id: user25.id)
 gn520 = GroupNews.create!(group_id: group41.id, news: user70.username + ' joined the group', user_id: user70.id, oid: group41.id, typo: 'g')
 ge520 = GroupEnrollment.create!(group_id: group41.id, user_id: user70.id)
 
-event149= Event.create!(user_id: user28.id, group_id: group41.id, name: "Hack Night — Building a weekly weather report", description: 'We’ll be building a weekly weather report that uses geolocation to report your local weather! ', location: "Palo Alto", start_time: DateTime.parse('2017-09-29 18:00'), end_time: DateTime.parse('2017-09-29 22:30'))
+event149= Event.create!(user_id: user28.id, group_id: group41.id, name: "Hack Night — Building a weekly weather report", description: 'We’ll be building a weekly weather report that uses geolocation to report your local weather! ', location: "Palo Alto", start_time: DateTime.parse('2017-09-29 18:00 GMT-7'), end_time: DateTime.parse('2017-09-29 22:30 GMT-7'))
 gn2447 = GroupNews.create!(group_id: group41.id, news: user28.username + ' created the event ' + event149.name, user_id: user28.id, oid: event149.id, typo: 'e')
 gn2448 = GroupNews.create!(group_id: group41.id, news: user28.username + ' rsvp\'d for ' + event149.name, user_id: user28.id, oid: event149.id, typo: 'e')
 gn2449 = GroupNews.create!(group_id: group41.id, news: user70.username + ' rsvp\'d for ' + event149.name, user_id: user70.id, oid: event149.id, typo: 'e')
@@ -5534,7 +5534,7 @@ ee1655 = EventEnrollment.create!(user_id: user82.id, event_id: event149.id)
 ee1656 = EventEnrollment.create!(user_id: user77.id, event_id: event149.id)
 
 
-event150= Event.create!(user_id: user28.id, group_id: group41.id, name: "Volunteer to Assemble Bikes for Kids (Big Bike Build)", description: 'We will be volunteering as a team to assemble bicycles. Big Bike Build is an annual event hosted by TurningWheels for Kids. TWFK\'s mission is to distribute bicycles for the holiday as well as year round focusing on preventing childhood obesity and supporting low-income families.', location: 'Concord', start_time: DateTime.parse('2017-12-01 08:00'), end_time: DateTime.parse('2017-12-01 14:30'))
+event150= Event.create!(user_id: user28.id, group_id: group41.id, name: "Volunteer to Assemble Bikes for Kids (Big Bike Build)", description: 'We will be volunteering as a team to assemble bicycles. Big Bike Build is an annual event hosted by TurningWheels for Kids. TWFK\'s mission is to distribute bicycles for the holiday as well as year round focusing on preventing childhood obesity and supporting low-income families.', location: 'Concord', start_time: DateTime.parse('2017-12-01 08:00 GMT-7'), end_time: DateTime.parse('2017-12-01 14:30 GMT-7'))
 
 gn2459 = GroupNews.create!(group_id: group41.id, news: user28.username + ' created the event ' + event150.name, user_id: user28.id, oid: event150.id, typo: 'e')
 gn2460 = GroupNews.create!(group_id: group41.id, news: user28.username + ' rsvp\'d for ' + event150.name, user_id: user28.id, oid: event150.id, typo: 'e')
@@ -5562,7 +5562,7 @@ ee1665 = EventEnrollment.create!(user_id: user81.id, event_id: event150.id)
 ee1666 = EventEnrollment.create!(user_id: user82.id, event_id: event150.id)
 ee1667 = EventEnrollment.create!(user_id: user77.id, event_id: event150.id)
 
-event151= Event.create!(user_id: user28.id, group_id: group41.id, name: "Riverview Park Uni Social/Beginner Meetup (Need Loaner Unicycle)", description: 'Any skill level is welcome even if you\'ve never been on a unicycle before.', location: "Milpitas", start_time: DateTime.parse('2017-12-03 09:00'), end_time: DateTime.parse('2017-12-03 17:30'))
+event151= Event.create!(user_id: user28.id, group_id: group41.id, name: "Riverview Park Uni Social/Beginner Meetup (Need Loaner Unicycle)", description: 'Any skill level is welcome even if you\'ve never been on a unicycle before.', location: "Milpitas", start_time: DateTime.parse('2017-12-03 09:00 GMT-7'), end_time: DateTime.parse('2017-12-03 17:30 GMT-7'))
 gn2471 = GroupNews.create!(group_id: group41.id, news: user28.username + ' created the event ' + event151.name, user_id: user28.id, oid: event151.id, typo: 'e')
 gn2472 = GroupNews.create!(group_id: group41.id, news: user28.username + ' rsvp\'d for ' + event151.name, user_id: user28.id, oid: event151.id, typo: 'e')
 gn2473 = GroupNews.create!(group_id: group41.id, news: user70.username + ' rsvp\'d for ' + event151.name, user_id: user70.id, oid: event151.id, typo: 'e')
@@ -5614,7 +5614,7 @@ gn529 = GroupNews.create!(group_id: group42.id, news: user56.username + ' joined
 ge529 = GroupEnrollment.create!(group_id: group42.id, user_id: user56.id)
 gn530 = GroupNews.create!(group_id: group42.id, news: user68.username + ' joined the group', user_id: user68.id, oid: group42.id, typo: 'g')
 ge530 = GroupEnrollment.create!(group_id: group42.id, user_id: user68.id)
-event152= Event.create!(user_id: user31.id, group_id: group42.id, name: "Heroes & Villains Day", description: 'Heroes & Villains Day 1', location: "San Jose", start_time: DateTime.parse('2017-11-06 09:00'), end_time: DateTime.parse('2017-11-06 17:30'))
+event152= Event.create!(user_id: user31.id, group_id: group42.id, name: "Heroes & Villains Day", description: 'Heroes & Villains Day 1', location: "San Jose", start_time: DateTime.parse('2017-11-06 09:00 GMT-7'), end_time: DateTime.parse('2017-11-06 17:30 GMT-7'))
 gn2483 = GroupNews.create!(group_id: group42.id, news: user31.username + ' created the event ' + event152.name, user_id: user31.id, oid: event152.id, typo: 'e')
 gn2484 = GroupNews.create!(group_id: group42.id, news: user31.username + ' rsvp\'d for ' + event152.name, user_id: user31.id, oid: event152.id, typo: 'e')
 gn2485 = GroupNews.create!(group_id: group42.id, news: user68.username + ' rsvp\'d for ' + event152.name, user_id: user68.id, oid: event152.id, typo: 'e')
@@ -5642,7 +5642,7 @@ ee1688 = EventEnrollment.create!(user_id: user7.id, event_id: event152.id)
 ee1689 = EventEnrollment.create!(user_id: user70.id, event_id: event152.id)
 
 
-event153= Event.create!(user_id: user31.id, group_id: group42.id, name: "Heroes & Villains Day", description: 'Heroes & Villains Day 2', location: "San Jose", start_time: DateTime.parse('2017-12-07 09:00'), end_time: DateTime.parse('2017-11-07 17:30'))
+event153= Event.create!(user_id: user31.id, group_id: group42.id, name: "Heroes & Villains Day", description: 'Heroes & Villains Day 2', location: "San Jose", start_time: DateTime.parse('2017-12-07 09:00 GMT-7'), end_time: DateTime.parse('2017-11-07 17:30 GMT-7'))
 gn2495 = GroupNews.create!(group_id: group42.id, news: user31.username + ' created the event ' + event153.name, user_id: user31.id, oid: event153.id, typo: 'e')
 gn2496 = GroupNews.create!(group_id: group42.id, news: user31.username + ' rsvp\'d for ' + event153.name, user_id: user31.id, oid: event153.id, typo: 'e')
 gn2497 = GroupNews.create!(group_id: group42.id, news: user68.username + ' rsvp\'d for ' + event153.name, user_id: user68.id, oid: event153.id, typo: 'e')
@@ -5670,7 +5670,7 @@ ee1699 = EventEnrollment.create!(user_id: user7.id, event_id: event153.id)
 ee1700 = EventEnrollment.create!(user_id: user70.id, event_id: event153.id)
 
 
-event154= Event.create!(user_id: user31.id, group_id: group42.id, name: "Silicon Valley ImprovMasters Meeting", description: 'Looking for a safe place to improve how you think & speak on your feet?', location: "Fremont", start_time: DateTime.parse('2017-12-05 18:00'), end_time: DateTime.parse('2017-12-05 20:30'))
+event154= Event.create!(user_id: user31.id, group_id: group42.id, name: "Silicon Valley ImprovMasters Meeting", description: 'Looking for a safe place to improve how you think & speak on your feet?', location: "Fremont", start_time: DateTime.parse('2017-12-05 18:00 GMT-7'), end_time: DateTime.parse('2017-12-05 20:30 GMT-7'))
 gn2507 = GroupNews.create!(group_id: group42.id, news: user31.username + ' created the event ' + event154.name, user_id: user31.id, oid: event154.id, typo: 'e')
 gn2508 = GroupNews.create!(group_id: group42.id, news: user31.username + ' rsvp\'d for ' + event154.name, user_id: user31.id, oid: event154.id, typo: 'e')
 gn2509 = GroupNews.create!(group_id: group42.id, news: user68.username + ' rsvp\'d for ' + event154.name, user_id: user68.id, oid: event154.id, typo: 'e')
@@ -5721,7 +5721,7 @@ gn539 = GroupNews.create!(group_id: group43.id, news: user47.username + ' joined
 ge539 = GroupEnrollment.create!(group_id: group43.id, user_id: user47.id)
 gn540 = GroupNews.create!(group_id: group43.id, news: user74.username + ' joined the group', user_id: user74.id, oid: group43.id, typo: 'g')
 ge540 = GroupEnrollment.create!(group_id: group43.id, user_id: user74.id)
-event155= Event.create!(user_id: user32.id, group_id: group43.id, name: "SV Agile Lean Coffee meetup", description: 'This group has a slack team for members to support each others and share knowledge, job leads, interview question & resources.', location: "San Jose", start_time: DateTime.parse('2017-12-05 18:00'), end_time: DateTime.parse('2017-12-05 21:30'))
+event155= Event.create!(user_id: user32.id, group_id: group43.id, name: "SV Agile Lean Coffee meetup", description: 'This group has a slack team for members to support each others and share knowledge, job leads, interview question & resources.', location: "San Jose", start_time: DateTime.parse('2017-12-05 18:00 GMT-7'), end_time: DateTime.parse('2017-12-05 21:30 GMT-7'))
 
 gn2519 = GroupNews.create!(group_id: group43.id, news: user32.username + ' created the event ' + event155.name, user_id: user32.id, oid: event155.id, typo: 'e')
 gn2520 = GroupNews.create!(group_id: group43.id, news: user32.username + ' rsvp\'d for ' + event155.name, user_id: user32.id, oid: event155.id, typo: 'e')
@@ -5750,7 +5750,7 @@ ee1721 = EventEnrollment.create!(user_id: user85.id, event_id: event155.id)
 ee1722 = EventEnrollment.create!(user_id: user68.id, event_id: event155.id)
 
 
-event156= Event.create!(user_id: user32.id, group_id: group43.id, name: "Mountain View Arts & Wine", description: 'Outreach booth for the Libertarian Party. Volunteers needed to staff the booth 11am-7pm Saturday and 10am-6pm Sunday.', location: "Mountain View", start_time: DateTime.parse('2017-11-01 09:00'), end_time: DateTime.parse('2017-11-01 17:30'))
+event156= Event.create!(user_id: user32.id, group_id: group43.id, name: "Mountain View Arts & Wine", description: 'Outreach booth for the Libertarian Party. Volunteers needed to staff the booth 11am-7pm Saturday and 10am-6pm Sunday.', location: "Mountain View", start_time: DateTime.parse('2017-11-01 09:00 GMT-7'), end_time: DateTime.parse('2017-11-01 17:30 GMT-7'))
 gn2531 = GroupNews.create!(group_id: group43.id, news: user32.username + ' created the event ' + event156.name, user_id: user32.id, oid: event156.id, typo: 'e')
 gn2532 = GroupNews.create!(group_id: group43.id, news: user32.username + ' rsvp\'d for ' + event156.name, user_id: user32.id, oid: event156.id, typo: 'e')
 gn2533 = GroupNews.create!(group_id: group43.id, news: user74.username + ' rsvp\'d for ' + event156.name, user_id: user74.id, oid: event156.id, typo: 'e')
@@ -5778,7 +5778,7 @@ ee1732 = EventEnrollment.create!(user_id: user85.id, event_id: event156.id)
 ee1733 = EventEnrollment.create!(user_id: user68.id, event_id: event156.id)
 
 
-event157= Event.create!(user_id: user32.id, group_id: group43.id, name: "Bintang Badminton Saturday @ Milpitas (10:30am - 4pm)", description: 'Come join our Saturday meetup!', location: "Milpitas", start_time: DateTime.parse('2017-12-16 10:00'), end_time: DateTime.parse('2017-12-16 16:00'))
+event157= Event.create!(user_id: user32.id, group_id: group43.id, name: "Bintang Badminton Saturday @ Milpitas (10:30am - 4pm)", description: 'Come join our Saturday meetup!', location: "Milpitas", start_time: DateTime.parse('2017-12-16 10:00 GMT-7'), end_time: DateTime.parse('2017-12-16 16:00 GMT-7'))
 gn2543 = GroupNews.create!(group_id: group43.id, news: user32.username + ' created the event ' + event157.name, user_id: user32.id, oid: event157.id, typo: 'e')
 gn2544 = GroupNews.create!(group_id: group43.id, news: user32.username + ' rsvp\'d for ' + event157.name, user_id: user32.id, oid: event157.id, typo: 'e')
 gn2545 = GroupNews.create!(group_id: group43.id, news: user74.username + ' rsvp\'d for ' + event157.name, user_id: user74.id, oid: event157.id, typo: 'e')
@@ -5828,7 +5828,7 @@ gn549 = GroupNews.create!(group_id: group44.id, news: user90.username + ' joined
 ge549 = GroupEnrollment.create!(group_id: group44.id, user_id: user90.id)
 gn550 = GroupNews.create!(group_id: group44.id, news: user97.username + ' joined the group', user_id: user97.id, oid: group44.id, typo: 'g')
 ge550 = GroupEnrollment.create!(group_id: group44.id, user_id: user97.id)
-event158= Event.create!(user_id: user22.id, group_id: group15.id, name: "wildcat canyon walk/ short hike", description: 'Meet at Wildcat Canyon Staging area for a short easy hike. Bring a coffee or tea. Park at the end of the parking lot/ closest to the start of the trail. Meet at the trailhead. We will start hiking at 11am sharp so arrive by 10.45am if possible. Please let me know if you are coming and I can provide my cell to ensure we all find each other.', location: "Berkeley", start_time: DateTime.parse('2017-12-25 10:00'), end_time: DateTime.parse('2017-12-25 18:00'))
+event158= Event.create!(user_id: user22.id, group_id: group15.id, name: "wildcat canyon walk/ short hike", description: 'Meet at Wildcat Canyon Staging area for a short easy hike. Bring a coffee or tea. Park at the end of the parking lot/ closest to the start of the trail. Meet at the trailhead. We will start hiking at 11am sharp so arrive by 10.45am if possible. Please let me know if you are coming and I can provide my cell to ensure we all find each other.', location: "Berkeley", start_time: DateTime.parse('2017-12-25 10:00 GMT-7'), end_time: DateTime.parse('2017-12-25 18:00 GMT-7'))
 
 gn2555 = GroupNews.create!(group_id: group44.id, news: user22.username + ' created the event ' + event158.name, user_id: user22.id, oid: event158.id, typo: 'e')
 gn2556 = GroupNews.create!(group_id: group44.id, news: user22.username + ' rsvp\'d for ' + event158.name, user_id: user22.id, oid: event158.id, typo: 'e')
@@ -5856,7 +5856,7 @@ ee1753 = EventEnrollment.create!(user_id: user46.id, event_id: event158.id)
 ee1754 = EventEnrollment.create!(user_id: user47.id, event_id: event158.id)
 ee1755 = EventEnrollment.create!(user_id: user74.id, event_id: event158.id)
 
-event159= Event.create!(user_id: user22.id, group_id: group15.id, name: "HBCUC Coalition meeting", description: 'We would like to thank everyone for your continued support. We are inviting you to attend our next scheduled monthly HBCUC meeting. It is scheduled for the first Saturday each month from 11am-1pm (with the exception of August). The location is in Oakland, CA 94607. Bring a fellow HBCU alumnus to join in on the great things we are doing this year. See you there.', location: "Oakland", start_time: DateTime.parse('2017-12-09 11:00'), end_time: DateTime.parse('2017-12-09 14:30'))
+event159= Event.create!(user_id: user22.id, group_id: group15.id, name: "HBCUC Coalition meeting", description: 'We would like to thank everyone for your continued support. We are inviting you to attend our next scheduled monthly HBCUC meeting. It is scheduled for the first Saturday each month from 11am-1pm (with the exception of August). The location is in Oakland, CA 94607. Bring a fellow HBCU alumnus to join in on the great things we are doing this year. See you there.', location: "Oakland", start_time: DateTime.parse('2017-12-09 11:00 GMT-7'), end_time: DateTime.parse('2017-12-09 14:30 GMT-7'))
 gn2567 = GroupNews.create!(group_id: group44.id, news: user22.username + ' created the event ' + event159.name, user_id: user22.id, oid: event159.id, typo: 'e')
 gn2568 = GroupNews.create!(group_id: group44.id, news: user22.username + ' rsvp\'d for ' + event159.name, user_id: user22.id, oid: event159.id, typo: 'e')
 gn2569 = GroupNews.create!(group_id: group44.id, news: user97.username + ' rsvp\'d for ' + event159.name, user_id: user97.id, oid: event159.id, typo: 'e')
@@ -5884,7 +5884,7 @@ ee1765 = EventEnrollment.create!(user_id: user47.id, event_id: event159.id)
 ee1766 = EventEnrollment.create!(user_id: user74.id, event_id: event159.id)
 
 
-event160= Event.create!(user_id: user22.id, group_id: group15.id, name: "Drawing in Hakone Gardens", description: 'Drawing in the nice and peaceful japanese traditional gardens in Saratoga.', location: "Saratoga", start_time: DateTime.parse('2017-12-21 11:00'), end_time: DateTime.parse('2017-12-21 14:30'))
+event160= Event.create!(user_id: user22.id, group_id: group15.id, name: "Drawing in Hakone Gardens", description: 'Drawing in the nice and peaceful japanese traditional gardens in Saratoga.', location: "Saratoga", start_time: DateTime.parse('2017-12-21 11:00 GMT-7'), end_time: DateTime.parse('2017-12-21 14:30 GMT-7'))
 gn2579 = GroupNews.create!(group_id: group44.id, news: user22.username + ' created the event ' + event160.name, user_id: user22.id, oid: event160.id, typo: 'e')
 gn2580 = GroupNews.create!(group_id: group44.id, news: user22.username + ' rsvp\'d for ' + event160.name, user_id: user22.id, oid: event160.id, typo: 'e')
 gn2581 = GroupNews.create!(group_id: group44.id, news: user97.username + ' rsvp\'d for ' + event160.name, user_id: user97.id, oid: event160.id, typo: 'e')
@@ -5935,7 +5935,7 @@ gn559 = GroupNews.create!(group_id: group45.id, news: user71.username + ' joined
 ge559 = GroupEnrollment.create!(group_id: group45.id, user_id: user71.id)
 gn560 = GroupNews.create!(group_id: group45.id, news: user61.username + ' joined the group', user_id: user61.id, oid: group45.id, typo: 'g')
 ge560 = GroupEnrollment.create!(group_id: group45.id, user_id: user61.id)
-event161= Event.create!(user_id: user45.id, group_id: group45.id, name: "SF Weekly Study Group", description: 'We host this meetup at Workshop Cafe in San Francisco. All cohorts are welcome.', location: "San Francisco", start_time: DateTime.parse('2017-09-22 09:00'), end_time: DateTime.parse('2017-09-22 19:00'))
+event161= Event.create!(user_id: user45.id, group_id: group45.id, name: "SF Weekly Study Group", description: 'We host this meetup at Workshop Cafe in San Francisco. All cohorts are welcome.', location: "San Francisco", start_time: DateTime.parse('2017-09-22 09:00 GMT-7'), end_time: DateTime.parse('2017-09-22 19:00 GMT-7'))
 
 gn2591 = GroupNews.create!(group_id: group45.id, news: user45.username + ' created the event ' + event161.name, user_id: user45.id, oid: event161.id, typo: 'e')
 gn2592 = GroupNews.create!(group_id: group45.id, news: user45.username + ' rsvp\'d for ' + event161.name, user_id: user45.id, oid: event161.id, typo: 'e')
@@ -5964,7 +5964,7 @@ ee1787 = EventEnrollment.create!(user_id: user97.id, event_id: event161.id)
 ee1788 = EventEnrollment.create!(user_id: user79.id, event_id: event161.id)
 
 
-event162= Event.create!(user_id: user45.id, group_id: group45.id, name: "Group Quantum Sound/Energy Healing", description: 'We find these sessions to be a energetic tune up. This is a opportunity to come into a centered balance place of being.', location: "Concord", start_time: DateTime.parse('2017-12-03 11:00'), end_time: DateTime.parse('2017-12-03 14:30'))
+event162= Event.create!(user_id: user45.id, group_id: group45.id, name: "Group Quantum Sound/Energy Healing", description: 'We find these sessions to be a energetic tune up. This is a opportunity to come into a centered balance place of being.', location: "Concord", start_time: DateTime.parse('2017-12-03 11:00 GMT-7'), end_time: DateTime.parse('2017-12-03 14:30 GMT-7'))
 
 gn2603 = GroupNews.create!(group_id: group45.id, news: user45.username + ' created the event ' + event162.name, user_id: user45.id, oid: event162.id, typo: 'e')
 gn2604 = GroupNews.create!(group_id: group45.id, news: user45.username + ' rsvp\'d for ' + event162.name, user_id: user45.id, oid: event162.id, typo: 'e')
@@ -5992,7 +5992,7 @@ ee1797 = EventEnrollment.create!(user_id: user33.id, event_id: event162.id)
 ee1798 = EventEnrollment.create!(user_id: user97.id, event_id: event162.id)
 ee1799 = EventEnrollment.create!(user_id: user79.id, event_id: event162.id)
 
-event163= Event.create!(user_id: user45.id, group_id: group45.id, name: "Full Moon Sound Healing Concert", description: 'We love to celebrate all the beauty life has to share at the time of the Full Moon. These ceremonies are representative of the blossoming of our heart\'s desires. We have noticed over the years the music we play has a special nurturing feeling, with the conscious intention of celebration being at it\'s core. We are grateful for the opportunity to have shared these Mystical Musical Moments with you since January of 2010.  We look forward to this time of celebration with our Soul Family.', location: "Milpitas", start_time: DateTime.parse('2017-11-21 19:00'), end_time: DateTime.parse('2017-11-21 20:30'))
+event163= Event.create!(user_id: user45.id, group_id: group45.id, name: "Full Moon Sound Healing Concert", description: 'We love to celebrate all the beauty life has to share at the time of the Full Moon. These ceremonies are representative of the blossoming of our heart\'s desires. We have noticed over the years the music we play has a special nurturing feeling, with the conscious intention of celebration being at it\'s core. We are grateful for the opportunity to have shared these Mystical Musical Moments with you since January of 2010.  We look forward to this time of celebration with our Soul Family.', location: "Milpitas", start_time: DateTime.parse('2017-11-21 19:00 GMT-7'), end_time: DateTime.parse('2017-11-21 20:30 GMT-7'))
 
 gn2615 = GroupNews.create!(group_id: group45.id, news: user45.username + ' created the event ' + event163.name, user_id: user45.id, oid: event163.id, typo: 'e')
 gn2616 = GroupNews.create!(group_id: group45.id, news: user45.username + ' rsvp\'d for ' + event163.name, user_id: user45.id, oid: event163.id, typo: 'e')
@@ -6044,7 +6044,7 @@ ge569 = GroupEnrollment.create!(group_id: group46.id, user_id: user13.id)
 gn570 = GroupNews.create!(group_id: group46.id, news: user86.username + ' joined the group', user_id: user86.id, oid: group46.id, typo: 'g')
 ge570 = GroupEnrollment.create!(group_id: group46.id, user_id: user86.id)
 
-event164= Event.create!(user_id: user26.id, group_id: group46.id, name: "Eclipse/New Moon Creation Ceremony", description: 'The celestial energy is building for this day! What an opportunity to create with clear intent when transformation is visibly apparent.   Somehow the concept of creating from the void is even more tangible when an eclipse is aligned with a new moon.', location: "San Jose", start_time: DateTime.parse('2017-12-22 19:00'), end_time: DateTime.parse('2017-12-22 23:30'))
+event164= Event.create!(user_id: user26.id, group_id: group46.id, name: "Eclipse/New Moon Creation Ceremony", description: 'The celestial energy is building for this day! What an opportunity to create with clear intent when transformation is visibly apparent.   Somehow the concept of creating from the void is even more tangible when an eclipse is aligned with a new moon.', location: "San Jose", start_time: DateTime.parse('2017-12-22 19:00 GMT-7'), end_time: DateTime.parse('2017-12-22 23:30 GMT-7'))
 gn2627 = GroupNews.create!(group_id: group46.id, news: user26.username + ' created the event ' + event164.name, user_id: user26.id, oid: event164.id, typo: 'e')
 gn2628 = GroupNews.create!(group_id: group46.id, news: user26.username + ' rsvp\'d for ' + event164.name, user_id: user26.id, oid: event164.id, typo: 'e')
 gn2629 = GroupNews.create!(group_id: group46.id, news: user86.username + ' rsvp\'d for ' + event164.name, user_id: user86.id, oid: event164.id, typo: 'e')
@@ -6072,7 +6072,7 @@ ee1820 = EventEnrollment.create!(user_id: user16.id, event_id: event164.id)
 ee1821 = EventEnrollment.create!(user_id: user61.id, event_id: event164.id)
 
 
-event165= Event.create!(user_id: user26.id, group_id: group46.id, name: "Bike across the Golden Gate Bridge", description: 'Adult guests of any gender are welcome to this event, and it is being crossposted with the Norcal Bicycle Touring Group and Sunnyvale Active Fun Seekers. ', location: "San Francisco", start_time: DateTime.parse('2017-10-13 11:00'), end_time: DateTime.parse('2017-10-13 17:30'))
+event165= Event.create!(user_id: user26.id, group_id: group46.id, name: "Bike across the Golden Gate Bridge", description: 'Adult guests of any gender are welcome to this event, and it is being crossposted with the Norcal Bicycle Touring Group and Sunnyvale Active Fun Seekers. ', location: "San Francisco", start_time: DateTime.parse('2017-10-13 11:00 GMT-7'), end_time: DateTime.parse('2017-10-13 17:30 GMT-7'))
 gn2639 = GroupNews.create!(group_id: group46.id, news: user26.username + ' created the event ' + event165.name, user_id: user26.id, oid: event165.id, typo: 'e')
 gn2640 = GroupNews.create!(group_id: group46.id, news: user26.username + ' rsvp\'d for ' + event165.name, user_id: user26.id, oid: event165.id, typo: 'e')
 gn2641 = GroupNews.create!(group_id: group46.id, news: user86.username + ' rsvp\'d for ' + event165.name, user_id: user86.id, oid: event165.id, typo: 'e')
@@ -6099,7 +6099,7 @@ ee1830 = EventEnrollment.create!(user_id: user62.id, event_id: event165.id)
 ee1831 = EventEnrollment.create!(user_id: user16.id, event_id: event165.id)
 ee1832 = EventEnrollment.create!(user_id: user61.id, event_id: event165.id)
 
-event166= Event.create!(user_id: user26.id, group_id: group46.id, name: "Wallyball at Cupertino Sports Center", description: 'So we will be playing at Cupertino Sport center from 8-10pm. We will get there a little earlier to setup the net and maybe go over rules if you have questions. We only have one court. Please tell them you are here to play wallyball on the racquetball courts. The fee should is $10 for a day pass. You can come earlier to workout if you want to make it worth it.', location: "Cupertino", start_time: DateTime.parse('2017-11-05 20:00'), end_time: DateTime.parse('2017-11-05 22:30'))
+event166= Event.create!(user_id: user26.id, group_id: group46.id, name: "Wallyball at Cupertino Sports Center", description: 'So we will be playing at Cupertino Sport center from 8-10pm. We will get there a little earlier to setup the net and maybe go over rules if you have questions. We only have one court. Please tell them you are here to play wallyball on the racquetball courts. The fee should is $10 for a day pass. You can come earlier to workout if you want to make it worth it.', location: "Cupertino", start_time: DateTime.parse('2017-11-05 20:00 GMT-7'), end_time: DateTime.parse('2017-11-05 22:30 GMT-7'))
 gn2651 = GroupNews.create!(group_id: group46.id, news: user26.username + ' created the event ' + event166.name, user_id: user26.id, oid: event166.id, typo: 'e')
 gn2652 = GroupNews.create!(group_id: group46.id, news: user26.username + ' rsvp\'d for ' + event166.name, user_id: user26.id, oid: event166.id, typo: 'e')
 gn2653 = GroupNews.create!(group_id: group46.id, news: user86.username + ' rsvp\'d for ' + event166.name, user_id: user86.id, oid: event166.id, typo: 'e')
@@ -6150,7 +6150,7 @@ ge579 = GroupEnrollment.create!(group_id: group47.id, user_id: user99.id)
 gn580 = GroupNews.create!(group_id: group47.id, news: user87.username + ' joined the group', user_id: user87.id, oid: group47.id, typo: 'g')
 ge580 = GroupEnrollment.create!(group_id: group47.id, user_id: user87.id)
 
-event167= Event.create!(user_id: user25.id, group_id: group47.id, name: "Love to Shop? Fun Paid Research Study About Shopping -$125 for 1 hour", description: 'Do you love to shop? I am a Bay Area researcher and am looking for some articulate participants for an upcoming research study about millennial shopping habits including both online and in person shopping. This in person study is taking place in SF this MONDAY JUNE 5TH. Those that are invited and participate will receive $125 for 1 hour of their time and opinions. I also have 2 hour spots that pay $150. I can divulge the sponsor of the study when I invite you', location: "San Francisco", start_time: DateTime.parse('2017-11-09 17:00'), end_time: DateTime.parse('2017-11-09 17:30'))
+event167= Event.create!(user_id: user25.id, group_id: group47.id, name: "Love to Shop? Fun Paid Research Study About Shopping -$125 for 1 hour", description: 'Do you love to shop? I am a Bay Area researcher and am looking for some articulate participants for an upcoming research study about millennial shopping habits including both online and in person shopping. This in person study is taking place in SF this MONDAY JUNE 5TH. Those that are invited and participate will receive $125 for 1 hour of their time and opinions. I also have 2 hour spots that pay $150. I can divulge the sponsor of the study when I invite you', location: "San Francisco", start_time: DateTime.parse('2017-11-09 17:00 GMT-7'), end_time: DateTime.parse('2017-11-09 17:30 GMT-7'))
 gn2663 = GroupNews.create!(group_id: group47.id, news: user25.username + ' created the event ' + event167.name, user_id: user25.id, oid: event167.id, typo: 'e')
 gn2664 = GroupNews.create!(group_id: group47.id, news: user25.username + ' rsvp\'d for ' + event167.name, user_id: user25.id, oid: event167.id, typo: 'e')
 gn2665 = GroupNews.create!(group_id: group47.id, news: user87.username + ' rsvp\'d for ' + event167.name, user_id: user87.id, oid: event167.id, typo: 'e')
@@ -6177,7 +6177,7 @@ ee1852 = EventEnrollment.create!(user_id: user61.id, event_id: event167.id)
 ee1853 = EventEnrollment.create!(user_id: user68.id, event_id: event167.id)
 ee1854 = EventEnrollment.create!(user_id: user86.id, event_id: event167.id)
 
-event168= Event.create!(user_id: user25.id, group_id: group47.id, name: "Drink $3 beers in and old church while listening to comedy", description: 'Looking to laugh? How about comedy in an old church with $3 beers and comics from Vice and SF Sketchfest? This show has a pretty cool intermission, where people hang out and get to meet one another. It\'s a good spot for making new friends!', location: "San Francisco", start_time: DateTime.parse('2017-12-16 16:00'), end_time: DateTime.parse('2017-12-16 19:30'))
+event168= Event.create!(user_id: user25.id, group_id: group47.id, name: "Drink $3 beers in and old church while listening to comedy", description: 'Looking to laugh? How about comedy in an old church with $3 beers and comics from Vice and SF Sketchfest? This show has a pretty cool intermission, where people hang out and get to meet one another. It\'s a good spot for making new friends!', location: "San Francisco", start_time: DateTime.parse('2017-12-16 16:00 GMT-7'), end_time: DateTime.parse('2017-12-16 19:30 GMT-7'))
 gn2675 = GroupNews.create!(group_id: group47.id, news: user25.username + ' created the event ' + event168.name, user_id: user25.id, oid: event168.id, typo: 'e')
 gn2676 = GroupNews.create!(group_id: group47.id, news: user25.username + ' rsvp\'d for ' + event168.name, user_id: user25.id, oid: event168.id, typo: 'e')
 gn2677 = GroupNews.create!(group_id: group47.id, news: user87.username + ' rsvp\'d for ' + event168.name, user_id: user87.id, oid: event168.id, typo: 'e')
@@ -6204,7 +6204,7 @@ ee1863 = EventEnrollment.create!(user_id: user61.id, event_id: event168.id)
 ee1864 = EventEnrollment.create!(user_id: user68.id, event_id: event168.id)
 ee1865 = EventEnrollment.create!(user_id: user86.id, event_id: event168.id)
 
-event169= Event.create!(user_id: user25.id, group_id: group47.id, name: "Founder Bootcamp Demo Night", description: 'This Bootcamp is a series of three full day intense workshop followed by mentoring support and an exclusive review of fund raising needs of startups, from legal structure, to pitch workshops.', location: "Palo Alto", start_time: DateTime.parse('2017-09-23 15:00'), end_time: DateTime.parse('2017-09-23 17:30'))
+event169= Event.create!(user_id: user25.id, group_id: group47.id, name: "Founder Bootcamp Demo Night", description: 'This Bootcamp is a series of three full day intense workshop followed by mentoring support and an exclusive review of fund raising needs of startups, from legal structure, to pitch workshops.', location: "Palo Alto", start_time: DateTime.parse('2017-09-23 15:00 GMT-7'), end_time: DateTime.parse('2017-09-23 17:30 GMT-7'))
 gn2687 = GroupNews.create!(group_id: group47.id, news: user25.username + ' created the event ' + event169.name, user_id: user25.id, oid: event169.id, typo: 'e')
 gn2688 = GroupNews.create!(group_id: group47.id, news: user25.username + ' rsvp\'d for ' + event169.name, user_id: user25.id, oid: event169.id, typo: 'e')
 gn2689 = GroupNews.create!(group_id: group47.id, news: user87.username + ' rsvp\'d for ' + event169.name, user_id: user87.id, oid: event169.id, typo: 'e')
@@ -6257,9 +6257,9 @@ ge589 = GroupEnrollment.create!(group_id: group48.id, user_id: user6.id)
 gn590 = GroupNews.create!(group_id: group48.id, news: user38.username + ' joined the group', user_id: user38.id, oid: group48.id, typo: 'g')
 ge590 = GroupEnrollment.create!(group_id: group48.id, user_id: user38.id)
 
-# event= Event.create!(user_id: user20.id, group_id: group15.id, name: "", description: '', location: "Los Gatos", start_time: DateTime.parse('2017-12-03 09:00'), end_time: DateTime.parse('2017-12-03 17:30'))
+# event= Event.create!(user_id: user20.id, group_id: group15.id, name: "", description: '', location: "Los Gatos", start_time: DateTime.parse('2017-12-03 09:00 GMT-7'), end_time: DateTime.parse('2017-12-03 17:30 GMT-7'))
 
-event170= Event.create!(user_id: user34.id, group_id: group48.id, name: "Volunteer with Sunnyvale Urban Forest Advocates", description: 'Sunnyvale Urban Forest Advocates (SUFA) is a volunteer group supporting the City of Sunnyvale and its residents in the planting and care of the City\'s Urban Forest.', location: "Sunnyvale", start_time: DateTime.parse('2017-12-28 09:00'), end_time: DateTime.parse('2017-12-28 12:30'))
+event170= Event.create!(user_id: user34.id, group_id: group48.id, name: "Volunteer with Sunnyvale Urban Forest Advocates", description: 'Sunnyvale Urban Forest Advocates (SUFA) is a volunteer group supporting the City of Sunnyvale and its residents in the planting and care of the City\'s Urban Forest.', location: "Sunnyvale", start_time: DateTime.parse('2017-12-28 09:00 GMT-7'), end_time: DateTime.parse('2017-12-28 12:30 GMT-7'))
 gn2699 = GroupNews.create!(group_id: group47.id, news: user34.username + ' created the event ' + event170.name, user_id: user34.id, oid: event170.id, typo: 'e')
 gn2700 = GroupNews.create!(group_id: group47.id, news: user34.username + ' rsvp\'d for ' + event170.name, user_id: user34.id, oid: event170.id, typo: 'e')
 gn2701 = GroupNews.create!(group_id: group47.id, news: user38.username + ' rsvp\'d for ' + event170.name, user_id: user38.id, oid: event170.id, typo: 'e')
@@ -6287,7 +6287,7 @@ ee1886 = EventEnrollment.create!(user_id: user78.id, event_id: event170.id)
 ee1887 = EventEnrollment.create!(user_id: user87.id, event_id: event170.id)
 
 
-event171= Event.create!(user_id: user34.id, group_id: group48.id, name: "Lightning Talks", description: 'Be a speaker or join us on the 2nd Friday of every month for insightful and interactive talks on various topics like Cool Hack, Solution Share, Epic Fail/Recovery, Debates, or Product/Project Demos!', location: "Santa Clara", start_time: DateTime.parse('2017-11-01 16:00'), end_time: DateTime.parse('2017-11-01 20:30'))
+event171= Event.create!(user_id: user34.id, group_id: group48.id, name: "Lightning Talks", description: 'Be a speaker or join us on the 2nd Friday of every month for insightful and interactive talks on various topics like Cool Hack, Solution Share, Epic Fail/Recovery, Debates, or Product/Project Demos!', location: "Santa Clara", start_time: DateTime.parse('2017-11-01 16:00 GMT-7'), end_time: DateTime.parse('2017-11-01 20:30 GMT-7'))
 gn2711 = GroupNews.create!(group_id: group47.id, news: user34.username + ' created the event ' + event171.name, user_id: user34.id, oid: event171.id, typo: 'e')
 gn2712 = GroupNews.create!(group_id: group47.id, news: user34.username + ' rsvp\'d for ' + event171.name, user_id: user34.id, oid: event171.id, typo: 'e')
 gn2713 = GroupNews.create!(group_id: group47.id, news: user38.username + ' rsvp\'d for ' + event171.name, user_id: user38.id, oid: event171.id, typo: 'e')
@@ -6315,7 +6315,7 @@ ee1897 = EventEnrollment.create!(user_id: user78.id, event_id: event171.id)
 ee1898 = EventEnrollment.create!(user_id: user87.id, event_id: event171.id)
 
 
-event172= Event.create!(user_id: user34.id, group_id: group48.id, name: "Meditation Meetup", description: 'Meditation is balance, happiness, true love and understanding. Smile, this is the greatest adventure ever! Discover yourself... and learn to meditate!', location: "Santa Clara", start_time: DateTime.parse('2017-09-13 13:00'), end_time: DateTime.parse('2017-09-13 17:30'))
+event172= Event.create!(user_id: user34.id, group_id: group48.id, name: "Meditation Meetup", description: 'Meditation is balance, happiness, true love and understanding. Smile, this is the greatest adventure ever! Discover yourself... and learn to meditate!', location: "Santa Clara", start_time: DateTime.parse('2017-09-13 13:00 GMT-7'), end_time: DateTime.parse('2017-09-13 17:30 GMT-7'))
 gn2723 = GroupNews.create!(group_id: group47.id, news: user34.username + ' created the event ' + event172.name, user_id: user34.id, oid: event172.id, typo: 'e')
 gn2724 = GroupNews.create!(group_id: group47.id, news: user34.username + ' rsvp\'d for ' + event172.name, user_id: user34.id, oid: event172.id, typo: 'e')
 gn2725 = GroupNews.create!(group_id: group47.id, news: user38.username + ' rsvp\'d for ' + event172.name, user_id: user38.id, oid: event172.id, typo: 'e')
@@ -6378,32 +6378,32 @@ event5= Event.create!(user_id: user19.id, group_id: group13.id, name: "Bar Wedne
 Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries.
 This week's Bar Wednesday will be hosted at Sino in Santana Row, San Jose.
 Before that I'll be going to Le Marché Santana Row, an outdoor French market every Wednesday from 4pm-8pm on Santana Row (between Olin Avenue and Olsen Drive).
-All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-09-22 12:00'), end_time: DateTime.parse('2017-09-22 6:00'))
+All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-09-22 12:00 GMT-7'), end_time: DateTime.parse('2017-09-22 6:00' GMT-7))
 
-event6 = Event.create!(name: "Bar Wednesday @ Paper Plane", user_id: user18.id, group_id: group13.id, description:" Bar Wednesday is a casual weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Paper Plane in downtown San Jose. Paper Plane is home to great cocktails, food and an impressive bottle wall. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-09-05 14:00'), end_time: DateTime.parse('2017-09-05 18:00'))
+event6 = Event.create!(name: "Bar Wednesday @ Paper Plane", user_id: user18.id, group_id: group13.id, description:" Bar Wednesday is a casual weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Paper Plane in downtown San Jose. Paper Plane is home to great cocktails, food and an impressive bottle wall. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-09-05 14:00 GMT-7'), end_time: DateTime.parse('2017-09-05 18:00 GMT-7'))
 
-event7 = Event.create!( name: "Bar Wednesday @ Haberdasher", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Bar Wednesday standby, Haberdasher, in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-09-03 12:00'), end_time: DateTime.parse('2017-09-03 16:00'))
+event7 = Event.create!( name: "Bar Wednesday @ Haberdasher", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Bar Wednesday standby, Haberdasher, in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-09-03 12:00 GMT-7'), end_time: DateTime.parse('2017-09-03 16:00 GMT-7'))
 
-event8 = Event.create!( name: "Bar Wednesday @ Five Points", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Five Points in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-09-08 18:00'), end_time: DateTime.parse('2017-09-08 23:00'))
+event8 = Event.create!( name: "Bar Wednesday @ Five Points", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Five Points in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-09-08 18:00 GMT-7'), end_time: DateTime.parse('2017-09-08 23:00 GMT-7'))
 
-event9 = Event.create!( name: "Bar Wednesday @ 55South", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at 55South, in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-09-10 17:00'), end_time: DateTime.parse('2017-09-10 22:00'))
+event9 = Event.create!( name: "Bar Wednesday @ 55South", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at 55South, in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-09-10 17:00 GMT-7'), end_time: DateTime.parse('2017-09-10 22:00 GMT-7'))
 
-event10 = Event.create!( name: "Bar Wednesday @ Haberdasher", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Bar Wednesday standby, Haberdasher, in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-10-02 19:00'), end_time: DateTime.parse('2017-10-02 23:30'))
+event10 = Event.create!( name: "Bar Wednesday @ Haberdasher", user_id: user18.id, group_id: group13.id, description: "Bar Wednesday is a casual (quasi) weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Bar Wednesday standby, Haberdasher, in downtown San Jose. Haberdasher (formerly Singlebarrel) is a speakeasy-style saloon specializing in classic & forgotten cocktails. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-10-02 19:00 GMT-7'), end_time: DateTime.parse('2017-10-02 23:30 GMT-7'))
 
 event11 = Event.create!(name: "It's Friday. Let's Play Ping Pong Tonight!", user_id: user15.id, group_id: group3.id, description: "• Drop in open play $5
 • All levels welcome
 • We play with multiple balls, so it's okay to miss because you always have another ball ready to go
-• Better players are encouraged to help lower level players", location: "milpitas", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258275/download_qhxlzq.jpg", start_time: DateTime.parse('2017-09-15 12:00'), end_time: DateTime.parse('2017-09-15 19:00'))
+• Better players are encouraged to help lower level players", location: "milpitas", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258275/download_qhxlzq.jpg", start_time: DateTime.parse('2017-09-15 12:00 GMT-7'), end_time: DateTime.parse('2017-09-15 19:00 GMT-7'))
 
 event12 = Event.create!(name: "It's Monday. Let's Play Ping Pong Tonight!", user_id: user15.id, group_id: group3.id, description: "• Drop in open play $5
 • All levels welcome
 • We play with multiple balls, so it's okay to miss because you always have another ball ready to go
-• Better players are encouraged to help lower level players", location: "sunnyvale", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258275/download_qhxlzq.jpg", start_time: DateTime.parse('2017-09-20 12:00'), end_time: DateTime.parse('2017-09-20 19:00'))
+• Better players are encouraged to help lower level players", location: "sunnyvale", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258275/download_qhxlzq.jpg", start_time: DateTime.parse('2017-09-20 12:00 GMT-7'), end_time: DateTime.parse('2017-09-20 19:00 GMT-7'))
 
 event13 = Event.create!(name: "It's Wednesday. Let's Play Ping Pong Tonight!", user_id: user15.id, group_id: group3.id, description: "• Drop in open play $5
 • All levels welcome
 • We play with multiple balls, so it's okay to miss because you always have another ball ready to go
-• Better players are encouraged to help lower level players", location: "cupertino", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258275/download_qhxlzq.jpg", start_time: DateTime.parse('2017-09-23 12:00'), end_time: DateTime.parse('2017-09-23 19:00'))
+• Better players are encouraged to help lower level players", location: "cupertino", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258275/download_qhxlzq.jpg", start_time: DateTime.parse('2017-09-23 12:00 GMT-7'), end_time: DateTime.parse('2017-09-23 19:00 GMT-7'))
 
 event14 = Event.create!(name: "Saturday Social", user_id: user12.id, group_id: group6.id,  description: "**This event gives attendance priority to bies. **
 * This event will be gender-balanced *
@@ -6412,27 +6412,27 @@ Sign up and you will be given priority treatment!
 ARE YOU AFRAID OF COMING ALONE AND WATCHING EVERYONE HAVE FUN WHILE YOU'RE SITTING IN THE CORNER?
 Don't worry! We often have a lot of  people show up. We are very friendly and no one is ever left out. Ever.
 WANT TO HAVE FUN RIGHT AWAY AND MEET A LOT OF PEOPLE?
-Make sure to ask for the organizer, come up and say hi!", location: "cupertino", start_time: DateTime.parse('2017-09-15 12:00'), end_time: DateTime.parse('2017-09-15 22:00'))
+Make sure to ask for the organizer, come up and say hi!", location: "cupertino", start_time: DateTime.parse('2017-09-15 12:00 GMT-7'), end_time: DateTime.parse('2017-09-15 22:00 GMT-7'))
 
 event15 = Event.create!(name: "Hump Day Happy Hour at D&B
 ", user_id: user12.id, group_id: group6.id, description: "This place is really the place to be on a Wednesday night! On Wednesday it's half off on apps, drinks, and of course games. What gets really interesting is that the middle of Dave and busters becomes dance floor with a DJ.
-Lets meet up at 9:30 before it gets too crowded. There is also a cover at 10 that you can use for a drink :)", location: "sunnyvale", start_time: DateTime.parse('2017-09-20 13:00'), end_time: DateTime.parse('2017-09-20 19:00'))
+Lets meet up at 9:30 before it gets too crowded. There is also a cover at 10 that you can use for a drink :)", location: "sunnyvale", start_time: DateTime.parse('2017-09-20 13:00 GMT-7'), end_time: DateTime.parse('2017-09-20 19:00 GMT-7'))
 
-event16= Event.create!(name: "trivia night", group_id: group8.id , user_id: user14.id, description: "et's go to trivia! Golden State Brewery hosts a trivia night every Thursday. It's a good chance to try some  beers and test your general knowledge. Trivia starts at 6:30pm but feel free to come a little earlier to grab a drink, play darts and billiards, or just hangout. They don't sell food, but you are more than welcome to bring outside food into the taproom.", location: "santa clara", start_time: DateTime.parse('2017-10-15 15:00'), end_time: DateTime.parse('2017-10-15 19:00'))
+event16= Event.create!(name: "trivia night", group_id: group8.id , user_id: user14.id, description: "et's go to trivia! Golden State Brewery hosts a trivia night every Thursday. It's a good chance to try some  beers and test your general knowledge. Trivia starts at 6:30pm but feel free to come a little earlier to grab a drink, play darts and billiards, or just hangout. They don't sell food, but you are more than welcome to bring outside food into the taproom.", location: "santa clara", start_time: DateTime.parse('2017-10-15 15:00 GMT-7'), end_time: DateTime.parse('2017-10-15 19:00 GMT-7'))
 
 
 event17 = Event.create!(name: "bie night", group_id: group1.id, user_id: user11.id, description: "From 7:30 - 9:30pm, come and chat with  people for good time in the market hall! Watch others sing songs (or participate yourself) and enjoy awesome ice cream at this tradition at the market.
 San Pedro Square Market has other restaurants as well so feel free to indulge at other places. For a Thursday night, there should be plenty of seating so it won't be hard to have us all together.
-Hope to see you all there!", location: "richmond", start_time: DateTime.parse('2017-10-22 12:00'), end_time: DateTime.parse('2017-10-22 19:00'))
+Hope to see you all there!", location: "richmond", start_time: DateTime.parse('2017-10-22 12:00 GMT-7'), end_time: DateTime.parse('2017-10-22 19:00 GMT-7'))
 
-event18= Event.create!(name: "trivia night", group_id: group1.id, user_id: user11.id, description: "Star wars trivia at starbucks!! 1st place $20 gift card!!", location: "milpitas", start_time: DateTime.parse('2017-10-05 12:00'), end_time: DateTime.parse('2017-10-05 19:00'))
+event18= Event.create!(name: "trivia night", group_id: group1.id, user_id: user11.id, description: "Star wars trivia at starbucks!! 1st place $20 gift card!!", location: "milpitas", start_time: DateTime.parse('2017-10-05 12:00 GMT-7'), end_time: DateTime.parse('2017-10-05 19:00 GMT-7'))
 
-event19= Event.create!(name: "movie night", group_id: group1.id, user_id: user11.id, description: "Star wars the force awakens movie night!!!! snacks will be provided but please bybob", location: "milpitas", start_time: DateTime.parse('2017-10-29 12:00'), end_time: DateTime.parse('2017-10-29 19:00'))
+event19= Event.create!(name: "movie night", group_id: group1.id, user_id: user11.id, description: "Star wars the force awakens movie night!!!! snacks will be provided but please bybob", location: "milpitas", start_time: DateTime.parse('2017-10-29 12:00 GMT-7'), end_time: DateTime.parse('2017-10-29 19:00 GMT-7'))
 
 event20 =Event.create!(name: "Movie Day: War for the Planet of the Apes", group_id: group9.id , user_id: user18.id, description: "94% Rotten Tomatoes, warring apes & Woody Harrelson, is there a better way to end the weekend? Probably, but this is all I got.
 We'll be watching War for the Planet of the Apes at Santana Row.
 Plan to get here a little early to get your tickets and so we can get good seats.
-We might also walk around and grab a bite afterwards. Looking forward to seeing y'All there!", location: "san francisco", start_time: DateTime.parse('2017-10-02 12:00'), end_time: DateTime.parse('2017-10-02 19:00') )
+We might also walk around and grab a bite afterwards. Looking forward to seeing y'All there!", location: "san francisco", start_time: DateTime.parse('2017-10-02 12:00 GMT-7'), end_time: DateTime.parse('2017-10-02 19:00 GMT-7') )
 
 
 

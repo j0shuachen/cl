@@ -29,8 +29,7 @@ class UpdateEvent extends React.Component{
   // this.props.match.params.groupId
   componentDidMount(){
     this.props.fetchEvent(this.props.eventId);
-    this.props.fetchGroup(this.props.groupId);
-
+    this.props.fetchGroup(this.props.groupId).then( ()=>this.prev());
     // setTimeout(this.prev, 500);
   }
 
@@ -95,7 +94,7 @@ componentWillMount(){
 
 
           <label className="eventdescription">
-            <div className="eventques"> Your event not what it used to be?</div>
+            <div className="eventques"> Your event not where it used to be?</div>
             <input className="einput" type="text" ref="description"
               value={this.state.description}
               onChange={this.createDescription}/>
