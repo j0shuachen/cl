@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import ReactLoading from 'react-loading';
+
 // import TimeAgo from 'react-timeago';
 // import TimeAgo from 'timeago-react'; // var TimeAgo = require('timeago-react');
 
@@ -333,8 +335,12 @@ renderU(){
     console.log(this.props);
     if(Object.keys(this.props.group).length === 0 || !this.props.x){
       return (
-        <div>Loading...</div>
-      );
+        <div className='singlegroupcontainer'>
+        <div className='loadgroupmain'>
+          <ReactLoading type='spin' color='#ed1c40' height='100px' width='100px'/>
+          <div className='loading'> Loading...</div>
+        </div>
+      </div>);
     }
 
     const idz = `/groups/${this.props.group.id}`;

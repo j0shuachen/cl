@@ -10,8 +10,8 @@ class UpdateGroup extends React.Component {
       location: "",
       user_id: "",
       errors: "",
-      id: this.props.groupId
-
+      id: this.props.groupId,
+      image_url: ''
     };
     this.createGroup = this.createGroup.bind(this);
     this.createName = this.createName.bind(this);
@@ -38,6 +38,7 @@ class UpdateGroup extends React.Component {
       image = this.state.image_url;
     }
     const groupe = {name: name, info: info, location: location, user_id: this.props.currentUser, id: this.props.groupId, image_url: image};
+    console.log(groupe);
     this.props.updateGroup({group: groupe}).then(()=>this.props.history.push(`/groups/${groupId}`));
   }
 
@@ -60,6 +61,7 @@ class UpdateGroup extends React.Component {
     this.setState({name:this.props.group.name});
     this.setState({info: this.props.group.info});
     this.setState({location: this.props.group.location});
+    this.setState({image_url: this.props.group.image_url});
   }
 
 
@@ -85,7 +87,7 @@ class UpdateGroup extends React.Component {
   }
 
   render(){
-
+console.log(this.props);
     return (
       <div className="groupformcontainer">
         <div className="creategroupgif">

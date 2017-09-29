@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import TimeAgo from 'timeago-react'; // var TimeAgo = require('timeago-react');
 import moment from 'moment';
+import ReactLoading from 'react-loading';
 
 class GroupShowDos extends React.Component{
 
@@ -11,8 +12,11 @@ class GroupShowDos extends React.Component{
       // member: null
       newz: false,
       loaded: false,
-      num: true
+      num: true,
+      heightning: 1215,
+      heighter: '1215px'
     };
+    this.newsheightclicker = this.newsheightclicker.bind(this);
 
     this.renderU = this.renderU.bind(this);
     this.ismember = this.ismember.bind(this);
@@ -35,7 +39,7 @@ class GroupShowDos extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true, newz: true}));
+    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true, newz: true, lengther: this.props.group.news.length}));
     this.props.fetchEvents().then(() => this.setState({checking: true}));
     this.props.fetchGroupEnrollments(this.props.match.params.groupId);
     // this.renderJ();
@@ -46,7 +50,7 @@ class GroupShowDos extends React.Component{
   }
 
   componentWillMount(){
-    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter());
+    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter()).then(()=> this.setState({check: true, newz: true, lengther: this.props.group.news.length}));
     // this.props.fetchEvents().then(() => this.eventsetter().then(this.fetchEventEnrollments()));
     this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
     this.props.fetchGroupNews(this.props.match.params.groupId).then(() => this.setState({newz: !this.state.newz}));
@@ -68,7 +72,15 @@ class GroupShowDos extends React.Component{
   }
 
 
+  newsheightclicker() {
+    console.log('hitt');
+    var newheight = this.state.heightning+1215;
 
+    var newheighter = newheight.toString() + 'px';
+    console.log(newheight);
+      this.setState({heighter: newheighter, heightning: newheight, newz: true});
+
+  }
 
 opmember(){
   if(this.props.memboz){
@@ -255,7 +267,7 @@ renderU(){
             return null;
           }else  {
             return(
-              `+ ${event.rsvp.num - 5} more`);
+          <div className='eventlistmore'>    {`+ ${event.rsvp.num - 5} more`} </div> );
             }
           };
           let ots = `/groups/${g}/users/${event.organizer.id}`;
@@ -361,7 +373,9 @@ renderU(){
           return null;
         }else  {
           return(
-            `+ ${event.rsvp.num - 5} more`);
+            <div className='eventlistmore'>   {`+ ${event.rsvp.num - 5} more`}</div>
+
+          );
         }
       };
       let ots = `/groups/${g}/users/${event.organizer.id}`;
@@ -425,11 +439,17 @@ renderU(){
 
 
   render() {
+
+
     console.log(this.props);
     if(Object.keys(this.props.group).length === 0 || !this.props.group.info){
       return (
-        <div>Loading...</div>
-      );
+        <div className='singlegroupcontainer'>
+        <div className='loadgroupmain'>
+          <ReactLoading type='spin' color='#ed1c40' height='100px' width='100px'/>
+          <div className='loading'> Loading...</div>
+        </div>
+      </div>);
     }
 
     const idz = `/groups/${this.props.group.id}`;
@@ -578,8 +598,12 @@ renderU(){
       </div>
 
         <div className="singlegroupnews">
-          <div>What's new</div>
-          {this.state.newz ? newsList(this.props.group.news) : newsList(this.props.group.news)}
+          <div className='whatsnew'>What's new</div>
+            <div style={{height: this.state.heighter, overflow: 'hidden'}}>
+            {this.state.newz ? newsList(this.props.group.news) : newsList(this.props.group.news)}
+            </div>
+          {this.state.heightning <= this.state.lengther* 135 ? <div className='newsclicker' onClick={this.newsheightclicker}>More news!</div> : null }
+
         </div>
 
 

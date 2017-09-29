@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import ReactLoading from 'react-loading';
+
 // import GroupEnrollment from '../group_enrollments/group_enrollment_container';
 // import GroupEnrollment from '../search/group_enrollment_container';
 
@@ -120,11 +122,16 @@ class GroupMembers extends React.Component{
     // if(!this.state.group){
     //   return(<div>loading...</div>);
     // }
+    if(Object.keys(this.props.group).length === 0 || !this.props.group.info){
 
-    if(this.props.group.length === 0){
+    // if(this.props.group.length === 0){
       return (
-        <div>Loading...</div>
-      );
+        <div className='singlegroupcontainer'>
+        <div className='loadgroupmain'>
+          <ReactLoading type='spin' color='#ed1c40' height='100px' width='100px'/>
+          <div className='loading'> Loading...</div>
+        </div>
+      </div>);
     }
     const idz = `/groups/${this.props.group.id}`;
     const members=`/groups/${this.props.group.id}/members`;

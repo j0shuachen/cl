@@ -147,6 +147,67 @@ class Api::GroupsController < ApplicationController
       @user = User.find(current_user.id)
       @members = @group.members
 
+
+
+      if @members.length <= 9
+        @randos = @members.shuffle
+      elsif @members.length > 9
+        @randos = @members.shuffle.take(8)
+      end
+      p 'members!!'
+      p @members
+      p 'lengthy!!'
+      p @numembers
+      @enrollments = @group.group_enrollments
+      if current_user
+        @user = User.find(current_user.id)
+      end
+      p @creator
+      @eventboth = []
+      both = @group.events.where(start_time: 'tbd', end_time: 'tbd')
+      both.each do |s|
+        @eventboth << s
+      end
+      @eventboth.reverse!
+      @eventeither = []
+      either = @group.events.where('start_time = ? and end_time != ?', 'tbd', 'tbd').or(@group.events.where('start_time != ? and end_time = ?', 'tbd', 'tbd'))
+      if either.length > 0
+        either.each do |s|
+          if s.start_time == 'tbd'
+            s[:timer] = DateTime.parse(s.end_time)
+            @eventeither << s
+          else
+            s[:timer] = DateTime.parse(s.start_time)
+            @eventeither << s
+          end
+        end
+        @eventeither.sort_by! do |t|
+          t[:timer]
+        end.reverse!
+      end
+      @pastevents = @group.events.where('start_time < ? or end_time < ?', DateTime.now, DateTime.now).order('end_time DESC')
+
+
+      @upcomingevents = @group.events.where('start_time > ? and end_time > ?',DateTime.now, DateTime.now ).order('start_time ASC')
+      @eventd=[]
+      o=  @group.events.where.not(start_time: 'tbd', end_time: 'tbd')
+      if o.length > 0
+        o.each do |s|
+          @eventd << s
+        end
+      end
+      @eventd.sort_by! do |el|
+        el.start_time
+      end
+      @eventd.reverse!
+
+      @events = @group.events.reverse
+      p 'youyo'
+      p @group.news
+      @groo = @group.news.sort_by do |opo|
+        opo.id
+      end
+      @groo = @groo.reverse
       render :show
     else
       render(
