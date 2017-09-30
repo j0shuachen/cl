@@ -132,6 +132,12 @@ justify-content: center;
 align-items: center;
 }
 
+.banner{
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
 .c1{
   font-size: 40px;
   padding: 20px;
@@ -148,7 +154,8 @@ align-items: center;
   font-size: 35px;
   flex-direction: column;
   margin-bottom: 20px;
-  padding: 40px;
+  // padding: 40px;
+  background-color: white;
 
 
 }
@@ -157,6 +164,8 @@ align-items: center;
   width: 900px;
   margin-top: 30px;
   display: flex;
+  background-color: white;
+
   flex-direction: column;
   align-items: center;
   align-self: center;
@@ -170,6 +179,8 @@ align-items: center;
     margin-top: 30px;
   display: flex;
   flex-direction: column;
+  background-color: white;
+
   // justify-content: center;
   // align-items: center;
   align-self: center;
@@ -190,7 +201,7 @@ align-items: center;
   align-self: center;
   padding: 30px;
   margin-top: 20px;
-  height: 400px;
+  height: 600px;
   margin-bottom: 100px;
   padding-bottom: 40px;
 
@@ -198,6 +209,8 @@ align-items: center;
 }
 
 .grouplocation{
+  background-color: white;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -222,9 +235,10 @@ align-items: center;
   // margin: 20px;
   font-family: 'Ubuntu', sans-serif;
   background-color: #ed1c40;
-margin-top: 50px;
+margin-top: 10px;
   font-size: 30px;
   color: white;
+  margin-bottom: 60px;
 }
 
 .creategroupsub:hover{
@@ -241,18 +255,40 @@ margin-top: 50px;
 }
 
 .ginput{
+  box-sizing: border-box;
   width: 900px;
   height: 40px;
-  font-size: 30px;
+  font-size: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
+  min-height: 40px;
 
+}
+.picturepicker{
+  width: 50%;
+}
+.colorpicker{
+  width: 50%;
+}
+.ques2{
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.formupdater{
+  display: flex;
+  // margin: 100px;
+  justify-content: center;
+  padding: 40px;
+  padding-top: 40px;
+  min-width: 1000px;
 }
 
 .ginput2{
   height: 100px;
+  box-sizing: border-box;
   width: 100%;
-  font-size: 30px;
+  font-size: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
 }

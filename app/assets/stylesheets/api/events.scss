@@ -12,6 +12,13 @@
   // flex-direction: column;
 
 }
+
+
+.pickers{
+  display: flex;
+  margin-top: 10px;
+  flex-direction: row;
+}
 .profileupdatebutton{
   align-self: flex-start;
   width: 33%;

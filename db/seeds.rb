@@ -246,7 +246,7 @@ event21= Event.create!(user_id: user1.id, group_id: group1.id, name: "Movie Nigh
 event22= Event.create!(user_id: user6.id, group_id: group1.id, name: "Bingo Night", description: "Bingo Night!!! $500 worth prizes! It's Bingo time! ", location: "Los Altos", start_time: DateTime.parse('2017-10-24 12:00 GMT-7'), end_time: DateTime.parse('2017-10-24 20:00 GMT-7'))
 event23= Event.create!(user_id: user6.id, group_id: group1.id, name: "Super Trivia", description: "Super Trivia Night! Teams of 3! Top prize is a $100 Amazon gift card to each team member. Second place $50, third place $25!!!!", location: "San Jose", start_time: DateTime.parse('2017-10-16 13:00 GMT-7'), end_time: DateTime.parse('2017-10-16 19:00 GMT-7'))
 event24= Event.create!(user_id: user59.id, group_id: group1.id, name: "Movie Night at Century23", description: "Come watch It!!! Dinner and a movie leggo!", location: "San Jose", start_time: DateTime.parse('2017-11-24 18:00 GMT-7'), end_time: DateTime.parse('2017-11-24 24:00 GMT-7'))
-event25= Event.create!(user_id: user58.id, group_id: group1.id, name: "New Member Mixer", description: "Monthly event to meet and greet all of our wonderful new members! We will be grabbing dinner at Alexander's Steak House and then heading out to Pure for drinks and socializing!!", location: "San Jose", start_time: DateTime.parse('2017-11-29 19:00 GMT-7'), end_time: DateTime.parse('2017-11-30 2:00' GMT-7))
+event25= Event.create!(user_id: user58.id, group_id: group1.id, name: "New Member Mixer", description: "Monthly event to meet and greet all of our wonderful new members! We will be grabbing dinner at Alexander's Steak House and then heading out to Pure for drinks and socializing!!", location: "San Jose", start_time: DateTime.parse('2017-11-29 19:00 GMT-7'), end_time: DateTime.parse('2017-11-30 02:00 GMT-7'))
 event26= Event.create!(user_id: user1.id, group_id: group1.id, name: "Breast Cancer Fundraiser", description: "Come join us for the breast cancer awareness fundraiser! Currently seeking 10 more volunteers for the morning shifts!", location: "San Jose", start_time: DateTime.parse('2017-11-07 18:00 GMT-7'), end_time: DateTime.parse('2017-11-07 24:00 GMT-7'))
 
 gn591 = GroupNews.create!(group_id: group1.id, news: user1.username + ' created the event ' + event21.name, user_id: user1.id, oid: event21.id, typo: 'e')
@@ -779,7 +779,7 @@ gn101 = GroupNews.create!(group_id: group4.id, news: user48.username + ' joined 
 ge101 = GroupEnrollment.create!(group_id: group4.id, user_id: user48.id)
 event36= Event.create!(user_id: user89.id, group_id: group4.id, name: "Make New Friends - Monthly Mixer Meetup", description: "Monthly Social Mixer
 Have you made any new friends this summer?
-Join this event and make a few more - you can never have too many friends. ", location: "Sunnyvale", start_time: DateTime.parse('2017-11-11 18:00 GMT-7'), end_time: DateTime.parse('2017-11-12 2:00' GMT-7))
+Join this event and make a few more - you can never have too many friends. ", location: "Sunnyvale", start_time: DateTime.parse('2017-11-11 18:00 GMT-7'), end_time: DateTime.parse('2017-11-12 02:00 GMT-7'))
 
 gn760 = GroupNews.create!(group_id: group4.id, news: user89.username + ' created the event ' + event36.name, user_id: user89.id, oid: event36.id, typo: 'e')
 gn761 = GroupNews.create!(group_id: group4.id, news: user89.username + ' rsvp\'d for ' + event36.name, user_id: user89.id, oid: event36.id, typo: 'e')
@@ -1218,7 +1218,7 @@ ee319 = EventEnrollment.create!(user_id: user11.id, event_id: event44.id)
 
 
 event45= Event.create!(user_id: user11.id, group_id: group6.id, name: "Love, Eat, Dance! Dinner Show at Angelica's", description: "Son 7 is a newly formed Latin World Beat Group Featuring traditional salsa, Latin music from around the world, tribal congas and originals by Gary Davila.
-Dance all evening or elevate your spirit with tunes from Celia Cruz, Buena vista Social Club, Hector Lavoe, Oscar de leon, Poncho sanchez and talented band leader: Gary Davila Originals.", location: "San Jose", start_time: DateTime.parse('2017-10-10 21:00 GMT-7'), end_time: DateTime.parse('2017-10-11 2:00' GMT-7))
+Dance all evening or elevate your spirit with tunes from Celia Cruz, Buena vista Social Club, Hector Lavoe, Oscar de leon, Poncho sanchez and talented band leader: Gary Davila Originals.", location: "San Jose", start_time: DateTime.parse('2017-10-10 21:00 GMT-7'), end_time: DateTime.parse('2017-10-11 02:00 GMT-7'))
 
 gn912 = GroupNews.create!(group_id: group6.id, news: user11.username + ' created the event ' + event45.name, user_id: user11.id, oid: event45.id, typo: 'e')
 gn913 = GroupNews.create!(group_id: group6.id, news: user11.username + ' rsvp\'d for ' + event45.name, user_id: user11.id, oid: event45.id, typo: 'e')
@@ -2089,7 +2089,7 @@ ee594 = EventEnrollment.create!(user_id: user75.id, event_id: event570.id)
 ee595 = EventEnrollment.create!(user_id: user74.id, event_id: event570.id)
 ee596 = EventEnrollment.create!(user_id: user73.id, event_id: event570.id)
 
-event580= Event.create!(user_id: user13.id, group_id: group12.id, name: "Lunchtime Soccer", description: "Lunchtime Soccer!!", location: "Sunnyvale", start_time: DateTime.parse('2017-09-27 12:00 GMT-7'), end_time: DateTime.parse('2017-09-27 1:30' GMT-7))
+event580= Event.create!(user_id: user13.id, group_id: group12.id, name: "Lunchtime Soccer", description: "Lunchtime Soccer!!", location: "Sunnyvale", start_time: DateTime.parse('2017-09-27 12:00 GMT-7'), end_time: DateTime.parse('2017-09-27 01:30 GMT-7'))
 
 gn1308 = GroupNews.create!(group_id: group12.id, news: user13.username + ' created the event ' + event580.name, user_id: user13.id, oid: event580.id, typo: 'e')
 gn1309 = GroupNews.create!(group_id: group12.id, news: user13.username + ' rsvp\'d for ' + event580.name, user_id: user13.id, oid: event580.id, typo: 'e')
@@ -3014,7 +3014,7 @@ ee887 = EventEnrollment.create!(user_id: user81.id, event_id: event81.id)
 ee888 = EventEnrollment.create!(user_id: user92.id, event_id: event81.id)
 ee889 = EventEnrollment.create!(user_id: user90.id, event_id: event81.id)
 
-event82= Event.create!(user_id: user69.id, group_id: group19.id, name: "IoT Beer Social (San Mateo)", description: ' To find us we will have the Linux Penguin on our table or you can email me ', location: "San Mateo", start_time: DateTime.parse('2017-11-05 17:00 GMT-7'), end_time: DateTime.parse('2017-11-06 2:30' GMT-7))
+event82= Event.create!(user_id: user69.id, group_id: group19.id, name: "IoT Beer Social (San Mateo)", description: ' To find us we will have the Linux Penguin on our table or you can email me ', location: "San Mateo", start_time: DateTime.parse('2017-11-05 17:00 GMT-7'), end_time: DateTime.parse('2017-11-06 02:30 GMT-7'))
 
 gn1624 = GroupNews.create!(group_id: group19.id, news: user15.username + ' created the event ' + event82.name, user_id: user15.id, oid: event82.id, typo: 'e')
 gn1625 = GroupNews.create!(group_id: group19.id, news: user15.username + ' rsvp\'d for ' + event82.name, user_id: user15.id, oid: event82.id, typo: 'e')
@@ -3339,7 +3339,7 @@ gn319 = GroupNews.create!(group_id: group22.id, news: user99.username + ' joined
 ge319 = GroupEnrollment.create!(group_id: group22.id, user_id: user99.id)
 gn320 = GroupNews.create!(group_id: group22.id, news: user98.username + ' joined the group', user_id: user98.id, oid: group22.id, typo: 'g')
 ge320 = GroupEnrollment.create!(group_id: group22.id, user_id: user98.id)
-event90= Event.create!(user_id: user18.id, group_id: group22.id, name: "Up on the Roof -- Cielo Bar", description: 'VIP seating at Cielo Bar, join us, mingle, network!', location: "San Jose", start_time: DateTime.parse('2017-11-28 19:00 GMT-7'), end_time: DateTime.parse('2017-11-29 2:30' GMT-7))
+event90= Event.create!(user_id: user18.id, group_id: group22.id, name: "Up on the Roof -- Cielo Bar", description: 'VIP seating at Cielo Bar, join us, mingle, network!', location: "San Jose", start_time: DateTime.parse('2017-11-28 19:00 GMT-7'), end_time: DateTime.parse('2017-11-29 02:30 GMT-7'))
 gn1727 = GroupNews.create!(group_id: group22.id, news: user18.username + ' created the event ' + event89.name, user_id: user18.id, oid: event90.id, typo: 'e')
 gn1728 = GroupNews.create!(group_id: group22.id, news: user18.username + ' rsvp\'d for ' + event90.name, user_id: user18.id, oid: event90.id, typo: 'e')
 gn1729 = GroupNews.create!(group_id: group22.id, news: user69.username + ' rsvp\'d for ' + event90.name, user_id: user69.id, oid: event90.id, typo: 'e')
@@ -6378,7 +6378,7 @@ event5= Event.create!(user_id: user19.id, group_id: group13.id, name: "Bar Wedne
 Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries.
 This week's Bar Wednesday will be hosted at Sino in Santana Row, San Jose.
 Before that I'll be going to Le Marché Santana Row, an outdoor French market every Wednesday from 4pm-8pm on Santana Row (between Olin Avenue and Olsen Drive).
-All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-09-22 12:00 GMT-7'), end_time: DateTime.parse('2017-09-22 6:00' GMT-7))
+All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-09-22 12:00 GMT-7'), end_time: DateTime.parse('2017-09-22 06:00 GMT-7'))
 
 event6 = Event.create!(name: "Bar Wednesday @ Paper Plane", user_id: user18.id, group_id: group13.id, description:" Bar Wednesday is a casual weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries. Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries. This week's Bar Wednesday will be hosted at Paper Plane in downtown San Jose. Paper Plane is home to great cocktails, food and an impressive bottle wall. All are welcome! Please enjoy Bar Wednesday responsibly.", location: "san jose", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258709/download_8_hewzf1.jpg", start_time: DateTime.parse('2017-09-05 14:00 GMT-7'), end_time: DateTime.parse('2017-09-05 18:00 GMT-7'))
 

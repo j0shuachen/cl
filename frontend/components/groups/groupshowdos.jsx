@@ -33,13 +33,14 @@ class GroupShowDos extends React.Component{
     // this.renderEventRsvp = this.renderEventRsvp.bind(this);
     this.eventList = this.eventList.bind(this);
     this.pastEventsList= this.pastEventsList.bind(this);
-  }
+    this.backgroundSetter = this.backgroundSetter.bind(this);
+    }
   getInitialState(){
     this.opmember();
   }
 
   componentDidMount(){
-    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true, newz: true, lengther: this.props.group.news.length}));
+    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.backgroundSetter());
     this.props.fetchEvents().then(() => this.setState({checking: true}));
     this.props.fetchGroupEnrollments(this.props.match.params.groupId);
     // this.renderJ();
@@ -299,7 +300,7 @@ renderU(){
                   <div className='org'>Organizer: </div>
                   <Link to={ots}><img className='eventorg' src={event.organizer.image_url}></img></Link>
                 </div>
-                <div className='groupeventid'>Ended: {moment.utc(event.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+                <div className='groupeventid'>Ended: {moment(event.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
 
                 {this.state[event.id] ? <div className='yoka2'>{event.rsvp.num} members went </div> : <div className='yoka2'>{event.rsvp.num} members went</div> }
               </div>
@@ -406,8 +407,8 @@ renderU(){
             <Link to={ots}><img className='eventorg' src={event.organizer.image_url}></img></Link>
           </div>
 
-          <div className='groupeventid'>Start time: {event.start_time === 'tbd' ? 'tbd' : moment.utc(event.start_time).format('ddd MMM Do YYYY hh:mm A')}</div>
-          <div className='groupeventid'>End time: {event.end_time === 'tbd' ? 'tbd' : moment.utc(event.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+          <div className='groupeventid'>Start time: {event.start_time === 'tbd' ? 'tbd' : moment(event.start_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+          <div className='groupeventid'>End time: {event.end_time === 'tbd' ? 'tbd' : moment(event.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
           {this.state[event.id] ? <div className='yoka2'>{event.rsvp.num} members attending</div> :       <div className='yoka2'>{event.rsvp.num} members attending</div> }
           {renderEventRsvp()}
           {x()}
@@ -435,12 +436,16 @@ renderU(){
     }
   }
 
+  backgroundSetter(){
 
+
+this.setState({check: true, newz: true, lengther: this.props.group.news.length, background: this.props.group.banner_url, color: this.props.group.color});
+  }
 
 
   render() {
 
-
+    console.log(this.state);
     console.log(this.props);
     if(Object.keys(this.props.group).length === 0 || !this.props.group.info){
       return (
@@ -521,12 +526,15 @@ renderU(){
 
 
 
+    var xo = this.props.group.color;
 
 
   return (
-    <div className="singlegroupcontainer">
+    <div className="singlegroupcontainer" >
       <div className="groupheader">
-        <div className="singlegroupbanner"></div>
+        <div className="singlegroupbanner" style={{backgroundColor:xo}}>
+        {  this.props.group.background_url ==='default' ? null : <img className='banner' src={this.props.group.background_url}></img>}
+        </div>
         <div className="singlegroupheader">
           <span>{this.props.group.name}</span>
         </div>
@@ -547,7 +555,7 @@ renderU(){
       </div>
       </div>
 
-      <div className="singlegroup" >
+      <div className="singlegroup" style={{backgroundColor: this.state.color}}>
         <div className="singlegroupsidebar">
           <div className="gcreated">
             <img className="grouppico" src={this.props.group.image_url}></img>
