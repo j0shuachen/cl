@@ -220,7 +220,7 @@ class Api::GroupsController < ApplicationController
     private
 
     def group_params
-      params.require(:group).permit(:user_id, :name, :info, :location, :image_url, :color)
+      params.require(:group).permit(:user_id, :name, :info, :location, :image_url, :color, :banner_url)
     end
 
 

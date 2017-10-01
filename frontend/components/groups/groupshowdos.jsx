@@ -13,8 +13,8 @@ class GroupShowDos extends React.Component{
       newz: false,
       loaded: false,
       num: true,
-      heightning: 1215,
-      heighter: '1215px'
+      heightning: 1395,
+      heighter: '1395px'
     };
     this.newsheightclicker = this.newsheightclicker.bind(this);
 
@@ -75,7 +75,9 @@ class GroupShowDos extends React.Component{
 
   newsheightclicker() {
     console.log('hitt');
-    var newheight = this.state.heightning+1215;
+    // var newheight = this.state.heightning+1215;
+    var newheight = this.state.heightning+1395;
+
 
     var newheighter = newheight.toString() + 'px';
     console.log(newheight);
@@ -439,7 +441,7 @@ renderU(){
   backgroundSetter(){
 
 
-this.setState({check: true, newz: true, lengther: this.props.group.news.length, background: this.props.group.banner_url, color: this.props.group.color});
+this.setState({check: true, newz: true, lengther: this.props.group.news.length, banner: this.props.group.banner_url, color: this.props.group.color});
   }
 
 
@@ -525,15 +527,18 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
     };
 
 
-
-    var xo = this.props.group.color;
+if(this.props.group.color === "#FFFFFF"){
+  var xo = '#ed1c40';
+}else{
+  xo = this.props.group.color;
+}
 
 
   return (
     <div className="singlegroupcontainer" >
       <div className="groupheader">
         <div className="singlegroupbanner" style={{backgroundColor:xo}}>
-        {  this.props.group.background_url ==='default' ? null : <img className='banner' src={this.props.group.background_url}></img>}
+        {  this.props.group.banner_url ==='default' ? null : <img className='banner' src={this.props.group.banner_url}></img>}
         </div>
         <div className="singlegroupheader">
           <span>{this.props.group.name}</span>

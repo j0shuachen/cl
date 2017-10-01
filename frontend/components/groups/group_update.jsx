@@ -14,9 +14,11 @@ class UpdateGroup extends React.Component {
       errors: "",
       id: this.props.groupId,
       image_url: '',
-      background_url: '',
+      banner_url: '',
       color:''
     };
+    this.uploadBannerButton = this.uploadBannerButton.bind(this);
+    this.defaultButton = this.defaultButton.bind(this);
     this.colorChanger = this.colorChanger.bind(this);
     this.createGroup = this.createGroup.bind(this);
     this.createName = this.createName.bind(this);
@@ -25,6 +27,7 @@ class UpdateGroup extends React.Component {
     this.prev = this.prev.bind(this);
     this.uploadButton = this.uploadButton.bind(this);
     this.setImage = this.setImage.bind(this);
+    this.setBanner = this.setBanner.bind(this);
   }
 
   componentDidMount(){
@@ -39,12 +42,13 @@ class UpdateGroup extends React.Component {
     const location = this.state.location;
     const user = this.props.currentUser;
     const color = this.state.color;
+    const banner_url=this.state.banner_url;
     if(this.state.image_url===null){
       var image = 'http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif';
     }else{
       image = this.state.image_url;
     }
-    const groupe = {name: name, info: info, location: location, user_id: this.props.currentUser, id: this.props.groupId, image_url: image, color: color};
+    const groupe = {name: name, info: info, location: location, user_id: this.props.currentUser, id: this.props.groupId, image_url: image, color: color, banner_url: banner_url};
     console.log(groupe);
     this.props.updateGroup({group: groupe}).then(()=>this.props.history.push(`/groups/${groupId}`));
   }
@@ -65,22 +69,35 @@ class UpdateGroup extends React.Component {
   }
 
   prev() {
+
+    // this.props.group.background_url === 'default' ? this.setState({background_url: null}) : this.setState({background_url: this.props.group.background_url});
     this.setState({name:this.props.group.name});
+    this.setState({banner_url: this.props.group.banner_url});
     this.setState({info: this.props.group.info});
     this.setState({location: this.props.group.location});
     this.setState({image_url: this.props.group.image_url});
     this.setState({color: this.props.group.color});
+    console.log(this.state);
   }
 
 
   setImage(url){
    if (url ){
      this.setState({image_url: url});
+     console.log(this.state);
 
   }
    //  console.log(this.state);
  }
-
+ setBanner(url){
+   if(url){
+     this.setState({banner_url: url});
+     console.log(this.state);
+   }
+ }
+defaultButton(){
+  this.setState({banner_url: 'default'});
+}
 
   uploadButton () {
     cloudinary.openUploadWidget(
@@ -92,6 +109,18 @@ class UpdateGroup extends React.Component {
       }
     );
 
+  }
+
+  uploadBannerButton(){
+    cloudinary.openUploadWidget(
+      window.CLOUDINARY_OPTIONS, (errors, images) => {
+        if(errors === null){
+          console.log(images[0].url);
+         this.setBanner(images[0].url);
+
+       }
+      }
+    );
   }
 
   colorChanger(color, e){
@@ -107,9 +136,9 @@ class UpdateGroup extends React.Component {
 console.log(this.props);
     return (
       <div className="groupformcontainer">
-        <div className="creategroupgif">
-          <div className="c1" >Start a new group</div>
-          <div className="c2">We'll help you find the right people!</div>
+        <div className="creategroupgif2" style={{backgroundColor: this.state.color}}>
+          {this.state.banner_url ==='default'?  <div className="c1" >Update your group</div> : <img className='backer' src= {this.state.banner_url}/>}
+
         </div>
         <div className= 'formupdater'style={{backgroundColor: this.state.color}}>
         <form className="groupform" onSubmit={this.createGroup} >
@@ -156,9 +185,28 @@ console.log(this.props);
             </div>
           </label>
 
+          <label className="grouppic">
+            <div className="steps">Step 5 of 5</div>
+            <div className='pickers'>
+              <div className='picturepickerdos'>
+            <div className="ques2">Update your group's banner!</div>
+            {this.state.banner_url === 'default' ? <div className='groupformpico' style={{backgroundColor: this.state.color}}></div> : <img className='groupformpico' src={this.state.banner_url}></img> }
+            <div className='buttonrow'>
+            <div className='uplob' onClick={this.uploadBannerButton}>Upload</div>
+            <div className='uplobdos' onClick={this.defaultButton}>Remove</div>
+            </div>
+            </div>
+          </div>
+
+      </label>
+
           <input className="creategroupsub" type="submit"></input>
         </form>
 
+
+</div>
+<div className="creategroupgif2" style={{backgroundColor: this.state.color}}>
+  {this.state.banner_url ==='default'  ? <div className="c1" >Update your group</div> : <img className='backer' src= {this.state.banner_url}></img> }
 
 </div>
       </div>
@@ -167,3 +215,7 @@ console.log(this.props);
 }
 
 export default UpdateGroup;
+
+// <div className="c1" >Update your group</div>
+//
+// src='http://res.cloudinary.com/dxeyfggji/image/upload/v1504262249/pexels-photo-358482_wlqvz6.jpg'
