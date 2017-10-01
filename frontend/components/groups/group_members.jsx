@@ -17,14 +17,17 @@ class GroupMembers extends React.Component{
       enrollment_id: null,
       loaded: false,
       newz: true,
-      heightning: 1215,
-      heighter: '1215px'
+      // heightning: 1215,
+      // heighter: '1215px'
+      heightning: 1395,
+      heighter: '1395px'
 
 
     };
     // this.props.fetchGroup(this.props.match.params.groupId);
     this.ops = this.ops.bind(this);
     this.newsheightclicker = this.newsheightclicker.bind(this);
+    this.backgroundSetter = this.backgroundSetter.bind(this);
     // this.renderEvents = this.renderEvents.bind(this);
 
     // this.allmembs = this.allmembs.bind(this);
@@ -50,7 +53,7 @@ class GroupMembers extends React.Component{
     // this.renderJ();
   }
   componentDidMount(){
-    this.props.fetchGroup(this.props.match.params.groupId).then(()=>this.setState({loaded: true}));
+    this.props.fetchGroup(this.props.match.params.groupId).then(()=>this.backgroundSetter());
     // this.props.fetchGroup(this.props.match.params.groupId).then(()=> this.ops()).then( () => this.setState({loaded: true}));
     // this.props.fetchGroup(this.props.match.params.groupId).then(()=> this.ops()).then( () => this.setState({loaded: true}));
 
@@ -65,6 +68,12 @@ class GroupMembers extends React.Component{
   //   this.props.fetchGroup(this.props.match.params.groupId);
   //
   // }
+
+  backgroundSetter(){
+
+
+this.setState({check: true, newz: true, lengther: this.props.group.news.length, banner: this.props.group.banner_url, color: this.props.group.color});
+  }
 
   // ops(){
   //   if(this.props.memboz){
@@ -87,7 +96,7 @@ class GroupMembers extends React.Component{
 
   newsheightclicker() {
     console.log('hitt');
-    var newheight = this.state.heightning+1215;
+    var newheight = this.state.heightning+1395;
 
     var newheighter = newheight.toString() + 'px';
     console.log(newheight);
@@ -118,6 +127,8 @@ class GroupMembers extends React.Component{
   }
 
   render() {
+
+
     // console.log(this.props);
     // if(!this.state.group){
     //   return(<div>loading...</div>);
@@ -225,10 +236,22 @@ class GroupMembers extends React.Component{
     };
     console.log(this.state);
     // console.log('hwifhaowfh', this.props);
+
+    if(this.props.group.color === "#FFFFFF"){
+      var xo = '#ed1c40';
+    }else{
+      xo = this.props.group.color;
+    }
+
   return (
     <div className="singlegroupcontainer">
       <div className="groupheader">
-        <div className="singlegroupbanner"></div>
+        <div className="singlegroupbanner" style={{backgroundColor: xo}}>
+
+          {  this.props.group.banner_url ==='default' ? null : <img className='banner' src={this.props.group.banner_url}></img>}
+
+
+        </div>
       <div className="singlegroupheader">
         <span>{this.props.group.name}</span>
       </div>
@@ -279,7 +302,7 @@ class GroupMembers extends React.Component{
             <div style={{height: this.state.heighter, overflow: 'hidden'}}>
             {this.state.newz ? newsList(this.props.group.news) : newsList(this.props.group.news)}
             </div>
-          {this.state.heightning <= this.state.lengther* 135 ? <div className='newsclicker' onClick={this.newsheightclicker}>More news!</div> : null }
+          {this.state.heightning <= this.state.lengther* 155 ? <div className='newsclicker' onClick={this.newsheightclicker}>More news!</div> : null }
 
             </div>
 

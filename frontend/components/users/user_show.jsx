@@ -15,7 +15,7 @@ class UserShow extends React.Component{
       loaded: false,
       num: true
     };
-
+    this.backgroundSetter = this.backgroundSetter.bind(this);
     this.renderU = this.renderU.bind(this);
     this.ismember = this.ismember.bind(this);
     this.renderJ = this.renderJ.bind(this);
@@ -36,7 +36,7 @@ class UserShow extends React.Component{
 
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId).then(() => this.setState({c: true}));
-    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true}));
+    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.backgroundSetter());
     this.props.fetchEvents().then(() => this.setState({checking: true}));
     this.props.fetchGroupEnrollments(this.props.match.params.groupId);
     // this.renderJ();
@@ -206,6 +206,12 @@ renderJ(){
       </div>
     );
   }
+}
+
+backgroundSetter(){
+
+
+this.setState({check: true, newz: true, lengther: this.props.group.news.length, banner: this.props.group.banner_url, color: this.props.group.color});
 }
 
 componentWillReceiveProps(nextProps){
@@ -468,10 +474,18 @@ renderU(){
   })
 );
 
+if(this.props.group.color === "#FFFFFF"){
+  var xo = '#ed1c40';
+}else{
+  xo = this.props.group.color;
+}
+
   return (
     <div className="singlegroupcontainer">
       <div className="groupheader">
-        <div className="singlegroupbanner"></div>
+        <div className="singlegroupbanner" style={{backgroundColor: xo}}></div>
+          {  this.props.group.banner_url ==='default' ? null : <img className='banner' src={this.props.group.banner_url}></img>}
+
         <div className="singlegroupheader">
           <span>{this.props.group.name}</span>
         </div>

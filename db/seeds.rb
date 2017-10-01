@@ -213,7 +213,7 @@ guest8 = User.create!(username: "guest8", password: "guest81", name: "guest8", l
 guest9 = User.create!(username: "guest9", password: "guest91", name: "guest9", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
 guest10 = User.create!(username: "guest10", password: "guest101", name: "guest10", location: "castro valley", email: "guest1@gmail.com", image_url: OP[rand(20)])
 
-group1= Group.create!(name: "star wars", location: "milpitas", user_id: user1.id, info: "star wars > star trek!! We are a group of star wars lovers that get together every weekend to hang out. Movie screening on the 21st of every month! May the force be with you!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258263/1200px-Star_Wars_Logo.svg_murnm7.png")
+group1= Group.create!(name: "star wars", location: "milpitas", user_id: user1.id, info: "star wars > star trek!! We are a group of star wars lovers that get together every weekend to hang out. Movie screening on the 21st of every month! May the force be with you!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258263/1200px-Star_Wars_Logo.svg_murnm7.png", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832303/youtube_banner_background_kjpwg_throughout_cool_ba_by_benjamin_morozov-dbfrjab_a2i6zi.jpg')
 gn33 = GroupNews.create!(group_id: group1.id, news: user1.username + ' created the group ' + group1.name, user_id: user1.id, oid: group1.id, typo: 'g')
 ge33 = GroupEnrollment.create!(group_id: group1.id, user_id: user1.id)
 
@@ -339,7 +339,7 @@ ee6 = EventEnrollment.create!(user_id: user61.id, event_id: event21.id)
 
 
 
-group2= Group.create!(name: "bootcamp grads", location: "san francisco", user_id: user12.id, info: "Bay area coding boot camp grads! We love coding and having fun! Join us as we explore  technologies every Wednesday night. Happy Hour socials on Friday!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504310022/logo-emblem-red-1000-1-_ycgof6.jpg")
+group2= Group.create!(name: "bootcamp grads", location: "san francisco", user_id: user12.id, info: "Bay area coding boot camp grads! We love coding and having fun! Join us as we explore  technologies every Wednesday night. Happy Hour socials on Friday!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504310022/logo-emblem-red-1000-1-_ycgof6.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832303/website-banner-backgrounds----7_hndb2z.png')
 gn34 = GroupNews.create!(group_id: group2.id, news: user12.username + ' created the group ' + group2.name, user_id: user12.id, oid: group2.id, typo: 'g')
 ge34 = GroupEnrollment.create!(group_id: group2.id, user_id: user12.id)
 
@@ -564,7 +564,7 @@ group3= Group.create!(name: "South Bay Ping Pong", location: "santa clara", user
 • All levels welcome
 • We play with multiple balls, so it's okay to miss because you always have another ball ready to go
 • Better players are encouraged to help lower level players
-", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258277/download_1_imnrgf.jpg")
+", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258277/download_1_imnrgf.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832302/tmp855131221754118145_d7di05.jpg')
 gn35 = GroupNews.create!(group_id: group3.id, news: user18.username + ' created the group ' + group3.name, user_id: user18.id, oid: group3.id, typo: 'g')
 ge35 = GroupEnrollment.create!(group_id: group3.id, user_id: user18.id)
 gn73 = GroupNews.create!(group_id: group3.id, news: user77.username + ' joined the group', user_id: user77.id, oid: group3.id, typo: 'g')
@@ -742,7 +742,7 @@ ee176 = EventEnrollment.create!(user_id: user18.id, event_id: event35.id)
 
 group4= Group.create!(user_id: user13.id, name: "weekend baksetball cru", location:"san francisco", info: "Weekend basketball crew! Players of all skill levels welcome! After a long week at work, there's nothing like a few pickup games to blow off steam!
 
-We meet every Saturday and Sunday at 10:00am!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258707/6359464693365503891966175787_pickup_basketball_gzp8ie.jpg")
+We meet every Saturday and Sunday at 10:00am!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258707/6359464693365503891966175787_pickup_basketball_gzp8ie.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832302/slider_nebula_xi5id3.jpg')
 gn36 = GroupNews.create!(group_id: group4.id, news: user13.username + ' created the group ' + group4.name, user_id: user13.id, oid: group4.id, typo: 'g')
 ge36 = GroupEnrollment.create!(group_id: group4.id, user_id: user13.id)
 gn86 = GroupNews.create!(group_id: group4.id, news: user24.username + ' joined the group', user_id: user24.id, oid: group4.id, typo: 'g')
@@ -955,7 +955,7 @@ ee243 = EventEnrollment.create!(user_id: user24.id, event_id: event39.id)
 ee244 = EventEnrollment.create!(user_id: user13.id, event_id: event39.id)
 
 
-group5= Group.create!(name: "hip hop lovers", location: "mountain view", user_id: user12.id, info: "Hip hop appreciation crew. We love everything about hip hop. Join us to hear about upcoming events and concerts first! No ticket scalping allowed here!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501259103/65c9ba984e90d29163196b211369ee63--graffiti-artists-hiphop_w1beva.jpg")
+group5= Group.create!(name: "hip hop lovers", location: "mountain view", user_id: user12.id, info: "Hip hop appreciation crew. We love everything about hip hop. Join us to hear about upcoming events and concerts first! No ticket scalping allowed here!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501259103/65c9ba984e90d29163196b211369ee63--graffiti-artists-hiphop_w1beva.jpg", banner_url:'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832302/SEP-WEBSITE-FOOTER-BANNER-IMAGE-NO-TEXT_ubvpqg.jpg')
 gn37 = GroupNews.create!(group_id: group5.id, news: user12.username + ' created the group ' + group5.name, user_id: user12.id, oid: group5.id, typo: 'g')
 ge37 = GroupEnrollment.create!(group_id: group5.id, user_id: user12.id)
 gn102 = GroupNews.create!(group_id: group5.id, news: user48.username + ' joined the group', user_id: user48.id, oid: group5.id, typo: 'g')
@@ -1125,7 +1125,7 @@ ee297 = EventEnrollment.create!(user_id: user14.id, event_id: event42.id)
 ee298 = EventEnrollment.create!(user_id: user48.id, event_id: event42.id)
 
 
-group6= Group.create!(name: "KPOP", location: "san francisco", user_id: user11.id, info: "Eat, drink, sleep kpop! Join us to learn about upcoming concerts, events, music drops and more!  members welcome at our Fresh Fridays where we watch  kpop music videos released over the last week!!!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258279/kpop-jpg_hv06pm.gif")
+group6= Group.create!(name: "KPOP", location: "san francisco", user_id: user11.id, info: "Eat, drink, sleep kpop! Join us to learn about upcoming concerts, events, music drops and more!  members welcome at our Fresh Fridays where we watch  kpop music videos released over the last week!!!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258279/kpop-jpg_hv06pm.gif",  banner_url:'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832302/SCS-PS_20170307_Gov_Staffhub_Blog-Banner_feat_rjgntt.png')
 gn38 = GroupNews.create!(group_id: group6.id, news: user11.username + ' created the group ' + group6.name, user_id: user11.id, oid: group6.id, typo: 'g')
 ge38 = GroupEnrollment.create!(group_id: group6.id, user_id: user11.id)
 gn119 = GroupNews.create!(group_id: group6.id, news: user40.username + ' joined the group', user_id: user40.id, oid: group6.id, typo: 'g')
@@ -1250,7 +1250,7 @@ ee331 = EventEnrollment.create!(user_id: user95.id, event_id: event45.id)
 ee332 = EventEnrollment.create!(user_id: user11.id, event_id: event45.id)
 
 
-group7= Group.create!(name: "Anime Club", location: "hayward", user_id: user15.id, info: "Naruto, Bleach, One Piece, Cowboy Bebop, we love em all!!!! Anime lovers unite!!! Join us if you are a fellow anime lover interested in making a few like-minded friends! We have a weekly ice cream social where  members are welcome to attend!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258285/2a1c5bbb55d56e983ff7ba2b09caa556--sharingan-eyes-kakashi-sharingan_vh5ubs.jpg")
+group7= Group.create!(name: "Anime Club", location: "hayward", user_id: user15.id, info: "Naruto, Bleach, One Piece, Cowboy Bebop, we love em all!!!! Anime lovers unite!!! Join us if you are a fellow anime lover interested in making a few like-minded friends! We have a weekly ice cream social where  members are welcome to attend!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258285/2a1c5bbb55d56e983ff7ba2b09caa556--sharingan-eyes-kakashi-sharingan_vh5ubs.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832302/qbx5T_no9gqr.jpg')
 gn39 = GroupNews.create!(group_id: group7.id, news: user15.username + ' created the group ' + group7.name, user_id: user26.id, oid: group7.id, typo: 'g')
 ge39 = GroupEnrollment.create!(group_id: group7.id, user_id: user15.id)
 gn130 = GroupNews.create!(group_id: group7.id, news: user95.username + ' joined the group', user_id: user95.id, oid: group7.id, typo: 'g')
@@ -1377,7 +1377,7 @@ ee371 = EventEnrollment.create!(user_id: user95.id, event_id: event48.id)
 
 
 
-group8= Group.create!(name: "caltrain commuters", location: "cupertino", user_id: user16.id, info: "You know what this is... caltrain commuters!!! Join us to share your funny caltrain stories and vent if need be! ", image_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1504310134/vSzCaJVS_ju3406.jpg')
+group8= Group.create!(name: "caltrain commuters", location: "cupertino", user_id: user16.id, info: "You know what this is... caltrain commuters!!! Join us to share your funny caltrain stories and vent if need be! ", image_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1504310134/vSzCaJVS_ju3406.jpg', banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832302/pol_banner_1152x415_c_0_sgbcld.jpg')
 gn40 = GroupNews.create!(group_id: group8.id, news: user16.username + ' created the group ' + group8.name, user_id: user16.id, oid: group8.id, typo: 'g')
 ge40 = GroupEnrollment.create!(group_id: group8.id, user_id: user16.id)
 gn142 = GroupNews.create!(group_id: group8.id, news: user47.username + ' joined the group', user_id: user47.id, oid: group8.id, typo: 'g')
@@ -1565,7 +1565,7 @@ ee434 = EventEnrollment.create!(user_id: user48.id, event_id: event52.id)
 ee435 = EventEnrollment.create!(user_id: user47.id, event_id: event52.id)
 
 
-group9= Group.create!(name: "L2SpeakKorean", location: "san francisco", user_id: user17.id, info: "Want to learn to speak korean? This is the club for you! All proficiency levels welcome! Please send me an email if you are a native speaker interested in helping others learn!", image_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1504310359/il_340x270.920999708_jd5c_hhptjx.jpg')
+group9= Group.create!(name: "L2SpeakKorean", location: "san francisco", user_id: user17.id, info: "Want to learn to speak korean? This is the club for you! All proficiency levels welcome! Please send me an email if you are a native speaker interested in helping others learn!", image_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1504310359/il_340x270.920999708_jd5c_hhptjx.jpg', banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832301/Orchestrated_Customer_Engagement_Home_banner_o5ftbs.jpg')
 gn41 = GroupNews.create!(group_id: group9.id, news: user17.username + ' created the group ' + group9.name, user_id: user17.id, oid: group9.id, typo: 'g')
 ge41 = GroupEnrollment.create!(group_id: group9.id, user_id: user17.id)
 gn157 = GroupNews.create!(group_id: group9.id, news: user68.username + ' joined the group', user_id: user68.id, oid: group9.id, typo: 'g')
@@ -1715,7 +1715,7 @@ ee483 = EventEnrollment.create!(user_id: user68.id, event_id: event55.id)
 
 
 
-group10= Group.create!(name: "San Jose Hiking Crew", location: "san jose", user_id: user14.id, info: "South bay hikers! We love the outdoors. Weekly hikes on Saturday from 7:00am-3:00pm and Sunday from 9:00am-5:00pm! Come out and hike with us!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501259174/download_10_ahldfl.jpg")
+group10= Group.create!(name: "San Jose Hiking Crew", location: "san jose", user_id: user14.id, info: "South bay hikers! We love the outdoors. Weekly hikes on Saturday from 7:00am-3:00pm and Sunday from 9:00am-5:00pm! Come out and hike with us!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501259174/download_10_ahldfl.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832301/interests_banner_zwl3zb.jpg')
 gn42 = GroupNews.create!(group_id: group10.id, news: user14.username + ' created the group ' + group10.name, user_id: user14.id, oid: group10.id, typo: 'g')
 ge42 = GroupEnrollment.create!(group_id: group10.id, user_id: user14.id)
 gn171 = GroupNews.create!(group_id: group10.id, news: user83.username + ' joined the group', user_id: user83.id, oid: group10.id, typo: 'g')
@@ -1868,7 +1868,7 @@ ee529 = EventEnrollment.create!(user_id: user26.id, event_id: event58.id)
 ee530 = EventEnrollment.create!(user_id: user89.id, event_id: event58.id)
 ee531 = EventEnrollment.create!(user_id: user14.id, event_id: event58.id)
 
-group11= Group.create!(name: "food club", location: "san jose", user_id: user18.id, info: "We are a group of food lovers that explore different restaurants around the bay area. Join us as we explore a  restaurant every week!  members welcome!!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501259277/585be1aa1600002400bdf2a6_ipusya.jpg")
+group11= Group.create!(name: "food club", location: "san jose", user_id: user18.id, info: "We are a group of food lovers that explore different restaurants around the bay area. Join us as we explore a  restaurant every week!  members welcome!!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501259277/585be1aa1600002400bdf2a6_ipusya.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832301/IMS-Health-Quintiles_dedgcx.jpg')
 gn43 = GroupNews.create!(group_id: group11.id, news: user18.username + ' created the group ' + group11.name, user_id: user18.id, oid: group11.id, typo: 'g')
 ge43 = GroupEnrollment.create!(group_id: group11.id, user_id: user18.id)
 gn186 = GroupNews.create!(group_id: group11.id, news: user26.username + ' joined the group', user_id: user26.id, oid: group11.id, typo: 'g')
@@ -2130,7 +2130,7 @@ ee612 = EventEnrollment.create!(user_id: user73.id, event_id: event580.id)
 
 group13 = Group.create!( name: "Bar Wednesday", location: "san jose", user_id: user20.id, info: "Bar Wednesday is a casual weekly event for local professionals across industries to socialize, philosophize and discuss  technologies. Members represent local startups, finance, technology, automotive, real estate and other industries.
 Bar Wednesday is an open event and will never have a sponsor or specific agenda. It will be hosted at various South Bay bars, cocktail lounges and breweries.
-All are welcome! Please enjoy Bar Wednesday responsibly.", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258713/download_7_psujbp.jpg")
+All are welcome! Please enjoy Bar Wednesday responsibly.", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258713/download_7_psujbp.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832300/images_ypfr63.jpg')
 gn45 = GroupNews.create!(group_id: group13.id, news: user20.username + ' created the group ' + group13.name, user_id: user20.id, oid: group13.id, typo: 'g')
 ge45 = GroupEnrollment.create!(group_id: group13.id, user_id: user20.id)
 gn211 = GroupNews.create!(group_id: group13.id, news: user47.username + ' joined the group', user_id: user47.id, oid: group13.id, typo: 'g')
@@ -2242,7 +2242,7 @@ ee645 = EventEnrollment.create!(user_id: user47.id, event_id: event610.id)
 
 
 
-group14 = Group.create!( name: "Hackaday", location: "san jose", user_id: user17.id, info: "This meetup is for Hackaday enthusiasts in San Jose, run in partnership with Hackaday! More info to be added here soon.")
+group14 = Group.create!( name: "Hackaday", location: "san jose", user_id: user17.id, info: "This meetup is for Hackaday enthusiasts in San Jose, run in partnership with Hackaday! More info to be added here soon.", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832300/images_2_ayljhe.jpg')
 gn46 = GroupNews.create!(group_id: group14.id, news: user17.username + ' created the group ' + group14.name, user_id: user17.id, oid: group14.id, typo: 'g')
 ge46 = GroupEnrollment.create!(group_id: group14.id, user_id: user17.id)
 gn221 = GroupNews.create!(group_id: group14.id, news: user54.username + ' joined the group', user_id: user54.id, oid: group14.id, typo: 'g')
@@ -2496,7 +2496,7 @@ ee736 = EventEnrollment.create!(user_id: user54.id, event_id: event68.id)
 
 
 group15= Group.create!(name:"Silicon Valley Offbeat 20's and 30's", location: "sunnyvale", user_id: 11, info: "This is a group for people in their 20s & early 30s looking to bond with cool  friends over quirky, fun activities. We're less about the happy hours and meeting over drinks (though they're bound to happen informally) and more about the strange, fun things you've always wanted to try doing (Quidditch, anyone?).
-Activities can range from the casual (hikes, game nights, karaoke nights, etc.) to the more offbeat (puzzle hunts, obstacle courses, murder mysteries, etc.). If this sounds right up your alley, come join us for some random fun!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258281/BoHxGMbIEAAUPgn_q7gcyk.jpg")
+Activities can range from the casual (hikes, game nights, karaoke nights, etc.) to the more offbeat (puzzle hunts, obstacle courses, murder mysteries, etc.). If this sounds right up your alley, come join us for some random fun!", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258281/BoHxGMbIEAAUPgn_q7gcyk.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832300/images_1_jaokmu.jpg')
 gn47 = GroupNews.create!(group_id: group15.id, news: user11.username + ' created the group ' + group15.name, user_id: user11.id, oid: group15.id, typo: 'g')
 ge47 = GroupEnrollment.create!(group_id: group15.id, user_id: user11.id)
 gn233 = GroupNews.create!(group_id: group15.id, news: user63.username + ' joined the group', user_id: user63.id, oid: group15.id, typo: 'g')
@@ -2608,7 +2608,7 @@ ee769 = EventEnrollment.create!(user_id: user63.id, event_id: event71.id)
 
 
 group16= Group.create!(name: "Asian Party Club", location: "san francisco", user_id: user20.id, info: "·  The Asian party club was recently founded to meet the needs of the Asian community.
-·  Hosts fun, social and networking events in San Francisco and the Silicon Valley.", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258716/download_9_yyeqwp.jpg")
+·  Hosts fun, social and networking events in San Francisco and the Silicon Valley.", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258716/download_9_yyeqwp.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832299/hero-banner_budh7a.jpg')
 gn48 = GroupNews.create!(group_id: group16.id, news: user20.username + ' created the group ' + group16.name, user_id: user26.id, oid: group16.id, typo: 'g')
 ge48 = GroupEnrollment.create!(group_id: group16.id, user_id: user20.id)
 gn243 = GroupNews.create!(group_id: group16.id, news: user39.username + ' joined the group', user_id: user39.id, oid: group16.id, typo: 'g')
@@ -2708,7 +2708,7 @@ ee798 = EventEnrollment.create!(user_id: user70.id, event_id: event74.id)
 ee799 = EventEnrollment.create!(user_id: user39.id, event_id: event74.id)
 
 
-group17= Group.create!(name: "Los Angeles Graphic Designers", location: "Los Angeles", user_id: user25.id, info: "We are a group of graphic designers based in Los Angeles shaking up the design industry! Join us for our weekly meetups and monthly design competitions!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262317/pexels-photo-128666_gr3wrd.jpg")
+group17= Group.create!(name: "Los Angeles Graphic Designers", location: "Los Angeles", user_id: user25.id, info: "We are a group of graphic designers based in Los Angeles shaking up the design industry! Join us for our weekly meetups and monthly design competitions!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262317/pexels-photo-128666_gr3wrd.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832300/grunge-blue-banner_pc7ew2.jpg')
 gn1 = GroupNews.create!(group_id: group17.id, news: user25.username + ' created the group ' + group17.name, user_id: user25.id, oid: group17.id, typo: 'g')
 ge1 = GroupEnrollment.create!(group_id: group17.id, user_id: user25.id)
 gn252 = GroupNews.create!(group_id: group17.id, news: user46.username + ' joined the group', user_id: user46.id, oid: group17.id, typo: 'g')
@@ -2830,7 +2830,7 @@ ee836 = EventEnrollment.create!(user_id: user71.id, event_id: event77.id)
 ee837 = EventEnrollment.create!(user_id: user49.id, event_id: event77.id)
 ee838 = EventEnrollment.create!(user_id: user46.id, event_id: event77.id)
 
-group18= Group.create!(name: "Bay Area Fantasy Football", location: "San Jose", user_id: user12.id, info: "Home to the bay area fantasy football association. Join us to sign up with a registered league and win prizes. Weekly meetups at local bars and pubs to watch the game!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262250/pexels-photo-564071_akyas1.jpg")
+group18= Group.create!(name: "Bay Area Fantasy Football", location: "San Jose", user_id: user12.id, info: "Home to the bay area fantasy football association. Join us to sign up with a registered league and win prizes. Weekly meetups at local bars and pubs to watch the game!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262250/pexels-photo-564071_akyas1.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832299/free_youtube_one_banner_with_background__by_cristidfs-d5ya62x_wjkmca.jpg')
 gn2 = GroupNews.create!(group_id: group18.id, news: user12.username + ' created the group ' + group18.name, user_id: user12.id, oid: group18.id, typo: 'g')
 ge2 = GroupEnrollment.create!(group_id: group18.id, user_id: user12.id)
 gn265 = GroupNews.create!(group_id: group18.id, news: user94.username + ' joined the group', user_id: user94.id, oid: group18.id, typo: 'g')
@@ -2958,7 +2958,7 @@ ee877 = EventEnrollment.create!(user_id: user94.id, event_id: event80.id)
 
 
 
-group19 =Group.create!(name: "Sunnyvale Swimmers", location: "sunnyvale", user_id: user15.id, info: "Sunnyvale Swimmers is a swimming club for all levels and ages! Our members range from beginners to swimmers who swim at a competitive level. Congrats to John S for placing 2nd at last month's county swim meet!!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262248/pexels-photo-261185_bzc0rr.jpg")
+group19 =Group.create!(name: "Sunnyvale Swimmers", location: "sunnyvale", user_id: user15.id, info: "Sunnyvale Swimmers is a swimming club for all levels and ages! Our members range from beginners to swimmers who swim at a competitive level. Congrats to John S for placing 2nd at last month's county swim meet!!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262248/pexels-photo-261185_bzc0rr.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832299/forest_wwyi9k.jpg')
 gn264 = GroupNews.create!(group_id: group19.id, news: user15.username + ' created the group ' + group19.name, user_id: user19.id, oid: group19.id, typo: 'g')
 ge264 = GroupEnrollment.create!(group_id: group19.id, user_id: user15.id)
 gn277 = GroupNews.create!(group_id: group19.id, news: user90.username + ' joined the group', user_id: user90.id, oid: group19.id, typo: 'g')
@@ -3077,7 +3077,7 @@ ee913 = EventEnrollment.create!(user_id: user90.id, event_id: event83.id)
 
 
 
-group20 =Group.create!(name: "SV Indoor Rock Climbing", location: "Sunnyvale", user_id: user15.id, info: "Club for indoor rock climbing enthusiasts! Weekly events hosted at various gyms! Come meet some fellow rock climbers!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262249/pexels-photo-419293_n2xivz.jpg")
+group20 =Group.create!(name: "SV Indoor Rock Climbing", location: "Sunnyvale", user_id: user15.id, info: "Club for indoor rock climbing enthusiasts! Weekly events hosted at various gyms! Come meet some fellow rock climbers!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262249/pexels-photo-419293_n2xivz.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832298/flower_jvrzit.jpg')
 gn3 = GroupNews.create!(group_id: group20.id, news: user15.username + ' created the group ' + group20.name, user_id: user15.id, oid: group20.id, typo: 'g')
 ge3 = GroupEnrollment.create!(group_id: group20.id, user_id: user15.id)
 gn288 = GroupNews.create!(group_id: group20.id, news: user36.username + ' joined the group', user_id: user36.id, oid: group20.id, typo: 'g')
@@ -3204,7 +3204,7 @@ ee950 = EventEnrollment.create!(user_id: user55.id, event_id: event86.id)
 ee951 = EventEnrollment.create!(user_id: user37.id, event_id: event86.id)
 ee952 = EventEnrollment.create!(user_id: user36.id, event_id: event86.id)
 
-group21 =Group.create!(name: "SF BALLAS", location: "San Francisco", user_id: user29.id, info: "SF BALLAS!!!! Join us for our weekly pickup games! Dinner and drinks at various pubs afterwards!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262249/pexels-photo-305244_nlzb4s.jpg")
+group21 =Group.create!(name: "SF BALLAS", location: "San Francisco", user_id: user29.id, info: "SF BALLAS!!!! Join us for our weekly pickup games! Dinner and drinks at various pubs afterwards!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262249/pexels-photo-305244_nlzb4s.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832298/Famous-Mac-OS-X-Wallpaper-1024x768_aomqx4.jpg')
 gn4 = GroupNews.create!(group_id: group21.id, news: user29.username + ' created the group ' + group21.name, user_id: user29.id, oid: group21.id, typo: 'g')
 ge4 = GroupEnrollment.create!(group_id: group21.id, user_id: user29.id)
 gn301 = GroupNews.create!(group_id: group21.id, news: user87.username + ' joined the group', user_id: user87.id, oid: group21.id, typo: 'g')
@@ -3316,7 +3316,7 @@ ee983 = EventEnrollment.create!(user_id: user77.id, event_id: event89.id)
 ee984 = EventEnrollment.create!(user_id: user88.id, event_id: event89.id)
 ee985 = EventEnrollment.create!(user_id: user87.id, event_id: event89.id)
 
-group22 =Group.create!(name: "Milpitas Tennis Club", location: "Milpitas", user_id: user18.id, info: "Tennis club based in the heart of Milpitas. Stop by M-F for pickup games and to meet fellow tennis players from the bay area!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262247/pexels-photo-209977_qhuhqb.jpg")
+group22 =Group.create!(name: "Milpitas Tennis Club", location: "Milpitas", user_id: user18.id, info: "Tennis club based in the heart of Milpitas. Stop by M-F for pickup games and to meet fellow tennis players from the bay area!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262247/pexels-photo-209977_qhuhqb.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832299/Dead-Space-2-HD-Wallpaper_jr63cc.png')
 gn5 = GroupNews.create!(group_id: group22.id, news: user18.username + ' created the group ' + group22.name, user_id: user18.id, oid: group22.id, typo: 'g')
 ge5 = GroupEnrollment.create!(group_id: group22.id, user_id: user18.id)
 gn311 = GroupNews.create!(group_id: group22.id, news: user69.username + ' joined the group', user_id: user69.id, oid: group22.id, typo: 'g')
@@ -3423,7 +3423,7 @@ ee1016 = EventEnrollment.create!(user_id: user56.id, event_id: event92.id)
 ee1017 = EventEnrollment.create!(user_id: user99.id, event_id: event92.id)
 ee1018 = EventEnrollment.create!(user_id: user98.id, event_id: event92.id)
 
-group23 =Group.create!(name: "justDIY", location: "San Diego", user_id: user42.id, info: "Why buy, when you can just DIY? Join us for our weekly projects! ", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262247/pexels-photo-209235_vc62fv.jpg")
+group23 =Group.create!(name: "justDIY", location: "San Diego", user_id: user42.id, info: "Why buy, when you can just DIY? Join us for our weekly projects! ", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262247/pexels-photo-209235_vc62fv.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832301/cool_neon_wallpapers_011_hu6di2.jpg')
 gn6 = GroupNews.create!(group_id: group23.id, news: user42.username + ' created the group ' + group23.name, user_id: user42.id, oid: group23.id, typo: 'g')
 ge6 = GroupEnrollment.create!(group_id: group23.id, user_id: user42.id)
 gn321 = GroupNews.create!(group_id: group23.id, news: user98.username + ' joined the group', user_id: user98.id, oid: group23.id, typo: 'g')
@@ -3531,7 +3531,7 @@ ee1050 = EventEnrollment.create!(user_id: user98.id, event_id: event95.id)
 ee1051 = EventEnrollment.create!(user_id: user97.id, event_id: event95.id)
 
 
-group49 =Group.create!(name: "Frequent Fliers", location: "Chicago", user_id: user38.id, info: "Frequent Fliers, we love travelling! Join our group to find like-minded travel buddies for your next vacay! ", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262247/pexels-photo-210199_jbldak.jpg")
+group49 =Group.create!(name: "Frequent Fliers", location: "Chicago", user_id: user38.id, info: "Frequent Fliers, we love travelling! Join our group to find like-minded travel buddies for your next vacay! ", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262247/pexels-photo-210199_jbldak.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832294/115_lbpgba.jpg')
 gn7 = GroupNews.create!(group_id: group49.id, news: user38.username + ' created the group ' + group49.name, user_id: user38.id, oid: group49.id, typo: 'g')
 ge7 = GroupEnrollment.create!(group_id: group49.id, user_id: user38.id)
 gn331 = GroupNews.create!(group_id: group49.id, news: user30.username + ' joined the group', user_id: user30.id, oid: group49.id, typo: 'g')
@@ -3639,7 +3639,7 @@ ee1083 = EventEnrollment.create!(user_id: user98.id, event_id: event98.id)
 ee1084 = EventEnrollment.create!(user_id: user97.id, event_id: event98.id)
 
 
-group24 =Group.create!(name: "Couples MeetUp", location: "San Jose", user_id: user43.id, info: "Tired of staying home every weekend with your SO? Come hang out and meet up with other couples in the bay area! Weekly events and activities!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262247/pexels-photo-207105_glqiyw.jpg")
+group24 =Group.create!(name: "Couples MeetUp", location: "San Jose", user_id: user43.id, info: "Tired of staying home every weekend with your SO? Come hang out and meet up with other couples in the bay area! Weekly events and activities!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262247/pexels-photo-207105_glqiyw.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832298/cool_dark_blue_453_h7vvzg.jpg')
 gn8 = GroupNews.create!(group_id: group24.id, news: user43.username + ' created the group ' + group24.name, user_id: user43.id, oid: group24.id, typo: 'g')
 ge8 = GroupEnrollment.create!(group_id: group24.id, user_id: user43.id)
 gn341 = GroupNews.create!(group_id: group24.id, news: user71.username + ' joined the group', user_id: user71.id, oid: group24.id, typo: 'g')
@@ -3746,7 +3746,7 @@ ee1117 = EventEnrollment.create!(user_id: user71.id, event_id: event101.id)
 
 
 
-group25 = Group.create!(name: "Bay Area Stargazers", location: "Mountain View", user_id: user31.id, info: "Bay Area Stargazers. If you love the night sky, join us for our weekend stargazing meetups!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262246/messier-101-ngc-5457-galaxy-pinwheel-galaxy-41954_dslbk1.jpg")
+group25 = Group.create!(name: "Bay Area Stargazers", location: "Mountain View", user_id: user31.id, info: "Bay Area Stargazers. If you love the night sky, join us for our weekend stargazing meetups!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262246/messier-101-ngc-5457-galaxy-pinwheel-galaxy-41954_dslbk1.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832300/converge-banner-1-e1404862107454_uwadv1.png')
 gn9 = GroupNews.create!(group_id: group25.id, news: user31.username + ' created the group ' + group25.name, user_id: user31.id, oid: group25.id, typo: 'g')
 ge9 = GroupEnrollment.create!(group_id: group25.id, user_id: user31.id)
 gn351 = GroupNews.create!(group_id: group25.id, news: user92.username + ' joined the group', user_id: user92.id, oid: group25.id, typo: 'g')
@@ -3853,7 +3853,7 @@ ee1149 = EventEnrollment.create!(user_id: user75.id, event_id: event104.id)
 ee1150 = EventEnrollment.create!(user_id: user71.id, event_id: event104.id)
 
 
-group26 = Group.create!(name: "Oakland Producers", location: "Oakland", user_id: user39.id, info: "Bay area music producers! Looking to buy or sell beats? Want to learn how to produce music? Join us for our weekly event tutorials and monthly competitions!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262247/pexels-photo-164907_f5nes9.jpg")
+group26 = Group.create!(name: "Oakland Producers", location: "Oakland", user_id: user39.id, info: "Bay area music producers! Looking to buy or sell beats? Want to learn how to produce music? Join us for our weekly event tutorials and monthly competitions!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262247/pexels-photo-164907_f5nes9.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832297/Colorful-twitter-header-banner_g21n0i.jpg')
 gn10 = GroupNews.create!(group_id: group26.id, news: user39.username + ' created the group ' + group26.name, user_id: user39.id, oid: group26.id, typo: 'g')
 ge10 = GroupEnrollment.create!(group_id: group26.id, user_id: user39.id)
 gn361 = GroupNews.create!(group_id: group26.id, news: user36.username + ' joined the group', user_id: user36.id, oid: group26.id, typo: 'g')
@@ -3962,7 +3962,7 @@ ee1181 = EventEnrollment.create!(user_id: user56.id, event_id: event107.id)
 ee1182 = EventEnrollment.create!(user_id: user45.id, event_id: event107.id)
 ee1183 = EventEnrollment.create!(user_id: user36.id, event_id: event107.id)
 
-group27 = Group.create!(name: "UX design", location: "Palo Alto", user_id: user41.id, info: "UX designers unite! Join us to learn about the newest cutting edge design practices in the industry now!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262246/color-pencil-drawing-coloring-colored-pencils-159825_elwhdg.jpg")
+group27 = Group.create!(name: "UX design", location: "Palo Alto", user_id: user41.id, info: "UX designers unite! Join us to learn about the newest cutting edge design practices in the industry now!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262246/color-pencil-drawing-coloring-colored-pencils-159825_elwhdg.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832297/Beautiful-Abstract-Wallpaper_swve2e.jpg')
 gn11 = GroupNews.create!(group_id: group27.id, news: user41.username + ' created the group ' + group27.name, user_id: user41.id, oid: group27.id, typo: 'g')
 ge11 = GroupEnrollment.create!(group_id: group27.id, user_id: user41.id)
 gn371 = GroupNews.create!(group_id: group27.id, news: user11.username + ' joined the group', user_id: user11.id, oid: group27.id, typo: 'g')
@@ -4070,7 +4070,7 @@ ee1214 = EventEnrollment.create!(user_id: user43.id, event_id: event110.id)
 ee1215 = EventEnrollment.create!(user_id: user12.id, event_id: event110.id)
 ee1216 = EventEnrollment.create!(user_id: user11.id, event_id: event110.id)
 
-group28 = Group.create!(name: "boxing fanatics", location: "San Jose", user_id: user33.id, info: "backyard boxing?! yup!!! Join us for weekly events! Sign up or spectate and enjoy the show!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262246/boxing-training-workout-silhouettes-39582_vzf0wm.jpg")
+group28 = Group.create!(name: "boxing fanatics", location: "San Jose", user_id: user33.id, info: "backyard boxing?! yup!!! Join us for weekly events! Sign up or spectate and enjoy the show!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262246/boxing-training-workout-silhouettes-39582_vzf0wm.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832298/banner27_bn44_1_gwkcxd.jpg')
 gn12 = GroupNews.create!(group_id: group28.id, news: user33.username + ' created the group ' + group28.name, user_id: user33.id, oid: group28.id, typo: 'g')
 ge12 = GroupEnrollment.create!(group_id: group28.id, user_id: user33.id)
 gn381 = GroupNews.create!(group_id: group28.id, news: user29.username + ' joined the group', user_id: user29.id, oid: group28.id, typo: 'g')
@@ -4176,7 +4176,7 @@ ee1247 = EventEnrollment.create!(user_id: user19.id, event_id: event112.id)
 ee1248 = EventEnrollment.create!(user_id: user10.id, event_id: event112.id)
 ee1249 = EventEnrollment.create!(user_id: user29.id, event_id: event112.id)
 
-group29 = Group.create!(name: "San Bruno Golfers", location: "San Bruno", user_id: user29.id, info: "Do you love golf? This is the meetup for you! Let's hit the back 9!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262246/golf-sunset-sport-golfer_zt2rrg.png")
+group29 = Group.create!(name: "San Bruno Golfers", location: "San Bruno", user_id: user29.id, info: "Do you love golf? This is the meetup for you! Let's hit the back 9!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262246/golf-sunset-sport-golfer_zt2rrg.png", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832296/banner-line-light-effect-space-illustration-abstract-template-graphic-design-background-bright-purple-red-x-rgb-color-mode-54076936_oxpn7c.jpg')
 gn13 = GroupNews.create!(group_id: group29.id, news: user29.username + ' created the group ' + group29.name, user_id: user29.id, oid: group29.id, typo: 'g')
 ge13 = GroupEnrollment.create!(group_id: group29.id, user_id: user29.id)
 gn391 = GroupNews.create!(group_id: group29.id, news: user55.username + ' joined the group', user_id: user55.id, oid: group29.id, typo: 'g')
@@ -4286,7 +4286,7 @@ ee1280 = EventEnrollment.create!(user_id: user26.id, event_id: event115.id)
 ee1281 = EventEnrollment.create!(user_id: user58.id, event_id: event115.id)
 ee1282 = EventEnrollment.create!(user_id: user55.id, event_id: event115.id)
 
-group30 = Group.create!(name: "Cupertino Track & Field", location: "Cupertino", user_id: user25.id, info: "Run all day, run all night! Welcome to the Cupertino Track & Field MeetUp!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262246/hurdles-track-race-competition-159745_c0fhvm.jpg")
+group30 = Group.create!(name: "Cupertino Track & Field", location: "Cupertino", user_id: user25.id, info: "Run all day, run all night! Welcome to the Cupertino Track & Field MeetUp!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262246/hurdles-track-race-competition-159745_c0fhvm.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832296/Amazing-Abstract-Glowing-Vector-Background_ympbpl.jpg')
 gn14 = GroupNews.create!(group_id: group30.id, news: user25.username + ' created the group ' + group30.name, user_id: user25.id, oid: group30.id, typo: 'g')
 ge14 = GroupEnrollment.create!(group_id: group30.id, user_id: user25.id)
 gn401 = GroupNews.create!(group_id: group30.id, news: user60.username + ' joined the group', user_id: user60.id, oid: group30.id, typo: 'g')
@@ -4393,7 +4393,7 @@ ee1313 = EventEnrollment.create!(user_id: user1.id, event_id: event118.id)
 ee1314 = EventEnrollment.create!(user_id: user60.id, event_id: event118.id)
 ee1315 = EventEnrollment.create!(user_id: user39.id, event_id: event118.id)
 
-group31 = Group.create!(name: "South Bay Robotics", location: "Cupertino", user_id: user27.id, info: "South Bay Robotics Club! We are changing the world, join us for our weekly forums and monthly build competitions!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262251/teens-robot-future-science-39349_hivgkv.jpg")
+group31 = Group.create!(name: "South Bay Robotics", location: "Cupertino", user_id: user27.id, info: "South Bay Robotics Club! We are changing the world, join us for our weekly forums and monthly build competitions!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262251/teens-robot-future-science-39349_hivgkv.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832296/92560104588dcd6_aek4f9.jpg')
 gn15 = GroupNews.create!(group_id: group31.id, news: user27.username + ' created the group ' + group31.name, user_id: user27.id, oid: group31.id, typo: 'g')
 ge15 = GroupEnrollment.create!(group_id: group31.id, user_id: user27.id)
 gn411 = GroupNews.create!(group_id: group31.id, news: user5.username + ' joined the group', user_id: user5.id, oid: group31.id, typo: 'g')
@@ -4501,7 +4501,7 @@ ee1346 = EventEnrollment.create!(user_id: user43.id, event_id: event121.id)
 ee1347 = EventEnrollment.create!(user_id: user5.id, event_id: event121.id)
 ee1348 = EventEnrollment.create!(user_id: user7.id, event_id: event121.id)
 
-group32 = Group.create!(name: "Hillsdale Chess Club", location: "Hillsdale", user_id: user23.id, info: "Welcome to the Hillsdale chess club. Drop by anytime between M-F 10am - 6pm for a game of chess! All skill levels welcome!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262248/pexels-photo-277052_uphvdh.jpg")
+group32 = Group.create!(name: "Hillsdale Chess Club", location: "Hillsdale", user_id: user23.id, info: "Welcome to the Hillsdale chess club. Drop by anytime between M-F 10am - 6pm for a game of chess! All skill levels welcome!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262248/pexels-photo-277052_uphvdh.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832296/36562635388ffa5_ybjgqj.jpg')
 gn16 = GroupNews.create!(group_id: group32.id, news: user23.username + ' created the group ' + group32.name, user_id: user23.id, oid: group32.id, typo: 'g')
 ge16 = GroupEnrollment.create!(group_id: group32.id, user_id: user23.id)
 gn421 = GroupNews.create!(group_id: group32.id, news: user18.username + ' joined the group', user_id: user18.id, oid: group32.id, typo: 'g')
@@ -4615,7 +4615,7 @@ ee1381 = EventEnrollment.create!(user_id: user89.id, event_id: event124.id)
 
 
 
-group33 = Group.create!(name: "Bay Area Roommate Finder", location: "San Francisco", user_id: user21.id, info: "New to the bay area? Looking for a roomate? This is the meetup for you!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262250/pexels-photo-509789_1_nq60kr.jpg")
+group33 = Group.create!(name: "Bay Area Roommate Finder", location: "San Francisco", user_id: user21.id, info: "New to the bay area? Looking for a roomate? This is the meetup for you!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262250/pexels-photo-509789_1_nq60kr.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832296/4756233650d835b_q7enev.jpg')
 gn17 = GroupNews.create!(group_id: group33.id, news: user21.username + ' created the group ' + group33.name, user_id: user21.id, oid: group33.id, typo: 'g')
 ge17 = GroupEnrollment.create!(group_id: group33.id, user_id: user21.id)
 gn431 = GroupNews.create!(group_id: group33.id, news: user88.username + ' joined the group', user_id: user88.id, oid: group33.id, typo: 'g')
@@ -4722,7 +4722,7 @@ ee1413 = EventEnrollment.create!(user_id: user96.id, event_id: event127.id)
 ee1414 = EventEnrollment.create!(user_id: user88.id, event_id: event127.id)
 
 
-group34 = Group.create!(name: "Redwood Cloud Chasers", location: "Redwood City", user_id: user36.id, info: "Got your head up in the clouds? Come join us as we daydream and chase clouds", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262248/pexels-photo-266519_trcydf.jpg")
+group34 = Group.create!(name: "Redwood Cloud Chasers", location: "Redwood City", user_id: user36.id, info: "Got your head up in the clouds? Come join us as we daydream and chase clouds", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262248/pexels-photo-266519_trcydf.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832295/995616690e59c86_i2javu.jpg')
 gn18 = GroupNews.create!(group_id: group34.id, news: user36.username + ' created the group ' + group34.name, user_id: user36.id, oid: group34.id, typo: 'g')
 ge18 = GroupEnrollment.create!(group_id: group34.id, user_id: user36.id)
 gn441 = GroupNews.create!(group_id: group34.id, news: user70.username + ' joined the group', user_id: user70.id, oid: group34.id, typo: 'g')
@@ -4827,7 +4827,7 @@ ee1445 = EventEnrollment.create!(user_id: user56.id, event_id: event130.id)
 ee1446 = EventEnrollment.create!(user_id: user78.id, event_id: event130.id)
 ee1447 = EventEnrollment.create!(user_id: user70.id, event_id: event130.id)
 
-group35 = Group.create!(name: "East Bay Muy Thai", location: "Oakland", user_id: user37.id, info: "East Bay Muy Thai. Be active, go muy thai!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262248/pexels-photo-238636_gbwhmn.jpg")
+group35 = Group.create!(name: "East Bay Muy Thai", location: "Oakland", user_id: user37.id, info: "East Bay Muy Thai. Be active, go muy thai!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262248/pexels-photo-238636_gbwhmn.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832295/9856375b5ed9126_v1ivah.jpg')
 gn19 = GroupNews.create!(group_id: group35.id, news: user37.username + ' created the group ' + group35.name, user_id: user37.id, oid: group35.id, typo: 'g')
 ge19 = GroupEnrollment.create!(group_id: group35.id, user_id: user37.id)
 gn451 = GroupNews.create!(group_id: group35.id, news: user81.username + ' joined the group', user_id: user81.id, oid: group35.id, typo: 'g')
@@ -4936,7 +4936,7 @@ ee1479 = EventEnrollment.create!(user_id: user78.id, event_id: event133.id)
 ee1480 = EventEnrollment.create!(user_id: user70.id, event_id: event133.id)
 
 
-group36 = Group.create!(name: "Cupertino Coders", location: "Cupertino", user_id: user41.id, info: "We are a group of avid coders. If you are interested in teaching others how to code, or want to learn to code... this is the group for you!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262250/pexels-photo-546819_1_inccnh.jpg")
+group36 = Group.create!(name: "Cupertino Coders", location: "Cupertino", user_id: user41.id, info: "We are a group of avid coders. If you are interested in teaching others how to code, or want to learn to code... this is the group for you!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262250/pexels-photo-546819_1_inccnh.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832295/6156603dafdf8e5_ygsllz.jpg')
 gn20 = GroupNews.create!(group_id: group36.id, news: user41.username + ' created the group ' + group36.name, user_id: user41.id, oid: group36.id, typo: 'g')
 ge20= GroupEnrollment.create!(group_id: group36.id, user_id: user41.id)
 gn461 = GroupNews.create!(group_id: group36.id, news: user66.username + ' joined the group', user_id: user66.id, oid: group36.id, typo: 'g')
@@ -5044,7 +5044,7 @@ ee1512 = EventEnrollment.create!(user_id: user63.id, event_id: event136.id)
 ee1513 = EventEnrollment.create!(user_id: user66.id, event_id: event136.id)
 
 
-group37 = Group.create!(name: "Summer Madness", location: "Long Beach", user_id: user44.id, info: "Summer is here! Join us to meet new people and find the best places to kick it this summer!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262251/pexels-photo-565999_fukjle.jpg")
+group37 = Group.create!(name: "Summer Madness", location: "Long Beach", user_id: user44.id, info: "Summer is here! Join us to meet new people and find the best places to kick it this summer!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262251/pexels-photo-565999_fukjle.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832295/01560115c986a3b_khzibm.jpg')
 gn21 = GroupNews.create!(group_id: group37.id, news: user44.username + ' created the group ' + group37.name, user_id: user44.id, oid: group37.id, typo: 'g')
 ge21 = GroupEnrollment.create!(group_id: group37.id, user_id: user44.id)
 gn471 = GroupNews.create!(group_id: group37.id, news: user50.username + ' joined the group', user_id: user50.id, oid: group37.id, typo: 'g')
@@ -5154,7 +5154,7 @@ ee1545 = EventEnrollment.create!(user_id: user55.id, event_id: event139.id)
 ee1546 = EventEnrollment.create!(user_id: user50.id, event_id: event139.id)
 
 
-group38 = Group.create!(name: "West Coast Woodshop", location: "Daly City", user_id: user40.id, info: "Woodshop fanatics! Why buy a table when you can make one?", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262317/pexels-photo-133022_i8efvb.jpg")
+group38 = Group.create!(name: "West Coast Woodshop", location: "Daly City", user_id: user40.id, info: "Woodshop fanatics! Why buy a table when you can make one?", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262317/pexels-photo-133022_i8efvb.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832295/1356014c58dabce_zbgfhe.jpg')
 gn22 = GroupNews.create!(group_id: group38.id, news: user40.username + ' created the group ' + group38.name, user_id: user40.id, oid: group38.id, typo: 'g')
 ge22 = GroupEnrollment.create!(group_id: group38.id, user_id: user40.id)
 gn481 = GroupNews.create!(group_id: group38.id, news: user89.username + ' joined the group', user_id: user89.id, oid: group38.id, typo: 'g')
@@ -5264,7 +5264,7 @@ ee1578 = EventEnrollment.create!(user_id: user92.id, event_id: event142.id)
 ee1579 = EventEnrollment.create!(user_id: user89.id, event_id: event142.id)
 
 
-group39 = Group.create!(name: "Napa Wine Lovers", location: "San Jose", user_id: user26.id, info: "We love Napa! Join us on our bi-monthly napa wine tasting tours!?", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262251/tuscany-grape-field-nature-51947_hpeirt.jpg")
+group39 = Group.create!(name: "Napa Wine Lovers", location: "San Jose", user_id: user26.id, info: "We love Napa! Join us on our bi-monthly napa wine tasting tours!?", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262251/tuscany-grape-field-nature-51947_hpeirt.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832295/160525-BB-MAGIC5-Campaign-Website-banner-background_g5b2w3.jpg')
 gn23 = GroupNews.create!(group_id: group39.id, news: user26.username + ' created the group ' + group39.name, user_id: user26.id, oid: group39.id, typo: 'g')
 ge23 = GroupEnrollment.create!(group_id: group39.id, user_id: user26.id)
 gn491 = GroupNews.create!(group_id: group39.id, news: user88.username + ' joined the group', user_id: user88.id, oid: group39.id, typo: 'g')
@@ -5374,7 +5374,7 @@ ee1612 = EventEnrollment.create!(user_id: user88.id, event_id: event145.id)
 
 
 
-group40 = Group.create!(name: "The Great Outdoors", location: "Redwood City", user_id: user22.id, info: "Join us on our monthly camping events!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262250/pexels-photo-558454_mjgmzi.jpg")
+group40 = Group.create!(name: "The Great Outdoors", location: "Redwood City", user_id: user22.id, info: "Join us on our monthly camping events!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262250/pexels-photo-558454_mjgmzi.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832295/68560a87accf64b_t3nm6l.jpg')
 gn24 = GroupNews.create!(group_id: group40.id, news: user22.username + ' created the group ' + group40.name, user_id: user22.id, oid: group40.id, typo: 'g')
 ge24 = GroupEnrollment.create!(group_id: group40.id, user_id: user22.id)
 gn501 = GroupNews.create!(group_id: group40.id, news: user58.username + ' joined the group', user_id: user58.id, oid: group40.id, typo: 'g')
@@ -5482,7 +5482,7 @@ ee1645 = EventEnrollment.create!(user_id: user58.id, event_id: event148.id)
 
 
 
-group41 = Group.create!(name: "Mobile App Dev", location: "Menlo Park", user_id: user28.id, info: "Are you a mobile app developer? This is the group for you! Weekly forums and events! Dev competitions every month!!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262249/pexels-photo-433617_adjfcl.jpg")
+group41 = Group.create!(name: "Mobile App Dev", location: "Menlo Park", user_id: user28.id, info: "Are you a mobile app developer? This is the group for you! Weekly forums and events! Dev competitions every month!!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262249/pexels-photo-433617_adjfcl.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832294/22577f2364d88e2_cojkha.jpg')
 gn25 = GroupNews.create!(group_id: group41.id, news: user28.username + ' created the group ' + group41.name, user_id: user28.id, oid: group41.id, typo: 'g')
 ge25 = GroupEnrollment.create!(group_id: group41.id, user_id: user28.id)
 gn511 = GroupNews.create!(group_id: group41.id, news: user77.username + ' joined the group', user_id: user77.id, oid: group41.id, typo: 'g')
@@ -5591,7 +5591,7 @@ ee1678 = EventEnrollment.create!(user_id: user77.id, event_id: event151.id)
 
 
 
-group42 = Group.create!(name: "PaddleBOARDERS", location: "Monterey", user_id: user31.id, info: "MeetUp for people who want to go paddleboarding or are interested in learning paddleboarding!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262248/pexels-photo-236953_pqillg.jpg")
+group42 = Group.create!(name: "PaddleBOARDERS", location: "Monterey", user_id: user31.id, info: "MeetUp for people who want to go paddleboarding or are interested in learning paddleboarding!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262248/pexels-photo-236953_pqillg.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832293/015603b41e8dc68_le0xs6.jpg')
 gn26 = GroupNews.create!(group_id: group42.id, news: user31.username + ' created the group ' + group42.name, user_id: user31.id, oid: group42.id, typo: 'g')
 ge26 = GroupEnrollment.create!(group_id: group42.id, user_id: user31.id)
 gn521 = GroupNews.create!(group_id: group42.id, news: user70.username + ' joined the group', user_id: user70.id, oid: group42.id, typo: 'g')
@@ -5698,7 +5698,7 @@ ee1710 = EventEnrollment.create!(user_id: user7.id, event_id: event154.id)
 ee1711 = EventEnrollment.create!(user_id: user70.id, event_id: event154.id)
 
 
-group43 = Group.create!(name: "Bay Area Book Club", location: "Fremont", user_id: user32.id, info: "We share good reads and talk about our favorite books. Join us for our weekly reading events and book sharing dinners. We read books that cover a wide variety of topics including business, tech, etc.", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262247/pexels-photo-220326_ka3nni.jpg")
+group43 = Group.create!(name: "Bay Area Book Club", location: "Fremont", user_id: user32.id, info: "We share good reads and talk about our favorite books. Join us for our weekly reading events and book sharing dinners. We read books that cover a wide variety of topics including business, tech, etc.", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262247/pexels-photo-220326_ka3nni.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832294/12561f63f7ed12c_p2zgoy.jpg')
 gn27= GroupNews.create!(group_id: group43.id, news: user32.username + ' created the group ' + group43.name, user_id: user25.id, oid: group43.id, typo: 'g')
 ge27 = GroupEnrollment.create!(group_id: group43.id, user_id: user32.id)
 gn531 = GroupNews.create!(group_id: group43.id, news: user68.username + ' joined the group', user_id: user68.id, oid: group43.id, typo: 'g')
@@ -5805,7 +5805,7 @@ ee1742 = EventEnrollment.create!(user_id: user86.id, event_id: event157.id)
 ee1743 = EventEnrollment.create!(user_id: user85.id, event_id: event157.id)
 ee1744 = EventEnrollment.create!(user_id: user68.id, event_id: event157.id)
 
-group44 = Group.create!(name: "Hayward Puzzle Club", location: "Hayward", user_id: user22.id, info: "We solve puzzles and crack codes! Think outside of the box and challenge your brain! Join us for our code cracking competitions and our puzzle solving events!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262248/pexels-photo-269399_gnrjxz.jpg")
+group44 = Group.create!(name: "Hayward Puzzle Club", location: "Hayward", user_id: user22.id, info: "We solve puzzles and crack codes! Think outside of the box and challenge your brain! Join us for our code cracking competitions and our puzzle solving events!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262248/pexels-photo-269399_gnrjxz.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832295/9057b67a09a1f1d_bro2oo.jpg')
 gn28 = GroupNews.create!(group_id: group44.id, news: user22.username + ' created the group ' + group44.name, user_id: user22.id, oid: group44.id, typo: 'g')
 ge28 = GroupEnrollment.create!(group_id: group44.id, user_id: user22.id)
 gn541 = GroupNews.create!(group_id: group44.id, news: user74.username + ' joined the group', user_id: user74.id, oid: group44.id, typo: 'g')
@@ -5912,7 +5912,7 @@ ee1776 = EventEnrollment.create!(user_id: user47.id, event_id: event160.id)
 ee1777 = EventEnrollment.create!(user_id: user74.id, event_id: event160.id)
 
 
-group45 = Group.create!(name: "Night Owls", location: "San Leandro", user_id: user45.id, info: "We are a group of nighttime photographers. Join us as we explore the bay area and capture breathtaking nighttime photographs. Weekly outings on Wednesday and Saturday nights!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262250/pexels-photo-434459_b4qo6m.jpg")
+group45 = Group.create!(name: "Night Owls", location: "San Leandro", user_id: user45.id, info: "We are a group of nighttime photographers. Join us as we explore the bay area and capture breathtaking nighttime photographs. Weekly outings on Wednesday and Saturday nights!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262250/pexels-photo-434459_b4qo6m.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832294/7557d8a6f6ac8dd_awpj6c.jpg')
 gn29 = GroupNews.create!(group_id: group45.id, news: user45.username + ' created the group ' + group45.name, user_id: user45.id, oid: group45.id, typo: 'g')
 ge29 = GroupEnrollment.create!(group_id: group45.id, user_id: user45.id)
 gn551 = GroupNews.create!(group_id: group45.id, news: user97.username + ' joined the group', user_id: user97.id, oid: group45.id, typo: 'g')
@@ -6020,7 +6020,7 @@ ee1808 = EventEnrollment.create!(user_id: user33.id, event_id: event163.id)
 ee1809 = EventEnrollment.create!(user_id: user97.id, event_id: event163.id)
 ee1810 = EventEnrollment.create!(user_id: user79.id, event_id: event163.id)
 
-group46 = Group.create!(name: "Bay Area Concert Krew", location: "Santa Clara", user_id: user26.id, info: "Going to a concert? None of your friends want to go? No worries, join the bay area concert krew and you'll always have a group to chill with!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262247/pexels-photo-154147_dda16b.jpg")
+group46 = Group.create!(name: "Bay Area Concert Krew", location: "Santa Clara", user_id: user26.id, info: "Going to a concert? None of your friends want to go? No worries, join the bay area concert krew and you'll always have a group to chill with!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262247/pexels-photo-154147_dda16b.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832294/5457c7d5c1abadb_c3fna4.jpg')
 gn30 = GroupNews.create!(group_id: group46.id, news: user26.username + ' created the group ' + group46.name, user_id: user26.id, oid: group46.id)
 ge30 = GroupEnrollment.create!(group_id: group46.id, user_id: user26.id)
 gn561 = GroupNews.create!(group_id: group46.id, news: user61.username + ' joined the group', user_id: user61.id, oid: group46.id, typo: 'g')
@@ -6126,7 +6126,7 @@ ee1841 = EventEnrollment.create!(user_id: user62.id, event_id: event166.id)
 ee1842 = EventEnrollment.create!(user_id: user16.id, event_id: event166.id)
 ee1843 = EventEnrollment.create!(user_id: user61.id, event_id: event166.id)
 
-group47 = Group.create!(name: "south bay chess", location: "Santa Clara", user_id: user25.id, info: "Welcome to south bay chess! We are a fun group of chess players. Weekly tourneys and monthly competitions against other clubs! All skill levels are welcome! Message group mod if you would like to be a chess mentor for new players!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262317/pexels-photo-131616_lkssd8.jpg")
+group47 = Group.create!(name: "south bay chess", location: "Santa Clara", user_id: user25.id, info: "Welcome to south bay chess! We are a fun group of chess players. Weekly tourneys and monthly competitions against other clubs! All skill levels are welcome! Message group mod if you would like to be a chess mentor for new players!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262317/pexels-photo-131616_lkssd8.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832293/2000x500-demo-banner_kn9hbf.png')
 gn31 = GroupNews.create!(group_id: group47.id, news: user25.username + ' created the group ' + group47.name, user_id: user25.id, oid: group47.id, typo: 'g')
 ge31 = GroupEnrollment.create!(group_id: group47.id, user_id: user25.id)
 gn571 = GroupNews.create!(group_id: group47.id, news: user86.username + ' joined the group', user_id: user86.id, oid: group47.id, typo: 'g')
@@ -6233,7 +6233,7 @@ ee1876 = EventEnrollment.create!(user_id: user86.id, event_id: event169.id)
 
 
 
-group48 = Group.create!(name: "Silicon Valley Sneakerheads", location: "Cupertino", user_id: user34.id, info: "Silicon Valley Sneakerheads! Looking to trade or sell your sneakers? Join us for monthly trade events, bring your sneakers!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262246/pexels-photo-48262_uxe5nz.jpg")
+group48 = Group.create!(name: "Silicon Valley Sneakerheads", location: "Cupertino", user_id: user34.id, info: "Silicon Valley Sneakerheads! Looking to trade or sell your sneakers? Join us for monthly trade events, bring your sneakers!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262246/pexels-photo-48262_uxe5nz.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832295/157_kunxgg.jpg')
 gn32 = GroupNews.create!(group_id: group48.id, news: user34.username + ' created the group ' + group48.name, user_id: user34.id, oid: group48.id, typo: 'g')
 ge32 = GroupEnrollment.create!(group_id: group48.id, user_id: user34.id)
 gn581 = GroupNews.create!(group_id: group48.id, news: user87.username + ' joined the group', user_id: user87.id, oid: group48.id, typo: 'g')

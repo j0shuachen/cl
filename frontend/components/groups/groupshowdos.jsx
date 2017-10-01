@@ -615,7 +615,7 @@ if(this.props.group.color === "#FFFFFF"){
             <div style={{height: this.state.heighter, overflow: 'hidden'}}>
             {this.state.newz ? newsList(this.props.group.news) : newsList(this.props.group.news)}
             </div>
-          {this.state.heightning <= this.state.lengther* 135 ? <div className='newsclicker' onClick={this.newsheightclicker}>More news!</div> : null }
+          {this.state.heightning <= this.state.lengther* 155 ? <div className='newsclicker' onClick={this.newsheightclicker}>More news!</div> : null }
 
         </div>
 
