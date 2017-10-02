@@ -47,9 +47,9 @@ class updateUserForm extends React.Component {
 
   prev (){
     this.setState({name: this.props.currentUser.name});
-    console.log(this.state.name);
+    // console.log(this.state.name);
     this.setState({username: this.props.currentUser.username});
-    console.log(this.state.username);
+    // console.log(this.state.username);
     this.setState({location: this.props.currentUser.location});
     this.setState({image_url: this.props.currentUser.image_url});
     this.setState({email: this.props.currentUser.email});
@@ -69,7 +69,7 @@ class updateUserForm extends React.Component {
   }
 
   render () {
-    console.log(this.props);
+    // console.log(this.props);
     return(
       <div className="signup-form-container">
 

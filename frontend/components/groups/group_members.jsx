@@ -95,11 +95,11 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
   // }
 
   newsheightclicker() {
-    console.log('hitt');
+    // console.log('hitt');
     var newheight = this.state.heightning+1395;
 
     var newheighter = newheight.toString() + 'px';
-    console.log(newheight);
+    // console.log(newheight);
       this.setState({heighter: newheighter, heightning: newheight, newz: true});
 
   }
@@ -234,7 +234,7 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
     }
   }
     };
-    console.log(this.state);
+    // console.log(this.state);
     // console.log('hwifhaowfh', this.props);
 
     if(this.props.group.color === "#FFFFFF"){

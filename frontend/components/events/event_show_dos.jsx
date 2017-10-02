@@ -172,9 +172,9 @@ if (this.props.group_enrollments){
 }
 
 checkrsvp (){
-  console.log('checkers');
+  // console.log('checkers');
   if(this.props.group.eventdos[this.props.eventId].rsvp){
-    console.log('checkedrs');
+    // console.log('checkedrs');
     // if(this.props.evento.rsvpph[this.props.currentUser.id]){
     //   var ok = this.props.eventId;
     //   this.setState({[this.props.eventId]: true});
@@ -311,7 +311,7 @@ renderUpdateGroup(){
   }}
 }
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     if(Object.keys(this.props.group).length === 0 || !this.props.evento.random || Object.keys(this.props.evento).length === 0){
       return (
         <div>Loading...</div>
@@ -395,7 +395,7 @@ const numbo = () => {
 };
 
 const randers = (ran=[]) => {
-console.log('randers');
+// console.log('randers');
   var arr = [];
   for(var i =0; i < ran.length; i++){
     var pj = `/groups/${this.props.groupId}/users/${ran[i].id}`;
@@ -408,14 +408,14 @@ console.log('randers');
 const leave = () => {
   // console.log('hitttttleave', this.props);
   this.setState({[this.props.eventId]: false});
-  console.log('left', this.state);
+  // console.log('left', this.state);
 // this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, groupId: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
   this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: this.props.eventId, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));
 };
 const join =() => {
   // console.log('hit');
   this.setState({[this.props.eventId]: true});
-  console.log('join', this.state);
+  // console.log('join', this.state);
 
 // this.props.createEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
   this.props.createEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: this.props.eventId, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));

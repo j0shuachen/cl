@@ -282,7 +282,7 @@ renderU(){
   }}
 }
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     if(Object.keys(this.props.group).length === 0){
       return (
         <div>Loading...</div>

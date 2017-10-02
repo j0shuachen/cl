@@ -6,7 +6,7 @@ import updateUserForm from './update_user_form';
 
 const mapStateToProps = (state, {match  }) => {
   // console.log(match);
-  console.log(state);
+  // console.log(state);
   // const groupId = parseInt(match.params.groupId);
   // const userId = parseInt(match.params.userId);
   // console.log(state);

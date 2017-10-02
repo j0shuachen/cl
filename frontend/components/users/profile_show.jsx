@@ -341,7 +341,7 @@ renderU(){
   }}
 }
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     // if(this.props.group.length === 0){
     if(!this.props.x){
 

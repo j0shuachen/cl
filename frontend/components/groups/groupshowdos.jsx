@@ -74,13 +74,13 @@ class GroupShowDos extends React.Component{
 
 
   newsheightclicker() {
-    console.log('hitt');
+    // console.log('hitt');
     // var newheight = this.state.heightning+1215;
     var newheight = this.state.heightning+1395;
 
 
     var newheighter = newheight.toString() + 'px';
-    console.log(newheight);
+    // console.log(newheight);
       this.setState({heighter: newheighter, heightning: newheight, newz: true});
 
   }
@@ -447,8 +447,8 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
 
   render() {
 
-    console.log(this.state);
-    console.log(this.props);
+    // console.log(this.state);
+    // console.log(this.props);
     if(Object.keys(this.props.group).length === 0 || !this.props.group.info){
       return (
         <div className='singlegroupcontainer'>

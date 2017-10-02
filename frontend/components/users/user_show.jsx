@@ -338,7 +338,7 @@ renderU(){
   }}
 }
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     if(Object.keys(this.props.group).length === 0 || !this.props.x){
       return (
         <div className='singlegroupcontainer'>
@@ -483,9 +483,9 @@ if(this.props.group.color === "#FFFFFF"){
   return (
     <div className="singlegroupcontainer">
       <div className="groupheader">
-        <div className="singlegroupbanner" style={{backgroundColor: xo}}></div>
+        <div className="singlegroupbanner" style={{backgroundColor: xo}}>
           {  this.props.group.banner_url ==='default' ? null : <img className='banner' src={this.props.group.banner_url}></img>}
-
+          </div>
         <div className="singlegroupheader">
           <span>{this.props.group.name}</span>
         </div>
@@ -500,7 +500,7 @@ if(this.props.group.color === "#FFFFFF"){
         </div>
 
         <div className="bardos">
-          {this.props.currentUser.id === this.props.x.id ? <Link className="glinkon" to={myprofile} >My profile</Link> : <Link className="glink" to={myprofile} >My profile</Link>}
+          {this.props.currentUser ? (this.props.currentUser.id === this.props.x.id ? <Link className="glinkon" to={myprofile} >My profile</Link> : <Link className="glink" to={myprofile} >My profile</Link>) : <Link className="glink" to={myprofile} >My profile</Link>}
         </div>
       </div>
       </div>

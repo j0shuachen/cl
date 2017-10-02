@@ -49,7 +49,7 @@ class UpdateGroup extends React.Component {
       image = this.state.image_url;
     }
     const groupe = {name: name, info: info, location: location, user_id: this.props.currentUser, id: this.props.groupId, image_url: image, color: color, banner_url: banner_url};
-    console.log(groupe);
+    // console.log(groupe);
     this.props.updateGroup({group: groupe}).then(()=>this.props.history.push(`/groups/${groupId}`));
   }
 
@@ -77,14 +77,14 @@ class UpdateGroup extends React.Component {
     this.setState({location: this.props.group.location});
     this.setState({image_url: this.props.group.image_url});
     this.setState({color: this.props.group.color});
-    console.log(this.state);
+    // console.log(this.state);
   }
 
 
   setImage(url){
    if (url ){
      this.setState({image_url: url});
-     console.log(this.state);
+    //  console.log(this.state);
 
   }
    //  console.log(this.state);
@@ -92,7 +92,7 @@ class UpdateGroup extends React.Component {
  setBanner(url){
    if(url){
      this.setState({banner_url: url});
-     console.log(this.state);
+    //  console.log(this.state);
    }
  }
 defaultButton(){
@@ -115,7 +115,7 @@ defaultButton(){
     cloudinary.openUploadWidget(
       window.CLOUDINARY_OPTIONS, (errors, images) => {
         if(errors === null){
-          console.log(images[0].url);
+          // console.log(images[0].url);
          this.setBanner(images[0].url);
 
        }
@@ -128,12 +128,12 @@ defaultButton(){
     let c = color.rgb;
     let col = `rgba(${c.r}, ${c.g}, ${c.b}, ${c.a})`;
     this.setState({color: col});
-    console.log(this.state.color);
-    console.log(this.state);
+    // console.log(this.state.color);
+    // console.log(this.state);
   }
 
   render(){
-console.log(this.props);
+// console.log(this.props);
     return (
       <div className="groupformcontainer">
         <div className="creategroupgif2" style={{backgroundColor: this.state.color}}>

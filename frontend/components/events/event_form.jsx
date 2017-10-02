@@ -95,13 +95,13 @@ class EventForm extends React.Component{
   }
 
   setStart(t){
-    console.log(t);
+    // console.log(t);
 
     this.setState({start_time:t});
   }
 
   setEnd(t){
-    console.log(t);
+    // console.log(t);
 
     this.setState({end_time:t});
   }

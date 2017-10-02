@@ -22,7 +22,7 @@ const EventsReducer = (state={errors:[]}, action) => {
     case RECEIVE_EVENT:
 
     const newEvent = {[action.eventt.id]: action.eventt};
-    console.log(newEvent);
+    // console.log(newEvent);
     return merge({}, state, newEvent);
     case UPDATE_EVENT:
       newState = merge({}, state);

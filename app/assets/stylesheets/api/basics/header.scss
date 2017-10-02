@@ -3,7 +3,7 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(0,0,0,.12);
+  // border-bottom: 1px solid rgba(0,0,0,.12);
   font-weight: bold;
   flex-wrap: nowrap;
   min-width: 900px;
@@ -49,7 +49,9 @@ align-content: space-between;;
   display: flex;
   width: 100%;
   align-content: space-between;
-  min-width: 1200px
+  min-width: 1200px;
+  border-bottom: 1px rgba(211, 211, 211, 0.7) solid;
+
 
 }
 
