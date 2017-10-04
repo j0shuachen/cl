@@ -42,6 +42,226 @@ align-content: space-between;;
   border-radius: 4px;
 }
 
+.aboutpara{
+  font-family: 'Ubuntu', sans-serif;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 10px;
+}
+.aboutcontainer{
+  display: flex;
+  min-width: 1200px;
+  // min-height: 1950px;
+  justify-content: center;
+  flex-direction: column;
+  padding: 100px;
+  padding-top: 50px;
+  border-top: 1px rgba(211, 211, 211, 0.7) solid;
+  background-color: #ed1c40;
+
+
+
+  justify-content: center;
+}
+
+.ptcontainer{
+  display: flex;
+  min-width: 1200px;
+  // min-height: 1950px;
+  justify-content: center;
+  // flex-direction: column;
+  padding: 100px;
+  padding-top: 50px;
+  border-top: 1px rgba(211, 211, 211, 0.7) solid;
+  background-color: #ed1c40;
+  min-height: 1500px;
+
+
+  justify-content: center;
+}
+
+.resumecontainer{
+  display: flex;
+  background-color: white;
+  min-width: 1200px;
+  min-height: 1950px;
+  // padding: 200px;
+  padding-top: 50px;
+  border-top: 1px rgba(211, 211, 211, 0.7) solid;
+
+  justify-content: center;
+}
+
+
+
+.pdfdown{
+  width: 50px;
+  height: 50px;
+  margin-left: 50px;
+  // position: absolute;
+  // left: 5px;
+  // top: 30px;
+}
+
+.pdfdowndos{
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  // position: absolute;
+  // left: 100px;
+  // top: 30px;
+}
+
+.pdfdown:hover{
+  width: 52px;
+  height: 52px;
+  margin-left: 50px;
+  // position: absolute;
+  // // left: 5px;
+  // top: 30px;
+  cursor: pointer;
+}
+.downicon{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.pdfdowndos:hover{
+  width: 52px;
+  height: 52px;
+  margin-left: 10px;
+  // position: absolute;
+  // left: 100px;
+  // top: 30px;
+  cursor: pointer;
+
+}
+.aboutprofilebar{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+
+}
+
+
+.aboutname{
+  display: flex;
+  align-self: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 30px;
+  margin-left: 30px;
+
+
+}
+.aboutprofilepic{
+  display: flex;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.ll{
+  margin: 10px;
+
+}
+
+.aboutmain{
+  display: flex;
+  background-color: white;
+  margin-top: 20px;
+  // align-self: center;
+  min-width: 800px;
+  min-height: 400px;
+  // height: 400px;
+  align-content: center;
+  text-align: center;
+  padding: 100px;
+  // justify-content: center;
+  flex-direction: column;
+
+  border: 1px rgba(211, 211, 211, 0.7) solid;
+  // margin: 200px;
+  // margin-top: 50px;
+
+}
+
+.termsmain{
+  display: flex;
+  background-color: white;
+  margin-top: 20px;
+  // align-self: center;
+  min-width: 600px;
+  max-width: 600px;
+  min-height: 1900px;
+  // height: 400px;
+  align-content: center;
+  align-self: center;
+  text-align: center;
+  padding: 70px;
+  // justify-content: center;
+  flex-direction: column;
+
+  border: 1px rgba(211, 211, 211, 0.7) solid;
+  // margin: 200px;
+  // margin-top: 50px;
+
+}
+
+.privacymain{
+  display: flex;
+  background-color: white;
+  margin-top: 20px;
+  // align-self: center;
+  min-width: 600px;
+  max-width: 600px;
+  min-height: 400px;
+  // height: 400px;
+  align-content: center;
+  align-self: center;
+  text-align: center;
+  padding: 70px;
+  // justify-content: center;
+  flex-direction: column;
+
+  border: 1px rgba(211, 211, 211, 0.7) solid;
+  // margin: 200px;
+  // margin-top: 50px;
+
+}
+
+
+.contactmain{
+  display: flex;
+  background-color: white;
+  margin-top: 20px;
+  // align-self: center;
+  min-width: 800px;
+  // min-height: 400px;
+  height: 400px;
+  align-content: center;
+  text-align: center;
+  padding: 30px;
+  // justify-content: center;
+  flex-direction: column;
+  font-size: 20px;
+  font-family: 'Ubuntu', sans-serif;
+
+  border: 1px rgba(211, 211, 211, 0.7) solid;
+}
+
+
+.aboutmaindos{
+  display: flex;
+  min-width: 800px;
+  min-height: 2000px;
+  flex-direction: column;
+  position: relative;
+
+
+}
+
 .mainhed{
   display: flex;
   align-items: center;
@@ -49,8 +269,8 @@ align-content: space-between;;
   display: flex;
   width: 100%;
   align-content: space-between;
-  min-width: 1200px;
-  border-bottom: 1px rgba(211, 211, 211, 0.7) solid;
+  min-width: 1400px;
+  // border-bottom: 1px rgba(211, 211, 211, 0.7) solid;
 
 
 }
@@ -59,7 +279,7 @@ align-content: space-between;;
   display: flex;
   width: 150px;
   height: 60px;
-  background-image: image-url("meetup_logo_before_after.png");
+  // background-image: image-url("meetup_logo_before_after.png");
   background-repeat: no-repeat;
   background-size: contain;
   // padding-right: 80px;
@@ -70,7 +290,11 @@ align-content: space-between;;
   justify-content: center;
 }
 
+.headerlogo{
+  object-fit: contain;
+  
 
+}
 
 
 .create-header{
@@ -118,9 +342,10 @@ align-content: space-between;;
   color: white;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Ubuntu', sans-serif;
   text-decoration: none;
   font-size: 20px;
+  font-family: 'Ubuntu', sans-serif;
+
   border-radius: 4px;
   align-content: center;
   text-align: center;

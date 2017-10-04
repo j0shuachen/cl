@@ -2611,8 +2611,7 @@ ee769 = EventEnrollment.create!(user_id: user63.id, event_id: event71.id)
 
 
 
-group16= Group.create!(name: "Asian Party Club", location: "san francisco", user_id: user20.id, info: "·  The Asian party club was recently founded to meet the needs of the Asian community.
-·  Hosts fun, social and networking events in San Francisco and the Silicon Valley.", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258716/download_9_yyeqwp.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832299/hero-banner_budh7a.jpg')
+group16= Group.create!(name: "Nature Lovers", location: "san francisco", user_id: user20.id, info: "We love nature, join us as we take in the beautiful scenery around the bay area!", image_url: "http://res.cloudinary.com/dxeyfggji/image/upload/v1504262250/pexels-photo-417222_nns3y3.jpg", banner_url: 'http://res.cloudinary.com/dxeyfggji/image/upload/v1506832299/hero-banner_budh7a.jpg')
 gn48 = GroupNews.create!(group_id: group16.id, news: user20.username + ' created the group ' + group16.name, user_id: user26.id, oid: group16.id, typo: 'g')
 ge48 = GroupEnrollment.create!(group_id: group16.id, user_id: user20.id)
 gn243 = GroupNews.create!(group_id: group16.id, news: user39.username + ' joined the group', user_id: user39.id, oid: group16.id, typo: 'g')

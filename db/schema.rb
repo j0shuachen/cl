@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170929091245) do
+ActiveRecord::Schema.define(version: 20171004072753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,17 @@ ActiveRecord::Schema.define(version: 20170929091245) do
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
+  create_table "pages", force: :cascade do |t|
+    t.string "title"
+    t.string "body"
+    t.integer "group_id"
+    t.integer "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_pages_on_author_id"
+    t.index ["group_id"], name: "index_pages_on_group_id"
+  end
+
   create_table "public_profiles", force: :cascade do |t|
     t.string "fname"
     t.string "lname"
@@ -103,6 +114,16 @@ ActiveRecord::Schema.define(version: 20170929091245) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_public_profiles_on_user_id", unique: true
+  end
+
+  create_table "sponsors", force: :cascade do |t|
+    t.string "name"
+    t.string "contribution"
+    t.integer "group_id"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_sponsors_on_group_id"
   end
 
   create_table "tag_event_enrollments", force: :cascade do |t|

@@ -97,11 +97,13 @@ render(){
   const personalGreeting = (currentUser, logout) => (
     <div className="mainhed">
     <div className="create-header">
-      <Link to="/create/group" className="create-header-button">Create a Meetup</Link>
+      <Link to="/create/group" className="create-header-button">Create a Clique</Link>
         <Link to="/" className="demo-button" onClick={this.demo}> Demo </Link>
   </div>
     <div className="logo">
-      <Link to="/groups" className="header-link"></Link>
+      <Link to="/groups" className="header-link">
+        <img className='headerlogo' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507097808/Drawing_1_gfv2bu.jpg'/>
+      </Link>
     </div>
     <div className="greeting">
       <div className="header-name">Hi,  <Link className='headertoprof' to={`/users/${currentUser.id}`}>{'   ' + currentUser.username}</Link>!</div>
@@ -115,7 +117,7 @@ render(){
     return (
       <div className="mainhed">
       <div className="create-header">
-        <Link to="/create/group" className="create-header-button">Create a Meetup</Link>
+        <Link to="/create/group" className="create-header-button">Create a Clique</Link>
           <Link to="/" className="demo-button" onClick={this.demo}> Demo </Link>
     </div>
       <div className="logo">

@@ -134,11 +134,14 @@ html, body, #root, #root>div {
   height: auto;
   position: relative;
   min-height: 100%;
+  min-width: 100%;
   margin: 0;
   padding:0;
+  // overflow: auto;
+
 }
 
-
+//
 html{
   height: 100%;
   // min-height: 1500px;
@@ -150,17 +153,7 @@ html{
   // height: 1500px;
 }
 
-.login-form-box{
-  display: flex;
-  // margin-top: 10%;
-  // margin-bottom: 5%;
-  // margin-right: 30%;
-  // margin-left: 30%;
-  display: flex;
 
-  width: 100%;
-
-}
 
 
 

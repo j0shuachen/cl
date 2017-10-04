@@ -3,6 +3,7 @@
     height: 100%;
     // max-height: 1300px;
     min-width: 1200px;
+    min-height: 2300px;
 
 }
 
@@ -128,7 +129,7 @@ align-items: center;
   flex-direction: column;
   // padding-top: 80px;
   background-size: cover;
-  min-width: 1000px;
+  min-width: 1400px;
 justify-content: center;
 align-items: center;
 }
@@ -148,7 +149,7 @@ align-items: center;
   flex-direction: column;
   // padding-top: 80px;
   background-size: cover;
-  min-width: 1000px;
+  min-width: 1400px;
 justify-content: center;
 align-items: center;
 }
@@ -169,12 +170,14 @@ align-items: center;
 
 .groupform{
   height: 100%;
+  margin-top: 30px;
   // max-height: 2200px;
   display: flex;
   font-size: 35px;
   flex-direction: column;
   margin-bottom: 20px;
   // padding: 40px;
+  min-width: 1400px;
   background-color: white;
 
 
@@ -303,18 +306,21 @@ margin-top: 40px;
   display: flex;
   // margin: 100px;
   justify-content: center;
-  padding: 40px;
+  // padding: 40px;
   padding-top: 40px;
-  min-width: 1000px;
+  padding-bottom: 40px;
+  min-width: 1400px;
 }
 
 .ginput2{
-  height: 100px;
+  min-height: 100px;
   box-sizing: border-box;
   width: 100%;
   font-size: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
+  border: 1px rgba(211, 211, 211, 0.7) solid;
+
 }
 
 .steps{

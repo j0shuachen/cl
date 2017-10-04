@@ -47,6 +47,11 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Event
 
+    has_many :pages,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Page
+
 
   attr_reader :password
 

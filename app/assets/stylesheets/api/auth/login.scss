@@ -1,18 +1,24 @@
 .login-form-container{
   height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+
+  // justify-content: center;
   // align-items: stretch;
   // align-content: stretch;
-  padding: 100px 400px 100px 400px;
+  // padding: 100px 400px 100px 400px;
   background-color: rgba(199,199,199,.3);
+  min-width: 1400px;
+  min-height: 2200px;
 }
 
 .login{}
 
 .login-form-box{
+  margin-top: 100px;
   display: flex;
   align-items: center;
+  align-self: center;
   flex-direction: column;
   font-family: 'Ubuntu', sans-serif;
   font-size: 30px;
@@ -24,7 +30,7 @@
 height: 100%;
  background-color: white;
  min-height: 600px;
- margin-bottom: 5px;
+ margin-bottom: 100px;
 
   // align-content: space-between;
 }

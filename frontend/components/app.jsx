@@ -23,10 +23,15 @@ import EventFormContainer from "./events/event_form_container";
 import UpdateEventContainer from '../components/events/update_event_container';
 import GroupMembersContainer from './groups/group_members_container';
 import UserShowContainer from './users/users_container';
+import About from './info/about';
+import Resume from './info/resume';
+import Privacy from './info/privacy';
+import Terms from './info/terms';
 // <Route exact path='/users/:userId' component={UserShowContainer}></Route>
 import UserUpdateContainer from '../components/session_form/user_update_container';
 import ProfileShowContainer from './users/profile_container';
 const App = () => (
+
   <div>
     <header>
       <nav>
@@ -36,6 +41,10 @@ const App = () => (
     </header>
     <Switch>
       <Route exact path="/" component={GroupIndex}/>
+      <Route exact path="/about" component={About}/>
+      <Route exact path='/resume' component={Resume}/>
+      <Route exact path='/privacy' component={Privacy}/>
+      <Route exact path = '/terms' component = {Terms}/>
       <Route exact path='/users/:userId' component ={ProfileShowContainer}/>
         <Route exact path="/groups/:groupId/events/:eventId" component={EventShowContainer}/>
         <Route exact path="/groups/:groupId/members" component={GroupMembersContainer}/>
@@ -62,20 +71,15 @@ const App = () => (
 
       </div>
       <div className="foot">
-      <Link to="/help" className= "l">Help</Link>
-      <Link to="/about" className= "l">About Us</Link>
-      <Link to="/pro" className= "l">MeetUp Pro</Link>
-      <Link to="/jobs" className= "l">Jobs</Link>
-      <Link to="/apps" className= "l">Apps</Link>
-      <Link to="/api" className= "l">Api</Link>
-      <Link to="/topics" className= "l">Topics</Link>
-      <Link to="/cities" className= "l">Cities</Link>
-      <Link to="/blog" className= "l">Blog</Link>
-      <Link to="/techblog" className= "l">Tech Blog</Link>
-      <Link to="/madeincali" className= "l">Made in SF</Link>
+        <a className='ll' href= 'https://www.linkedin.com/in/joshuaschen/'><img className='linkedinlogo' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507054510/In-White-41px-R_iuuifi.png'/> </a>
+
+      <Link to="/about" className= "l">About</Link>
+      <Link to='/resume' className='l'>Resume</Link>
+
+
       </div>
       <div className="footcopy">
-        <span className= "l"> ©2017 MeetUp</span>
+        <span className= "l"> ©2017 cliqueUp</span>
         <Link to="/privacy" className= "l">Privacy</Link>
         <Link to="/terms" className= "l">Terms</Link>
       </div>
@@ -88,3 +92,15 @@ const App = () => (
 );
 
 export default App;
+// <Link to="/madeincali" className= "l">Made in the Bay</Link>
+// <Link to="/blog" className= "l">Blog</Link>
+//       <Link to="/topics" className= "l">Topics</Link>
+// <Link to="/contact" className= "l">Contact</Link>
+// <Link to="/techblog" className= "l">Tech Blog</Link>
+// <Link to="/jobs" className= "l">Jobs</Link>
+// <Link to="/apps" className= "l">Apps</Link>
+//   <Link to="/cities" className= "l">Cities</Link>
+
+
+// <Link to="/pro" className= "l">MeetUp Pro</Link>
+// <Link to="/api" className= "l">Api</Link>

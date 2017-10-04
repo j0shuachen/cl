@@ -12,9 +12,7 @@
 
 .backgroundgif{
   display: flex;
-  height: 300px;
-  width: 1200px;
-  min-width: 500px;
+  // height: 300px;
   width: 100%;
   background-image: image-url("testg.gif");
   background-size: contain;
@@ -24,8 +22,9 @@
   color: white;
   flex-direction: column;
   // padding-top: 80px;
+  min-height: 200px;
   background-size: cover;
-  min-width: 1000px;
+  min-width: 1200px;
   object-fit: cover;
 }
 

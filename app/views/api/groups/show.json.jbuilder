@@ -20,7 +20,7 @@ json.number @numembers
 #     end
 #   end
 # end
-
+json.relatedgroups @relatedgroups.shuffle.take(5)
 json.eventboth do
   json.array! @eventboth.each do |e|
     json.extract! e, :id, :name, :group_id, :organizer, :image_url, :description, :location, :start_time, :end_time

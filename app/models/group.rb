@@ -39,6 +39,16 @@ class Group < ApplicationRecord
   foreign_key: :group_id,
   class_name: :GroupNews
 
+  has_many :sponsors, dependent: :destroy,
+  primary_key: :id,
+  foreign_key: :group_id,
+  class_name: :Sponsor
+
+  has_many :pages, dependent: :destroy,
+  primary_key: :id,
+  foreign_key: :group_id,
+  class_name: :Page
+
 def events_hash
   events_hash = {}
   events.each { |event| events_hash[event.id] = event }

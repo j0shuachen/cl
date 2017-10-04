@@ -49,10 +49,10 @@ class GroupIndex extends React.Component {
       <div className="x">
         <div className="backgroundgif">
         <div className="dummyp">What do you love?</div>
-        <div className="dummypdos">Do more of it with MeetUp</div>
+        <div className="dummypdos">Do more of it with Clique</div>
         </div>
 
-        <div className="groupindexheader"> Find a MeetUp! </div>
+        <div className="groupindexheader"> Find a Clique! </div>
         <div className="searchbarz">
           <div className="searchwhite"><Search/></div>
         </div>

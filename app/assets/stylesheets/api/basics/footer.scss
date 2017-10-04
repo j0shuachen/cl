@@ -1,6 +1,6 @@
 footer{
   display: flex;
-  height: 120px;
+  min-height: 120px;
   align-content: space-around;
   align-items: flex-end;
   flex-direction: column;
@@ -10,7 +10,8 @@ footer{
   padding: 0 10 0 10;
   font-family: 'Ubuntu', sans-serif;
   flex-wrap: nowrap;
-  min-width: 900px;
+  // min-width: 900px;
+  min-width: 1400px;
   min-height: 120px;
   // align-self: baseline;
   // position: relative;
@@ -20,7 +21,7 @@ footer{
 
 .foot{
   display: flex;
-  justify-content: space-around;
+  // justify-content: space-around;
   width: 100%;
   color: white;
   align-items: flex-start;

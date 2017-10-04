@@ -133,7 +133,7 @@ defaultButton(){
   }
 
   render(){
-// console.log(this.props);
+console.log(this.state);
     return (
       <div className="groupformcontainer">
         <div className="creategroupgif2" style={{backgroundColor: this.state.color}}>

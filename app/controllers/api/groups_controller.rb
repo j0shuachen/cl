@@ -133,7 +133,29 @@ class Api::GroupsController < ApplicationController
       opo.id
     end
     @groo = @groo.reverse
-
+    @memid = []
+    @group.members.each do |mem|
+      @memid << mem.id
+    end
+    @reg =[]
+    @memid.each do |memidd|
+      @reg << GroupEnrollment.where('user_id =?', memidd)
+    end
+    p 'reggroupenrolls'
+    p @reg.flatten!
+    @relatedgroups = []
+    @reg.each do |reg|
+      @relatedgroups << Group.where('id=?', reg['group_id'])
+    end
+    p 'related'
+    p @relatedgroups.flatten!.uniq!
+    # @ab = []
+    # @relatedgroups.each do |rg|
+    #   @ab << Group.where('id =?', rg)
+    # end
+    # @ab.uniq!
+    # p 'ab'
+    # p @ab
     # render api_group_url(:id)
 
     render :show

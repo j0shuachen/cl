@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :event_enrollments
     resources :group_enrollments
     resources :group_news
+    resources :sponsors
+    resources :pages
     # resources :events
     # resources :event_enrollments
   end
