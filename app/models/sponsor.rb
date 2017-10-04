@@ -1,5 +1,4 @@
 class Sponsor < ApplicationRecord
-  validates :contribution, :image_url
   validates :name, :group_id, presence: true
 
 
