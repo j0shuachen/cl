@@ -74,37 +74,16 @@ class updateUserForm extends React.Component {
       <div className="signup-form-container">
 
           <form onSubmit={this.handleSubmit} className="signup-form-box">
+            <div className='updateusertitle'> Your CliqueUp Profile</div>
             <input type="hidden" ref="id" value={this.state.id}/>
 
             <div className="signupformtop">
-            </div>
 
-            <label className="userupdatepic">
-              <div className="userques"> Update your picture? </div>
-                {this.state.image_url ? <img className='groupformpic' src={this.state.image_url}></img> :<img className='groupformpic' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1501260585/default_group_normal_ymyl3t.png'></img> }
-                <div className='uplob' onClick={this.uploadButton}>Upload</div>
 
-            </label>
-            <br/>
-              <label className="form">
-                <span className="login-input">Email:</span>
-                <input type="text"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  className="login-input"/>
-              </label>
-              <br/>
-            <label className="form">
-              <span className="login-input">Username:</span>
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"/>
-            </label>
-            <br/>
+            <div className='updateyourprofile'>Update your profile</div>
 
-            <label className="form">
-              <span className="login-input">Name:</span>
+            <label className="formname">
+              <span className="login-inputques">Name</span>
                 <input type="text"
                   value={this.state.name}
                   onChange={this.update('name')}
@@ -112,18 +91,41 @@ class updateUserForm extends React.Component {
                   placeholder="This will be your name displayed to other users"
                   />
             </label>
-            <br/>
-            <label className="form">
-              <span className="login-input"> Location:</span>
-              <input type="text"
-                value={this.state.location}
-                onChange={this.update('location')}
-                className="login-input"
-                placeholder="We use this to find groups and events near you!"
-                />
-            </label>
 
-              <br/>
+          <div className='userupdateblock'>
+            <label className="userupdateformpicholder">
+              <div className="userques"> Update your picture </div>
+                {this.state.image_url ? <img className='updateuserformpic' src={this.state.image_url}></img> :<img className='groupformpic' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1501260585/default_group_normal_ymyl3t.png'></img> }
+                <div className='uplob' onClick={this.uploadButton}>Upload</div>
+                      </label>
+                  <div className='userupdateinfo'>
+                    <label className="form">
+                      <span className="login-inputques">Email:</span>
+                      <input type="text"
+                        value={this.state.email}
+                        onChange={this.update('email')}
+                        className="login-inputside"/>
+                    </label>
+
+                  <label className="form">
+                    <span className="login-inputques">Username:</span>
+                    <input type="text"
+                      value={this.state.username}
+                      onChange={this.update('username')}
+                      className="login-inputside"/>
+                  </label>
+                  <label className="form">
+                    <span className="login-inputques"> Location:</span>
+                    <input type="text"
+                      value={this.state.location}
+                      onChange={this.update('location')}
+                      className="login-inputside"
+                      placeholder="We use this to find groups and events near you!"
+                      />
+                  </label>
+                  </div>
+          </div>
+            </div>
             <input type="submit" value="Update" className="formos"/>
 
         </form>

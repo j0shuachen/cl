@@ -99,8 +99,13 @@ margin-top: 12px;
 .membergroups{
   display: flex;
   text-decoration: none;
-  width: 245px;
+  // width: 245px;
+  width: 100%;
   height: 65px;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  text-decoration: none;
+  margin-bottom: 5px;
+  margin-top: 5px;
   // flex-direction: column;
 }
 .membergroupname{
@@ -183,4 +188,9 @@ text-transform: uppercase;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 border-bottom: 1px solid transparent;
 padding: 16px 16px 0;
+}
+
+.indentmod{
+  padding: 16px 16px 0px;
+
 }

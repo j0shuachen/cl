@@ -83,7 +83,7 @@ class UserShow extends React.Component{
     if(this.props.group.mod){
       if(this.props.group.mod.id === this.props.currentUser.id){
         var go = `/groups/${this.props.group.id}/update`;
-        return(<Link to={go} className='glink'>Update Group</Link>);
+        return(<Link to={go} className='glink'>Update</Link>);
       }else{
         return (null);
       }
@@ -603,7 +603,7 @@ if(this.props.group.color === "#FFFFFF"){
             <div className='usergroups'>
               <div className='modmem'>
                 <div className='statstitle'>Moderates groups: </div>
-                <div className='indent' style={{height: '325px'}}>{this.groupmods()}</div>
+                <div className='indentmod' style={{height: '325px'}}>{this.groupmods()}</div>
 
               </div>
             </div>

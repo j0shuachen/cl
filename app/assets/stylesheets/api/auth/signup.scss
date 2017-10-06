@@ -1,3 +1,209 @@
+
+
+
+.signup-form-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.updateyourprofile{
+  font-size: 28px;
+    line-height: 1.25;
+        font-weight: 500;
+        padding-bottom: 8px;
+}
+
+.login-inputques, .userques{
+  font-size: 13px;
+font-weight: 600;
+display: block;
+    // margin-bottom: 16px;
+    width: 100%;
+}
+.formname{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form{
+  margin-bottom: 5px;
+}
+.formos{
+  display: flex;
+  margin-left: 16px;
+  margin-top: 35px;
+  justify-content: center;
+  box-sizing: border-box;
+-webkit-appearance: none;
+border-radius: 3px;
+font-size: 16px;
+font-weight: 600;
+min-height: 36px;
+outline: 0;
+padding: 0 16px;
+vertical-align: middle;
+line-height: 1;
+margin-bottom: 16px;
+border: 1px solid rgba(0,0,0,.12);
+stroke: transparent;
+fill: #fff!important;
+color: #fff!important;
+background: #ed1c40;
+border-color: #ed1c40;
+width: 75px;
+height: 35px;
+}
+
+.uplob{
+  box-sizing: border-box;
+  margin-top: 10px;
+  height: 30px;
+  align-content: center;
+  display: flex;
+  // box-sizing: border-box;
+  width: 200px;
+  color: #2A9BC7;
+  font-size: 16px;
+font-weight: 400;
+    padding: 20.5px .66em;
+    justify-content: center;
+        // height: 71.5px;
+            padding: 0 20px;
+            border: 1px solid rgba(0,0,0,.12);
+flex-direction: column;
+            align-items: center;
+}
+
+
+
+.updateuserformpic{
+  min-width: 200px;
+  min-height: 200px;
+  object-fit: cover;
+  max-height: 200px;
+  max-width: 200px;
+  box-sizing: border-box;
+  // position: relative;
+padding: 5px;
+border: 1px solid #ccc;
+}
+
+.login-inputside{
+  width: 75%;
+  line-height: 1.45;
+padding: 4px;
+font-size: 16px;
+// border-radius: 1px;
+font-family: "Graphik Meetup",helvetica,arial,sans-serif;
+
+}
+.login-input{
+  width: 50%;
+  line-height: 1.45;
+padding: 4px;
+font-size: 16px;
+// border-radius: 1px;
+font-family: "Graphik Meetup",helvetica,arial,sans-serif;
+}
+
+.userupdateformpicholder{
+    width: 202px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+.userupdateblock{
+  display: flex;
+}
+.userupdateinfo{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 20px;
+}
+
+
+.updateusertitle{
+      color: rgba(0,0,0,.87);
+      border-bottom: 1px solid transparent;
+    padding: 16px 16px 0;
+    font-size: 16px;
+line-height: 1.45;
+font-family: "Graphik Meetup",helvetica,arial,sans-serif;
+font-weight: 400;
+    font-weight: 500;
+
+text-rendering: optimizeLegibility;
+}
+
+.signupformtop{
+      border-top: 1px solid rgba(0,0,0,.12);
+          padding: 16px 16px 0;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+
+}
+
+@media only screen and (min-width: 640px){
+  .updateusertitle {
+      font-size: 42px;
+  }
+}
+
+
+.userupdateformpic{
+  display: flex;
+  width: 50px;
+  height: 50px;
+}
+
+
+.signup-form-box{
+  display: flex;
+  // height: 100%;
+  flex-direction: column;
+  width: 575px;
+  // height: 600px;
+  margin-top: 30px;
+  box-sizing: border-box;
+      border: 1px solid rgba(0,0,0,.12);
+      align-self: center;
+      border-radius: 3px;
+      margin-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // .signup-form-container{
 //
 //   display: flex;
