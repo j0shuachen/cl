@@ -1,108 +1,108 @@
-.singlegroupcontainer{
-  font-family: 'Ubuntu', sans-serif;
-  height: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-
-
-.singlegroup{
-  height: 100%;
-  max-height: 100%;
-  min-height: 100%;
-  padding-top: 20px;
-  min-width: 1200px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  background-color: white;
-  // min-height: 1750px
-  min-height: 2000px;
-  min-width: 1400px;
-}
-
-.groupheader{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-width: 1400px;
-}
-
-.singlegroupheader{
-width: 100%;
-// min-width: 1200px;
-height: 40px;
-color:#ed1c40;
-background-color: white;
-display: flex;
-align-items: center;
-// align-content: center;
-
-
-
-}
-
-.singlegroupheader >span{
-  // display: flex;
-  font-size: 25px;
-  text-align: center;
-
-}
-
-.picturepickerdos{
-  width: 100%;
-}
-.groupformpico{
-  width: 100%;
-  height: 120px;
-
-  object-fit: cover;
-}
-.singlegroupbanner{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  min-width: 900px;
-  height: 120px;
-  min-height: 120px;
-  // background-image: image-url("vally.jpg");
-  // background-size: contain;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-
-}
-
-.singletop{
-  display: flex;
-  min-width: 900px;
-  align-content: space-between;
-}
-.singlegroupbar{
-  display: flex;
-  width: 100%;
-  justify-content: left;
-  min-width: 600px;
-  align-items: center;
-  align-content: space-around;
-  height: 60px;
-  min-height: 60px;
-  background-color:#ed1c40;
-}
-
-.bardos{
-  display: flex;
-  justify-content: center;
-  // padding: 20px;
-  min-width: 200px;
-  text-decoration: none;
-  color: white;
-  background-color:#ed1c40;
-  height: 60px;
-  min-height: 60px;
-}
-.mygroupprofile{
-
-}
+// .singlegroupcontainer{
+//   font-family: 'Ubuntu', sans-serif;
+//   height: 100%;
+//   min-height: 100%;
+//   display: flex;
+//   flex-direction: column;
+// }
+//
+//
+//
+// .singlegroup{
+//   height: 100%;
+//   max-height: 100%;
+//   min-height: 100%;
+//   padding-top: 20px;
+//   min-width: 1200px;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: row;
+//   background-color: white;
+//   // min-height: 1750px
+//   min-height: 2000px;
+//   min-width: 1400px;
+// }
+//
+// .groupheader{
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+//   min-width: 1400px;
+// }
+//
+// .singlegroupheader{
+// width: 100%;
+// // min-width: 1200px;
+// height: 40px;
+// color:#ed1c40;
+// background-color: white;
+// display: flex;
+// align-items: center;
+// // align-content: center;
+//
+//
+//
+// }
+//
+// .singlegroupheader >span{
+//   // display: flex;
+//   font-size: 25px;
+//   text-align: center;
+//
+// }
+//
+// .picturepickerdos{
+//   width: 100%;
+// }
+// .groupformpico{
+//   width: 100%;
+//   height: 120px;
+//
+//   object-fit: cover;
+// }
+// .singlegroupbanner{
+//   display: flex;
+//   width: 100%;
+//   justify-content: center;
+//   min-width: 900px;
+//   height: 120px;
+//   min-height: 120px;
+//   // background-image: image-url("vally.jpg");
+//   // background-size: contain;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//
+//
+// }
+//
+// .singletop{
+//   display: flex;
+//   min-width: 900px;
+//   align-content: space-between;
+// }
+// .singlegroupbar{
+//   display: flex;
+//   width: 100%;
+//   justify-content: left;
+//   min-width: 600px;
+//   align-items: center;
+//   align-content: space-around;
+//   height: 60px;
+//   min-height: 60px;
+//   background-color:#ed1c40;
+// }
+//
+// .bardos{
+//   display: flex;
+//   justify-content: center;
+//   // padding: 20px;
+//   min-width: 200px;
+//   text-decoration: none;
+//   color: white;
+//   background-color:#ed1c40;
+//   height: 60px;
+//   min-height: 60px;
+// }
+// .mygroupprofile{
+//
+// }

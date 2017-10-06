@@ -1,163 +1,163 @@
-.indexlink{
-  display: flex;
-  width:300px;
-  height: 300px;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 25px;
-  color: #ed1c40;
-  // border: 1px solid rgba(0,0,0,.12);
-
-
-
-
-}
-
-
-
-.eventindex{
-  display: flex;
-  width:300px;
-  height: 300px;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 25px;
-  color: #ed1c40;
-}
-
-
-.x{
-min-width: 1400px;
-}
-
-.indexlinko{
-  display: flex;
-  width:300px;
-  height: 300px;
-
-}
-
-
-
-
-.groupindexheader{
-  display: flex;
-  width: 100%;
-  // height: 100px;
-  min-height: 100px;
-  background-color: #ed1c40;
-  font-family: 'Ubuntu', sans-serif;
-  color: white;
-  justify-content: center;
-  font-size: 40px;
-  min-width: 1200px;
-  align-items: center;
-}
-
-  .searchbarz{
-    display: flex;
-    min-height: 80px;
-    min-width: 1400px;
-    width: 100%;
-    color: #ed1c40;
-    background-color: black;
-  }
-
-  .search{
-    display: flex;
-    height: 50px;
-    width: 300px;
-    // width: 100%;
-    font-size: 20px;
-    text-align: center;
-    justify-content: center;
-    background-color: white;
-
-
-  }
-
-  .searchwhite{
-    display: flex;
-    margin: 15px;
-    height: 50px;
-    width: 300px;
-    background-color: white;
-  }
-
-
-
-  .grouplist{
-    // z-index: 100;
-
-    padding:0px;
-    display: flex;
-    padding: 45px;
-    // justify-content: center;
-// justify-content: space-evenly;
-// justify-content: space-between;
-flex-wrap: wrap;
-    margin-bottom: 30px;
-    min-width: 1200px;
-    justify-content: space-between;
-    // max-width: 1500px;
-    // min-width: 1400px;
-    // margin-left: 20px;
-    // align-self: center;
-    // flex-direction: column;
-
-  }
-  // .g3{
-  //   min-width: 200px;
-  //   min-height: 200px;
-  //   display: flex;
-  //   padding:10px;
-  //   font-size: 30px;
-  //   width: 200px;
-  //   align-self: center;
-  //   height: 40px;
-  //   border-top: 1px rgba(211,211,211,.7) solid;
-  //   justify-content: center;
-  // align-items: center;
-  // }
-
-
-  .g1{
-    // z-index: 10;
-    font-family: 'Ubuntu', sans-serif;
-    text-align: center;
-    // min-width: 300px;
-    min-width: 250px;
-    min-height: 350px;
-    display: flex;
-    padding:10px;
-    flex-direction: column;
-    font-size: 25px;
-    width: 200px;
-    align-self: center;
-    height: 80px;
-    border-top: 1px rgba(211,211,211,.7) solid;
-    justify-content: center;
-  align-items: center;
-  color:#ed1c40;
-  }
-
-
-  .g999{
-    display: flex;
-    margin-top: 5px;
-    position: relative;
-    max-width: 300px;
-    // display: block;
-    max-height: 60px;
-    font-size: 25px;
-    height: 60px;
-    // size: 4vw;
-    justify-content: center;
-  align-items: center;
-  color:#ed1c40;
-    text-overflow: ellipsis;
-  }
+// .indexlink{
+//   display: flex;
+//   width:300px;
+//   height: 300px;
+//   justify-content: center;
+//   align-items: center;
+//   text-decoration: none;
+//   font-family: 'Ubuntu', sans-serif;
+//   font-size: 25px;
+//   color: #ed1c40;
+//   // border: 1px solid rgba(0,0,0,.12);
+//
+//
+//
+//
+// }
+//
+//
+//
+// .eventindex{
+//   display: flex;
+//   width:300px;
+//   height: 300px;
+//   justify-content: center;
+//   align-items: center;
+//   text-decoration: none;
+//   font-family: 'Ubuntu', sans-serif;
+//   font-size: 25px;
+//   color: #ed1c40;
+// }
+//
+//
+// .x{
+// min-width: 1400px;
+// }
+//
+// .indexlinko{
+//   display: flex;
+//   width:300px;
+//   height: 300px;
+//
+// }
+//
+//
+//
+//
+// .groupindexheader{
+//   display: flex;
+//   width: 100%;
+//   // height: 100px;
+//   min-height: 100px;
+//   background-color: #ed1c40;
+//   font-family: 'Ubuntu', sans-serif;
+//   color: white;
+//   justify-content: center;
+//   font-size: 40px;
+//   min-width: 1200px;
+//   align-items: center;
+// }
+//
+//   .searchbarz{
+//     display: flex;
+//     min-height: 80px;
+//     min-width: 1400px;
+//     width: 100%;
+//     color: #ed1c40;
+//     background-color: black;
+//   }
+//
+//   .search{
+//     display: flex;
+//     height: 50px;
+//     width: 300px;
+//     // width: 100%;
+//     font-size: 20px;
+//     text-align: center;
+//     justify-content: center;
+//     background-color: white;
+//
+//
+//   }
+//
+//   .searchwhite{
+//     display: flex;
+//     margin: 15px;
+//     height: 50px;
+//     width: 300px;
+//     background-color: white;
+//   }
+//
+//
+//
+//   .grouplist{
+//     // z-index: 100;
+//
+//     padding:0px;
+//     display: flex;
+//     padding: 45px;
+//     // justify-content: center;
+// // justify-content: space-evenly;
+// // justify-content: space-between;
+// flex-wrap: wrap;
+//     margin-bottom: 30px;
+//     min-width: 1200px;
+//     justify-content: space-between;
+//     // max-width: 1500px;
+//     // min-width: 1400px;
+//     // margin-left: 20px;
+//     // align-self: center;
+//     // flex-direction: column;
+//
+//   }
+//   // .g3{
+//   //   min-width: 200px;
+//   //   min-height: 200px;
+//   //   display: flex;
+//   //   padding:10px;
+//   //   font-size: 30px;
+//   //   width: 200px;
+//   //   align-self: center;
+//   //   height: 40px;
+//   //   border-top: 1px rgba(211,211,211,.7) solid;
+//   //   justify-content: center;
+//   // align-items: center;
+//   // }
+//
+//
+//   .g1{
+//     // z-index: 10;
+//     font-family: 'Ubuntu', sans-serif;
+//     text-align: center;
+//     // min-width: 300px;
+//     min-width: 250px;
+//     min-height: 350px;
+//     display: flex;
+//     padding:10px;
+//     flex-direction: column;
+//     font-size: 25px;
+//     width: 200px;
+//     align-self: center;
+//     height: 80px;
+//     border-top: 1px rgba(211,211,211,.7) solid;
+//     justify-content: center;
+//   align-items: center;
+//   color:#ed1c40;
+//   }
+//
+//
+//   .g999{
+//     display: flex;
+//     margin-top: 5px;
+//     position: relative;
+//     max-width: 300px;
+//     // display: block;
+//     max-height: 60px;
+//     font-size: 25px;
+//     height: 60px;
+//     // size: 4vw;
+//     justify-content: center;
+//   align-items: center;
+//   color:#ed1c40;
+//     text-overflow: ellipsis;
+//   }

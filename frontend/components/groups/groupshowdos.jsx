@@ -10,14 +10,15 @@ class GroupShowDos extends React.Component{
     super(props);
     this.state= {
       // member: null
+
       newz: false,
       loaded: false,
       num: true,
-      heightning: 1395,
-      heighter: '1395px'
+      heightning: 1035,
+      heighter: '1035px'
     };
     this.newsheightclicker = this.newsheightclicker.bind(this);
-
+    this.newsClicker = this.newsClicker.bind(this);
     this.renderU = this.renderU.bind(this);
     this.ismember = this.ismember.bind(this);
     this.renderJ = this.renderJ.bind(this);
@@ -76,12 +77,24 @@ class GroupShowDos extends React.Component{
   newsheightclicker() {
     // console.log('hitt');
     // var newheight = this.state.heightning+1215;
-    var newheight = this.state.heightning+1395;
+    var newheight = this.state.heightning+1035;
 
 
     var newheighter = newheight.toString() + 'px';
     // console.log(newheight);
       this.setState({heighter: newheighter, heightning: newheight, newz: true});
+
+  }
+
+  newsClicker(){
+    var o = this.props.group.news.length;
+    var adder = o - 9;
+    if(adder > 9){
+      this.setState({newsheight: this.state.newsheight+ 9, newsmore: true});
+    }else{
+      var newnewheight = this.state.newsheight + adder;
+      this.setState({newsheight: newnewheight, newsmore: false});
+    }
 
   }
 
@@ -230,7 +243,7 @@ randomGroupMembers (){
       let li = `/groups/${this.props.groupId}/users/${k[i].id}`;
       ar.push(
       <Link className= 'opos' key={i} to={li}>
-        <img className='groupnewspic2'src={k[i].image_url}></img>
+        <img className='rmemrowpic'src={k[i].image_url}></img>
       </Link>
     );
     }
@@ -247,7 +260,7 @@ renderU(){
     if (v === g){
       return (
         <div className="jer">
-          <Link to={show} className="upgroup">Update Group</Link>
+          <Link to={show} className="upgroup">Update</Link>
         </div>
       );
     }}
@@ -279,7 +292,7 @@ renderU(){
           var arr = [];
           for(var i =0; i < ran.length; i++){
             var pj = `/groups/${this.props.groupId}/users/${ran[i].id}`;
-            arr.push(<Link to={pj} key={i} className='soolo'> <img className='eventorg' src={ran[i].image_url}></img></Link>);
+            arr.push(<Link to={pj} key={i} className='eventmembertile'> <img className='eventorg' src={ran[i].image_url}></img></Link>);
           }
           return arr;
         };
@@ -287,27 +300,36 @@ renderU(){
         return(
           <div className="groupeventeach" key={event.id}>
             <Link to={ok} className="groupeventname">{event.name}</Link>
-              {event.image_url === 'https://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif' || event.image_url ==='http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif' ? null : <img className="indexpic2" src={event.image_url}></img> }
 
-            <div className='hoppaa'>
 
-              <div className='yoka3'>
+              <div className='groupeventbody'>
+                <div className='groupeventtime'>Ended: {moment(event.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+
                 <div className="groupeventlocation">Location: {event.location}</div>
-                {event.rsvp.rando.length > 0 ? <div className='yoka'>{randers(event.rsvp.rando)} {numbo()}  </div> : null}
-                <div className="groupevenntdescription">{event.description}</div>
-              </div>
+                <div className='groupeventdivider'>
+                  <div className='groupeventbodyleft'>
+                    {event.image_url === 'https://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif' || event.image_url ==='http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif' ? null : <img className="indexpic2" src={event.image_url}></img> }
+                    {event.rsvp.rando.length > 0 ? <div className='eventmembersholder'>{randers(event.rsvp.rando)} {numbo()}  </div> : null}
+                    <div className="groupeventdescription">{event.description}</div>
 
-              <div className='yoka4'>
-                <div className='groupeventorganizer'>
-                  <div className='org'>Organizer: </div>
-                  <Link to={ots}><img className='eventorg' src={event.organizer.image_url}></img></Link>
+
+                  </div>
+                  <div className='groupeventorgbody'>
+                    <div className='groupeventorganizer'>
+                      <div className='org'>Organizer: </div>
+                      <Link to={ots}><img className='eventorg' src={event.organizer.image_url}></img></Link>
+                    </div>
+
+                    {this.state[event.id] ? <div className='groupeventmemberswent'>{event.rsvp.num} members went </div> : <div className='groupeventmemberswent'>{event.rsvp.num} members went</div> }
+                  </div>
                 </div>
-                <div className='groupeventid'>Ended: {moment(event.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
 
-                {this.state[event.id] ? <div className='yoka2'>{event.rsvp.num} members went </div> : <div className='yoka2'>{event.rsvp.num} members went</div> }
+
+
               </div>
 
-          </div>
+
+
         </div>
         );
       }));
@@ -387,7 +409,7 @@ renderU(){
         var arr = [];
         for(var i =0; i < ran.length; i++){
           var pj = `/groups/${this.props.groupId}/users/${ran[i].id}`;
-          arr.push(<Link to={pj} key={i} className='soolo'> <img className='eventorg' src={ran[i].image_url}></img></Link>);
+          arr.push(<Link to={pj} key={i} className='eventmembertile'> <img className='eventorg' src={ran[i].image_url}></img></Link>);
         }
         return arr;
       };
@@ -396,27 +418,27 @@ renderU(){
         <Link to={ok} className="groupeventname">{event.name}</Link>
           {event.image_url === 'https://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif' || event.image_url ==='http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif' ? null : <img className="indexpic2" src={event.image_url}></img> }
 
-        <div className='hoppaa'>
-          <div className='yoka3'>
-            <div className="groupeventlocation">Location: {event.location}</div>
-            {event.rsvp.rando.length > 0 ? <div className='yoka'>{randers(event.rsvp.rando)} {numbo()}  </div> : null}
-            <div className="groupevenntdescription">{event.description}</div>
-          </div>
-        <div className='yoka4'>
+          <div className='groupeventbody'>
 
+            <div className="groupeventlocation">Location: {event.location}</div>
+              <div className='groupeventtime'>Start time: {event.start_time === 'tbd' ? 'tbd' : moment(event.start_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+              <div className='groupeventtime'>End time: {event.end_time === 'tbd' ? 'tbd' : moment(event.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+              <div className='groupeventdivider'>
+            <div className='groupeventbodyleft'>
+          {event.rsvp.rando.length > 0 ? <div className='eventmembersholder'>{randers(event.rsvp.rando)} {numbo()}  </div> : null}
+            <div className="groupeventdescription">{event.description}</div>
+          </div>
+        <div className='groupeventorgbody'>
           <div className='groupeventorganizer'>
             <div className='org'>Organizer: </div>
             <Link to={ots}><img className='eventorg' src={event.organizer.image_url}></img></Link>
           </div>
-
-          <div className='groupeventid'>Start time: {event.start_time === 'tbd' ? 'tbd' : moment(event.start_time).format('ddd MMM Do YYYY hh:mm A')}</div>
-          <div className='groupeventid'>End time: {event.end_time === 'tbd' ? 'tbd' : moment(event.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
-          {this.state[event.id] ? <div className='yoka2'>{event.rsvp.num} members attending</div> :       <div className='yoka2'>{event.rsvp.num} members attending</div> }
+          {this.state[event.id] ? <div className='groupeventmemberswent'>{event.rsvp.num} members attending</div> :       <div className='groupeventmemberswent'>{event.rsvp.num} members attending</div> }
           {renderEventRsvp()}
           {x()}
-
         </div>
-      </div>
+        </div>
+        </div>
     </div>
     );
   }));
@@ -428,7 +450,7 @@ renderU(){
     if(this.props.group.mod){
       if(this.props.group.mod.id === this.props.currentUser.id){
         var go = `/groups/${this.props.group.id}/update`;
-        return(<Link to={go} className='glink'>Update Group</Link>);
+        return(<Link to={go} className='glink'>Update</Link>);
       }else{
         return (null);
       }
@@ -439,22 +461,39 @@ renderU(){
   }
 
   backgroundSetter(){
+     var o = this.props.group.news.length;
+     if(o > 9){
+       var newsheight = 9;
+       var newsmore = true;
+     }else{
+       newsheight = o;
+       newsmore = false;
+     }
 
-
-this.setState({check: true, newz: true, lengther: this.props.group.news.length, banner: this.props.group.banner_url, color: this.props.group.color});
+this.setState({check: true, newz: true, lengther: this.props.group.news.length, banner: this.props.group.banner_url, color: this.props.group.color, newsmore: newsmore, newsheight: newsheight });
   }
 
 
   render() {
+    console.log(this.props);
+//     if(1+1 ===2){
+//     return (
+//       <div className='loadgroupcontainer'>
+//       <div className='loadgroupmain'>
+//
+//         <ReactLoading type='spin' color='#ed1c40' height='100px' width='100px'/>
+//       </div>
+//     </div>);
+// }
 
     // console.log(this.state);
     // console.log(this.props);
-    if(Object.keys(this.props.group).length === 0 || !this.props.group.info){
+    if(Object.keys(this.props.group).length === 0 || !this.props.group.info || !this.state.color){
       return (
-        <div className='singlegroupcontainer'>
+        <div className='loadgroupcontainer'>
         <div className='loadgroupmain'>
+
           <ReactLoading type='spin' color='#ed1c40' height='100px' width='100px'/>
-          <div className='loading'> Loading...</div>
         </div>
       </div>);
     }
@@ -491,7 +530,7 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
         if(this.state.member){
           return(  <Link className="createeventt2" to={idz +"/create/event"}>Create event</Link>);
       }else{
-        return( <div className='createeventt'> Join group to create an event! </div>);
+        return( <div className='createevent'> Join group to create an event! </div>);
         }
       };
 
@@ -511,11 +550,15 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
         }
         x.push(
           <div className='newseach' key={i}>
-            <Link to={user}>
-            <img className='groupnewspic' src={news[i].use.image_url}></img>
-            </Link>
-          <div className='yc'>
-            <Link className='news' to={ol} >{news[i].news} </Link>
+
+          <div className='newsholder'>
+            <div className='newsdivider'>
+              <Link className='news' to={ol} >{news[i].news} </Link>
+
+              <Link className='newspicholder' to={user}>
+              <img className='groupnewspic' src={news[i].use.image_url}></img>
+              </Link>
+            </div>
             <TimeAgo className= 'ago' datetime={v}></TimeAgo>
           </div>
           </div>
@@ -535,16 +578,18 @@ if(this.props.group.color === "#FFFFFF"){
 
 
   return (
-    <div className="singlegroupcontainer" >
-      <div className="groupheader">
+    <div className="singlegroupcontainer" style={{backgroundColor: this.state.color}}>
+
+        <div className='groupheader'>
+            <div className="grouphead">
         <div className="singlegroupbanner" style={{backgroundColor:xo}}>
         {  this.props.group.banner_url ==='default' ? null : <img className='banner' src={this.props.group.banner_url}></img>}
-        </div>
         <div className="singlegroupheader">
-          <span>{this.props.group.name}</span>
+          {this.props.group.name}
+        </div>
         </div>
 
-      <div className="singletop">
+
         <div className="singlegroupbar">
           <Link to={idz} className="glinkon">Home</Link>
           <Link to={members} className="glink">Members</Link>
@@ -552,43 +597,50 @@ if(this.props.group.color === "#FFFFFF"){
           <Link to={photos} className="glink">Photos</Link>
           <Link to={pages} className="glink">Pages</Link>
           {this.renderUpdateGroup()}
-        </div>
+          <div className="bardos">
+            {this.props.currentUser? <Link className="glink" to={myprofile} >My profile</Link> : null }
 
-        <div className="bardos">
-          {this.props.currentUser? <Link className="glink" to={myprofile} >My profile</Link> : null }
-        </div>
-      </div>
-      </div>
-
-      <div className="singlegroup" style={{backgroundColor: this.state.color}}>
-        <div className="singlegroupsidebar">
-          <div className="gcreated">
-            <img className="grouppico" src={this.props.group.image_url}></img>
-
-            <div className="gcreated2">
-              <div className="g11">{this.props.group.name}</div>
-              <div className="g2">Established: {this.props.group.creator}</div>
-                {this.state.num ? <div className='g2'>{this.props.group.number} members</div> : <div className='g2'>{this.props.group.number} members</div>}
-
-              <div className="g66">
-                <div className='g90'>Mod: {moddname()}</div>
-
-                </div>
-            </div>
           </div>
         </div>
 
-        <div className="singlegroupmain" >
+
+
+      </div>
+      </div>
+
+      <div className="singlegroup">
+        <div className="singlegroupsidebar">
+            <div className='photoplaceholder'>
+            <img className='groupphoto' src={this.props.group.image_url}></img>
+            </div>
+            <div className="gcreated2">
+
+              <div className="groupsidebarname">{this.props.group.name}</div>
+              <div className='groupsidebarlocation'>{this.props.group.location}</div>
+            <div className="groupsidebarestablished">Established: {this.props.group.creator}</div>
+                {this.state.num ? <div className='membercount'>{this.props.group.number} members</div> : <div className='membercount'>{this.props.group.number} members</div>}
+
+              <div className="moderatorcolumn">
+                <div className='moderatedby'>Moderated by:</div>
+                <div className='g90'>
+                  <img className='eventorg' src={this.props.group.mod.image_url}/>
+                  <div className='groupsidebarmod'>{moddname()}</div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div className="singlegroupmain" style={{backgroundColor: this.state.color}}>
           <div className="grouphomeinfo">
             <div className="info">{this.props.group.info}</div>
             <div className='roze'>
-              <div className='toze' >Contact Info: {moddcontact()}</div>
+              <div className='contactinfo' >Contact Info: {moddcontact()}</div>
 
           {renderCreateEvent()}
           </div>
 
         </div>
-        <div>
+        <div className='memberholder'>
           {this.state.num ? <div className='ole'>We're {this.props.group.number} members</div> : <div className='ole'>We're {this.props.group.number} members</div>}
 
         <div className='roz'>
@@ -612,10 +664,9 @@ if(this.props.group.color === "#FFFFFF"){
 
         <div className="singlegroupnews">
           <div className='whatsnew'>What's new</div>
-            <div style={{height: this.state.heighter, overflow: 'hidden'}}>
-            {this.state.newz ? newsList(this.props.group.news) : newsList(this.props.group.news)}
-            </div>
-          {this.state.heightning <= this.state.lengther* 155 ? <div className='newsclicker' onClick={this.newsheightclicker}>More news!</div> : null }
+          {newsList(this.props.group.news.slice(0, this.state.newsheight + 1))}
+          {this.props.group.news.length <= this.state.newsheight ? null : <div className='newsclicker' onClick={this.newsClicker} >More News</div>}
+
 
         </div>
 
@@ -629,3 +680,7 @@ if(this.props.group.color === "#FFFFFF"){
 
 
 export default GroupShowDos;
+// <div style={{height: this.state.heighter, overflow: 'hidden'}}>
+// {this.state.newz ? newsList(this.props.group.news) : newsList(this.props.group.news)}
+// </div>
+// {this.state.heightning <= this.state.lengther* 120 ? <div className='newsclicker' onClick={this.newsheightclicker}>More news!</div> : null }

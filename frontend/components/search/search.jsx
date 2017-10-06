@@ -68,8 +68,8 @@ showGroups(){
     // console.log(this.props);
     return (
     <div className="searchbar">
-      <form className="search">
-      <label className="search" >
+      <form >
+      <label  >
         <input className="search" onChange={this.update('searchParams')} value={this.searchParams} placeholder="Search all groups!">
         </input>
       </label>

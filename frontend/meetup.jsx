@@ -26,7 +26,7 @@ import {createEvent, fetchEvent, fetchEvents} from './util/event_api_util';
 import {deleteGroupEnrollment, createGroupEnrollment, fetchGroupEnrollment, fetchGroupEnrollments } from './util/group_enrollment_api_util';
 import {  } from './actions/group_enrollment_actions';
 import {createGroupNew, fetchGroupNew, fetchGroupNews} from './util/group_news_api_util';
-
+import {createSponsor, fetchSponsor, fetchSponsors, updateSponsor, deleteSponsor} from './util/sponsor_api_util';
 
 window.signup = signup;
 window.login = login;
@@ -49,3 +49,8 @@ window.fetchGroupNews = fetchGroupNews;
 window.fetchGroupNew = fetchGroupNew;
 window.createGroupNew = createGroupNew;
 window.fetchUser = fetchUser;
+window.createSponsor = createSponsor;
+window.fetchSponsor = fetchSponsor;
+window.fetchSponsors = fetchSponsors;
+window.updateSponsor = updateSponsor;
+window.deleteSponsor = deleteSponsor;

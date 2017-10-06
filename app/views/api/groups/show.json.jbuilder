@@ -21,6 +21,13 @@ json.number @numembers
 #   end
 # end
 json.relatedgroups @relatedgroups.shuffle.take(5)
+json.memberino do
+  json.array! @members.each do |membo|
+    json.extract! membo, :name, :username, :image_url
+    json.enrollinfo GroupEnrollment.where('user_id=? and group_id=?', membo.id, @group.id )
+  end
+end
+
 json.eventboth do
   json.array! @eventboth.each do |e|
     json.extract! e, :id, :name, :group_id, :organizer, :image_url, :description, :location, :start_time, :end_time
@@ -118,6 +125,8 @@ end
 json.members do
   json.array! @members
 end
+
+
 
 json.randos @randos
 

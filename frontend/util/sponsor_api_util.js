@@ -41,8 +41,8 @@ export const deleteSponsor = (sponsor) => (
 export const updateSponsor = (sponsor) => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/events/${event.id}`,
-    data: {event}
+    url: `/api/events/${sponsor.id}`,
+    data: {sponsor}
 
   })
 );

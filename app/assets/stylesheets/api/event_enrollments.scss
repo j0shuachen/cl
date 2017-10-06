@@ -1,3 +1,425 @@
 // Place all the styles related to the Api::event_enrollments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* { margin:0; padding:0; }
+
+
+body, html, #root {
+  display: flex;
+  //
+
+  flex-basis: 100%;
+  flex-grow: 1;
+  min-height: 100%;
+  //
+    font-size: 16px;
+    line-height: 1.45;
+    font-family: "Graphik Meetup",helvetica,arial,sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    -moz-font-feature-settings: "liga","kern";
+    -moz-font-feature-settings: "liga=1, kern=1";
+    -ms-font-feature-settings: "liga","kern";
+    -o-font-feature-settings: "liga","kern";
+    -webkit-font-feature-settings: "liga","kern";
+    font-feature-settings: "liga","kern";
+}
+
+nav{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  flex-shrink:0;
+  flex-basis: 100%;
+  box-sizing: border-box;
+    padding: 16px 16px 8px;
+  // width: 100%;
+}
+
+.mainheaderbar{
+  box-sizing: border-box;
+  display: flex;
+    // padding: 16px 16px 8px;
+    // margin: 16px 16px 8px;
+    // margin: 16px;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  // border-bottom: 1px rgba(211, 211, 211, 0.7) solid;
+  // margin: 0;
+  // padding: 0;
+
+}
+
+.headerlogo{
+  min-height: 30px;
+  min-width: 100px;
+  max-height: 30px;
+  max-width: 100px;
+  padding-bottom: 5px;
+}
+
+header{
+  min-height: 65px;
+  display: flex;
+  flex-direction: row;
+}
+
+html{
+  overflow-y: scroll;
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+color: rgba(0,0,0,.87);
+}
+
+.create-header, .login-signup{
+  display: flex;
+}
+
+.greeting{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 250px;
+}
+
+.headertoprof, .header-button, .create-header-button, .demo-button, .sign-in-button, .sign-up-button{
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  justify-content: flex-end;
+    font-weight: 600;
+    text-decoration: none;
+    color: #F64060 !important;
+    //
+    -webkit-flex-grow: 0;
+flex-grow: 0;
+-ms-flex-positive: 0;
+-webkit-flex-shrink: 1;
+flex-shrink: 1;
+-ms-flex-negative: 1;
+// -webkit-flex-basis: 22px;
+// flex-basis: 22px;
+-ms-flex-preferred-size: 22px;
+font-size: 12px;
+display: block;
+height: initial;
+color: rgba(0,0,0,0.54);
+border-bottom: 3px solid transparent;
+max-width: 18vw;
+}
+
+
+@media only screen and (min-width: 640px){
+nav {
+  box-sizing: border-box;
+    padding: 16px 16px 8px;
+}
+.header-name, .headertoprof, .header-button,.create-header-button, .demo-button, .sign-in-button, .sign-up-button {
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    justify-content: flex-end;
+}
+
+footertop{
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: start;
+    -webkit-box-align: flex;
+    box-align: flex;
+    -webkit-align-items: flex;
+    -ms-align-items: flex;
+    align-items: flex;
+    -ms-flex-align: flex;
+    box-sizing: border-box;
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-lines: single;
+    box-lines: single;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+
+}
+
+
+
+.x{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink:0;
+}
+
+.eo{
+  max-width: 200px;
+  max-height: 200px;
+}
+
+
+.indexheadermain{
+  display: flex;
+  justify-content: center;
+  max-width: 950px;
+  align-self: center;
+  color: white;
+  min-width: 100%;
+  font-size: 34px;
+  line-height: 1.25;
+
+  margin: 0 0 16px;
+// max-width: 950px;
+// margin: 0 auto;
+}
+.indexheadersecondary{
+  display: flex;
+  justify-content: center;
+  max-width: 950px;
+  align-self: center;
+  color: rgba(255,255,255,.7);
+  margin: 0 0 16px;
+// padding: 0;
+
+}
+
+
+.backgroundgif{
+    background: #F64060;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px 0 48px;
+    margin-bottom: 44px;
+}
+
+
+
+.groupindexheader{
+  display: flex;
+  min-width: 960px;
+  margin: 0 auto;
+  background-color: #0f1721;
+  color: #fff;
+// min-width: 100%;
+  padding: 12px;
+  min-height: 45px;
+// width: 100%;
+  box-sizing: border-box;
+// width: 71.42855%
+
+z-index: 2;
+position: absolute;
+top: auto;
+// bottom: -42px;
+top: 200px;
+align-self: center;
+}
+
+.searchbar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 45px;
+}
+
+.findaclique{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-left: 8px;
+}
+
+.search{
+  min-height: 45px;
+  font-size: 16px;
+  margin: 0 3px 0 0;
+border-radius: 3px;
+padding: 8px 32px 8px 8px;
+border: 1px solid #000;
+font-size: 16px;
+height: 45px;
+width: 280px;
+}
+
+
+
+
+
+
+
+
+.grouplist{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: center;
+  // justify-content: center;
+  // justify-content: space-between;
+  max-width: 960px;
+  padding-top: 16px;
+  font-size: 13px;
+    // padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 16px;
+}
+
+.grouptile{
+  display: flex;
+  flex-direction: column;
+  min-width: 33.33333%;
+  max-width: 33.33333%;
+  box-sizing: border-box;
+  padding: 0 10px 0 10px;
+  position: relative;
+}
+
+.groupindexpic{
+  box-sizing: border-box;
+  min-width: 309px;
+  min-height: 180px;
+  max-width: 309px;
+  max-height: 180px;
+  object-fit: cover;
+  // width: 33.33333%;
+  border-radius: 3px;
+  margin-bottom: 16px;
+  // padding: 0 16px 0 0;
+}
+
+.grouptitle{
+  position: absolute;
+  bottom: 30px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.26);
+
+}
+
+
+
+
+
+
+
+
+
+
+footer{
+box-sizing: border-box;
+margin-left: auto;
+margin-right: auto;
+// max-width: 960px;
+padding: 24px 16px 8px;
+width: 100%;
+color: #fff;
+background-color: #0f1721;
+margin-bottom: 0px;
+}
+
+
+.footertop{
+  display: flex;
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding-bottom: 5px;
+  border-bottom: 1px rgba(211, 211, 211, 0.7) solid;
+  min-height: 40px;
+
+}
+
+.footercreate, .footerlogin{
+  display: flex;
+  flex: 0.5;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Graphik Meetup",helvetica,arial,sans-serif;
+  font-weight: 400;
+
+}
+
+.footerlogin{
+  justify-content: flex-end;
+}
+
+
+.foot{
+  display: flex;
+  min-height: 56px;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Graphik Meetup",helvetica,arial,sans-serif;
+  font-weight: 400;
+  margin-top: 3px;
+  margin-bottom: 10px!important;
+}
+
+.footerlinks, .linkedinlink, .footerlinksbottom{
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga","kern";
+  padding: 16px 8px 0 0;
+
+}
+
+.footerlinksbottom{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.linkedinlink{
+  padding: 10px 8px 0 0;
+}
+
+.footcopy{
+  display: flex;
+  min-height: 41px;
+  margin-bottom: 16px;
+
+}
+
+.copyright{
+  padding-right: 8px;
+  flex-direction: column;
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+  justify-content: center;
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  // padding-bottom: 1px;
+  margin-bottom: 3px;
+
+
+  // padding: 16px 8px 0 0;
+}

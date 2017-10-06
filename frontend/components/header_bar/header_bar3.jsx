@@ -95,18 +95,20 @@ personalGreeting (currentUser, logout) {
 render(){
 
   const personalGreeting = (currentUser, logout) => (
-    <div className="mainhed">
+    <div className="mainheaderbar">
     <div className="create-header">
+      <div className="logo">
+
+          <Link to="/groups" className="header-link">
+            <img className='headerlogo' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507253413/Drawing_3_pa3iwm.jpg'/>
+          </Link>
+        </div>
       <Link to="/create/group" className="create-header-button">Create a Clique</Link>
         <Link to="/" className="demo-button" onClick={this.demo}> Demo </Link>
   </div>
-    <div className="logo">
-      <Link to="/groups" className="header-link">
-        <img className='headerlogo' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507097808/Drawing_1_gfv2bu.jpg'/>
-      </Link>
-    </div>
+
     <div className="greeting">
-      <div className="header-name">Hi,  <Link className='headertoprof' to={`/users/${currentUser.id}`}>{'   ' + currentUser.username}</Link>!</div>
+      <div className="header-name">  <Link className='headertoprof' to={`/users/${currentUser.id}`}>{'Hi, ' + currentUser.username +'!'}</Link></div>
       <Link to="/"className="header-button" onClick={logout}>Log Out
       </Link>
   </div>
@@ -115,13 +117,17 @@ render(){
 
   const sessionLinks =() =>{
     return (
-      <div className="mainhed">
+      <div className="mainheaderbar">
       <div className="create-header">
         <Link to="/create/group" className="create-header-button">Create a Clique</Link>
           <Link to="/" className="demo-button" onClick={this.demo}> Demo </Link>
     </div>
       <div className="logo">
-        <Link to="/groups" className="header-link"></Link>
+        <Link to="/groups" className="header-link">
+          <img className='headerlogo' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507097808/Drawing_1_gfv2bu.jpg'/>
+
+
+        </Link>
       </div>
     <div className="login-signup">
 

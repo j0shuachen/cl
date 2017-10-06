@@ -12,7 +12,7 @@ import{
 // };
 // x
 
-const GroupEnrollmentReducer = (state={}, action) => {
+const EventEnrollmentReducer = (state={}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
   // console.log(action);
@@ -52,4 +52,4 @@ const GroupEnrollmentReducer = (state={}, action) => {
 
 };
 
-export default GroupEnrollmentReducer;
+export default EventEnrollmentReducer;

@@ -13,8 +13,14 @@ class UserShow extends React.Component{
       // member: null
       newz: true,
       loaded: false,
-      num: true
+      num: true,
+      shown: false,
+      initint: 325,
+      init: '325px'
     };
+    this.collapseGroups = this.collapseGroups.bind(this);
+    this.renderUpdateGroup = this.renderUpdateGroup.bind(this);
+    this.showAllGroups = this.showAllGroups.bind(this);
     this.backgroundSetter = this.backgroundSetter.bind(this);
     this.renderU = this.renderU.bind(this);
     this.ismember = this.ismember.bind(this);
@@ -69,6 +75,22 @@ class UserShow extends React.Component{
 
   componentWillUpdateProps(prevProps,nextProps){
 
+  }
+
+
+  renderUpdateGroup (){
+  if(this.props.group && this.props.currentUser){
+    if(this.props.group.mod){
+      if(this.props.group.mod.id === this.props.currentUser.id){
+        var go = `/groups/${this.props.group.id}/update`;
+        return(<Link to={go} className='glink'>Update Group</Link>);
+      }else{
+        return (null);
+      }
+    }
+  }else{
+    return null;
+    }
   }
 
 
@@ -210,7 +232,6 @@ renderJ(){
 
 backgroundSetter(){
 
-
 this.setState({check: true, newz: true, lengther: this.props.group.news.length, banner: this.props.group.banner_url, color: this.props.group.color});
 }
 
@@ -220,6 +241,16 @@ componentWillReceiveProps(nextProps){
   // if(this.props.match.params.id !== nextProps.match.params.id){
   //   this.props.fetchGroup(nextProps.match.params.id);
   // }
+}
+
+showAllGroups(){
+  var newlength = (this.props.x.usermems.length * 65).toString() + 'px';
+  this.setState({init: newlength, shown: true});
+}
+
+collapseGroups(){
+
+  this.setState({init: '325px', shown: false});
 }
 
 renderdel(){
@@ -245,7 +276,7 @@ info(){
       var updater = `/groups/${this.props.groupId}/users/${this.props.currentUser.id}/update`;
       return(
         <Link  className='joiner' to={updater}>
-          Update
+          Edit profile
         </Link>
       );
     }
@@ -256,20 +287,32 @@ info(){
   if (this.state.c){
     return (
       <div className="userinfo">
-        <div className='usertitle'>User Info</div>
-        <div className='userprof'>
-        <img className='userpico' src={this.props.x.image_url}></img>
-        <div className='statistics'>
-          <div className='stats'>Total event rsvps: {this.props.x.eventrsvps.length}</div>
-          <div className='stats' >Number of events attended: {this.props.x.eventswent.length}</div>
-          <div className='stats'>Moderates: {this.props.x.usermods.length} groups</div>
-          <div className='stats'>Member of: {this.props.x.usermems.length} groups</div>
-        </div>
-      </div>
+        <div className='userdivider'>
+          <div className='userleftside'>
+        <div className='usertitle'>{this.props.x.name}</div>
+          <div className='username'>username: {this.props.x.name}</div>
+          <div className='username'>contact info: {this.props.x.email}</div>
+          <div className= 'profileupdatebutton'>{g()}</div>
 
-        <div className='username'>username: {this.props.x.name}</div>
-        <div className='username'>contact info: {this.props.x.email}</div>
-        <div className= 'profileupdatebutton'>{g()}</div>
+        <div className='userprof'>
+
+
+      </div>
+      </div>
+      </div>
+      <div className='userrightside'>
+        <div className='userpicholder'>
+        <img className='userupdatepic' src={this.props.x.image_url}></img>
+        </div>
+        <div className='usergroups'>
+          <div className='modmem'>
+            <div className='mod'>{'Member of ' + this.props.x.usermems.length + ' group(s)'} </div>
+            <div className='indent' style={{height: this.state.init}}>{this.membergroups()}</div>
+          {this.props.x.usermems.length > 5 ? (this.state.shown ? <div className='collapseGroups' onClick={this.collapseGroups}>Collapse</div> : <div className='showall' onClick={this.showAllGroups}>SEE ALL MY GROUPS</div>) : null}
+        </div>
+        </div>
+
+      </div>
       </div>
     );
   }
@@ -294,7 +337,7 @@ groupmods(){
       }
       return arr;
     }else{
-      return(<div>Has not started any groups!</div>);
+      return(<div className='nogroups'>Has not started any groups!</div>);
     }
   }
 }
@@ -318,7 +361,7 @@ membergroups(){
 
   return arr;
 }else{
-  return(<div>Has not joined any groups yet!</div>);
+  return(<div className='nogroups'>Has not joined any groups yet!</div>);
 }
 }
 }
@@ -338,10 +381,10 @@ renderU(){
   }}
 }
   render() {
-    // console.log(this.props);
+    console.log(this.props);
     if(Object.keys(this.props.group).length === 0 || !this.props.x){
       return (
-        <div className='singlegroupcontainer'>
+        <div className='loadgroupcontainer'>
         <div className='loadgroupmain'>
           <ReactLoading type='spin' color='#ed1c40' height='100px' width='100px'/>
           <div className='loading'> Loading...</div>
@@ -481,59 +524,91 @@ if(this.props.group.color === "#FFFFFF"){
 }
 
   return (
-    <div className="singlegroupcontainer">
-      <div className="groupheader">
-        <div className="singlegroupbanner" style={{backgroundColor: xo}}>
-          {  this.props.group.banner_url ==='default' ? null : <img className='banner' src={this.props.group.banner_url}></img>}
-          </div>
+    <div className="singlegroupcontainer" style={{backgroundColor: this.state.color}}>
+
+        <div className='groupheader'>
+            <div className="grouphead">
+        <div className="singlegroupbanner" style={{backgroundColor:xo}}>
+        {  this.props.group.banner_url ==='default' ? null : <img className='banner' src={this.props.group.banner_url}></img>}
         <div className="singlegroupheader">
-          <span>{this.props.group.name}</span>
+          {this.props.group.name}
+        </div>
         </div>
 
-      <div className="singletop">
+
         <div className="singlegroupbar">
-          <Link to={idz} className="glink">Home</Link>
+          <Link to={idz} className="glinkon">Home</Link>
           <Link to={members} className="glink">Members</Link>
           <Link to={sponsors} className="glink">Sponsors</Link>
           <Link to={photos} className="glink">Photos</Link>
           <Link to={pages} className="glink">Pages</Link>
+          {this.renderUpdateGroup()}
+          <div className="bardos">
+            {this.props.currentUser? <Link className="glink" to={myprofile} >My profile</Link> : null }
+
+          </div>
         </div>
 
-        <div className="bardos">
-          {this.props.currentUser ? (this.props.currentUser.id === this.props.x.id ? <Link className="glinkon" to={myprofile} >My profile</Link> : <Link className="glink" to={myprofile} >My profile</Link>) : <Link className="glink" to={myprofile} >My profile</Link>}
-        </div>
+
+
       </div>
       </div>
 
-      <div className="singlegroup" >
+      <div className="singlegroup">
         <div className="singlegroupsidebar">
-          <div className="gcreated">
-            <img className="grouppico" src={this.props.group.image_url}></img>
-
+            <div className='photoplaceholder'>
+            <img className='groupphoto' src={this.props.group.image_url}></img>
+            </div>
             <div className="gcreated2">
-              <div className="g11">{this.props.group.name}</div>
-              <div className="g2">Established: {this.props.group.creator}</div>
-                {this.state.num ? <div className='g2'>{this.props.group.number} members</div> : <div className='g2'>{this.props.group.number} members</div>}
 
-              <div className="g66">
-                <div className='g90'>Mod: {moddname()}</div>
+              <div className="groupsidebarname">{this.props.group.name}</div>
+              <div className='groupsidebarlocation'>{this.props.group.location}</div>
+            <div className="groupsidebarestablished">Established: {this.props.group.creator}</div>
+                {this.state.num ? <div className='membercount'>{this.props.group.number} members</div> : <div className='membercount'>{this.props.group.number} members</div>}
 
+              <div className="moderatorcolumn">
+                <div className='moderatedby'>Moderated by:</div>
+                <div className='g90'>
+                  <img className='eventorg' src={this.props.group.mod.image_url}/>
+                  <div className='groupsidebarmod' >{moddname()}</div>
+                  </div>
                 </div>
             </div>
-          </div>
         </div>
 
-        <div className="singlegroupmain">
-          <div className="userhomeinfo">
-          {this.info()}
-            <div className='modmem'>
-              <div className='mod'>Moderates groups: </div>
-              <div className='indent'>{this.groupmods()}</div>
-              <div className='mod'>Member of groups: </div>
-              <div className='indent'>{this.membergroups()}</div>
+        <div className="usershowmain">
+          <div className="userhomeinfo">{this.info()}</div>
+
+            <div className='userprofilestats'>
+
+              <div className='statistics'>
+                <div className='statstitle'>{'Attendance stats for ' + this.props.x.name}</div>
+                <div className='statsblock'>
+                  <div className='statsub'>
+                  <div className='statstag'>RSVPed Yes</div>
+              <div className='stats'> { this.props.x.eventrsvps.length + ' time(s)'}</div>
+                </div>
+                <div className='statsub'>
+                  <div className='statstagblack'>  Meetups attended</div>
+                <div className='stats'>{this.props.x.eventswent.length + ' so far'}</div>
+              </div>
+                </div>
             </div>
 
-          </div>
+        </div>
+
+
+
+
+            <div className='usergroups'>
+              <div className='modmem'>
+                <div className='statstitle'>Moderates groups: </div>
+                <div className='indent' style={{height: '325px'}}>{this.groupmods()}</div>
+
+              </div>
+            </div>
+
+
 
       </div>
 
@@ -546,3 +621,7 @@ if(this.props.group.color === "#FFFFFF"){
 
 }
 export default UserShow;
+// <div className='userprofiletag'>
+//   <div className='userquestion'>Location: </div>
+//   <div className='userprofileinfo'>{this.props.x.location}</div>
+// </div>

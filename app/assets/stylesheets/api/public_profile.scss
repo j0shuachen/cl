@@ -1,3 +1,186 @@
 // Place all the styles related to the api::public_profile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.usershowmain{
+  display: flex;
+  width: 740px;
+  max-width: 740px;
+  margin-left: 10px;
+  flex-direction: column;
+
+}
+
+.userhomeinfo{
+  display: flex;
+  background-color: white;
+  border-radius: 3px;
+  flex-direction: column;
+  width: 100%;
+      margin-bottom: 16px;
+  // padding: 0 15px 15px 0;
+}
+
+.usertitle{
+  border-bottom: 1px solid transparent;
+// padding: 16px 16px 0;
+    font-size: 28px;
+    stroke: transparent;
+fill: rgba(0,0,0,.87);
+color: rgba(0,0,0,.87);
+font-weight: 600;
+letter-spacing: -.02em;
+}
+
+.userinfo{
+  display: flex;
+      margin-bottom: 16px;
+}
+
+.userupdatepic{
+  width: 240px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.profileupdatebutton{
+  border-top: 1px solid rgba(0,0,0,.12);
+border-bottom: 1px solid rgba(0,0,0,.12);
+margin-bottom: 16px;
+box-sizing: border-box;
+margin-top: 12px;
+
+// padding: 16px 16px 0;
+
+}
+
+.userpicholder{
+  border-bottom: 1px solid rgba(0,0,0,.12);
+
+}
+
+
+.joiner{
+  color: #2A9BC7;
+  text-decoration: none;
+}
+
+.userleftside{
+  display: flex;
+  box-sizing: border-box;
+  width: 470px;
+  flex-direction: column;
+  padding: 16px 16px 0;
+
+}
+
+.userrightside{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+      padding: 16px 16px 0;
+}
+
+
+.usergroups{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 3px;
+      margin-bottom: 16px;
+}
+
+.username{
+  margin-top: 5px;
+}
+
+.membergroups{
+  display: flex;
+  text-decoration: none;
+  width: 245px;
+  height: 65px;
+  // flex-direction: column;
+}
+.membergroupname{
+  display: flex;
+  padding-left: 12px;
+      color: #2A9BC7;
+      text-decoration: none;
+          font-weight: 500;
+}
+
+.userprofilestats{
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  background-color: white;
+      margin-bottom: 16px;
+      min-height: 300px;
+}
+
+.statistics, .modmem{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+      // padding: 16px 16px 0px;
+}
+
+.statstitle{
+  padding: 16px 16px 0px;
+
+  font-size: 34px;
+line-height: 1.25;
+    font-weight: 500;
+    stroke: transparent;
+fill: rgba(0,0,0,.87);
+color: rgba(0,0,0,.87);
+/* font-weight: 600; */
+letter-spacing: -.02em;
+padding-bottom: 8px;
+}
+.statsblock{
+  border-top: 1px solid rgba(0,0,0,.12);
+border-bottom: 1px solid transparent;
+padding: 16px 16px 0;
+}
+
+.showall, .collapseGroups{
+  border-radius: 3px;
+text-align: center;
+padding: 6px 10px;
+font-size: 13px;
+font-weight: 400;
+text-transform: uppercase;
+    color: #2A9BC7;
+}
+
+.showall:hover, .collapseGroups:hover{
+  cursor: pointer;
+}
+
+.stats{
+  margin-bottom: 16px;
+}
+
+.indent{
+  overflow: hidden;
+}
+
+.statstag{
+      color: #0fd9a3;
+}
+.membergroupspic{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+
+.nogroups{
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+border-bottom: 1px solid transparent;
+padding: 16px 16px 0;
+}

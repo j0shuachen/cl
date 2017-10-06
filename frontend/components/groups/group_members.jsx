@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import ReactLoading from 'react-loading';
+import moment from 'moment';
+
 
 // import GroupEnrollment from '../group_enrollments/group_enrollment_container';
 // import GroupEnrollment from '../search/group_enrollment_container';
@@ -28,6 +30,8 @@ class GroupMembers extends React.Component{
     this.ops = this.ops.bind(this);
     this.newsheightclicker = this.newsheightclicker.bind(this);
     this.backgroundSetter = this.backgroundSetter.bind(this);
+    this.renderUpdateGroup = this.renderUpdateGroup.bind(this);
+
     // this.renderEvents = this.renderEvents.bind(this);
 
     // this.allmembs = this.allmembs.bind(this);
@@ -53,12 +57,13 @@ class GroupMembers extends React.Component{
     // this.renderJ();
   }
   componentDidMount(){
-    this.props.fetchGroup(this.props.match.params.groupId).then(()=>this.backgroundSetter());
+    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.backgroundSetter());
     // this.props.fetchGroup(this.props.match.params.groupId).then(()=> this.ops()).then( () => this.setState({loaded: true}));
     // this.props.fetchGroup(this.props.match.params.groupId).then(()=> this.ops()).then( () => this.setState({loaded: true}));
 
     this.props.fetchEvents();
     this.props.fetchGroupEnrollments(this.props.match.params.groupId);
+
     // this.ops();
     // this.props.fetchGroupEnrollments(this.props.match.params.groupId);
     // this.renderJ();
@@ -68,6 +73,21 @@ class GroupMembers extends React.Component{
   //   this.props.fetchGroup(this.props.match.params.groupId);
   //
   // }
+
+  renderUpdateGroup (){
+  if(this.props.group && this.props.currentUser){
+    if(this.props.group.mod){
+      if(this.props.group.mod.id === this.props.currentUser.id){
+        var go = `/groups/${this.props.group.id}/update`;
+        return(<Link to={go} className='glink'>Update</Link>);
+      }else{
+        return (null);
+      }
+    }
+  }else{
+    return null;
+    }
+  }
 
   backgroundSetter(){
 
@@ -107,17 +127,21 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
     if(this.props.group){
     // if(this.state.loaded){
     let arr = [];
-      if(this.props.group.members){
-      let o = this.props.group.members;
+      if(this.props.group.memberino){
+      // let o = this.props.group.members;
+      let o = this.props.group.memberino;
       let v = this.props.groupId;
 
       for (var i=0; i < o.length; i++){
         let p = o[i].id;
         let user = `/groups/${v}/users/${p}`;
       arr.push(
-            <Link  key={o[i].id} className= 'memrow' to={user}>
-            <img className='groupnewspic' src={o[i].image_url}></img>
-          <div className='memname'>{o[i].name}</div>
+            <Link  key={i} className= 'memrow' to={user}>
+            <img className='groupmemberspic' src={o[i].image_url}></img>
+            <div className='membersubholder'>
+        <div className='memname'>{o[i].name}</div>
+        <div className='memberjoindate'>Joined: {moment(o[i].enrollinfo[0].created_at).format('MMM Do YYYY')}</div>
+        </div>
           </Link>
         );
       }
@@ -129,18 +153,16 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
   render() {
 
 
-    // console.log(this.props);
+    console.log(this.props);
     // if(!this.state.group){
     //   return(<div>loading...</div>);
     // }
-    if(Object.keys(this.props.group).length === 0 || !this.props.group.info){
-
-    // if(this.props.group.length === 0){
+    if(Object.keys(this.props.group).length === 0 || !this.props.group.info || !this.state.color){
       return (
-        <div className='singlegroupcontainer'>
+        <div className='loadgroupcontainer'>
         <div className='loadgroupmain'>
+
           <ReactLoading type='spin' color='#ed1c40' height='100px' width='100px'/>
-          <div className='loading'> Loading...</div>
         </div>
       </div>);
     }
@@ -220,11 +242,15 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
         }
         x.push(
           <div className='newseach' key={i}>
-            <Link to={user}>
-            <img className='groupnewspic' src={news[i].use.image_url}></img>
-            </Link>
-          <div className='yc'>
-            <Link className='membersnews' to={ol} >{news[i].news} </Link>
+
+          <div className='newsholder'>
+            <div className='newsdivider'>
+              <Link className='news' to={ol} >{news[i].news} </Link>
+
+              <Link className='newspicholder' to={user}>
+              <img className='groupnewspic' src={news[i].use.image_url}></img>
+              </Link>
+            </div>
             <TimeAgo className= 'ago' datetime={v}></TimeAgo>
           </div>
           </div>
@@ -244,49 +270,58 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
     }
 
   return (
-    <div className="singlegroupcontainer">
-      <div className="groupheader">
-        <div className="singlegroupbanner" style={{backgroundColor: xo}}>
+    <div className="singlegroupcontainer" style={{backgroundColor: this.state.color}}>
 
-          {  this.props.group.banner_url ==='default' ? null : <img className='banner' src={this.props.group.banner_url}></img>}
-
-
+        <div className='groupheader'>
+            <div className="grouphead">
+        <div className="singlegroupbanner" style={{backgroundColor:xo}}>
+        {  this.props.group.banner_url ==='default' ? null : <img className='banner' src={this.props.group.banner_url}></img>}
+        <div className="singlegroupheader">
+          {this.props.group.name}
         </div>
-      <div className="singlegroupheader">
-        <span>{this.props.group.name}</span>
-      </div>
+        </div>
 
-      <div className="singletop">
-      <div className="singlegroupbar">
-        <Link to={idz} className="glink">Home</Link>
-        <Link to={members} className="glinkon">Members</Link>
-        <Link to={sponsors} className="glink">Sponsors</Link>
-        <Link to={photos} className="glink">Photos</Link>
-        <Link to={pages} className="glink">Pages</Link>
-      </div>
-      <div className="bardos">
-      <Link className="glink" to={myprofile} >My profile</Link>
-      </div>
-    </div>
-      </div>
 
-    <div className="singlegroup">
-      <div className="singlegroupsidebar">
-        <div className="gcreated">
-          <img className="grouppico" src={this.props.group.image_url}></img>
+        <div className="singlegroupbar">
+          <Link to={idz} className="glink">Home</Link>
+          <Link to={members} className="glinkon">Members</Link>
+          <Link to={sponsors} className="glink">Sponsors</Link>
+          <Link to={photos} className="glink">Photos</Link>
+          <Link to={pages} className="glink">Pages</Link>
+          {this.renderUpdateGroup()}
+          <div className="bardos">
+            {this.props.currentUser? <Link className="glink" to={myprofile} >My profile</Link> : null }
 
-          <div className="gcreated2">
-            <div className="g11">{this.props.group.name}</div>
-            <div className="g2">Established: {this.props.group.creator}</div>
-              {this.state.num ? <div className='g2'>{this.props.group.number} members</div> : <div className='g2'>{this.props.group.number} members</div>}
-
-            <div className="g66">
-              <div className='g90'>Mod: {moddname()}</div>
-
-              </div>
           </div>
         </div>
+
+
+
       </div>
+      </div>
+
+
+      <div className="singlegroup">
+        <div className="singlegroupsidebar">
+            <div className='photoplaceholder'>
+            <img className='groupphoto' src={this.props.group.image_url}></img>
+            </div>
+            <div className="gcreated2">
+
+              <div className="groupsidebarname">{this.props.group.name}</div>
+              <div className='groupsidebarlocation'>{this.props.group.location}</div>
+            <div className="groupsidebarestablished">Established: {this.props.group.creator}</div>
+                {this.state.num ? <div className='membercount'>{this.props.group.number} members</div> : <div className='membercount'>{this.props.group.number} members</div>}
+
+              <div className="moderatorcolumn">
+                <div className='moderatedby'>Moderated by:</div>
+                <div className='g90'>
+                  <img className='eventorg' src={this.props.group.mod.image_url}/>
+                  <div className='groupsidebarmod'>{moddname()}</div>
+                  </div>
+                </div>
+            </div>
+        </div>
 
         <div className="singlegroupmain">
 
