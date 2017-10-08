@@ -537,14 +537,14 @@ if(this.props.group.color === "#FFFFFF"){
 
 
         <div className="singlegroupbar">
-          <Link to={idz} className="glinkon">Home</Link>
+          <Link to={idz} className="glink">Home</Link>
           <Link to={members} className="glink">Members</Link>
           <Link to={sponsors} className="glink">Sponsors</Link>
           <Link to={photos} className="glink">Photos</Link>
           <Link to={pages} className="glink">Pages</Link>
           {this.renderUpdateGroup()}
           <div className="bardos">
-            {this.props.currentUser? <Link className="glink" to={myprofile} >My profile</Link> : null }
+            {this.props.currentUser? (this.props.currentUser.id === this.props.x.id ? <Link className="glinkon" to={myprofile} >My profile</Link> :  <Link className="glink" to={myprofile} >My profile</Link>) : null }
 
           </div>
         </div>
@@ -602,7 +602,7 @@ if(this.props.group.color === "#FFFFFF"){
 
             <div className='usergroups'>
               <div className='modmem'>
-                <div className='statstitle'>Moderates groups: </div>
+                <div className='statstitle'>Moderates groups </div>
                 <div className='indentmod' style={{height: '325px'}}>{this.groupmods()}</div>
 
               </div>

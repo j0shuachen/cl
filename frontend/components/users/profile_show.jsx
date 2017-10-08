@@ -250,22 +250,49 @@ info(){
   };
   if (this.state.c){
     return (
-      <div className="userinfo">
-        <div className='usertitle'>User Info</div>
+      <div className="profileuserinfo">
         <div className='userprof'>
+        <div className='profilestatistics'>
+          <div className='profiletitle'>User Info</div>
+          <div className='profilestatsblock'>
+            <div className='profilesublock'>
+            <div className='stats2'>Member since: </div>
+            <div className='statsmoment'>{moment(this.props.x.created_at).format('ddd MMM Do YYYY')}</div>
+            </div>
+
+          </div>
+          <div className= 'profileupdatebutton2'>{g()}</div>
+
+          <div className='profilestatsblock'>
+            <div className='profilesublock'>
+            <div className='stats'>RSVPed Yes </div>
+            <div>{this.props.x.eventrsvps.length}</div>
+            </div>
+              <div className='profilesublock2'>
+            <div className='stats' >Events attended </div>
+            <div>{this.props.x.eventswent.length}</div>
+          </div>
+        </div>
+          <div className='profilestatsblock'>
+            <div className='profilesublock'>
+          <div className='stats'>Moderates </div>
+          <div>{this.props.x.usermods.length} groups</div>
+        </div>
+        <div className='profilesublock2'>
+        <div className='stats'>Member of</div>
+        <div> {this.props.x.usermems.length} groups</div>
+        </div>
+          </div>
+
+      </div>
+      <div className='profilerightside'>
         <img className='userpico' src={this.props.x.image_url}></img>
-        <div className='statistics'>
-          <div className='stats'>Member since: {moment(this.props.x.created_at).format('ddd MMM Do YYYY')}</div>
-          <div className='stats'>Total event rsvps: {this.props.x.eventrsvps.length}</div>
-          <div className='stats' >Number of events attended: {this.props.x.eventswent.length}</div>
-          <div className='stats'>Moderates: {this.props.x.usermods.length} groups</div>
-          <div className='stats'>Member of: {this.props.x.usermems.length} groups</div>
+          <div className='username'>username: {this.props.x.name}</div>
+          <div className='username'>contact info: {this.props.x.email}</div>
         </div>
       </div>
 
-        <div className='username'>username: {this.props.x.name}</div>
-        <div className='username'>contact info: {this.props.x.email}</div>
-        <div className= 'profileupdatebutton'>{g()}</div>
+
       </div>
     );
   }
@@ -281,14 +308,18 @@ groupmods(){
 
         var linker = `/groups/${o[i].id}`;
         arr.push(
-          <Link to={linker} className='membergroupsglob' key={i}>
-            <div className='membergroupsglobin'>
-            <img className='membergroupspic' src={o[i].image_url}></img>
-            <div className='membergroupname'>{o[i].name}</div>
-            </div>
-            <div className='joingroupdate'>Created on: {moment(o[i].created_at).format('ddd MMM Do YYYY')}</div>
+          <div className='membergroupsglobin' key={i}>
 
-          </Link>
+          <Link to={linker} className='membergroupsglob'>
+            <img className='membergroupspic' src={o[i].image_url}></img>
+              <div className='profilegroupname'>{o[i].name}</div>
+
+            </Link>
+
+              <div className='joingroupdate'>Created on: {moment(o[i].created_at).format('ddd MMM Do YYYY')}</div>
+
+            </div>
+
         );
       }
       return arr;
@@ -307,15 +338,16 @@ membergroups(){
       var linker = `/groups/${o[i].id}`;
 
     arr.push(
-      <Link to={linker} className='membergroupsglob' key={i}>
-        <div className='membergroupsglobin'>
+        <div className='membergroupsglobin' key={i}>
+          <Link to={linker} className='membergroupsglob'>
 
         <img className='membergroupspic' src={o[i].image_url}></img>
-        <div className='membergroupname'>{o[i].name}</div>
+        <div className='profilegroupname'>{o[i].name}</div>
+          </Link>
+          <div className='joingroupdate'>Joined on: {moment(o[i].enrollmentinfo[0].created_at).format('ddd MMM Do YYYY')}</div>
         </div>
-        <div className='joingroupdate'>Joined on: {moment(o[i].enrollmentinfo[0].created_at).format('ddd MMM Do YYYY')}</div>
 
-      </Link>
+
     );
   }
 
@@ -482,7 +514,7 @@ var groupindex = `/groups`;
   return (
     <div className="singlegroupcontainer">
       <div className="groupheader">
-        <div className="singlegroupbanner"></div>
+        <div className="profilebanner"></div>
         <div className="singlegroupheader">
           <span>{this.props.group.name}</span>
         </div>
@@ -497,22 +529,19 @@ var groupindex = `/groups`;
       </div>
       </div>
 
-      <div className="singlegroup" >
-
-
         <div className="profilegroupmain">
-          <div className="userhomeinfo">
           {this.info()}
-            <div className='modmem'>
-              <div className='mod'>Moderates groups: </div>
-              {this.groupmods()}
-              <div className='moddos'>Member of groups: </div>
-              {this.membergroups()}
+            <div className='modmemprofile'>
+              <div className='profiletitle'>Moderates groups </div>
+            <div className='profilegroupbody'>  {this.groupmods()}
+              </div>
             </div>
+            <div className='modmemprofile'>
 
-          </div>
-
-      </div>
+              <div className='profiletitle'>Member of groups </div>
+              <div className='profilegroupbody'>{this.membergroups()}
+                </div>
+            </div>
 
 
   </div>

@@ -27,11 +27,11 @@ class GroupMembers extends React.Component{
 
     };
     // this.props.fetchGroup(this.props.match.params.groupId);
+    this.renderUpdateGroup = this.renderUpdateGroup.bind(this);
+
     this.ops = this.ops.bind(this);
     this.newsheightclicker = this.newsheightclicker.bind(this);
     this.backgroundSetter = this.backgroundSetter.bind(this);
-    this.renderUpdateGroup = this.renderUpdateGroup.bind(this);
-
     // this.renderEvents = this.renderEvents.bind(this);
 
     // this.allmembs = this.allmembs.bind(this);
@@ -57,11 +57,10 @@ class GroupMembers extends React.Component{
     // this.renderJ();
   }
   componentDidMount(){
-    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.backgroundSetter());
+    this.props.fetchGroup(this.props.match.params.groupId).then(()=>this.backgroundSetter());
     // this.props.fetchGroup(this.props.match.params.groupId).then(()=> this.ops()).then( () => this.setState({loaded: true}));
     // this.props.fetchGroup(this.props.match.params.groupId).then(()=> this.ops()).then( () => this.setState({loaded: true}));
 
-    this.props.fetchEvents();
     this.props.fetchGroupEnrollments(this.props.match.params.groupId);
 
     // this.ops();
@@ -158,11 +157,13 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
     //   return(<div>loading...</div>);
     // }
     if(Object.keys(this.props.group).length === 0 || !this.props.group.info || !this.state.color){
+
+    // if(this.props.group.length === 0){
       return (
         <div className='loadgroupcontainer'>
         <div className='loadgroupmain'>
-
           <ReactLoading type='spin' color='#ed1c40' height='100px' width='100px'/>
+          <div className='loading'> Loading...</div>
         </div>
       </div>);
     }
@@ -227,9 +228,8 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
     };
 
     const newsList = (news = []) => {
-      if(this.props.group){
-        if(this.props.group.news){
-          let g = this.props.group.news.length;
+
+          let g = news.length;
       var x = [];
       var o = this.props.groupId;
       for(var i=0; i< g; i++){
@@ -257,9 +257,8 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
         );
       }
       return x;
-    }
-  }
     };
+
     // console.log(this.state);
     // console.log('hwifhaowfh', this.props);
 

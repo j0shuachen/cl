@@ -1,3 +1,193 @@
+.groupformcontainer{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+      background-color: #fff;
+
+}
+
+.mod{
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  // border-top: none;
+  font-size: 16px;
+  font-weight: 500px;
+  min-height: 50px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+
+.creategroupgif{
+
+  background-position: center;
+// background-image: url(../../../../img/start_v2/dweb_hero.jpg);
+background-color: #0f1721;
+height: 250px;
+position: relative;
+}
+
+
+.bannertext{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: black;
+  // margin-top: 20px;
+  min-width: 500px;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  max-width: 400px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  top: 30%;
+  font-size: 40px;
+  /* background-color: white; */
+  color: white;
+  background-color: transparent;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.26);
+}
+
+.c1, .c2{
+  display: flex;
+      font-weight: 500!important;
+      font-size: 34px;
+line-height: 1.25;
+  justify-content: center;
+}
+
+.c2{
+      margin-bottom: 16px;
+          margin-top: 16px;
+              font-size: 20px;
+}
+
+.creategroupbanner{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5
+}
+
+.groupform{
+  border-radius: 2px;
+  box-sizing: border-box;
+margin-left: auto;
+margin-right: auto;
+max-width: 840px;
+padding: 24px 16px 8px;
+width: 100%;
+margin-bottom: 40px;
+background-color: white;
+}
+
+.ques{
+      font-size: 28px;
+      font-weight: 500!important;
+          padding-bottom: 16px;
+}
+.steps{
+  stroke: transparent;
+fill: rgba(0,0,0,.26);
+font-size: 13px;
+line-height: 1.6;
+color: rgba(0,0,0,.26);
+}
+
+
+.groupname, .groupinfo, .grouplocation, .grouppic{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+margin-left: auto;
+margin-right: auto;
+max-width: 840px;
+padding: 24px 16px 8px;
+width: 100%;
+margin-bottom: 32px;
+border-top: 1px solid rgba(0,0,0,.12);
+
+      // padding-bottom: 16px;
+}
+
+.grouppic{
+  margin-bottom: 40px;
+}
+
+.groupname{
+  border: none;
+}
+
+.groupformpic{
+  width: 200px;
+  height: 200px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+
+
+.ginput, .ginput2{
+  background-color: #fafafa;
+border-radius: 3px;
+border: 1px solid rgba(0,0,0,.12);
+box-shadow: none;
+box-sizing: border-box;
+margin: 0 0 4px;
+max-width: 100%;
+padding: 8px;
+width: 100%;
+    height: 39.2px;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.45;
+    font: system-ui;
+    // color: rgba(	211,	211,	211, 0)
+    // color: #d3d3d3
+}
+
+.ginput2{
+  background-color: #fafafa;
+ border-radius: 3px;
+ border: 1px solid rgba(0,0,0,.12);
+ box-shadow: none;
+ box-sizing: border-box;
+ margin: 0 0 4px;
+ max-width: 100%;
+ padding: 8px;
+ width: 100%;
+ height: 200px;
+}
+.ginput::placeholder, .ginput2::placeholder{
+  color: #d3d3d3;
+  font: system-ui;
+  font-weight: 100px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // .groupformcontainer{
 //     font-family: 'Ubuntu', sans-serif;
 //     height: 100%;

@@ -36,8 +36,21 @@ nav{
   flex-basis: 100%;
   box-sizing: border-box;
     padding: 16px 16px 8px;
+        border-bottom: 1px rgba(211, 211, 211, 0.7) solid;
   // width: 100%;
 }
+
+.create-header-button{
+  min-width: 105px;
+}
+.demo, .header-button{
+  min-width: 40px;
+}
+.sign-in-button, .sign-up-button{
+  min-width: 50px;
+}
+
+
 
 .mainheaderbar{
   box-sizing: border-box;
@@ -48,7 +61,7 @@ nav{
   flex-grow: 1;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 1px rgba(211, 211, 211, 0.7) solid;
+  // border-bottom: 1px rgba(211, 211, 211, 0.7) solid;
   // margin: 0;
   // padding: 0;
 
@@ -79,6 +92,9 @@ color: rgba(0,0,0,.87);
   display: flex;
 }
 
+.create-header{
+  min-width: 175px;
+}
 .greeting{
   display: flex;
   // align-items: center;
@@ -274,6 +290,7 @@ width: 280px;
 
 
 .grouplist{
+  min-width: 960px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

@@ -433,7 +433,7 @@ renderU(){
             <div className='org'>Organizer: </div>
             <Link to={ots}><img className='eventorg' src={event.organizer.image_url}></img></Link>
           </div>
-          {this.state[event.id] ? <div className='groupeventmemberswent'>{event.rsvp.num} members attending</div> :       <div className='groupeventmemberswent'>{event.rsvp.num} members attending</div> }
+          {this.state[event.id] ? <div className='groupeventmemberswent'>{event.rsvp.num} RSVPS</div> :       <div className='groupeventmemberswent'>{event.rsvp.num} RSVPS</div> }
           {renderEventRsvp()}
           {x()}
         </div>
@@ -535,8 +535,8 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
       };
 
     const newsList = (news = []) => {
-      if(this.props.group){
-        if(this.props.group.news){
+      // if(this.props.group){
+      //   if(this.props.group.news){
       var x = [];
       var t = news.length;
       var o = this.props.groupId;
@@ -565,9 +565,9 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
         );
       }
       return x;
-    }
-  }
     };
+  // }
+  //   };
 
 
 if(this.props.group.color === "#FFFFFF"){

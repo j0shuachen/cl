@@ -32,6 +32,7 @@ display: block;
   margin-bottom: 5px;
 }
 .formos{
+  text-decoration: none;
   display: flex;
   margin-left: 16px;
   margin-top: 35px;
@@ -55,12 +56,23 @@ background: #ed1c40;
 border-color: #ed1c40;
 width: 75px;
 height: 35px;
+text-decoration: none;
 }
 
-.uplob{
+.formos::hover{
+  cursor: pointer;
+}
+.buttonrow{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.uplob, .uplobdos{
   box-sizing: border-box;
   margin-top: 10px;
   height: 30px;
+  margin-right: 20px;
   align-content: center;
   display: flex;
   // box-sizing: border-box;
@@ -77,6 +89,10 @@ flex-direction: column;
             align-items: center;
 }
 
+
+.uplob:hover, .uplobdos:hover, .formos:hover{
+  cursor: pointer;
+}
 
 
 .updateuserformpic{

@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 // import TimeAgo from 'react-timeago';
 import TimeAgo from 'timeago-react'; // var TimeAgo = require('timeago-react');
 import moment from 'moment';
+import ReactLoading from 'react-loading';
+
 class EventShowDos extends React.Component{
 
   constructor (props) {
@@ -13,6 +15,9 @@ class EventShowDos extends React.Component{
       loaded: false,
       num: true,
     };
+    this.backgroundSetter = this.backgroundSetter.bind(this);
+    this.newsClicker = this.newsClicker.bind(this);
+
     this.membergroups = this.membergroups.bind(this);
     this.renderUpdateGroup = this.renderUpdateGroup.bind(this);
     this.ismember = this.ismember.bind(this);
@@ -32,7 +37,7 @@ class EventShowDos extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true}));
+    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.backgroundSetter());
     // this.props.fetchGroup(this.props.match.params.groupId);
 
     // this.props.fetchEvents().then(() => this.setState({checking: true}));
@@ -73,6 +78,30 @@ class EventShowDos extends React.Component{
 
   }
 
+  newsClicker(){
+    var o = this.props.group.news.length;
+    var adder = o - 9;
+    if(adder > 9){
+      this.setState({newsheight: this.state.newsheight+ 9, newsmore: true});
+    }else{
+      var newnewheight = this.state.newsheight + adder;
+      this.setState({newsheight: newnewheight, newsmore: false});
+    }
+
+  }
+
+  backgroundSetter(){
+     var o = this.props.group.news.length;
+     if(o > 9){
+       var newsheight = 9;
+       var newsmore = true;
+     }else{
+       newsheight = o;
+       newsmore = false;
+     }
+
+  this.setState({check: true, newz: true, lengther: this.props.group.news.length, banner: this.props.group.banner_url, color: this.props.group.color, newsmore: newsmore, newsheight: newsheight });
+  }
 
 opmember(){
   if(this.props.memboz){
@@ -277,15 +306,17 @@ membergroups(){
       var linker = `/groups/${this.props.groupId}/users/${o[i].id}`;
 
     arr.push(
-      <Link to={linker} className='eventmembersglob' key={i}>
-        <div className='membergroupsglobin'>
+      <div className='membergroupsglobin' key={i}>
+
+      <Link to={linker} className='groupmemberpage'>
 
         <img className='membergroupspic' src={o[i].image_url}></img>
         <div className='membergroupname'>{o[i].name}</div>
-        </div>
-        <div className='joingroupdate'>RSVP'd on: {moment(o[i].eventenrollmentinfo[0].created_at).format('ddd MMM Do YYYY')}</div>
-
       </Link>
+
+        <div className='rsvpdate'>RSVPed: {moment(o[i].eventenrollmentinfo[0].created_at).format('MMM Do YYYY')}</div>
+        </div>
+
     );
   }
 
@@ -312,10 +343,21 @@ renderUpdateGroup(){
 }
   render() {
     // console.log(this.props);
-    if(Object.keys(this.props.group).length === 0 || !this.props.evento.random || Object.keys(this.props.evento).length === 0){
+    if(Object.keys(this.props.group).length === 0 ){
       return (
-        <div>Loading...</div>
-      );
+        <div className='loadgroupcontainer'>
+        <div className='loadgroupmain'>
+
+          <ReactLoading type='spin' color='#ed1c40' height='100px' width='100px'/>
+        </div>
+      </div>);
+    }
+
+
+    if(this.props.group.color === "#FFFFFF"){
+      var xo = '#ed1c40';
+    }else{
+      xo = this.props.group.color;
     }
     const idz = `/groups/${this.props.group.id}`;
     const members=`/groups/${this.props.group.id}/members`;
@@ -355,26 +397,30 @@ renderUpdateGroup(){
     //   })
     // );
     const newsList = (news = []) => {
+      // if(this.props.group){
+      //   if(this.props.group.news){
       var x = [];
-      let p = this.props.groupId;
-      // for(var i=news.length-1; i>= 0; i--){
-      for(var i = 0; i < news.length; i++){
+      var t = news.length;
+      var o = this.props.groupId;
+      for(var i=0; i< t; i++){
         let v = new Date(news[i].date).toString();
-        let use = news[i].user_id;
-        let lin = `/groups/${p}/users/${use}`;
-        if(news[i].typo==='g'){
-          var o = `/groups/${p}`;
-      }else if(news[i].typo==='e'){
-        o = `/groups/${p}/events/${news[i].oid}`;
-      }
-        // let pops = `/groups/${p}/events/${}`;
+          var user = `/groups/${o}/users/${news[i].user_id}`;
+          if(news[i].typo==='g'){
+            var ol = `/groups/${o}`;
+        }else if(news[i].typo==='e'){
+          ol = `/groups/${o}/events/${news[i].oid}`;
+        }
         x.push(
           <div className='newseach' key={i}>
-            <Link to={lin}>
-            <img className='groupnewspic' src={news[i].use.image_url}></img>
-            </Link>
-          <div className='yc'>
-            <Link to={o} >{news[i].news} </Link>
+
+          <div className='newsholder'>
+            <div className='newsdivider'>
+              <Link className='news' to={ol} >{news[i].news} </Link>
+
+              <Link className='newspicholder' to={user}>
+              <img className='groupnewspic' src={news[i].use.image_url}></img>
+              </Link>
+            </div>
             <TimeAgo className= 'ago' datetime={v}></TimeAgo>
           </div>
           </div>
@@ -382,7 +428,6 @@ renderUpdateGroup(){
       }
       return x;
     };
-
 
 const numbo = () => {
   let len = this.props.evento.rsvpp;
@@ -435,22 +480,20 @@ const ot = () => {
 
   if(this.state[this.props.eventId] && this.state.member){
     return(
-      <div className='joinerdos' onClick={leave}>
+      <div className='joiner' onClick={leave}>
         Leave Event
       </div>
     );
   }else if (!this.state.member) {
     return(
-      <div className= 'joinGrouptoRsvp'>
+      <div className= 'jjjj'>
         Join group to RSVP
       </div>
     );
   }
   else if (this.state.member && !this.state[this.props.eventId]) {
     return(
-      <div className='eventrsvp'>
-        <div className='joinerdos' onClick={join}>RSVP</div>
-      </div>
+        <div className='joiner' onClick={join}>RSVP</div>
     );
   }
 };
@@ -458,15 +501,18 @@ const ot = () => {
 var ots = `/groups/${this.props.groupId}/users/${this.props.evento.organizer.id}`;
 var ok = `/groups/${this.props.groupId}/events/${this.props.eventId}`;
   return (
-    <div className="singlegroupcontainer">
+    <div className="singlegroupcontainer" style={{backgroundColor: this.state.color}}>
 
-      <div className="groupheader">
-        <div className="singlegroupbanner"></div>
+        <div className='groupheader'>
+            <div className="grouphead">
+        <div className="singlegroupbanner" style={{backgroundColor:xo}}>
+        {  this.props.group.banner_url ==='default' ? null : <img className='banner' src={this.props.group.banner_url}></img>}
         <div className="singlegroupheader">
-          <span>{this.props.group.name}</span>
+          {this.props.group.name}
+        </div>
         </div>
 
-      <div className="singletop">
+
         <div className="singlegroupbar">
           <Link to={idz} className="glink">Home</Link>
           <Link to={members} className="glink">Members</Link>
@@ -474,62 +520,77 @@ var ok = `/groups/${this.props.groupId}/events/${this.props.eventId}`;
           <Link to={photos} className="glink">Photos</Link>
           <Link to={pages} className="glink">Pages</Link>
           {this.renderUpdateGroup()}
+          <div className="bardos">
+            {this.props.currentUser? <Link className="glink" to={myprofile} >My profile</Link> : null }
 
+          </div>
         </div>
 
-        <div className="bardos">
-          {this.props.currentUser? <Link className="glink" to={myprofile} >My profile</Link> : null }
-        </div>
+
+
       </div>
       </div>
       <div className="singlegroup" >
 
-      <div className="singlegroupsidebar">
-        <div className="gcreated">
-          <img className="grouppico" src={this.props.group.image_url}></img>
+        <div className="singlegroupsidebar">
+            <div className='photoplaceholder'>
+            <img className='groupphoto' src={this.props.group.image_url}></img>
+            </div>
+            <div className="gcreated2">
 
-          <div className="gcreated2">
-            <div className="g11">{this.props.group.name}</div>
-            <div className="g2">Established: {this.props.group.creator}</div>
-              {this.state.num ? <div className='g2'>{this.props.group.number} members</div> : <div className='g2'>{this.props.group.number} members</div>}
+              <div className="groupsidebarname">{this.props.group.name}</div>
+              <div className='groupsidebarlocation'>{this.props.group.location}</div>
+            <div className="groupsidebarestablished">Established: {this.props.group.creator}</div>
+                {this.state.num ? <div className='membercount'>{this.props.group.number} members</div> : <div className='membercount'>{this.props.group.number} members</div>}
 
-            <div className="g66">
-              <div className='g90'>Mod: {moddname()}</div>
-
-              </div>
-          </div>
+              <div className="moderatorcolumn">
+                <div className='moderatedby'>Moderated by:</div>
+                <div className='g90'>
+                  <img className='eventorg' src={this.props.group.mod.image_url}/>
+                  <div className='groupsidebarmod'>{moddname()}</div>
+                  </div>
+                </div>
+            </div>
         </div>
-      </div>
-
         <div className="singlegroupmain">
           <div className='eventhomeinfo'>
             <Link to={ok} className="singlegroupeventname">{this.props.evento.name}</Link>
               {this.props.evento.image_url === 'https://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif' || this.props.evento.image_url ==='http://res.cloudinary.com/dxeyfggji/image/upload/v1501260586/default-event-image_twehlf.gif' ? null : <img className="indexpic2" src={this.props.evento.image_url}></img> }
-              <div className='hoppaa'>
-                <div className='yoka3'>
+              <div className='groupeventbody'>
                   <div className="groupeventlocation">Location: {this.props.evento.location}</div>
-                    {this.props.evento.random.length > 0 ? <div className='yoka'>{randers(this.props.evento.random)} {numbo()}  </div> : null}
-                    <div className="groupevenntdescription">{this.props.evento.description}</div>
+                    <div className='groupeventtime'>Start time: {this.props.evento.start_time === 'tbd' ? 'tbd' : moment(this.props.evento.start_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+                    <div className='groupeventtime'>End time: {this.props.evento.end_time === 'tbd' ? 'tbd' : moment(this.props.evento.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
+                    <div className='groupeventdivider'>
+                      <div className='groupeventbodyleft'>
+                        {this.props.evento.random.length > 0 ? <div className='eventmembersholder'>{randers(this.props.evento.random)} {numbo()}  </div> : null}
+                        <div className="groupeventdescription">{this.props.evento.description}</div>
+                      </div>
+
+                      <div className='groupeventorgbody'>
+                        <div className='groupeventorganizer'>
+                          <div className='org'> Organizer:</div>
+                          <Link to={ots}><img className='eventorg' src={this.props.evento.organizer.image_url}></img></Link>
                     </div>
-                  <div className='yoka4'>
-                    <div className='groupeventorganizer'>
-                      <div className='org'>Organizer: </div>
-                      <Link to={ots}><img className='eventorg' src={this.props.evento.organizer.image_url}></img></Link>
+                    {this.state[event.id] ? <div className='groupeventmemberswent'>{this.props.evento.membersnum} RSVPs</div> :       <div className='groupeventmemberswent'>{this.props.evento.membersnum} RSVPs</div> }
+                    {timeChecker() ? null : ot()}
+                    {this.renderEventUpdate()}
+
+
                     </div>
-                    <div className='groupeventid'>Start time: {this.props.evento.start_time === 'tbd' ? 'tbd' : moment.utc(this.props.evento.start_time).format('ddd MMM Do YYYY hh:mm A')}</div>
-                    <div className='groupeventid'>End time: {this.props.evento.end_time === 'tbd' ? 'tbd' : moment.utc(this.props.evento.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
-                      {this.state[event.id] ? <div className='yoka2'>{this.props.evento.membersnum} members attending</div> :       <div className='yoka2'>{this.props.evento.membersnum} members attending</div> }
-                      {timeChecker() ? null : ot()}
-                      {this.renderEventUpdate()}
+
                     </div>
                   </div>
                 </div>
+                <div className='usersingroup'>
                 {this.membergroups()}
+                </div>
               </div>
 
               <div className="singlegroupnews">
-                <div>Event news</div>
-                {this.state.newz ? newsList(this.props.group.eventdos[this.props.eventId].news) : newsList(this.props.group.eventdos[this.props.eventId].news)}
+                <div className='whatsnew'>What's new</div>
+                  {newsList(this.props.group.news.slice(0, this.state.newsheight + 1))}
+
+                  {this.props.group.news.length <= this.state.newsheight ? null : <div className='newsclicker' onClick={this.newsClicker} >More News</div>}
               </div>
 
             </div>

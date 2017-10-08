@@ -1,3 +1,100 @@
+
+
+.eventhomeinfo{
+    border: 1px rgba(211,211,211,.7) solid;
+    padding: 16px;
+    background-color: white;
+}
+
+.singlegroupeventname{
+  text-decoration: none;
+  stroke: transparent;
+fill: rgba(0,0,0,.87);
+color: rgba(0,0,0,.87);
+font-weight: 600;
+letter-spacing: -.02em;
+font-size: 28px;
+line-height: 1.25;
+margin-bottom: 10px;
+
+}
+
+.formostext{
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff!important;
+
+
+}
+
+.yo{
+      padding-bottom: 20px;
+}
+
+.submittingblock{
+  display: flex;
+  flex-direction: row;
+}
+.formos2{
+  margin-left: 10px;
+  box-sizing: border-box;
+      margin-top: 35px;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75px;
+  min-width: 75px;
+  min-height: 36px;
+  max-width: 75px;
+  max-height: 36px;
+  height: 36px;
+  fill: #fff!important;
+  color: #fff!important;
+  background: #ed1c40;
+  border-color: #ed1c40;
+  vertical-align: middle;
+  line-height: 1;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0,0,0,.12);
+  text-align: center;
+}
+
+.usersingroup{
+  display: flex;
+  flex-direction: column;
+  border: 1px rgba(211,211,211,.7) solid;
+border-top: none;
+padding: 16px;
+background-color: white;
+
+}
+
+.groupmemberpage{
+  display: flex;
+  width: 70%;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+
+
+.rsvpdate{
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  justify-content: center;
+  // margin-left: 135px;
+  font-size: 13px;
+}
+
+
+
+
 // .eventpico{
 //   display: flex;
 //   width: 200px;

@@ -1,3 +1,240 @@
 // Place all the styles related to the api::public_profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// .profilecontainer{
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+//   width: 100%;
+// }
+
+
+.profilegroup{
+  display: flex;
+  flex-direction: column;
+
+}
+.profilegroupmain{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+
+
+}
+
+.profilesubblock, .profilesubblock2{
+  display: flex;
+  flex-direction: column;
+  // min-width: 50%;
+  min-width: 100px;
+  width: 50%;
+}
+.profilesublock2{
+  margin-left: 100px;
+  width: 50%;
+}
+
+.profilesublock{
+  width: 50%;
+}
+
+.userprof{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.profilestatistics{
+  display: flex;
+  flex-direction: column;
+  // padding: 16px 16px 0;
+  min-width: 620px;
+  box-sizing: border-box;
+
+}
+
+.profilestats{
+  border-top: 1px solid rgba(0,0,0,.12);
+border-bottom: 1px solid transparent;
+}
+.profiletitle{
+  border-bottom: 1px solid transparent;
+    font-size: 28px;
+    line-height: 1.25;
+    stroke: transparent;
+    padding-bottom: 10px;
+         padding: 16px 16px 0;
+fill: rgba(0,0,0,.87);
+color: rgba(0,0,0,.87);
+font-weight: 600;
+letter-spacing: -.02em;
+border-bottom: 1px solid rgba(0,0,0,.12)!important;
+
+}
+
+.profilebanner{
+      background-color: #F64060;
+      min-height: 125px;
+      max-height: 125px;
+      min-width: 960px;
+      max-width: 960px;
+
+}
+
+// .userhomeinfo{
+//
+//   display: flex;
+//   flex-direction: column;
+// }
+
+.groupnamejoin{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  text-decoration: none;
+
+
+}
+
+.stats2, .stats, .statsmoment{
+      font-weight: 500;
+      font-size: 16px;
+      font-family: "Graphik Meetup",helvetica,arial,sans-serif;
+}
+
+
+.profilestatsblock{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+      padding: 16px 16px 0;
+}
+
+
+.modmem{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 100%;
+  // margin-top: 30px;
+  // border: 1px solid rgba(0,0,0,.12)!important;
+  // padding: 16px 16px 0;
+
+}
+
+.modmemprofile{
+  width: 960px;
+  max-width: 960px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-top: 30px;
+  border: 1px solid rgba(0,0,0,.12)!important;
+  // padding: 16px 16px 0;
+
+}
+
+.profilegroupbody{
+  display: flex;
+     padding: 16px 16px 0;
+  flex-direction: column;
+  margin-bottom: 50px;
+  // margin-top: 10px;
+}
+
+.membergroupsglobin{
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  width: 100%;
+  // margin-top: 10px;
+  padding-top: 10px;
+  border-bottom: 1px solid rgba(0,0,0,.12)!important;
+  padding-bottom: 10px;
+
+}
+
+
+
+.membergroupsglob{
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+
+.profilegroupname{
+  text-decoration: none;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  width: 50%;
+  box-sizing: border-box;
+  padding-left: 12px;
+      color: #2A9BC7;
+      text-decoration: none;
+          font-weight: 500;
+}
+
+
+
+.joingroupdate{
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 200px;
+  // justify-content: flex-end;
+  // align-self: flex-end;
+  // justify-content: flex-end;
+}
+
+
+.profileuserinfo{
+  margin-top: 30px;
+
+  width: 960px;
+  align-self: center;
+  border-radius: 3px;
+background-color: #fff;
+margin-bottom: 16px;
+border: 1px solid rgba(0,0,0,.12)!important;
+border-bottom: 1px solid rgba(0,0,0,.26)!important;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileupdatebutton2{
+  border-top: 1px solid rgba(0,0,0,.12);
+border-bottom: 1px solid rgba(0,0,0,.12);
+margin-bottom: 16px;
+box-sizing: border-box;
+margin-top: 12px;
+  width: 50%;
+    margin: 16px 16px 0;
+}
+
+.profilerightside{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+margin-left: 20px;
+
+    padding: 16px 16px 0;
+}
+.userpico{
+  // margin-top: 20px;
+  // margin-left: 40px;
+
+  // margin-left: 100px;
+  max-width: 200px;
+  max-height: 200px;
+  min-width: 200px;
+  min-height: 200px;
+  object-fit: cover;
+}

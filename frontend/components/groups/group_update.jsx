@@ -1,5 +1,6 @@
 import React from 'react';
 import { SketchPicker } from 'react-color';
+import {Link} from 'react-router-dom';
 
 
 class UpdateGroup extends React.Component {
@@ -133,11 +134,15 @@ defaultButton(){
   }
 
   render(){
-console.log(this.state);
+console.log(this.props);
+var cancel = `/groups/${this.props.group.id}`;
     return (
       <div className="groupformcontainer">
-        <div className="creategroupgif2" style={{backgroundColor: this.state.color}}>
-          {this.state.banner_url ==='default'?  <div className="c1" >Update your group</div> : <img className='backer' src= {this.state.banner_url}/>}
+        <div className="creategroupgif" style={{backgroundColor: this.state.color}}>
+          <img className='creategroupbanner' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507339343/f628524ed09d7bd7982e00b6804cd4c6_yrmycz.jpg'/>
+          <div className='bannertext'>
+            Update your clique
+          </div>
 
         </div>
         <div className= 'formupdater'style={{backgroundColor: this.state.color}}>
@@ -173,7 +178,7 @@ console.log(this.state);
             <div className="steps">Step 4 of 4</div>
             <div className='pickers'>
               <div className='picturepicker'>
-            <div className="ques2">Update your group's picture!</div>
+            <div className="ques2">Update your clique's picture</div>
             {this.state.image_url ? <img className='groupformpic' src={this.state.image_url}></img> :<img className='groupformpic' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1501260585/default_group_normal_ymyl3t.png'></img> }
             <div className='uplob' onClick={this.uploadButton}>Upload</div>
             </div>
@@ -199,15 +204,19 @@ console.log(this.state);
           </div>
 
       </label>
-
-          <input className="creategroupsub" type="submit"></input>
-        </form>
-
+          <div className='submittingblock'>
+          <input className="formos" type="submit"></input>
+          <div className='formos2'>
+              <Link className='formostext' to={cancel}>Cancel</Link>
+          </div>
+          </div>
+      </form>
 
 </div>
 <div className="creategroupgif2" style={{backgroundColor: this.state.color}}>
-  {this.state.banner_url ==='default'  ? <div className="c1" >Update your group</div> : <img className='backer' src= {this.state.banner_url}></img> }
-
+  {this.state.banner_url ==='default'  ?  <img className='backer' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507339343/f628524ed09d7bd7982e00b6804cd4c6_yrmycz.jpg'/>
+ : <img className='backer' src= {this.state.banner_url}></img> }
+  <div className="bannertextupdate" >Preview your banner here</div>
 </div>
       </div>
     );
@@ -215,6 +224,10 @@ console.log(this.state);
 }
 
 export default UpdateGroup;
+
+
+// {this.state.banner_url ==='default'?  <div className="c1" >Update your group</div> : <img className='backer' src= {this.state.banner_url}/>}
+
 
 // <div className="c1" >Update your group</div>
 //

@@ -100,33 +100,36 @@ class GroupForm extends React.Component {
     return (
       <div className="groupformcontainer">
         <div className="creategroupgif">
-          <div className="c1" >Start a new group</div>
+          <img className='creategroupbanner' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507336184/41cf6d39d0ad0f0e07317e26d1602076_g6caa6.jpg'></img>
+          <div className='bannertext'>
+        <div className="c1" >Start a new group</div>
           <div className="c2">We'll help you find the right people!</div>
-        </div>
+          </div>
+      </div>
         <form className="groupform" onSubmit={this.createGroup}>
 
           <label className="groupname">
             <div className="steps">Step 1 of 4</div>
             <div className="ques">What will your group be called?</div>
           <input className="ginput" type="text" ref="name"
-            value={this.state.name} placeholder="Your group's name here!"
+            value={this.state.name} placeholder="example: New York Hiking Clique"
             onChange={this.createName}/>
           </label>
 
           <label className="groupinfo">
             <div className="steps">Step 2 of 4</div>
-            <div className="ques">How would you describe your group?</div>
+            <div className="ques">What will your clique be about?</div>
             <textarea className="ginput2" type="text" ref="location"
               cols="30" rows='10' value={this.state.info}
-              placeholder="Description of your group!"
+              placeholder="example: We're a group of hikers who love the outdoors! Join us as we explore the beauty of nature around New York!"
             onChange={this.createInfo}/>
           </label>
 
           <label className="grouplocation">
             <div className="steps">Step 3 of 4</div>
-            <div className="ques">Where is your group's home base?</div>
+            <div className="ques">{"What's your new clique's" } hometown?</div>
             <input className="ginput" type="text" ref="location"
-            value={this.state.location} placeholder="Your group's location here!"
+            value={this.state.location} placeholder="Enter your clique's location!"
             onChange={this.createLocation}/>
           </label>
 
@@ -142,7 +145,7 @@ class GroupForm extends React.Component {
 
           <span className="errors">{this.renderErrors()}</span>
 
-          <input className="creategroupsub" type="submit"></input>
+          <input className="formos" type="submit"></input>
 
       </form>
 

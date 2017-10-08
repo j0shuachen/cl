@@ -65,6 +65,11 @@ margin-top: 12px;
 .joiner{
   color: #2A9BC7;
   text-decoration: none;
+  margin-top: 10px;
+}
+
+.joiner:hover{
+  cursor: pointer;
 }
 
 .userleftside{
@@ -85,11 +90,13 @@ margin-top: 12px;
 
 
 .usergroups{
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
   display: flex;
   flex-direction: column;
   background-color: white;
   border-radius: 3px;
       margin-bottom: 16px;
+      margin-top: 10px;
 }
 
 .username{
@@ -104,17 +111,28 @@ margin-top: 12px;
   height: 65px;
   border-bottom: 1px solid rgba(0,0,0,.12);
   text-decoration: none;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  // margin-bottom: 5px;
+  // margin-top: 5px;
+  box-sizing: border-box;
   // flex-direction: column;
 }
 .membergroupname{
   display: flex;
+  width: 100%;
+  box-sizing: border-box;
   padding-left: 12px;
       color: #2A9BC7;
       text-decoration: none;
           font-weight: 500;
+          justify-content: center;
+display: flex;
+flex-direction: column;
 }
+
+
+
 
 .userprofilestats{
   display: flex;
@@ -160,6 +178,7 @@ font-size: 13px;
 font-weight: 400;
 text-transform: uppercase;
     color: #2A9BC7;
+    margin-top: 20px;
 }
 
 .showall:hover, .collapseGroups:hover{
@@ -167,7 +186,7 @@ text-transform: uppercase;
 }
 
 .stats{
-  margin-bottom: 16px;
+  // margin-bottom: 16px;
 }
 
 .indent{
@@ -180,7 +199,12 @@ text-transform: uppercase;
 .membergroupspic{
   width: 50px;
   height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  max-width: 50px;
+  max-height: 50px;
   object-fit: cover;
+  margin-left: 10px;
 }
 
 
@@ -191,6 +215,7 @@ padding: 16px 16px 0;
 }
 
 .indentmod{
-  padding: 16px 16px 0px;
+  padding: 20px 20px 0px;
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
 
 }

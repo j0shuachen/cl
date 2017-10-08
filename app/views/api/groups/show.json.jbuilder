@@ -23,7 +23,7 @@ json.number @numembers
 json.relatedgroups @relatedgroups.shuffle.take(5)
 json.memberino do
   json.array! @members.each do |membo|
-    json.extract! membo, :name, :username, :image_url
+    json.extract! membo, :name, :username, :image_url, :id
     json.enrollinfo GroupEnrollment.where('user_id=? and group_id=?', membo.id, @group.id )
   end
 end
