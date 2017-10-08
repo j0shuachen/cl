@@ -7,9 +7,7 @@ import Flatpickr from 'react-flatpickr';
 class EventForm extends React.Component{
   constructor(props){
     super(props);
-    //test//
-    // console.log(this.props);
-    //heroku//
+  
     this.state={
       group_id: "",
       user_id: "",
