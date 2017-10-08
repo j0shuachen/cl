@@ -152,7 +152,7 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
   render() {
 
 
-    console.log(this.props);
+    // console.log(this.props);
     // if(!this.state.group){
     //   return(<div>loading...</div>);
     // }

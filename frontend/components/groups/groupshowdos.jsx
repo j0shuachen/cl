@@ -475,7 +475,7 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
 
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
 //     if(1+1 ===2){
 //     return (
 //       <div className='loadgroupcontainer'>

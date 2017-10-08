@@ -134,7 +134,7 @@ defaultButton(){
   }
 
   render(){
-console.log(this.props);
+// console.log(this.props);
 var cancel = `/groups/${this.props.group.id}`;
     return (
       <div className="groupformcontainer">
