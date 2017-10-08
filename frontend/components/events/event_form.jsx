@@ -9,6 +9,7 @@ class EventForm extends React.Component{
     super(props);
     //test//
     // console.log(this.props);
+    //heroku//
     this.state={
       group_id: "",
       user_id: "",
