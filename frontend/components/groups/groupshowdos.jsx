@@ -219,7 +219,7 @@ renderJ (){
     }else if (!this.props.currentUser) {
       return(
         <div className='createeventto'
-          >Log in to join group!
+          >Log in to join!
         </div>
       );
     }

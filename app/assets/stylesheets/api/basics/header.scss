@@ -1,3 +1,81 @@
+.aboutcontainer, .resumecontainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  background-color: #fafafa;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.aboutprofilebar{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.downicon{
+  background-color: white;
+  height: 100px;
+
+}
+
+.pdfdown, .pdfdowndos{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.aboutname{
+  width: 40%;
+  height: 50px;
+  border-bottom: 1px solid rgba(0,0,0,.12)!important;
+  font-weight: 500;
+  font-size: 34px;
+line-height: 1.25;
+border-bottom: 1px solid transparent;
+    padding: 16px 16px 0;
+
+}
+
+.resumeimage{
+  // object-fit: cover;
+}
+
+.aboutprofilepic{
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 20px;
+  // margin-left: 100px;
+}
+.aboutmain, .aboutmaindos{
+  // margin: 50px;
+  border-radius: 3px;
+background-color: #fff;
+align-self: center;
+// margin-bottom: 16px;
+border: 1px solid rgba(0,0,0,.12)!important;
+display: flex;
+flex-direction: column;
+    min-width: 960px;
+    max-width: 960px;
+    // margin-right: 20px;
+}
+
+.aboutblock{
+  display: flex;
+}
+
+.aboutme{
+  margin: 20px 20px 20px 0;
+}
+
+
+
+
 // nav{
 //   font-family: 'Ubuntu', sans-serif;
 //   display: flex;

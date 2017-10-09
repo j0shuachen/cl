@@ -70,7 +70,7 @@ showGroups(){
     <div className="searchbar">
       <form >
       <label  >
-        <input className="search" onChange={this.update('searchParams')} value={this.searchParams} placeholder="Search all groups!">
+        <input className="search" onChange={this.update('searchParams')} value={this.searchParams} placeholder="Search all cliques!">
         </input>
       </label>
       </form>

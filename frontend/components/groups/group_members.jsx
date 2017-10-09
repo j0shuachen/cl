@@ -28,6 +28,7 @@ class GroupMembers extends React.Component{
     };
     // this.props.fetchGroup(this.props.match.params.groupId);
     this.renderUpdateGroup = this.renderUpdateGroup.bind(this);
+    this.newsClicker = this.newsClicker.bind(this);
 
     this.ops = this.ops.bind(this);
     this.newsheightclicker = this.newsheightclicker.bind(this);
@@ -88,11 +89,32 @@ class GroupMembers extends React.Component{
     }
   }
 
-  backgroundSetter(){
 
+  newsClicker(){
+    var o = this.props.group.news.length;
+    var adder = o - 9;
+    if(adder > 9){
+      this.setState({newsheight: this.state.newsheight+ 9, newsmore: true});
+    }else{
+      var newnewheight = this.state.newsheight + adder;
+      this.setState({newsheight: newnewheight, newsmore: false});
+    }
 
-this.setState({check: true, newz: true, lengther: this.props.group.news.length, banner: this.props.group.banner_url, color: this.props.group.color});
   }
+
+    backgroundSetter(){
+       var o = this.props.group.news.length;
+       if(o > 9){
+         var newsheight = 9;
+         var newsmore = true;
+       }else{
+         newsheight = o;
+         newsmore = false;
+       }
+
+  this.setState({check: true, newz: true, lengther: this.props.group.news.length, banner: this.props.group.banner_url, color: this.props.group.color, newsmore: newsmore, newsheight: newsheight });
+    }
+
 
   // ops(){
   //   if(this.props.memboz){
@@ -330,15 +352,13 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
           </div>
 
       </div>
-        <div className="singlegroupnews"  >
+      <div className="singlegroupnews">
+        <div className='whatsnew'>What's new</div>
+        {newsList(this.props.group.news.slice(0, this.state.newsheight + 1))}
+        {this.props.group.news.length <= this.state.newsheight ? null : <div className='newsclicker' onClick={this.newsClicker} >More News</div>}
 
-          <div className='whatsnew'>What's new</div>
-            <div style={{height: this.state.heighter, overflow: 'hidden'}}>
-            {this.state.newz ? newsList(this.props.group.news) : newsList(this.props.group.news)}
-            </div>
-          {this.state.heightning <= this.state.lengther* 155 ? <div className='newsclicker' onClick={this.newsheightclicker}>More news!</div> : null }
 
-            </div>
+      </div>
 
 
 

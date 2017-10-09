@@ -124,7 +124,7 @@ render(){
     </div>
       <div className="logo">
         <Link to="/groups" className="header-link">
-          <img className='headerlogo' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507097808/Drawing_1_gfv2bu.jpg'/>
+          <img className='headerlogo' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507253413/Drawing_3_pa3iwm.jpg'/>
 
 
         </Link>
@@ -177,3 +177,6 @@ const {currentUser, logout} = this.props;
 //   className="modal-button" onClick={this.closeModal}>Continue with Google</Link>
 
 export default HeaderBar3;
+
+
+// 'http://res.cloudinary.com/dxeyfggji/image/upload/v1507097808/Drawing_1_gfv2bu.jpg'

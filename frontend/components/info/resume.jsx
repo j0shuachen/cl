@@ -11,7 +11,7 @@ class Resume extends React.Component{
         <a href='http://res.cloudinary.com/dxeyfggji/image/upload/v1507112383/ChenJoshResume.pdf'>  <img className='pdfdown' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1506956336/pdf-file-format-symbol_318-45340_plqofm.jpg'/> </a>
       <a href='http://res.cloudinary.com/dxeyfggji/image/upload/v1507112383/ChenJosh.png' download='ChenJoshuaResume.png' >  <img className='pdfdowndos' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1506956333/download_iy2qpr.png'/></a>
           </div>
-        <img src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507112383/ChenJosh.png'/>
+        <img className= 'resumeimage' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507508930/ChenJoshua_t8p29u.png'/>
         </div>
       </div>
     );

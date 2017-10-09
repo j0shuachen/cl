@@ -70,44 +70,51 @@ class LogInForm extends React.Component {
 
   renderErrors(){
     return(
-      <ul>
+      <div>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <div className='errorz' key={`error-${i}`}>
             {error}
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     );
   }
 
   render () {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-        <div className="login-formtop"><div>Login</div></div>
-        <div className="login-form">
+      <div className="signup-form-container">
+        <form onSubmit={this.handleSubmit} className="signup-form-box">
+        <div className="signupformtop">Login</div>
+        <div className="signupformbody">
           <br/>
-            <div className="forms">Username:</div>
+            <label className="usernameform">
+
+            <div className="signupques">Username:</div>
             <input type="text"
               value={this.state.username}
               onChange={this.update('username')}
-              className="forms"/>
-          <br/>
-            <div className="forms">Password:</div>
+              className="signupinput"/>
+            </label>
+            <label className="usernameform">
+
+            <div className="signupques">Password:</div>
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
-              className="forms"/>
-          <br/>
+              className="signupinput"/>
+            </label>
             <span className="errors">{this.renderErrors()}</span>
-            <div><input className="formo" type="submit" value="Log In"/> </div>
+            <div><input className="formos" type="submit" value="Log In"/> </div>
 
 
         </div>
-        <div className="loginbottom">
+        <div className="signupwelcome">
 
-          <div>Not a member?</div>
-          <div className="logintosignup">{this.navLink()}</div>
+          <div className='signupbuttontop'>
+              <div className="alreadyamember">Not a member?</div>
+              <br/>
+              <div className="signtuptologin">{this.navLink()}</div>
+              </div>
           </div>
 
         </form>

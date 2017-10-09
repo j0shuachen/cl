@@ -46,15 +46,26 @@ class SignUpForm extends React.Component {
 
   renderErrors(){
     return(
-      <ul>
+      <div>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <div className='errorz' key={`error-${i}`}>
             {error}
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     );
   }
+  // <ul>
+  //   {this.props.errors.map((error, i) => (
+  //     <li key={`error-${i}`}>
+  //       {error}
+  //     </li>
+  //   ))}
+  // </ul>
+
+
+
+
 
   render () {
     return (
@@ -64,51 +75,55 @@ class SignUpForm extends React.Component {
             <div className="signupformtop">
               Sign Up
             </div>
-            
-            <label className="form">
-              <span className="login-input">Username:</span>
+            <div className='signupformbody'>
+            <label className="usernameform">
+              <span className="signupques">Username:</span>
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
-                className="login-input"/>
+                className="signupinput"/>
             </label>
             <br/>
-            <label className="form">
-              <span className="login-input">Password:</span>
+            <label className="usernameform">
+              <span className="signupques">Password:</span>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="login-input"/>
+                className="signupinput"/>
             </label>
             <br/>
-            <label className="form">
-              <span className="login-input">Name:</span>
+            <label className="usernameform">
+              <span className="signupques">Name:</span>
                 <input type="text"
                   value={this.state.name}
                   onChange={this.update('name')}
-                  className="login-input"
+                  className="signupinput"
                   placeholder="This will be your name displayed to other users"
                   />
             </label>
             <br/>
-            <label className="form">
-              <span className="login-input"> Location:</span>
+            <label className="usernameform">
+              <span className="signupques"> Location:</span>
               <input type="text"
                 value={this.state.location}
                 onChange={this.update('location')}
-                className="login-input"
+                className="signupinput"
                 placeholder="We use this to find groups and events near you!"
                 />
             </label>
             <br/>
+              {this.renderErrors()}
+
             <input type="submit" value="Continue" className="formos"/>
+            </div>
               <div className="signupwelcome">
                 <span className="privacy">By clicking "Continue", you agree to our Terms of Service, Privacy Policy, and Cookie Policy.</span>
                 <br/>
-                    <div className="signupbuttontop">Already a member?</div>
+                <div className='signupbuttontop'>
+                    <div className="alreadyamember">Already a member?</div>
                     <br/>
                     <div className="signtuptologin">{this.navLink()}</div>
-                  {this.renderErrors()}
+                    </div>
               </div>
         </form>
 

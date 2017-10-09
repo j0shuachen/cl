@@ -1,4 +1,85 @@
+.signupformtop{
+      font-size: 42px;
+}
 
+
+.signupques{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 80px;
+  font-size: 13px;
+    font-weight: 600;
+}
+
+.signupbuttontop{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+}
+
+.signtuptologin{
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.errorz{
+  font-size: 13px;
+  font-weight: 500px;
+  color: #ed1c40;
+}
+
+.signupwelcome{
+  display: flex;
+  flex-direction: column;
+  padding: 16px 60px 16px 60px;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
+    line-height: 1.6;
+    color: rgba(0,0,0,.87);
+font-family: "Graphik Meetup",helvetica,arial,sans-serif;
+margin-bottom: 50px;
+}
+.privacy{
+  color: rgba(0,0,0,.87);
+  border-bottom: 1px solid rgba(0,0,0,.12);
+    // margin-bottom: 16px!important;
+    padding-bottom: 16px;
+}
+
+
+.signupformbody{
+  border-top: 1px solid rgba(0,0,0,.12);
+  padding: 16px;
+  padding: 30px 60px 30px 60px;
+  margin-top: 5px;
+
+}
+.usernameform{
+  display: flex;
+flex-direction: column;
+margin-bottom: 16px;
+}
+
+.signupinput{
+  background-color: #fafafa;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: none;
+    box-sizing: border-box;
+    margin: 0 0 4px;
+    max-width: 100%;
+    padding: 8px;
+    width: 100%;
+    height: 39.2px;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.45;
+    font: system-ui;
+    // margin-left: 10px;
+
+}
 
 
 .signup-form-container{
