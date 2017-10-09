@@ -514,9 +514,10 @@ var groupindex = `/groups`;
   return (
     <div className="singlegroupcontainer">
       <div className="groupheader">
-        <div className="profilebanner"></div>
-        <div className="singlegroupheader">
-          <span>{this.props.group.name}</span>
+        <div className="profilebanner">
+        <div className="singlegroupheaderv2">
+          cliqueUp profile
+        </div>
         </div>
 
       <div className="singletop">

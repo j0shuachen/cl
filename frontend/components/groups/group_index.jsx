@@ -51,12 +51,9 @@ class GroupIndex extends React.Component {
         <div className="indexheadermain">What do you love?</div>
         <div className="indexheadersecondary">Do more of it with Clique</div>
         </div>
-
-        <div className="groupindexheader">
             <Search/>
 
-        <div className='findaclique'>Find a Clique!</div>
-         </div>
+
         <div className="grouplist">{groupItems}</div>
 
       </div>
@@ -71,4 +68,11 @@ class GroupIndex extends React.Component {
 export default GroupIndex;
 
 
+
+// <div className="groupindexheader">
+//     <Search/>
+//
+// <div className='findaclique'>Find a Clique!</div>
+//  </div>
+//
 //         <ul className="grouplist">{groupItems}</ul>

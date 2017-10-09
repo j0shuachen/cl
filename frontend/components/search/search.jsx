@@ -35,9 +35,8 @@ class Search extends React.Component {
       const o =`/groups/${group.id}`;
 
       return (
-        <div className= "res1" key={idx}>
-        <Link className= "res" to={o} >{group.name}</Link>
-      </div>);
+        <Link className= "res"  key={idx} to={o} >{group.name}</Link>
+      );
     });
     return mappd;
   }else{
@@ -50,14 +49,11 @@ class Search extends React.Component {
 showGroups(){
   if(this.allGroups().length ===0 ){
     return (
-      <div></div>
-    );
+null    );
   }else{
 
       return(
-      <div>
         <div className="formContainer">{this.allGroups()}</div>
-        </div>
       );
   }
 }
@@ -67,15 +63,15 @@ showGroups(){
   render() {
     // console.log(this.props);
     return (
-    <div className="searchbar">
-      <form >
-      <label  >
-        <input className="search" onChange={this.update('searchParams')} value={this.searchParams} placeholder="Search all cliques!">
-        </input>
-      </label>
-      </form>
-      {this.showGroups()}
-    </div>
+      <div className='groupindexheader'>
+
+        <div className='searchblock'>
+        <input className="search" onChange={this.update('searchParams')} value={this.searchParams} placeholder="Search all cliques!"></input>
+          <div className='findaclique'>Find a Clique!</div>
+          </div>
+            {this.showGroups()}
+
+      </div>
   );
 }
 }

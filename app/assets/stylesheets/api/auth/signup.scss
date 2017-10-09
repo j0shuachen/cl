@@ -268,15 +268,19 @@ text-rendering: optimizeLegibility;
   flex-direction: column;
   width: 575px;
   // height: 600px;
-  margin-top: 30px;
+  // margin-top: 100px;
+  margin: 75px 0 75px 0;
   box-sizing: border-box;
       border: 1px solid rgba(0,0,0,.12);
       align-self: center;
       border-radius: 3px;
-      margin-bottom: 25px;
+      margin-bottom: 75px;
 }
 
-
+.groupindexpic:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
 
 
 

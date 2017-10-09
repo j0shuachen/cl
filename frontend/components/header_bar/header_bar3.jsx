@@ -96,39 +96,45 @@ render(){
 
   const personalGreeting = (currentUser, logout) => (
     <div className="mainheaderbar">
-    <div className="create-header">
       <div className="logo">
 
           <Link to="/groups" className="header-link">
-            <img className='headerlogo' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507253413/Drawing_3_pa3iwm.jpg'/>
+            <img className='headerlogo' src='https://res.cloudinary.com/dxeyfggji/image/upload/v1507253413/Drawing_3_pa3iwm.jpg'/>
           </Link>
         </div>
+        <div className='headerright'>
+          <div className="create-header">
+
       <Link to="/create/group" className="create-header-button">Create a Clique</Link>
         <Link to="/" className="demo-button" onClick={this.demo}> Demo </Link>
-  </div>
+        </div>
 
-    <div className="greeting">
-      <div className="header-name">  <Link className='headertoprof' to={`/users/${currentUser.id}`}>{'Hi, ' + currentUser.username +'!'}</Link></div>
-      <Link to="/"className="header-button" onClick={logout}>Log Out
-      </Link>
+    <div className="login-signup">
+       <Link className='headertoprof' to={`/users/${currentUser.id}`}>{'Hi, ' + currentUser.username +'!'}</Link>
+      <Link to="/"className="header-button" onClick={logout}>Log Out</Link>
   </div>
+</div>
+
+
 </div>
   );
 
   const sessionLinks =() =>{
     return (
       <div className="mainheaderbar">
+        <div className="logo">
+          <Link to="/groups" className="header-link">
+            <img className='headerlogo' src='https://res.cloudinary.com/dxeyfggji/image/upload/v1507253413/Drawing_3_pa3iwm.jpg'/>
+
+
+          </Link>
+        </div>
+        <div className='headerright'>
       <div className="create-header">
         <Link to="/create/group" className="create-header-button">Create a Clique</Link>
           <Link to="/" className="demo-button" onClick={this.demo}> Demo </Link>
     </div>
-      <div className="logo">
-        <Link to="/groups" className="header-link">
-          <img className='headerlogo' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507253413/Drawing_3_pa3iwm.jpg'/>
 
-
-        </Link>
-      </div>
     <div className="login-signup">
 
       <Link to="/login"
@@ -137,6 +143,7 @@ render(){
       <Link to="/signup"
         className="sign-up-button">Signup
       </Link>
+    </div>
     </div>
     </div>
   );

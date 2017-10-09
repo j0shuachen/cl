@@ -71,7 +71,7 @@ const App = () => (
 
       </div>
       <div className="foot">
-        <a className='linkedinlink' href= 'https://www.linkedin.com/in/joshuaschen/'><img className='linkedinlogo' src='http://res.cloudinary.com/dxeyfggji/image/upload/v1507054510/In-White-41px-R_iuuifi.png'/> </a>
+        <a className='linkedinlink' href= 'https://www.linkedin.com/in/joshuaschen/'><img className='linkedinlogo' src='https://res.cloudinary.com/dxeyfggji/image/upload/v1507054510/In-White-41px-R_iuuifi.png'/> </a>
 
       <Link to="/about" className= "footerlinks">About</Link>
       <Link to='/resume' className='footerlinks'>Resume</Link>
