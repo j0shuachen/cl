@@ -566,7 +566,7 @@ group3= Group.create!(name: "South Bay Ping Pong", location: "santa clara", user
 • All levels welcome
 • We play with multiple balls, so it's okay to miss because you always have another ball ready to go
 • Better players are encouraged to help lower level players
-", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258277/download_1_imnrgf.jpg", banner_url: 'https://res.cloudinary.com/dxeyfggji/image/upload/v1506832302/tmp855131221754118145_d7di05.jpg', color: "rgba(0, 0, 0, 1)")
+", image_url: "https://res.cloudinary.com/dxeyfggji/image/upload/v1501258277/download_1_imnrgf.jpg", banner_url: 'https://res.cloudinary.com/dxeyfggji/image/upload/v1506832302/tmp855131221754118145_d7di05.jpg', color: "rgb(66, 241, 244)")
 gn35 = GroupNews.create!(group_id: group3.id, news: user18.username + ' created the group ' + group3.name, user_id: user18.id, oid: group3.id, typo: 'g')
 ge35 = GroupEnrollment.create!(group_id: group3.id, user_id: user18.id)
 gn73 = GroupNews.create!(group_id: group3.id, news: user77.username + ' joined the group', user_id: user77.id, oid: group3.id, typo: 'g')

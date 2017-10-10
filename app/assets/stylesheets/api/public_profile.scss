@@ -152,6 +152,7 @@ flex-direction: column;
 }
 
 .statstitle{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   padding: 16px 16px 0px;
 
   font-size: 34px;
@@ -165,7 +166,7 @@ letter-spacing: -.02em;
 padding-bottom: 8px;
 }
 .statsblock{
-  border-top: 1px solid rgba(0,0,0,.12);
+  // border-top: 1px solid rgba(0,0,0,.12);
 border-bottom: 1px solid transparent;
 padding: 16px 16px 0;
 }
@@ -209,13 +210,13 @@ text-transform: uppercase;
 
 
 .nogroupsuserprofile{
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  // border-top: 1px solid rgba(0, 0, 0, 0.12);
 border-bottom: 1px solid transparent;
 padding: 16px 16px 0;
 }
 
 .indentmod{
   padding: 20px 20px 0px;
-      border-top: 1px solid rgba(0, 0, 0, 0.12);
+  // border-top: 1px solid rgba(0, 0, 0, 0.12);
 
 }
