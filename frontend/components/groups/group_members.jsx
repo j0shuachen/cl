@@ -178,7 +178,9 @@ class GroupMembers extends React.Component{
     // if(!this.state.group){
     //   return(<div>loading...</div>);
     // }
-    if(Object.keys(this.props.group).length === 0 || !this.props.group.info || !this.state.color){
+// || !this.props.group.info
+
+    if(Object.keys(this.props.group).length === 0  || !this.state.color){
 
     // if(this.props.group.length === 0){
       return (

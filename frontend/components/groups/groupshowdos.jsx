@@ -487,8 +487,9 @@ this.setState({check: true, newz: true, lengther: this.props.group.news.length, 
 // }
 
     // console.log(this.state);
-    // console.log(this.props);
-    if(Object.keys(this.props.group).length === 0 || !this.props.group.info || !this.state.color){
+    // || !this.props.group.info || !this.state.color
+    console.log(this.props);
+    if(Object.keys(this.props.group).length === 0 || !this.state.color ){
       return (
         <div className='loadgroupcontainer'>
         <div className='loadgroupmain'>

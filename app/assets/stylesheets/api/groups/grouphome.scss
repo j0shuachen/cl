@@ -45,7 +45,7 @@
 }
 .groupheader{
   // box-sizing: border-box;
-  border-top: 1px rgba(211, 211, 211, 0.7) solid;
+  // border-top: 1px rgba(211, 211, 211, 0.7) solid;
 
   display: flex;
   flex-direction: column;
@@ -61,6 +61,11 @@
     border-top-right-radius: 3px;
 }
 
+
+
+.statsub{
+  margin-bottom: 20px;
+}
 .singlegroupbanner{
   display: flex;
   flex-basis: 100%;
@@ -158,7 +163,7 @@ justify-content: flex-end;
 left: 0;
 right: 0;
 justify-content: center;
-max-width: 400px;
+// max-width: 400px;
 display: flex;
 margin-left: auto;
 margin-right: auto;

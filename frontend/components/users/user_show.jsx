@@ -337,7 +337,7 @@ groupmods(){
       }
       return arr;
     }else{
-      return(<div className='nogroups'>Has not started any groups!</div>);
+      return(<div className='nogroupsuserprofile'>Has not started any groups!</div>);
     }
   }
 }
@@ -382,7 +382,7 @@ renderU(){
 }
   render() {
     // console.log(this.props);
-    if(Object.keys(this.props.group).length === 0 || !this.props.x){
+    if(Object.keys(this.props.group).length === 0 || !this.props.x || !this.state.color){
       return (
         <div className='loadgroupcontainer'>
         <div className='loadgroupmain'>

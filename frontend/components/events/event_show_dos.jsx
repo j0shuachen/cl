@@ -208,9 +208,11 @@ checkrsvp (){
     //   var ok = this.props.eventId;
     //   this.setState({[this.props.eventId]: true});
     // }
+    if(this.props.currentUser){
     if(this.props.group.eventdos[this.props.eventId].rsvp[this.props.currentUser.id]){
       this.setState({[this.props.eventId]: true});
     }
+  }
   }
 }
 eventsetter(){
@@ -343,7 +345,7 @@ renderUpdateGroup(){
 }
   render() {
     // console.log(this.props);
-    if(Object.keys(this.props.group).length === 0 ){
+    if(Object.keys(this.props.group).length === 0 || !this.props.evento || !this.state.color){
       return (
         <div className='loadgroupcontainer'>
         <div className='loadgroupmain'>
@@ -447,6 +449,17 @@ const randers = (ran=[]) => {
     arr.push(<Link to={pj} key={i} className='soolo'> <img className='eventorg' src={ran[i].image_url}></img></Link>);
   }
   return arr;
+};
+
+
+const randeros = () => {
+  if(this.props.evento.random){
+    if(this.props.evento.random.length > 0){
+    return ( <div className='eventmembersholder'>{randers(this.props.evento.random)} {numbo()}  </div> );
+  }
+  }else{
+    return(null);
+  }
 };
 
 
@@ -562,7 +575,7 @@ var ok = `/groups/${this.props.groupId}/events/${this.props.eventId}`;
                     <div className='groupeventtime'>End time: {this.props.evento.end_time === 'tbd' ? 'tbd' : moment(this.props.evento.end_time).format('ddd MMM Do YYYY hh:mm A')}</div>
                     <div className='groupeventdivider'>
                       <div className='groupeventbodyleft'>
-                        {this.props.evento.random.length > 0 ? <div className='eventmembersholder'>{randers(this.props.evento.random)} {numbo()}  </div> : null}
+                        {randeros()}
                         <div className="groupeventdescription">{this.props.evento.description}</div>
                       </div>
 
