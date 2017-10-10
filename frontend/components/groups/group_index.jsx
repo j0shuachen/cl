@@ -66,13 +66,3 @@ class GroupIndex extends React.Component {
 }
 
 export default GroupIndex;
-
-
-
-// <div className="groupindexheader">
-//     <Search/>
-//
-// <div className='findaclique'>Find a Clique!</div>
-//  </div>
-//
-//         <ul className="grouplist">{groupItems}</ul>

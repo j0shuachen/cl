@@ -2,15 +2,12 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import ReactLoading from 'react-loading';
 
-// import TimeAgo from 'react-timeago';
-// import TimeAgo from 'timeago-react'; // var TimeAgo = require('timeago-react');
 
 class UserShow extends React.Component{
 
   constructor (props) {
     super(props);
     this.state= {
-      // member: null
       newz: true,
       loaded: false,
       num: true,
@@ -27,7 +24,6 @@ class UserShow extends React.Component{
     this.renderJ = this.renderJ.bind(this);
     this.createMember= this.createMember.bind(this);
     this.deleteMember= this.deleteMember.bind(this);
-    // this.amember = this.amember.bind(this);
     this.renderjoin = this.renderjoin.bind(this);
     this.renderdel = this.renderdel.bind(this);
     this.opmember = this.opmember.bind(this);
@@ -45,23 +41,17 @@ class UserShow extends React.Component{
     this.props.fetchGroup(this.props.match.params.groupId).then(() => this.backgroundSetter());
     this.props.fetchEvents().then(() => this.setState({checking: true}));
     this.props.fetchGroupEnrollments(this.props.match.params.groupId);
-    // this.renderJ();
-    // this.amember();
+
     this.opmember();
     this.eventsetter();
-    // this.ismember();
   }
 
   componentWillMount(){
     this.props.fetchUser(this.props.match.params.userId);
 
     this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter());
-    // this.props.fetchEvents().then(() => this.eventsetter().then(this.fetchEventEnrollments()));
     this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
     this.props.fetchGroupNews(this.props.match.params.groupId).then(() => this.setState({newz: !this.state.newz}));
-
-    // this.renderJ();
-    // this.ismember();
     this.opmember();
     this.eventsetter();
   }
@@ -79,156 +69,136 @@ class UserShow extends React.Component{
 
 
   renderUpdateGroup (){
-  if(this.props.group && this.props.currentUser){
-    if(this.props.group.mod){
-      if(this.props.group.mod.id === this.props.currentUser.id){
-        var go = `/groups/${this.props.group.id}/update`;
-        return(<Link to={go} className='glink'>Update</Link>);
-      }else{
-        return (null);
+    if(this.props.group && this.props.currentUser){
+      if(this.props.group.mod){
+        if(this.props.group.mod.id === this.props.currentUser.id){
+          var go = `/groups/${this.props.group.id}/update`;
+            return(
+              <Link to={go} className='glink'>Update</Link>
+            );
+        }else{
+          return (
+            null
+          );
+        }
+      }
+    }else {
+      return null;
       }
     }
-  }else{
-    return null;
-    }
-  }
 
 
-opmember(){
-  if(this.props.memboz){
-    if(this.props.currentUser){
-    let x = false;
-  const g = this.props.memboz;
-  const og = Object.values(g);
-  // const ot = Object.values(og);
-  // console.log('og',og);
+  opmember(){
+    if(this.props.memboz){
+      if(this.props.currentUser){
+        let x = false;
+        const g = this.props.memboz;
+        const og = Object.values(g);
 
-  for(var i=0; i < og.length; i++){
-    if(og[i].id === this.props.currentUser.id){
-      x = true;
-    }
-  }
-  // return x;
-  if (x){
-    this.setState({member:true});
-  }
-  else {
-    this.setState({member: false});
-  }
-  return;
-}else{
-  this.setState({member: false});
-}
-}
-}
-
-ismember(){
-  const g = this.props.group.members;
-  if (g){
-    for(var i =0; i < g.length; i++){
-      if(g[i].id === this.props.currentUser.id){
-        this.setState({member: true});
-        return true;
+        for(var i=0; i < og.length; i++){
+          if(og[i].id === this.props.currentUser.id){
+            x = true;
+          }
+        }
+      if (x){
+        this.setState({member:true});
       }
+      else {
+        this.setState({member: false});
+      }
+      return;
+    }else{
+      this.setState({member: false});
+    }
+  }
+}
+
+  ismember(){
+    const g = this.props.group.members;
+    if (g){
+      for(var i =0; i < g.length; i++){
+        if(g[i].id === this.props.currentUser.id){
+          this.setState({member: true});
+          return true;
+        }
       }
       this.setState({member: false});
-      return false;
+        return false;
+      }
     }
-}
 
-createMember(){
-  const m = this.props.currentUser.id;
-  const o = this.props.groupId;
-  const t = this.props.group.user.name;
-  this.props.createGroupEnrollment({group_enrollment:{user_id: m, group_id: o}}).then(()=> this.setState({check: true}));
-  this.setState({member: true, num: true});
-  this.setState({newz: !this.state.newz});
-  this.props.createGroupNew({group_news:{group_id: o, news: `${t} joined the group`}}).then(() =>this.props.fetchGroup(this.props.groupId).then(()=> this.setState({newz: !this.state.newz})));
-
-    // console.log('dododo');
-    // this.forceUpdate();
-}
-
-deleteMember(){
-  const m = this.props.currentUser.id;
-  const o = this.props.groupId;
-  const t = this.props.group.user.name;
-
-this.setState({check: true});
-// console.log(this.props);
-if (this.props.group_enrollments){
-  let ok = this.props.group_enrollments[0];
-  let arr = Object.keys(ok);
-  if (arr.length > 0){
-  for(var i=0; i < arr.length; i++){
-    // if(ok[arr[i]])
-
-    let x = ok[arr[i]];
-    // console.log(ok[i]);
-    // console.log(this.props.currentUser.id);
-    if(x.user_id === this.props.currentUser.id){
-      // console.log('ld');
-
-      // this.props.deleteGroupEnrollment({group_enrollment:{id: x.id, user_id: x.user_id, group_id: x.group_id}, id: x.id}).then(() => this.props.fetchGroup(this.props.groupId)).then(()=>this.setState({check:false}));
-      this.props.deleteGroupEnrollment({group_enrollment:{id: x.id, user_id: x.user_id, group_id: x.group_id}, id: x.id}).then(()=>this.setState({check:false}));
-
-      this.setState({member: false, num: false});
-
-      this.props.createGroupNew({group_news:{group_id: o, news: `${t} left the group`}}).then( () => this.props.fetchGroup(this.props.groupId).then(()=> this.setState({newz: !this.state.newz})));
-
-        // console.log('huir');
-        // this.opmember();
-        break;
-}
+  createMember(){
+    const m = this.props.currentUser.id;
+    const o = this.props.groupId;
+    const t = this.props.group.user.name;
+    this.props.createGroupEnrollment({group_enrollment:{user_id: m, group_id: o}}).then(()=> this.setState({check: true}));
+    this.setState({member: true, num: true});
+    this.setState({newz: !this.state.newz});
+    this.props.createGroupNew({group_news:{group_id: o, news: `${t} joined the group`}}).then(() =>this.props.fetchGroup(this.props.groupId).then(()=> this.setState({newz: !this.state.newz})));
 
   }
-}
-}
 
+  deleteMember(){
+    const m = this.props.currentUser.id;
+    const o = this.props.groupId;
+    const t = this.props.group.user.name;
 
+    this.setState({check: true});
+    if (this.props.group_enrollments){
+      let ok = this.props.group_enrollments[0];
+      let arr = Object.keys(ok);
+      if (arr.length > 0){
+        for(var i=0; i < arr.length; i++){
+          let x = ok[arr[i]];
+          if(x.user_id === this.props.currentUser.id){
 
+            this.props.deleteGroupEnrollment({group_enrollment:{id: x.id, user_id: x.user_id, group_id: x.group_id}, id: x.id}).then(()=>this.setState({check:false}));
 
-}
-eventsetter(){
-  if(this.props.group.events){
-    if(this.props.currentUser){
-    let v = this.props.currentUser.id;
+            this.setState({member: false, num: false});
 
-    let t = this.props.group.events;
-    for(var i=0; i < t.length; i++){
-      if(t[i].rsvp){
-      if(t[i].rsvp[v] && this.state.member){
-        // console.log('i',t[i].rsvp[v]);
-        // console.log('v', v);
-        // console.log(this.state);
-      this.setState({[t[i].id]: true });
-      // console.log('fgjhkl', this.state);
+            this.props.createGroupNew({group_news:{group_id: o, news: `${t} left the group`}}).then( () => this.props.fetchGroup(this.props.groupId).then(()=> this.setState({newz: !this.state.newz})));
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  eventsetter(){
+    if(this.props.group.events){
+      if(this.props.currentUser){
+        let v = this.props.currentUser.id;
+
+        let t = this.props.group.events;
+        for(var i=0; i < t.length; i++){
+          if(t[i].rsvp){
+            if(t[i].rsvp[v] && this.state.member){
+              this.setState({[t[i].id]: true });
+            }else{
+              this.setState({[t[i].id]: false});
+            }
+          }
+        }
+      }
+    }
+  }
+
+  renderJ(){
+    if (this.state.member){
+      return (
+        <div>
+          <div onClick={this.deleteMember}>Leave group!</div>
+        </div>
+
+      );
     }else{
-      this.setState({[t[i].id]: false});
+      return (
+        <div>
+          <div onClick={this.createMember}>Join group!</div>
+        </div>
+      );
     }
-  }else{
-    // this.setState({[t[i].id]: false});
   }
-    }
-  }}
-}
-//
-renderJ(){
-  if (this.state.member){
-    return (
-      <div>
-        <div onClick={this.deleteMember}>Leave group!</div>
-      </div>
-
-    );
-  }else{
-    return (
-      <div>
-        <div onClick={this.createMember}>Join group!</div>
-      </div>
-    );
-  }
-}
 
 backgroundSetter(){
 
@@ -461,23 +431,18 @@ renderU(){
           }
         }
       };
+
       const leave = () => {
-        // console.log('hitttttleave', this.props);
         this.setState({[event.id]: false});
-        // console.log('left', this.state);
-    // this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, groupId: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
         this.props.deleteEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, groupId: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));
       };
+
       const join =() => {
-        // console.log('hit');
         this.setState({[event.id]: true});
-    // this.props.createEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(this.eventsetter()));
         this.props.createEventEnrollment({event_enrollment:{user_id: this.props.currentUser.id, event_id: event.id, group_id: this.props.groupId}}).then(this.props.fetchGroup(this.props.groupId).then(ot()));
-        // console.log('state',this.state);
-        // console.log(this.props);
       };
+
       const ot = () => {
-    // console.log(this.state);
         if(this.state[event.id] && this.state.member){
           return(
             <div className='leaveevent' onClick={leave}>
@@ -508,120 +473,93 @@ renderU(){
         <div className="groupeventid">Event# {event.id}</div>
         <div className="groupeventorganizer">Event organizer: {event.organizer.name}</div>
         <div className="groupevenntdescription">{event.description}</div>
-        <div className="uplinko">{x()}
+        <div className="uplinko">{x()}</div>
+        <div>{event.rsvp.num} members attending</div>
+        <div>{ot()}</div>
       </div>
-      <div>{event.rsvp.num} members attending</div>
-      <div>{ot()}</div>
-    </div>
     );
   })
 );
 
-if(this.props.group.color === "#FFFFFF"){
-  var xo = '#ed1c40';
-}else{
-  xo = this.props.group.color;
-}
+  if(this.props.group.color === "#FFFFFF"){
+    var xo = '#ed1c40';
+  }else{
+    xo = this.props.group.color;
+  }
 
   return (
     <div className="singlegroupcontainer" style={{backgroundColor: this.state.color}}>
 
         <div className='groupheader'>
-            <div className="grouphead">
-        <div className="singlegroupbanner" style={{backgroundColor:xo}}>
-        {  this.props.group.banner_url ==='default' ? null : <img className='banner' src={this.props.group.banner_url}></img>}
-        <div className="singlegroupheader">
-          {this.props.group.name}
-        </div>
-        </div>
+          <div className="grouphead">
+            <div className="singlegroupbanner" style={{backgroundColor:xo}}>
+              { this.props.group.banner_url ==='default' ? null : <img className='banner' src={this.props.group.banner_url}></img>}
+              <div className="singlegroupheader">{this.props.group.name}</div>
+            </div>
 
-
-        <div className="singlegroupbar">
-          <Link to={idz} className="glink">Home</Link>
-          <Link to={members} className="glink">Members</Link>
-          <Link to={sponsors} className="glink">Sponsors</Link>
-          <Link to={photos} className="glink">Photos</Link>
-          <Link to={pages} className="glink">Pages</Link>
-          {this.renderUpdateGroup()}
-          <div className="bardos">
-            {this.props.currentUser? (this.props.currentUser.id === this.props.x.id ? <Link className="glinkon" to={myprofile} >My profile</Link> :  <Link className="glink" to={myprofile} >My profile</Link>) : null }
-
+            <div className="singlegroupbar">
+              <Link to={idz} className="glink">Home</Link>
+              <Link to={members} className="glink">Members</Link>
+              <Link to={sponsors} className="glink">Sponsors</Link>
+              <Link to={photos} className="glink">Photos</Link>
+              <Link to={pages} className="glink">Pages</Link>
+              {this.renderUpdateGroup()}
+              <div className="bardos">
+                {this.props.currentUser? (this.props.currentUser.id === this.props.x.id ? <Link className="glinkon" to={myprofile} >My profile</Link> :  <Link className="glink" to={myprofile} >My profile</Link>) : null }
+              </div>
+            </div>
           </div>
-        </div>
-
-
-
-      </div>
       </div>
 
       <div className="singlegroup">
         <div className="singlegroupsidebar">
-            <div className='photoplaceholder'>
+          <div className='photoplaceholder'>
             <img className='groupphoto' src={this.props.group.image_url}></img>
-            </div>
-            <div className="gcreated2">
+          </div>
 
-              <div className="groupsidebarname">{this.props.group.name}</div>
-              <div className='groupsidebarlocation'>{this.props.group.location}</div>
+          <div className="gcreated2">
+            <div className="groupsidebarname">{this.props.group.name}</div>
+            <div className='groupsidebarlocation'>{this.props.group.location}</div>
             <div className="groupsidebarestablished">Established: {this.props.group.creator}</div>
-                {this.state.num ? <div className='membercount'>{this.props.group.number} members</div> : <div className='membercount'>{this.props.group.number} members</div>}
-
-              <div className="moderatorcolumn">
-                <div className='moderatedby'>Moderated by:</div>
-                <div className='g90'>
-                  <img className='eventorg' src={this.props.group.mod.image_url}/>
-                  <div className='groupsidebarmod' >{moddname()}</div>
-                  </div>
-                </div>
+            {this.state.num ? <div className='membercount'>{this.props.group.number} members</div> : <div className='membercount'>{this.props.group.number} members</div>}
+            <div className="moderatorcolumn">
+              <div className='moderatedby'>Moderated by:</div>
+              <div className='g90'>
+                <img className='eventorg' src={this.props.group.mod.image_url}/>
+                <div className='groupsidebarmod' >{moddname()}</div>
+              </div>
             </div>
+          </div>
         </div>
 
         <div className="usershowmain">
           <div className="userhomeinfo">{this.info()}</div>
-
-            <div className='userprofilestats'>
-
-              <div className='statistics'>
-                <div className='statstitle'>{'Attendance stats for ' + this.props.x.name}</div>
-                <div className='statsblock'>
-                  <div className='statsub'>
+          <div className='userprofilestats'>
+            <div className='statistics'>
+              <div className='statstitle'>{'Attendance stats for ' + this.props.x.name}</div>
+              <div className='statsblock'>
+                <div className='statsub'>
                   <div className='statstag'>RSVPed Yes</div>
-              <div className='stats'> { this.props.x.eventrsvps.length + ' time(s)'}</div>
+                  <div className='stats'> { this.props.x.eventrsvps.length + ' time(s)'}</div>
                 </div>
                 <div className='statsub'>
                   <div className='statstagblack'>  Meetups attended</div>
-                <div className='stats'>{this.props.x.eventswent.length + ' so far'}</div>
-              </div>
+                  <div className='stats'>{this.props.x.eventswent.length + ' so far'}</div>
                 </div>
-            </div>
-
-        </div>
-
-
-
-
-            <div className='usergroups'>
-              <div className='modmem'>
-                <div className='statstitle'>Moderates groups </div>
-                <div className='indentmod' style={{height: '325px'}}>{this.groupmods()}</div>
-
               </div>
             </div>
+          </div>
 
-
-
+          <div className='usergroups'>
+            <div className='modmem'>
+              <div className='statstitle'>Moderates groups </div>
+              <div className='indentmod' style={{height: '325px'}}>{this.groupmods()}</div>
+            </div>
+          </div>
+        </div>
       </div>
-
-
-  </div>
-
     </div>
-  );
-}
-
+    );
+  }
 }
 export default UserShow;
-// <div className='userprofiletag'>
-//   <div className='userquestion'>Location: </div>
-//   <div className='userprofileinfo'>{this.props.x.location}</div>
-// </div>
