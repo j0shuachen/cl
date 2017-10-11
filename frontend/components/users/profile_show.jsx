@@ -48,7 +48,7 @@ class UserShow extends React.Component{
   }
 
   componentWillMount(){
-    this.props.fetchUser(this.props.match.params.userId);
+    // this.props.fetchUser(this.props.match.params.userId);
 
     // this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter());
     // // this.props.fetchEvents().then(() => this.eventsetter().then(this.fetchEventEnrollments()));
@@ -381,7 +381,6 @@ renderU(){
         <div className='singlegroupcontainer'>
         <div className='loadgroupmain'>
           <ReactLoading type='spin' color='#ed1c40' height='100px' width='100px'/>
-          <div className='loading'> Loading...</div>
         </div>
       </div>);
     }

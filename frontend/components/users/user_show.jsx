@@ -47,13 +47,15 @@ class UserShow extends React.Component{
   }
 
   componentWillMount(){
-    this.props.fetchUser(this.props.match.params.userId);
+    // this.props.fetchUser(this.props.match.params.userId);
 
     // this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter());
     // this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
     // this.props.fetchGroupNews(this.props.match.params.groupId).then(() => this.setState({newz: !this.state.newz}));
-    this.opmember();
-    this.eventsetter();
+
+    //
+    // this.opmember();
+    // this.eventsetter();
   }
 
   componentWillReceiveProps(nextProps){
@@ -357,7 +359,6 @@ renderU(){
         <div className='loadgroupcontainer'>
         <div className='loadgroupmain'>
           <ReactLoading type='spin' color='#ed1c40' height='100px' width='100px'/>
-          <div className='loading'> Loading...</div>
         </div>
       </div>);
     }

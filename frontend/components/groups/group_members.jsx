@@ -35,7 +35,7 @@ class GroupMembers extends React.Component{
     // this.props.fetchEvents();
     // this.props.fetchGroup(this.props.match.params.groupId).then(()=>this.setState({loaded: true, lengther: this.props.group.news.length})).then(()=> this.ops());
 
-    this.props.fetchGroupEnrollments(this.props.match.params.groupId);
+    // this.props.fetchGroupEnrollments(this.props.match.params.groupId);
 
   }
   componentDidMount(){
@@ -124,7 +124,6 @@ class GroupMembers extends React.Component{
         <div className='loadgroupcontainer'>
           <div className='loadgroupmain'>
             <ReactLoading type='spin' color='#ed1c40' height='100px' width='100px'/>
-            <div className='loading'> Loading...</div>
           </div>
         </div>
       );

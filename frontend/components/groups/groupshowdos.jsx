@@ -52,12 +52,12 @@ class GroupShowDos extends React.Component{
     //slowed
     // this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter()).then(()=> this.setState({check: true, newz: true, lengther: this.props.group.news.length}));
     // this.props.fetchEvents().then(() => this.eventsetter().then(this.fetchEventEnrollments()));
-    this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
-    this.props.fetchGroupNews(this.props.match.params.groupId).then(() => this.setState({newz: !this.state.newz}));
-
-
-    this.opmember();
-    this.eventsetter();
+    // this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
+    // this.props.fetchGroupNews(this.props.match.params.groupId).then(() => this.setState({newz: !this.state.newz}));
+    //
+    //
+    // this.opmember();
+    // this.eventsetter();
   }
 
   componentWillReceiveProps(nextProps){
