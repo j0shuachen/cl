@@ -39,8 +39,8 @@ class UserShow extends React.Component{
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId).then(() => this.setState({c: true}));
     this.props.fetchGroup(this.props.match.params.groupId).then(() => this.backgroundSetter());
-    this.props.fetchEvents().then(() => this.setState({checking: true}));
-    this.props.fetchGroupEnrollments(this.props.match.params.groupId);
+    // this.props.fetchEvents().then(() => this.setState({checking: true}));
+    // this.props.fetchGroupEnrollments(this.props.match.params.groupId);
 
     this.opmember();
     this.eventsetter();
@@ -49,9 +49,9 @@ class UserShow extends React.Component{
   componentWillMount(){
     this.props.fetchUser(this.props.match.params.userId);
 
-    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter());
-    this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
-    this.props.fetchGroupNews(this.props.match.params.groupId).then(() => this.setState({newz: !this.state.newz}));
+    // this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter());
+    // this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
+    // this.props.fetchGroupNews(this.props.match.params.groupId).then(() => this.setState({newz: !this.state.newz}));
     this.opmember();
     this.eventsetter();
   }

@@ -40,7 +40,7 @@ class GroupShowDos extends React.Component{
 
   componentDidMount(){
     this.props.fetchGroup(this.props.match.params.groupId).then(() => this.backgroundSetter());
-    this.props.fetchEvents().then(() => this.setState({checking: true}));
+    // this.props.fetchEvents().then(() => this.setState({checking: true}));
     this.props.fetchGroupEnrollments(this.props.match.params.groupId);
 
     this.opmember();
@@ -48,7 +48,9 @@ class GroupShowDos extends React.Component{
   }
 
   componentWillMount(){
-    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter()).then(()=> this.setState({check: true, newz: true, lengther: this.props.group.news.length}));
+
+    //slowed
+    // this.props.fetchGroup(this.props.match.params.groupId).then(() => this.opmember()).then(() => this.eventsetter()).then(()=> this.setState({check: true, newz: true, lengther: this.props.group.news.length}));
     // this.props.fetchEvents().then(() => this.eventsetter().then(this.fetchEventEnrollments()));
     this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
     this.props.fetchGroupNews(this.props.match.params.groupId).then(() => this.setState({newz: !this.state.newz}));

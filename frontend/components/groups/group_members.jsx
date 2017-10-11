@@ -32,8 +32,8 @@ class GroupMembers extends React.Component{
   }
 
   componentWillMount(){
-    this.props.fetchEvents();
-    this.props.fetchGroup(this.props.match.params.groupId).then(()=>this.setState({loaded: true, lengther: this.props.group.news.length})).then(()=> this.ops());
+    // this.props.fetchEvents();
+    // this.props.fetchGroup(this.props.match.params.groupId).then(()=>this.setState({loaded: true, lengther: this.props.group.news.length})).then(()=> this.ops());
 
     this.props.fetchGroupEnrollments(this.props.match.params.groupId);
 
