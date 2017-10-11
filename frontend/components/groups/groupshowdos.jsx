@@ -459,10 +459,13 @@ class GroupShowDos extends React.Component{
   }
 
 
+
+
   render() {
+    // || !this.state.color
 
     // console.log(this.props);
-    if(Object.keys(this.props.group).length === 0 || !this.state.color ){
+    if(Object.keys(this.props.group).length === 0 || !this.state.color  ){
       return (
         <div className='loadgroupcontainer'>
           <div className='loadgroupmain'>
@@ -498,6 +501,12 @@ class GroupShowDos extends React.Component{
         return (
           this.props.group.mod.email
         );
+      }
+    };
+
+    const modurl = () => {
+      if(this.props.group.mod){
+        return(this.props.group.mod.image_url);
       }
     };
 
@@ -544,6 +553,29 @@ class GroupShowDos extends React.Component{
     };
 
 
+    const newsSetting = () =>{
+      if(this.props.group.news){
+        return (newsList(this.props.group.news.slice(0, this.state.newsheight + 1)));
+      }
+    };
+
+    const clicker = () => {
+      if(this.props.group.news){
+        if(this.props.group.news.length<= this.state.newsheight){
+          return null;
+
+        }else{
+          return ( <div className='newsclicker' onClick={this.newsClicker} >More News</div>);
+        }
+      }
+
+    };
+
+
+
+
+
+
 
     if(this.props.group.color === "#FFFFFF"){
       var xo = '#ed1c40';
@@ -553,11 +585,11 @@ class GroupShowDos extends React.Component{
 
 
     return (
-      <div className="singlegroupcontainer" style={{backgroundColor: this.state.color}}>
+      <div className="singlegroupcontainer" style={{backgroundColor: this.props.group.color}}>
 
         <div className='groupheader'>
           <div className="grouphead">
-            <div className="singlegroupbanner" style={{backgroundColor:xo}}>
+            <div className="singlegroupbanner" style={{backgroundColor: this.props.group.color}}>
               { this.props.group.banner_url ==='default' ? null : <img className='banner' src={this.props.group.banner_url}></img>}
               <div className="singlegroupheader">{this.props.group.name}</div>
             </div>
@@ -595,7 +627,7 @@ class GroupShowDos extends React.Component{
             </div>
           </div>
 
-          <div className="singlegroupmain" style={{backgroundColor: this.state.color}}>
+          <div className="singlegroupmain" style={{backgroundColor: this.props.group.color}}>
             <div className="grouphomeinfo">
               <div className="info">{this.props.group.info}</div>
               <div className='roze'>
@@ -620,8 +652,8 @@ class GroupShowDos extends React.Component{
           </div>
           <div className="singlegroupnews">
             <div className='whatsnew'>What's new</div>
-            {newsList(this.props.group.news.slice(0, this.state.newsheight + 1))}
-            {this.props.group.news.length <= this.state.newsheight ? null : <div className='newsclicker' onClick={this.newsClicker} >More News</div>}
+            {newsSetting()}
+            {clicker()}
           </div>
         </div>
       </div>
