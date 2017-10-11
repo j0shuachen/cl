@@ -42,12 +42,12 @@ class EventShowDos extends React.Component{
   }
 
   componentWillMount(){
-    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true}));
-    this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true, newz: true})).then(() => this.checkrsvp());
-    this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
-    this.props.fetchGroupNews(this.props.match.params.groupId).then(() => this.setState({newz: !this.state.newz}));
-    this.opmember();
-    this.eventsetter();
+    // this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true}));
+    // this.props.fetchGroup(this.props.match.params.groupId).then(() => this.setState({check: true, newz: true})).then(() => this.checkrsvp());
+    // this.props.fetchGroupEnrollments(this.props.match.params.groupId).then(() => this.opmember());
+    // this.props.fetchGroupNews(this.props.match.params.groupId).then(() => this.setState({newz: !this.state.newz}));
+    // this.opmember();
+    // this.eventsetter();
   }
 
   componentWillReceiveProps(nextProps){
