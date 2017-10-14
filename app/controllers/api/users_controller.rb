@@ -40,14 +40,27 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     # @eventswent = EventEnrollment.joins('INNER JOIN events ON events.id = event_enrollments.event_id').where('event_enrollments.user_id = ?', @user.id)
-    @eventswent = Event.joins('INNER JOIN event_enrollments ON event_enrollments.event_id = events.id').where('events.user_id = ?', @user.id)
+    # @eventswent = Event.joins('INNER JOIN event_enrollments ON event_enrollments.event_id = events.id').where('events.user_id = ?', @user.id)
     @eventrsvps = EventEnrollment.where('user_id = ?', @user.id )
-    p 'checking'
-    p @eventswent
+    @epoc = []
+    @eventswent =[]
+    @eventrsvps.each do |e|
+      @epoc.push(Event.where('id =?', e.event_id))
+    end
+    @epoc.flatten!
+      @epoc.each do |ex|
+        if ex['start_time'] != 'tbd' && ex['end_time'] != 'tbd'
+          if DateTime.parse(ex['start_time']) < DateTime.now || DateTime.parse(ex['end_time']) < DateTime.now
+            @eventswent.push(ex)
+          end
+        end
+      end
+    # p 'checking'
+    # p @eventswent
     # @eventsdos = GroupEnrollment.joins('INNER JOIN groups ON groups.id = group_enrollments.group_id').where('group_enrollments.user_id =?', @user.id)
     @eventsdos = Group.joins('INNER JOIN group_enrollments ON group_enrollments.group_id = groups.id').where('group_enrollments.user_id = ?', @user.id)
-    p 'doneo'
-    p @eventsdos
+    # p 'doneo'
+    # p @eventsdos
 
     render `api/users/#{@user.id}`
   end

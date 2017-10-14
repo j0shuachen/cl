@@ -488,6 +488,10 @@ renderU(){
     xo = this.props.group.color;
   }
 
+  if(this.props.group.mod){
+    var modlink = `/groups/${this.props.groupId}/users/${this.props.group.mod.id}`;
+  }
+
   return (
     <div className="singlegroupcontainer" style={{backgroundColor: this.state.color}}>
 
@@ -525,10 +529,10 @@ renderU(){
             {this.state.num ? <div className='membercount'>{this.props.group.number} members</div> : <div className='membercount'>{this.props.group.number} members</div>}
             <div className="moderatorcolumn">
               <div className='moderatedby'>Moderated by:</div>
-              <div className='g90'>
+              <Link to={modlink} className='g90'>
                 <img className='eventorg' src={this.props.group.mod.image_url}/>
                 <div className='groupsidebarmod' >{moddname()}</div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

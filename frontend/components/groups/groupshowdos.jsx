@@ -574,6 +574,9 @@ class GroupShowDos extends React.Component{
     };
 
 
+    if(this.props.group.mod){
+      var modlink = `/groups/${this.props.groupId}/users/${this.props.group.mod.id}`;
+    }
 
 
 
@@ -586,12 +589,14 @@ class GroupShowDos extends React.Component{
     }
 
 
+
+
     return (
       <div className="singlegroupcontainer" style={{backgroundColor: this.props.group.color}}>
 
         <div className='groupheader'>
           <div className="grouphead">
-            <div className="singlegroupbanner" style={{backgroundColor: this.props.group.color}}>
+            <div className="singlegroupbanner" style={{backgroundColor: xo}}>
               { this.props.group.banner_url ==='default' ? null : <img className='banner' src={this.props.group.banner_url}></img>}
               <div className="singlegroupheader">{this.props.group.name}</div>
             </div>
@@ -621,10 +626,10 @@ class GroupShowDos extends React.Component{
               {this.state.num ? <div className='membercount'>{this.props.group.number} members</div> : <div className='membercount'>{this.props.group.number} members</div>}
               <div className="moderatorcolumn">
                 <div className='moderatedby'>Moderated by:</div>
-                <div className='g90'>
+                <Link to={modlink} className='g90'>
                   <img className='eventorg' src={this.props.group.mod.image_url}/>
                   <div className='groupsidebarmod'>{moddname()}</div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

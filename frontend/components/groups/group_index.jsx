@@ -55,7 +55,7 @@ class GroupIndex extends React.Component {
 
 
         <div className="grouplist">{groupItems}</div>
-
+        
       </div>
 
     );

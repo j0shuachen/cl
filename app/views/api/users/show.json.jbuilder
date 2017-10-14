@@ -15,3 +15,6 @@ end
 json.eventswent @eventswent
 json.eventsdos @eventsdos
 json.eventrsvps @eventrsvps
+
+
+json.epoc @epoc
