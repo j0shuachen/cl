@@ -18,6 +18,7 @@
   background-color: white;
   border-radius: 3px;
   flex-direction: column;
+  border: 1px rgba(211,211,211,.7) solid;
   width: 100%;
       margin-bottom: 16px;
   // padding: 0 15px 15px 0;
@@ -136,6 +137,7 @@ flex-direction: column;
 
 .userprofilestats{
   display: flex;
+  border: 1px rgba(211,211,211,.7) solid;
   flex-direction: column;
   border-radius: 3px;
   background-color: white;
