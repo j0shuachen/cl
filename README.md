@@ -2,7 +2,7 @@
 CliqueUp is a MeetUp clone allowing users to create groups and events to interact with like-minded people!
 
 ## Heroku Link
-https://cliqueup.herokuapp.com/#/
+https://cliquee.herokuapp.com/#/
 
 ## Users
 On the database side, users are stored in a table with columns for id, username, name, email, location, hashed password, created_at, update_at, and session token.

@@ -120,7 +120,9 @@
 .glink , .bardos{
   // border-radius: 3px;
   background: #fff;
-  color: rgba(0,0,0,.54)!important;
+  // color: rgba(0,0,0,.54)!important;
+  color: rgba(0,0,0,.54);
+
   padding: 0 10px;
   margin-right: 1px;
   text-decoration: none;
@@ -128,6 +130,10 @@
   flex-direction: column;
   justify-content: center;
 }
+
+// .glink:hover{
+//   color: black;
+// }
 
 .bardos{
   display: flex;
