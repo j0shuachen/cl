@@ -13,6 +13,8 @@
 .grouphomememinfo{
   display: flex;
   background-color: white;
+  border: 1px solid rgba(0,0,0,.12)!important;
+
   flex-direction: column;
   border-bottom: 1px solid transparent;
     padding: 16px 16px 0;
