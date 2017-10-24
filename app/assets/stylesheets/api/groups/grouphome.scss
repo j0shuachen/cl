@@ -213,7 +213,7 @@ text-shadow: 1px 1px 0 rgba(0,0,0,.26);
   background-color: #fff;
   margin-bottom: 16px;
   border: 1px solid rgba(0,0,0,.12)!important;
-  border-bottom: 1px solid rgba(0,0,0,.26)!important;
+  // border-bottom: 1px solid rgba(0,0,0,.26)!important;
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   -o-background-clip: padding-box;
@@ -389,6 +389,8 @@ flex-direction: row;
   margin-top: 16px;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: none;
 }
 
 .groupeventeach{
@@ -397,7 +399,9 @@ flex-direction: row;
   flex-direction: column;
   padding: 0 16px 16px;
   padding: 16px 16px 0;
-  border-bottom: 1px solid rgba(0,0,0,.26)!important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+  // border-bottom: 1px solid rgba(0,0,0,.26)!important;
 
 
 }
